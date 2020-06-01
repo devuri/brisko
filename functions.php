@@ -7,9 +7,9 @@
  * @package brisko
  */
 
-if ( ! defined( 'READABLE_VERSION' ) ) {
+if ( ! defined( 'BRISKO_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'READABLE_VERSION', '0.0.3' );
+	define( 'BRISKO_VERSION', '0.0.4' );
 }
 
 if ( ! function_exists( 'brisko_setup' ) ) :
@@ -143,19 +143,19 @@ add_action( 'widgets_init', 'brisko_widgets_init' );
  * Enqueue scripts and styles.
  */
 function brisko_scripts() {
-	wp_enqueue_style( 'brisko-theme-style', get_stylesheet_uri(), array('underscores'), READABLE_VERSION );
+	wp_enqueue_style( 'brisko-theme-style', get_stylesheet_uri(), array('underscores','bootstrap','clean'), BRISKO_VERSION );
 	wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
 
 	/**
 	 * bootstrap
 	 * @link https://fontawesome.com/v4.7.0/
 	 */
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), READABLE_VERSION );
-	wp_enqueue_style( 'clean', get_template_directory_uri() . '/css/clean.css', array('bootstrap'), READABLE_VERSION );
-	wp_enqueue_style( 'underscores', get_template_directory_uri() . '/css/underscores.css', array(), READABLE_VERSION );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), BRISKO_VERSION );
+	wp_enqueue_style( 'clean', get_template_directory_uri() . '/css/clean.css', array('bootstrap'), BRISKO_VERSION );
+	wp_enqueue_style( 'underscores', get_template_directory_uri() . '/css/underscores.css', array(), BRISKO_VERSION );
 
 
-	wp_enqueue_script( 'brisko-navigation', get_template_directory_uri() . '/js/navigation.js', array(), READABLE_VERSION, true );
+	wp_enqueue_script( 'brisko-navigation', get_template_directory_uri() . '/js/navigation.js', array(), BRISKO_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
