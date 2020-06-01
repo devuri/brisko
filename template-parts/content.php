@@ -45,10 +45,13 @@
 				),
 				wp_kses_post( get_the_title() )
 			)
-		);
-else :
+		); ?>
+			<footer class="entry-footer">
+				<?php brisko_entry_footer(); ?>
+			</footer><!-- .entry-footer -->
+<?php else :
 		the_excerpt();
-
+		printf( esc_html__( '%1$s.', 'brisko' ), '<div class="read-more"><a class="more-link" href="'.get_permalink().'">Read More</a></div>' );
 endif;
 		wp_link_pages(
 			array(
@@ -58,8 +61,4 @@ endif;
 		);
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php brisko_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
