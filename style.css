@@ -48,9 +48,11 @@ p a {
 }
 
 blockquote, .wp-block-quote {
-    border-left: solid 4px #e2e8f0;
-    padding-left: 0.5rem;
-    margin-bottom: 1.5em;
+    border-left: solid 5px #d1cfcf;
+    padding-left: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: #a7a4a4;
+    margin-left: 0.9rem;
 }
 
 th, td {
