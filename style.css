@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 			devuri
 Description: 	Beautifully Simple Responsive WordPress theme with a modern clean design.
-Version: 			0.0.4
+Version: 			0.0.5
 Tested up to: 5.4
 Requires PHP: 5.6
 Text Domain: 	brisko
@@ -22,6 +22,12 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
+body {
+	color: #333;
+	font-family: Noto, "Times New Roman", serif;
+	font-size: 1.3rem;
+	line-height: 1.6;
+}
 
 body a {
 	color: #CC5555;
@@ -31,6 +37,26 @@ body a {
 	-webkit-font-smoothing: antialiased;
 	transition: all .25s;
 }
+
+p {
+    line-height: 1.75;
+    margin: 30px 0;
+}
+
+p a {
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -44,22 +70,25 @@ body a {
 .custom-logo-link {
 	width: 90px;
 	margin-bottom: 1rem;
+	padding-top: 1rem;
 }
 
 .site-description {
-	text-align: right;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+    text-align: right;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
 }
 
 
 /*--------------------------------------------------------------
 # Main width
 --------------------------------------------------------------*/
+.white-bg {
+	background-color: #FFFFFF;
+}
 
 .container {
 	max-width: 1200px;
-	background-color: #FFFFFF;
 }
 
 .entry-header {
@@ -81,16 +110,12 @@ body a {
 	padding-top: 2rem;
 }
 
-.main-width {
-	max-width: 56rem;
-}
-
 .entry-content {
 	word-wrap: break-word;
 	color: #353535;
 	padding-top: 0rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	/* padding-left: 1rem; */
+	/* padding-right: 1rem; */
 }
 
 .read-more {
@@ -112,6 +137,10 @@ body a {
 
 .post-thumbnail {
 	margin-bottom: 1rem;
+}
+
+.primary-content{
+	padding-right: 2rem;
 }
 
 .entry-meta {
@@ -199,8 +228,8 @@ span.nav-subtitle {
 
 .sidebar ul,
 ol {
-	margin-right: 1rem;
-	margin-left: 1rem;
+	margin-right: 0rem;
+	margin-left: 0rem;
 }
 
 .sidebar ul {
@@ -209,16 +238,16 @@ ol {
 }
 
 .sidebar ul li {
-	border-bottom: solid thin #f0f0f0;
+	border-bottom: solid thin #E2E8F0;
 	padding: 0.3em 0;
 }
 
 .widget-title {
-	padding: 0.5em;
+	padding-bottom: 0.5em;
 	color: black;
 	font-size: inherit;
 	font-weight: 700;
-	border-bottom: solid thin #f0f0f0;
+	border-bottom: solid thin #E2E8F0;
 	text-transform: uppercase;
 }
 
@@ -230,7 +259,7 @@ ol {
 .brisko-navigation {
 	margin-bottom: 2em;
 	box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
-	border-top: 1px solid #dee2e6;
+	border-top: 1px solid #E2E8F0;
 	background-color: #fff;
 }
 
@@ -249,7 +278,7 @@ ol {
 	text-transform: uppercase;
 	color: #000;
 	display: block;
-	padding: 0.7rem 1rem;
+	padding: 0.9rem 1.2rem;
 	letter-spacing: .07em;
 	background-color: #FFFFFF;
 }
@@ -351,4 +380,11 @@ textarea {
 
 .search-submit {
 	margin-left: 8px;
+}
+/*--------------------------------------------------------------
+ # Footer
+ --------------------------------------------------------------*/
+.site-footer{
+	border-top: 1px solid #E2E8F0;
+	padding: 1rem;
 }

@@ -13,7 +13,9 @@
  */
 
 get_header(); ?>
-<main id="primary" class="site-main main-width container">
+<main id="primary" class="site-main container white-bg">
+	<div class="row">
+	<div class="col-md-8 primary-content">
 <?php
 		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) : ?>
@@ -30,5 +32,12 @@ get_header(); ?>
 			else :
 				get_template_part( 'template-parts/content', 'none' );
 			endif; ?>
-	</main><!-- #main -->
+</div><!-- col 8 -->
+<div class="col-md-4">
+<div class="sidebar mb-4  avs-sidebar pad-left-1m">
+			<?php get_sidebar(); ?>
+		</div><!-- sidebar -->
+	</div><!-- col 4 -->
+</div><!-- row -->
+</main><!-- #main -->
 <?php get_footer();

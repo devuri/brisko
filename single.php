@@ -8,9 +8,9 @@
  */
 
 get_header(); ?>
-<main id="primary" class="site-main container">
+<main id="primary" class="site-main container white-bg">
 		<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-8 primary-content">
 		<?php while ( have_posts() ) :
 			the_post();
 			get_template_part( 'template-parts/content', get_post_type() );
