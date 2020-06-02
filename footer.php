@@ -12,7 +12,7 @@
 ?><footer id="colophon" class="site-footer white-bg">
 		<div align="center" class="site-info container">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'brisko' ) ); ?>">
-			 <?php printf( esc_html__( 'Proudly powered by %s', 'brisko' ), 'WordPress' );?>
+			 <?php printf( esc_html__( 'Powered by %s', 'brisko' ), 'WordPress' );?>
 			</a>
 			<span class="sep"> | </span>
 				<?php
