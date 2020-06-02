@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 			devuri
 Description: 	Beautifully Simple Responsive WordPress theme with a modern clean design.
-Version: 			0.0.6
+Version: 			0.0.7
 Tested up to: 5.4
 Requires PHP: 5.6
 Text Domain: 	brisko
@@ -45,6 +45,22 @@ p {
 
 p a {
     text-decoration: underline;
+}
+
+blockquote, .wp-block-quote {
+    border-left: solid 4px #e2e8f0;
+    padding-left: 0.5rem;
+    margin-bottom: 1.5em;
+}
+
+th, td {
+    border: 1px solid #e2e8f0;
+    padding: 8px 12px;
+}
+
+pre{
+	word-wrap: break-word;
+	white-space: pre-wrap;
 }
 
 h1,
@@ -210,10 +226,50 @@ h6 {
 	font-size: medium;
 	margin: 0px 0;
 }
+.comment-list {
+    padding: 0;
+}
+.comments-title{
+	font-size: medium;
+}
+.comment-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+		font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.comment-author img {
+    border-radius: 50%;
+    margin-right: .5rem;
+}
+
+.comment-metadata a{
+	color: #c1c1c1;
+}
+.says{
+	display: none;
+}
+.comment-reply-link {
+    border: solid thin #eaeaea;
+    padding: 0.2rem 0.5rem;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 .comment-form-cookies-consent {
 	font-size: medium;
 	font-weight: normal;
+}
+
+.comments-area ol {
+    list-style: none;
+}
+
+.comment-body{
+    border: solid thin #e2e8f0;
+    padding: 1rem;
+    margin-bottom: 2rem;
+		font-size: medium;
 }
 
 div.comments-area label {
@@ -411,4 +467,6 @@ textarea {
 .site-footer{
 	border-top: 1px solid #E2E8F0;
 	padding: 1rem;
+	font-size: medium;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

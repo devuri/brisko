@@ -13,7 +13,7 @@
  * theme release version
  */
 if ( ! defined( 'BRISKO_VERSION' ) ) {
-	define( 'BRISKO_VERSION', '0.0.6' );
+	define( 'BRISKO_VERSION', '0.0.7' );
 }
 
 if ( ! function_exists( 'brisko_setup' ) ) :
