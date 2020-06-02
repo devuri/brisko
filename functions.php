@@ -13,7 +13,7 @@
  * theme release version
  */
 if ( ! defined( 'BRISKO_VERSION' ) ) {
-	define( 'BRISKO_VERSION', '0.0.4' );
+	define( 'BRISKO_VERSION', '0.0.5' );
 }
 
 if ( ! function_exists( 'brisko_setup' ) ) :
@@ -147,7 +147,7 @@ add_action( 'widgets_init', 'brisko_widgets_init' );
  * Enqueue scripts and styles.
  */
 function brisko_scripts() {
-	wp_enqueue_style( 'brisko-theme-style', get_stylesheet_uri(), array('underscores','bootstrap','clean'), BRISKO_VERSION );
+	wp_enqueue_style( 'brisko-theme-style', get_stylesheet_uri(), array('underscores','bootstrap'), BRISKO_VERSION );
 	wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
 
 	/**
@@ -155,7 +155,6 @@ function brisko_scripts() {
 	 * @link https://fontawesome.com/v4.7.0/
 	 */
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), BRISKO_VERSION );
-	wp_enqueue_style( 'clean', get_template_directory_uri() . '/css/clean.css', array('bootstrap'), BRISKO_VERSION );
 	wp_enqueue_style( 'underscores', get_template_directory_uri() . '/css/underscores.css', array(), BRISKO_VERSION );
 
 

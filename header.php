@@ -28,7 +28,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'brisko' ); ?></a>
 	<header id="masthead" class="site-header">
-		<div class="site-branding container">
+		<div class="site-branding container white-bg">
 			<div class="row">
 			<div class="logo-header col-sm">
 				<?php
@@ -50,7 +50,7 @@
 		</div><!-- .row -->
 		</div><!-- .site-branding -->
 		<div class="brisko-navigation container-fluid">
-		<div class="container">
+		<div class="container white-bg">
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'brisko' ); ?></button>
 				<?php
