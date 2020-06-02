@@ -16,7 +16,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
 </head>
 
@@ -24,10 +23,10 @@
 <?php wp_body_open(); ?>
 <div class="container">
 	<?php the_header_image_tag(array( 'class' => 'brisko-header-img') ); ?>
-</div><!--header_image-->
+</div>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'brisko' ); ?></a>
-
 	<header id="masthead" class="site-header">
 		<div class="site-branding container">
 			<div class="row">
@@ -66,6 +65,5 @@
 				?>
 			</nav><!-- #site-navigation -->
 		</div><!-- .container -->
-		</div><!-- .brisko-navigation -->
-
-	</header><!-- #masthead -->
+	</div><!-- .brisko-navigation -->
+</header><!-- #masthead -->

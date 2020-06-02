@@ -22,297 +22,333 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-  body a {
-    color: #CC5555;
-    text-decoration: none;
-    background-color: transparent;
-    line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
-    transition: all .25s;
-  }
+
+body a {
+	color: #CC5555;
+	text-decoration: none;
+	background-color: transparent;
+	line-height: 1.75;
+	-webkit-font-smoothing: antialiased;
+	transition: all .25s;
+}
+
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-  .brisko-header-img{
-  	margin-bottom:1rem;
-  }
 
-  .custom-logo-link{
-  	width:90px;
-  	margin-bottom: 1rem;
-  }
+.brisko-header-img {
+	margin-bottom: 1rem;
+}
 
-  .site-description{
-    text-align: right;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+.custom-logo-link {
+	width: 90px;
+	margin-bottom: 1rem;
+}
+
+.site-description {
+	text-align: right;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
 
 /*--------------------------------------------------------------
 # Main width
 --------------------------------------------------------------*/
-  .container {
-  	max-width: 1200px;
-    background-color: #FFFFFF;
-  }
 
-  .entry-header{
-    word-wrap: break-word;
-  }
- /*--------------------------------------------------------------
+.container {
+	max-width: 1200px;
+	background-color: #FFFFFF;
+}
+
+.entry-header {
+	word-wrap: break-word;
+}
+
+
+/*--------------------------------------------------------------
  # Post
  --------------------------------------------------------------*/
-  .sticky {
-    display: block;
-    border: solid thin #d0d0d0;
-    padding: 2rem;
-  }
 
-  .site-main {
-    padding-top: 2rem;
-  }
+.sticky {
+	display: block;
+	border: solid thin #d0d0d0;
+	padding: 2rem;
+}
 
-  .main-width {
-    max-width: 56rem;
-  }
+.site-main {
+	padding-top: 2rem;
+}
 
-  .entry-content{
-   	word-wrap: break-word;
-    color: #353535;
-    padding-top: 0rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+.main-width {
+	max-width: 56rem;
+}
 
-  .read-more {
-    font-weight: 600;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: medium;
-    letter-spacing: 0.1rem;
-  }
+.entry-content {
+	word-wrap: break-word;
+	color: #353535;
+	padding-top: 0rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
 
-  .more-link{
-    padding: 0.7em 0.8em;
-    border: solid thin #ccc;
-  }
+.read-more {
+	font-weight: 600;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: medium;
+	letter-spacing: 0.1rem;
+}
 
-  .more-link::after {
-    content: " \00BB";
-  }
+.more-link {
+	padding: 0.7em 0.8em;
+	border: solid thin #ccc;
+	text-transform: lowercase;
+}
 
-  .post-thumbnail{
-   	margin-bottom:1rem;
-  }
-  .entry-meta{
-    width: 100%;
-    border: solid thin #f1f1f1;
-    border-left: none;
-    border-right: none;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 8px;
-    font-size: medium;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
+.more-link::after {
+	content: " \00BB";
+}
 
-  .tags-links a{
-    padding: 4px 12px;
-    background: #e2e8f0;
-    color:#000000;
-    margin: 0 4px 4px 0;
-    font-size: medium;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
+.post-thumbnail {
+	margin-bottom: 1rem;
+}
 
-  .cat-links a{
-   	margin-right: 4px;
-  }
+.entry-meta {
+	width: 100%;
+	border: solid thin #f1f1f1;
+	border-left: none;
+	border-right: none;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 8px;
+	font-size: medium;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-  .entry-footer{
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
+.tags-links a {
+	padding: 4px 12px;
+	background: #e2e8f0;
+	color: #000000;
+	margin: 0 4px 4px 0;
+	font-size: medium;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-  .comment-notes {
-    font-size: medium;
-    margin: 0px 0;
-  }
-  .comment-form-cookies-consent{
-    font-size: medium;
-    font-weight: normal;
-  }
+.cat-links a {
+	margin-right: 4px;
+}
 
-  div.comments-area label {
-    display: inline-block;
-    margin-bottom: 0;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #757575;
-  }
-  div.comment-respond{
-    margin-top: 8rem;
-  }
-  div.comment-respond h3 {
-    font-size:inherit;
-  }
+.entry-footer {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-  p.logged-in-as{
-    font-size: medium;
-    margin: 0px 0;
-  }
+.comment-notes {
+	font-size: medium;
+	margin: 0px 0;
+}
 
-  .site-main .comment-navigation,
-  .site-main .posts-navigation,
-  .site-main .post-navigation {
-    margin: 0 0 1.5em;
-    margin-top: 24px;
-    border-top: solid thin #999;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+.comment-form-cookies-consent {
+	font-size: medium;
+	font-weight: normal;
+}
 
-  span.nav-subtitle{
-    color:#999;
-  }
+div.comments-area label {
+	display: inline-block;
+	margin-bottom: 0;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #757575;
+}
+
+div.comment-respond {
+	margin-top: 8rem;
+}
+
+div.comment-respond h3 {
+	font-size: inherit;
+}
+
+p.logged-in-as {
+	font-size: medium;
+	margin: 0px 0;
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	margin-top: 24px;
+	border-top: solid thin #999;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+span.nav-subtitle {
+	color: #999;
+}
 
 
 /*--------------------------------------------------------------
 # Sidebar
 --------------------------------------------------------------*/
-.sidebar {
-  margin-left: 1rem;
-  word-wrap: break-word;
-}
-  .sidebar ul, ol{
-  	margin-right: 1rem;
-  	margin-left: 1rem;
-  }
 
-  .sidebar ul {
-    list-style: none;
-    padding-inline-start: unset;
-  }
-  .sidebar ul li {
-    border-bottom: solid thin #f0f0f0;
-    padding: 0.3em 0;
-  }
-  .widget-title {
-    padding: 0.5em;
-    color: black;
-    font-size: inherit;
-    font-weight: 700;
-    border-bottom: solid thin #f0f0f0;
-    text-transform: uppercase;
-  }
+.sidebar {
+	margin-left: 1rem;
+	word-wrap: break-word;
+}
+
+.sidebar ul,
+ol {
+	margin-right: 1rem;
+	margin-left: 1rem;
+}
+
+.sidebar ul {
+	list-style: none;
+	padding-inline-start: unset;
+}
+
+.sidebar ul li {
+	border-bottom: solid thin #f0f0f0;
+	padding: 0.3em 0;
+}
+
+.widget-title {
+	padding: 0.5em;
+	color: black;
+	font-size: inherit;
+	font-weight: 700;
+	border-bottom: solid thin #f0f0f0;
+	text-transform: uppercase;
+}
+
 
 /*--------------------------------------------------------------
 # Nav Menu
 --------------------------------------------------------------*/
-  .brisko-navigation{
-  	margin-bottom: 2em;
-  	box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-  	border-top: 1px solid #dee2e6;
-  	background-color: #fff;
-  }
 
-  .nav-menu{
-  	background-color:#FFFFFF;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-   }
+.brisko-navigation {
+	margin-bottom: 2em;
+	box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+	border-top: 1px solid #dee2e6;
+	background-color: #fff;
+}
 
-  .nav-menu ul li{
-  	background-color:#FFFFFF;
-   }
+.nav-menu {
+	background-color: #FFFFFF;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-  .nav-menu a {
-    font-size: small;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #000;
-  	display: block;
-  	padding: 0.7rem 1rem;
-    letter-spacing: .07em;
-  	background-color:#FFFFFF;
-   }
+.nav-menu ul li {
+	background-color: #FFFFFF;
+}
 
-  .nav-menu a:hover {
-    color: #CC5555;
-  	background-color:#F8F9FA;
-   }
+.nav-menu a {
+	font-size: small;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #000;
+	display: block;
+	padding: 0.7rem 1rem;
+	letter-spacing: .07em;
+	background-color: #FFFFFF;
+}
 
-  /* Link color*/
-  ul.primary-menu li a, ul.primary-menu li a:visited {
-      color: #CC5555 !important;
-  }
+.nav-menu a:hover {
+	color: #CC5555;
+	background-color: #F8F9FA;
+}
 
-  ul.primary-menu li a:hover, ul.primary-menu li a:active {
-    color: #CC5555 !important;}
 
-  ul.primary-menu li.active a {
-    color: #CC5555 !important;
-  }
+/* Link color*/
 
- /*--------------------------------------------------------------
+ul.primary-menu li a,
+ul.primary-menu li a:visited {
+	color: #CC5555 !important;
+}
+
+ul.primary-menu li a:hover,
+ul.primary-menu li a:active {
+	color: #CC5555 !important;
+}
+
+ul.primary-menu li.active a {
+	color: #CC5555 !important;
+}
+
+
+/*--------------------------------------------------------------
  # Input and Forms
  --------------------------------------------------------------*/
-  button, input[type="button"],
-  input[type="reset"],
-  input[type="submit"] {
-  	display: inline-block;
-  	color: #fff;
-  	background-color: #6c757d;
-  	border-color: #6c757d;
-  	font-weight: 400;
-  	text-align: center;
-  	white-space: nowrap;
-  	vertical-align: middle;
-  	-webkit-user-select: none;
-  	-moz-user-select: none;
-  	-ms-user-select: none;
-  	user-select: none;
-  	border: 1px solid transparent;
-  	padding: .375rem .75rem;
-  	font-size: 1rem;
-  	line-height: 1.5;
-  	border-radius: 0px;
-  	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
 
-  input[type="text"], input[type="email"],
-  input[type="url"], input[type="password"],
-  input[type="search"], input[type="number"],
-  input[type="tel"], input[type="range"],
-  input[type="date"], input[type="month"],
-  input[type="week"], input[type="time"],
-  input[type="datetime"], input[type="datetime-local"],
-  input[type="color"], textarea {
-  	display: block;
-  	width: 100%;
-  	padding: .375rem .75rem;
-  	font-size: 1rem;
-  	line-height: 1.5;
-  	color: #495057;
-  	background-color: #fff;
-  	background-clip: padding-box;
-  	border: 1px solid #ced4da;
-  	border-radius: 0px;
-  	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	display: inline-block;
+	color: #fff;
+	background-color: #6c757d;
+	border-color: #6c757d;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: 0px;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-  .search-form {
-  	display: -webkit-box;
-  	display: -ms-flexbox;
-  	display: flex;
-  	-webkit-box-orient: horizontal;
-  	-webkit-box-direction: normal;
-  	-ms-flex-flow: row wrap;
-  	flex-flow: row wrap;
-  	-webkit-box-align:baseline;
-  	-ms-flex-align: baseline;
-  	align-items: baseline;
-  }
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	display: block;
+	width: 100%;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: 0px;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-  .search-submit{
-    margin-left:8px;
-  }
+.search-form {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-box-align: baseline;
+	-ms-flex-align: baseline;
+	align-items: baseline;
+}
+
+.search-submit {
+	margin-left: 8px;
+}

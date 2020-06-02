@@ -6,11 +6,8 @@
  *
  * @package brisko
  */
-
-get_header();
-?>
-
-	<main id="primary" class="site-main container">
+get_header(); ?>
+<main id="primary" class="site-main container">
 
 		<?php if ( have_posts() ) : ?>
 
