@@ -1,8 +1,8 @@
 /*!
 Theme Name: 	Brisko
 Author: 			devuri
-Description: 	Beautifully Simple Responsive WordPress theme with a modern clean design.
-Version: 			0.0.7
+Description: 	Beautifully Simple Responsive and Lightweight WordPress theme with a modern clean design.
+Version: 			0.0.8
 Tested up to: 5.4
 Requires PHP: 5.6
 Text Domain: 	brisko
@@ -29,8 +29,23 @@ body {
 	line-height: 1.6;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 800;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.open-sans-font{
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
 body a {
-	color: #CC5555;
+	color: #E4584B;
 	text-decoration: none;
 	background-color: transparent;
 	line-height: 1.75;
@@ -39,40 +54,33 @@ body a {
 }
 
 p {
-    line-height: 1.75;
-    margin: 30px 0;
+	line-height: 1.75;
+	margin: 30px 0;
 }
 
 p a {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
-blockquote, .wp-block-quote {
-    border-left: solid 4px #e2e8f0;
-    padding-left: 0.5rem;
-    margin-bottom: 1.5em;
+blockquote,
+.wp-block-quote {
+	border-left: solid 5px #d1cfcf;
+	padding-left: 0.9rem;
+	margin-bottom: 1.5rem;
+	color: #a7a4a4;
+	margin-left: 0.9rem;
 }
 
-th, td {
-    border: 1px solid #e2e8f0;
-    padding: 8px 12px;
+th,
+td {
+	border: 1px solid #e2e8f0;
+	padding: 8px 12px;
 }
 
-pre{
+pre {
 	word-wrap: break-word;
 	white-space: pre-wrap;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 800;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 
 
 /*--------------------------------------------------------------
@@ -90,19 +98,22 @@ h6 {
 }
 
 .site-description {
-    text-align: right;
-    padding-top: 2rem;
-    padding-bottom: 0.5rem;
+	text-align: right;
+	padding-top: 2rem;
+	padding-bottom: 0.5rem;
 }
 
-.archive-title{
-    font-size: large;
-    padding: 0.2rem;
-    color: #8F8F8F;
+.archive-title {
+	font-size: large;
+	padding: 0.2rem;
+	color: #8F8F8F;
 }
+
+
 /*--------------------------------------------------------------
 # Main width
 --------------------------------------------------------------*/
+
 .white-bg {
 	background-color: #FFFFFF;
 }
@@ -114,7 +125,57 @@ h6 {
 .entry-header {
 	word-wrap: break-word;
 }
+/*--------------------------------------------------------------
+# Nav Menu
+--------------------------------------------------------------*/
 
+.brisko-navigation {
+	margin-bottom: 2em;
+	box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+	border-top: 1px solid #E2E8F0;
+	background-color: #fff;
+}
+
+.nav-menu {
+	background-color: #FFFFFF;
+}
+
+.nav-menu ul li {
+	background-color: #FFFFFF;
+}
+
+.nav-menu a  {
+    font-size: 0.989rem;
+    font-weight: 600;
+    text-transform:capitalize;
+    color: #000;
+    display: block;
+    padding: 0.9rem 1.2rem;
+    letter-spacing: .07em;
+    background-color: #FFFFFF;
+}
+
+.nav-menu a:hover {
+	color: #E4584B;
+	background-color: #F8F9FA;
+}
+
+
+/* Link color*/
+
+ul.primary-menu li a,
+ul.primary-menu li a:visited {
+	color: #E4584B !important;
+}
+
+ul.primary-menu li a:hover,
+ul.primary-menu li a:active {
+	color: #E4584B !important;
+}
+
+ul.primary-menu li.active a {
+	color: #E4584B !important;
+}
 
 /*--------------------------------------------------------------
  # Post
@@ -140,7 +201,6 @@ h6 {
 
 .read-more {
 	font-weight: 600;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: medium;
 	letter-spacing: 0.1rem;
 }
@@ -159,7 +219,7 @@ h6 {
 	margin-bottom: 1rem;
 }
 
-.primary-content{
+.primary-content {
 	padding-right: 2rem;
 }
 
@@ -172,7 +232,6 @@ h6 {
 	padding-bottom: 8px;
 	padding-left: 8px;
 	font-size: medium;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .tags-links a {
@@ -181,79 +240,91 @@ h6 {
 	color: #000000;
 	margin: 0 4px 4px 0;
 	font-size: medium;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .cat-links a {
 	margin-right: 4px;
 }
 
-.entry-footer {
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+
 /*--------------------------------------------------------------
-# Comments
+# Nav Previous and Next
 --------------------------------------------------------------*/
+
+.nav-title {
+	word-break: break-all;
+}
+
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
 	margin: 0 0 1.5em;
 	margin-top: 24px;
+	word-wrap: break-word;
 	/* border-top: solid thin #999; */
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 }
 
-.comment-navigation
-.nav-previous,
+.comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-    flex: 1 0 50%;
-    border: solid thin #eaeaea;
-    padding: 1rem;
+	flex: 1 0 50%;
+	word-wrap: break-word;
+	border: solid thin #eaeaea;
+	padding: 1rem;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-    text-align: end;
-    flex: 1 0 50%;
-    border: solid thin #eaeaea;
-    padding: 1rem;
+	text-align: end;
+	flex: 1 0 50%;
+	border: solid thin #eaeaea;
+	padding: 1rem;
 }
+
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
 
 .comment-notes {
 	font-size: medium;
 	margin: 0px 0;
 }
+
 .comment-list {
-    padding: 0;
-}
-.comments-title{
-	font-size: medium;
-}
-.comment-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-		font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.comment-author img {
-    border-radius: 50%;
-    margin-right: .5rem;
+	padding: 0;
 }
 
-.comment-metadata a{
+.comments-title {
+	font-size: medium;
+}
+
+.comment-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.comment-author img {
+	border-radius: 50%;
+	margin-right: .5rem;
+}
+
+.comment-metadata a {
 	color: #c1c1c1;
 }
-.says{
+
+.says {
 	display: none;
 }
+
 .comment-reply-link {
-    border: solid thin #eaeaea;
-    padding: 0.2rem 0.5rem;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border: solid thin #eaeaea;
+	padding: 0.2rem 0.5rem;
 }
 
 .comment-form-cookies-consent {
@@ -262,20 +333,25 @@ h6 {
 }
 
 .comments-area ol {
-    list-style: none;
+	list-style: none;
 }
 
-.comment-body{
-    border: solid thin #e2e8f0;
-    padding: 1rem;
-    margin-bottom: 2rem;
-		font-size: medium;
+.comment-body {
+	border: solid thin #e2e8f0;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	font-size: medium;
+	word-wrap: break-word;
+}
+
+ol.children {
+	margin-bottom: 0;
+	margin-left: 0;
 }
 
 div.comments-area label {
 	display: inline-block;
 	margin-bottom: 0;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #757575;
 }
 
@@ -331,61 +407,6 @@ ol {
 	text-transform: uppercase;
 }
 
-
-/*--------------------------------------------------------------
-# Nav Menu
---------------------------------------------------------------*/
-
-.brisko-navigation {
-	margin-bottom: 2em;
-	box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
-	border-top: 1px solid #E2E8F0;
-	background-color: #fff;
-}
-
-.nav-menu {
-	background-color: #FFFFFF;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.nav-menu ul li {
-	background-color: #FFFFFF;
-}
-
-.nav-menu a {
-	font-size: small;
-	font-weight: 600;
-	text-transform: uppercase;
-	color: #000;
-	display: block;
-	padding: 0.9rem 1.2rem;
-	letter-spacing: .07em;
-	background-color: #FFFFFF;
-}
-
-.nav-menu a:hover {
-	color: #CC5555;
-	background-color: #F8F9FA;
-}
-
-
-/* Link color*/
-
-ul.primary-menu li a,
-ul.primary-menu li a:visited {
-	color: #CC5555 !important;
-}
-
-ul.primary-menu li a:hover,
-ul.primary-menu li a:active {
-	color: #CC5555 !important;
-}
-
-ul.primary-menu li.active a {
-	color: #CC5555 !important;
-}
-
-
 /*--------------------------------------------------------------
  # Input and Forms
  --------------------------------------------------------------*/
@@ -396,8 +417,8 @@ input[type="reset"],
 input[type="submit"] {
 	display: inline-block;
 	color: #fff;
-	background-color: #6c757d;
-	border-color: #6c757d;
+	background-color: #E4584B;
+	border-color: #E4584B;
 	font-weight: 400;
 	text-align: center;
 	white-space: nowrap;
@@ -461,12 +482,14 @@ textarea {
 .search-submit {
 	margin-left: 8px;
 }
+
+
 /*--------------------------------------------------------------
  # Footer
  --------------------------------------------------------------*/
-.site-footer{
+
+.site-footer {
 	border-top: 1px solid #E2E8F0;
 	padding: 1rem;
 	font-size: medium;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
