@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 			devuri
 Description: 	Beautifully Simple Responsive WordPress theme with a modern clean design.
-Version: 			0.0.7
+Version: 			0.0.8
 Tested up to: 5.4
 Requires PHP: 5.6
 Text Domain: 	brisko
@@ -28,6 +28,21 @@ body {
 	font-size: 1.3rem;
 	line-height: 1.6;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 800;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.open-sans-font{
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 
 body a {
 	color: #CC5555;
@@ -65,16 +80,6 @@ td {
 pre {
 	word-wrap: break-word;
 	white-space: pre-wrap;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: 800;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
@@ -120,7 +125,57 @@ h6 {
 .entry-header {
 	word-wrap: break-word;
 }
+/*--------------------------------------------------------------
+# Nav Menu
+--------------------------------------------------------------*/
 
+.brisko-navigation {
+	margin-bottom: 2em;
+	box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+	border-top: 1px solid #E2E8F0;
+	background-color: #fff;
+}
+
+.nav-menu {
+	background-color: #FFFFFF;
+}
+
+.nav-menu ul li {
+	background-color: #FFFFFF;
+}
+
+.nav-menu a  {
+    font-size: 0.989rem;
+    font-weight: 600;
+    text-transform:capitalize;
+    color: #000;
+    display: block;
+    padding: 0.9rem 1.2rem;
+    letter-spacing: .07em;
+    background-color: #FFFFFF;
+}
+
+.nav-menu a:hover {
+	color: #CC5555;
+	background-color: #F8F9FA;
+}
+
+
+/* Link color*/
+
+ul.primary-menu li a,
+ul.primary-menu li a:visited {
+	color: #CC5555 !important;
+}
+
+ul.primary-menu li a:hover,
+ul.primary-menu li a:active {
+	color: #CC5555 !important;
+}
+
+ul.primary-menu li.active a {
+	color: #CC5555 !important;
+}
 
 /*--------------------------------------------------------------
  # Post
@@ -146,7 +201,6 @@ h6 {
 
 .read-more {
 	font-weight: 600;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: medium;
 	letter-spacing: 0.1rem;
 }
@@ -178,7 +232,6 @@ h6 {
 	padding-bottom: 8px;
 	padding-left: 8px;
 	font-size: medium;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .tags-links a {
@@ -187,15 +240,10 @@ h6 {
 	color: #000000;
 	margin: 0 4px 4px 0;
 	font-size: medium;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .cat-links a {
 	margin-right: 4px;
-}
-
-.entry-footer {
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
@@ -259,7 +307,6 @@ h6 {
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 1rem;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .comment-author img {
@@ -278,7 +325,6 @@ h6 {
 .comment-reply-link {
 	border: solid thin #eaeaea;
 	padding: 0.2rem 0.5rem;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .comment-form-cookies-consent {
@@ -306,7 +352,6 @@ ol.children {
 div.comments-area label {
 	display: inline-block;
 	margin-bottom: 0;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #757575;
 }
 
@@ -361,61 +406,6 @@ ol {
 	border-bottom: solid thin #E2E8F0;
 	text-transform: uppercase;
 }
-
-
-/*--------------------------------------------------------------
-# Nav Menu
---------------------------------------------------------------*/
-
-.brisko-navigation {
-	margin-bottom: 2em;
-	box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
-	border-top: 1px solid #E2E8F0;
-	background-color: #fff;
-}
-
-.nav-menu {
-	background-color: #FFFFFF;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.nav-menu ul li {
-	background-color: #FFFFFF;
-}
-
-.nav-menu a {
-	font-size: small;
-	font-weight: 600;
-	text-transform: uppercase;
-	color: #000;
-	display: block;
-	padding: 0.9rem 1.2rem;
-	letter-spacing: .07em;
-	background-color: #FFFFFF;
-}
-
-.nav-menu a:hover {
-	color: #CC5555;
-	background-color: #F8F9FA;
-}
-
-
-/* Link color*/
-
-ul.primary-menu li a,
-ul.primary-menu li a:visited {
-	color: #CC5555 !important;
-}
-
-ul.primary-menu li a:hover,
-ul.primary-menu li a:active {
-	color: #CC5555 !important;
-}
-
-ul.primary-menu li.active a {
-	color: #CC5555 !important;
-}
-
 
 /*--------------------------------------------------------------
  # Input and Forms
@@ -502,5 +492,4 @@ textarea {
 	border-top: 1px solid #E2E8F0;
 	padding: 1rem;
 	font-size: medium;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

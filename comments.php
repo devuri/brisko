@@ -19,7 +19,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area open-sans-font">
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 			if ( '1' === $brisko_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'brisko' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'brisko' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
