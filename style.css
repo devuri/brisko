@@ -1,7 +1,7 @@
 /*!
 Theme Name: 	Brisko
 Author: 			devuri
-Description: 	Beautifully Simple Responsive WordPress theme with a modern clean design.
+Description: 	Beautifully Simple Responsive and Lightweight WordPress theme with a modern clean design.
 Version: 			0.0.8
 Tested up to: 5.4
 Requires PHP: 5.6
@@ -45,7 +45,7 @@ h6 {
 
 
 body a {
-	color: #CC5555;
+	color: #E4584B;
 	text-decoration: none;
 	background-color: transparent;
 	line-height: 1.75;
@@ -156,7 +156,7 @@ pre {
 }
 
 .nav-menu a:hover {
-	color: #CC5555;
+	color: #E4584B;
 	background-color: #F8F9FA;
 }
 
@@ -165,16 +165,16 @@ pre {
 
 ul.primary-menu li a,
 ul.primary-menu li a:visited {
-	color: #CC5555 !important;
+	color: #E4584B !important;
 }
 
 ul.primary-menu li a:hover,
 ul.primary-menu li a:active {
-	color: #CC5555 !important;
+	color: #E4584B !important;
 }
 
 ul.primary-menu li.active a {
-	color: #CC5555 !important;
+	color: #E4584B !important;
 }
 
 /*--------------------------------------------------------------
@@ -417,8 +417,8 @@ input[type="reset"],
 input[type="submit"] {
 	display: inline-block;
 	color: #fff;
-	background-color: #cc5555;
-	border-color: #cc5555;
+	background-color: #E4584B;
+	border-color: #E4584B;
 	font-weight: 400;
 	text-align: center;
 	white-space: nowrap;
