@@ -8,8 +8,8 @@
  */
 
 ?>
-<?php brisko_post_thumbnail(); ?>
-<div class="post-article" style="margin-bottom: 4rem;">
+<div class="post-article">
+	<?php brisko_post_thumbnail(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
