@@ -23,9 +23,10 @@
 	}
 
 	/**
-	 * Load actions
+	 * Load some helpers 
 	 */
 	require_once BRISKO_THEME_DIR . 'inc/core/actions.php';
+	require_once BRISKO_THEME_DIR . 'inc/core/helpers.php';
 
 /**
  * Theme Setup
