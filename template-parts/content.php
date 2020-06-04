@@ -21,7 +21,7 @@
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta open-sans-font">
+			<div class="entry-meta <?php brisko_secondary_font(); ?>">
 				<?php
 				brisko_posted_on();
 				brisko_posted_by();
@@ -46,12 +46,12 @@
 				wp_kses_post( get_the_title() )
 			)
 		); ?>
-			<footer class="entry-footer open-sans-font">
+			<footer class="entry-footer <?php brisko_secondary_font(); ?>">
 				<?php brisko_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
 <?php else :
 		the_excerpt();
-		printf( esc_html__( '%1$s', 'brisko' ), '<div class="read-more open-sans-font"><a class="more-link" href="'.get_permalink().'">Read More</a></div>' );
+		printf( esc_html__( '%1$s', 'brisko' ), '<div class="read-more '.get_brisko_secondary_font().'"><a class="more-link" href="'.get_permalink().'">Read More</a></div>' );
 endif;
 		wp_link_pages(
 			array(
