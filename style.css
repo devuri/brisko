@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 			devuri
 Description: 	Beautifully Simple Responsive and Lightweight WordPress theme with a modern clean design.
-Version: 			0.1.0
+Version: 			0.1.2
 Tested up to: 5.4
 Requires PHP: 5.6
 Text Domain: 	brisko
@@ -42,7 +42,7 @@ h6 {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.secondary_font{
+.secondary-font{
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
