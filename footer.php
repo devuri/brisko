@@ -9,7 +9,9 @@
  * @package brisko
  */
 
-?><footer id="colophon" class="site-footer white-bg open-sans-font">
+?>
+<?php brisko_before_footer(); ?>
+<footer id="colophon" class="site-footer white-bg open-sans-font">
 		<div align="center" class="site-info container">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'brisko' ) ); ?>">
 			 <?php printf( esc_html__( 'Powered by %s', 'brisko' ), 'WordPress' );?>

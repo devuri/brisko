@@ -8,14 +8,29 @@
  */
 
 
+	/**
+	 * release version
+	 */
+	if ( ! defined( 'BRISKO_VERSION' ) ) {
+	 	define( 'BRISKO_VERSION', '0.1.0' );
+	}
+
+
+	/**
+	 * Lets Define Some Constants
+	 */
+	if ( ! defined( 'BRISKO_THEME_DIR' ) ) {
+	define( 'BRISKO_THEME_DIR', trailingslashit( get_template_directory() ) );
+	}
+
+	/**
+	 * Load actions
+	 */
+	require_once BRISKO_THEME_DIR . 'inc/core/actions.php';
 
 /**
- * theme release version
+ * Theme Setup
  */
-if ( ! defined( 'BRISKO_VERSION' ) ) {
-	define( 'BRISKO_VERSION', '0.0.9' );
-}
-
 if ( ! function_exists( 'brisko_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -152,7 +167,6 @@ function brisko_scripts() {
 
 	/**
 	 * bootstrap
-	 * @link https://fontawesome.com/v4.7.0/
 	 */
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), BRISKO_VERSION );
 	wp_enqueue_style( 'underscores', get_template_directory_uri() . '/css/underscores.css', array(), BRISKO_VERSION );
