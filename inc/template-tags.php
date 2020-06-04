@@ -88,7 +88,7 @@ if ( ! function_exists( 'brisko_entry_footer' ) ) :
 			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'brisko' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<br/><span class="tags-links '.get_brisko_secondary_font().'">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<br/><span class="tags-links secondary-font">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 

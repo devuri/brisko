@@ -50,7 +50,7 @@
 		</div><!-- .site-branding -->
 		<div class="brisko-navigation container-fluid">
 		<div class="container white-bg">
-			<nav id="site-navigation" class="main-navigation <?php brisko_secondary_font(); ?>">
+			<nav id="site-navigation" class="main-navigation secondary-font">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'brisko' ); ?></button>
 				<?php
 				wp_nav_menu(

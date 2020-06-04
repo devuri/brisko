@@ -11,7 +11,7 @@
 
 ?>
 <?php brisko_before_footer(); ?>
-<footer id="colophon" class="site-footer white-bg <?php brisko_secondary_font(); ?>">
+<footer id="colophon" class="site-footer white-bg secondary-font">
 		<div align="center" class="site-info container">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'brisko' ) ); ?>">
 			 <?php printf( esc_html__( 'Powered by %s', 'brisko' ), 'WordPress' );?>

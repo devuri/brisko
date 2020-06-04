@@ -11,7 +11,7 @@
 	 * release version
 	 */
 	if ( ! defined( 'BRISKO_VERSION' ) ) {
-	 	define( 'BRISKO_VERSION', '0.1.2' );
+	 	define( 'BRISKO_VERSION', '0.1.3' );
 	}
 
 
@@ -23,10 +23,9 @@
 	}
 
 	/**
-	 * Load some helpers 
+	 * Load some helpers
 	 */
 	require_once BRISKO_THEME_DIR . 'inc/core/actions.php';
-	require_once BRISKO_THEME_DIR . 'inc/core/helpers.php';
 
 /**
  * Theme Setup
