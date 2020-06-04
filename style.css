@@ -202,6 +202,10 @@ ul.primary-menu li.active a {
 	/* padding-right: 1rem; */
 }
 
+.post-article{
+	margin-bottom: 4rem;
+}
+
 .read-more {
 	font-weight: 600;
 	font-size: medium;
