@@ -67,3 +67,6 @@
 	</div><!-- .brisko-navigation -->
 </header><!-- #masthead -->
 <?php brisko_after_header(); ?>
+<?php if ( is_front_page() && is_home() ) :
+	brisko_homepage_header();
+endif;

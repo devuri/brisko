@@ -7,7 +7,6 @@
  * @package brisko
  */
 
-
 	/**
 	 * release version
 	 */
