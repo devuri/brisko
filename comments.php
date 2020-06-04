@@ -19,7 +19,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="comments" class="comments-area open-sans-font">
+<div id="comments" class="comments-area <?php brisko_secondary_font(); ?>">
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
