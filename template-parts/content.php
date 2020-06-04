@@ -9,6 +9,7 @@
 
 ?>
 <?php brisko_post_thumbnail(); ?>
+<div class="post-article" style="margin-bottom: 4rem;">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
@@ -61,3 +62,4 @@ endif;
 		?>
 	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->
+</div><!-- post-article -->
