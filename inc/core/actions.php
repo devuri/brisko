@@ -25,6 +25,18 @@
 	endif;
 
 	/**
+	 * brisko_after_post_content
+	 */
+	if ( ! function_exists( 'brisko_after_post_content' ) ) :
+		function brisko_after_post_content() {
+		    /**
+		     * after the closing post-article tag.
+		     */
+		    do_action( 'brisko_after_post_content' );
+		}
+	endif;
+
+	/**
 	 * brisko_before_sidebar
 	 */
 	if ( ! function_exists( 'brisko_before_sidebar' ) ) :
