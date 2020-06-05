@@ -13,12 +13,8 @@
 <?php brisko_before_footer(); ?>
 <footer id="colophon" class="site-footer white-bg secondary-font">
 		<div align="center" class="site-info container">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'brisko' ) ); ?>">
-			 <?php printf( esc_html__( 'Powered by %s', 'brisko' ), 'WordPress' );?>
-			</a>
-			<span class="sep"> | </span>
 				<?php
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'brisko' ), 'Brisko', '<a href="http://themeiko.com">Themeiko</a>' );
+				printf( esc_html__( 'Copyright &copy; %1$s %2$s. Theme %3$s by %4$s.', 'brisko' ), date_i18n( __( 'Y' , 'brisko' ) ), get_bloginfo( 'name' ), 'Brisko', '<a href="http://themeiko.com">Themeiko</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
