@@ -11,7 +11,7 @@
 
 ?>
 <?php brisko_before_footer(); ?>
-<footer id="colophon" class="site-footer white-bg secondary-font">
+<footer id="colophon" class="site-footer bg-white secondary-font">
 		<div align="center" class="site-info container">
 				<?php
 				printf( esc_html__( 'Copyright &copy; %1$s %2$s. Theme %3$s by %4$s.', 'brisko' ), date_i18n( __( 'Y' , 'brisko' ) ), get_bloginfo( 'name' ), 'Brisko', '<a href="http://themeiko.com">Themeiko</a>' );
