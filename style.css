@@ -115,6 +115,10 @@ pre {
     grid-gap: 1.5em;
 }
 
+.wp-block-image {
+    margin-bottom: 1em;
+    display: flow-root;
+}
 
 /*--------------------------------------------------------------
 # Header
