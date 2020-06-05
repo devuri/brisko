@@ -9,8 +9,7 @@
  * @package brisko
  */
 
-?>
-<!doctype html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -19,7 +18,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('brisko-font brisko-font-style'); ?>>
 <?php wp_body_open(); ?>
 <div class="container">
 	<?php the_header_image_tag(array( 'class' => 'brisko-header-img') ); ?>
@@ -69,4 +68,4 @@
 <?php brisko_after_header(); ?>
 <?php if ( is_front_page() && is_home() ) :
 	brisko_homepage_header();
-endif;
+endif; ?>
