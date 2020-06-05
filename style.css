@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 			devuri
 Description: 	Beautifully Simple Responsive and Lightweight WordPress theme with a modern clean design.
-Version: 			0.1.4
+Version: 			0.1.5
 Tested up to: 5.4
 Requires PHP: 5.6
 Text Domain: 	brisko
@@ -30,6 +30,10 @@ body {
 	font-family: Noto, "Times New Roman", serif;
 	font-size: 1.3rem;
 	line-height: 1.6;
+}
+
+.post, .page {
+    margin: 0 0 0em;
 }
 
 h1,
@@ -133,7 +137,7 @@ pre {
 --------------------------------------------------------------*/
 
 .brisko-navigation {
-	margin-bottom: 2em;
+	margin-bottom: 0.2em;
 	box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
 	border-top: 1px solid #E2E8F0;
 	background-color: #fff;
@@ -497,6 +501,6 @@ textarea {
 
 .site-footer {
 	border-top: 1px solid #E2E8F0;
-	padding: 1rem;
+	padding: 0.2rem;
 	font-size: medium;
 }
