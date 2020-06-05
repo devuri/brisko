@@ -1,4 +1,9 @@
 <?php
+/**
+ * Custom actions for Brisko
+ * https://developer.wordpress.org/reference/functions/do_action/
+ */
+
 
 	/**
 	 * brisko_after_header
