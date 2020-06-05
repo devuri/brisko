@@ -26,29 +26,26 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'brisko' ); ?></a>
 	<header id="masthead" class="site-header">
-		<div class="site-branding container white-bg">
-			<div class="row">
-			<div class="logo-header col-sm">
+		<div class="site-branding bg-white">
+			<div class="container">
+			<div class="logo-header d-flex flex-column flex-md-row align-items-center bg-white">
 				<?php
 				if ( has_custom_logo() ) :
 					the_custom_logo();	?>
 					<?php else : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 class="site-title pt-3 pb-3 mr-md-auto"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php 	endif; ?>
-			</div><!--logo-header-->
-			<div class="description col-sm">
 				<?php $brisko_description = get_bloginfo( 'description', 'display' );
-				if ( $brisko_description || is_customize_preview() ) :
-					?>
-					<div class="site-description text-muted">
+				if ( $brisko_description || is_customize_preview() ) : ?>
+					<span class="site-description text-muted">
 						<?php echo $brisko_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					</div>
+					</span>
 				<?php endif; ?>
-			</div><!--site-description-->
-		</div><!-- .row -->
+			</div><!--logo-header-->
+		</div><!-- .container-->
 		</div><!-- .site-branding -->
 		<div class="brisko-navigation container-fluid">
-		<div class="container white-bg">
+		<div class="container bg-white">
 			<nav id="site-navigation" class="main-navigation secondary-font">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'brisko' ); ?></button>
 				<?php

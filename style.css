@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 			devuri
 Description: 	Beautifully Simple Responsive and Lightweight WordPress theme with a modern clean design.
-Version: 			0.1.5
+Version: 			0.1.7
 Tested up to: 5.4
 Requires PHP: 5.6
 Text Domain: 	brisko
@@ -29,13 +29,25 @@ body {
 	color: #333;
 }
 
+.container {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.site-main {
+	padding: 1.75rem;
+}
+
 .brisko-font{
 	font-family: Noto, "Times New Roman", serif;
 }
 
 .brisko-font-style{
-	font-size: 1.3rem;
-	line-height: 1.6;
+	font-size: 1.2rem;
+	line-height: 1.75;
 }
 
 .post, .page {
@@ -56,7 +68,9 @@ h6 {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-
+body a:hover {
+  text-decoration: none;
+}
 body a {
 	color: #E4584B;
 	text-decoration: none;
@@ -95,25 +109,37 @@ pre {
 	white-space: pre-wrap;
 }
 
+.gallery {
+    margin-bottom: 1.5em;
+    display: inherit;
+    grid-gap: 1.5em;
+}
+
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 
 .brisko-header-img {
-	margin-bottom: 1rem;
+	margin-bottom: 0;
 }
 
 .custom-logo-link {
 	width: 90px;
 	margin-bottom: 1rem;
 	padding-top: 1rem;
+	margin-right: 1.75rem;
 }
 
+.site-title{
+	padding-left: 0;
+}
+
+.site-title h1{
+	margin-bottom: 0;
+}
 .site-description {
-	text-align: right;
-	padding-top: 2rem;
-	padding-bottom: 0.5rem;
+	padding-right: 0.75rem;
 }
 
 .archive-title {
@@ -126,10 +152,6 @@ pre {
 /*--------------------------------------------------------------
 # Main width
 --------------------------------------------------------------*/
-
-.white-bg {
-	background-color: #FFFFFF;
-}
 
 .container {
 	max-width: 1200px;
@@ -200,9 +222,6 @@ ul.primary-menu li.active a {
 	padding: 2rem;
 }
 
-.site-main {
-	padding-top: 2rem;
-}
 
 .entry-content {
 	word-wrap: break-word;
@@ -267,6 +286,9 @@ ul.primary-menu li.active a {
 /*--------------------------------------------------------------
 # Nav Previous and Next
 --------------------------------------------------------------*/
+.post-navigation .nav-previous span, .post-navigation .nav-next span {
+    display: block;
+}
 
 .nav-title {
 	word-break: break-all;
@@ -305,6 +327,12 @@ ul.primary-menu li.active a {
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
+.comment-respond {
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+  border: solid thin #eaeaea;
+  padding: 1.75rem;
+}
 
 .comment-notes {
 	font-size: medium;
@@ -372,9 +400,6 @@ div.comments-area label {
 	color: #757575;
 }
 
-div.comment-respond {
-	margin-top: 8rem;
-}
 
 div.comment-respond h3 {
 	font-size: inherit;

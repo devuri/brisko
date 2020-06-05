@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-<main id="primary" class="site-main container white-bg">
+<main id="primary" class="site-main container bg-white">
 	<div class="row">
 	<div class="col-md-8 primary-content">
 <?php
