@@ -34,7 +34,7 @@ body {
 }
 
 .brisko-font-style{
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	line-height: 1.6;
 }
 
@@ -93,6 +93,12 @@ td {
 pre {
 	word-wrap: break-word;
 	white-space: pre-wrap;
+}
+
+.gallery {
+    margin-bottom: 1.5em;
+    display: inherit;
+    grid-gap: 1.5em;
 }
 
 
