@@ -12,7 +12,7 @@
  * @package brisko
  */
 get_header(); ?>
-<main id="primary" class="site-main container white-bg">
+<main id="primary" class="site-main container bg-white">
 		<?php
 		while ( have_posts() ) :
 			the_post();
