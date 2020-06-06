@@ -30,6 +30,43 @@
 	endif;
 
 	/**
+	 * brisko_post_header
+	 */
+	if ( ! function_exists( 'brisko_post_header' ) ) :
+		function brisko_post_header() {
+				/**
+				 * header section on posts.
+				 */
+				do_action( 'brisko_post_header' );
+		}
+	endif;
+
+	/**
+	 * brisko_page_header
+	 */
+	if ( ! function_exists( 'brisko_page_header' ) ) :
+		function brisko_page_header() {
+				/**
+				 * header section on pages.
+				 */
+				do_action( 'brisko_page_header' );
+		}
+	endif;
+
+	/**
+	 * brisko_page_footer
+	 */
+	if ( ! function_exists( 'brisko_page_footer' ) ) :
+		function brisko_page_footer() {
+				/**
+				 * footer section on pages.
+				 */
+				do_action( 'brisko_page_footer' );
+		}
+	endif;
+
+
+	/**
 	 * brisko_after_post_content
 	 */
 	if ( ! function_exists( 'brisko_after_post_content' ) ) :
@@ -52,6 +89,7 @@
 		    do_action( 'brisko_before_sidebar' );
 		}
 	endif;
+
 	/**
 	 * brisko_after_sidebar
 	 */
@@ -63,6 +101,7 @@
 		    do_action( 'brisko_after_sidebar' );
 		}
 	endif;
+
 	/**
 	 * brisko_before_footer
 	 */
@@ -72,5 +111,30 @@
 		     * before the opening footer tag.
 		     */
 		    do_action( 'brisko_before_footer' );
+		}
+	endif;
+
+	/**
+	 * brisko_footer
+	 */
+	if ( ! function_exists( 'brisko_footer' ) ) :
+		function brisko_footer() {
+				/**
+				 * after the opening <footer> tag.
+				 */
+				do_action( 'brisko_footer' );
+		}
+	endif;
+
+	/**
+	 * brisko_after_footer
+	 */
+	if ( ! function_exists( 'brisko_after_footer' ) ) :
+		function brisko_after_footer() {
+		    /**
+		     * after the closing footer tag.
+		     * wp_footer happens just before this action
+		     */
+		    do_action( 'brisko_after_footer' );
 		}
 	endif;

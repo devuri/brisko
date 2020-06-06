@@ -11,7 +11,7 @@
 	 * release version
 	 */
 	if ( ! defined( 'BRISKO_VERSION' ) ) {
-	 	define( 'BRISKO_VERSION', '0.1.8' );
+	 	define( 'BRISKO_VERSION', '0.2.0' );
 	}
 
 
