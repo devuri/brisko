@@ -200,6 +200,11 @@ div.nav-menu .children {
 	display: block;
 }
 
+div.nav-menu .sub-menu .sub-menu,
+div.nav-menu .children .children  {
+    display: none;
+}
+
 div.nav-menu a:hover {
 	color: #E4584B;
 	background-color: #F8F9FA;
@@ -215,7 +220,6 @@ div.nav-menu .children .children {
 	position: absolute;
 	left: 100%;
 	top: 0;
-	display: block;
 }
 
 
