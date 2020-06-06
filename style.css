@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 			devuri
 Description: 	Beautifully Simple Responsive and Lightweight WordPress theme with a modern clean design.
-Version: 			0.2.0
+Version: 			0.2.3
 Tested up to: 5.4
 Requires PHP: 5.6
 Text Domain: 	brisko
@@ -30,28 +30,29 @@ body {
 }
 
 .container {
-    width: 100%;
-    padding-right: 0;
-    padding-left: 0;
-    margin-right: auto;
-    margin-left: auto;
+	width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .site-main {
 	padding: 1.75rem;
 }
 
-.brisko-font{
+.brisko-font {
 	font-family: Noto, "Times New Roman", serif;
 }
 
-.brisko-font-style{
+.brisko-font-style {
 	font-size: 1.2rem;
 	line-height: 1.75;
 }
 
-.post, .page {
-  margin: 0 0 0em;
+.post,
+.page {
+	margin: 0 0 0em;
 }
 
 h1,
@@ -64,13 +65,14 @@ h6 {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.secondary-font{
+.secondary-font {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body a:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
+
 body a {
 	color: #E4584B;
 	text-decoration: none;
@@ -110,8 +112,8 @@ pre {
 }
 
 .wp-block-image {
-    margin-bottom: 1em;
-    display: flow-root;
+	margin-bottom: 1em;
+	display: flow-root;
 }
 
 
@@ -130,13 +132,14 @@ pre {
 	margin-right: 1.75rem;
 }
 
-.site-title{
+.site-title {
 	padding-left: 0;
 }
 
-.site-title h1{
+.site-title h1 {
 	margin-bottom: 0;
 }
+
 .site-description {
 	padding-right: 0.75rem;
 }
@@ -159,57 +162,62 @@ pre {
 .entry-header {
 	word-wrap: break-word;
 }
+
+
 /*--------------------------------------------------------------
 # Nav Menu
 --------------------------------------------------------------*/
 
-.brisko-navigation {
+div.brisko-navigation {
 	margin-bottom: 0.2em;
 	box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
 	border-top: 1px solid #E2E8F0;
 	background-color: #fff;
+	border-bottom: 1px solid #E2E8F0;
 }
 
-.nav-menu {
+div.nav-menu {
 	background-color: #FFFFFF;
 }
 
-.nav-menu ul li {
+div.nav-menu ul li {
 	background-color: #FFFFFF;
 }
 
-.nav-menu a  {
-    font-size: 0.989rem;
-    font-weight: 600;
-    text-transform:capitalize;
-    color: #000;
-    display: block;
-    padding: 0.9rem 1.2rem;
-    letter-spacing: .07em;
-    background-color: #FFFFFF;
+div.nav-menu a {
+	font-size: 0.989rem;
+	font-weight: 600;
+	text-transform: capitalize;
+	color: #353535;
+	padding: 0.8rem 1.2rem;
+	letter-spacing: .02em;
+	background-color: #FFFFFF;
+	display: block;
 }
 
-.nav-menu a:hover {
+div.nav-menu .sub-menu,
+div.nav-menu .children {
+	display: block;
+}
+
+div.nav-menu a:hover {
 	color: #E4584B;
 	background-color: #F8F9FA;
 }
 
-
-/* Link color*/
-
-ul.primary-menu li a,
-ul.primary-menu li a:visited {
-	color: #E4584B !important;
+div.nav-menu li:hover>.sub-menu,
+div.nav-menu li:hover>.children {
+	display: block;
 }
 
-ul.primary-menu li a:hover,
-ul.primary-menu li a:active {
-	color: #E4584B !important;
+div.nav-menu .sub-menu .sub-menu,
+div.nav-menu .children .children {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	display: block;
 }
 
-ul.primary-menu li.active a {
-	color: #E4584B !important;
-}
 
 /*--------------------------------------------------------------
  # Post
@@ -221,7 +229,6 @@ ul.primary-menu li.active a {
 	padding: 2rem;
 }
 
-
 .entry-content {
 	word-wrap: break-word;
 	color: #353535;
@@ -230,7 +237,7 @@ ul.primary-menu li.active a {
 	/* padding-right: 1rem; */
 }
 
-.post-article{
+.post-article {
 	margin-bottom: 4rem;
 }
 
@@ -285,8 +292,10 @@ ul.primary-menu li.active a {
 /*--------------------------------------------------------------
 # Nav Previous and Next
 --------------------------------------------------------------*/
-.post-navigation .nav-previous span, .post-navigation .nav-next span {
-    display: block;
+
+.post-navigation .nav-previous span,
+.post-navigation .nav-next span {
+	display: block;
 }
 
 .nav-title {
@@ -326,11 +335,12 @@ ul.primary-menu li.active a {
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
+
 .comment-respond {
 	margin-top: 4rem;
 	margin-bottom: 4rem;
-  border: solid thin #eaeaea;
-  padding: 1.75rem;
+	border: solid thin #eaeaea;
+	padding: 1.75rem;
 }
 
 .comment-notes {
@@ -399,7 +409,6 @@ div.comments-area label {
 	color: #757575;
 }
 
-
 div.comment-respond h3 {
 	font-size: inherit;
 }
@@ -412,6 +421,7 @@ p.logged-in-as {
 span.nav-subtitle {
 	color: #999;
 }
+
 
 /*--------------------------------------------------------------
 # Sidebar
@@ -446,6 +456,7 @@ ol {
 	border-bottom: solid thin #E2E8F0;
 	text-transform: uppercase;
 }
+
 
 /*--------------------------------------------------------------
  # Input and Forms
