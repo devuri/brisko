@@ -109,16 +109,11 @@ pre {
 	white-space: pre-wrap;
 }
 
-.gallery {
-    margin-bottom: 1.5em;
-    display: inherit;
-    grid-gap: 1.5em;
-}
-
 .wp-block-image {
     margin-bottom: 1em;
     display: flow-root;
 }
+
 
 /*--------------------------------------------------------------
 # Header
@@ -417,7 +412,6 @@ p.logged-in-as {
 span.nav-subtitle {
 	color: #999;
 }
-
 
 /*--------------------------------------------------------------
 # Sidebar
