@@ -12,6 +12,7 @@
  * @package brisko
  */
 get_header(); ?>
+<?php brisko_page_header() ?>
 <main id="primary" class="site-main container bg-white">
 		<?php
 		while ( have_posts() ) :
@@ -22,4 +23,5 @@ get_header(); ?>
 			endif;
 		endwhile; ?>
 	</main><!-- #main -->
+<?php brisko_page_footer() ?>
 <?php get_footer();
