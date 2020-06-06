@@ -8,6 +8,7 @@
  */
 
 get_header(); ?>
+<?php brisko_post_header() ?>
 <main id="primary" class="site-main container bg-white">
 		<div class="row">
 		<div class="col-md-8 primary-content">
