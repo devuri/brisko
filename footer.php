@@ -14,7 +14,7 @@
 	<?php brisko_footer(); ?>
 		<div align="center" class="site-info container">
 				<?php
-				printf( esc_html__( 'Copyright &copy; %1$s %2$s. Theme %3$s by %4$s.', 'brisko' ), date_i18n( __( 'Y' , 'brisko' ) ), get_bloginfo( 'name' ), 'Brisko', '<a href="http://themeiko.com">Themeiko</a>' );
+				printf( esc_html__( 'Copyright &copy; %1$s %2$s. Theme %3$s by %4$s.', 'brisko' ), date_i18n( __( 'Y' , 'brisko' ) ), get_bloginfo( 'name' ), 'Brisko', '<a href="https://switchwebdev.com/brisko-wordpress-theme/">switchwebdev</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
