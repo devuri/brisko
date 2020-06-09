@@ -163,6 +163,13 @@ pre {
 	word-wrap: break-word;
 }
 
+
+.elementor-image-gallery .gallery {
+    margin-bottom: 1.5em;
+    display: inline-block;
+    grid-gap: 1.5em;
+}
+
 /*--------------------------------------------------------------
 	Navigation
 --------------------------------------------------------------*/
