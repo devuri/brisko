@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 			devuri
 Description: 	Beautifully Simple Responsive and Lightweight WordPress theme with a modern clean design.
-Version: 			0.2.3
+Version: 			0.3.1
 Tested up to: 5.4
 Requires PHP: 5.6
 Text Domain: 	brisko
@@ -163,9 +163,8 @@ pre {
 	word-wrap: break-word;
 }
 
-
 /*--------------------------------------------------------------
-# Nav Menu
+	Navigation
 --------------------------------------------------------------*/
 
 div.brisko-navigation {
@@ -176,50 +175,35 @@ div.brisko-navigation {
 	border-bottom: 1px solid #E2E8F0;
 }
 
-div.nav-menu {
-	background-color: #FFFFFF;
-}
-
-div.nav-menu ul li {
-	background-color: #FFFFFF;
-}
-
-div.nav-menu a {
-	font-size: 0.989rem;
+nav.main-navigation a {
+	font-size: 1rem;
 	font-weight: 600;
 	text-transform: capitalize;
 	color: #353535;
-	padding: 0.8rem 1.2rem;
-	letter-spacing: .02em;
+	padding: 0.6rem 1.2rem;
 	background-color: #FFFFFF;
-	display: block;
 }
 
-div.nav-menu .sub-menu,
-div.nav-menu .children {
-	display: block;
-}
-
-div.nav-menu .sub-menu .sub-menu,
-div.nav-menu .children .children  {
-    display: none;
-}
-
-div.nav-menu a:hover {
+nav.main-navigation a:hover {
 	color: #E4584B;
 	background-color: #F8F9FA;
 }
 
-div.nav-menu li:hover>.sub-menu,
-div.nav-menu li:hover>.children {
+nav.main-navigation ul ul a {
+	border-bottom: solid thin #e2e8f0;
+}
+
+/*--------------------------------------------------------------
+	Dropdown list display
+--------------------------------------------------------------*/
+.main-navigation ul ul {
 	display: block;
 }
 
-div.nav-menu .sub-menu .sub-menu,
-div.nav-menu .children .children {
-	position: absolute;
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	display: block;
 	left: 100%;
-	top: 0;
 }
 
 
