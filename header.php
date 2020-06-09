@@ -20,12 +20,15 @@
 
 <body <?php body_class('brisko-font brisko-font-style'); ?>>
 <?php wp_body_open(); ?>
+
 <div class="container">
 	<?php the_header_image_tag(array( 'class' => 'brisko-header-img') ); ?>
 </div>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'brisko' ); ?></a>
 	<header id="masthead" class="site-header">
+
 		<div class="site-branding bg-white">
 			<div class="container">
 			<div class="logo-header d-flex flex-column flex-md-row align-items-center bg-white">
@@ -44,6 +47,7 @@
 			</div><!--logo-header-->
 		</div><!-- .container-->
 		</div><!-- .site-branding -->
+
 		<div class="brisko-navigation container-fluid">
 		<div class="container bg-white">
 			<nav id="site-navigation" class="main-navigation secondary-font">
@@ -52,6 +56,7 @@
 			</nav><!-- #site-navigation -->
 		</div><!-- .container -->
 	</div><!-- .brisko-navigation -->
+
 </header><!-- #masthead -->
 <?php brisko_after_header(); ?>
 <?php if ( is_front_page() && is_home() ) :
