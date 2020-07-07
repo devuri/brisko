@@ -39,6 +39,10 @@ if ( ! function_exists( 'brisko_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function brisko_setup() {
+		/*
+		 * Make theme available for translation.
+		 */
+		load_theme_textdomain( 'brisko' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
