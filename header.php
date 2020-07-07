@@ -35,9 +35,12 @@
 				<?php
 				if ( has_custom_logo() ) :
 					the_custom_logo();	?>
-					<?php else : ?>
-					<h1 class="site-title pt-3 pb-3 mr-md-auto"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php 	endif; ?>
+					<?php endif; ?>
+					<h1 class="site-title pt-3 mr-md-auto">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php bloginfo( 'name' ); ?>
+					</a>
+				</h1>
 				<?php $brisko_description = get_bloginfo( 'description', 'display' );
 				if ( $brisko_description || is_customize_preview() ) : ?>
 					<span class="site-description text-muted">
