@@ -39,13 +39,6 @@ if ( ! function_exists( 'brisko_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function brisko_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on brisko, use a find and replace
-		 * to change 'brisko' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'brisko', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );

@@ -1,7 +1,7 @@
 === Brisko ===
-Contributors: icelayer, brisko
+Contributors: icelayer
 Tested up to: 5.4
-Version: 0.3.3
+Version: 0.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -48,3 +48,8 @@ Source: https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap.css
 
 = 0.3.3 =
 * Initial release
+
+= 0.3.5 =
+* Fix Elementor gallery
+* Remove languages folder
+* Fix Logo WPREVIEW #1 Adding a custom logo and removing it will make the text logo (and description) disappear.
