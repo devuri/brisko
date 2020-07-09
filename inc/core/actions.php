@@ -4,30 +4,6 @@
  * https://developer.wordpress.org/reference/functions/do_action/
  */
 
-	/**
-	 * brisko_actions()
-	 *
-	 * list of actions available
-	 * @return array actions
-	 */
-	if ( ! function_exists( 'brisko_actions' ) ) :
-		function brisko_actions(){
-		 	$actions = array();
-		 	$actions[] = 'brisko_before_header';
-		 	$actions[] = 'brisko_after_header';
-		 	$actions[] = 'brisko_homepage_header';
-		 	$actions[] = 'brisko_post_header';
-		 	$actions[] = 'brisko_page_header';
-		 	$actions[] = 'brisko_page_footer';
-		 	$actions[] = 'brisko_after_post_content';
-		 	$actions[] = 'brisko_before_sidebar';
-		 	$actions[] = 'brisko_after_sidebar';
-		 	$actions[] = 'brisko_before_footer';
-		 	$actions[] = 'brisko_footer';
-		 	$actions[] = 'brisko_after_footer';
-		 	return $actions;
-		}
-	endif;
 
 	/**
 	 * brisko_before_header
