@@ -13,6 +13,7 @@
 	if ( ! function_exists( 'brisko_actions' ) ) :
 		function brisko_actions(){
 		 	$actions = array();
+		 	$actions[] = 'brisko_before_header';
 		 	$actions[] = 'brisko_after_header';
 		 	$actions[] = 'brisko_homepage_header';
 		 	$actions[] = 'brisko_post_header';
@@ -25,6 +26,18 @@
 		 	$actions[] = 'brisko_footer';
 		 	$actions[] = 'brisko_after_footer';
 		 	return $actions;
+		}
+	endif;
+
+	/**
+	 * brisko_before_header
+	 */
+	if ( ! function_exists( 'brisko_before_header' ) ) :
+		function brisko_before_header() {
+		    /**
+		     * before the header tag.
+		     */
+		    do_action( 'brisko_before_header' );
 		}
 	endif;
 
