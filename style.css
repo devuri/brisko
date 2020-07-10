@@ -287,6 +287,10 @@ nav.main-navigation ul ul a {
 /*--------------------------------------------------------------
 # Nav Previous and Next
 --------------------------------------------------------------*/
+#menu-main-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .post-navigation .nav-previous span,
 .post-navigation .nav-next span {
