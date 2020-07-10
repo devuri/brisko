@@ -17,17 +17,15 @@
 			the_title( '<h2 class="post-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
+		endif; ?>
+		<?php brisko_before_entry_meta(); ?>
 			<div class="entry-meta secondary-font">
 				<?php
 				brisko_posted_on();
 				brisko_posted_by();
 				?>
 			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<?php brisko_after_entry_meta(); ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
