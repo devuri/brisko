@@ -57,3 +57,6 @@ Source: https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap.css
 = 0.3.9 =
 * Add brisko_before_header action
 * Fix description output
+
+= 0.4.2 =
+* Fix main menu overflow
