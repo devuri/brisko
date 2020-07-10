@@ -6,6 +6,18 @@
 
 
 	/**
+	 * brisko_before_header
+	 */
+	if ( ! function_exists( 'brisko_before_header' ) ) :
+		function brisko_before_header() {
+		    /**
+		     * before the header tag.
+		     */
+		    do_action( 'brisko_before_header' );
+		}
+	endif;
+
+	/**
 	 * brisko_after_header
 	 */
 	if ( ! function_exists( 'brisko_after_header' ) ) :

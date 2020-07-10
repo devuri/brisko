@@ -25,6 +25,7 @@
 </div>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'brisko' ); ?></a>
+<?php brisko_before_header(); ?>
 <?php brisko_after_header(); ?>
 <?php if ( is_front_page() && is_home() ) :
 	brisko_homepage_header();
