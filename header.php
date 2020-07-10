@@ -45,7 +45,7 @@
 				<?php $brisko_description = get_bloginfo( 'description', 'display' );
 				if ( $brisko_description || is_customize_preview() ) : ?>
 					<span class="site-description text-muted">
-						<?php echo $brisko_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php esc_html_e( $brisko_description, 'brisko' ); ?>
 					</span>
 				<?php endif; ?>
 			</div><!--logo-header-->
