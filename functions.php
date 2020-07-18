@@ -11,7 +11,7 @@
 	 * release version
 	 */
 	if ( ! defined( 'BRISKO_VERSION' ) ) {
-	 	define( 'BRISKO_VERSION', '0.4.2' );
+	 	define( 'BRISKO_VERSION', '0.4.3' );
 	}
 
 
@@ -169,6 +169,7 @@ function brisko_scripts() {
 
 
 	wp_enqueue_script( 'brisko-navigation', get_template_directory_uri() . '/js/navigation.js', array(), BRISKO_VERSION, true );
+	wp_enqueue_script( 'brisko-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), BRISKO_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

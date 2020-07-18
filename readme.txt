@@ -1,7 +1,7 @@
 === Brisko ===
 Contributors: icelayer
 Tested up to: 5.4
-Version: 0.4.1
+Version: 0.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -44,6 +44,10 @@ Bootstrap, Copyright 2011-2020 The Bootstrap Authors
 License: MIT
 Source: https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap.css
 
+SmoothScroll for websites, Copyright (c) 2010-2015 Balazs Galambosi
+License: MIT
+Source: https://github.com/gblazex/smoothscroll-for-websites
+
 == Changelog ==
 
 = 0.3.3 =
@@ -60,3 +64,6 @@ Source: https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap.css
 
 = 0.4.2 =
 * Fix main menu overflow
+
+= 0.4.3 =
+* Add SmoothScroll for websites
