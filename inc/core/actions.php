@@ -77,6 +77,17 @@
 		}
 	endif;
 
+	/**
+	 * brisko_before_entry_meta
+	 */
+	if ( ! function_exists( 'brisko_before_entry_meta' ) ) :
+		function brisko_before_entry_meta() {
+		    /**
+		     * after the closing post-article tag.
+		     */
+		    do_action( 'brisko_before_entry_meta' );
+		}
+	endif;
 
 	/**
 	 * brisko_after_post_content
