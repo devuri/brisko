@@ -78,6 +78,18 @@
 	endif;
 
 	/**
+	 * brisko_after_entry_meta
+	 */
+	if ( ! function_exists( 'brisko_after_entry_meta' ) ) :
+		function brisko_after_entry_meta() {
+		    /**
+		     * before the entry meta.
+		     */
+		    do_action( 'brisko_after_entry_meta' );
+		}
+	endif;
+
+	/**
 	 * brisko_before_entry_meta
 	 */
 	if ( ! function_exists( 'brisko_before_entry_meta' ) ) :
