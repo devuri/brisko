@@ -68,3 +68,6 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 = 0.4.3 =
 * Add SmoothScroll for websites
 * Fix error brisko_before_entry_meta
+
+= 0.4.5 =
+* Fix error brisko_after_entry_meta
