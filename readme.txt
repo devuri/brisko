@@ -71,3 +71,9 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 
 = 0.4.5 =
 * Fix error brisko_after_entry_meta
+
+= 0.4.7 =
+* Fix 404 add sidebar
+
+= 0.5.1 =
+* Add Customizer Option for the theme copyright text.
