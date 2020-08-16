@@ -14,11 +14,20 @@
 			$( '.site-title a' ).text( to );
 		} );
 	} );
+  
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-description' ).text( to );
 		} );
 	} );
+
+  // footer copyright text
+  wp.customize( 'briskotheme_options[copyright]', function( value ) {
+    value.bind( function( to ) {
+      $( '.brisko-footer-copyright' ).text( to );
+    } );
+  } );
+
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
