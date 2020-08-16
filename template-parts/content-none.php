@@ -8,9 +8,11 @@
  */
 
 ?>
+<div class="row">
+<div class="col-md-8 primary-content">
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'brisko' ); ?></h1>
+		<h1 class="page-title archive-title entry-meta"><?php esc_html_e( 'Nothing Found', 'brisko' ); ?></h1>
 	</header><!-- .page-header -->
 	<div class="page-content">
 		<?php
@@ -37,7 +39,6 @@
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'brisko' ); ?></p>
 			<?php
 			get_search_form();
-		endif;
-		?>
+		endif; ?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

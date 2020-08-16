@@ -11,9 +11,8 @@
 	 * release version
 	 */
 	if ( ! defined( 'BRISKO_VERSION' ) ) {
-	 	define( 'BRISKO_VERSION', '0.4.5' );
+	 	define( 'BRISKO_VERSION', '0.5.1' );
 	}
-
 
 	/**
 	 * Lets Define Some Constants
