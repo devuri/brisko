@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 			devuri
 Description: 	Brisko is a beautifully simple responsive and lightweight WordPress theme that is fast and optimized for WordPress page builders, you can use it as a foundation to build versatile layouts using modern page builders like Elementor, Gutenberg, Beaver Builder, Brizy, SiteOrigin etc. this theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions.
-Version: 			0.5.1
+Version: 			0.5.2
 Tested up to: 5.4
 Requires PHP: 5.6
 Text Domain: 	brisko
@@ -271,12 +271,22 @@ nav.main-navigation ul ul a {
 	font-size: medium;
 }
 
+.tags-links {
+  font-size: initial;
+  color: #8e8e8e;
+}
+
 .tags-links a {
-  padding: 4px 12px;
-  background: #e4584b;
-  color: #ffffff;
-  margin: 0 4px 4px 0;
+  padding: 2px 8px;
+    /* background: #e4584b; */
+  color: #767676;
   font-size: medium;
+  border: solid thin #eaeaea;
+  display: inline-block;
+  margin-bottom: 2px;
+  margin-right: 3px;
+  border-radius: 3px;
+  font-size: small;
 }
 .cat-links a {
 	margin-right: 4px;
