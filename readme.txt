@@ -78,3 +78,6 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 = 0.5.1 =
 * Add Customizer Option for the theme copyright text.
 * Fix Nothing Found, archive pages
+
+= 0.5.2 =
+* Tag Links Style Update.
