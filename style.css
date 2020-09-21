@@ -301,6 +301,11 @@ nav.main-navigation ul ul a {
   flex-wrap: wrap;
 }
 
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .post-navigation .nav-previous span,
 .post-navigation .nav-next span {
 	display: block;
