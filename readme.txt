@@ -1,7 +1,7 @@
 === Brisko ===
 Contributors: icelayer
-Tested up to: 5.4
-Version: 0.4.5
+Tested up to: 5.5
+Version: 0.5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -81,3 +81,9 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 
 = 0.5.2 =
 * Tag Links Style Update.
+
+= 0.5.3 =
+* Fix nav-menu, main menu overflow issue.
+
+= 0.5.4 =
+* Simplify Header section.

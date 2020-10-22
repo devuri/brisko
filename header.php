@@ -21,45 +21,46 @@
 <body <?php body_class('brisko-font brisko-font-style'); ?>>
 <?php wp_body_open(); ?>
 
-<div class="container">
-	<?php the_header_image_tag(array( 'class' => 'brisko-header-img') ); ?>
+<div class="container-fluid brisko-header-img">
+	<div class="container">
+		<?php the_header_image_tag(array( 'class' => 'brisko-header-img') ); ?>
+	</div>
 </div>
 
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'brisko' ); ?></a>
 <?php brisko_before_header(); ?>
 	<header id="masthead" class="site-header">
-
-		<div class="site-branding bg-white">
-			<div class="container">
-			<div class="logo-header d-flex flex-column flex-md-row align-items-center bg-white">
-				<?php
-				if ( has_custom_logo() ) :
-					the_custom_logo();	?>
+		<div class="align-items-center bg-white brisko-navigation">
+			<div class="container d-flex flex-column flex-md-row align-items-center">
+				<div class="mr-md-auto d-flex flex-column flex-md-row align-items-center">
+					<?php if ( has_custom_logo() ) : ?>
+						<div id="the-logo">
+							<?php the_custom_logo();	?>
+						</div>
 					<?php endif; ?>
-					<h1 class="site-title pt-3 mr-md-auto">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<?php bloginfo( 'name' ); ?>
-					</a>
-				</h1>
-				<?php $brisko_description = get_bloginfo( 'description', 'display' );
-				if ( $brisko_description || is_customize_preview() ) : ?>
-					<span class="site-description text-muted">
-						<?php echo $brisko_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					</span>
-				<?php endif; ?>
-			</div><!--logo-header-->
-		</div><!-- .container-->
-		</div><!-- .site-branding -->
-
-		<div class="brisko-navigation container-fluid">
-		<div class="container bg-white">
-			<nav id="site-navigation" class="main-navigation secondary-font">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'brisko' ); ?></button>
-				<?php wp_nav_menu(array('theme_location' => 'menu-1',) ); ?>
-			</nav><!-- #site-navigation -->
-		</div><!-- .container -->
-	</div><!-- .brisko-navigation -->
+					<div class="site-title">
+						<div id="name">
+							<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<?php bloginfo( 'name' ); ?>
+							</a>
+						</div>
+						<div id="description">
+							<?php $brisko_description = get_bloginfo( 'description', 'display' );
+							if ( $brisko_description || is_customize_preview() ) : ?>
+								<span class="site-description text-muted">
+									<?php echo $brisko_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</span>
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+					<nav id="site-navigation" class="my-2 my-md-0 mr-md-3 main-navigation secondary-font">
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'brisko' ); ?></button>
+					    <?php wp_nav_menu(array('theme_location' => 'menu-1',) ); ?>
+					</nav>
+			</div>
+		</div>
 
 </header><!-- #masthead -->
 <?php brisko_after_header(); ?>
