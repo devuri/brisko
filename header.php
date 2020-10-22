@@ -40,19 +40,15 @@
 						</div>
 					<?php endif; ?>
 					<div class="site-title">
-						<div id="name">
 							<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 								<?php bloginfo( 'name' ); ?>
 							</a>
-						</div>
-						<div id="description">
 							<?php $brisko_description = get_bloginfo( 'description', 'display' );
 							if ( $brisko_description || is_customize_preview() ) : ?>
-								<span class="site-description text-muted">
+								<small class="site-description text-muted align-items-center">
 									<?php echo $brisko_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-								</span>
+								</small>
 							<?php endif; ?>
-						</div>
 					</div>
 				</div>
 					<nav id="site-navigation" class="my-2 my-md-0 mr-md-3 main-navigation secondary-font">
