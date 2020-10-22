@@ -81,3 +81,9 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 
 = 0.5.2 =
 * Tag Links Style Update.
+
+= 0.5.3 =
+* Fix nav-menu, main menu overflow issue.
+
+= 0.5.4 =
+* Simplify Header section.
