@@ -16,7 +16,6 @@
 		<div class="brisko-theme-credit"><?php
 			/**
 			 * Brisko Theme credit
-			 * @var [type]
 			 */
 			if ( brisko_theme_mod( 'copyright' ) !== false ) {
 				$copyright = '<span class="brisko-footer-copyright">' . brisko_theme_mod( 'copyright' ) . '</span>';

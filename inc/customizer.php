@@ -13,25 +13,46 @@
 function brisko_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section('brisko_options', array(
-			'title'    => __('Theme Options', 'brisko'),
+			'title'    => esc_html__('Theme Options', 'brisko'),
 			'priority' => 120,
 	));
 
+	/**
+	 * copyright section
+	 */
 	$wp_customize->add_setting('brisko_options[copyright]', array(
-		'default'        		=> 'Copyright © 2020 '.get_bloginfo( 'name' ).'.',
+		'default'        		=> esc_html__('Copyright © 2020 '.get_bloginfo( 'name' ).'.'),
 		'capability'     		=> 'edit_theme_options',
-		'transport' 				=> 'postMessage',
+		'transport' 			=> 'postMessage',
 		'type'           		=> 'option',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback'     => 'sanitize_text_field',
 	));
 
 	$wp_customize->add_control('briskofooter_copyright', array(
-		'label'      => __('Footer Copyright Text', 'brisko'),
+		'label'      => esc_html__('Footer Copyright Text', 'brisko'),
 		'section'    => 'brisko_options',
 		'settings'   => 'brisko_options[copyright]',
 	));
 
+	/**
+	 * featured image
+	 */
+	$wp_customize->add_setting( 'brisko_options[featured_image]', array(
+		'default'           => 1,
+		'capability'     	=> 'edit_theme_options',
+		'transport' 		=> 'postMessage',
+		'type'           	=> 'option',
+		'sanitize_callback' => 'absint',
+	) );
 
+	$wp_customize->add_control('brisko_featured_image', array(
+		'label'      => esc_html__('Display Featured Image On Posts Pages', 'brisko'),
+		'section'    => 'brisko_options',
+		'type'       => 'checkbox',
+		'settings'   => 'brisko_options[featured_image]',
+	));
+
+	$wp_customize->get_setting( 'brisko_options[featured_image]' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'brisko_options[copyright]' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -75,7 +96,7 @@ add_action( 'customize_register', 'brisko_customize_register' );
  * @return void
  */
 function brisko_customize_partial_copyright() {
-	echo get_option('brisko_options')['copyright'];
+		echo brisko_theme_mod('copyright');
 }
 
 /**
