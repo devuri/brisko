@@ -9,7 +9,16 @@
 
 ?>
 <div class="post-article">
-	<?php brisko_post_thumbnail(); ?>
+	<?php
+	if ( is_singular() && is_main_query() ) {
+		//if ( brisko_theme_mod( 'featured_image' ) !== 0 ) {
+		if ( brisko_theme_mod( 'featured_image' ) !== 0 ) {
+			brisko_post_thumbnail();
+		}
+	} else {
+		brisko_post_thumbnail();
+	}
+	?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
