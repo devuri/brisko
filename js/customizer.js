@@ -14,7 +14,7 @@
 			$( '.site-title a' ).text( to );
 		} );
 	} );
-  
+
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-description' ).text( to );
@@ -28,6 +28,19 @@
     } );
   } );
 
+
+	// Post Featured Image
+	wp.customize( 'brisko_options[featured_image]', function( value ) {
+		value.bind( function( val ) {
+			  if ( true === val ) {
+				$( '.post-featured-image' ).hide();
+				console.log(val);
+			} else if ( false === val) {
+				$( '.post-featured-image' ).show();
+				console.log(val);
+			  }
+		 } );
+	} );
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
