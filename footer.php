@@ -18,7 +18,11 @@
 			 * Brisko Theme credit
 			 * @var [type]
 			 */
-			$copyright = '<span class="brisko-footer-copyright">'.get_option('briskotheme_options')['copyright'].'</span>';
+			if ( get_option('briskotheme_options' , false ) !== false ) {
+				$copyright = '<span class="brisko-footer-copyright">'.get_option('briskotheme_options')['copyright'].'</span>';
+			} else {
+				$copyright = get_bloginfo('name');
+			}
 			printf( esc_html__( '%1$s %2$s Theme %3$s by %4$s.', 'brisko' ), $copyright , ' | ' ,' Brisko', '<a href="https://switchwebdev.com/brisko-wordpress-theme/">SwitchWebdev</a>' );
 
 				?></div><!-- .brisko-theme-credit -->
