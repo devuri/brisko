@@ -26,6 +26,27 @@
 	 */
 	require_once BRISKO_THEME_DIR . 'inc/core/actions.php';
 
+	/**
+	 * Get Brisko theme option.
+	 *
+	 * Retrieves brisko theme option value based on the option key
+	 * Returns false if the option does not exist.
+	 * @param  string $key .
+	 * @return bool      .
+	 */
+	function brisko_theme_mod( $key = 'featured_image' ){
+
+		$brisko_options = get_option( 'brisko_options', false );
+		if ( $brisko_options === false ) {
+			return false;
+		}
+
+		if ( ! array_key_exists( $key, $brisko_options ) ) {
+			return false;
+		}
+		return $brisko_options[$key];
+	}
+
 /**
  * Theme Setup
  */
