@@ -69,6 +69,15 @@ function brisko_customize_register( $wp_customize ) {
 			)
 		);
 
+		# post-featured-image
+		$wp_customize->selective_refresh->add_partial(
+			'brisko_options[featured_image]',
+			array(
+				'selector'        => '.post-featured-image',
+				'render_callback' => 'brisko_customize_partial_featured_image',
+			)
+		);
+
 		# blogname
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
@@ -98,6 +107,16 @@ add_action( 'customize_register', 'brisko_customize_register' );
 function brisko_customize_partial_copyright() {
 		echo brisko_theme_mod('copyright');
 }
+
+/**
+ * Render the site title for the selective refresh partial.
+ *
+ * @return void
+ */
+function brisko_customize_partial_featured_image() {
+	//brisko_theme_mod('featured_image');
+}
+
 
 /**
  * Render the site title for the selective refresh partial.
