@@ -17,7 +17,7 @@ function brisko_customize_register( $wp_customize ) {
 			'priority' => 120,
 	));
 
-	$wp_customize->add_setting('briskotheme_options[copyright]', array(
+	$wp_customize->add_setting('brisko_options[copyright]', array(
 		'default'        		=> 'Copyright © 2020 '.get_bloginfo( 'name' ).'.',
 		'capability'     		=> 'edit_theme_options',
 		'transport' 				=> 'postMessage',
@@ -28,11 +28,11 @@ function brisko_customize_register( $wp_customize ) {
 	$wp_customize->add_control('briskofooter_copyright', array(
 		'label'      => __('Footer Copyright Text', 'brisko'),
 		'section'    => 'brisko_options',
-		'settings'   => 'briskotheme_options[copyright]',
+		'settings'   => 'brisko_options[copyright]',
 	));
 
 
-	$wp_customize->get_setting( 'briskotheme_options[copyright]' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'brisko_options[copyright]' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -41,7 +41,7 @@ function brisko_customize_register( $wp_customize ) {
 
 		# copyright
 		$wp_customize->selective_refresh->add_partial(
-			'briskotheme_options[copyright]',
+			'brisko_options[copyright]',
 			array(
 				'selector'        => '.brisko-footer-copyright',
 				'render_callback' => 'brisko_customize_partial_copyright',
@@ -75,7 +75,7 @@ add_action( 'customize_register', 'brisko_customize_register' );
  * @return void
  */
 function brisko_customize_partial_copyright() {
-		echo get_option('briskotheme_options')['copyright'];
+	echo get_option('brisko_options')['copyright'];
 }
 
 /**

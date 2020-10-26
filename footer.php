@@ -18,8 +18,8 @@
 			 * Brisko Theme credit
 			 * @var [type]
 			 */
-			if ( get_option('briskotheme_options' , false ) !== false ) {
-				$copyright = '<span class="brisko-footer-copyright">'.get_option('briskotheme_options')['copyright'].'</span>';
+			if ( get_option('brisko_options' , false ) !== false ) {
+				$copyright = '<span class="brisko-footer-copyright">'.get_option('brisko_options')['copyright'].'</span>';
 			} else {
 				$copyright = get_bloginfo('name');
 			}

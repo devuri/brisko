@@ -22,7 +22,7 @@
 	} );
 
   // footer copyright text
-  wp.customize( 'briskotheme_options[copyright]', function( value ) {
+  wp.customize( 'brisko_options[copyright]', function( value ) {
     value.bind( function( to ) {
       $( '.brisko-footer-copyright' ).text( to );
     } );
