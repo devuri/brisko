@@ -1,7 +1,7 @@
 === Brisko ===
 Contributors: icelayer
 Tested up to: 5.5
-Version: 0.5.6
+Version: 0.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -90,3 +90,14 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 
 = 0.5.4 =
 * Fix: Trying to access array offset.
+
+= 0.6.1 =
+* Add: Custom Inline Theme styles.
+* Add: Link Color Option.
+* Add: Featured Image Display Option.
+* New: brisko_theme_mod().
+* Fix: Page header title style.
+* Fix: Remove h1,h2,h3,h4,h5,h6 font-family style.
+* Fix: more-link class Add border-radius.
+* Fix: entry-meta class Add color: #999.
+* Fix: wp-block-button__link.
