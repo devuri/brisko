@@ -18,23 +18,6 @@ function brisko_customize_register( $wp_customize ) {
 	));
 
 	/**
-	 * copyright section
-	 */
-	$wp_customize->add_setting('brisko_options[copyright]', array(
-		'default'        		=> esc_html__('Copyright © 2020 '.get_bloginfo( 'name' ).'.'),
-		'capability'     		=> 'edit_theme_options',
-		'transport' 			=> 'postMessage',
-		'type'           		=> 'option',
-		'sanitize_callback'     => 'sanitize_text_field',
-	));
-
-	$wp_customize->add_control('briskofooter_copyright', array(
-		'label'      => esc_html__('Footer Copyright Text', 'brisko'),
-		'section'    => 'brisko_options',
-		'settings'   => 'brisko_options[copyright]',
-	));
-
-	/**
 	 * featured image
 	 */
 	$wp_customize->add_setting( 'brisko_options[featured_image]', array(
@@ -52,7 +35,49 @@ function brisko_customize_register( $wp_customize ) {
 		'settings'   => 'brisko_options[featured_image]',
 	));
 
-	$wp_customize->get_setting( 'brisko_options[featured_image]' )->transport  = 'postMessage';
+	/**
+	 * Link Color
+	 */
+	$wp_customize->add_setting( 'brisko_options[link_color]',
+		array(
+			'type' 				=> 'option',
+			'capability' 		=> 'manage_options',
+			'default' 			=> '#E4584B',
+			'transport' 		=> 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+
+	$wp_customize->add_control(
+		 new WP_Customize_Color_Control(
+			$wp_customize, 'brisko_options[link_color]',
+			 array(
+			   'label' => esc_html__( 'Link Color', 'brisko' ),
+			   'description' => esc_html__( 'Select a color', 'brisko'  ),
+			   'section' => 'brisko_options',
+			)
+	) );
+
+	/**
+	 * copyright section
+	 */
+	$wp_customize->add_setting('brisko_options[copyright]', array(
+		'default'        		=> esc_html__('Copyright © 2020 '.get_bloginfo( 'name' ).'.'),
+		'capability'     		=> 'edit_theme_options',
+		'transport' 			=> 'postMessage',
+		'type'           		=> 'option',
+		'sanitize_callback'     => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control('briskofooter_copyright', array(
+		'label'      => esc_html__('Footer Copyright Text', 'brisko'),
+		'description' => esc_html__( 'Edit Footer Text', 'brisko'  ),
+		'section'    => 'brisko_options',
+		'settings'   => 'brisko_options[copyright]',
+	));
+
+
+	$wp_customize->get_setting( 'brisko_options[link_color]' )->transport  = 'postMessage';
+	// $wp_customize->get_setting( 'brisko_options[featured_image]' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'brisko_options[copyright]' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
