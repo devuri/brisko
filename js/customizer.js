@@ -21,6 +21,15 @@
 		} );
 	} );
 
+	// Link color
+    wp.customize( 'brisko_options[link_color]', function( value ) {
+      value.bind( function( to ) {
+        $('body a').css('color', to );
+        $('button, input[type="button"], input[type="reset"], input[type="submit"]').css('background-color', to );
+        $('button, input[type="button"], input[type="reset"], input[type="submit"]').css('border-color', to );
+      } );
+    } );
+
   // footer copyright text
   wp.customize( 'brisko_options[copyright]', function( value ) {
     value.bind( function( to ) {
@@ -28,19 +37,7 @@
     } );
   } );
 
-
-	// Post Featured Image
-	wp.customize( 'brisko_options[featured_image]', function( value ) {
-		value.bind( function( val ) {
-			  if ( true === val ) {
-				$( '.post-featured-image' ).hide();
-				console.log(val);
-			} else if ( false === val) {
-				$( '.post-featured-image' ).show();
-				console.log(val);
-			  }
-		 } );
-	} );
+	// TODO Post Featured Image
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
