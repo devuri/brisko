@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 		devuri
 Description: 	Brisko is a beautifully simple responsive and lightweight WordPress theme that is fast and optimized for WordPress page builders, you can use it as a foundation to build versatile layouts using modern page builders like Elementor, Gutenberg, Beaver Builder, Brizy, SiteOrigin etc. this theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions.
-Version: 		0.5.4
+Version: 		0.6.1
 Tested up to:   5.4
 Requires PHP:   5.6
 Text Domain: 	brisko
@@ -62,8 +62,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 800;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	/* font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
 }
 
 .secondary-font {
@@ -255,9 +255,10 @@ nav.main-navigation ul ul a {
 }
 
 .more-link {
-	padding: 0.7em 0.8em;
-	border: solid thin #ccc;
-	text-transform: lowercase;
+    padding: 0.7em 0.8em;
+    border: solid thin #e2e8f0;
+    text-transform: lowercase;
+    border-radius: 2rem;
 }
 
 .more-link::after {
@@ -273,14 +274,15 @@ nav.main-navigation ul ul a {
 }
 
 .entry-meta {
-	width: 100%;
-	border: solid thin #f1f1f1;
-	border-left: none;
-	border-right: none;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	padding-left: 8px;
-	font-size: medium;
+    width: 100%;
+    border: solid thin #f1f1f1;
+    border-left: none;
+    border-right: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    font-size: medium;
+    color: #999;
 }
 
 .tags-links {
@@ -486,6 +488,20 @@ ol {
 /*--------------------------------------------------------------
  # Input and Forms
  --------------------------------------------------------------*/
+.wp-block-button__link {
+     color: #ffffff !important;
+     background-color: #32373c;
+     border: none;
+     border-radius: 28px;
+     box-shadow: none;
+     cursor: pointer;
+     display: inline-block;
+     font-size: 18px;
+     padding: 12px 24px;
+     text-align: center;
+     text-decoration: none;
+     overflow-wrap: break-word;
+ }
 
 button,
 input[type="button"],

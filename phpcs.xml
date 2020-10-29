@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<ruleset name="Brisko Theme">
+
+	<description>A custom set of rules to check for a WP</description>
+
+	<!-- Exclude. -->
+	<exclude-pattern>*/WPAdminPage/*</exclude-pattern>
+	<exclude-pattern>*/dev-lib/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>.github/</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+
+	<rule ref="WordPress">
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+	</rule>
+
+	<rule ref="Squiz.PHP.CommentedOutCode"/>
+	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+	<!-- <rule ref="Generic.Commenting.Todo"/> -->
+	<rule ref="Generic.ControlStructures.InlineControlStructure"/>
+
+	<rule ref="WordPress-Extra">
+		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments"/>
+		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
+		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed"/>
+		<exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine"/>
+		<exclude name="Squiz.Commenting.FileComment.Missing"/>
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+		<exclude name="Squiz.Commenting.ClassComment.Missing"/>
+		<exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning"/>
+		<exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
+		<exclude name="Generic.WhiteSpace.ScopeIndent"/>
+
+		<!-- <exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/> -->
+		<!-- <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" /> -->
+		<!-- <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket" /> -->
+		<!-- <exclude name="PEAR.Functions.FunctionCallSignature.Indent" /> -->
+		<!-- <exclude name="WordPress.WhiteSpace.PrecisionAlignment.Found" /> -->
+		<!-- <exclude name="WordPress.Arrays.ArrayDeclaration.IndexNoNewline" /> -->
+		<!-- <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions.NoSpacesAroundArrayKeys" /> -->
+		<!-- <exclude name="WordPress.PHP.YodaConditions" /> -->
+		<!-- <exclude name="WordPress.Security.EscapeOutput"/> -->
+	</rule>
+
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Docs"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="my-textdomain"/>
+				<element value="library-textdomain"/>
+			</property>
+		</properties>
+	</rule>
+
+</ruleset>

@@ -14,20 +14,30 @@
 			$( '.site-title a' ).text( to );
 		} );
 	} );
-  
+
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-description' ).text( to );
 		} );
 	} );
 
+	// Link color
+    wp.customize( 'brisko_options[link_color]', function( value ) {
+      value.bind( function( to ) {
+        $('body a').css('color', to );
+        $('button, input[type="button"], input[type="reset"], input[type="submit"]').css('background-color', to );
+        $('button, input[type="button"], input[type="reset"], input[type="submit"]').css('border-color', to );
+      } );
+    } );
+
   // footer copyright text
-  wp.customize( 'briskotheme_options[copyright]', function( value ) {
+  wp.customize( 'brisko_options[copyright]', function( value ) {
     value.bind( function( to ) {
       $( '.brisko-footer-copyright' ).text( to );
     } );
   } );
 
+	// TODO Post Featured Image
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
