@@ -31,10 +31,11 @@
 	 *
 	 * Retrieves brisko theme option value based on the option key
 	 * Returns false if the option does not exist.
-	 * @param  string $key .
+	 *
+	 * @param string $key .
 	 * @return bool      .
 	 */
-	function brisko_theme_mod( $key = 'featured_image' ){
+	function brisko_theme_mod( $key = 'featured_image' ) {
 
 		$brisko_options = get_option( 'brisko_options', false );
 		if ( $brisko_options === false ) {
@@ -44,7 +45,7 @@
 		if ( ! array_key_exists( $key, $brisko_options ) ) {
 			return false;
 		}
-		return $brisko_options[$key];
+		return $brisko_options[ $key ];
 	}
 
 /**
@@ -178,15 +179,14 @@ add_action( 'widgets_init', 'brisko_widgets_init' );
  * Enqueue scripts and styles.
  */
 function brisko_scripts() {
-	wp_enqueue_style( 'brisko-theme-style', get_stylesheet_uri(), array('underscores','bootstrap'), BRISKO_VERSION );
+	wp_enqueue_style( 'brisko-theme-style', get_stylesheet_uri(), array( 'underscores', 'bootstrap' ), BRISKO_VERSION );
 	wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
 
 	/**
-	 * bootstrap
+	 * Bootstrap
 	 */
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), BRISKO_VERSION );
 	wp_enqueue_style( 'underscores', get_template_directory_uri() . '/css/underscores.css', array(), BRISKO_VERSION );
-
 
 	wp_enqueue_script( 'brisko-navigation', get_template_directory_uri() . '/js/navigation.js', array(), BRISKO_VERSION, true );
 	wp_enqueue_script( 'brisko-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), BRISKO_VERSION, true );
@@ -196,6 +196,28 @@ function brisko_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'brisko_scripts' );
+
+
+/**
+ * Custom Theme styles
+ */
+add_action( 'wp_enqueue_scripts', function() {
+
+	// Get the theme setting.
+	if ( brisko_theme_mod( 'link_color' ) ) {
+		$color = brisko_theme_mod( 'link_color' );
+	} else {
+		$color  = '#E4584B';
+	}
+
+	$bttns  = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
+	$links  = "body a{color: {$color};}body a:hover{color: {$color};}";
+	$navs   = "nav.main-navigation a:hover {color: {$color};background-color: #F8F9FA;}";
+	$bttn_color = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color}";
+	$custom_styles = $links . $navs . $bttn_color;
+		wp_add_inline_style( 'brisko-theme-style', $custom_styles );
+	}
+);
 
 /**
  * Implement the Custom Header feature.
