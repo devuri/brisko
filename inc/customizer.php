@@ -10,21 +10,21 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+
 function brisko_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section('brisko_options', array(
-			'title'    => esc_html__('Theme Options', 'brisko'),
+			'title'    => esc_html__('Brisko Theme Options', 'brisko'),
 			'priority' => 120,
 	));
 
 	/**
 	 * featured image
 	 */
-	$wp_customize->add_setting( 'brisko_options[featured_image]', array(
-		'default'           => 1,
+	$wp_customize->add_setting( 'featured_image', array(
+		'default'           => absint(1),
 		'capability'     	=> 'edit_theme_options',
 		'transport' 		=> 'postMessage',
-		'type'           	=> 'option',
 		'sanitize_callback' => 'absint',
 	) );
 
@@ -32,15 +32,14 @@ function brisko_customize_register( $wp_customize ) {
 		'label'      => esc_html__('Display Featured Image On Posts Pages', 'brisko'),
 		'section'    => 'brisko_options',
 		'type'       => 'checkbox',
-		'settings'   => 'brisko_options[featured_image]',
+		'settings'   => 'featured_image',
 	));
 
 	/**
 	 * Link Color
 	 */
-	$wp_customize->add_setting( 'brisko_options[link_color]',
+	$wp_customize->add_setting( 'link_color',
 		array(
-			'type' 				=> 'option',
 			'capability' 		=> 'manage_options',
 			'default' 			=> '#E4584B',
 			'transport' 		=> 'postMessage',
@@ -49,7 +48,7 @@ function brisko_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		 new WP_Customize_Color_Control(
-			$wp_customize, 'brisko_options[link_color]',
+			$wp_customize, 'link_color',
 			 array(
 			   'label' => esc_html__( 'Link Color', 'brisko' ),
 			   'description' => esc_html__( 'Select a color', 'brisko'  ),
@@ -57,28 +56,59 @@ function brisko_customize_register( $wp_customize ) {
 			)
 	) );
 
+	// separator
+	$wp_customize->add_setting( 'brisko_separator', array(
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+	$wp_customize->add_control(
+		new Birsko_Separator_Control(
+			$wp_customize,
+			'brisko_separator',
+			array(
+				'section' => 'brisko_options',
+			)
+		)
+	);
+
 	/**
 	 * copyright section
 	 */
-	$wp_customize->add_setting('brisko_options[copyright]', array(
-		'default'        		=> esc_html__('Copyright © 2020 '.get_bloginfo( 'name' ).'.'),
+	$wp_customize->add_setting('footer_copyright', array(
+		'default'        		=> wp_kses_post('Copyright © 2020 '.get_bloginfo( 'name' ).'.'),
 		'capability'     		=> 'edit_theme_options',
 		'transport' 			=> 'postMessage',
-		'type'           		=> 'option',
 		'sanitize_callback'     => 'sanitize_text_field',
 	));
 
-	$wp_customize->add_control('briskofooter_copyright', array(
-		'label'      => esc_html__('Footer Copyright Text', 'brisko'),
+	$wp_customize->add_control('brisko_copyright', array(
+		'label'       => esc_html__('Copyright Text', 'brisko'),
 		'description' => esc_html__( 'Edit Footer Text', 'brisko'  ),
-		'section'    => 'brisko_options',
-		'settings'   => 'brisko_options[copyright]',
+		'section'     => 'brisko_options',
+		'settings'    => 'footer_copyright',
+	));
+
+	/**
+	 * Powered By
+	 */
+	$wp_customize->add_setting('poweredby', array(
+		'default'        		=> wp_kses_post('Powered by <a href="https://wpbrisko.com">Brisko WordPress Theme</a>'),
+		'capability'     		=> 'edit_theme_options',
+		'transport' 			=> 'postMessage',
+		'sanitize_callback'     => 'wp_kses_post',
+	));
+
+	$wp_customize->add_control('brisko_poweredby', array(
+		'label'       => esc_html__('Powered By', 'brisko'),
+		'description' => esc_html__( 'Edit Powered By', 'brisko'  ),
+		'section'     => 'brisko_options',
+		'settings'    => 'poweredby',
+		'type'        => 'textarea',
 	));
 
 
-	$wp_customize->get_setting( 'brisko_options[link_color]' )->transport  = 'postMessage';
-	// $wp_customize->get_setting( 'brisko_options[featured_image]' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'brisko_options[copyright]' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'link_color' )->transport  = 'postMessage';
+	// $wp_customize->get_setting( 'featured_image' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'footer_copyright' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -87,7 +117,7 @@ function brisko_customize_register( $wp_customize ) {
 
 		# copyright
 		$wp_customize->selective_refresh->add_partial(
-			'brisko_options[copyright]',
+			'footer_copyright',
 			array(
 				'selector'        => '.brisko-footer-copyright',
 				'render_callback' => 'brisko_customize_partial_copyright',
@@ -96,7 +126,7 @@ function brisko_customize_register( $wp_customize ) {
 
 		# post-featured-image
 		$wp_customize->selective_refresh->add_partial(
-			'brisko_options[featured_image]',
+			'featured_image',
 			array(
 				'selector'        => '.post-featured-image',
 				'render_callback' => 'brisko_customize_partial_featured_image',
@@ -130,7 +160,7 @@ add_action( 'customize_register', 'brisko_customize_register' );
  * @return void
  */
 function brisko_customize_partial_copyright() {
-		echo brisko_theme_mod('copyright');
+		echo get_theme_mod('footer_copyright');
 }
 
 /**
@@ -139,7 +169,7 @@ function brisko_customize_partial_copyright() {
  * @return void
  */
 function brisko_customize_partial_featured_image() {
-	//brisko_theme_mod('featured_image');
+	// get_theme_mod('featured_image');
 }
 
 

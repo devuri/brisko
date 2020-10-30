@@ -11,7 +11,7 @@
 	 * release version
 	 */
 	if ( ! defined( 'BRISKO_VERSION' ) ) {
-	 	define( 'BRISKO_VERSION', '0.5.6' );
+	 	define( 'BRISKO_VERSION', '0.6.3' );
 	}
 
 	/**
@@ -19,33 +19,6 @@
 	 */
 	if ( ! defined( 'BRISKO_THEME_DIR' ) ) {
 	define( 'BRISKO_THEME_DIR', trailingslashit( get_template_directory() ) );
-	}
-
-	/**
-	 * Load some helpers
-	 */
-	require_once BRISKO_THEME_DIR . 'inc/core/actions.php';
-
-	/**
-	 * Get Brisko theme option.
-	 *
-	 * Retrieves brisko theme option value based on the option key
-	 * Returns false if the option does not exist.
-	 *
-	 * @param string $key .
-	 * @return bool      .
-	 */
-	function brisko_theme_mod( $key = 'featured_image' ) {
-
-		$brisko_options = get_option( 'brisko_options', false );
-		if ( $brisko_options === false ) {
-			return false;
-		}
-
-		if ( ! array_key_exists( $key, $brisko_options ) ) {
-			return false;
-		}
-		return $brisko_options[ $key ];
 	}
 
 /**
@@ -204,12 +177,10 @@ add_action( 'wp_enqueue_scripts', 'brisko_scripts' );
 add_action( 'wp_enqueue_scripts', function() {
 
 	// Get the theme setting.
-	if ( brisko_theme_mod( 'link_color' ) ) {
-		$color = brisko_theme_mod( 'link_color' );
-	} else {
-		$color  = '#E4584B';
-	}
+	$defualt = '#E4584B';
+	$color = get_theme_mod( 'link_color', $defualt );
 
+	// css output
 	$bttns  = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
 	$links  = "body a{color: {$color};}body a:hover{color: {$color};}";
 	$navs   = "nav.main-navigation a:hover {color: {$color};background-color: #F8F9FA;}";
@@ -218,6 +189,17 @@ add_action( 'wp_enqueue_scripts', function() {
 		wp_add_inline_style( 'brisko-theme-style', $custom_styles );
 	}
 );
+
+
+	/**
+	 * Load some helpers
+	 */
+	require_once BRISKO_THEME_DIR . 'inc/core/actions.php';
+
+	/**
+	 * Load some helpers
+	 */
+	require_once BRISKO_THEME_DIR . 'inc/custom-control.php';
 
 /**
  * Implement the Custom Header feature.

@@ -7,7 +7,7 @@
  * @package brisko
  */
 get_header(); ?>
-<main id="primary" class="site-main container">
+<main id="primary" class="site-main container bg-white">
 	<?php if ( have_posts() ) : ?>
 		<header class="page-header">
 			<h1 class="page-title archive-title entry-meta">
