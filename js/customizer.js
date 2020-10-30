@@ -22,7 +22,7 @@
 	} );
 
 	// Link color
-    wp.customize( 'brisko_options[link_color]', function( value ) {
+    wp.customize( 'link_color', function( value ) {
       value.bind( function( to ) {
         $('body a').css('color', to );
         $('button, input[type="button"], input[type="reset"], input[type="submit"]').css('background-color', to );
@@ -31,7 +31,7 @@
     } );
 
   // footer copyright text
-  wp.customize( 'brisko_options[copyright]', function( value ) {
+  wp.customize( 'footer_copyright', function( value ) {
     value.bind( function( to ) {
       $( '.brisko-footer-copyright' ).text( to );
     } );

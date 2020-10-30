@@ -11,8 +11,7 @@
 <div class="post-article">
 	<?php
 	if ( is_singular() && is_main_query() ) {
-		//if ( brisko_theme_mod( 'featured_image' ) !== 0 ) {
-		if ( brisko_theme_mod( 'featured_image' ) !== 0 ) {
+		if ( get_theme_mod( 'featured_image' ) !== 0 ) {
 			brisko_post_thumbnail();
 		}
 	} else {
