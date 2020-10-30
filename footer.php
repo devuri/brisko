@@ -14,15 +14,25 @@
 	<?php brisko_footer(); ?>
 		<div align="center" class="site-info container">
 		<div class="brisko-theme-credit"><?php
+
 			/**
-			 * Brisko Theme credit
+			 * Copyright info
 			 */
-			if ( brisko_theme_mod( 'copyright' ) !== false ) {
-				$copyright = '<span class="brisko-footer-copyright">' . brisko_theme_mod( 'copyright' ) . '</span>';
+			if ( get_theme_mod( 'footer_copyright' ) !== false ) {
+				$copyright = '<span class="brisko-footer-copyright">' . esc_html__( get_theme_mod( 'footer_copyright' ) ) . '</span>';
 			} else {
 				$copyright = get_bloginfo('name');
 			}
-			printf( esc_html__( '%1$s %2$s Theme %3$s by %4$s.', 'brisko' ), $copyright , ' | ' ,' Brisko', '<a href="https://switchwebdev.com/brisko-wordpress-theme/">SwitchWebdev</a>' );
+
+			/**
+			 * Brisko Theme credit powered by
+			 */
+			if ( get_theme_mod( 'poweredby' ) !== false ) {
+ 				$poweredby = wp_kses_post( get_theme_mod( 'poweredby' ) );
+ 			} else {
+ 				$poweredby = 'Powered by <a href="https://wpbrisko.com">Brisko WordPress Theme</a>';
+ 			}
+			printf( esc_html__( '%1$s %2$s %3$s', 'brisko' ), $copyright, '   ', $poweredby );
 
 				?></div><!-- .brisko-theme-credit -->
 		</div><!-- .site-info -->
