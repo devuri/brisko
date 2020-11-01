@@ -83,7 +83,7 @@ class Customizer
 		$wp_customize->add_control(
 			'navigation_width', array(
 				'label'       => esc_html__( 'Navigation width', 'brisko' ),
-				'description' => esc_html__( 'edit menu navigation width', 'brisko' ),
+				'description' => esc_html__( 'set menu navigation width', 'brisko' ),
 				'section'     => self::$section,
 				'type'        => 'select',
 				'choices'     => array(
@@ -225,6 +225,27 @@ class Customizer
 				'label'   => esc_html__( 'Display Post Categories', 'brisko' ),
 				'section' => self::$section,
 				'type'    => 'checkbox',
+			)
+		);
+
+		// Post width.
+		$wp_customize->add_setting(
+			'post_width', array(
+				'sanitize_callback' => 'sanitize_html_class',
+				'default'           => 'container',
+			)
+		);
+
+		$wp_customize->add_control(
+			'post_width', array(
+				'label'       => esc_html__( 'Post width', 'brisko' ),
+				'description' => esc_html__( 'set width for all single post pages', 'brisko' ),
+				'section'     => self::$section,
+				'type'        => 'select',
+				'choices'     => array(
+					'container'       => esc_html__( 'Boxed', 'brisko' ),
+					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
+				),
 			)
 		);
 

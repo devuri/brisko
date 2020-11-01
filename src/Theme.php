@@ -39,16 +39,21 @@ class Theme
 	 * Navigation width
 	 */
 	public static function navigation_width() {
-		$navigation_width = get_theme_mod( 'navigation_width', 'container' );
-		echo esc_attr( $navigation_width );
+		echo esc_attr( get_theme_mod( 'navigation_width', 'container' ) );
 	}
 
 	/**
 	 * Page width
 	 */
 	public static function page_width() {
-		$page_width = get_theme_mod( 'page_width', 'container' );
-		echo esc_attr( $page_width );
+		echo esc_attr( get_theme_mod( 'page_width', 'container' ) );
+	}
+
+	/**
+	 * Post width
+	 */
+	public static function post_width() {
+		echo esc_attr( get_theme_mod( 'post_width', 'container' ) );
 	}
 
 	/**

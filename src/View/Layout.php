@@ -2,6 +2,8 @@
 
 namespace Brisko\View;
 
+use Brisko\Theme;
+
 abstract class Layout
 {
 	/**
@@ -26,7 +28,7 @@ abstract class Layout
 	 * @return void
 	 */
 	public static function head(){ ?>
-		<main id="primary" class="site-main container bg-white">
+		<main id="primary" class="site-main <?php Theme::post_width(); ?> bg-white">
 			<div class="row">
 				<div class="col-md-8 primary-content">
 		<?php
