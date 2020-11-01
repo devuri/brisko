@@ -87,6 +87,18 @@ class Theme
 	}
 
 	/**
+	 * Display Post Categories.
+	 */
+	public static function display_post_categories() {
+		if ( ! get_theme_mod( 'display_post_categories', 1 ) ) {
+			return sanitize_html_class( 'this-display-none' );
+		} else {
+			return sanitize_html_class( 'this-display-show' );
+		}
+	}
+
+
+	/**
 	 * Template
 	 *
 	 * @return Template
