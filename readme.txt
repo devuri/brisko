@@ -1,7 +1,7 @@
 === Brisko ===
 Contributors: icelayer
 Tested up to: 5.5
-Version: 0.6.3
+Version: 0.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -107,3 +107,18 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 * Fix: Use get_theme_mod() instead of options.
 * Add: Customizer Custom separator.
 * Add: Customizer setting for Powered by.
+
+= 0.6.4 =
+* Fix: Header Image move to menu section.
+
+= 0.7.1 =
+* Add Composer
+* Fix full width page layout
+* Fix Customizer setting Powered by live preview
+* Add 'brisko_before_comments' and 'brisko_after_comments'
+* Add PHPCS
+
+= 0.7.2 =
+* Add Navigation width Customizer setting
+* Fix Featured Image Display
+* Add Post Settings section
