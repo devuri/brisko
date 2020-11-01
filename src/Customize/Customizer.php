@@ -353,6 +353,8 @@ class Customizer
 		$wp_customize->get_setting( 'featured_image' )->transport   = self::$transport;
 		$wp_customize->get_setting( 'footer_copyright' )->transport = self::$transport;
 		$wp_customize->get_setting( 'poweredby' )->transport        = self::$transport;
+
+		// .
 		$wp_customize->get_setting( 'blogname' )->transport         = self::$transport;
 		$wp_customize->get_setting( 'blogdescription' )->transport  = self::$transport;
 		$wp_customize->get_setting( 'header_textcolor' )->transport = self::$transport;

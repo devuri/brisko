@@ -37,6 +37,17 @@
     } );
   } );
 
+  // cat-links
+  wp.customize( 'display_post_categories', function( value ) {
+    value.bind( function( to ) {
+		if ( false === to ) {
+			$( '.cat-links' ).addClass( "this-display-none" );
+		} else {
+			$( '.cat-links' ).removeClass( "this-display-none" );
+		}
+    } );
+  } );
+
   // footer poweredby
   wp.customize( 'poweredby', function( value ) {
     value.bind( function( to ) {
