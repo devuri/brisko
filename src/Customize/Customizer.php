@@ -142,7 +142,40 @@ class Customizer
 			)
 		);
 
-		// Separator Post Settings.
+		/**
+		 * Archives Template Details
+		 */
+		( new Control() )->separator( $wp_customize, esc_html__( 'Blog', 'brisko' ) );
+
+		// Blog Title .
+		// Blog Layout .
+
+		// Read More Button .
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Read More Button', 'brisko' ) );
+
+		// button border radius.
+		$wp_customize->add_setting(
+			'read_more_border_radius', array(
+				'default'           => absint( 1 ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'read_more_border_radius', array(
+				'label'   => esc_html__( 'Border Radius', 'brisko' ),
+				'section' => self::$section,
+				'type'    => 'checkbox',
+			)
+		);
+
+		// background color.
+
+		/**
+		 * Separator Post Settings.
+		 */
 		( new Control() )->separator( $wp_customize, esc_html__( 'Posts', 'brisko' ) );
 
 		/**

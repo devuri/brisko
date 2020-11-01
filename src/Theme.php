@@ -57,6 +57,17 @@ class Theme
 	}
 
 	/**
+	 * Button border radius
+	 */
+	public static function button_border_radius() {
+		if ( ! get_theme_mod( 'read_more_border_radius', 1 ) ) {
+			return sanitize_html_class( 'this-button-border-radius-none' );
+		} else {
+			return sanitize_html_class( 'this-button-border-radius' );
+		}
+	}
+
+	/**
 	 * Navigation width
 	 */
 	public static function post_thumbnail_display() {

@@ -52,7 +52,13 @@
 	<?php
 	else :
 		the_excerpt();
-		printf( esc_html__( '%1$s', 'brisko' ), '<div class="read-more secondary-font"><a class="more-link" href="' . get_permalink() . '">Read More</a></div>' );
+		?>
+		<div class="read-more secondary-font">
+			<a class="more-link <?php echo esc_html( Brisko\Theme::button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
+			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
+		</a>
+	</div>
+	<?php
 	endif;
 		wp_link_pages(
 			array(
