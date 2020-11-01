@@ -18,33 +18,29 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('brisko-font brisko-font-style'); ?>>
+<body <?php body_class( 'brisko-font brisko-font-style' ); ?>>
 <?php wp_body_open(); ?>
-
-<div class="container-fluid brisko-header-img">
-	<div class="container">
-		<?php the_header_image_tag(array( 'class' => 'brisko-header-img') ); ?>
-	</div>
-</div>
 
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'brisko' ); ?></a>
 <?php brisko_before_header(); ?>
 	<header id="masthead" class="site-header">
 		<div class="align-items-center bg-white brisko-navigation">
-			<div class="container d-flex flex-column flex-md-row align-items-center">
+			<div class="<?php Brisko\Theme::navigation_width(); ?> d-flex flex-column flex-md-row align-items-center">
 				<div class="mr-md-auto d-flex flex-column flex-md-row align-items-center">
 					<?php if ( has_custom_logo() ) : ?>
 						<div id="the-logo">
-							<?php the_custom_logo();	?>
+							<?php the_custom_logo(); ?>
 						</div>
 					<?php endif; ?>
 					<div class="site-title">
 							<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 								<?php bloginfo( 'name' ); ?>
 							</a>
-							<?php $brisko_description = get_bloginfo( 'description', 'display' );
-							if ( $brisko_description || is_customize_preview() ) : ?>
+							<?php
+								$brisko_description = get_bloginfo( 'description', 'display' );
+								if ( $brisko_description || is_customize_preview() ) :
+								?>
 								<small class="site-description text-muted align-items-center">
 									<?php echo $brisko_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 								</small>
@@ -53,11 +49,11 @@
 				</div>
 					<nav id="site-navigation" class="my-2 my-md-0 mr-md-3 main-navigation secondary-font">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'brisko' ); ?></button>
-					    <?php wp_nav_menu(array('theme_location' => 'menu-1',) ); ?>
+					    <?php wp_nav_menu( array( 'theme_location' => 'menu-1' ) ); ?>
 					</nav>
 			</div>
 		</div>
-
+	<?php brisko_header_image(); ?>
 </header><!-- #masthead -->
 <?php brisko_after_header(); ?>
 <?php if ( is_front_page() && is_home() ) :
