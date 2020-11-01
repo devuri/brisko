@@ -135,3 +135,4 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 * Fix Display Post Tags
 * Fix Display Previous and Next Post Navigation
 * Fix Display Post Categories
+* Add Display Page Header
