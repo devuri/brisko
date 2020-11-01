@@ -44,6 +44,14 @@ class Theme
 	}
 
 	/**
+	 * Page width
+	 */
+	public static function page_width() {
+		$page_width = get_theme_mod( 'page_width', 'container' );
+		echo esc_attr( $page_width );
+	}
+
+	/**
 	 * Navigation width
 	 */
 	public static function post_thumbnail_display() {
