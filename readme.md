@@ -9,7 +9,7 @@ For more information about the Brisko Theme please go to https://wpbrisko.com
 
 ![screenshot](https://user-images.githubusercontent.com/4777400/85940125-27509900-b8e0-11ea-8dfa-aaeca9fcdcfc.png)
 
-#### MIT License
+#### GPL-2.0 License
 
 ## License
 Brisko WordPress Theme, Copyright 2020 Uriel Wilson.
