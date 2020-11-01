@@ -37,6 +37,13 @@
     } );
   } );
 
+  // footer poweredby
+  wp.customize( 'poweredby', function( value ) {
+    value.bind( function( to ) {
+      $( '.brisko-footer-poweredby' ).html( to );
+    } );
+  } );
+
 	// TODO Post Featured Image
 
 	// Header text color.

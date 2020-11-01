@@ -1,17 +1,8 @@
 <?php
-/**
- * The sidebar containing the main widget area
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package brisko
- */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-} ?>
-<aside id="secondary" class="widget-area">
-	<?php brisko_before_sidebar(); ?>
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	<?php brisko_after_sidebar(); ?>
-</aside><!-- #secondary -->
+	use Brisko\Theme;
+
+	/**
+	 * Sidebar template
+	 */
+	Theme::template()->sidebar();

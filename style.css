@@ -2,7 +2,7 @@
 Theme Name: 	Brisko
 Author: 		devuri
 Description: 	Brisko is a beautifully simple responsive and lightweight WordPress theme that is fast and optimized for WordPress page builders, you can use it as a foundation to build versatile layouts using modern page builders like Elementor, Gutenberg, Beaver Builder, Brizy, SiteOrigin etc. this theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions.
-Version: 		0.6.3
+Version: 		0.7.2
 Tested up to:   5.4
 Requires PHP:   5.6
 Text Domain: 	brisko
@@ -25,6 +25,7 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
+
 body {
 	color: #333;
 }
@@ -42,8 +43,7 @@ body {
 }
 
 .brisko-font {
-	/* font-family: Noto, "Times New Roman", serif; */
-	/* font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+	/* -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif */
 }
 
 .brisko-font-style {
@@ -56,6 +56,14 @@ body {
 	margin: 0 0 0em;
 }
 
+.this-display-show {
+	display: initial;
+}
+
+.this-display-none {
+    display: none;
+}
+
 h1,
 h2,
 h3,
@@ -63,11 +71,11 @@ h4,
 h5,
 h6 {
 	font-weight: 700;
-	/* font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+	/* -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif */
 }
 
 .secondary-font {
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 body a:hover {
@@ -124,6 +132,7 @@ pre {
 
 .brisko-header-img {
 	margin-bottom: 0;
+	width: 100%;
 }
 
 .custom-logo-link {
@@ -555,7 +564,7 @@ textarea {
 	border: 1px solid #ced4da;
 	border-radius: 0px;
 	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .search-form {

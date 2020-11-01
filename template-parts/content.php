@@ -9,15 +9,7 @@
 
 ?>
 <div class="post-article">
-	<?php
-	if ( is_singular() && is_main_query() ) {
-		if ( get_theme_mod( 'featured_image' ) !== 0 ) {
-			brisko_post_thumbnail();
-		}
-	} else {
-		brisko_post_thumbnail();
-	}
-	?>
+	<?php brisko_post_thumbnail(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
@@ -25,7 +17,8 @@
 			the_title( '<h2 class="post-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif; ?>
+		endif;
+		?>
 		<?php brisko_before_entry_meta(); ?>
 			<div class="entry-meta secondary-font">
 				<?php
@@ -51,14 +44,16 @@
 				),
 				wp_kses_post( get_the_title() )
 			)
-		); ?>
+		);
+		?>
 			<footer class="entry-footer secondary-font">
 				<?php brisko_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
-<?php else :
+	<?php
+	else :
 		the_excerpt();
-		printf( esc_html__( '%1$s', 'brisko' ), '<div class="read-more secondary-font"><a class="more-link" href="'.get_permalink().'">Read More</a></div>' );
-endif;
+		printf( esc_html__( '%1$s', 'brisko' ), '<div class="read-more secondary-font"><a class="more-link" href="' . get_permalink() . '">Read More</a></div>' );
+	endif;
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),

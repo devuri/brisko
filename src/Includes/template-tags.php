@@ -88,7 +88,7 @@ if ( ! function_exists( 'brisko_entry_footer' ) ) :
 			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'brisko' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<br/><span class="tags-links secondary-font">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<br/><span class="tags-links secondary-font %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, Brisko\Theme::display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
@@ -129,7 +129,7 @@ if ( ! function_exists( 'brisko_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
+			<div class="post-thumbnail <?php Brisko\Theme::post_thumbnail_display(); ?>">
 				<?php the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
 
