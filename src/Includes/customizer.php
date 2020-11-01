@@ -6,7 +6,7 @@
  * @return void
  */
 function brisko_customize_partial_copyright() {
-		echo get_theme_mod( 'footer_copyright' );
+	echo get_theme_mod( 'footer_copyright' );
 }
 
 /**
@@ -15,16 +15,7 @@ function brisko_customize_partial_copyright() {
  * @return void
  */
 function brisko_customize_partial_poweredby() {
-		echo get_theme_mod( 'poweredby' );
-}
-
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
-function brisko_customize_partial_featured_image() {
-	// get_theme_mod('featured_image');
+	echo get_theme_mod( 'poweredby' );
 }
 
 
