@@ -18,13 +18,13 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('brisko-font brisko-font-style'); ?>>
+<body <?php body_class( 'brisko-font brisko-font-style' ); ?>>
 <?php wp_body_open(); ?>
-<div class="container">
-	<?php the_header_image_tag(array( 'class' => 'brisko-header-img') ); ?>
-</div>
+<?php brisko_header_image(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'brisko' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary">
+		<?php esc_html_e( 'Skip to content', 'brisko' ); ?>
+	</a>
 <?php brisko_before_header(); ?>
 <?php brisko_after_header(); ?>
 <?php if ( is_front_page() && is_home() ) :
