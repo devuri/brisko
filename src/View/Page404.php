@@ -52,7 +52,7 @@ class Page404 extends Layout
  		</div><!-- .widget -->
  		<?php
 
-		 /* translators: %1$s: smiley */
+		/* translators: %1$s: smiley */
  		$brisko_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'brisko' ), convert_smilies( ':)' ) ) . '</p>';
  		the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$brisko_archive_content" );
  		the_widget( 'WP_Widget_Tag_Cloud' );
