@@ -25,7 +25,7 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'brisko' ); ?></a>
 <?php brisko_before_header(); ?>
 	<header id="masthead" class="site-header">
-		<div class="align-items-center bg-white brisko-navigation">
+		<div class="align-items-center brisko-navigation">
 			<div class="<?php Brisko\Theme::options()->navigation_width(); ?> d-flex flex-column flex-md-row align-items-center">
 				<div class="mr-md-auto d-flex flex-column flex-md-row align-items-center">
 					<?php if ( has_custom_logo() ) : ?>
