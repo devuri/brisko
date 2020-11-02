@@ -6,7 +6,7 @@
  * @return void
  */
 function brisko_customize_partial_copyright() {
-	echo get_theme_mod( 'footer_copyright' );
+	echo esc_html( get_theme_mod( 'footer_copyright' ) );
 }
 
 /**
@@ -15,7 +15,7 @@ function brisko_customize_partial_copyright() {
  * @return void
  */
 function brisko_customize_partial_poweredby() {
-	echo get_theme_mod( 'poweredby' );
+	echo wp_kses_post( get_theme_mod( 'poweredby' ) );
 }
 
 
