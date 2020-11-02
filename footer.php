@@ -11,7 +11,7 @@
 
 ?>
 <?php brisko_before_footer(); ?>
-<footer id="colophon" class="site-footer this-site-footer bg-white ">
+<footer id="colophon" class="site-footer this-site-footer bg-white this-margin-top">
 	<?php brisko_footer(); ?>
 		<div align="center" class="site-info container">
 		<div class="brisko-theme-credit">
