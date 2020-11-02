@@ -40,7 +40,7 @@ abstract class Layout
 	 */
 	public static function sidebar() {
 
-		if ( true === get_theme_mod( 'disable_sidebar', false ) ) {
+		if ( 1 === get_theme_mod( 'disable_sidebar', false ) ) {
 			return false;
 		}
 

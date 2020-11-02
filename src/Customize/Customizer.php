@@ -122,6 +122,27 @@ class Customizer
 			)
 		);
 
+		/**
+		 * Disable Sidebar
+		 */
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Sidebar', 'brisko' ) );
+ 		$wp_customize->add_setting(
+ 			'disable_sidebar', array(
+ 				'default'           => absint( 0 ),
+ 				'capability'        => 'edit_theme_options',
+ 				'transport'         => self::$transport,
+ 				'sanitize_callback' => 'absint',
+ 			)
+ 		);
+
+ 		$wp_customize->add_control(
+ 			'disable_sidebar', array(
+ 				'label'   => esc_html__( 'Disable Sidebar', 'brisko' ),
+ 				'section' => self::$section,
+ 				'type'    => 'checkbox',
+ 			)
+ 		);
+
 		// Separator Header Image Settings.
 		( new Control() )->separator( $wp_customize, esc_html__( 'Header Image', 'brisko' ) );
 		/**
