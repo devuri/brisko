@@ -30,9 +30,13 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
     );
 
     public static $classMap = array (
+        'Brisko\\Activate' => __DIR__ . '/../..' . '/src/Activate.php',
         'Brisko\\Customize\\Controls\\Control' => __DIR__ . '/../..' . '/src/Customize/Controls/Control.php',
+        'Brisko\\Customize\\Controls\\HeaderControl' => __DIR__ . '/../..' . '/src/Customize/Controls/HeaderControl.php',
         'Brisko\\Customize\\Controls\\SeparatorControl' => __DIR__ . '/../..' . '/src/Customize/Controls/SeparatorControl.php',
         'Brisko\\Customize\\Customizer' => __DIR__ . '/../..' . '/src/Customize/Customizer.php',
+        'Brisko\\Enqueue' => __DIR__ . '/../..' . '/src/Enqueue.php',
+        'Brisko\\Options' => __DIR__ . '/../..' . '/src/Options.php',
         'Brisko\\Template' => __DIR__ . '/../..' . '/src/Template.php',
         'Brisko\\Theme' => __DIR__ . '/../..' . '/src/Theme.php',
         'Brisko\\View\\Archive' => __DIR__ . '/../..' . '/src/View/Archive.php',
