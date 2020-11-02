@@ -192,14 +192,16 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	// Get the theme setting.
 	$defualt = '#E4584B';
-	$color = get_theme_mod( 'link_color', $defualt );
-
-	// css output
 	$bttns  = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
+	$color = get_theme_mod( 'link_color', $defualt );
+	$nav_padding = get_theme_mod( 'navigation_padding', 10 );
+
+	// css output.
 	$links  = "body a{color: {$color};}body a:hover{color: {$color};}";
-	$navs   = "nav.main-navigation a:hover {color: {$color};background-color: #F8F9FA;}";
+	$nav_links   = "nav.main-navigation a:hover {color: {$color};background-color: #F8F9FA;}";
+	$navigation   = ".brisko-navigation {padding: {$nav_padding}px;}";
 	$bttn_color = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color}";
-	$custom_styles = $links . $navs . $bttn_color;
+	$custom_styles = $links . $navigation . $nav_links . $bttn_color;
 		wp_add_inline_style( 'brisko-theme-style', $custom_styles );
 	}
 );
