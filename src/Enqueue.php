@@ -62,7 +62,7 @@ final class Enqueue
 		wp_enqueue_style( 'brisko-theme-style', get_stylesheet_uri(), array( 'underscores', 'bootstrap' ), Theme::VERSION );
 		wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
 
-		wp_enqueue_style( 'custom-styles', get_stylesheet_uri(), array( 'brisko-theme-style' ), '/css/custom-styles.css',  Theme::VERSION );
+		wp_enqueue_style( 'custom-styles', get_stylesheet_uri(), array( 'brisko-theme-style' ), '/css/custom-styles.css', Theme::VERSION );
 
 		/**
 		 * Bootstrap
