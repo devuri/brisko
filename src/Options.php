@@ -32,6 +32,13 @@ final class Options
 	}
 
 	/**
+	 * Header Image
+	 */
+	public function header_image_display() {
+		return esc_attr( get_theme_mod( 'header_image_display', 'this-entire-site' ) );
+	}
+
+	/**
 	 * Navigation width
 	 */
 	public function navigation_width() {

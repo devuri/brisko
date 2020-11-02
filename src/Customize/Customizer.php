@@ -70,6 +70,32 @@ class Customizer
 
 		$this->brisko_options( $wp_customize );
 
+		// Separator Header Image Settings.
+		( new Control() )->separator( $wp_customize, esc_html__( 'Header Image', 'brisko' ) );
+		/**
+		 * Header Image
+		 */
+		$wp_customize->add_setting(
+			'header_image_display', array(
+				'sanitize_callback' => 'sanitize_html_class',
+				'default'           => 'entire-site',
+			)
+		);
+
+		$wp_customize->add_control(
+			'header_image_display', array(
+				'label'       => esc_html__( 'Header Image', 'brisko' ),
+				'description' => esc_html__( 'display settings for the header image', 'brisko' ),
+				'section'     => self::$section,
+				'type'        => 'select',
+				'choices'     => array(
+					'this-home-page-only' => esc_html__( 'Home Page / Front Page Only', 'brisko' ),
+					'this-entire-site'    => esc_html__( 'Entire Site', 'brisko' ),
+					'this-disabled'       => esc_html__( 'Disabled', 'brisko' ),
+				),
+			)
+		);
+
 		// Separator Header Navigation Settings.
 		( new Control() )->separator( $wp_customize, esc_html__( 'Navigation', 'brisko' ) );
 

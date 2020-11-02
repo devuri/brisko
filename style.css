@@ -46,6 +46,15 @@ body {
 	/* -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif */
 }
 
+.this-home-page-only {
+	display: none;
+}
+.this-entire-site {
+	display: inherit;
+}
+.this-disabled {
+	display: none;
+}
 .this-box-shadow {
 	margin-bottom: 0.2em;
 	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075)

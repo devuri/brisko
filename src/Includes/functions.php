@@ -26,10 +26,21 @@
 	 * Header Image
 	 */
 	function brisko_header_image() {
+
+		if ( 'this-disabled' === Brisko\Theme::options()->header_image_display() ) {
+			return false;
+		}
+
+		if ( 'this-home-page-only' === Brisko\Theme::options()->header_image_display() ) {
+			if ( false === is_front_page() ) {
+				return false;
+			}
+		}
+
 		?>
-			<div class="container-fluid brisko-header-img" style="padding:0px">
+			<div class="container-fluid brisko-header-img <?php Brisko\Theme::options()->header_image_display(); ?>" style="padding:0px">
 				<?php
-					the_header_image_tag( array( 'class' => 'brisko-header-img') );
+					the_header_image_tag( array( 'class' => 'brisko-header-img' ) );
 				?>
 			</div>
 		<?php
