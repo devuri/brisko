@@ -42,14 +42,17 @@ final class Enqueue
 		$bttns  = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
 		$color = get_theme_mod( 'link_color', $defualt );
 		$nav_padding = get_theme_mod( 'navigation_padding', 10 );
+		$width = get_theme_mod( 'website_width', 1140 );
 
 		// css output.
+		$site_width  = ".container{max-width: {$width}px;}";
 		$links  = "body a{color: {$color};}body a:hover{color: {$color};}";
 		$nav_links   = "nav.main-navigation a:hover {color: {$color};background-color: #F8F9FA;}";
 		$navigation   = ".brisko-navigation {padding: {$nav_padding}px;}";
 		$bttn_color = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color}";
-		$custom_styles = $links . $navigation . $nav_links . $bttn_color;
-			wp_add_inline_style( 'brisko-theme-style', $custom_styles );
+		$custom_styles = $site_width . $links . $navigation . $nav_links . $bttn_color;
+
+		wp_add_inline_style( 'custom-styles', $custom_styles );
 	}
 
 	/**
@@ -58,6 +61,8 @@ final class Enqueue
 	public function brisko_scripts() {
 		wp_enqueue_style( 'brisko-theme-style', get_stylesheet_uri(), array( 'underscores', 'bootstrap' ), Theme::VERSION );
 		wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
+
+		wp_enqueue_style( 'custom-styles', get_stylesheet_uri(), array( 'brisko-theme-style' ), '/css/custom-styles.css',  Theme::VERSION );
 
 		/**
 		 * Bootstrap
