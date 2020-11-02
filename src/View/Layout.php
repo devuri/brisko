@@ -28,7 +28,7 @@ abstract class Layout
 	 * @return void
 	 */
 	public static function head(){ ?>
-		<main id="primary" class="site-main <?php Brisko\Theme::options()->post_width(); ?> bg-white">
+		<main id="primary" class="site-main <?php Theme::options()->post_width(); ?> bg-white">
 			<div class="row">
 				<div class="col-md-8 primary-content">
 		<?php
