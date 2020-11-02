@@ -10,7 +10,6 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
         'bfe4c115bf472a7ffc0ecf6af254fa3b' => __DIR__ . '/../..' . '/src/Includes/actions.php',
         'e2dfbebf28d16a9491ae3797ab185a35' => __DIR__ . '/../..' . '/src/Includes/custom-header.php',
         '07f7b1f0c3cda4b437f2c8fec7b4f438' => __DIR__ . '/../..' . '/src/Includes/customizer.php',
-        '3f88e9d6f6db234e070acc699f8f2247' => __DIR__ . '/../..' . '/src/Includes/template-functions.php',
         '99bc6bf0598402d4282cd7e6ecbbe3a2' => __DIR__ . '/../..' . '/src/Includes/template-tags.php',
     );
 
