@@ -30,7 +30,27 @@ abstract class Layout
 	public static function head(){ ?>
 		<main id="primary" class="site-main <?php Theme::options()->post_width(); ?> bg-white">
 			<div class="row">
-				<div class="col-md-8 primary-content">
+				<!-- col-md-8  -->
+				<div class="col-md primary-content">
+		<?php
+	}
+
+	/**
+	 * Get the sidebar.
+	 */
+	public static function sidebar() {
+
+		if ( true === get_theme_mod( 'disable_sidebar', false ) ) {
+			return false;
+		}
+
+		?>
+		<!-- col-md-4 -->
+		<div class="col-md-4">
+			<div class="sidebar mb-4  avs-sidebar pad-left-1m">
+				<?php get_sidebar(); ?>
+			</div><!-- sidebar -->
+		</div><!-- col 4 -->
 		<?php
 	}
 
@@ -40,13 +60,9 @@ abstract class Layout
 	public static function footer() {
 		?>
 		</div><!-- col 8 -->
-		<div class="col-md-4">
-			<div class="sidebar mb-4  avs-sidebar pad-left-1m">
-				<?php get_sidebar(); ?>
-			</div><!-- sidebar -->
-		</div><!-- col 4 -->
-				</div><!-- row -->
-			</main><!-- #main -->
+				<?php self::sidebar(); ?>
+			</div><!-- row -->
+		</main><!-- #main -->
 		<?php
 	}
 }
