@@ -46,6 +46,11 @@ body {
 	/* -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif */
 }
 
+.this-box-shadow {
+	margin-bottom: 0.2em;
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075)
+}
+
 .brisko-font-style {
 	font-size: 1.2rem;
 	line-height: 1.75;
@@ -193,8 +198,8 @@ pre {
 }
 
 div.brisko-navigation {
-	margin-bottom: 0.2em;
-	box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+	/* margin-bottom: 0.2em; */
+	/* box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075); */
 	/* border-top: 1px solid #E2E8F0;
 	background-color: #fff;
 	border-bottom: 1px solid #E2E8F0; */
