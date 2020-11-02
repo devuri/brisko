@@ -43,6 +43,15 @@ final class Theme
 	}
 
 	/**
+	 * Theme Header
+	 *
+	 * @return Header .
+	 */
+	public static function header() {
+		return Header::get();
+	}
+
+	/**
 	 * Theme Options
 	 *
 	 * @return Options .
@@ -50,7 +59,6 @@ final class Theme
 	public static function options() {
 		return Options::get();
 	}
-
 
 	/**
 	 * Template

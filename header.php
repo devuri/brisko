@@ -53,7 +53,7 @@
 					</nav>
 			</div>
 		</div>
-	<?php brisko_header_image(); ?>
+	<?php Brisko\Theme::header()->image(); ?>
 </header><!-- #masthead -->
 <?php brisko_after_header(); ?>
 <?php if ( is_front_page() && is_home() ) :
