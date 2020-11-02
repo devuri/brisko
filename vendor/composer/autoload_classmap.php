@@ -12,6 +12,7 @@ return array(
     'Brisko\\Customize\\Controls\\SeparatorControl' => $baseDir . '/src/Customize/Controls/SeparatorControl.php',
     'Brisko\\Customize\\Customizer' => $baseDir . '/src/Customize/Customizer.php',
     'Brisko\\Enqueue' => $baseDir . '/src/Enqueue.php',
+    'Brisko\\Header' => $baseDir . '/src/Header.php',
     'Brisko\\Options' => $baseDir . '/src/Options.php',
     'Brisko\\Template' => $baseDir . '/src/Template.php',
     'Brisko\\Theme' => $baseDir . '/src/Theme.php',

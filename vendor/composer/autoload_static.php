@@ -7,7 +7,6 @@ namespace Composer\Autoload;
 class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
 {
     public static $files = array (
-        'f4a8b2c31dac7c3b168f065fe17cd308' => __DIR__ . '/../..' . '/src/Includes/functions.php',
         'bfe4c115bf472a7ffc0ecf6af254fa3b' => __DIR__ . '/../..' . '/src/Includes/actions.php',
         'e2dfbebf28d16a9491ae3797ab185a35' => __DIR__ . '/../..' . '/src/Includes/custom-header.php',
         '07f7b1f0c3cda4b437f2c8fec7b4f438' => __DIR__ . '/../..' . '/src/Includes/customizer.php',
@@ -36,6 +35,7 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
         'Brisko\\Customize\\Controls\\SeparatorControl' => __DIR__ . '/../..' . '/src/Customize/Controls/SeparatorControl.php',
         'Brisko\\Customize\\Customizer' => __DIR__ . '/../..' . '/src/Customize/Customizer.php',
         'Brisko\\Enqueue' => __DIR__ . '/../..' . '/src/Enqueue.php',
+        'Brisko\\Header' => __DIR__ . '/../..' . '/src/Header.php',
         'Brisko\\Options' => __DIR__ . '/../..' . '/src/Options.php',
         'Brisko\\Template' => __DIR__ . '/../..' . '/src/Template.php',
         'Brisko\\Theme' => __DIR__ . '/../..' . '/src/Theme.php',

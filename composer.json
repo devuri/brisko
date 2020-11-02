@@ -4,7 +4,6 @@
         "Brisko\\":"src"
 	},
 	  	"files": [
-			"src/Includes/functions.php",
 			"src/Includes/actions.php",
 			"src/Includes/custom-header.php",
 			"src/Includes/customizer.php",
