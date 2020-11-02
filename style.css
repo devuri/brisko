@@ -25,7 +25,6 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-
 body {
 	color: #333;
 }
@@ -42,44 +41,9 @@ body {
 	padding: 1.75rem;
 }
 
-.brisko-font {
-	/* -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif */
-}
-
-.this-border-bottom {
-    border-bottom: solid thin #f0f0f0;
-}
-
-.this-home-page-only {
-	display: none;
-}
-.this-entire-site {
-	display: inherit;
-}
-.this-disabled {
-	display: none;
-}
-.this-box-shadow {
-	margin-bottom: 0.2em;
-	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075)
-}
-
-.brisko-font-style {
-	font-size: 1.2rem;
-	line-height: 1.75;
-}
-
 .post,
 .page {
 	margin: 0 0 0em;
-}
-
-.this-display-show {
-	display: initial;
-}
-
-.this-display-none {
-    display: none;
 }
 
 h1,
@@ -143,7 +107,6 @@ pre {
 	display: flow-root;
 }
 
-
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -205,9 +168,9 @@ pre {
 --------------------------------------------------------------*/
 .site-name {
     font-family: inherit;
-    font-size: 1.25em;
+    font-size: 2.0rem;
     margin-bottom: 0;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 div.brisko-navigation {
@@ -285,10 +248,6 @@ nav.main-navigation ul ul a {
     padding: 0.7em 0.8em;
 	border: solid thin #e2e8f0;
     text-transform: lowercase;
-}
-
-.this-button-border-radius {
-	border-radius: 2rem;
 }
 
 .more-link::after {
