@@ -28,9 +28,16 @@ final class Theme
 	}
 
 	/**
+	 * Define Theme Version
+	 */
+	const VERSION = '0.7.6';
+
+	/**
 	 * [__construct description]
 	 */
 	private function __construct() {
+		Activate::init();
+		Enqueue::init();
 		Customizer::init();
 		add_action( 'brisko_footer_credit', array( FooterCredits::class, 'init' ) );
 	}
