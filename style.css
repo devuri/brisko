@@ -46,6 +46,10 @@ body {
 	/* -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif */
 }
 
+.this-border-bottom {
+    border-bottom: solid thin #f0f0f0;
+}
+
 .this-home-page-only {
 	display: none;
 }
