@@ -38,6 +38,7 @@ final class Theme
 	private function __construct() {
 		Activate::init();
 		Enqueue::init();
+		Header::init();
 		Customizer::init();
 		add_action( 'brisko_footer_credit', array( FooterCredits::class, 'init' ) );
 	}
@@ -48,7 +49,7 @@ final class Theme
 	 * @return Header .
 	 */
 	public static function header() {
-		return Header::get();
+		return Header::init();
 	}
 
 	/**

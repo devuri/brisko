@@ -7,7 +7,6 @@
 			"src/Includes/actions.php",
 			"src/Includes/custom-header.php",
 			"src/Includes/customizer.php",
-			"src/Includes/template-functions.php",
 			"src/Includes/template-tags.php"
 		]
     },
