@@ -54,7 +54,7 @@
 		the_excerpt();
 		?>
 		<div class="read-more secondary-font">
-			<a class="more-link <?php echo esc_html( Brisko\Theme::button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
+			<a class="more-link <?php echo esc_html( Brisko\Theme::options()->button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
 			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
 		</a>
 	</div>
