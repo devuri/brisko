@@ -2,17 +2,13 @@
 
 namespace Brisko\View;
 
-/**
- *
- */
 class Single extends Layout
 {
 
 	/**
 	 * Display content
-	 * @return [type] [description]
 	 */
-	public static function view(){
+	public static function view() {
 
 		self::head();
 
@@ -20,7 +16,6 @@ class Single extends Layout
 
 		/**
 		 * Post content
-		 * @var [type]
 		 */
 		while ( have_posts() ) :
 			the_post();
