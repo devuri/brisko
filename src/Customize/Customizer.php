@@ -143,6 +143,29 @@ class Customizer
  			)
  		);
 
+		// Separator Header Navigation Settings.
+		( new Control() )->separator( $wp_customize, esc_html__( 'Navigation', 'brisko' ) );
+
+		$wp_customize->add_setting(
+			'navigation_width', array(
+				'sanitize_callback' => 'sanitize_html_class',
+				'default'           => 'container',
+			)
+		);
+
+		$wp_customize->add_control(
+			'navigation_width', array(
+				'label'       => esc_html__( 'Navigation width', 'brisko' ),
+				'description' => esc_html__( 'set menu navigation width', 'brisko' ),
+				'section'     => self::$section,
+				'type'        => 'select',
+				'choices'     => array(
+					'container'       => esc_html__( 'Boxed', 'brisko' ),
+					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
+				),
+			)
+		);
+
 		// Separator Header Image Settings.
 		( new Control() )->separator( $wp_customize, esc_html__( 'Header Image', 'brisko' ) );
 		/**
@@ -165,29 +188,6 @@ class Customizer
 					'this-home-page-only' => esc_html__( 'Home Page / Front Page Only', 'brisko' ),
 					'this-entire-site'    => esc_html__( 'Entire Site', 'brisko' ),
 					'this-disabled'       => esc_html__( 'Disabled', 'brisko' ),
-				),
-			)
-		);
-
-		// Separator Header Navigation Settings.
-		( new Control() )->separator( $wp_customize, esc_html__( 'Navigation', 'brisko' ) );
-
-		$wp_customize->add_setting(
-			'navigation_width', array(
-				'sanitize_callback' => 'sanitize_html_class',
-				'default'           => 'container',
-			)
-		);
-
-		$wp_customize->add_control(
-			'navigation_width', array(
-				'label'       => esc_html__( 'Navigation width', 'brisko' ),
-				'description' => esc_html__( 'set menu navigation width', 'brisko' ),
-				'section'     => self::$section,
-				'type'        => 'select',
-				'choices'     => array(
-					'container'       => esc_html__( 'Boxed', 'brisko' ),
-					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
 				),
 			)
 		);
