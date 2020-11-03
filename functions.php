@@ -13,13 +13,13 @@
 	require __DIR__ . '/vendor/autoload.php';
 
 	/**
-	 * Load Jetpack compatibility file.
-	 */
-	if ( defined( 'JETPACK__VERSION' ) ) {
-	 	require get_template_directory() . 'src/Includes/jetpack.php';
-	}
-
-	/**
 	 * Load Theme
 	 */
 	Brisko\Theme::setup();
+
+	/**
+	 * Load Jetpack compatibility file.
+	 */
+	if ( defined( 'JETPACK__VERSION' ) ) {
+	 	require get_template_directory() . 'src/inc/jetpack.php';
+	}
