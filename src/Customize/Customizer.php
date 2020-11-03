@@ -83,7 +83,7 @@ class Customizer
 		$wp_customize->add_control(
 			'navigation_width', array(
 				'label'       => esc_html__( 'Navigation width', 'brisko' ),
-				'description' => esc_html__( 'edit menu navigation width', 'brisko' ),
+				'description' => esc_html__( 'set menu navigation width', 'brisko' ),
 				'section'     => self::$section,
 				'type'        => 'select',
 				'choices'     => array(
@@ -118,10 +118,64 @@ class Customizer
 				)
 			)
 		);
-		// Separator Post Settings.
+		// Separator Pages Settings.
 		( new Control() )->separator( $wp_customize, esc_html__( 'Pages', 'brisko' ) );
 
-		// Separator Post Settings.
+		// Pages width.
+		$wp_customize->add_setting(
+			'page_width', array(
+				'sanitize_callback' => 'sanitize_html_class',
+				'default'           => 'container',
+			)
+		);
+
+		$wp_customize->add_control(
+			'page_width', array(
+				'label'       => esc_html__( 'Page width', 'brisko' ),
+				'description' => esc_html__( 'set page width for all pages', 'brisko' ),
+				'section'     => self::$section,
+				'type'        => 'select',
+				'choices'     => array(
+					'container'       => esc_html__( 'Boxed', 'brisko' ),
+					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
+				),
+			)
+		);
+
+		/**
+		 * Archives Template Details
+		 */
+		( new Control() )->separator( $wp_customize, esc_html__( 'Blog', 'brisko' ) );
+
+		// Blog Title .
+		// Blog Layout .
+
+		// Read More Button .
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Read More Button', 'brisko' ) );
+
+		// button border radius.
+		$wp_customize->add_setting(
+			'read_more_border_radius', array(
+				'default'           => absint( 1 ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'read_more_border_radius', array(
+				'label'   => esc_html__( 'Border Radius', 'brisko' ),
+				'section' => self::$section,
+				'type'    => 'checkbox',
+			)
+		);
+
+		// background color.
+
+		/**
+		 * Separator Post Settings.
+		 */
 		( new Control() )->separator( $wp_customize, esc_html__( 'Posts', 'brisko' ) );
 
 		/**
@@ -204,6 +258,27 @@ class Customizer
 				'label'   => esc_html__( 'Display Post Categories', 'brisko' ),
 				'section' => self::$section,
 				'type'    => 'checkbox',
+			)
+		);
+
+		// Post width.
+		$wp_customize->add_setting(
+			'post_width', array(
+				'sanitize_callback' => 'sanitize_html_class',
+				'default'           => 'container',
+			)
+		);
+
+		$wp_customize->add_control(
+			'post_width', array(
+				'label'       => esc_html__( 'Post width', 'brisko' ),
+				'description' => esc_html__( 'set width for all single post pages', 'brisko' ),
+				'section'     => self::$section,
+				'type'        => 'select',
+				'choices'     => array(
+					'container'       => esc_html__( 'Boxed', 'brisko' ),
+					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
+				),
 			)
 		);
 

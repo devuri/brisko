@@ -39,8 +39,32 @@ class Theme
 	 * Navigation width
 	 */
 	public static function navigation_width() {
-		$navigation_width = get_theme_mod( 'navigation_width', 'container' );
-		echo esc_attr( $navigation_width );
+		echo esc_attr( get_theme_mod( 'navigation_width', 'container' ) );
+	}
+
+	/**
+	 * Page width
+	 */
+	public static function page_width() {
+		echo esc_attr( get_theme_mod( 'page_width', 'container' ) );
+	}
+
+	/**
+	 * Post width
+	 */
+	public static function post_width() {
+		echo esc_attr( get_theme_mod( 'post_width', 'container' ) );
+	}
+
+	/**
+	 * Button border radius
+	 */
+	public static function button_border_radius() {
+		if ( ! get_theme_mod( 'read_more_border_radius', 1 ) ) {
+			return sanitize_html_class( 'this-button-border-radius-none' );
+		} else {
+			return sanitize_html_class( 'this-button-border-radius' );
+		}
 	}
 
 	/**
