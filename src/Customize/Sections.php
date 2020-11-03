@@ -22,8 +22,8 @@ final class Sections {
 	protected static function sections() {
 
 		self::$sections[] = 'general';
-		self::$sections[] = 'header';
 		self::$sections[] = 'navigation';
+		self::$sections[] = 'header';
 		self::$sections[] = 'pages';
 		self::$sections[] = 'blog';
 		self::$sections[] = 'posts';
