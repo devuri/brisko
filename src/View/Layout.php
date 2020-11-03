@@ -23,15 +23,44 @@ abstract class Layout
 	}
 
 	/**
+	 * Disabled Sidebar.
+	 */
+	public static function is_disabled() {
+
+		if ( 1 === get_theme_mod( 'disable_sidebar', false ) ) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Head section
 	 *
 	 * @return void
 	 */
-	public static function head(){ ?>
+	public static function no_sidebar(){ ?>
 		<main id="primary" class="site-main <?php Theme::options()->post_width(); ?> bg-white">
 			<div class="row">
-				<!-- col-md-8  -->
 				<div class="col-md primary-content">
+		<?php
+	}
+
+	/**
+	 * Head section
+	 *
+	 * @return void
+	 */
+	public static function head() {
+
+		if ( self::is_disabled() ) {
+			echo self::no_sidebar(); // @codingStandardsIgnoreLine
+			return;
+		}
+
+		?>
+		<main id="primary" class="site-main <?php Theme::options()->post_width(); ?> bg-white">
+			<div class="row">
+				<div class="col-md-8 primary-content">
 		<?php
 	}
 
@@ -40,12 +69,11 @@ abstract class Layout
 	 */
 	public static function sidebar() {
 
-		if ( 1 === get_theme_mod( 'disable_sidebar', false ) ) {
+		if ( self::is_disabled() ) {
 			return false;
 		}
 
 		?>
-		<!-- col-md-4 -->
 		<div class="col-md-4">
 			<div class="sidebar mb-4  avs-sidebar pad-left-1m">
 				<?php get_sidebar(); ?>
