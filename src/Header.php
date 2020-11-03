@@ -76,7 +76,7 @@ final class Header
 		}
 
 		?>
-			<div class="container-fluid brisko-header-img <?php Theme::options()->header_image_display(); ?>" style="padding:0px">
+			<div class="<?php Theme::options()->header_image_width(); ?> brisko-header-img <?php Theme::options()->header_image_display(); ?>" style="padding:0px">
 				<?php
 					the_header_image_tag( array( 'class' => 'brisko-header-img' ) );
 				?>

@@ -56,5 +56,25 @@ class Header
 			)
 		);
 
+		// Header Image width.
+		$wp_customize->add_setting(
+			'header_image_width', array(
+				'sanitize_callback' => 'sanitize_html_class',
+				'default'           => 'container',
+			)
+		);
+
+		$wp_customize->add_control(
+			'header_image_width', array(
+				'label'       => esc_html__( 'Header Image width', 'brisko' ),
+				'description' => esc_html__( 'set width for the header image', 'brisko' ),
+				'section'     => self::$section,
+				'type'        => 'select',
+				'choices'     => array(
+					'container'       => esc_html__( 'Boxed', 'brisko' ),
+					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
+				),
+			)
+		);
 	}
 }
