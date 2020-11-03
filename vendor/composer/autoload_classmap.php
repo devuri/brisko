@@ -37,4 +37,5 @@ return array(
     'Brisko\\View\\Search' => $baseDir . '/src/View/Search.php',
     'Brisko\\View\\Sidebar' => $baseDir . '/src/View/Sidebar.php',
     'Brisko\\View\\Single' => $baseDir . '/src/View/Single.php',
+    'Brisko\\View\\Thumbnail' => $baseDir . '/src/View/Thumbnail.php',
 );

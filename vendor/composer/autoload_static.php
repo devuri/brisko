@@ -59,6 +59,7 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
         'Brisko\\View\\Search' => __DIR__ . '/../..' . '/src/View/Search.php',
         'Brisko\\View\\Sidebar' => __DIR__ . '/../..' . '/src/View/Sidebar.php',
         'Brisko\\View\\Single' => __DIR__ . '/../..' . '/src/View/Single.php',
+        'Brisko\\View\\Thumbnail' => __DIR__ . '/../..' . '/src/View/Thumbnail.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
