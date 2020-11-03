@@ -36,6 +36,10 @@ GNU General Public License for more details.
 
 Brisko bundles the following resources:
 
+Header Image screenshot
+Licenses: CC0 license
+Source: https://stocksnap.io/photo/camera-photography-NY3VQ20BHF
+
 Underscores, Copyright 2012-2020 Automattic, Inc.
 Licenses: GPL2
 Source: https://github.com/Automattic/_s
