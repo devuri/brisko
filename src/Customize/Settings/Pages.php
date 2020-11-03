@@ -36,7 +36,7 @@ class Pages
 		// Display Page Header.
 		$wp_customize->add_setting(
 			'display_page_header', array(
-				'default'           => absint( 1 ),
+				'default'           => absint( 0 ),
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'absint',

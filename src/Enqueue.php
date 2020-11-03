@@ -38,9 +38,8 @@ final class Enqueue
 	public function custom_css() {
 
 		// Get the theme setting.
-		$defualt = '#E4584B';
 		$bttns  = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
-		$color = get_theme_mod( 'link_color', $defualt );
+		$color = get_theme_mod( 'link_color', '#000000' );
 		$nav_padding = get_theme_mod( 'navigation_padding', 10 );
 
 		// css output.

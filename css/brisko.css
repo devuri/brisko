@@ -10,7 +10,7 @@ body a:hover {
 }
 
 body a {
-	color: #E4584B;
+	color: #000000;
 	text-decoration: none;
 	background-color: transparent;
 	line-height: 1.75;
@@ -163,7 +163,7 @@ nav.main-navigation a {
 }
 
 nav.main-navigation a:hover {
-	color: #E4584B;
+	color: #000000;
 	background-color: #F8F9FA;
 }
 
@@ -487,8 +487,8 @@ input[type="reset"],
 input[type="submit"] {
 	display: inline-block;
 	color: #fff;
-	background-color: #E4584B;
-	border-color: #E4584B;
+	background-color: #000000;
+	border-color: #000000;
 	font-weight: 400;
 	text-align: center;
 	white-space: nowrap;

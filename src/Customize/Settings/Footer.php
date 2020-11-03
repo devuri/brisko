@@ -74,5 +74,6 @@ class Footer
 			)
 		);
 
+		// footer width .
 	}
 }

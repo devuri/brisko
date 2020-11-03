@@ -42,7 +42,7 @@ final class Options
 	 * Header Image width
 	 */
 	public function header_image_width() {
-		echo esc_attr( get_theme_mod( 'header_image_width', 'container-fluid' ) );
+		echo esc_attr( get_theme_mod( 'header_image_width', 'container' ) );
 	}
 
 	/**
@@ -56,7 +56,7 @@ final class Options
 	 * Display Page header.
 	 */
 	public function display_page_header() {
-		if ( ! get_theme_mod( 'display_page_header', 1 ) ) {
+		if ( ! get_theme_mod( 'display_page_header', 0 ) ) {
 			return sanitize_html_class( 'this-display-none' );
 		} else {
 			return sanitize_html_class( 'this-display-show' );
