@@ -121,6 +121,24 @@ class Customizer
 		// Separator Pages Settings.
 		( new Control() )->separator( $wp_customize, esc_html__( 'Pages', 'brisko' ) );
 
+		// Display Page Header.
+		$wp_customize->add_setting(
+			'display_page_header', array(
+				'default'           => absint( 1 ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'display_page_header', array(
+				'label'   => esc_html__( 'Display Page Header', 'brisko' ),
+				'section' => self::$section,
+				'type'    => 'checkbox',
+			)
+		);
+
 		// Pages width.
 		$wp_customize->add_setting(
 			'page_width', array(
@@ -207,6 +225,24 @@ class Customizer
 		 */
 		( new Control() )->header_title( $wp_customize, esc_html__( 'Post Details', 'brisko' ) );
 
+		// Display Post Categories .
+		$wp_customize->add_setting(
+			'display_post_categories', array(
+				'default'           => absint( 1 ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'display_post_categories', array(
+				'label'   => esc_html__( 'Display Post Categories', 'brisko' ),
+				'section' => self::$section,
+				'type'    => 'checkbox',
+			)
+		);
+
 		// Display tags.
 		$wp_customize->add_setting(
 			'display_tags', array(
@@ -237,25 +273,7 @@ class Customizer
 
 		$wp_customize->add_control(
 			'display_previous_next', array(
-				'label'   => esc_html__( 'Display Previous and Next Post Navigation', 'brisko' ),
-				'section' => self::$section,
-				'type'    => 'checkbox',
-			)
-		);
-
-		// Display Post Categories .
-		$wp_customize->add_setting(
-			'display_post_categories', array(
-				'default'           => absint( 1 ),
-				'capability'        => 'edit_theme_options',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'absint',
-			)
-		);
-
-		$wp_customize->add_control(
-			'display_post_categories', array(
-				'label'   => esc_html__( 'Display Post Categories', 'brisko' ),
+				'label'   => esc_html__( 'Display Previous and Next Navigation', 'brisko' ),
 				'section' => self::$section,
 				'type'    => 'checkbox',
 			)
@@ -335,6 +353,8 @@ class Customizer
 		$wp_customize->get_setting( 'featured_image' )->transport   = self::$transport;
 		$wp_customize->get_setting( 'footer_copyright' )->transport = self::$transport;
 		$wp_customize->get_setting( 'poweredby' )->transport        = self::$transport;
+
+		// .
 		$wp_customize->get_setting( 'blogname' )->transport         = self::$transport;
 		$wp_customize->get_setting( 'blogdescription' )->transport  = self::$transport;
 		$wp_customize->get_setting( 'header_textcolor' )->transport = self::$transport;

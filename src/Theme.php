@@ -43,6 +43,17 @@ class Theme
 	}
 
 	/**
+	 * Display Page header.
+	 */
+	public static function display_page_header() {
+		if ( ! get_theme_mod( 'display_page_header', 1 ) ) {
+			return sanitize_html_class( 'this-display-none' );
+		} else {
+			return sanitize_html_class( 'this-display-show' );
+		}
+	}
+
+	/**
 	 * Page width
 	 */
 	public static function page_width() {
@@ -85,6 +96,18 @@ class Theme
 			return sanitize_html_class( 'this-display-show' );
 		}
 	}
+
+	/**
+	 * Display Post Categories.
+	 */
+	public static function display_post_categories() {
+		if ( ! get_theme_mod( 'display_post_categories', 1 ) ) {
+			return sanitize_html_class( 'this-display-none' );
+		} else {
+			return '';
+		}
+	}
+
 
 	/**
 	 * Template

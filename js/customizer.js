@@ -37,6 +37,39 @@
     } );
   } );
 
+  // cat-links
+  wp.customize( 'display_post_categories', function( value ) {
+    value.bind( function( to ) {
+		if ( false === to ) {
+			$( '.cat-links' ).addClass( "this-display-none" );
+		} else {
+			$( '.cat-links' ).removeClass( "this-display-none" );
+		}
+    } );
+  } );
+
+  // tags-links
+  wp.customize( 'display_tags', function( value ) {
+	value.bind( function( to ) {
+	  if ( false === to ) {
+		  $( '.tags-links' ).addClass( "this-display-none" );
+	  } else {
+		  $( '.tags-links' ).removeClass( "this-display-none" );
+	  }
+	} );
+  } );
+
+  // post-navigation
+  wp.customize( 'display_previous_next', function( value ) {
+	value.bind( function( to ) {
+	  if ( false === to ) {
+		  $( '.post-navigation' ).addClass( "this-display-none" );
+	  } else {
+		  $( '.post-navigation' ).removeClass( "this-display-none" );
+	  }
+	} );
+  } );
+
   // footer poweredby
   wp.customize( 'poweredby', function( value ) {
     value.bind( function( to ) {

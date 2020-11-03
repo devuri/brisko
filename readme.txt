@@ -1,7 +1,7 @@
 === Brisko ===
 Contributors: icelayer
 Tested up to: 5.5
-Version: 0.7.3
+Version: 0.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -130,3 +130,9 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 * Add Page width Full Page setting
 * Add Post width Full Page setting
 * Add Read More Button setting
+
+= 0.7.4 =
+* Fix Display Post Tags
+* Fix Display Previous and Next Post Navigation
+* Fix Display Post Categories
+* Add Display Page Header

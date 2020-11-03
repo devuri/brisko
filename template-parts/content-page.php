@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="page-header">
+	<header class="page-header <?php echo esc_attr( Brisko\Theme::display_page_header() ); ?>">
 		<?php the_title( '<h2 class="page-title archive-title entry-meta">', '</h2>' ); ?>
 	</header><!-- .entry-header -->
 	<?php brisko_post_thumbnail(); ?>
