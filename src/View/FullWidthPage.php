@@ -36,7 +36,7 @@ class FullWidthPage extends Layout
 	 */
 	public static function head() {
 		brisko_page_header(); ?>
-		<main id="primary" class="full-width-template bg-white">
+		<main id="primary" class="full-width-template">
 		<?php
 	}
 

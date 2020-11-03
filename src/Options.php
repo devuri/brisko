@@ -39,6 +39,13 @@ final class Options
 	}
 
 	/**
+	 * Header Image width
+	 */
+	public function header_image_width() {
+		echo esc_attr( get_theme_mod( 'header_image_width', 'container-fluid' ) );
+	}
+
+	/**
 	 * Navigation width
 	 */
 	public function navigation_width() {
