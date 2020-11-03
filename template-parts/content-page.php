@@ -13,7 +13,7 @@
 	<header class="page-header <?php echo esc_attr( Brisko\Theme::options()->display_page_header() ); ?>">
 		<?php the_title( '<h2 class="page-title archive-title entry-meta">', '</h2>' ); ?>
 	</header><!-- .entry-header -->
-	<?php brisko_post_thumbnail(); ?>
+	<?php Brisko\Theme::post_thumbnail(); ?>
 	<div class="entry-content">
 		<?php
 		the_content();
