@@ -1,4 +1,5 @@
 <?php
+
 namespace Brisko\Customize;
 
 use Brisko\Customize\Settings\General;

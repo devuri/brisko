@@ -2,7 +2,7 @@
 
 namespace Brisko\Customize;
 
-class Customizer
+final class Customizer
 {
 	/**
 	 * Initialize the Customizer

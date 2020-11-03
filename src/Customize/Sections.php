@@ -1,4 +1,5 @@
 <?php
+
 namespace Brisko\Customize;
 
 final class Sections {
