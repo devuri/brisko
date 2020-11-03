@@ -74,7 +74,7 @@ class Customizer
 			// build out each section.
 			$wp_customize->add_section( 'brisko_section_' . trim( $section ),
 				array(
-					'title'      => __( ' » ' . trim( ucwords( $section ) ) ), // @codingStandardsIgnoreLine
+					'title'      => esc_html( ' » ' . trim( ucwords( $section ) ) ),
 					'capability' => 'edit_theme_options',
 					'panel'      => 'brisko_theme_panel',
 				)
