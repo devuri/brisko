@@ -94,7 +94,7 @@ final class Activate
 				apply_filters(
 					'brisko_custom_background_args',
 					array(
-						'default-color' => 'ffffff',
+						'default-color' => '#f3f3f3',
 						'default-image' => '',
 					)
 				)
