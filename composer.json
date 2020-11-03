@@ -4,10 +4,10 @@
         "Brisko\\":"src"
 	},
 	  	"files": [
-			"src/Includes/actions.php",
-			"src/Includes/custom-header.php",
-			"src/Includes/customizer.php",
-			"src/Includes/template-tags.php"
+			"src/inc/actions.php",
+			"src/inc/custom-header.php",
+			"src/inc/customizer.php",
+			"src/inc/template-tags.php"
 		]
     },
     "config": {
