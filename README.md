@@ -9,7 +9,8 @@ Brisko is a beautifully simple and lightweight WordPress theme that is optimized
 
 For more information about the Brisko Theme please go to https://wpbrisko.com
 
-![screenshot](https://user-images.githubusercontent.com/4777400/85940125-27509900-b8e0-11ea-8dfa-aaeca9fcdcfc.png)
+![brisko-theme-v4-optimized](https://user-images.githubusercontent.com/4777400/98036232-b0746100-1de7-11eb-86b8-1ec3f9f52a59.png)
+
 
 #### GPL-2.0 License
 Brisko WordPress Theme, Copyright 2020 Uriel Wilson.
