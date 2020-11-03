@@ -39,7 +39,7 @@ class General
 		$wp_customize->add_setting(
 			'link_color', array(
 				'capability'        => 'manage_options',
-				'default'           => '#E4584B',
+				'default'           => '#000000',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'sanitize_hex_color',
 			)
