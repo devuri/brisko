@@ -57,10 +57,11 @@ final class Enqueue
 	 * Enqueue scripts and styles.
 	 */
 	public function brisko_scripts() {
-		wp_enqueue_style( 'brisko-theme-style', get_stylesheet_uri(), array( 'underscores', 'bootstrap' ), Theme::VERSION );
+		wp_enqueue_style( 'brisko-theme', get_stylesheet_uri(), array( 'underscores', 'bootstrap', 'brisko' ), Theme::VERSION );
 		wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
 
-		wp_enqueue_style( 'custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array( 'brisko-theme-style' ), Theme::VERSION );
+		wp_enqueue_style( 'brisko', get_template_directory_uri() . '/css/brisko.css', array(), Theme::VERSION );
+		wp_enqueue_style( 'custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array( 'brisko-theme' ), Theme::VERSION );
 
 		/**
 		 * Bootstrap
