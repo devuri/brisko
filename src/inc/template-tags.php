@@ -31,7 +31,6 @@ if ( ! function_exists( 'brisko_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-
 				edit_post_link(
 					sprintf(
 						wp_kses(
@@ -78,14 +77,14 @@ if ( ! function_exists( 'brisko_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( '  ', 'brisko' ) );
+			$categories_list = get_the_category_list( esc_html__( '  ', 'brisko' ) ); // @codingStandardsIgnoreLine
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
 				printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, Brisko\Theme::options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'brisko' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'brisko' ) ); // @codingStandardsIgnoreLine
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
 				printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, Brisko\Theme::options()->display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -114,46 +113,6 @@ if ( ! function_exists( 'brisko_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'brisko_post_thumbnail' ) ) :
-	/**
-	 * Displays an optional post thumbnail.
-	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
-	 */
-	function brisko_post_thumbnail() {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-			return;
-		}
-
-		if ( is_singular() ) :
-			?>
-
-			<div class="post-thumbnail <?php Brisko\Theme::options()->post_thumbnail_display(); ?>">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
-
-		<?php else : ?>
-
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-				?>
-			</a>
-
-			<?php
-		endif; // End is_singular().
-	}
-endif;
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**

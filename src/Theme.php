@@ -2,6 +2,7 @@
 
 namespace Brisko;
 
+use Brisko\View\Thumbnail;
 use Brisko\View\FooterCredits;
 use Brisko\Customize\Customizer;
 
@@ -30,7 +31,7 @@ final class Theme
 	/**
 	 * Define Theme Version
 	 */
-	const VERSION = '0.9.1';
+	const VERSION = '0.9.3';
 
 	/**
 	 * [__construct description]
@@ -50,6 +51,13 @@ final class Theme
 	 */
 	public static function header() {
 		return Header::init();
+	}
+
+	/**
+	 * Displays an optional post thumbnail.
+	 */
+	public static function post_thumbnail() {
+		Thumbnail::get()->post_thumbnail();
 	}
 
 	/**
