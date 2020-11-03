@@ -57,32 +57,6 @@ class General
 		);
 
 		/**
-		 * Header Image
-		 */
-		$wp_customize->add_setting(
-			'website_width', array(
-				'sanitize_callback' => 'absint',
-				'default'           => 'entire-site',
-			)
-		);
-
-		$wp_customize->add_control(
-			'website_width', array(
-				'label'       => esc_html__( 'Site Width', 'brisko' ),
-				'description' => esc_html__( 'website with, only applies with Box layout', 'brisko' ),
-				'section'     => self::$section,
-				'type'        => 'select',
-				'choices'     => array(
-					1200 => esc_html__( 'XXL (1200)', 'brisko' ),
-					1140 => esc_html__( 'XL (1140)', 'brisko' ),
-					960  => esc_html__( 'L (960)', 'brisko' ),
-					720  => esc_html__( 'M (720)', 'brisko' ),
-					540  => esc_html__( 'S (540)', 'brisko' ),
-				),
-			)
-		);
-
-		/**
 		 * Disable Sidebar
 		 */
 		( new Control() )->header_title( $wp_customize, esc_html__( 'Sidebar', 'brisko' ), self::$section );
