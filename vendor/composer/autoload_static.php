@@ -7,10 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
 {
     public static $files = array (
-        'bfe4c115bf472a7ffc0ecf6af254fa3b' => __DIR__ . '/../..' . '/src/Includes/actions.php',
-        'e2dfbebf28d16a9491ae3797ab185a35' => __DIR__ . '/../..' . '/src/Includes/custom-header.php',
-        '07f7b1f0c3cda4b437f2c8fec7b4f438' => __DIR__ . '/../..' . '/src/Includes/customizer.php',
-        '99bc6bf0598402d4282cd7e6ecbbe3a2' => __DIR__ . '/../..' . '/src/Includes/template-tags.php',
+        '12534e0e28f71b5f4918fa2cb8b68fab' => __DIR__ . '/../..' . '/src/inc/actions.php',
+        'de3366fb7a3a78723023c5dc4de88fc2' => __DIR__ . '/../..' . '/src/inc/custom-header.php',
+        '2d5ac3b8c1d4618606a94aa967480af1' => __DIR__ . '/../..' . '/src/inc/customizer.php',
+        '30f493bd22578a96783edb4fcad2892b' => __DIR__ . '/../..' . '/src/inc/template-tags.php',
     );
 
     public static $prefixLengthsPsr4 = array (
