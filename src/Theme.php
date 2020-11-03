@@ -5,7 +5,7 @@ namespace Brisko;
 use Brisko\View\FooterCredits;
 use Brisko\Customize\Customizer;
 
-class Theme
+final class Theme
 {
 
 	/**
@@ -28,86 +28,38 @@ class Theme
 	}
 
 	/**
+	 * Define Theme Version
+	 */
+	const VERSION = '0.7.7';
+
+	/**
 	 * [__construct description]
 	 */
 	private function __construct() {
+		Activate::init();
+		Enqueue::init();
+		Header::init();
 		Customizer::init();
 		add_action( 'brisko_footer_credit', array( FooterCredits::class, 'init' ) );
 	}
 
 	/**
-	 * Navigation width
+	 * Theme Header
+	 *
+	 * @return Header .
 	 */
-	public static function navigation_width() {
-		echo esc_attr( get_theme_mod( 'navigation_width', 'container' ) );
+	public static function header() {
+		return Header::init();
 	}
 
 	/**
-	 * Display Page header.
+	 * Theme Options
+	 *
+	 * @return Options .
 	 */
-	public static function display_page_header() {
-		if ( ! get_theme_mod( 'display_page_header', 1 ) ) {
-			return sanitize_html_class( 'this-display-none' );
-		} else {
-			return sanitize_html_class( 'this-display-show' );
-		}
+	public static function options() {
+		return Options::get();
 	}
-
-	/**
-	 * Page width
-	 */
-	public static function page_width() {
-		echo esc_attr( get_theme_mod( 'page_width', 'container' ) );
-	}
-
-	/**
-	 * Post width
-	 */
-	public static function post_width() {
-		echo esc_attr( get_theme_mod( 'post_width', 'container' ) );
-	}
-
-	/**
-	 * Button border radius
-	 */
-	public static function button_border_radius() {
-		if ( ! get_theme_mod( 'read_more_border_radius', 1 ) ) {
-			return sanitize_html_class( 'this-button-border-radius-none' );
-		} else {
-			return sanitize_html_class( 'this-button-border-radius' );
-		}
-	}
-
-	/**
-	 * Navigation width
-	 */
-	public static function post_thumbnail_display() {
-		$navigation_width = get_theme_mod( 'featured_image', 'container' );
-		echo esc_attr( $navigation_width );
-	}
-
-	/**
-	 * Display tags.
-	 */
-	public static function display_tags() {
-		if ( ! get_theme_mod( 'display_tags', 1 ) ) {
-			return sanitize_html_class( 'this-display-none' );
-		} else {
-			return sanitize_html_class( 'this-display-show' );
-		}
-	}
-
-	/**
-	 * Display Post Categories.
-	 */
-	public static function display_post_categories() {
-		if ( ! get_theme_mod( 'display_post_categories', 1 ) ) {
-			return sanitize_html_class( 'this-display-none' );
-		} else {
-			return '';
-		}
-	}
-
 
 	/**
 	 * Template

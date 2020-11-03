@@ -38,7 +38,7 @@ class FooterCredits
 	public function copyright() {
 
 		if ( get_theme_mod( 'footer_copyright' ) !== false ) {
-			$copyright = '<span class="brisko-footer-copyright">' . esc_html__( get_theme_mod( 'footer_copyright' ) ) . '</span>'; // @codingStandardsIgnoreLine
+			$copyright = '<span class="brisko-footer-copyright">' . esc_html( get_theme_mod( 'footer_copyright' ) ) . '</span>'; // @codingStandardsIgnoreLine
 		} else {
 			$copyright = get_bloginfo( 'name' );
 		}
@@ -66,7 +66,7 @@ class FooterCredits
 	 * @return void
 	 */
 	public function get_footer_credits() {
-		printf( esc_html__( '%1$s %2$s %3$s', 'brisko' ), $this->copyright(), '   ', $this->poweredby() ); // @codingStandardsIgnoreLine
+		printf( esc_html__( '%1$s %2$s %3$s', 'brisko' ), wp_kses_post( $this->copyright() ), '   ', wp_kses_post( $this->poweredby() ) ); // @codingStandardsIgnoreLine
 	}
 
 }

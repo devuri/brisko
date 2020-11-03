@@ -20,7 +20,7 @@
 		endif;
 		?>
 		<?php brisko_before_entry_meta(); ?>
-			<div class="entry-meta secondary-font">
+			<div class="entry-meta ">
 				<?php
 				brisko_posted_on();
 				brisko_posted_by();
@@ -46,15 +46,15 @@
 			)
 		);
 		?>
-			<footer class="entry-footer secondary-font">
+			<footer class="entry-footer ">
 				<?php brisko_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
 	<?php
 	else :
 		the_excerpt();
 		?>
-		<div class="read-more secondary-font">
-			<a class="more-link <?php echo esc_html( Brisko\Theme::button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
+		<div class="read-more ">
+			<a class="more-link <?php echo esc_html( Brisko\Theme::options()->button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
 			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
 		</a>
 	</div>

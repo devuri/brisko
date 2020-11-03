@@ -33,7 +33,7 @@ class Page extends Layout
 	 */
 	public static function head() {
 		brisko_page_header(); ?>
-		<main id="primary" class="site-main <?php Theme::page_width(); ?> bg-white">
+		<main id="primary" class="site-main <?php Theme::options()->page_width(); ?> bg-white">
 		<?php
 	}
 

@@ -81,14 +81,14 @@ if ( ! function_exists( 'brisko_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( '  ', 'brisko' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, Brisko\Theme::display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, Brisko\Theme::options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'brisko' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<br/><span class="tags-links secondary-font %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, Brisko\Theme::display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, Brisko\Theme::options()->display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
@@ -129,7 +129,7 @@ if ( ! function_exists( 'brisko_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail <?php Brisko\Theme::post_thumbnail_display(); ?>">
+			<div class="post-thumbnail <?php Brisko\Theme::options()->post_thumbnail_display(); ?>">
 				<?php the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
 

@@ -6,9 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Brisko\\Activate' => $baseDir . '/src/Activate.php',
     'Brisko\\Customize\\Controls\\Control' => $baseDir . '/src/Customize/Controls/Control.php',
+    'Brisko\\Customize\\Controls\\HeaderControl' => $baseDir . '/src/Customize/Controls/HeaderControl.php',
     'Brisko\\Customize\\Controls\\SeparatorControl' => $baseDir . '/src/Customize/Controls/SeparatorControl.php',
     'Brisko\\Customize\\Customizer' => $baseDir . '/src/Customize/Customizer.php',
+    'Brisko\\Enqueue' => $baseDir . '/src/Enqueue.php',
+    'Brisko\\Header' => $baseDir . '/src/Header.php',
+    'Brisko\\Options' => $baseDir . '/src/Options.php',
     'Brisko\\Template' => $baseDir . '/src/Template.php',
     'Brisko\\Theme' => $baseDir . '/src/Theme.php',
     'Brisko\\View\\Archive' => $baseDir . '/src/View/Archive.php',

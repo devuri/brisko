@@ -12,7 +12,7 @@ use Brisko\View\FullWidthPage;
 use Brisko\View\CanvasPage;
 use Brisko\View\Search;
 
-class Template
+final class Template
 {
 	/**
 	 * Private $instance
