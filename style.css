@@ -25,8 +25,17 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-body {
-	color: #333;
+body a:hover {
+	text-decoration: none;
+}
+
+body a {
+	color: #E4584B;
+	text-decoration: none;
+	background-color: transparent;
+	line-height: 1.75;
+	-webkit-font-smoothing: antialiased;
+	transition: all .25s;
 }
 
 .container {
@@ -56,23 +65,6 @@ h6 {
 	/* -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif */
 }
 
-.secondary-font {
-	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-}
-
-body a:hover {
-	text-decoration: none;
-}
-
-body a {
-	color: #E4584B;
-	text-decoration: none;
-	background-color: transparent;
-	line-height: 1.75;
-	-webkit-font-smoothing: antialiased;
-	transition: all .25s;
-}
-
 p {
 	line-height: 1.75;
 	margin: 30px 0;
@@ -93,7 +85,7 @@ blockquote,
 
 th,
 td {
-	border: 1px solid #e2e8f0;
+	border: 1px solid #f0f0f0;
 	padding: 8px 12px;
 }
 
@@ -140,17 +132,13 @@ pre {
 .archive-title {
 	font-size: large;
 	padding: 0.2rem;
-	color: #8F8F8F;
+	/* color: #8F8F8F; */
 }
 
 
 /*--------------------------------------------------------------
 # Main width
 --------------------------------------------------------------*/
-
-.container {
-	max-width: 1200px;
-}
 
 .entry-header {
 	word-wrap: break-word;
@@ -176,9 +164,9 @@ pre {
 div.brisko-navigation {
 	/* margin-bottom: 0.2em; */
 	/* box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075); */
-	/* border-top: 1px solid #E2E8F0;
+	/* border-top: 1px solid #f0f0f0;
 	background-color: #fff;
-	border-bottom: 1px solid #E2E8F0; */
+	border-bottom: 1px solid #f0f0f0; */
 }
 
 nav.main-navigation {
@@ -188,7 +176,7 @@ nav.main-navigation a {
 	font-size: 1rem;
 	/* font-weight: 600; */
 	text-transform: capitalize;
-	color: #353535;
+	/* color: #353535; */
 	padding: 0.6rem 1.2rem;
 	background-color: #FFFFFF;
 }
@@ -199,7 +187,7 @@ nav.main-navigation a:hover {
 }
 
 nav.main-navigation ul ul a {
-	border-bottom: solid thin #e2e8f0;
+	border-bottom: solid thin #f0f0f0;
 }
 
 /*--------------------------------------------------------------
@@ -238,6 +226,21 @@ nav.main-navigation ul ul a {
 	margin-bottom: 4rem;
 }
 
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+    display: block;
+    padding: 0.5em;
+    margin-top: 1em;
+}
+
+.post-page-numbers{
+    padding-left: 8px;
+    padding-right: 8px;
+    border: solid thin #eaeaea;
+    border-radius: 2px;
+}
+
 .read-more {
 	font-weight: 600;
 	font-size: medium;
@@ -246,7 +249,7 @@ nav.main-navigation ul ul a {
 
 .more-link {
     padding: 0.7em 0.8em;
-	border: solid thin #e2e8f0;
+	border: solid thin #f0f0f0;
     text-transform: lowercase;
 }
 
@@ -258,13 +261,9 @@ nav.main-navigation ul ul a {
 	margin-bottom: 1rem;
 }
 
-.primary-content {
-	padding-right: 2rem;
-}
-
 .entry-meta {
     width: 100%;
-    border: solid thin #f1f1f1;
+    border: solid thin #f0f0f0;
     border-left: none;
     border-right: none;
     padding-top: 8px;
@@ -407,11 +406,11 @@ nav.main-navigation ul ul a {
 }
 
 .comment-body {
-	border: solid thin #e2e8f0;
-	padding: 1rem;
-	margin-bottom: 2rem;
-	font-size: medium;
-	word-wrap: break-word;
+    border: solid thin #f0f0f0;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    font-size: medium;
+    word-wrap: break-word;
 }
 
 ol.children {
@@ -460,7 +459,7 @@ ol {
 }
 
 .sidebar ul li {
-	border-bottom: solid thin #E2E8F0;
+	border-bottom: solid thin #f0f0f0;
 	padding: 0.3em 0;
 }
 
@@ -469,7 +468,7 @@ ol {
 	color: black;
 	font-size: inherit;
 	font-weight: 700;
-	border-bottom: solid thin #E2E8F0;
+	border-bottom: solid thin #f0f0f0;
 	text-transform: uppercase;
 }
 
@@ -569,11 +568,5 @@ textarea {
  # Footer
  --------------------------------------------------------------*/
  .entry-footer{
- 		clear: both;
+ 	clear: both;
  }
-
-.site-footer {
-    border-top: 1px solid #E2E8F0;
-    padding: 1rem;
-    font-size: medium;
-}
