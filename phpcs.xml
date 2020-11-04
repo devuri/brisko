@@ -57,27 +57,14 @@
 	<rule ref="Generic.ControlStructures.InlineControlStructure"/>
 
 	<rule ref="WordPress-Extra">
-		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments"/>
-		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
-		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed"/>
-		<exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine"/>
-		<exclude name="Squiz.Commenting.FileComment.Missing"/>
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
 		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed"/>
+		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments"/>
+		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
+		<exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine"/>
 		<exclude name="Squiz.Commenting.ClassComment.Missing"/>
-		<exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning"/>
-		<exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
-		<exclude name="Generic.WhiteSpace.ScopeIndent"/>
-
-		<!-- <exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/> -->
-		<!-- <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" /> -->
-		<!-- <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket" /> -->
-		<!-- <exclude name="PEAR.Functions.FunctionCallSignature.Indent" /> -->
-		<!-- <exclude name="WordPress.WhiteSpace.PrecisionAlignment.Found" /> -->
-		<!-- <exclude name="WordPress.Arrays.ArrayDeclaration.IndexNoNewline" /> -->
-		<!-- <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions.NoSpacesAroundArrayKeys" /> -->
-		<!-- <exclude name="WordPress.PHP.YodaConditions" /> -->
-		<!-- <exclude name="WordPress.Security.EscapeOutput"/> -->
+		<exclude name="Squiz.Commenting.FileComment.Missing"/>
 	</rule>
 
 	<rule ref="WordPress-Core"/>
