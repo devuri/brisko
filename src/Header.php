@@ -60,28 +60,4 @@ final class Header
 		}
 	}
 
-	/**
-	 * Header Image
-	 */
-	public function image() {
-
-		if ( 'this-disabled' === Theme::options()->header_image_display() ) {
-			return false;
-		}
-
-		if ( 'this-home-page-only' === Theme::options()->header_image_display() ) {
-			if ( false === is_front_page() ) {
-				return false;
-			}
-		}
-
-		?>
-			<div class="<?php Theme::options()->header_image_width(); ?> brisko-header-img <?php Theme::options()->header_image_display(); ?>" style="padding:0px">
-				<?php
-					the_header_image_tag( array( 'class' => 'brisko-header-img' ) );
-				?>
-			</div>
-		<?php
-	}
-
 }
