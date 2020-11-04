@@ -39,6 +39,7 @@ final class Theme
 	private function __construct() {
 		Activate::init();
 		Enqueue::init();
+		Body::init();
 		Head::init();
 		Customizer::init();
 		add_action( 'brisko_footer_credit', array( FooterCredits::class, 'init' ) );
