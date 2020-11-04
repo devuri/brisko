@@ -45,6 +45,7 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
         'Brisko\\Customize\\Settings\\SelectiveRefresh' => __DIR__ . '/../..' . '/src/Customize/Settings/SelectiveRefresh.php',
         'Brisko\\Enqueue' => __DIR__ . '/../..' . '/src/Enqueue.php',
         'Brisko\\Header' => __DIR__ . '/../..' . '/src/Header.php',
+        'Brisko\\Navigation' => __DIR__ . '/../..' . '/src/Navigation.php',
         'Brisko\\Options' => __DIR__ . '/../..' . '/src/Options.php',
         'Brisko\\Template' => __DIR__ . '/../..' . '/src/Template.php',
         'Brisko\\Theme' => __DIR__ . '/../..' . '/src/Theme.php',

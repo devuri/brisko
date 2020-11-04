@@ -23,6 +23,7 @@ return array(
     'Brisko\\Customize\\Settings\\SelectiveRefresh' => $baseDir . '/src/Customize/Settings/SelectiveRefresh.php',
     'Brisko\\Enqueue' => $baseDir . '/src/Enqueue.php',
     'Brisko\\Header' => $baseDir . '/src/Header.php',
+    'Brisko\\Navigation' => $baseDir . '/src/Navigation.php',
     'Brisko\\Options' => $baseDir . '/src/Options.php',
     'Brisko\\Template' => $baseDir . '/src/Template.php',
     'Brisko\\Theme' => $baseDir . '/src/Theme.php',
