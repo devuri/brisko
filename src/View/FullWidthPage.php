@@ -2,17 +2,13 @@
 
 namespace Brisko\View;
 
-/**
- *
- */
 class FullWidthPage extends Layout
 {
 
 	/**
 	 * Display content
-	 * @return [type] [description]
 	 */
-	public static function view(){
+	public static function view() {
 
 		self::head();
 
@@ -31,8 +27,7 @@ class FullWidthPage extends Layout
 	}
 
 	/**
-	 * head section
-	 * @return [type] [description]
+	 * Head section
 	 */
 	public static function head() {
 		brisko_page_header(); ?>
@@ -43,8 +38,10 @@ class FullWidthPage extends Layout
 	/**
 	 * Footer section
 	 */
-	public static function footer(){ ?>
+	public static function footer() {
+		?>
 			</main><!-- #main -->
-		<?php brisko_page_footer();
+		<?php
+		brisko_page_footer();
 	}
 }

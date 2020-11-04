@@ -2,17 +2,13 @@
 
 namespace Brisko\View;
 
-/**
- *
- */
 class IndexPage extends Layout
 {
 
 	/**
 	 * Display content
-	 * @return [type] [description]
 	 */
-	public static function view(){
+	public static function view() {
 
 		self::head();
 
@@ -24,7 +20,8 @@ class IndexPage extends Layout
  				<header>
  					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
  				</header>
- 				<?php endif;
+ 				<?php
+			endif;
  			/* Start the Loop */
  			while ( have_posts() ) :
  				the_post();

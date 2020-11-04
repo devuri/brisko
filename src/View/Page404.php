@@ -2,17 +2,13 @@
 
 namespace Brisko\View;
 
-/**
- *
- */
 class Page404 extends Layout
 {
 
 	/**
 	 * Display content
-	 * @return [type] [description]
 	 */
-	public static function view(){
+	public static function view() {
 
 		self::head();
 		?>
@@ -32,13 +28,12 @@ class Page404 extends Layout
 		esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'brisko' );
 
 		get_search_form();
- 		//the_widget( 'WP_Widget_Recent_Posts' );
-
 			?>
-						<br/>
+				<br/>
 					<div class="widget widget_categories">
  					<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'brisko' ); ?></h2>
- 						<ul><?php
+ 						<ul>
+							<?php
  							wp_list_categories(
  								array(
  									'orderby'    => 'count',
@@ -48,7 +43,8 @@ class Page404 extends Layout
  									'number'     => 10,
  								)
  							);
- 					?></ul>
+ 					?>
+				</ul>
  		</div><!-- .widget -->
  		<?php
 

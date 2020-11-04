@@ -2,26 +2,22 @@
 
 namespace Brisko\View;
 
-/**
- *
- */
 class Archive extends Layout
 {
 
 	/**
 	 * Display content
-	 * @return [type] [description]
 	 */
-	public static function view(){
+	public static function view() {
 		self::head();
 
 		brisko_post_header();
 
 		/**
 		 * Post content
-		 * @var [type]
 		 */
-		 if ( have_posts() ) : ?>
+		if ( have_posts() ) :
+			?>
  			<header class="page-header">
  				<?php
  				the_archive_title( '<h2 class="page-title archive-title entry-meta">', '</h2> <br/>' );
