@@ -13,7 +13,7 @@ final class Navigation
 	private static $instance = null;
 
 	/**
-	 * Get Options
+	 * Get Class
 	 *
 	 * @return Navigation ..
 	 */
