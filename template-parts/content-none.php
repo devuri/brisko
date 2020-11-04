@@ -8,13 +8,11 @@
  */
 
 ?>
-<div class="row">
-<div class="col-md-8 primary-content">
+<div class="post-article">
 <section class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title archive-title entry-meta"><?php esc_html_e( 'Nothing Found', 'brisko' ); ?></h1>
 	</header><!-- .page-header -->
-	<div class="page-content">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 			printf(
@@ -41,5 +39,4 @@
 			get_search_form();
 		endif;
 		?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+</div><!-- post-article -->
