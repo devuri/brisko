@@ -31,25 +31,25 @@
 	<div class="entry-content">
 		<?php
 		if ( is_singular() ) :
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'brisko' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-		?>
+			the_content(
+				sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. Only visible to screen readers */
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'brisko' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					wp_kses_post( get_the_title() )
+				)
+			);
+			?>
 			<footer class="entry-footer ">
 				<?php brisko_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
-	<?php
+			<?php
 	else :
 		the_excerpt();
 		?>
@@ -58,7 +58,7 @@
 			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
 		</a>
 	</div>
-	<?php
+		<?php
 	endif;
 		wp_link_pages(
 			array(

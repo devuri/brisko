@@ -1,8 +1,8 @@
 <?php
 
- 	use Brisko\Theme;
+	use Brisko\Theme;
 
- 	/**
- 	 * Search results pages
- 	 */
- 	Theme::template()->search();
+	/**
+	 * Search results pages
+	 */
+	Theme::template()->search();
