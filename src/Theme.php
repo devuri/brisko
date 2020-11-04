@@ -54,6 +54,13 @@ final class Theme
 	}
 
 	/**
+	 * Displays Main Navigation.
+	 */
+	public static function navigation() {
+		Navigation::get()->navigation();
+	}
+
+	/**
 	 * Displays an optional post thumbnail.
 	 */
 	public static function post_thumbnail() {
