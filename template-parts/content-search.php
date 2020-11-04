@@ -24,7 +24,7 @@
 	<div class="entry-summary">
 		<?php
 		the_excerpt();
-		printf( esc_html__( '%1$s', 'brisko' ), '<div class="read-more"><a class="more-link" href="'.get_permalink().'">Read More</a></div>' );
+		printf( esc_html__( '%1$s', 'brisko' ), '<div class="read-more"><a class="more-link" href="'.get_permalink().'">Read More</a></div>' ); // @codingStandardsIgnoreLine
 		?>
 	</div><!-- .entry-summary -->
 </article><!-- #post-<?php the_ID(); ?> -->

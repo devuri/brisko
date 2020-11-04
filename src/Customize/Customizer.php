@@ -7,7 +7,7 @@ final class Customizer
 	/**
 	 * Initialize the Customizer
 	 *
-   	 * @see Theme __construct
+	 * @see Theme __construct
 	 *
 	 * @return Customizer
 	 */

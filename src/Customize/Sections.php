@@ -16,7 +16,7 @@ final class Sections {
 	 *
 	 * Here is where we will add new panel sections
 	 *
-   	 * @see Customizer sections
+	 * @see Customizer sections
 	 *
 	 * @return array $sections
 	 */

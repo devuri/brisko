@@ -10,7 +10,6 @@ class CanvasPage extends Layout
 
 	/**
 	 * Display content
-	 * @return [type] [description]
 	 */
 	public static function view(){
 
@@ -19,7 +18,7 @@ class CanvasPage extends Layout
 		/**
 		 * Page content
 		 */
-		 while ( have_posts() ) :
+		while ( have_posts() ) :
  			the_post();
  			get_template_part( 'template-parts/content', 'full-width' );
  			if ( comments_open() || get_comments_number() ) :
@@ -31,8 +30,7 @@ class CanvasPage extends Layout
 	}
 
 	/**
-	 * head section
-	 * @return [type] [description]
+	 * Head section
 	 */
 	public static function head() {
 		brisko_page_header(); ?>
@@ -43,8 +41,10 @@ class CanvasPage extends Layout
 	/**
 	 * Footer section
 	 */
-	public static function footer(){ ?>
+	public static function footer() {
+		?>
 			</main><!-- #main -->
-		<?php brisko_page_footer();
+		<?php
+		brisko_page_footer();
 	}
 }

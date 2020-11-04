@@ -7,9 +7,8 @@ class Search extends Layout
 
 	/**
 	 * Display content
-	 * @return [type] [description]
 	 */
-	public static function view(){
+	public static function view() {
 
 		self::head();
 
@@ -24,8 +23,8 @@ class Search extends Layout
 			</header><!-- .page-header -->
 			<br/>
 			<?php
-				/* Start the Loop */
-				while ( have_posts() ) :
+			// Start the Loop.
+			while ( have_posts() ) :
 						the_post();
 						/**
 						 * Run the loop for the search to output the results.
@@ -37,8 +36,8 @@ class Search extends Layout
 					the_posts_navigation();
 				else :
 					get_template_part( 'template-parts/content', 'none' );
-				endif;
+		endif;
 
-		self::footer();
+				self::footer();
 	}
 }
