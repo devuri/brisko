@@ -13,7 +13,6 @@
 	<!-- Check all files in this directory and the directories below it. -->
 	<file>.</file>
 
-
 	<!-- Include the WordPress ruleset. -->
 	<rule ref="WordPress">
 		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
@@ -23,7 +22,6 @@
 		<exclude name="WPThemeReview.PluginTerritory.ForbiddenFunctions.editor_blocks_register_block_pattern_category" />
 		<exclude name="PHPCompatibility.FunctionDeclarations.NewClosure.Found" />
 	</rule>
-
 
 	<!-- Verify that the text_domain is set to the desired text-domain.
 	 Multiple valid text domains can be provided as a comma-delimited list. -->
