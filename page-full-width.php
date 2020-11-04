@@ -7,7 +7,7 @@
 
 	use Brisko\Theme;
 
- 	/**
- 	 * Page Brisko Full Width
- 	 */
- 	Theme::template()->full_width_page();
+	/**
+	 * Page Brisko Full Width
+	 */
+	Theme::template()->full_width_page();

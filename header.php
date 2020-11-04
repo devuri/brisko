@@ -39,7 +39,7 @@
 							</a>
 							<?php
 								$brisko_description = get_bloginfo( 'description', 'display' );
-								if ( $brisko_description || is_customize_preview() ) :
+							if ( $brisko_description || is_customize_preview() ) :
 								?>
 								<small class="site-description text-muted align-items-center">
 									<?php echo $brisko_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -49,7 +49,7 @@
 				</div>
 					<nav id="site-navigation" class="my-2 my-md-0 mr-md-3 main-navigation ">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'brisko' ); ?></button>
-					    <?php wp_nav_menu( array( 'theme_location' => 'menu-1' ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'menu-1' ) ); ?>
 					</nav>
 			</div>
 		</div>

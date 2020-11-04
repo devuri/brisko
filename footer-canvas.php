@@ -11,7 +11,7 @@
 
 	brisko_before_footer();
 	brisko_footer();
-	?>
+?>
 	</div><!-- #page -->
 		<?php wp_footer(); ?>
 		<?php brisko_after_footer(); ?>
