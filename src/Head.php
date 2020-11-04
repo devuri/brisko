@@ -2,7 +2,7 @@
 
 namespace Brisko;
 
-final class Header
+final class Head
 {
 	/**
 	 * Private $instance
@@ -19,7 +19,7 @@ final class Header
 	public static function init() {
 
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new Header();
+			self::$instance = new Head();
 		}
 		return self::$instance;
 	}
