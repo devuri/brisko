@@ -19,14 +19,10 @@
 </head>
 <body <?php body_class( 'brisko-font brisko-font-style' ); ?>>
 <?php wp_body_open(); ?>
-
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'brisko' ); ?></a>
 <?php brisko_before_header(); ?>
-	<header id="masthead" class="site-header">
-	<?php Brisko\Theme::navigation(); ?>
-	<?php Brisko\Theme::header()->image(); ?>
-</header><!-- #masthead -->
+	<?php Brisko\Theme::header(); ?>
 <?php brisko_after_header(); ?>
 <?php if ( is_front_page() && is_home() ) :
 	brisko_homepage_header();

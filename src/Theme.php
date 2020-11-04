@@ -47,17 +47,10 @@ final class Theme
 	/**
 	 * Theme Header
 	 *
-	 * @return Header .
+	 * @return SiteHeader .
 	 */
 	public static function header() {
-		return Header::init();
-	}
-
-	/**
-	 * Displays Main Navigation.
-	 */
-	public static function navigation() {
-		Navigation::get()->navigation();
+		return SiteHeader::get()->site_header();
 	}
 
 	/**
