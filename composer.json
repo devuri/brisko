@@ -4,9 +4,9 @@
         "Brisko\\":"src"
 	},
 	  	"files": [
+			"src/Customize/helpers.php",
 			"src/inc/actions.php",
 			"src/inc/custom-header.php",
-			"src/inc/customizer.php",
 			"src/inc/template-tags.php"
 		]
     },
