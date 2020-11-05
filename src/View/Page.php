@@ -35,9 +35,8 @@ class Page extends Layout
 	 * Head section
 	 */
 	public static function head() {
-		brisko_page_header(); ?>
-		<main id="primary" class="site-main <?php Theme::options()->page_width(); ?> bg-white">
-		<?php
+		brisko_page_header();
+		get_template_part( 'template-parts/head', 'page' );
 	}
 
 	/**

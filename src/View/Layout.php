@@ -17,6 +17,7 @@ abstract class Layout
 
 	/**
 	 * Display content
+	 * this here for PHP compatability, will be declared in child class.
 	 */
 	public static function view() {
 		// return the view .
@@ -37,31 +38,19 @@ abstract class Layout
 	 * Head section
 	 *
 	 * @return void
-	 */
-	public static function no_sidebar(){ ?>
-		<main id="primary" class="site-main <?php Theme::options()->post_width(); ?> bg-white">
-			<div class="row">
-				<div class="col-md primary-content">
-		<?php
-	}
-
-	/**
-	 * Head section
-	 *
-	 * @return void
+	 * @link https://developer.wordpress.org/reference/functions/get_template_part/
 	 */
 	public static function head() {
 
-		if ( self::is_disabled() ) {
-			echo self::no_sidebar(); // @codingStandardsIgnoreLine
-			return;
-		}
+		// check if sidebar or not .
+		$no_sidebar      = sanitize_html_class( 'col-md' );
+		$sidebar         = sanitize_html_class( 'col-md-8' );
+		$sidebar_display = ( ( self::is_disabled() ) ? $no_sidebar : $sidebar );
 
-		?>
-		<main id="primary" class="site-main <?php Theme::options()->post_width(); ?> bg-white">
-			<div class="row">
-				<div class="col-md-8 primary-content">
-		<?php
+		// params .
+		$args = array( 'content_class' => $sidebar_display );
+		get_template_part( 'template-parts/head', 'blog', $args );
+
 	}
 
 	/**
@@ -72,14 +61,8 @@ abstract class Layout
 		if ( self::is_disabled() ) {
 			return false;
 		}
+		get_template_part( 'template-parts/sidebar' );
 
-		?>
-		<div class="col-md-4">
-			<div class="sidebar mb-4  avs-sidebar pad-left-1m">
-				<?php get_sidebar(); ?>
-			</div><!-- sidebar -->
-		</div><!-- col 4 -->
-		<?php
 	}
 
 	/**
