@@ -2,15 +2,12 @@
 
 namespace Brisko;
 
+use Brisko\Traits\Singleton;
+
 final class Footer
 {
 
-	/**
-	 * Class instance.
-	 *
-	 * @var $instance
-	 */
-	private static $instance = null;
+	use Singleton;
 
 	/**
 	 * Get Class
@@ -18,18 +15,9 @@ final class Footer
 	 * @return Footer ..
 	 */
 	public static function get() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new Footer();
-		}
-		return self::$instance;
+		return new Footer();
 	}
 
-	/**
-	 * [__construct description]
-	 */
-	private function __construct() {
-		// nothing to see here .
-	}
 
 	/**
 	 * Header Image

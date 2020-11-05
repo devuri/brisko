@@ -2,17 +2,13 @@
 
 namespace Brisko\View;
 
+use Brisko\Traits\Singleton;
 use Brisko\Options;
 
 class Thumbnail
 {
 
-	/**
-	 * Class instance.
-	 *
-	 * @var $instance
-	 */
-	private static $instance = null;
+	use Singleton;
 
 	/**
 	 * Get Options
@@ -20,17 +16,7 @@ class Thumbnail
 	 * @return Thumbnail ..
 	 */
 	public static function get() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new Thumbnail();
-		}
-		return self::$instance;
-	}
-
-	/**
-	 * [__construct description]
-	 */
-	private function __construct() {
-		// nothing to see here .
+		return new Thumbnail();
 	}
 
 	/**

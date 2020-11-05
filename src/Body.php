@@ -2,15 +2,12 @@
 
 namespace Brisko;
 
+use Brisko\Traits\Singleton;
+
 final class Body
 {
 
-	/**
-	 * Class instance.
-	 *
-	 * @var $instance
-	 */
-	private static $instance = null;
+	use Singleton;
 
 	/**
 	 * Get Class
@@ -18,10 +15,7 @@ final class Body
 	 * @return Body ..
 	 */
 	public static function init() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new Body();
-		}
-		return self::$instance;
+		return new Body();
 	}
 
 	/**

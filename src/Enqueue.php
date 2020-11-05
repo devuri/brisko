@@ -2,14 +2,12 @@
 
 namespace Brisko;
 
+use Brisko\Traits\Singleton;
+
 final class Enqueue
 {
-	/**
-	 * Private $instance
-	 *
-	 * @var $instance
-	 */
-	private static $instance;
+
+	use Singleton;
 
 	/**
 	 * Singleton
@@ -17,11 +15,7 @@ final class Enqueue
 	 * @return object
 	 */
 	public static function init() {
-
-		if ( ! isset( self::$instance ) ) {
-			self::$instance = new Enqueue();
-		}
-		return self::$instance;
+		return new Enqueue();
 	}
 
 	/**

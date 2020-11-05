@@ -2,11 +2,12 @@
 
 namespace Brisko\View;
 
-/**
- *
- */
+use Brisko\Traits\Singleton;
+
 class CanvasPage extends Layout
 {
+
+	use Singleton;
 
 	/**
 	 * Display content

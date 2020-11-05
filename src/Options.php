@@ -2,15 +2,12 @@
 
 namespace Brisko;
 
+use Brisko\Traits\Singleton;
+
 final class Options
 {
 
-	/**
-	 * Class instance.
-	 *
-	 * @var $instance
-	 */
-	private static $instance = null;
+	use Singleton;
 
 	/**
 	 * Get Options
@@ -18,17 +15,8 @@ final class Options
 	 * @return Options ..
 	 */
 	public static function get() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new Options();
-		}
-		return self::$instance;
-	}
+		return new Options();
 
-	/**
-	 * [__construct description]
-	 */
-	private function __construct() {
-		// nothing to see here .
 	}
 
 	/**

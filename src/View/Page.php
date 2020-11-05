@@ -2,10 +2,13 @@
 
 namespace Brisko\View;
 
+use Brisko\Traits\Singleton;
 use Brisko\Theme;
 
 class Page extends Layout
 {
+
+	use Singleton;
 
 	/**
 	 * Display content

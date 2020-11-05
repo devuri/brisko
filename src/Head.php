@@ -2,14 +2,12 @@
 
 namespace Brisko;
 
+use Brisko\Traits\Singleton;
+
 final class Head
 {
-	/**
-	 * Private $instance
-	 *
-	 * @var $instance
-	 */
-	private static $instance;
+
+	use Singleton;
 
 	/**
 	 * Singleton
@@ -17,11 +15,7 @@ final class Head
 	 * @return object
 	 */
 	public static function init() {
-
-		if ( ! isset( self::$instance ) ) {
-			self::$instance = new Head();
-		}
-		return self::$instance;
+		return new Head();
 	}
 
 	/**
