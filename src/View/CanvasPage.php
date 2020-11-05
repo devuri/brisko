@@ -11,7 +11,7 @@ class CanvasPage extends Layout
 	/**
 	 * Display content
 	 */
-	public static function view(){
+	public static function view() {
 
 		self::head();
 
@@ -19,12 +19,12 @@ class CanvasPage extends Layout
 		 * Page content
 		 */
 		while ( have_posts() ) :
- 			the_post();
- 			get_template_part( 'template-parts/content', 'full-width' );
- 			if ( comments_open() || get_comments_number() ) :
- 				comments_template();
- 			endif;
- 		endwhile;
+			the_post();
+			get_template_part( 'template-parts/content', 'full-width' );
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		endwhile;
 
 		self::footer();
 	}

@@ -31,7 +31,7 @@ final class Theme
 	/**
 	 * Define Theme Version
 	 */
-	const VERSION = '0.9.5';
+	const VERSION = '0.9.6';
 
 	/**
 	 * [__construct description]
@@ -39,7 +39,7 @@ final class Theme
 	private function __construct() {
 		Activate::init();
 		Enqueue::init();
-		Header::init();
+		Head::init();
 		Customizer::init();
 		add_action( 'brisko_footer_credit', array( FooterCredits::class, 'init' ) );
 	}
@@ -47,17 +47,10 @@ final class Theme
 	/**
 	 * Theme Header
 	 *
-	 * @return Header .
+	 * @return SiteHeader .
 	 */
 	public static function header() {
-		return Header::init();
-	}
-
-	/**
-	 * Displays Main Navigation.
-	 */
-	public static function navigation() {
-		Navigation::get()->navigation();
+		return SiteHeader::get()->site_header();
 	}
 
 	/**

@@ -15,7 +15,7 @@ class Sidebar
 		}
 
 		?>
-			<aside id="secondary" class="widget-area">
+		<aside id="secondary" class="widget-area">
 		<?php
 		/**
 		 * Sidebar
@@ -24,8 +24,8 @@ class Sidebar
 		dynamic_sidebar( 'sidebar-1' );
 		brisko_after_sidebar();
 
-				?>
-			</aside><!-- #secondary -->
+		?>
+		</aside><!-- #secondary -->
 		<?php
 	}
 

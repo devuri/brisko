@@ -2,7 +2,7 @@
 
 namespace Brisko;
 
-final class Header
+final class Head
 {
 	/**
 	 * Private $instance
@@ -19,7 +19,7 @@ final class Header
 	public static function init() {
 
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new Header();
+			self::$instance = new Head();
 		}
 		return self::$instance;
 	}
@@ -58,30 +58,6 @@ final class Header
 		if ( is_singular() && pings_open() ) {
 			printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 		}
-	}
-
-	/**
-	 * Header Image
-	 */
-	public function image() {
-
-		if ( 'this-disabled' === Theme::options()->header_image_display() ) {
-			return false;
-		}
-
-		if ( 'this-home-page-only' === Theme::options()->header_image_display() ) {
-			if ( false === is_front_page() ) {
-				return false;
-			}
-		}
-
-		?>
-			<div class="<?php Theme::options()->header_image_width(); ?> brisko-header-img <?php Theme::options()->header_image_display(); ?>" style="padding:0px">
-				<?php
-					the_header_image_tag( array( 'class' => 'brisko-header-img' ) );
-				?>
-			</div>
-		<?php
 	}
 
 }
