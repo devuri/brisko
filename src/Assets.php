@@ -4,7 +4,7 @@ namespace Brisko;
 
 use Brisko\Traits\Singleton;
 
-final class Enqueue
+final class Assets
 {
 
 	use Singleton;
@@ -15,11 +15,11 @@ final class Enqueue
 	 * @return object
 	 */
 	public static function init() {
-		return new Enqueue();
+		return new Assets();
 	}
 
 	/**
-	 *  Enqueue scripts
+	 *  Assets scripts
 	 */
 	private function __construct() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'brisko_scripts' ) );
