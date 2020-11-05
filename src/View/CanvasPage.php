@@ -2,19 +2,15 @@
 
 namespace Brisko\View;
 
-use Brisko\Traits\Singleton;
-
 class CanvasPage extends Layout
 {
-
-	use Singleton;
 
 	/**
 	 * Display content
 	 */
-	public static function view() {
+	public function view() {
 
-		self::head();
+		$this->head();
 
 		/**
 		 * Page content
@@ -27,13 +23,13 @@ class CanvasPage extends Layout
 			endif;
 		endwhile;
 
-		self::footer();
+		$this->footer();
 	}
 
 	/**
 	 * Head section
 	 */
-	public static function head() {
+	public function head() {
 		brisko_page_header(); ?>
 		<main id="primary" class="full-width-template bg-white">
 		<?php
@@ -42,7 +38,7 @@ class CanvasPage extends Layout
 	/**
 	 * Footer section
 	 */
-	public static function footer() {
+	public function footer() {
 		?>
 			</main><!-- #main -->
 		<?php

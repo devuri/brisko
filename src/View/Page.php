@@ -2,20 +2,17 @@
 
 namespace Brisko\View;
 
-use Brisko\Traits\Singleton;
 use Brisko\Theme;
 
 class Page extends Layout
 {
 
-	use Singleton;
-
 	/**
 	 * Display content
 	 */
-	public static function view() {
+	public function view() {
 
-		self::head();
+		$this->head();
 
 		/**
 		 * Page content
@@ -28,7 +25,7 @@ class Page extends Layout
 			endif;
 		endwhile;
 
-		self::footer();
+		$this->footer();
 	}
 
 	/**

@@ -2,19 +2,15 @@
 
 namespace Brisko\View;
 
-use Brisko\Traits\Singleton;
-
 class Single extends Layout
 {
-
-	use Singleton;
 
 	/**
 	 * Display content
 	 */
-	public static function view() {
+	public function view() {
 
-		self::head();
+		$this->head();
 
 		brisko_post_header();
 
@@ -43,7 +39,7 @@ class Single extends Layout
 
 		endwhile;
 
-		self::footer();
+		$this->footer();
 	}
 
 	/**

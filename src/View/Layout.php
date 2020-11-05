@@ -2,17 +2,21 @@
 
 namespace Brisko\View;
 
+use Brisko\Traits\Singleton;
 use Brisko\Contracts\View;
 use Brisko\Theme;
 
 class Layout implements View
 {
+
+	use Singleton;
+
 	/**
 	 * Layout background
 	 *
 	 * @return string
 	 */
-	public static function main_class() {
+	public function main_class() {
 		return 'bg-white';
 	}
 
@@ -20,14 +24,14 @@ class Layout implements View
 	 * Display content
 	 * this here for PHP compatability, will be declared in child class.
 	 */
-	public static function view() {
+	public function view() {
 		// return the view .
 	}
 
 	/**
 	 * Disabled Sidebar.
 	 */
-	public static function is_disabled() {
+	public function is_disabled() {
 
 		if ( 1 === get_theme_mod( 'disable_sidebar', false ) ) {
 			return true;
@@ -41,12 +45,12 @@ class Layout implements View
 	 * @return void
 	 * @link https://developer.wordpress.org/reference/functions/get_template_part/
 	 */
-	public static function head() {
+	public function head() {
 
 		// check if sidebar or not .
 		$no_sidebar      = sanitize_html_class( 'col-md' );
 		$sidebar         = sanitize_html_class( 'col-md-8' );
-		$sidebar_display = ( ( self::is_disabled() ) ? $no_sidebar : $sidebar );
+		$sidebar_display = ( ( $this->is_disabled() ) ? $no_sidebar : $sidebar );
 
 		// params .
 		$args = array( 'content_class' => $sidebar_display );
@@ -57,9 +61,9 @@ class Layout implements View
 	/**
 	 * Get the sidebar.
 	 */
-	public static function sidebar() {
+	public function sidebar() {
 
-		if ( self::is_disabled() ) {
+		if ( $this->is_disabled() ) {
 			return false;
 		}
 		get_template_part( 'template-parts/sidebar' );
@@ -69,10 +73,10 @@ class Layout implements View
 	/**
 	 * Footer section
 	 */
-	public static function footer() {
+	public function footer() {
 		?>
 		</div><!-- col 8 -->
-				<?php self::sidebar(); ?>
+				<?php $this->sidebar(); ?>
 			</div><!-- row -->
 		</main><!-- #main -->
 		<?php

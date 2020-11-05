@@ -7,6 +7,15 @@ interface View
 	/**
 	 * Get the view.
 	 */
-	public static function view();
+	public function view();
 
+	/**
+	 * Head.
+	 */
+	public function head();
+
+	/**
+	 * The Footer.
+	 */
+	public function footer();
 }
