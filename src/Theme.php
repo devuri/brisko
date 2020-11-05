@@ -3,7 +3,6 @@
 namespace Brisko;
 
 use Brisko\View\Thumbnail;
-use Brisko\View\FooterCredits;
 use Brisko\Customize\Customizer;
 
 final class Theme
@@ -42,7 +41,6 @@ final class Theme
 		Body::init();
 		Head::init();
 		Customizer::init();
-		add_action( 'brisko_footer_credit', array( FooterCredits::class, 'init' ) );
 	}
 
 	/**
