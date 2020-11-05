@@ -38,8 +38,50 @@ class Blog
 		// Blog Title .
 		// Blog Layout .
 
+		// blog width.
+		$wp_customize->add_setting(
+			'post_width', array(
+				'sanitize_callback' => 'sanitize_html_class',
+				'default'           => 'container',
+			)
+		);
+
+		$wp_customize->add_control(
+			'post_width', array(
+				'label'       => esc_html__( 'Blog width', 'brisko' ),
+				'description' => esc_html__( 'set blog width', 'brisko' ),
+				'section'     => self::$section,
+				'type'        => 'select',
+				'choices'     => array(
+					'container'       => esc_html__( 'Boxed', 'brisko' ),
+					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
+				),
+			)
+		);
+
+		/**
+		 * Disable Sidebar
+		 */
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Sidebar', 'brisko' ), self::$section );
+		$wp_customize->add_setting(
+			'disable_sidebar', array(
+				'default'           => absint( 0 ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'disable_sidebar', array(
+				'label'   => esc_html__( 'Disable Sidebar', 'brisko' ),
+				'section' => self::$section,
+				'type'    => 'checkbox',
+			)
+		);
+
 		// Read More Button .
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Read More Button', 'brisko' ) );
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Read More Button', 'brisko' ), self::$section );
 
 		// button border radius.
 		$wp_customize->add_setting(
@@ -53,12 +95,12 @@ class Blog
 
 		$wp_customize->add_control(
 			'read_more_border_radius', array(
-				'label'   => esc_html__( 'Border Radius', 'brisko' ),
-				'section' => self::$section,
-				'type'    => 'checkbox',
+				'label'       => esc_html__( 'Border Radius', 'brisko' ),
+				'description' => esc_html__( 'set read more button border radius', 'brisko' ),
+				'section'     => self::$section,
+				'type'        => 'checkbox',
 			)
 		);
-
 		// background color.
 	}
 }
