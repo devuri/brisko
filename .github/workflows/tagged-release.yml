@@ -1,9 +1,9 @@
 name: "Create New Release"
 
-on:	
-  push:	
-    branches:	
-      - "master"
+on:
+  push:
+    tags:
+      - "*"
 
 jobs:
   tagged-release:
