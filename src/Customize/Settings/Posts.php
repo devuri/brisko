@@ -40,7 +40,7 @@ class Posts
 		 */
 		$wp_customize->add_setting(
 			'featured_image', array(
-				'default'           => sanitize_html_class( 'show-image' ),
+				'default'           => sanitize_html_class( 'this-display-show' ),
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'sanitize_html_class',
