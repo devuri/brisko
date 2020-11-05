@@ -2,9 +2,10 @@
 
 namespace Brisko\View;
 
+use Brisko\Contracts\View;
 use Brisko\Theme;
 
-abstract class Layout
+class Layout implements View
 {
 	/**
 	 * Layout background
