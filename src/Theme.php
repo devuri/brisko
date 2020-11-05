@@ -2,19 +2,14 @@
 
 namespace Brisko;
 
+use Brisko\Traits\Singleton;
 use Brisko\View\Thumbnail;
-use Brisko\View\FooterCredits;
 use Brisko\Customize\Customizer;
 
 final class Theme
 {
 
-	/**
-	 * Class instance.
-	 *
-	 * @var $instance
-	 */
-	private static $instance = null;
+	use Singleton;
 
 	/**
 	 * Setup Theme
@@ -22,10 +17,7 @@ final class Theme
 	 * @return object ..
 	 */
 	public static function setup() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new Theme();
-		}
-		return self::$instance;
+		return new Theme();
 	}
 
 	/**
@@ -42,7 +34,6 @@ final class Theme
 		Body::init();
 		Head::init();
 		Customizer::init();
-		add_action( 'brisko_footer_credit', array( FooterCredits::class, 'init' ) );
 	}
 
 	/**

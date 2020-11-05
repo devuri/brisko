@@ -2,14 +2,12 @@
 
 namespace Brisko;
 
+use Brisko\Traits\Singleton;
+
 final class Activate
 {
-	/**
-	 * Private $instance
-	 *
-	 * @var $instance
-	 */
-	private static $instance;
+
+	use Singleton;
 
 	/**
 	 * Singleton
@@ -17,11 +15,7 @@ final class Activate
 	 * @return object
 	 */
 	public static function init() {
-
-		if ( ! isset( self::$instance ) ) {
-			self::$instance = new Activate();
-		}
-		return self::$instance;
+		return new Activate();
 	}
 
 	/**

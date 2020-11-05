@@ -2,15 +2,12 @@
 
 namespace Brisko;
 
+use Brisko\Traits\Singleton;
+
 final class SiteHeader
 {
 
-	/**
-	 * Class instance.
-	 *
-	 * @var $instance
-	 */
-	private static $instance = null;
+	use Singleton;
 
 	/**
 	 * Get Class
@@ -18,19 +15,8 @@ final class SiteHeader
 	 * @return SiteHeader ..
 	 */
 	public static function get() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new SiteHeader();
-		}
-		return self::$instance;
+		return new SiteHeader();
 	}
-
-	/**
-	 * [__construct description]
-	 */
-	private function __construct() {
-		// nothing to see here .
-	}
-
 
 	/**
 	 * Site Header

@@ -2,8 +2,12 @@
 
 namespace Brisko\View;
 
+use Brisko\Traits\Singleton;
+
 class Sidebar
 {
+
+	use Singleton;
 
 	/**
 	 * Display content

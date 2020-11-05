@@ -2,15 +2,12 @@
 
 namespace Brisko;
 
+use Brisko\Traits\Singleton;
+
 final class Navigation
 {
 
-	/**
-	 * Class instance.
-	 *
-	 * @var $instance
-	 */
-	private static $instance = null;
+	use Singleton;
 
 	/**
 	 * Get Class
@@ -18,17 +15,7 @@ final class Navigation
 	 * @return Navigation ..
 	 */
 	public static function get() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new Navigation();
-		}
-		return self::$instance;
-	}
-
-	/**
-	 * [__construct description]
-	 */
-	private function __construct() {
-		// nothing to see here .
+		return new Navigation();
 	}
 
 	/**

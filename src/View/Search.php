@@ -2,8 +2,12 @@
 
 namespace Brisko\View;
 
+use Brisko\Traits\Singleton;
+
 class Search extends Layout
 {
+
+	use Singleton;
 
 	/**
 	 * Display content

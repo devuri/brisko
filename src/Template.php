@@ -2,6 +2,7 @@
 
 namespace Brisko;
 
+use Brisko\Traits\Singleton;
 use Brisko\View\IndexPage;
 use Brisko\View\Sidebar;
 use Brisko\View\Archive;
@@ -14,12 +15,8 @@ use Brisko\View\Search;
 
 final class Template
 {
-	/**
-	 * Private $instance
-	 *
-	 * @var $instance
-	 */
-	private static $instance;
+
+	use Singleton;
 
 	/**
 	 * Singleton
@@ -27,18 +24,7 @@ final class Template
 	 * @return object
 	 */
 	public static function init() {
-
-		if ( ! isset( self::$instance ) ) {
-			self::$instance = new Template();
-		}
-		return self::$instance;
-	}
-
-	/**
-	 * [__construct description]
-	 */
-	private function __construct() {
-		// nothing to see here .
+		return new Template();
 	}
 
 	/**
