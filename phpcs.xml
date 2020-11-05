@@ -21,6 +21,7 @@
 		<exclude name="WPThemeReview.PluginTerritory.ForbiddenFunctions.editor_blocks_register_block_pattern" />
 		<exclude name="WPThemeReview.PluginTerritory.ForbiddenFunctions.editor_blocks_register_block_pattern_category" />
 		<exclude name="PHPCompatibility.FunctionDeclarations.NewClosure.Found" />
+		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 	</rule>
 
 	<!-- Verify that the text_domain is set to the desired text-domain.
