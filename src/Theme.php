@@ -79,4 +79,12 @@ final class Theme
 		return Template::init();
 	}
 
+	/**
+	 * Footer
+	 *
+	 * @return Footer
+	 */
+	public static function footer() {
+		return Footer::get()->site_footer();
+	}
 }
