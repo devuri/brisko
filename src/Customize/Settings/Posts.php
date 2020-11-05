@@ -40,7 +40,7 @@ class Posts
 		 */
 		$wp_customize->add_setting(
 			'featured_image', array(
-				'default'           => sanitize_html_class( 'show-image' ),
+				'default'           => sanitize_html_class( 'this-display-show' ),
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'sanitize_html_class',
@@ -115,27 +115,6 @@ class Posts
 				'label'   => esc_html__( 'Display Previous and Next Navigation', 'brisko' ),
 				'section' => self::$section,
 				'type'    => 'checkbox',
-			)
-		);
-
-		// Post width.
-		$wp_customize->add_setting(
-			'post_width', array(
-				'sanitize_callback' => 'sanitize_html_class',
-				'default'           => 'container',
-			)
-		);
-
-		$wp_customize->add_control(
-			'post_width', array(
-				'label'       => esc_html__( 'Post width', 'brisko' ),
-				'description' => esc_html__( 'set width for all single post pages', 'brisko' ),
-				'section'     => self::$section,
-				'type'        => 'select',
-				'choices'     => array(
-					'container'       => esc_html__( 'Boxed', 'brisko' ),
-					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
-				),
 			)
 		);
 

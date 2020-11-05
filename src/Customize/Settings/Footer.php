@@ -74,6 +74,29 @@ class Footer
 			)
 		);
 
+		/**
+		 * Top Margin.
+		 */
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Top Margin', 'brisko' ), self::$section );
+
+		// Remove Top Margin.
+		$wp_customize->add_setting(
+			'footer_remove_top_margin', array(
+				'default'           => false,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'footer_remove_top_margin', array(
+				'label'       => esc_html__( 'Remove Top Margin', 'brisko' ),
+				'description' => esc_html__( 'removes the top margin for footer section', 'brisko' ),
+				'section'     => self::$section,
+				'type'        => 'checkbox',
+			)
+		);
 		// footer width .
 	}
 }
