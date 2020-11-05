@@ -67,7 +67,7 @@ final class Theme
 	 * @return Template
 	 */
 	public static function template() {
-		return Template::init();
+		return Template::get();
 	}
 
 	/**

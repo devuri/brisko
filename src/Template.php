@@ -23,7 +23,7 @@ final class Template
 	 *
 	 * @return object
 	 */
-	public static function init() {
+	public static function get() {
 		return new Template();
 	}
 
