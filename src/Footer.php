@@ -18,13 +18,12 @@ final class Footer
 		return new Footer();
 	}
 
-
 	/**
 	 * Header Image
 	 */
 	public function site_footer() {
 		?>
-		<footer id="colophon" class="site-footer this-site-footer bg-white this-margin-top">
+		<footer id="colophon" class="site-footer this-site-footer bg-white <?php Options::get()->footer_top_margin(); ?>">
 			<?php brisko_footer(); ?>
 			<div align="center" class="site-info container">
 				<div class="brisko-theme-credit">

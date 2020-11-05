@@ -106,4 +106,14 @@ final class Options
 		}
 	}
 
+	/**
+	 * Footer Top Margin.
+	 */
+	public function footer_top_margin() {
+		if ( false === get_theme_mod( 'footer_remove_top_margin', false ) ) {
+			echo sanitize_html_class( 'this-margin-top' );
+		} else {
+			echo sanitize_html_class( 'no-top-margin' );
+		}
+	}
 }
