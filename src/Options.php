@@ -59,10 +59,10 @@ final class Options
 	}
 
 	/**
-	 * Post width
+	 * Blog width
 	 */
-	public function post_width() {
-		echo esc_attr( get_theme_mod( 'post_width', 'container' ) );
+	public function blog_width() {
+		echo esc_attr( get_theme_mod( 'blog_width', 'container' ) );
 	}
 
 	/**

@@ -40,14 +40,14 @@ class Blog
 
 		// blog width.
 		$wp_customize->add_setting(
-			'post_width', array(
+			'blog_width', array(
 				'sanitize_callback' => 'sanitize_html_class',
 				'default'           => 'container',
 			)
 		);
 
 		$wp_customize->add_control(
-			'post_width', array(
+			'blog_width', array(
 				'label'       => esc_html__( 'Blog width', 'brisko' ),
 				'description' => esc_html__( 'set blog width', 'brisko' ),
 				'section'     => self::$section,
