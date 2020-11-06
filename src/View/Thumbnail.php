@@ -11,6 +11,39 @@ class Thumbnail
 	use Singleton;
 
 	/**
+	 * Thumbnail for single
+	 */
+	public function thumbnail_singular() {
+		?>
+		<div class="post-thumbnail <?php Options::get()->post_thumbnail_display(); ?>">
+			<?php the_post_thumbnail(); ?>
+		</div><!-- .post-thumbnail -->
+		<?php
+	}
+
+	/**
+	 * Thumbnail for blog
+	 */
+	public function thumbnail_blog() {
+		?>
+		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<?php
+				the_post_thumbnail(
+					'post-thumbnail',
+					array(
+						'alt' => the_title_attribute(
+							array(
+								'echo' => false,
+							)
+						),
+					)
+				);
+			?>
+		</a>
+		<?php
+	}
+
+	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
@@ -18,34 +51,17 @@ class Thumbnail
 	 */
 	public function post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-			return;
+			return false;
 		}
 
 		if ( is_singular() ) :
-			?>
 
-			<div class="post-thumbnail <?php Options::get()->post_thumbnail_display(); ?>">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+			$this->thumbnail_singular();
 
-		<?php else : ?>
+		else :
 
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-				?>
-			</a>
+			$this->thumbnail_blog();
 
-			<?php
 		endif; // End is_singular().
 	}
 
