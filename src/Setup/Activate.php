@@ -1,10 +1,11 @@
 <?php
 
-namespace Brisko;
+namespace Brisko\Setup;
 
 use Brisko\Traits\Singleton;
+use Brisko\Contracts\Setup;
 
-final class Activate
+final class Activate implements Setup
 {
 
 	use Singleton;

@@ -4,6 +4,10 @@ namespace Brisko;
 
 use Brisko\Traits\Singleton;
 use Brisko\View\Thumbnail;
+use Brisko\Setup\Activate;
+use Brisko\Setup\Assets;
+use Brisko\Setup\Body;
+use Brisko\Setup\Head;
 use Brisko\Customize\Customizer;
 
 final class Theme
