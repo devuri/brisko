@@ -145,6 +145,10 @@ nav.main-navigation ul ul a {
   # Post
   --------------------------------------------------------------*/
 
+.post, .page {
+    margin: 0em;
+}
+
 .sticky {
 	display: block;
 	border: solid thin #d0d0d0;
