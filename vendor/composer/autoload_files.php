@@ -8,6 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'e9122ae3d8760167901fcc564665809e' => $baseDir . '/src/Customize/helpers.php',
     '12534e0e28f71b5f4918fa2cb8b68fab' => $baseDir . '/src/inc/actions.php',
-    'de3366fb7a3a78723023c5dc4de88fc2' => $baseDir . '/src/inc/custom-header.php',
     '30f493bd22578a96783edb4fcad2892b' => $baseDir . '/src/inc/template-tags.php',
 );

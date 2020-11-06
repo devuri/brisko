@@ -9,7 +9,6 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
     public static $files = array (
         'e9122ae3d8760167901fcc564665809e' => __DIR__ . '/../..' . '/src/Customize/helpers.php',
         '12534e0e28f71b5f4918fa2cb8b68fab' => __DIR__ . '/../..' . '/src/inc/actions.php',
-        'de3366fb7a3a78723023c5dc4de88fc2' => __DIR__ . '/../..' . '/src/inc/custom-header.php',
         '30f493bd22578a96783edb4fcad2892b' => __DIR__ . '/../..' . '/src/inc/template-tags.php',
     );
 
@@ -28,9 +27,8 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
     );
 
     public static $classMap = array (
-        'Brisko\\Activate' => __DIR__ . '/../..' . '/src/Activate.php',
-        'Brisko\\Assets' => __DIR__ . '/../..' . '/src/Assets.php',
-        'Brisko\\Body' => __DIR__ . '/../..' . '/src/Body.php',
+        'Brisko\\Contracts\\Setup' => __DIR__ . '/../..' . '/src/Contracts/Setup.php',
+        'Brisko\\Contracts\\View' => __DIR__ . '/../..' . '/src/Contracts/View.php',
         'Brisko\\Customize\\Build' => __DIR__ . '/../..' . '/src/Customize/Build.php',
         'Brisko\\Customize\\Controls\\Control' => __DIR__ . '/../..' . '/src/Customize/Controls/Control.php',
         'Brisko\\Customize\\Controls\\HeaderControl' => __DIR__ . '/../..' . '/src/Customize/Controls/HeaderControl.php',
@@ -46,9 +44,12 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
         'Brisko\\Customize\\Settings\\Posts' => __DIR__ . '/../..' . '/src/Customize/Settings/Posts.php',
         'Brisko\\Customize\\Settings\\SelectiveRefresh' => __DIR__ . '/../..' . '/src/Customize/Settings/SelectiveRefresh.php',
         'Brisko\\Footer' => __DIR__ . '/../..' . '/src/Footer.php',
-        'Brisko\\Head' => __DIR__ . '/../..' . '/src/Head.php',
         'Brisko\\Navigation' => __DIR__ . '/../..' . '/src/Navigation.php',
         'Brisko\\Options' => __DIR__ . '/../..' . '/src/Options.php',
+        'Brisko\\Setup\\Activate' => __DIR__ . '/../..' . '/src/Setup/Activate.php',
+        'Brisko\\Setup\\Assets' => __DIR__ . '/../..' . '/src/Setup/Assets.php',
+        'Brisko\\Setup\\Body' => __DIR__ . '/../..' . '/src/Setup/Body.php',
+        'Brisko\\Setup\\Head' => __DIR__ . '/../..' . '/src/Setup/Head.php',
         'Brisko\\SiteHeader' => __DIR__ . '/../..' . '/src/SiteHeader.php',
         'Brisko\\Template' => __DIR__ . '/../..' . '/src/Template.php',
         'Brisko\\Theme' => __DIR__ . '/../..' . '/src/Theme.php',
