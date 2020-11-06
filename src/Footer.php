@@ -4,6 +4,13 @@ namespace Brisko;
 
 use Brisko\Traits\Singleton;
 
+/**
+ * The Footer class.
+ *
+ * Used for the <footer> section.
+ *
+ * @package brisko
+ */
 final class Footer
 {
 

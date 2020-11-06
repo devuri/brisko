@@ -10,6 +10,15 @@ use Brisko\Setup\Body;
 use Brisko\Setup\Head;
 use Brisko\Customize\Customizer;
 
+/**
+ * The main Brisko theme class.
+ * Brisko theme instance for all the other classes.
+ *
+ * We will use this as the entry point
+ * to instantiate and access other classes.
+ *
+ * @package brisko
+ */
 final class Theme
 {
 
