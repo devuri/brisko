@@ -10,15 +10,6 @@ final class Navigation
 	use Singleton;
 
 	/**
-	 * Get Class
-	 *
-	 * @return Navigation ..
-	 */
-	public static function get() {
-		return new Navigation();
-	}
-
-	/**
 	 * Header Image
 	 */
 	public function navigation() {

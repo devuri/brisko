@@ -10,16 +10,6 @@ final class Options
 	use Singleton;
 
 	/**
-	 * Get Options
-	 *
-	 * @return Options ..
-	 */
-	public static function get() {
-		return new Options();
-
-	}
-
-	/**
 	 * Header Image
 	 */
 	public function header_image_display() {

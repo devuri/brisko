@@ -10,15 +10,6 @@ final class SiteHeader
 	use Singleton;
 
 	/**
-	 * Get Class
-	 *
-	 * @return SiteHeader ..
-	 */
-	public static function get() {
-		return new SiteHeader();
-	}
-
-	/**
 	 * Site Header
 	 */
 	public function site_header() {

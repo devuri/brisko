@@ -10,15 +10,6 @@ final class Footer
 	use Singleton;
 
 	/**
-	 * Get Class
-	 *
-	 * @return Footer ..
-	 */
-	public static function get() {
-		return new Footer();
-	}
-
-	/**
 	 * Header Image
 	 */
 	public function site_footer() {

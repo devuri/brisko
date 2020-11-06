@@ -19,15 +19,6 @@ final class Template
 	use Singleton;
 
 	/**
-	 * Singleton
-	 *
-	 * @return object
-	 */
-	public static function get() {
-		return new Template();
-	}
-
-	/**
 	 * The main template file
 	 *
 	 * This is the most generic template file in a WordPress theme
