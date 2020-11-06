@@ -5,80 +5,34 @@
  * License: GNU General Public License v2.0 (https://github.com/devuri/brisko/blob/master/LICENSE)
  */
 
-body a:hover {
-	text-decoration: none;
-}
+ p {
+ 	line-height: 1.75;
+ 	margin: 30px 0;
+ }
 
-body a {
-	color: #000000;
-	text-decoration: none;
-	background-color: transparent;
-	line-height: 1.75;
-	-webkit-font-smoothing: antialiased;
-	transition: all .25s;
-}
+ blockquote,
+ .wp-block-quote {
+ 	border-left: solid 5px #4c4c4c;
+ 	padding-left: 0.9rem;
+ 	margin-bottom: 1.5rem;
+ 	color: #4c4c4c;
+ 	margin-left: 0.9rem;
+ }
 
-.container {
-	width: 100%;
-	padding-right: 0;
-	padding-left: 0;
-	margin-right: auto;
-	margin-left: auto;
-}
+ th,
+ td {
+ 	border: 1px solid #f0f0f0;
+ 	padding: 8px 12px;
+ }
 
-.site-main {
-	padding: 1.75rem;
-}
-
-.post,
-.page {
-	margin: 0 0 0em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: 800;
-	line-height: inherit;
-}
-
-p {
-	line-height: 1.75;
-	margin: 30px 0;
-}
-
-p a {
-	text-decoration: underline;
-}
-
-blockquote,
-.wp-block-quote {
-	border-left: solid 5px #4c4c4c;
-	padding-left: 0.9rem;
-	margin-bottom: 1.5rem;
-	color: #4c4c4c;
-	margin-left: 0.9rem;
-}
-
-th,
-td {
-	border: 1px solid #f0f0f0;
-	padding: 8px 12px;
-}
-
-pre {
-	word-wrap: break-word;
-	white-space: pre-wrap;
-}
-
-.wp-block-image {
-	margin-bottom: 1em;
-	display: flow-root;
-}
-
+ pre {
+ 	word-wrap: break-word;
+ 	white-space: pre-wrap;
+ }
+ .wp-block-image {
+ 	margin-bottom: 1em;
+ 	display: flow-root;
+ }
 
 /*--------------------------------------------------------------
  # Header
