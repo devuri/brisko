@@ -1,10 +1,9 @@
 <?php
 
-namespace Brisko\View;
+namespace Brisko;
 
 use Brisko\Traits\Singleton;
 use Brisko\Contracts\View;
-use Brisko\Theme;
 
 class Layout implements View
 {

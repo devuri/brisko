@@ -3,6 +3,7 @@
 namespace Brisko\View;
 
 use Brisko\Theme;
+use Brisko\Layout;
 
 class Page extends Layout
 {
