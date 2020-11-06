@@ -31,7 +31,7 @@ class Page extends Layout
 	/**
 	 * Head section
 	 */
-	public static function head() {
+	public function head() {
 		brisko_page_header();
 		get_template_part( 'template-parts/head', 'page' );
 	}
@@ -39,7 +39,7 @@ class Page extends Layout
 	/**
 	 * Footer section
 	 */
-	public static function footer() {
+	public function footer() {
 		?>
 			</main><!-- #main -->
 		<?php
