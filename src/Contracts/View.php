@@ -4,8 +4,14 @@ namespace Brisko\Contracts;
 
 interface View
 {
+
 	/**
-	 * Get the view.
+	 * Get the instance.
+	 */
+	public static function get();
+
+	/**
+	 * The view.
 	 */
 	public function view();
 
