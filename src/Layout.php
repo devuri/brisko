@@ -5,6 +5,13 @@ namespace Brisko;
 use Brisko\Traits\Singleton;
 use Brisko\Contracts\View;
 
+/**
+ * The main theme Layout class.
+ *
+ * We will use this as the base for all main views.
+ *
+ * @package brisko
+ */
 class Layout implements View
 {
 
