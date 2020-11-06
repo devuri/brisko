@@ -230,6 +230,11 @@ nav.main-navigation ul ul a {
 	margin-right: 4px;
 }
 
+.comment-navigation .nav-links, .posts-navigation .nav-links, .post-navigation .nav-links {
+    display: flex;
+	text-transform: lowercase;
+}
+
 
 /*--------------------------------------------------------------
  # Nav Previous and Next
