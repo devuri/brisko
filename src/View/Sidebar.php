@@ -12,7 +12,7 @@ class Sidebar
 	/**
 	 * Display content
 	 */
-	public static function view() {
+	public function view() {
 
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			return 0;

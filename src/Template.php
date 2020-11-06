@@ -53,7 +53,7 @@ final class Template
 	 * @package brisko
 	 */
 	public function sidebar() {
-		Sidebar::view();
+		Sidebar::get()->view();
 	}
 
 	/**
