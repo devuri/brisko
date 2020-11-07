@@ -4,6 +4,7 @@ namespace Brisko;
 
 use Brisko\Traits\Singleton;
 use Brisko\View\Thumbnail;
+use Brisko\View\Excerpt;
 use Brisko\Setup\Activate;
 use Brisko\Setup\Assets;
 use Brisko\Setup\Body;
@@ -36,7 +37,7 @@ final class Theme
 	/**
 	 * Define Theme Version
 	 */
-	const VERSION = '1.0.4';
+	const VERSION = '1.0.5';
 
 	/**
 	 * [__construct description]
@@ -63,6 +64,13 @@ final class Theme
 	 */
 	public static function post_thumbnail() {
 		Thumbnail::get()->post_thumbnail();
+	}
+
+	/**
+	 * Displays an optional post excerpt.
+	 */
+	public static function excerpt() {
+		Excerpt::get()->post_excerpt();
 	}
 
 	/**

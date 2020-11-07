@@ -49,10 +49,10 @@
 			<footer class="entry-footer ">
 				<?php brisko_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
-			<?php
-	else :
-		the_excerpt();
-		?>
+		<?php else : ?>
+			<div class="post-excerpt" style="font-size: unset;">
+				<?php Brisko\Theme::excerpt(); ?>
+			</div>
 		<div class="read-more ">
 			<a class="more-link <?php echo esc_html( Brisko\Theme::options()->button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
 			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
