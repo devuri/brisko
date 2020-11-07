@@ -149,12 +149,6 @@ nav.main-navigation ul ul a {
     margin: 0em;
 }
 
-.sticky {
-	display: block;
-	border: solid thin #d0d0d0;
-	padding: 2rem;
-}
-
 .entry-content {
 	word-wrap: break-word;
 	color: #353535;
@@ -420,7 +414,6 @@ ol {
 	color: black;
 	font-size: inherit;
 	font-weight: 700;
-	border-bottom: solid thin #f0f0f0;
 	text-transform: uppercase;
 }
 

@@ -54,6 +54,12 @@ body a {
 	margin: 0 0 0em;
 }
 
+.sticky {
+	display: block;
+	border: solid thin #d0d0d0;
+	padding: 2rem;
+}
+
 h1,
 h2,
 h3,
