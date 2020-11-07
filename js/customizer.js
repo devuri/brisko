@@ -30,6 +30,13 @@
       } );
     } );
 
+	// Navigation background color
+    wp.customize( 'nav_background_color', function( value ) {
+      value.bind( function( to ) {
+        $('.brisko-navigation').css('background-color', to );
+      } );
+    } );
+
   // footer copyright text
   wp.customize( 'footer_copyright', function( value ) {
     value.bind( function( to ) {

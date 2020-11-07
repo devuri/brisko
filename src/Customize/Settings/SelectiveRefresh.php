@@ -36,6 +36,7 @@ class SelectiveRefresh
 		 * @link https://developer.wordpress.org/reference/classes/wp_customize_selective_refresh/add_partial/
 		 */
 		$wp_customize->get_setting( 'link_color' )->transport       = self::$transport;
+		$wp_customize->get_setting( 'nav_background_color' )->transport       = self::$transport;
 		$wp_customize->get_setting( 'featured_image' )->transport   = self::$transport;
 		$wp_customize->get_setting( 'footer_copyright' )->transport = self::$transport;
 		$wp_customize->get_setting( 'poweredby' )->transport        = self::$transport;
