@@ -37,7 +37,7 @@ final class Theme
 	/**
 	 * Define Theme Version
 	 */
-	const VERSION = '1.0.5';
+	const VERSION = '1.0.7';
 
 	/**
 	 * [__construct description]
@@ -57,6 +57,24 @@ final class Theme
 	 */
 	public static function header() {
 		return SiteHeader::get()->site_header();
+	}
+
+	/**
+	 * Theme Navigation
+	 *
+	 * @return Navigation .
+	 */
+	public static function navigation() {
+		return Navigation::get()->navigation();
+	}
+
+	/**
+	 * Theme Header
+	 *
+	 * @return SiteHeader .
+	 */
+	public static function header_image() {
+		return SiteHeader::get()->header_image();
 	}
 
 	/**
