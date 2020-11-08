@@ -2,19 +2,15 @@
 
 namespace Brisko\View;
 
-use Brisko\Traits\Singleton;
-
 class Page404 extends Layout
 {
-
-	use Singleton;
 
 	/**
 	 * Display content
 	 */
-	public static function view() {
+	public function view() {
 
-		self::head();
+		$this->head();
 		?>
 		<header class="page-header">
 			<h1 class="page-title archive-title entry-meta">
@@ -57,7 +53,7 @@ class Page404 extends Layout
 		the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$brisko_archive_content" );
 		the_widget( 'WP_Widget_Tag_Cloud' );
 
-		self::footer();
+		$this->footer();
 	}
 
 }

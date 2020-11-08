@@ -11,15 +11,6 @@ class Thumbnail
 	use Singleton;
 
 	/**
-	 * Get Options
-	 *
-	 * @return Thumbnail ..
-	 */
-	public static function get() {
-		return new Thumbnail();
-	}
-
-	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div

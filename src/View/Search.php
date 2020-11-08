@@ -2,19 +2,15 @@
 
 namespace Brisko\View;
 
-use Brisko\Traits\Singleton;
-
 class Search extends Layout
 {
-
-	use Singleton;
 
 	/**
 	 * Display content
 	 */
-	public static function view() {
+	public function view() {
 
-		self::head();
+		$this->head();
 
 		if ( have_posts() ) : ?>
 			<header class="page-header">
@@ -42,6 +38,6 @@ class Search extends Layout
 					get_template_part( 'template-parts/content', 'none' );
 		endif;
 
-				self::footer();
+				$this->footer();
 	}
 }

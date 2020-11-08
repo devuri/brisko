@@ -2,18 +2,14 @@
 
 namespace Brisko\View;
 
-use Brisko\Traits\Singleton;
-
 class Archive extends Layout
 {
-
-	use Singleton;
 
 	/**
 	 * Display content
 	 */
-	public static function view() {
-		self::head();
+	public function view() {
+		$this->head();
 
 		brisko_post_header();
 
@@ -45,7 +41,7 @@ class Archive extends Layout
 			get_template_part( 'template-parts/content', 'none' );
 		endif;
 
-		self::footer();
+		$this->footer();
 	}
 
 }

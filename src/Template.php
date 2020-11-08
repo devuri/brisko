@@ -23,7 +23,7 @@ final class Template
 	 *
 	 * @return object
 	 */
-	public static function init() {
+	public static function get() {
 		return new Template();
 	}
 
@@ -41,7 +41,7 @@ final class Template
 	 */
 	public function index() {
 		get_header();
-		IndexPage::view();
+		IndexPage::get()->view();
 		get_footer();
 	}
 
@@ -53,7 +53,7 @@ final class Template
 	 * @package brisko
 	 */
 	public function sidebar() {
-		Sidebar::view();
+		Sidebar::get()->view();
 	}
 
 	/**
@@ -65,7 +65,7 @@ final class Template
 	 */
 	public function archive() {
 		get_header();
-		Archive::view();
+		Archive::get()->view();
 		get_footer();
 	}
 
@@ -78,7 +78,7 @@ final class Template
 	 */
 	public function single() {
 		get_header();
-		Single::view();
+		Single::get()->view();
 		get_footer();
 	}
 
@@ -91,7 +91,7 @@ final class Template
 	 */
 	public function page_404() {
 		get_header();
-		Page404::view();
+		Page404::get()->view();
 		get_footer();
 	}
 
@@ -109,7 +109,7 @@ final class Template
 	 */
 	public function page() {
 		get_header();
-		Page::view();
+		Page::get()->view();
 		get_footer();
 	}
 
@@ -120,7 +120,7 @@ final class Template
 	 */
 	public function canvas_page() {
 		get_header( 'canvas' );
-		CanvasPage::view();
+		CanvasPage::get()->view();
 		get_footer( 'canvas' );
 	}
 
@@ -131,7 +131,7 @@ final class Template
 	 */
 	public function full_width_page() {
 		get_header();
-		FullWidthPage::view();
+		FullWidthPage::get()->view();
 		get_footer();
 	}
 
@@ -144,7 +144,7 @@ final class Template
 	 */
 	public function search() {
 		get_header();
-		Search::view();
+		Search::get()->view();
 		get_footer();
 	}
 
