@@ -13,19 +13,18 @@ use Brisko\View\FullWidthPage;
 use Brisko\View\CanvasPage;
 use Brisko\View\Search;
 
+/**
+ * The main Template class.
+ *
+ * We will use this as the entry point
+ * to instantiate and access the views.
+ *
+ * @package brisko
+ */
 final class Template
 {
 
 	use Singleton;
-
-	/**
-	 * Singleton
-	 *
-	 * @return object
-	 */
-	public static function get() {
-		return new Template();
-	}
 
 	/**
 	 * The main template file

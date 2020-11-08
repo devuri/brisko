@@ -4,20 +4,18 @@ namespace Brisko;
 
 use Brisko\Traits\Singleton;
 
+/**
+ * The main Options class.
+ *
+ * We will use this as the entry point
+ * for all theme options ( get_theme_mod() ).
+ *
+ * @package brisko
+ */
 final class Options
 {
 
 	use Singleton;
-
-	/**
-	 * Get Options
-	 *
-	 * @return Options ..
-	 */
-	public static function get() {
-		return new Options();
-
-	}
 
 	/**
 	 * Header Image

@@ -2,6 +2,8 @@
 
 namespace Brisko\View;
 
+use Brisko\Layout;
+
 class Single extends Layout
 {
 
@@ -45,7 +47,7 @@ class Single extends Layout
 	/**
 	 * The Post Navigation
 	 */
-	public static function post_navigation() {
+	public function post_navigation() {
 		the_post_navigation(
 			array(
 				'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'brisko' ) . '</span> <h5 class="nav-title">%title</h5>',

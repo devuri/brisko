@@ -4,19 +4,18 @@ namespace Brisko;
 
 use Brisko\Traits\Singleton;
 
+/**
+ * The SiteHeader class.
+ *
+ * Used for the <header> section
+ * <header id="masthead" class="site-header">
+ *
+ * @package brisko
+ */
 final class SiteHeader
 {
 
 	use Singleton;
-
-	/**
-	 * Get Class
-	 *
-	 * @return SiteHeader ..
-	 */
-	public static function get() {
-		return new SiteHeader();
-	}
 
 	/**
 	 * Site Header

@@ -2,6 +2,8 @@
 
 namespace Brisko\View;
 
+use Brisko\Layout;
+
 class Search extends Layout
 {
 

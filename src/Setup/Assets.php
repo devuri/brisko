@@ -1,10 +1,12 @@
 <?php
 
-namespace Brisko;
+namespace Brisko\Setup;
 
 use Brisko\Traits\Singleton;
+use Brisko\Contracts\Setup;
+use Brisko\Theme;
 
-final class Assets
+final class Assets implements Setup
 {
 
 	use Singleton;

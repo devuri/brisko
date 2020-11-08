@@ -1,11 +1,17 @@
 <?php
 
-namespace Brisko\View;
+namespace Brisko;
 
 use Brisko\Traits\Singleton;
 use Brisko\Contracts\View;
-use Brisko\Theme;
 
+/**
+ * The main theme Layout class.
+ *
+ * We will use this as the base for all main views.
+ *
+ * @package brisko
+ */
 class Layout implements View
 {
 

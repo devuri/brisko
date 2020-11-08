@@ -4,19 +4,17 @@ namespace Brisko;
 
 use Brisko\Traits\Singleton;
 
+/**
+ * The Footer class.
+ *
+ * Used for the <footer> section.
+ *
+ * @package brisko
+ */
 final class Footer
 {
 
 	use Singleton;
-
-	/**
-	 * Get Class
-	 *
-	 * @return Footer ..
-	 */
-	public static function get() {
-		return new Footer();
-	}
 
 	/**
 	 * Header Image

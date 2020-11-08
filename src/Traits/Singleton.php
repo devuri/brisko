@@ -22,7 +22,7 @@
  *
  * If you specifically need multiple objects, then use a normal class.
  *
- * @package Brisko
+ * @package brisko
  * @link https://github.com/rtCamp/blank-theme/tree/master/inc/traits
  */
 

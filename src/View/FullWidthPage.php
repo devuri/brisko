@@ -2,6 +2,8 @@
 
 namespace Brisko\View;
 
+use Brisko\Layout;
+
 class FullWidthPage extends Layout
 {
 
@@ -29,7 +31,7 @@ class FullWidthPage extends Layout
 	/**
 	 * Head section
 	 */
-	public static function head() {
+	public function head() {
 		brisko_page_header(); ?>
 		<main id="primary" class="full-width-template">
 		<?php
@@ -38,7 +40,7 @@ class FullWidthPage extends Layout
 	/**
 	 * Footer section
 	 */
-	public static function footer() {
+	public function footer() {
 		?>
 			</main><!-- #main -->
 		<?php

@@ -4,8 +4,21 @@ namespace Brisko;
 
 use Brisko\Traits\Singleton;
 use Brisko\View\Thumbnail;
+use Brisko\Setup\Activate;
+use Brisko\Setup\Assets;
+use Brisko\Setup\Body;
+use Brisko\Setup\Head;
 use Brisko\Customize\Customizer;
 
+/**
+ * The main Brisko theme class.
+ * Brisko theme instance for all the other classes.
+ *
+ * We will use this as the entry point
+ * to instantiate and access other classes.
+ *
+ * @package brisko
+ */
 final class Theme
 {
 
@@ -23,7 +36,7 @@ final class Theme
 	/**
 	 * Define Theme Version
 	 */
-	const VERSION = '0.9.6';
+	const VERSION = '1.0.4';
 
 	/**
 	 * [__construct description]
