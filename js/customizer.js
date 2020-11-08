@@ -14,20 +14,77 @@
 			$( '.site-title a' ).text( to );
 		} );
 	} );
-  
+
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-description' ).text( to );
 		} );
 	} );
 
+	// Link color
+    wp.customize( 'link_color', function( value ) {
+      value.bind( function( to ) {
+        $('body a').css('color', to );
+        $('button, input[type="button"], input[type="reset"], input[type="submit"]').css('background-color', to );
+        $('button, input[type="button"], input[type="reset"], input[type="submit"]').css('border-color', to );
+      } );
+    } );
+
+	// Navigation background color
+    wp.customize( 'nav_background_color', function( value ) {
+      value.bind( function( to ) {
+        $('.brisko-navigation').css('background-color', to );
+      } );
+    } );
+
   // footer copyright text
-  wp.customize( 'briskotheme_options[copyright]', function( value ) {
+  wp.customize( 'footer_copyright', function( value ) {
     value.bind( function( to ) {
       $( '.brisko-footer-copyright' ).text( to );
     } );
   } );
 
+  // cat-links
+  wp.customize( 'display_post_categories', function( value ) {
+    value.bind( function( to ) {
+		if ( false === to ) {
+			$( '.cat-links' ).addClass( "this-display-none" );
+		} else {
+			$( '.cat-links' ).removeClass( "this-display-none" );
+		}
+    } );
+  } );
+
+  // tags-links
+  wp.customize( 'display_tags', function( value ) {
+	value.bind( function( to ) {
+	  if ( false === to ) {
+		  $( '.tags-links' ).addClass( "this-display-none" );
+	  } else {
+		  $( '.tags-links' ).removeClass( "this-display-none" );
+	  }
+	} );
+  } );
+
+  // post-navigation
+  wp.customize( 'display_previous_next', function( value ) {
+	value.bind( function( to ) {
+	  if ( false === to ) {
+		  $( '.post-navigation' ).addClass( "this-display-none" );
+	  } else {
+		  $( '.post-navigation' ).removeClass( "this-display-none" );
+	  }
+	} );
+  } );
+
+  // footer poweredby
+  wp.customize( 'poweredby', function( value ) {
+    value.bind( function( to ) {
+      $( '.brisko-footer-poweredby' ).html( to );
+    } );
+  } );
+
+	// TODO Post Featured Image
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {

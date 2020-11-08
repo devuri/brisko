@@ -1,16 +1,16 @@
 === Brisko ===
 Contributors: icelayer
-Tested up to: 5.4
-Version: 0.4.5
+Tested up to: 5.5
+Version: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 == Description ==
 
-Brisko is a beautifully simple responsive and lightweight WordPress theme that is fast and optimized for WordPress page builders, you can use it as a foundation to build versatile layouts using modern page builders like Elementor, The Block Editor, Beaver Builder, Brizy, SiteOrigin etc. this theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions.
+Brisko is a beautifully simple and lightweight WordPress theme that is optimized for speed and WordPress page builders like Elementor, you can use it as a foundation to build versatile layouts using Elementor Template Kits or the WordPress Block Patterns. This theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions, the color scheme can be easily customized to match Elementor Template Kits. The options are easy to manage using the live theme customizer.  Use the WordPress Customizer and Elementor page builder to create professional designs on a solid foundation. Check out our prebuilt website demos for inspiration. demo.wpbrisko.com
 
-For more information about the Brisko Theme please go to https://switchwebdev.com/brisko-wordpress-theme/.
+For more information about the Brisko Theme please go to https://wpbrisko.com.
 
 == Installation ==
 
@@ -35,6 +35,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 Brisko bundles the following resources:
+
+Header Image screenshot
+Licenses: CC0 license
+Source: https://stocksnap.io/photo/camera-photography-NY3VQ20BHF
 
 Underscores, Copyright 2012-2020 Automattic, Inc.
 Licenses: GPL2
@@ -81,3 +85,58 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 
 = 0.5.2 =
 * Tag Links Style Update.
+
+= 0.5.3 =
+* Fix nav-menu, main menu overflow issue.
+
+= 0.5.4 =
+* Simplify Header section.
+
+= 0.5.4 =
+* Fix: Trying to access array offset.
+
+= 0.6.1 =
+* Add: Custom Inline Theme styles.
+* Add: Link Color Option.
+* Add: Featured Image Display Option.
+* New: brisko_theme_mod().
+* Fix: Page header title style.
+* Fix: Remove h1,h2,h3,h4,h5,h6 font-family style.
+* Fix: more-link class Add border-radius.
+* Fix: entry-meta class Add color: #999.
+* Fix: wp-block-button__link.
+
+= 0.6.3 =
+* Fix: Search background.
+* Fix: Use get_theme_mod() instead of options.
+* Add: Customizer Custom separator.
+* Add: Customizer setting for Powered by.
+
+= 0.6.4 =
+* Fix: Header Image move to menu section.
+
+= 0.7.1 =
+* Add Composer
+* Fix full width page layout
+* Fix Customizer setting Powered by live preview
+* Add 'brisko_before_comments' and 'brisko_after_comments'
+* Add PHPCS
+
+= 0.7.2 =
+* Add Navigation width Customizer setting
+* Fix Featured Image Display
+* Add Post Settings section
+
+= 0.7.3 =
+* Fix Display Previous and Next Post Navigation
+* Fix Display Post Categories
+* Add Site Info Full Page setting
+* Add Page width Full Page setting
+* Add Post width Full Page setting
+* Add Read More Button setting
+
+= 0.7.4 =
+* Fix Display Post Tags
+* Fix Display Previous and Next Post Navigation
+* Fix Display Post Categories
+* Add Display Page Header

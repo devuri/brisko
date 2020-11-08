@@ -1,0 +1,517 @@
+/*!
+ * Brisko CSS (https://wpbrisko.com/)
+ * Copyright 2020 Uriel Wilson
+ * @link https://github.com/devuri/brisko
+ * License: GNU General Public License v2.0 (https://github.com/devuri/brisko/blob/master/LICENSE)
+ */
+
+ p {
+ 	line-height: 1.75;
+ 	margin: 30px 0;
+ }
+
+ blockquote,
+ .wp-block-quote {
+ 	border-left: solid 5px #4c4c4c;
+ 	padding-left: 0.9rem;
+ 	margin-bottom: 1.5rem;
+ 	color: #4c4c4c;
+ 	margin-left: 0.9rem;
+ }
+
+ th,
+ td {
+ 	border: 1px solid #f0f0f0;
+ 	padding: 8px 12px;
+ }
+
+ pre {
+ 	word-wrap: break-word;
+ 	white-space: pre-wrap;
+ }
+ .wp-block-image {
+ 	margin-bottom: 1em;
+ 	display: flow-root;
+ }
+
+/*--------------------------------------------------------------
+ # Header
+ --------------------------------------------------------------*/
+
+.brisko-header-img {
+	margin-bottom: 0;
+	width: 100%;
+}
+
+.custom-logo-link {
+	max-width: 260px;
+	margin-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	margin-right: 1rem;
+}
+
+.site-title {
+	padding-left: 0;
+}
+
+.site-title h1 {
+	margin-bottom: 0;
+}
+
+.site-description {
+	padding-right: 0.75rem;
+	padding-bottom: 0.5rem;
+	display: block;
+}
+
+.archive-title {
+	font-size: large;
+	padding: 0.2rem;
+}
+
+
+/*--------------------------------------------------------------
+ # Main width
+ --------------------------------------------------------------*/
+
+.entry-header {
+    word-wrap: break-word;
+    margin-top: 1rem;
+}
+
+.elementor-image-gallery .gallery {
+	margin-bottom: 1.5em;
+	display: inline-block;
+	grid-gap: 1.5em;
+}
+
+
+/*--------------------------------------------------------------
+ 	Navigation
+ --------------------------------------------------------------*/
+
+.site-name {
+	font-family: inherit;
+	font-size: 2.0rem;
+	margin-bottom: 0;
+	font-weight: 800;
+}
+
+div.brisko-navigation {
+	/* margin-bottom: 0.2em; */
+	/* box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075); */
+	/* border-top: 1px solid #f0f0f0;
+ 	background-color: #fff;
+ 	border-bottom: 1px solid #f0f0f0; */
+}
+
+nav.main-navigation {
+	width: auto;
+}
+
+nav.main-navigation a {
+	font-size: 1rem;
+	text-transform: capitalize;
+	padding: 0.6rem 1.2rem;
+	background-color: #FFFFFF;
+}
+
+nav.main-navigation a:hover {
+	color: #000000;
+	background-color: #F8F9FA;
+}
+
+nav.main-navigation ul ul a {
+	border-bottom: solid thin #f0f0f0;
+}
+
+
+/*--------------------------------------------------------------
+ 	Dropdown list display
+ --------------------------------------------------------------*/
+
+.main-navigation ul ul {
+	display: block;
+}
+
+.main-navigation ul ul li:hover>ul,
+.main-navigation ul ul li.focus>ul {
+	display: block;
+	left: 100%;
+}
+
+
+/*--------------------------------------------------------------
+  # Post
+  --------------------------------------------------------------*/
+
+.post, .page {
+    margin: 0em;
+}
+
+.entry-content {
+	word-wrap: break-word;
+	color: #353535;
+	padding-top: 0rem;
+	/* padding-left: 1rem; */
+	/* padding-right: 1rem; */
+}
+
+.post-article {
+	margin-bottom: 4rem;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+	display: block;
+	padding: 0.5em;
+	margin-top: 1em;
+}
+
+.post-page-numbers {
+	padding-left: 8px;
+	padding-right: 8px;
+	border: solid thin #eaeaea;
+	border-radius: 2px;
+}
+
+.read-more {
+	font-weight: 600;
+	font-size: medium;
+	letter-spacing: 0.1rem;
+}
+
+.more-link {
+	padding: 0.7em 0.8em;
+	border: solid thin #f0f0f0;
+	text-transform: lowercase;
+}
+
+.more-link::after {
+	content: " \00BB";
+}
+
+.post-thumbnail {
+	margin-bottom: 1rem;
+}
+
+.entry-meta {
+	width: 100%;
+	border: solid thin #f0f0f0;
+	border-left: none;
+	border-right: none;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 8px;
+	font-size: medium;
+	color: #999;
+}
+
+.tags-links {
+	font-size: initial;
+	color: #8e8e8e;
+}
+
+.tags-links a {
+	padding: 2px 8px;
+	color: #767676;
+	border: solid thin #eaeaea;
+	display: inline-block;
+	margin-bottom: 4px;
+	margin-right: 3px;
+	border-radius: 3px;
+	font-size: small;
+}
+
+.cat-links a {
+	margin-right: 4px;
+}
+
+.comment-navigation .nav-links, .posts-navigation .nav-links, .post-navigation .nav-links {
+    display: flex;
+	text-transform: lowercase;
+}
+
+
+/*--------------------------------------------------------------
+ # Nav Previous and Next
+ --------------------------------------------------------------*/
+
+#menu-main-menu {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nav-menu {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.post-navigation .nav-previous span,
+.post-navigation .nav-next span {
+	display: block;
+}
+
+.nav-title {
+	word-break: break-all;
+}
+
+
+/*--------------------------------------------------------------
+ # Comments
+ --------------------------------------------------------------*/
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	margin-top: 24px;
+	word-wrap: break-word;
+	/* border-top: solid thin #999; */
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	flex: 1 0 50%;
+	word-wrap: break-word;
+	border: solid thin #eaeaea;
+	padding: 1rem;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+	border: solid thin #eaeaea;
+	padding: 1rem;
+}
+
+
+/*--------------------------------------------------------------
+ # Comments
+ --------------------------------------------------------------*/
+
+.comment-respond {
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	border: solid thin #eaeaea;
+	padding: 1.75rem;
+}
+
+.comment-notes {
+	font-size: medium;
+	margin: 0px 0;
+}
+
+.comment-list {
+	padding: 0;
+}
+
+.comments-title {
+	font-size: medium;
+	padding-bottom: 1rem;
+}
+
+.comment-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.comment-author img {
+	border-radius: 50%;
+	margin-right: .5rem;
+}
+
+.comment-metadata a {
+	color: #c1c1c1;
+}
+
+.says {
+	display: none;
+}
+
+.comment-reply-link {
+	border: solid thin #eaeaea;
+	padding: 0.2rem 0.5rem;
+}
+
+.comment-form-cookies-consent {
+	font-size: medium;
+	font-weight: normal;
+}
+
+.comments-area ol {
+	list-style: none;
+}
+
+.comment-body {
+	border: solid thin #f0f0f0;
+	padding: 2rem;
+	margin-bottom: 2rem;
+	font-size: medium;
+	word-wrap: break-word;
+}
+
+ol.children {
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+div.comments-area label {
+	display: inline-block;
+	margin-bottom: 0;
+	color: #757575;
+}
+
+div.comment-respond h3 {
+	font-size: inherit;
+}
+
+p.logged-in-as {
+	font-size: medium;
+	margin: 0px 0;
+}
+
+span.nav-subtitle {
+	color: #999;
+}
+
+
+/*--------------------------------------------------------------
+ # Sidebar
+ --------------------------------------------------------------*/
+
+.sidebar {
+	margin-left: 1rem;
+	word-wrap: break-word;
+}
+
+.sidebar ul,
+ol {
+	margin-right: 0rem;
+	margin-left: 0rem;
+}
+
+.sidebar ul {
+	list-style: none;
+	padding-inline-start: unset;
+}
+
+.sidebar ul li {
+	border-bottom: solid thin #f0f0f0;
+	padding: 0.3em 0;
+}
+
+.widget-title {
+	padding-bottom: 0.5em;
+	color: black;
+	font-size: inherit;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+
+/*--------------------------------------------------------------
+  # Input and Forms
+  --------------------------------------------------------------*/
+
+.wp-block-button__link {
+	color: #ffffff !important;
+	background-color: #32373c;
+	border: none;
+	border-radius: 28px;
+	box-shadow: none;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 18px;
+	padding: 12px 24px;
+	text-align: center;
+	text-decoration: none;
+	overflow-wrap: break-word;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	display: inline-block;
+	color: #fff;
+	background-color: #000000;
+	border-color: #000000;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: 0px;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	display: block;
+	width: 100%;
+	padding: .375rem .65rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: 0px;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.search-form {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-box-align: baseline;
+	-ms-flex-align: baseline;
+	align-items: baseline;
+}
+
+.search-submit {
+	margin-left: 8px;
+}
+
+
+/*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+
+.entry-footer {
+	clear: both;
+}

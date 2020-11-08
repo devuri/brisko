@@ -7,7 +7,7 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php brisko_post_thumbnail(); ?>
+	<?php Brisko\Theme::post_thumbnail(); ?>
 	<div class="full-width-content">
 		<?php
 		the_content();

@@ -1,0 +1,15 @@
+{
+    "autoload": {
+      "psr-4": {
+        "Brisko\\":"src"
+	},
+	  	"files": [
+			"src/Customize/helpers.php",
+			"src/inc/actions.php",
+			"src/inc/template-tags.php"
+		]
+    },
+    "config": {
+    "optimize-autoloader": true
+    }
+}

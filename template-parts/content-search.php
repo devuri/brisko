@@ -8,22 +8,29 @@
  */
 
 ?>
+<div class="post-article">
+	<?php Brisko\Theme::post_thumbnail(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php brisko_post_thumbnail(); ?>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta secondary-font">
-			<?php
-			brisko_posted_on();
-			brisko_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-	<div class="entry-summary">
 		<?php
-		the_excerpt();
-		printf( esc_html__( '%1$s', 'brisko' ), '<div class="read-more"><a class="more-link" href="'.get_permalink().'">Read More</a></div>' );
-		?></div><!-- .entry-summary -->
+			the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		?>
+		<?php brisko_before_entry_meta(); ?>
+			<div class="entry-meta ">
+				<?php
+				brisko_posted_on();
+				brisko_posted_by();
+				?>
+			</div><!-- .entry-meta -->
+		<?php brisko_after_entry_meta(); ?>
+	</header><!-- .entry-header -->
+	<div class="entry-content">
+		<?php the_excerpt(); ?>
+		<div class="read-more ">
+			<a class="more-link <?php echo esc_html( Brisko\Theme::options()->button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
+			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
+		</a>
+	</div>
+	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->
+</div><!-- post-article -->

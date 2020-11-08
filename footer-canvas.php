@@ -8,11 +8,12 @@
  *
  * @package brisko
  */
+
 ?>
+</div><!-- #page -->
 <?php brisko_before_footer(); ?>
 <?php brisko_footer(); ?>
-</div><!-- #page -->
-<?php wp_footer(); ?>
-<?php brisko_after_footer(); ?>
-</body>
+	<?php wp_footer(); ?>
+		<?php brisko_after_footer(); ?>
+	</body>
 </html>
