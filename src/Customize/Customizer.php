@@ -34,7 +34,7 @@ final class Customizer
 				'priority'       => 10,
 				'capability'     => 'edit_theme_options',
 				'theme_supports' => '',
-				'title'          => esc_html__( 'Brisko Theme Options', 'brisko' ),
+				'title'          => esc_html__( 'Theme Options', 'brisko' ),
 			)
 		);
 	}
