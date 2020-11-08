@@ -12,11 +12,11 @@
 	<?php Brisko\Theme::post_thumbnail(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h2 class="post-title">', '</h1>' );
+		<?php if ( is_singular() ) : ?>
+			<?php the_title( '<h2 class="post-title">', '</h1>' ); ?>
+				<?php
 		else :
-			the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		endif;
 		?>
 		<?php brisko_before_entry_meta(); ?>
@@ -49,17 +49,17 @@
 			<footer class="entry-footer ">
 				<?php brisko_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
-			<?php
-	else :
-		the_excerpt();
-		?>
+		<?php else : ?>
+			<div class="post-excerpt" style="font-size: unset;">
+				<?php Brisko\Theme::excerpt(); ?>
+			</div>
 		<div class="read-more ">
 			<a class="more-link <?php echo esc_html( Brisko\Theme::options()->button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
 			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
 		</a>
-	</div>
-		<?php
-	endif;
+	</div><!-- read-more -->
+	<?php endif; ?>
+	<?php
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),

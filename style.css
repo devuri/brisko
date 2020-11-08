@@ -24,11 +24,51 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
-body {
-	/* font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif; */
+body a:hover {
+	text-decoration: none;
 }
 
+body a {
+	color: #000000;
+	text-decoration: none;
+	background-color: transparent;
+	line-height: 1.75;
+	-webkit-font-smoothing: antialiased;
+	transition: all .25s;
+}
+
+.container {
+	width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.site-main {
+	padding: 1.75rem;
+}
+
+.post,
+.page {
+	margin: 0 0 0em;
+}
+
+.sticky {
+	display: block;
+	border: solid thin #d0d0d0;
+	padding: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 800;
+	line-height: inherit;
+}
 
 .site-main {
 	padding: 1.75rem;

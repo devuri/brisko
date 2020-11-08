@@ -34,16 +34,24 @@ final class Assets implements Setup
 	public function custom_css() {
 
 		// Get the theme setting.
-		$bttns  = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
-		$color = get_theme_mod( 'link_color', '#000000' );
-		$nav_padding = get_theme_mod( 'navigation_padding', 10 );
+		$bttns                 = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
+		$color                 = get_theme_mod( 'link_color', '#000000' );
+		$navigation_background = get_theme_mod( 'nav_background_color', '#fff' );
+		$nav_padding           = get_theme_mod( 'navigation_padding', 10 );
+		$nav_margin_bottom     = get_theme_mod( 'nav_margin_bottom', 2 );
+
+		// CSS array .
+		$custom_styles                   = array();
+		$custom_styles['links']          = "body a{color: {$color};}body a:hover{color: {$color};}";
+		$custom_styles['link_hover']     = "a:focus, a:hover {color: {$color};}";
+		$custom_styles['nav_links']      = "nav.main-navigation a:hover {color: {$color};background-color: #F8F9FA;}";
+		$custom_styles['nav_background'] = ".brisko-navigation {background-color: {$navigation_background};}";
+		$custom_styles['nav_padding']    = ".brisko-navigation {padding: {$nav_padding}px;}";
+		$custom_styles['margin_bottom']  = ".brisko-navigation {margin-bottom: {$nav_margin_bottom}px;}";
+		$custom_styles['bttn_color']     = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color}";
 
 		// css output.
-		$links  = "body a{color: {$color};}body a:hover{color: {$color};}";
-		$nav_links   = "nav.main-navigation a:hover {color: {$color};background-color: #F8F9FA;}";
-		$navigation   = ".brisko-navigation {padding: {$nav_padding}px;}";
-		$bttn_color = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color}";
-		$custom_styles = $links . $navigation . $nav_links . $bttn_color;
+		$custom_styles = implode( '', $custom_styles );
 
 		wp_add_inline_style( 'custom-styles', $custom_styles );
 	}

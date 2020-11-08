@@ -53,5 +53,28 @@ class Navigation
 			)
 		);
 
+		/**
+		 * Navigation background color
+		 */
+		$wp_customize->add_setting(
+			'nav_background_color', array(
+				'capability'        => 'manage_options',
+				'default'           => '#ffffff',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
+
+		$wp_customize->add_control(
+			new \WP_Customize_Color_Control(
+				$wp_customize, 'nav_background_color',
+				array(
+					'label'       => esc_html__( 'Navigation background color', 'brisko' ),
+					'description' => esc_html__( 'set navigation background color', 'brisko' ),
+					'section'     => self::$section,
+				)
+			)
+		);
+
 	}
 }
