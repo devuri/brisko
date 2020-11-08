@@ -21,10 +21,7 @@ final class SiteHeader
 	 * Site Header
 	 */
 	public function site_header() {
-		$this->head();
-		Navigation::get()->navigation();
-		$this->header_image();
-		$this->foot();
+		get_template_part( 'template-parts/header', 'header' );
 	}
 
 	/**
@@ -51,21 +48,4 @@ final class SiteHeader
 		<?php
 	}
 
-	/**
-	 * Header Image
-	 */
-	public function head() {
-		?>
-			<header id="masthead" class="site-header">
-		<?php
-	}
-
-	/**
-	 * Header Image
-	 */
-	public function foot() {
-		?>
-		</header><!-- #masthead -->
-		<?php
-	}
 }

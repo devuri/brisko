@@ -60,6 +60,24 @@ final class Theme
 	}
 
 	/**
+	 * Theme Navigation
+	 *
+	 * @return Navigation .
+	 */
+	public static function navigation() {
+		return Navigation::get()->navigation();
+	}
+
+	/**
+	 * Theme Header
+	 *
+	 * @return SiteHeader .
+	 */
+	public static function header_image() {
+		return SiteHeader::get()->header_image();
+	}
+
+	/**
 	 * Displays an optional post thumbnail.
 	 */
 	public static function post_thumbnail() {
