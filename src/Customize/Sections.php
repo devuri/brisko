@@ -2,14 +2,33 @@
 
 namespace Brisko\Customize;
 
+use Brisko\Traits\Singleton;
+
 final class Sections {
+
+	use Singleton;
 
 	/**
 	 * $sections
 	 *
 	 * @var array $sections
 	 */
-	private static $sections = array();
+	private $sections = array();
+
+	/**
+	 * [__construct description]
+	 */
+	private function __construct() {
+
+		$this->sections[] = 'general';
+		$this->sections[] = 'navigation';
+		$this->sections[] = 'header';
+		$this->sections[] = 'pages';
+		$this->sections[] = 'blog';
+		$this->sections[] = 'posts';
+		$this->sections[] = 'footer';
+
+	}
 
 	/**
 	 * Lets define customizer sections
@@ -20,22 +39,8 @@ final class Sections {
 	 *
 	 * @return array $sections
 	 */
-	protected static function sections() {
-
-		self::$sections[] = 'general';
-		self::$sections[] = 'navigation';
-		self::$sections[] = 'header';
-		self::$sections[] = 'pages';
-		self::$sections[] = 'blog';
-		self::$sections[] = 'posts';
-		self::$sections[] = 'footer';
-		return self::$sections;
+	public function sections() {
+		return $this->sections;
 	}
 
-	/**
-	 * Get the sections list
-	 */
-	public static function get() {
-		return self::sections();
-	}
 }

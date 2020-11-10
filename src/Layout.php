@@ -37,7 +37,7 @@ class Layout implements View
 	/**
 	 * Disabled Sidebar.
 	 */
-	public function is_disabled() {
+	public function disable_sidebar() {
 
 		if ( 1 === get_theme_mod( 'disable_sidebar', false ) ) {
 			return true;
@@ -56,7 +56,7 @@ class Layout implements View
 		// check if sidebar or not .
 		$no_sidebar      = sanitize_html_class( 'col-md' );
 		$sidebar         = sanitize_html_class( 'col-md-8' );
-		$sidebar_display = ( ( $this->is_disabled() ) ? $no_sidebar : $sidebar );
+		$sidebar_display = ( ( $this->disable_sidebar() ) ? $no_sidebar : $sidebar );
 
 		// params .
 		$args = array( 'content_class' => $sidebar_display );
@@ -69,7 +69,7 @@ class Layout implements View
 	 */
 	public function sidebar() {
 
-		if ( $this->is_disabled() ) {
+		if ( $this->disable_sidebar() ) {
 			return false;
 		}
 		get_template_part( 'template-parts/sidebar' );

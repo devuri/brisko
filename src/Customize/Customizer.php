@@ -2,7 +2,9 @@
 
 namespace Brisko\Customize;
 
-final class Customizer
+use Brisko\Contracts\Setup;
+
+final class Customizer implements Setup
 {
 	/**
 	 * Initialize the Customizer
@@ -53,43 +55,13 @@ final class Customizer
 		/**
 		 * Sections
 		 */
-		$this->sections( $wp_customize );
+		Build::get()->sections( $wp_customize );
 
 		/**
 		 * Settings
 		 */
-		$this->settings( $wp_customize );
+		Build::get()->settings( $wp_customize );
 
-	}
-
-	/**
-	 * Sections
-	 *
-	 * @param WP_Customize_Manager $wp_customize .
-	 */
-	public function sections( $wp_customize ) {
-
-		foreach ( Sections::get() as $seckey => $section ) {
-
-			// build out each section.
-			$wp_customize->add_section( 'brisko_section_' . trim( $section ),
-				array(
-					'title'      => esc_html( ' » ' . trim( ucwords( $section ) ) ),
-					'capability' => 'edit_theme_options',
-					'panel'      => 'brisko_theme_panel',
-				)
-			);
-
-		} // foreach
-	}
-
-	/**
-	 * Settings .
-	 *
-	 * @param WP_Customize_Manager $wp_customize .
-	 */
-	public function settings( $wp_customize ) {
-		Build::sections( $wp_customize );
 	}
 
 }

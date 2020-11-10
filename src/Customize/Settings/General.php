@@ -57,25 +57,24 @@ class General
 		);
 
 		/**
-		 * Disable Sidebar
+		 * Enable Smooth scroll
 		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Sidebar', 'brisko' ), self::$section );
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Smooth Scroll', 'brisko' ), self::$section );
 		$wp_customize->add_setting(
-			'disable_sidebar', array(
-				'default'           => absint( 0 ),
+			'enable_smooth_scroll', array(
+				'default'           => false,
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
-				'sanitize_callback' => 'absint',
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
 			)
 		);
 
 		$wp_customize->add_control(
-			'disable_sidebar', array(
-				'label'   => esc_html__( 'Disable Sidebar', 'brisko' ),
+			'enable_smooth_scroll', array(
+				'label'   => esc_html__( 'Enable Smooth Scroll', 'brisko' ),
 				'section' => self::$section,
 				'type'    => 'checkbox',
 			)
 		);
-
 	}
 }

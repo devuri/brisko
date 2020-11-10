@@ -24,6 +24,7 @@ final class Assets implements Setup
 	 *  Assets scripts
 	 */
 	private function __construct() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'brisko_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'brisko_scripts' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'custom_css' ) );
 	}
@@ -59,7 +60,7 @@ final class Assets implements Setup
 	/**
 	 * Enqueue scripts and styles.
 	 */
-	public function brisko_scripts() {
+	public function brisko_styles() {
 		wp_enqueue_style( 'brisko-theme', get_stylesheet_uri(), array( 'underscores', 'bootstrap', 'brisko' ), Theme::VERSION );
 		wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
 
@@ -72,12 +73,21 @@ final class Assets implements Setup
 		wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), Theme::VERSION );
 		wp_enqueue_style( 'underscores', get_template_directory_uri() . '/css/underscores.css', array(), Theme::VERSION );
 
+	}
+
+	/**
+	 * Enqueue scripts and styles.
+	 */
+	public function brisko_scripts() {
+
 		wp_enqueue_script( 'brisko-navigation', get_template_directory_uri() . '/js/navigation.js', array(), Theme::VERSION, true );
-		wp_enqueue_script( 'brisko-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), Theme::VERSION, true );
+
+		if ( true === get_theme_mod( 'enable_smooth_scroll', false ) ) {
+			wp_enqueue_script( 'brisko-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), Theme::VERSION, true );
+		}
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 	}
-
 }
