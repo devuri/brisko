@@ -34,9 +34,17 @@ body a {
 	transition: all .25s;
 }
 
-body a:hover {
-	text-decoration: none;
+.post-article a {
+	text-decoration: underline;
 }
+
+.comments-area a {
+	text-decoration: underline;
+}
+
+/* body a:hover {
+	text-decoration: none;
+} */
 
 .container {
 	width: 100%;
