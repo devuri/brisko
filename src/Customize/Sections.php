@@ -16,17 +16,21 @@ final class Sections {
 	private $sections = array();
 
 	/**
-	 * [__construct description]
+	 * Create the customizer sections array
+	 * The keys should be lowercase single words,
+	 * these will be used to create sections
+	 * The array value can be mutitple words
+	 * these will be used for section title
 	 */
 	private function __construct() {
 
-		$this->sections[] = 'general';
-		$this->sections[] = 'navigation';
-		$this->sections[] = 'header';
-		$this->sections[] = 'pages';
-		$this->sections[] = 'blog';
-		$this->sections[] = 'posts';
-		$this->sections[] = 'footer';
+		$this->sections['general']    = 'General';
+		$this->sections['navigation'] = 'Navigation';
+		$this->sections['header']     = 'Header';
+		$this->sections['pages']      = 'Pages';
+		$this->sections['blog']       = 'Blog';
+		$this->sections['posts']      = 'Posts';
+		$this->sections['footer']     = 'Footer';
 
 	}
 
