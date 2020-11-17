@@ -26,6 +26,7 @@ class Thumbnail
 	 */
 	public function thumbnail_blog() {
 		?>
+		<div class="blog-thumbnail">
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
 				the_post_thumbnail(
@@ -40,6 +41,7 @@ class Thumbnail
 				);
 			?>
 		</a>
+	</div><!-- .blog-thumbnail -->
 		<?php
 	}
 

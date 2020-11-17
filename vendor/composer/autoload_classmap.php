@@ -36,6 +36,7 @@ return array(
     'Brisko\\Traits\\Singleton' => $baseDir . '/src/Traits/Singleton.php',
     'Brisko\\View\\Archive' => $baseDir . '/src/View/Archive.php',
     'Brisko\\View\\CanvasPage' => $baseDir . '/src/View/CanvasPage.php',
+    'Brisko\\View\\Excerpt' => $baseDir . '/src/View/Excerpt.php',
     'Brisko\\View\\FullWidthPage' => $baseDir . '/src/View/FullWidthPage.php',
     'Brisko\\View\\IndexPage' => $baseDir . '/src/View/IndexPage.php',
     'Brisko\\View\\Page' => $baseDir . '/src/View/Page.php',

@@ -57,6 +57,7 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
         'Brisko\\Traits\\Singleton' => __DIR__ . '/../..' . '/src/Traits/Singleton.php',
         'Brisko\\View\\Archive' => __DIR__ . '/../..' . '/src/View/Archive.php',
         'Brisko\\View\\CanvasPage' => __DIR__ . '/../..' . '/src/View/CanvasPage.php',
+        'Brisko\\View\\Excerpt' => __DIR__ . '/../..' . '/src/View/Excerpt.php',
         'Brisko\\View\\FullWidthPage' => __DIR__ . '/../..' . '/src/View/FullWidthPage.php',
         'Brisko\\View\\IndexPage' => __DIR__ . '/../..' . '/src/View/IndexPage.php',
         'Brisko\\View\\Page' => __DIR__ . '/../..' . '/src/View/Page.php',
