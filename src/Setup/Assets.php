@@ -40,6 +40,7 @@ final class Assets implements Setup
 		$navigation_background = get_theme_mod( 'nav_background_color', '#fff' );
 		$nav_padding           = get_theme_mod( 'navigation_padding', 10 );
 		$nav_margin_bottom     = get_theme_mod( 'nav_margin_bottom', 2 );
+		$links_underline       = get_theme_mod( 'links_underline', false );
 
 		// CSS array .
 		$custom_styles                   = array();
