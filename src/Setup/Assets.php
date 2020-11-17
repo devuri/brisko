@@ -40,7 +40,7 @@ final class Assets implements Setup
 		$navigation_background = get_theme_mod( 'nav_background_color', '#fff' );
 		$nav_padding           = get_theme_mod( 'navigation_padding', 10 );
 		$nav_margin_bottom     = get_theme_mod( 'nav_margin_bottom', 2 );
-		$links_underline       = get_theme_mod( 'links_underline', false );
+		$underline_post_links  = get_theme_mod( 'underline_post_links', true );
 
 		// CSS array .
 		$custom_styles                   = array();
@@ -50,7 +50,11 @@ final class Assets implements Setup
 		$custom_styles['nav_background'] = ".brisko-navigation {background-color: {$navigation_background};}";
 		$custom_styles['nav_padding']    = ".brisko-navigation {padding: {$nav_padding}px;}";
 		$custom_styles['margin_bottom']  = ".brisko-navigation {margin-bottom: {$nav_margin_bottom}px;}";
-		$custom_styles['bttn_color']     = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color}";
+		$custom_styles['bttn_color']     = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color};}";
+
+		if ( false === $underline_post_links ) {
+			$custom_styles['underline_post_links'] = ".post-article a {text-decoration: none;}";
+		}
 
 		// css output.
 		$custom_styles = implode( '', $custom_styles );

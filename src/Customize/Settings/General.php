@@ -76,5 +76,26 @@ class General
 				'type'    => 'checkbox',
 			)
 		);
+
+		/**
+		 * Underline Content Links
+		 */
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Underline Content Links', 'brisko' ), self::$section );
+		$wp_customize->add_setting(
+			'underline_post_links', array(
+				'default'           => true,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'underline_post_links', array(
+				'label'   => esc_html__( 'Underline Content Links', 'brisko' ),
+				'section' => self::$section,
+				'type'    => 'checkbox',
+			)
+		);
 	}
 }
