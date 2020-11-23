@@ -157,6 +157,10 @@ nav.main-navigation ul ul a {
 	/* padding-right: 1rem; */
 }
 
+h2.post-title a {
+	text-decoration: none;
+}
+
 .post-article {
 	margin-bottom: 4rem;
 }
