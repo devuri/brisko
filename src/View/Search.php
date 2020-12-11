@@ -34,12 +34,15 @@ class Search extends Layout
 						 * called content-search.php and that will be used instead.
 						 */
 						get_template_part( 'template-parts/content', 'search' );
-				endwhile;
-					the_posts_navigation();
-				else :
-					get_template_part( 'template-parts/content', 'none' );
+			endwhile;
+
+			the_posts_navigation();
+
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
 		endif;
 
-				$this->footer();
+			$this->footer();
 	}
 }
