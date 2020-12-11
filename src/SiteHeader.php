@@ -40,7 +40,7 @@ final class SiteHeader
 		}
 
 		?>
-			<div class="<?php Options::get()->header_image_width(); ?> brisko-header-img <?php Options::get()->header_image_display(); ?>" style="padding:0px">
+			<div class="<?php Options::get()->header_image_width(); ?> brisko-header-img" style="padding:0px">
 				<?php
 					the_header_image_tag( array( 'class' => 'brisko-header-img' ) );
 				?>
