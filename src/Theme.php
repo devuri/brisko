@@ -117,4 +117,13 @@ final class Theme
 	public static function footer() {
 		return Footer::get()->site_footer();
 	}
+
+	/**
+	 * Footer Credit
+	 *
+	 * @return string
+	 */
+	public static function footer_credit() {
+		return Footer::get()->footer_credit();
+	}
 }
