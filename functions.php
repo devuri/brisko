@@ -17,7 +17,7 @@
 	 */
 	Brisko\Theme::setup();
 
-if ( ! function_exists( 'wp_brisko' ) ) :
+if ( ! function_exists( 'brisko' ) ) :
 	/**
 	 * Get the Brisko Theme
 	 *
@@ -25,7 +25,7 @@ if ( ! function_exists( 'wp_brisko' ) ) :
 	 *
 	 * @return Theme
 	 */
-	function wp_brisko() {
+	function brisko() {
 		return new Brisko\Theme();
 	}
 endif;
