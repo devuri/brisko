@@ -3,10 +3,10 @@
 namespace Brisko\Setup;
 
 use Brisko\Traits\Singleton;
-use Brisko\Contracts\Setup;
+use Brisko\Contracts\SetupInterface;
 use Brisko\Theme;
 
-final class Assets implements Setup
+final class Assets implements SetupInterface
 {
 
 	use Singleton;

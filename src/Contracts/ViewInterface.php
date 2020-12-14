@@ -2,7 +2,7 @@
 
 namespace Brisko\Contracts;
 
-interface View
+interface ViewInterface
 {
 
 	/**

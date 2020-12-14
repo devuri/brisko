@@ -2,7 +2,7 @@
 
 namespace Brisko\Contracts;
 
-interface Setup
+interface SetupInterface
 {
 
 	/**
