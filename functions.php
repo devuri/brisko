@@ -23,10 +23,10 @@ if ( ! function_exists( 'brisko' ) ) :
 	 *
 	 * Helper function to get the Bisko Theme Object.
 	 *
-	 * @return Theme
+	 * @return Brisko
 	 */
 	function brisko() {
-		return new Brisko\Theme();
+		return Brisko\Brisko::get();
 	}
 endif;
 
