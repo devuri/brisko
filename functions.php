@@ -17,6 +17,19 @@
 	 */
 	Brisko\Theme::setup();
 
+if ( ! function_exists( 'wp_brisko' ) ) :
+	/**
+	 * Get the Brisko Theme
+	 *
+	 * Helper function to get the Bisko Theme Object.
+	 *
+	 * @return Theme
+	 */
+	function wp_brisko() {
+		return new Brisko\Theme();
+	}
+endif;
+
 /**
  * Load Jetpack compatibility file.
  */
