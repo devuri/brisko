@@ -37,7 +37,7 @@ final class Theme
 	/**
 	 * Define Theme Version
 	 */
-	const VERSION = '1.1.0';
+	const VERSION = '1.2.0';
 
 	/**
 	 * [__construct description]
@@ -116,5 +116,14 @@ final class Theme
 	 */
 	public static function footer() {
 		return Footer::get()->site_footer();
+	}
+
+	/**
+	 * Footer Credit
+	 *
+	 * @return string
+	 */
+	public static function footer_credit() {
+		return Footer::get()->footer_credit();
 	}
 }

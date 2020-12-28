@@ -17,20 +17,10 @@ final class Footer
 	use Singleton;
 
 	/**
-	 * Header Image
+	 * Site Footer
 	 */
 	public function site_footer() {
-		?>
-		<footer id="colophon" class="site-footer this-site-footer bg-white <?php Options::get()->footer_top_margin(); ?>">
-			<?php brisko_footer(); ?>
-			<div align="center" class="site-info container">
-				<div class="brisko-theme-credit">
-					<?php $this->footer_credit(); ?>
-					<?php do_action( 'brisko_footer_credit' ); ?>
-				</div><!-- .brisko-theme-credit -->
-			</div><!-- .site-info -->
-		</footer><!-- #colophon -->
-		<?php
+		get_template_part( 'template-parts/footer', 'footer' );
 	}
 
 	/**

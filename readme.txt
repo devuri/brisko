@@ -1,7 +1,7 @@
 === Brisko ===
 Contributors: icelayer
 Tested up to: 5.5
-Version: 1.1.0
+Version: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready

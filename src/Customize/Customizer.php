@@ -2,9 +2,9 @@
 
 namespace Brisko\Customize;
 
-use Brisko\Contracts\Setup;
+use Brisko\Contracts\SetupInterface;
 
-final class Customizer implements Setup
+final class Customizer implements SetupInterface
 {
 	/**
 	 * Initialize the Customizer

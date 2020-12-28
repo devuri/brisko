@@ -3,9 +3,9 @@
 namespace Brisko\Setup;
 
 use Brisko\Traits\Singleton;
-use Brisko\Contracts\Setup;
+use Brisko\Contracts\SetupInterface;
 
-final class Body implements Setup
+final class Body implements SetupInterface
 {
 
 	use Singleton;
