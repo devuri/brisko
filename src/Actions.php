@@ -53,12 +53,10 @@ final class Actions
 		if ( false === $action ) {
 			return false;
 		}
-
 		// check if this is valid action.
 		if ( in_array( $action, $this->actions(), true ) ) {
 			do_action( $action );
 		}
-
 	}
 
 }
