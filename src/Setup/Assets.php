@@ -53,6 +53,7 @@ final class Assets implements SetupInterface
 		$custom_styles['bttn_color']     = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color};}";
 
 		if ( false === $underline_post_links ) {
+			$custom_styles['underline_body_links'] = "body a{text-decoration: none;}";
 			$custom_styles['underline_post_links'] = ".post-article a {text-decoration: none;}";
 		}
 

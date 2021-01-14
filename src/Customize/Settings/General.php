@@ -80,7 +80,7 @@ class General
 		/**
 		 * Underline Content Links
 		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Underline Content Links', 'brisko' ), self::$section );
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Underline Links', 'brisko' ), self::$section );
 		$wp_customize->add_setting(
 			'underline_post_links', array(
 				'default'           => true,
@@ -92,7 +92,7 @@ class General
 
 		$wp_customize->add_control(
 			'underline_post_links', array(
-				'label'   => esc_html__( 'Underline Content Links', 'brisko' ),
+				'label'   => esc_html__( 'Underline Links', 'brisko' ),
 				'section' => self::$section,
 				'type'    => 'checkbox',
 			)

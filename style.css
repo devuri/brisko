@@ -34,6 +34,11 @@ body a {
 	transition: all .25s;
 }
 
+
+body a {
+	text-decoration: underline;
+}
+
 .post-article a {
 	text-decoration: underline;
 }
