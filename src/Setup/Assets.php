@@ -53,7 +53,8 @@ final class Assets implements SetupInterface
 		$custom_styles['bttn_color']     = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color};}";
 
 		if ( false === $underline_post_links ) {
-			$custom_styles['underline_post_links'] = ".post-article a {text-decoration: none;}";
+			$custom_styles['underline_body_links'] = "body a{text-decoration: none;}"; // @codingStandardsIgnoreLine
+			$custom_styles['underline_post_links'] = ".post-article a {text-decoration: none;}"; // @codingStandardsIgnoreLine
 		}
 
 		// css output.
@@ -72,9 +73,7 @@ final class Assets implements SetupInterface
 		wp_enqueue_style( 'brisko', get_template_directory_uri() . '/css/brisko.css', array(), Theme::VERSION );
 		wp_enqueue_style( 'custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array( 'brisko-theme' ), Theme::VERSION );
 
-		/**
-		 * Bootstrap and underscores
-		 */
+		// Bootstrap and underscores.
 		wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), Theme::VERSION );
 		wp_register_style( 'underscores', get_template_directory_uri() . '/css/underscores.css', array(), Theme::VERSION );
 
