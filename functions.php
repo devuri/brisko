@@ -34,5 +34,5 @@ endif;
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) :
-	require get_template_directory() . 'src/inc/jetpack.php';
+	require get_template_directory() . '/src/inc/jetpack.php';
 endif;
