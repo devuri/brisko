@@ -64,7 +64,7 @@ class Thumbnail
 
 			$this->thumbnail_blog();
 
-		endif; // End is_singular().
+		endif;
 	}
 
 }
