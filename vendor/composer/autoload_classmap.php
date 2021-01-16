@@ -6,8 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Brisko\\Contracts\\Setup' => $baseDir . '/src/Contracts/Setup.php',
-    'Brisko\\Contracts\\View' => $baseDir . '/src/Contracts/View.php',
+    'Brisko\\Actions' => $baseDir . '/src/Actions.php',
+    'Brisko\\Brisko' => $baseDir . '/src/Brisko.php',
+    'Brisko\\Contracts\\SetupInterface' => $baseDir . '/src/Contracts/SetupInterface.php',
+    'Brisko\\Contracts\\ViewInterface' => $baseDir . '/src/Contracts/ViewInterface.php',
     'Brisko\\Customize\\Build' => $baseDir . '/src/Customize/Build.php',
     'Brisko\\Customize\\Controls\\Control' => $baseDir . '/src/Customize/Controls/Control.php',
     'Brisko\\Customize\\Controls\\HeaderControl' => $baseDir . '/src/Customize/Controls/HeaderControl.php',
@@ -30,6 +32,7 @@ return array(
     'Brisko\\Setup\\Assets' => $baseDir . '/src/Setup/Assets.php',
     'Brisko\\Setup\\Body' => $baseDir . '/src/Setup/Body.php',
     'Brisko\\Setup\\Head' => $baseDir . '/src/Setup/Head.php',
+    'Brisko\\Setup\\Jetpack' => $baseDir . '/src/Setup/Jetpack.php',
     'Brisko\\SiteHeader' => $baseDir . '/src/SiteHeader.php',
     'Brisko\\Template' => $baseDir . '/src/Template.php',
     'Brisko\\Theme' => $baseDir . '/src/Theme.php',
@@ -45,4 +48,5 @@ return array(
     'Brisko\\View\\Sidebar' => $baseDir . '/src/View/Sidebar.php',
     'Brisko\\View\\Single' => $baseDir . '/src/View/Single.php',
     'Brisko\\View\\Thumbnail' => $baseDir . '/src/View/Thumbnail.php',
+    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );
