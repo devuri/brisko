@@ -9,6 +9,7 @@ use Brisko\Setup\Activate;
 use Brisko\Setup\Assets;
 use Brisko\Setup\Body;
 use Brisko\Setup\Head;
+use Brisko\Setup\Jetpack;
 use Brisko\Customize\Customizer;
 
 /**
@@ -47,6 +48,7 @@ final class Theme
 		Assets::init();
 		Body::init();
 		Head::init();
+		Jetpack::init();
 		Customizer::init();
 	}
 
