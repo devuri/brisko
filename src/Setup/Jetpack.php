@@ -51,7 +51,6 @@ final class Jetpack implements SetupInterface
 				'container' => 'primary',
 				'render'    => array( $this, 'infinite_scroll_render' ),
 				'footer'    => 'page',
-				// 'type'      => 'click',
 			)
 		);
 
