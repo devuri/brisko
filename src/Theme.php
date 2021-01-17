@@ -9,6 +9,7 @@ use Brisko\Setup\Activate;
 use Brisko\Setup\Assets;
 use Brisko\Setup\Body;
 use Brisko\Setup\Head;
+use Brisko\Setup\Jetpack;
 use Brisko\Customize\Customizer;
 
 /**
@@ -37,7 +38,7 @@ final class Theme
 	/**
 	 * Define Theme Version
 	 */
-	const VERSION = '1.2.5';
+	const VERSION = '1.3.1';
 
 	/**
 	 * [__construct description]
@@ -47,6 +48,7 @@ final class Theme
 		Assets::init();
 		Body::init();
 		Head::init();
+		Jetpack::init();
 		Customizer::init();
 	}
 

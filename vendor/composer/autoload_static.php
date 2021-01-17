@@ -27,8 +27,10 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
     );
 
     public static $classMap = array (
-        'Brisko\\Contracts\\Setup' => __DIR__ . '/../..' . '/src/Contracts/Setup.php',
-        'Brisko\\Contracts\\View' => __DIR__ . '/../..' . '/src/Contracts/View.php',
+        'Brisko\\Actions' => __DIR__ . '/../..' . '/src/Actions.php',
+        'Brisko\\Brisko' => __DIR__ . '/../..' . '/src/Brisko.php',
+        'Brisko\\Contracts\\SetupInterface' => __DIR__ . '/../..' . '/src/Contracts/SetupInterface.php',
+        'Brisko\\Contracts\\ViewInterface' => __DIR__ . '/../..' . '/src/Contracts/ViewInterface.php',
         'Brisko\\Customize\\Build' => __DIR__ . '/../..' . '/src/Customize/Build.php',
         'Brisko\\Customize\\Controls\\Control' => __DIR__ . '/../..' . '/src/Customize/Controls/Control.php',
         'Brisko\\Customize\\Controls\\HeaderControl' => __DIR__ . '/../..' . '/src/Customize/Controls/HeaderControl.php',
@@ -51,6 +53,7 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
         'Brisko\\Setup\\Assets' => __DIR__ . '/../..' . '/src/Setup/Assets.php',
         'Brisko\\Setup\\Body' => __DIR__ . '/../..' . '/src/Setup/Body.php',
         'Brisko\\Setup\\Head' => __DIR__ . '/../..' . '/src/Setup/Head.php',
+        'Brisko\\Setup\\Jetpack' => __DIR__ . '/../..' . '/src/Setup/Jetpack.php',
         'Brisko\\SiteHeader' => __DIR__ . '/../..' . '/src/SiteHeader.php',
         'Brisko\\Template' => __DIR__ . '/../..' . '/src/Template.php',
         'Brisko\\Theme' => __DIR__ . '/../..' . '/src/Theme.php',
@@ -66,6 +69,7 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
         'Brisko\\View\\Sidebar' => __DIR__ . '/../..' . '/src/View/Sidebar.php',
         'Brisko\\View\\Single' => __DIR__ . '/../..' . '/src/View/Single.php',
         'Brisko\\View\\Thumbnail' => __DIR__ . '/../..' . '/src/View/Thumbnail.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
