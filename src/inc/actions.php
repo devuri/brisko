@@ -20,6 +20,18 @@ if ( ! function_exists( 'brisko_before_header' ) ) :
 endif;
 
 /**
+ * Brisko_custom_header
+ */
+if ( ! function_exists( 'brisko_custom_header' ) ) :
+	function brisko_custom_header() {
+		/**
+		 * Custom header.
+		 */
+		do_action( 'brisko_custom_header' );
+	}
+endif;
+
+/**
  * brisko_after_header
  */
 if ( ! function_exists( 'brisko_after_header' ) ) :

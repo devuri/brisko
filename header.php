@@ -24,6 +24,7 @@
 		<?php esc_html_e( 'Skip to content', 'brisko' ); ?>
 	</a>
 <?php brisko_before_header(); ?>
+<?php brisko_custom_header(); ?>
 	<?php Brisko\Theme::header(); ?>
 <?php brisko_after_header(); ?>
 <?php if ( is_front_page() && is_home() ) :
