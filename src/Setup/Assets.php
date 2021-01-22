@@ -12,6 +12,13 @@ final class Assets implements SetupInterface
 	use Singleton;
 
 	/**
+	 * Disable Theme Styles.
+	 *
+	 * @var bool
+	 */
+	private $disable_styles = false;
+
+	/**
 	 * Singleton
 	 *
 	 * @return object
@@ -24,9 +31,16 @@ final class Assets implements SetupInterface
 	 *  Assets scripts
 	 */
 	private function __construct() {
+
+		// get setting.
+		$this->disable_styles = get_theme_mod( 'disable_styles', false );
+
+		// enqueue.
 		add_action( 'wp_enqueue_scripts', array( $this, 'brisko_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'brisko_scripts' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'custom_css' ) );
+		do_action( 'brisko_assets' );
+
 	}
 
 	/**
@@ -67,10 +81,18 @@ final class Assets implements SetupInterface
 	 * Enqueue scripts and styles.
 	 */
 	public function brisko_styles() {
-		wp_enqueue_style( 'brisko-theme', get_stylesheet_uri(), array( 'underscores', 'bootstrap', 'brisko' ), Theme::VERSION );
-		wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
 
-		wp_enqueue_style( 'brisko', get_template_directory_uri() . '/css/brisko.css', array(), Theme::VERSION );
+		/**
+		 * We can disable all theme styles.
+		 *
+		 * Useful for child themes.
+		 */
+		if ( false === $this->disable_styles ) {
+			wp_enqueue_style( 'brisko-theme', get_stylesheet_uri(), array( 'underscores', 'bootstrap', 'brisko' ), Theme::VERSION );
+			wp_enqueue_style( 'brisko', get_template_directory_uri() . '/css/brisko.css', array(), Theme::VERSION );
+		}
+
+		wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
 		wp_enqueue_style( 'custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array( 'brisko-theme' ), Theme::VERSION );
 
 		// Bootstrap and underscores.
