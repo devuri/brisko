@@ -56,10 +56,9 @@ class General
 			)
 		);
 
-		/**
-		 * Enable Smooth scroll
-		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Smooth Scroll', 'brisko' ), self::$section );
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Other Settings', 'brisko' ), self::$section );
+
+		// Smooth scroll.
 		$wp_customize->add_setting(
 			'enable_smooth_scroll', array(
 				'default'           => false,
@@ -77,10 +76,7 @@ class General
 			)
 		);
 
-		/**
-		 * Underline Content Links
-		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Underline Links', 'brisko' ), self::$section );
+		// Underline Content Links.
 		$wp_customize->add_setting(
 			'underline_post_links', array(
 				'default'           => true,
@@ -97,5 +93,29 @@ class General
 				'type'    => 'checkbox',
 			)
 		);
+
+		/**
+		 * Child Theme Settings
+		 */
+		if ( is_child_theme() ) {
+			( new Control() )->header_title( $wp_customize, esc_html__( 'Child Theme Settings', 'brisko' ), self::$section );
+			$wp_customize->add_setting(
+				'disable_styles', array(
+					'default'           => false,
+					'capability'        => 'edit_theme_options',
+					'transport'         => self::$transport,
+					'sanitize_callback' => 'brisko_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				'disable_styles', array(
+					'label'       => esc_html__( 'Disable Brisko Styles', 'brisko' ),
+					'description' => esc_html__( 'This will disable the parent theme styles (some custom styles will be affected).', 'brisko' ),
+					'section'     => self::$section,
+					'type'        => 'checkbox',
+				)
+			);
+		}
 	}
 }
