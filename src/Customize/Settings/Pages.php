@@ -4,8 +4,9 @@ namespace Brisko\Customize\Settings;
 
 use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
+use Brisko\Contracts\SettingsInterface;
 
-class Pages
+class Pages implements SettingsInterface
 {
 	/**
 	 * Brisko Section
@@ -45,10 +46,10 @@ class Pages
 
 		$wp_customize->add_control(
 			'display_page_header', array(
-				'label'   => esc_html__( 'Display Page Header', 'brisko' ),
+				'label'       => esc_html__( 'Display Page Header', 'brisko' ),
 				'description' => esc_html__( 'show the page titles on each page', 'brisko' ),
-				'section' => self::$section,
-				'type'    => 'checkbox',
+				'section'     => self::$section,
+				'type'        => 'checkbox',
 			)
 		);
 

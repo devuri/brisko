@@ -6,7 +6,7 @@ use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
 use Brisko\Contracts\SettingsInterface;
 
-class Child
+class Child implements SettingsInterface
 {
 	/**
 	 * Brisko Section
@@ -55,6 +55,8 @@ class Child
 				'type'        => 'checkbox',
 			)
 		);
+
+		do_action( 'brisko_child_customizer', $wp_customize, $control );
 
 	}
 }
