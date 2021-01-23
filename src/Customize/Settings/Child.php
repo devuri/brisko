@@ -56,5 +56,7 @@ class Child
 			)
 		);
 
+		do_action( 'brisko_child_customizer', $wp_customize, $control );
+
 	}
 }
