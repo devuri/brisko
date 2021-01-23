@@ -6,7 +6,7 @@ interface SettingsInterface
 {
 
 	/**
-	 * Lets build out the customizer settings
+	 * Customizer settings
 	 *
 	 * Create new customizer settings here.
 	 *
