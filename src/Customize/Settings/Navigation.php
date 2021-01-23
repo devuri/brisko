@@ -4,8 +4,9 @@ namespace Brisko\Customize\Settings;
 
 use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
+use Brisko\Contracts\SettingsInterface;
 
-class Navigation
+class Navigation implements SettingsInterface
 {
 	/**
 	 * Brisko Section

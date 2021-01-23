@@ -6,7 +6,7 @@ use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
 use Brisko\Contracts\SettingsInterface;
 
-class Child
+class Child implements SettingsInterface
 {
 	/**
 	 * Brisko Section
