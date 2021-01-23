@@ -94,28 +94,5 @@ class General
 			)
 		);
 
-		/**
-		 * Child Theme Settings
-		 */
-		if ( is_child_theme() ) {
-			( new Control() )->header_title( $wp_customize, esc_html__( 'Child Theme Settings', 'brisko' ), self::$section );
-			$wp_customize->add_setting(
-				'disable_styles', array(
-					'default'           => false,
-					'capability'        => 'edit_theme_options',
-					'transport'         => self::$transport,
-					'sanitize_callback' => 'brisko_sanitize_checkbox',
-				)
-			);
-
-			$wp_customize->add_control(
-				'disable_styles', array(
-					'label'       => esc_html__( 'Disable Brisko Styles', 'brisko' ),
-					'description' => esc_html__( 'This will disable the parent theme styles (some custom styles will be affected).', 'brisko' ),
-					'section'     => self::$section,
-					'type'        => 'checkbox',
-				)
-			);
-		}
 	}
 }
