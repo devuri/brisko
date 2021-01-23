@@ -12,13 +12,6 @@ final class Assets implements SetupInterface
 	use Singleton;
 
 	/**
-	 * Disable Theme Styles.
-	 *
-	 * @var bool
-	 */
-	private $disable_styles = false;
-
-	/**
 	 * Singleton
 	 *
 	 * @return object
@@ -31,9 +24,6 @@ final class Assets implements SetupInterface
 	 *  Assets scripts
 	 */
 	private function __construct() {
-
-		// get setting.
-		$this->disable_styles = get_theme_mod( 'disable_styles', false );
 
 		// enqueue.
 		add_action( 'wp_enqueue_scripts', array( $this, 'brisko_styles' ) );
@@ -87,13 +77,15 @@ final class Assets implements SetupInterface
 		 *
 		 * Useful for child themes.
 		 */
-		if ( false === $this->disable_styles ) {
+		if ( false === get_theme_mod( 'disable_styles', false ) ) {
 			wp_enqueue_style( 'brisko-theme', get_stylesheet_uri(), array( 'underscores', 'bootstrap', 'brisko' ), Theme::VERSION );
 			wp_enqueue_style( 'brisko', get_template_directory_uri() . '/css/brisko.css', array(), Theme::VERSION );
+			wp_enqueue_style( 'custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array( 'brisko-theme' ), Theme::VERSION );
+		} else {
+			wp_enqueue_style( 'custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array(), Theme::VERSION );
 		}
 
 		wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
-		wp_enqueue_style( 'custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array( 'brisko-theme' ), Theme::VERSION );
 
 		// Bootstrap and underscores.
 		wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), Theme::VERSION );
@@ -106,7 +98,9 @@ final class Assets implements SetupInterface
 	 */
 	public function brisko_scripts() {
 
-		wp_enqueue_script( 'brisko-navigation', get_template_directory_uri() . '/js/navigation.js', array(), Theme::VERSION, true );
+		if ( false === get_theme_mod( 'disable_styles', false ) ) {
+			wp_enqueue_script( 'brisko-navigation', get_template_directory_uri() . '/js/navigation.js', array(), Theme::VERSION, true );
+		}
 
 		if ( true === get_theme_mod( 'enable_smooth_scroll', false ) ) {
 			wp_enqueue_script( 'brisko-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), Theme::VERSION, true );
