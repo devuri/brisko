@@ -16,12 +16,26 @@ class Search extends Layout
 
 		if ( have_posts() ) : ?>
 			<header class="page-header">
-				<h1 class="page-title archive-title entry-meta">
+				<h3 class="page-title archive-title entry-meta">
+					<?php
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search: %s', 'brisko' ), '<span>' . get_bloginfo( 'name' ) . '</span>' );
+					?>
+				</h3>
+				<form role="search" method="get" class="search-form" action="https://dev.toyotajamaica.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form><br>
+				<h2 class="page-title archive-title">
 					<?php
 					/* translators: %s: search query. */
 					printf( esc_html__( 'Search Results for: %s', 'brisko' ), '<span>' . get_search_query() . '</span>' );
 					?>
-				</h1>
+				</h2>
+				<hr>
 			</header><!-- .page-header -->
 			<br/>
 			<?php
@@ -36,7 +50,7 @@ class Search extends Layout
 						get_template_part( 'template-parts/content', 'search' );
 			endwhile;
 
-			the_posts_navigation();
+			brisko_posts_navigation();
 
 		else :
 

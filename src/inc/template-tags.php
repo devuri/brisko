@@ -124,3 +124,18 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+
+/**
+ * Post Navigation.
+ *
+ * @link https://wordpress.org/plugins/wp-pagenavi/
+ */
+function brisko_posts_navigation() {
+	if ( function_exists( 'wp_pagenavi' ) ) :
+		wp_pagenavi();
+		echo '<br>';
+		return;
+	endif;
+	the_posts_navigation();
+}
