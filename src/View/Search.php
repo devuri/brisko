@@ -22,13 +22,8 @@ class Search extends Layout
 					printf( esc_html__( 'Search: %s', 'brisko' ), '<span>' . get_bloginfo( 'name' ) . '</span>' );
 					?>
 				</h3>
-				<form role="search" method="get" class="search-form" action="https://dev.toyotajamaica.com/">
-				<label>
-					<span class="screen-reader-text">Search for:</span>
-					<input type="search" class="search-field" placeholder="Search …" value="" name="s">
-				</label>
-				<input type="submit" class="search-submit" value="Search">
-			</form><br>
+				<?php get_search_form(); ?>
+				<br>
 				<h2 class="page-title archive-title">
 					<?php
 					/* translators: %s: search query. */
