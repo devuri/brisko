@@ -30,7 +30,6 @@ class Search extends Layout
 					printf( esc_html__( 'Search Results for: %s', 'brisko' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h2>
-				<hr>
 			</header><!-- .page-header -->
 			<br/>
 			<?php
