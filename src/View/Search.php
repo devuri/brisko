@@ -19,7 +19,7 @@ class Search extends Layout
 				<h3 class="page-title archive-title entry-meta">
 					<?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search: %s', 'brisko' ), '<span>' . get_bloginfo( 'name' ) . '</span>' );
+					printf( esc_html__( 'Search: %s', 'brisko' ), '<span>' . esc_html( get_bloginfo( 'name' ) ) . '</span>' );
 					?>
 				</h3>
 				<?php get_search_form(); ?>
