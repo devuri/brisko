@@ -13,7 +13,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( is_singular() ) : ?>
-			<?php the_title( '<h2 class="post-title">', '</h1>' ); ?>
+			<?php the_title( '<h2 class="post-title">', '</h2>' ); ?>
 				<?php
 		else :
 			the_title( sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );

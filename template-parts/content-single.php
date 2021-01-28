@@ -14,7 +14,7 @@
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h2 class="post-title">', '</h1>' );
+			the_title( '<h2 class="post-title">', '</h2>' );
 		else :
 			the_title( sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		endif;
