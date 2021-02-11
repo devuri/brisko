@@ -128,4 +128,16 @@
 			}
 		} );
 	} );
+
+	// site-footer
+    wp.customize( 'disable_footer', function( value ) {
+	  	value.bind( function( to ) {
+	  	  if ( true === to ) {
+	  		  $( '.site-footer' ).addClass( "this-display-none" );
+	  	  } else {
+	  		  $( '.site-footer' ).removeClass( "this-display-none" );
+	  	  }
+	  	} );
+    } );
+
 }( jQuery ) );

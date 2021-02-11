@@ -20,6 +20,13 @@ final class Footer
 	 * Site Footer
 	 */
 	public function site_footer() {
+
+		if ( true === get_theme_mod( 'disable_footer', false ) ) :
+			brisko_footer();
+			do_action( 'brisko_footer_credit' );
+			return;
+		endif;
+
 		get_template_part( 'template-parts/footer', 'footer' );
 	}
 
