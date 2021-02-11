@@ -23,7 +23,26 @@ final class Navigation
 	 * Navigation
 	 */
 	public function navigation() {
-		get_template_part( 'template-parts/nav', 'navigation' );
+
+		if ( true === get_theme_mod( 'disable_navigation', false ) ) :
+			do_action( 'brisko_navigation' );
+			return;
+		endif;
+
+		get_template_part( 'template-parts/navigation', 'navigation' );
+	}
+
+	/**
+	 * Navigation Menu
+	 */
+	public function nav_menu() {
+
+		if ( true === get_theme_mod( 'disable_nav_menu', false ) ) :
+			do_action( 'brisko_nav_menu' );
+			return;
+		endif;
+
+		get_template_part( 'template-parts/nav' );
 	}
 
 }
