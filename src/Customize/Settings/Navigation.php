@@ -77,5 +77,43 @@ class Navigation implements SettingsInterface
 			)
 		);
 
+		( new Control() )->separator( $wp_customize, esc_html__( 'Turn off Navigation', 'brisko' ), self::$section );
+
+		// Disable Nav Menu .
+		$wp_customize->add_setting(
+			'disable_nav_menu', array(
+				'default'           => false,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'disable_nav_menu', array(
+				'label'   => esc_html__( 'Disable Nav Menu Only', 'brisko' ),
+				'section' => self::$section,
+				'type'    => 'checkbox',
+			)
+		);
+
+		// Disable Navigation Section.
+		$wp_customize->add_setting(
+			'disable_navigation', array(
+				'default'           => false,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'disable_navigation', array(
+				'label'   => esc_html__( 'Disable Navigation Section', 'brisko' ),
+				'section' => self::$section,
+				'type'    => 'checkbox',
+			)
+		);
+
 	}
 }
