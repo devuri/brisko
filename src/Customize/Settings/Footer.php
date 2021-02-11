@@ -98,6 +98,23 @@ class Footer implements SettingsInterface
 				'type'        => 'checkbox',
 			)
 		);
-		// footer width .
+
+		// Disable Footer.
+		$wp_customize->add_setting(
+			'disable_footer', array(
+				'default'           => false,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'disable_footer', array(
+				'label'   => esc_html__( 'Disable The Footer', 'brisko' ),
+				'section' => self::$section,
+				'type'    => 'checkbox',
+			)
+		);
 	}
 }

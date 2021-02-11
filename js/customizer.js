@@ -21,6 +21,29 @@
 		} );
 	} );
 
+	// site-navigation
+    wp.customize( 'disable_nav_menu', function( value ) {
+	  	value.bind( function( to ) {
+	  	  if ( true === to ) {
+	  		  $( '#site-navigation' ).addClass( "this-display-none" );
+	  	  } else {
+	  		  $( '#site-navigation' ).removeClass( "this-display-none" );
+	  	  }
+	  	} );
+    } );
+
+	// disable_navigation
+    wp.customize( 'disable_navigation', function( value ) {
+	  	value.bind( function( to ) {
+	  	  if ( true === to ) {
+	  		  $( '#navigation' ).addClass( "this-display-none" );
+	  	  } else {
+	  		  $( '#navigation' ).removeClass( "this-display-none" );
+	  	  }
+	  	} );
+    } );
+
+
 	// Link color
     wp.customize( 'link_color', function( value ) {
       value.bind( function( to ) {
@@ -105,4 +128,16 @@
 			}
 		} );
 	} );
+
+	// site-footer
+    wp.customize( 'disable_footer', function( value ) {
+	  	value.bind( function( to ) {
+	  	  if ( true === to ) {
+	  		  $( '.site-footer' ).addClass( "this-display-none" );
+	  	  } else {
+	  		  $( '.site-footer' ).removeClass( "this-display-none" );
+	  	  }
+	  	} );
+    } );
+
 }( jQuery ) );

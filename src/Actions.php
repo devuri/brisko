@@ -25,6 +25,8 @@ final class Actions
 		$actions   = array();
 		$actions[] = 'brisko_before_header';
 		$actions[] = 'brisko_custom_header';
+		$actions[] = 'brisko_navigation';
+		$actions[] = 'brisko_nav_menu';
 		$actions[] = 'brisko_after_header';
 		$actions[] = 'brisko_homepage_header';
 		$actions[] = 'brisko_post_header';
