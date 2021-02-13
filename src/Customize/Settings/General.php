@@ -61,24 +61,6 @@ class General implements SettingsInterface
 
 		( new Control() )->header_title( $wp_customize, esc_html__( 'Other Settings', 'brisko' ), self::section() );
 
-		// Smooth scroll.
-		$wp_customize->add_setting(
-			'enable_smooth_scroll', array(
-				'default'           => false,
-				'capability'        => 'edit_theme_options',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_checkbox',
-			)
-		);
-
-		$wp_customize->add_control(
-			'enable_smooth_scroll', array(
-				'label'   => esc_html__( 'Enable Smooth Scroll', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
-			)
-		);
-
 		// Underline Content Links.
 		$wp_customize->add_setting(
 			'underline_post_links', array(

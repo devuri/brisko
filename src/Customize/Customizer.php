@@ -42,6 +42,15 @@ final class Customizer implements SetupInterface
 	}
 
 	/**
+	 * Build Class.
+	 *
+	 * @return object .
+	 */
+	public function build() {
+		return Build::get();
+	}
+
+	/**
 	 * Theme Customizer.
 	 * Add postMessage support for site title and description for the Theme Customizer.
 	 *
@@ -55,12 +64,12 @@ final class Customizer implements SetupInterface
 		/**
 		 * Sections
 		 */
-		Build::get()->sections( $wp_customize );
+		$this->build()->sections( $wp_customize );
 
 		/**
 		 * Settings
 		 */
-		Build::get()->settings( $wp_customize );
+		$this->build()->settings( $wp_customize );
 
 	}
 
