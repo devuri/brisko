@@ -173,6 +173,24 @@ class Advanced implements SettingsInterface
 			)
 		);
 
+		// Disable Bootstrap Grid.
+		$wp_customize->add_setting(
+			'disable_bootstrap_grid', array(
+				'default'           => false,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'disable_bootstrap_grid', array(
+				'label'   => esc_html__( 'Disable Bootstrap Grid', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
 		( new Control() )->separator( $wp_customize, esc_html__( 'Underscores', 'brisko' ), self::section() );
 		// Disable Underscores.
 		$wp_customize->add_setting(
