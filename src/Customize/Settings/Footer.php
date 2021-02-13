@@ -8,12 +8,6 @@ use Brisko\Contracts\SettingsInterface;
 
 class Footer implements SettingsInterface
 {
-	/**
-	 * Brisko Section
-	 *
-	 * @var $section
-	 */
-	public static $section = 'brisko_section_footer';
 
 	/**
 	 * Customizer transport
@@ -21,6 +15,14 @@ class Footer implements SettingsInterface
 	 * @var $transport
 	 */
 	public static $transport = 'postMessage';
+
+	/**
+	 * Brisko Section
+	 */
+	public static function section() {
+		$class = new \ReflectionClass( new self() );
+		return 'brisko_section_' . strtolower( $class->getShortName() );
+	}
 
 	/**
 	 * Lets build out the customizer settings
@@ -34,7 +36,7 @@ class Footer implements SettingsInterface
 		/**
 		 * Footer Settings
 		 */
-		( new Control() )->separator( $wp_customize, esc_html__( 'Footer', 'brisko' ), self::$section );
+		( new Control() )->separator( $wp_customize, esc_html__( 'Footer', 'brisko' ), self::section() );
 
 		// Copyright section .
 		$wp_customize->add_setting(
@@ -50,7 +52,7 @@ class Footer implements SettingsInterface
 			'footer_copyright', array(
 				'label'       => esc_html__( 'Copyright Text', 'brisko' ),
 				'description' => esc_html__( 'edit footer section', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'settings'    => 'footer_copyright',
 			)
 		);
@@ -69,7 +71,7 @@ class Footer implements SettingsInterface
 			'poweredby', array(
 				'label'       => esc_html__( 'Powered By', 'brisko' ),
 				'description' => esc_html__( 'edit Powered by section, html can be used', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'settings'    => 'poweredby',
 				'type'        => 'textarea',
 			)
@@ -78,7 +80,7 @@ class Footer implements SettingsInterface
 		/**
 		 * Top Margin.
 		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Top Margin', 'brisko' ), self::$section );
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Top Margin', 'brisko' ), self::section() );
 
 		// Remove Top Margin.
 		$wp_customize->add_setting(
@@ -94,7 +96,7 @@ class Footer implements SettingsInterface
 			'footer_remove_top_margin', array(
 				'label'       => esc_html__( 'Remove Top Margin', 'brisko' ),
 				'description' => esc_html__( 'removes the top margin for footer section', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'type'        => 'checkbox',
 			)
 		);
@@ -112,7 +114,7 @@ class Footer implements SettingsInterface
 		$wp_customize->add_control(
 			'disable_footer', array(
 				'label'   => esc_html__( 'Disable The Footer', 'brisko' ),
-				'section' => self::$section,
+				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);

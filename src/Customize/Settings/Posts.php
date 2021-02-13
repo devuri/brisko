@@ -8,12 +8,6 @@ use Brisko\Contracts\SettingsInterface;
 
 class Posts implements SettingsInterface
 {
-	/**
-	 * Brisko Section
-	 *
-	 * @var $section
-	 */
-	public static $section = 'brisko_section_posts';
 
 	/**
 	 * Customizer transport
@@ -21,6 +15,14 @@ class Posts implements SettingsInterface
 	 * @var $transport
 	 */
 	public static $transport = 'postMessage';
+
+	/**
+	 * Brisko Section
+	 */
+	public static function section() {
+		$class = new \ReflectionClass( new self() );
+		return 'brisko_section_' . strtolower( $class->getShortName() );
+	}
 
 	/**
 	 * Lets build out the customizer settings
@@ -34,7 +36,7 @@ class Posts implements SettingsInterface
 		/**
 		 * Separator Post Settings.
 		 */
-		( new Control() )->separator( $wp_customize, esc_html__( 'Posts', 'brisko' ), self::$section );
+		( new Control() )->separator( $wp_customize, esc_html__( 'Posts', 'brisko' ), self::section() );
 
 		/**
 		 * Featured image
@@ -51,7 +53,7 @@ class Posts implements SettingsInterface
 			'featured_image', array(
 				'label'       => esc_html__( 'Featured Image Display', 'brisko' ),
 				'description' => esc_html__( 'featured Image on single posts', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'type'        => 'select',
 				'choices'     => array(
 					'this-display-show' => esc_html__( 'Display on single posts', 'brisko' ),
@@ -63,7 +65,7 @@ class Posts implements SettingsInterface
 		/**
 		 * Post Details
 		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Post Details', 'brisko' ), self::$section );
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Post Details', 'brisko' ), self::section() );
 
 		// Display Post Categories .
 		$wp_customize->add_setting(
@@ -78,7 +80,7 @@ class Posts implements SettingsInterface
 		$wp_customize->add_control(
 			'display_post_categories', array(
 				'label'   => esc_html__( 'Display Post Categories', 'brisko' ),
-				'section' => self::$section,
+				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);
@@ -96,7 +98,7 @@ class Posts implements SettingsInterface
 		$wp_customize->add_control(
 			'display_tags', array(
 				'label'   => esc_html__( 'Display Post Tags', 'brisko' ),
-				'section' => self::$section,
+				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);
@@ -114,7 +116,7 @@ class Posts implements SettingsInterface
 		$wp_customize->add_control(
 			'display_previous_next', array(
 				'label'   => esc_html__( 'Display Previous and Next Navigation', 'brisko' ),
-				'section' => self::$section,
+				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);

@@ -20,6 +20,9 @@ class HeaderControl extends \WP_Customize_Control {
 				<?php echo esc_html( $this->label ); ?>
 			</label>
 			<hr/>
+			<p class="description" style="padding-right:8px; margin-top: unset;color: #848484;">
+				<?php echo esc_html( $this->description ); ?>
+			</p>
 		<?php
 	}
 }

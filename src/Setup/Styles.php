@@ -43,6 +43,11 @@ final class Styles implements EnqueueInterface
 			wp_enqueue_style( 'underscores' );
 		}
 
+		// bootstrap grid.
+		if ( false === get_theme_mod( 'disable_bootstrap_grid', false ) ) {
+			wp_enqueue_style( 'bootstrap-grid' );
+		}
+
 		// bootstrap.
 		if ( false === get_theme_mod( 'disable_bootstrap', false ) ) {
 			wp_enqueue_style( 'bootstrap' );
@@ -74,10 +79,11 @@ final class Styles implements EnqueueInterface
 
 		// Bootstrap and underscores.
 		wp_register_style( 'underscores', get_template_directory_uri() . '/css/underscores.css', array(), Theme::VERSION );
-		wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), Theme::VERSION );
+		wp_register_style( 'bootstrap-grid', get_template_directory_uri() . '/css/bootstrap/bootstrap-grid.css', array(), Theme::VERSION );
+		wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap/bootstrap.min.css', array(), Theme::VERSION );
 
 		// brisko .
-		wp_register_style( 'brisko', get_template_directory_uri() . '/css/brisko.css', array(), Theme::VERSION );
+		wp_register_style( 'brisko', get_template_directory_uri() . '/css/brisko.min.css', array(), Theme::VERSION );
 		wp_register_style( 'brisko-theme', get_stylesheet_uri(), array(), Theme::VERSION );
 
 		// custom .

@@ -6,6 +6,11 @@ interface SettingsInterface
 {
 
 	/**
+	 * Brisko Section
+	 */
+	public static function section();
+
+	/**
 	 * Customizer settings
 	 *
 	 * Create new customizer settings here.

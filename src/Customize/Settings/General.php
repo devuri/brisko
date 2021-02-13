@@ -8,12 +8,6 @@ use Brisko\Contracts\SettingsInterface;
 
 class General implements SettingsInterface
 {
-	/**
-	 * Brisko Section
-	 *
-	 * @var $section
-	 */
-	public static $section = 'brisko_section_general';
 
 	/**
 	 * Customizer transport
@@ -21,6 +15,14 @@ class General implements SettingsInterface
 	 * @var $transport
 	 */
 	public static $transport = 'postMessage';
+
+	/**
+	 * Brisko Section
+	 */
+	public static function section() {
+		$class = new \ReflectionClass( new self() );
+		return 'brisko_section_' . strtolower( $class->getShortName() );
+	}
 
 	/**
 	 * Lets build out the customizer settings
@@ -32,7 +34,7 @@ class General implements SettingsInterface
 	public static function settings( $wp_customize ) {
 
 		// Separator General Settings.
-		( new Control() )->separator( $wp_customize, esc_html__( 'General', 'brisko' ), self::$section );
+		( new Control() )->separator( $wp_customize, esc_html__( 'General', 'brisko' ), self::section() );
 
 		/**
 		 * Link Color
@@ -52,12 +54,12 @@ class General implements SettingsInterface
 				array(
 					'label'       => esc_html__( 'Link Color', 'brisko' ),
 					'description' => esc_html__( 'Select a color', 'brisko' ),
-					'section'     => self::$section,
+					'section'     => self::section(),
 				)
 			)
 		);
 
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Other Settings', 'brisko' ), self::$section );
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Other Settings', 'brisko' ), self::section() );
 
 		// Smooth scroll.
 		$wp_customize->add_setting(
@@ -72,7 +74,7 @@ class General implements SettingsInterface
 		$wp_customize->add_control(
 			'enable_smooth_scroll', array(
 				'label'   => esc_html__( 'Enable Smooth Scroll', 'brisko' ),
-				'section' => self::$section,
+				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);
@@ -90,7 +92,7 @@ class General implements SettingsInterface
 		$wp_customize->add_control(
 			'underline_post_links', array(
 				'label'   => esc_html__( 'Underline Links', 'brisko' ),
-				'section' => self::$section,
+				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);

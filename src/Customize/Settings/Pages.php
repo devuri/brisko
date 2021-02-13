@@ -8,12 +8,6 @@ use Brisko\Contracts\SettingsInterface;
 
 class Pages implements SettingsInterface
 {
-	/**
-	 * Brisko Section
-	 *
-	 * @var $section
-	 */
-	public static $section = 'brisko_section_pages';
 
 	/**
 	 * Customizer transport
@@ -21,6 +15,14 @@ class Pages implements SettingsInterface
 	 * @var $transport
 	 */
 	public static $transport = 'postMessage';
+
+	/**
+	 * Brisko Section
+	 */
+	public static function section() {
+		$class = new \ReflectionClass( new self() );
+		return 'brisko_section_' . strtolower( $class->getShortName() );
+	}
 
 	/**
 	 * Lets build out the customizer settings
@@ -32,7 +34,7 @@ class Pages implements SettingsInterface
 	public static function settings( $wp_customize ) {
 
 		// Separator Pages Settings.
-		( new Control() )->separator( $wp_customize, esc_html__( 'Pages', 'brisko' ), self::$section );
+		( new Control() )->separator( $wp_customize, esc_html__( 'Pages', 'brisko' ), self::section() );
 
 		// Display Page Header.
 		$wp_customize->add_setting(
@@ -48,7 +50,7 @@ class Pages implements SettingsInterface
 			'display_page_header', array(
 				'label'       => esc_html__( 'Display Page Header', 'brisko' ),
 				'description' => esc_html__( 'show the page titles on each page', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'type'        => 'checkbox',
 			)
 		);
@@ -65,7 +67,7 @@ class Pages implements SettingsInterface
 			'page_width', array(
 				'label'       => esc_html__( 'Page width', 'brisko' ),
 				'description' => esc_html__( 'set page width for all pages', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'type'        => 'select',
 				'choices'     => array(
 					'container'       => esc_html__( 'Boxed', 'brisko' ),

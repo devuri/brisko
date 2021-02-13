@@ -10,6 +10,7 @@ use Brisko\Customize\Settings\Blog;
 use Brisko\Customize\Settings\Posts;
 use Brisko\Customize\Settings\Footer;
 use Brisko\Customize\Settings\Child;
+use Brisko\Customize\Settings\Advanced;
 use Brisko\Customize\Settings\SelectiveRefresh;
 use Brisko\Traits\Singleton;
 
@@ -32,6 +33,7 @@ final class Build {
 		Blog::settings( $wp_customize );
 		Posts::settings( $wp_customize );
 		Footer::settings( $wp_customize );
+		Advanced::settings( $wp_customize );
 		Child::settings( $wp_customize );
 		SelectiveRefresh::settings( $wp_customize );
 	}
