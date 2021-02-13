@@ -8,12 +8,6 @@ use Brisko\Contracts\SettingsInterface;
 
 class Child implements SettingsInterface
 {
-	/**
-	 * Brisko Section
-	 *
-	 * @var $section
-	 */
-	public static $section = 'brisko_section_child';
 
 	/**
 	 * Customizer transport
@@ -22,6 +16,13 @@ class Child implements SettingsInterface
 	 */
 	public static $transport = 'postMessage';
 
+	/**
+	 * Brisko Section
+	 */
+	public static function section() {
+		$class = new \ReflectionClass( new self() );
+		return 'brisko_section_' . strtolower( $class->getShortName() );
+	}
 
 	/**
 	 * Lets build out the customizer settings
@@ -35,7 +36,7 @@ class Child implements SettingsInterface
 		$control = new Control();
 
 		// Separator General Settings.
-		$control->separator( $wp_customize, esc_html__( 'Child Theme Settings', 'brisko' ), self::$section );
+		$control->separator( $wp_customize, esc_html__( 'Child Theme Settings', 'brisko' ), self::section() );
 
 		// Styles.
 		$wp_customize->add_setting(
@@ -51,7 +52,7 @@ class Child implements SettingsInterface
 			'disable_styles', array(
 				'label'       => esc_html__( 'Disable Brisko Styles', 'brisko' ),
 				'description' => esc_html__( 'This will disable the parent theme styles.', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'type'        => 'checkbox',
 			)
 		);

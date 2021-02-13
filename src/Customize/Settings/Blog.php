@@ -8,12 +8,6 @@ use Brisko\Contracts\SettingsInterface;
 
 class Blog implements SettingsInterface
 {
-	/**
-	 * Brisko Section
-	 *
-	 * @var $section
-	 */
-	public static $section = 'brisko_section_blog';
 
 	/**
 	 * Customizer transport
@@ -21,6 +15,14 @@ class Blog implements SettingsInterface
 	 * @var $transport
 	 */
 	public static $transport = 'postMessage';
+
+	/**
+	 * Brisko Section
+	 */
+	public static function section() {
+		$class = new \ReflectionClass( new self() );
+		return 'brisko_section_' . strtolower( $class->getShortName() );
+	}
 
 	/**
 	 * Lets build out the customizer settings
@@ -34,7 +36,7 @@ class Blog implements SettingsInterface
 		/**
 		 * Archives Template Details
 		 */
-		( new Control() )->separator( $wp_customize, esc_html__( 'Blog', 'brisko' ), self::$section );
+		( new Control() )->separator( $wp_customize, esc_html__( 'Blog', 'brisko' ), self::section() );
 
 		// Blog Title .
 		// Blog Layout .
@@ -51,7 +53,7 @@ class Blog implements SettingsInterface
 			'blog_width', array(
 				'label'       => esc_html__( 'Blog width', 'brisko' ),
 				'description' => esc_html__( 'set blog width', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'type'        => 'select',
 				'choices'     => array(
 					'container'       => esc_html__( 'Boxed', 'brisko' ),
@@ -63,7 +65,7 @@ class Blog implements SettingsInterface
 		/**
 		 * Disable Sidebar
 		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Sidebar', 'brisko' ), self::$section );
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Sidebar', 'brisko' ), self::section() );
 		$wp_customize->add_setting(
 			'disable_sidebar', array(
 				'default'           => absint( 0 ),
@@ -76,13 +78,13 @@ class Blog implements SettingsInterface
 		$wp_customize->add_control(
 			'disable_sidebar', array(
 				'label'   => esc_html__( 'Disable Sidebar', 'brisko' ),
-				'section' => self::$section,
+				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);
 
 		// Read More Button .
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Read More Button', 'brisko' ), self::$section );
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Read More Button', 'brisko' ), self::section() );
 
 		// button border radius.
 		$wp_customize->add_setting(
@@ -98,7 +100,7 @@ class Blog implements SettingsInterface
 			'read_more_border_radius', array(
 				'label'       => esc_html__( 'Border Radius', 'brisko' ),
 				'description' => esc_html__( 'set read more button border radius', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'type'        => 'checkbox',
 			)
 		);

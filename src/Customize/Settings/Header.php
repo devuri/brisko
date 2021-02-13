@@ -8,12 +8,6 @@ use Brisko\Contracts\SettingsInterface;
 
 class Header implements SettingsInterface
 {
-	/**
-	 * Brisko Section
-	 *
-	 * @var $section
-	 */
-	public static $section = 'brisko_section_header';
 
 	/**
 	 * Customizer transport
@@ -21,6 +15,14 @@ class Header implements SettingsInterface
 	 * @var $transport
 	 */
 	public static $transport = 'postMessage';
+
+	/**
+	 * Brisko Section
+	 */
+	public static function section() {
+		$class = new \ReflectionClass( new self() );
+		return 'brisko_section_' . strtolower( $class->getShortName() );
+	}
 
 	/**
 	 * Lets build out the customizer settings
@@ -32,7 +34,7 @@ class Header implements SettingsInterface
 	public static function settings( $wp_customize ) {
 
 		// Separator Header Image Settings.
-		( new Control() )->separator( $wp_customize, esc_html__( 'Header Image', 'brisko' ), self::$section );
+		( new Control() )->separator( $wp_customize, esc_html__( 'Header Image', 'brisko' ), self::section() );
 		/**
 		 * Header Image
 		 */
@@ -47,7 +49,7 @@ class Header implements SettingsInterface
 			'header_image_display', array(
 				'label'       => esc_html__( 'Header Image', 'brisko' ),
 				'description' => esc_html__( 'display settings for the header image', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'type'        => 'select',
 				'choices'     => array(
 					'this-home-page-only' => esc_html__( 'Home Page / Front Page Only', 'brisko' ),
@@ -69,7 +71,7 @@ class Header implements SettingsInterface
 			'header_image_width', array(
 				'label'       => esc_html__( 'Header Image width', 'brisko' ),
 				'description' => esc_html__( 'set width for the header image', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'type'        => 'select',
 				'choices'     => array(
 					'container'       => esc_html__( 'Boxed', 'brisko' ),

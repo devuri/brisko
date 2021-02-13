@@ -8,12 +8,6 @@ use Brisko\Contracts\SettingsInterface;
 
 class Navigation implements SettingsInterface
 {
-	/**
-	 * Brisko Section
-	 *
-	 * @var $section
-	 */
-	public static $section = 'brisko_section_navigation';
 
 	/**
 	 * Customizer transport
@@ -21,6 +15,14 @@ class Navigation implements SettingsInterface
 	 * @var $transport
 	 */
 	public static $transport = 'postMessage';
+
+	/**
+	 * Brisko Section
+	 */
+	public static function section() {
+		$class = new \ReflectionClass( new self() );
+		return 'brisko_section_' . strtolower( $class->getShortName() );
+	}
 
 	/**
 	 * Lets build out the customizer settings
@@ -32,7 +34,7 @@ class Navigation implements SettingsInterface
 	public static function settings( $wp_customize ) {
 
 		// Separator Header Navigation Settings.
-		( new Control() )->separator( $wp_customize, esc_html__( 'Navigation', 'brisko' ), self::$section );
+		( new Control() )->separator( $wp_customize, esc_html__( 'Navigation', 'brisko' ), self::section() );
 
 		$wp_customize->add_setting(
 			'navigation_width', array(
@@ -45,7 +47,7 @@ class Navigation implements SettingsInterface
 			'navigation_width', array(
 				'label'       => esc_html__( 'Navigation width', 'brisko' ),
 				'description' => esc_html__( 'set menu navigation width', 'brisko' ),
-				'section'     => self::$section,
+				'section'     => self::section(),
 				'type'        => 'select',
 				'choices'     => array(
 					'container'       => esc_html__( 'Boxed', 'brisko' ),
@@ -72,12 +74,12 @@ class Navigation implements SettingsInterface
 				array(
 					'label'       => esc_html__( 'Navigation background color', 'brisko' ),
 					'description' => esc_html__( 'set navigation background color', 'brisko' ),
-					'section'     => self::$section,
+					'section'     => self::section(),
 				)
 			)
 		);
 
-		( new Control() )->separator( $wp_customize, esc_html__( 'Turn off Navigation', 'brisko' ), self::$section );
+		( new Control() )->separator( $wp_customize, esc_html__( 'Turn off Navigation', 'brisko' ), self::section() );
 
 		// Disable Nav Menu .
 		$wp_customize->add_setting(
@@ -92,7 +94,7 @@ class Navigation implements SettingsInterface
 		$wp_customize->add_control(
 			'disable_nav_menu', array(
 				'label'   => esc_html__( 'Disable Nav Menu Only', 'brisko' ),
-				'section' => self::$section,
+				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);
@@ -110,7 +112,7 @@ class Navigation implements SettingsInterface
 		$wp_customize->add_control(
 			'disable_navigation', array(
 				'label'   => esc_html__( 'Disable Navigation Section', 'brisko' ),
-				'section' => self::$section,
+				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);
