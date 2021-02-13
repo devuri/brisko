@@ -28,6 +28,6 @@
 					<?php endif; ?>
 			</div>
 		</div>
-			<?php Brisko\Navigation::nav_menu(); ?>
+			<?php Brisko\Navigation::get()->nav_menu(); ?>
 	</div>
 </div>
