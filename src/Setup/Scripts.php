@@ -41,7 +41,9 @@ final class Scripts implements EnqueueInterface
 			wp_enqueue_script( 'brisko-bootstrap' );
 		}
 
-		wp_enqueue_script( 'brisko-navigation' );
+		if ( false === get_theme_mod( 'disable_navigation_js', true ) ) {
+			wp_enqueue_script( 'brisko-navigation' );
+		}
 
 		if ( true === get_theme_mod( 'enable_smooth_scroll', false ) ) {
 			wp_enqueue_script( 'brisko-smooth-scroll' );

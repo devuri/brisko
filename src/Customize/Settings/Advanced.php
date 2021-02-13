@@ -38,11 +38,12 @@ class Advanced implements SettingsInterface
 
 		( new Control() )->header_title(
 			$wp_customize,
-			esc_html__( 'Underscores', 'brisko' ),
+			esc_html__( 'Advanced Settings', 'brisko' ),
 			self::section(),
-			esc_html__( 'This will disable the associated Stylesheet and JavaScript.', 'brisko' ),
+			esc_html__( 'Disable Stylesheet and JavaScript.', 'brisko' ),
 		);
 
+		( new Control() )->separator( $wp_customize, esc_html__( 'Underscores', 'brisko' ), self::section() );
 		// Disable Underscores.
 		$wp_customize->add_setting(
 			'disable_underscores', array(
@@ -61,13 +62,25 @@ class Advanced implements SettingsInterface
 			)
 		);
 
-		( new Control() )->header_title(
-			$wp_customize,
-			esc_html__( 'Bootstrap', 'brisko' ),
-			self::section(),
-			esc_html__( 'This will disable the associated Bootstrap Stylesheet and JavaScript.', 'brisko' ),
+		// Disable Underscores JavaScript.
+		$wp_customize->add_setting(
+			'disable_navigation_js', array(
+				'default'           => false,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
 		);
 
+		$wp_customize->add_control(
+			'disable_navigation_js', array(
+				'label'   => esc_html__( 'Disable Navigation JS', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
+		( new Control() )->separator( $wp_customize, esc_html__( 'Bootstrap', 'brisko' ), self::section() );
 		// Disable Bootstrap.
 		$wp_customize->add_setting(
 			'disable_bootstrap', array(
@@ -86,13 +99,25 @@ class Advanced implements SettingsInterface
 			)
 		);
 
-		( new Control() )->header_title(
-			$wp_customize,
-			esc_html__( 'Brisko', 'brisko' ),
-			self::section(),
-			esc_html__( 'This will disable the associated Brisko Stylesheet.', 'brisko' ),
+		// Disable Bootstrap JS.
+		$wp_customize->add_setting(
+			'disable_bootstrap_js', array(
+				'default'           => true,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
 		);
 
+		$wp_customize->add_control(
+			'disable_bootstrap_js', array(
+				'label'   => esc_html__( 'Disable Bootstrap JS', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
+		( new Control() )->separator( $wp_customize, esc_html__( 'Brisko', 'brisko' ), self::section() );
 		// Disable Brisko.
 		$wp_customize->add_setting(
 			'disable_brisko', array(
