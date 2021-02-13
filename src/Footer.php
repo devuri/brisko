@@ -21,6 +21,9 @@ final class Footer
 	 */
 	public function site_footer() {
 
+		// elementor footer.
+		Element::get()->location( 'footer' );
+
 		if ( true === get_theme_mod( 'disable_footer', false ) ) :
 			brisko_footer();
 			do_action( 'brisko_footer_credit' );
@@ -28,6 +31,7 @@ final class Footer
 		endif;
 
 		get_template_part( 'template-parts/footer', 'footer' );
+
 	}
 
 	/**
