@@ -77,46 +77,5 @@ class Footer implements SettingsInterface
 			)
 		);
 
-		/**
-		 * Top Margin.
-		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Top Margin', 'brisko' ), self::section() );
-
-		// Remove Top Margin.
-		$wp_customize->add_setting(
-			'footer_remove_top_margin', array(
-				'default'           => false,
-				'capability'        => 'edit_theme_options',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_checkbox',
-			)
-		);
-
-		$wp_customize->add_control(
-			'footer_remove_top_margin', array(
-				'label'       => esc_html__( 'Remove Top Margin', 'brisko' ),
-				'description' => esc_html__( 'removes the top margin for footer section', 'brisko' ),
-				'section'     => self::section(),
-				'type'        => 'checkbox',
-			)
-		);
-
-		// Disable Footer.
-		$wp_customize->add_setting(
-			'disable_footer', array(
-				'default'           => false,
-				'capability'        => 'edit_theme_options',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_checkbox',
-			)
-		);
-
-		$wp_customize->add_control(
-			'disable_footer', array(
-				'label'   => esc_html__( 'Disable The Footer', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
-			)
-		);
 	}
 }

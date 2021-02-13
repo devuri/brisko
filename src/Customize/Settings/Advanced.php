@@ -40,13 +40,13 @@ class Advanced implements SettingsInterface
 			$wp_customize,
 			esc_html__( 'Advanced Settings', 'brisko' ),
 			self::section(),
-			esc_html__( 'Disable Stylesheet and JavaScript.', 'brisko' ),
+			esc_html__( 'Stylesheets, JavaScript and other Settings.', 'brisko' ),
 		);
 
-		( new Control() )->separator( $wp_customize, esc_html__( 'Underscores', 'brisko' ), self::section() );
-		// Disable Underscores.
+		( new Control() )->separator( $wp_customize, esc_html__( 'Brisko', 'brisko' ), self::section() );
+		// Disable Brisko.
 		$wp_customize->add_setting(
-			'disable_underscores', array(
+			'disable_brisko', array(
 				'default'           => false,
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
@@ -55,16 +55,16 @@ class Advanced implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'disable_underscores', array(
-				'label'   => esc_html__( 'Disable Underscores Styles', 'brisko' ),
+			'disable_brisko', array(
+				'label'   => esc_html__( 'Disable Brisko Styles', 'brisko' ),
 				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);
 
-		// Disable Underscores JavaScript.
+		// Disable Theme Styles.
 		$wp_customize->add_setting(
-			'disable_navigation_js', array(
+			'disable_theme_styles', array(
 				'default'           => false,
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
@@ -73,8 +73,64 @@ class Advanced implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'disable_navigation_js', array(
-				'label'   => esc_html__( 'Disable Navigation JS', 'brisko' ),
+			'disable_theme_styles', array(
+				'label'   => esc_html__( 'Disable Theme Styles', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
+		// Smooth scroll.
+		$wp_customize->add_setting(
+			'enable_smooth_scroll', array(
+				'default'           => false,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'enable_smooth_scroll', array(
+				'label'   => esc_html__( 'Enable Smooth Scroll JS', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
+		( new Control() )->separator( $wp_customize, esc_html__( 'Footer', 'brisko' ), self::section() );
+
+		// Remove Top Margin.
+		$wp_customize->add_setting(
+			'footer_remove_top_margin', array(
+				'default'           => false,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'footer_remove_top_margin', array(
+				'label'   => esc_html__( 'Remove Top Margin', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
+		// Disable Footer.
+		$wp_customize->add_setting(
+			'disable_footer', array(
+				'default'           => false,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'disable_footer', array(
+				'label'   => esc_html__( 'Disable The Footer', 'brisko' ),
 				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
@@ -117,10 +173,10 @@ class Advanced implements SettingsInterface
 			)
 		);
 
-		( new Control() )->separator( $wp_customize, esc_html__( 'Brisko', 'brisko' ), self::section() );
-		// Disable Brisko.
+		( new Control() )->separator( $wp_customize, esc_html__( 'Underscores', 'brisko' ), self::section() );
+		// Disable Underscores.
 		$wp_customize->add_setting(
-			'disable_brisko', array(
+			'disable_underscores', array(
 				'default'           => false,
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
@@ -129,16 +185,16 @@ class Advanced implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'disable_brisko', array(
-				'label'   => esc_html__( 'Disable Brisko Styles', 'brisko' ),
+			'disable_underscores', array(
+				'label'   => esc_html__( 'Disable Underscores Styles', 'brisko' ),
 				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
 		);
 
-		// Disable Theme Styles.
+		// Disable Underscores JavaScript.
 		$wp_customize->add_setting(
-			'disable_theme_styles', array(
+			'disable_navigation_js', array(
 				'default'           => false,
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
@@ -147,8 +203,8 @@ class Advanced implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'disable_theme_styles', array(
-				'label'   => esc_html__( 'Disable Theme Styles', 'brisko' ),
+			'disable_navigation_js', array(
+				'label'   => esc_html__( 'Disable Navigation JS', 'brisko' ),
 				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
