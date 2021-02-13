@@ -37,8 +37,8 @@ final class Scripts implements EnqueueInterface
 	 */
 	public function enqueue() {
 
-		if ( false === get_theme_mod( 'disable_bootstrap_js', false ) ) {
-			wp_enqueue_script( 'brisko-bootstrap-js' );
+		if ( false === get_theme_mod( 'disable_bootstrap_js', true ) ) {
+			wp_enqueue_script( 'brisko-bootstrap' );
 		}
 
 		wp_enqueue_script( 'brisko-navigation' );
@@ -59,7 +59,7 @@ final class Scripts implements EnqueueInterface
 	 */
 	public function register() {
 
-		wp_register_script( 'brisko-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), Theme::VERSION, true );
+		wp_register_script( 'brisko-bootstrap', get_template_directory_uri() . '/js/bootstrap/bootstrap.min.js', array(), Theme::VERSION, true );
 		wp_register_script( 'brisko-navigation', get_template_directory_uri() . '/js/navigation.js', array(), Theme::VERSION, true );
 		wp_register_script( 'brisko-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), Theme::VERSION, true );
 
