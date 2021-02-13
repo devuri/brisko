@@ -27,7 +27,10 @@ final class Footer
 			return;
 		endif;
 
-		get_template_part( 'template-parts/footer', 'footer' );
+		// checks for elementor footer.
+		if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'footer' ) ) :
+			get_template_part( 'template-parts/footer', 'footer' );
+		endif;
 	}
 
 	/**
