@@ -33,10 +33,6 @@ final class Sections {
 		$this->sections['footer']     = 'Footer';
 		$this->sections['advanced']   = 'Advanced';
 
-		if ( is_child_theme() ) :
-			$this->sections['child'] = 'Child Theme';
-		endif;
-
 	}
 
 	/**

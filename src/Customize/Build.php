@@ -34,7 +34,6 @@ final class Build {
 		Posts::settings( $wp_customize );
 		Footer::settings( $wp_customize );
 		Advanced::settings( $wp_customize );
-		Child::settings( $wp_customize );
 		SelectiveRefresh::settings( $wp_customize );
 	}
 
