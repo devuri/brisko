@@ -61,7 +61,7 @@ final class Scripts implements EnqueueInterface
 	 */
 	public function register() {
 
-		wp_register_script( 'brisko-bootstrap', get_template_directory_uri() . '/js/bootstrap/bootstrap.min.js', array(), Theme::VERSION, true );
+		wp_register_script( 'brisko-bootstrap', get_template_directory_uri() . '/js/bootstrap/bootstrap.min.js', array( 'jquery' ), Theme::VERSION, true );
 		wp_register_script( 'brisko-navigation', get_template_directory_uri() . '/js/navigation.js', array(), Theme::VERSION, true );
 		wp_register_script( 'brisko-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), Theme::VERSION, true );
 
