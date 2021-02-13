@@ -21,16 +21,17 @@ final class Footer
 	 */
 	public function site_footer() {
 
+		// elementor footer.
+		Element::get()->location( 'footer' );
+
 		if ( true === get_theme_mod( 'disable_footer', false ) ) :
 			brisko_footer();
 			do_action( 'brisko_footer_credit' );
 			return;
 		endif;
 
-		// checks for elementor footer.
-		if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'footer' ) ) :
-			get_template_part( 'template-parts/footer', 'footer' );
-		endif;
+		get_template_part( 'template-parts/footer', 'footer' );
+
 	}
 
 	/**

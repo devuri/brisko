@@ -21,6 +21,10 @@ final class SiteHeader
 	 * Site Header
 	 */
 	public function site_header() {
+
+		// elementor header.
+		Element::get()->location( 'header' );
+
 		get_template_part( 'template-parts/header', 'header' );
 	}
 
