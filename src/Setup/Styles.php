@@ -48,14 +48,14 @@ final class Styles implements EnqueueInterface
 			wp_enqueue_style( 'bootstrap-grid' );
 		}
 
-		// bootstrap.
-		if ( false === get_theme_mod( 'disable_bootstrap', false ) ) {
-			wp_enqueue_style( 'bootstrap' );
-		}
-
 		// brisko.
 		if ( false === get_theme_mod( 'disable_brisko', false ) ) {
 			wp_enqueue_style( 'brisko' );
+		}
+
+		// bootstrap.
+		if ( false === get_theme_mod( 'disable_bootstrap', false ) ) {
+			wp_enqueue_style( 'bootstrap' );
 		}
 
 		// brisko theme styles.
