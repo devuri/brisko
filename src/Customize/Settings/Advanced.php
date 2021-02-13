@@ -173,10 +173,28 @@ class Advanced implements SettingsInterface
 			)
 		);
 
+		// Disable Bootstrap Reboot.
+		$wp_customize->add_setting(
+			'disable_bootstrap_reboot', array(
+				'default'           => true,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'disable_bootstrap_reboot', array(
+				'label'   => esc_html__( 'Disable Bootstrap Reboot', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
 		// Disable Bootstrap Grid.
 		$wp_customize->add_setting(
 			'disable_bootstrap_grid', array(
-				'default'           => false,
+				'default'           => true,
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'brisko_sanitize_checkbox',
