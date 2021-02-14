@@ -10,7 +10,7 @@ Brisko is a beautifully simple and lightweight WordPress theme that is optimized
 For more information about the Brisko Theme please go to https://wpbrisko.com
 
 ### Features
-* Includes Full Bootstrap 4
+* Includes Bootstrap v4
 * Customizer Settings
 * Jetpack Support
 * Child Theme ready
@@ -37,7 +37,6 @@ For more information about the Brisko Theme please go to https://wpbrisko.com
 #### Single Posts
 * Disable/Enable Featured Image
 * Disable/Enable Post Categories
-* Disable/Enable Post Categories
 * Disable/Enable Post Tags
 * Disable/Enable Previous and Next Navigation
 
@@ -49,10 +48,36 @@ For more information about the Brisko Theme please go to https://wpbrisko.com
 * Disable/Enable Underscores
 * Disable/Enable Navigation JS
 * Disable/Enable Brisko Styles
-* Disable/Enable Full Bootstrap support
+* Disable/Enable Bootstrap
 * Disable/Enable Bootstrap Grid
 * Disable/Enable Bootstrap JS
 * Disable/Enable Footer Section
+
+### Child Themes
+Built in child theme support, use Advanced Settings to disable/enable theme features, or replace the template parts.
+
+#### Built in Actions.
+* `brisko_before_header`
+* `brisko_custom_header`
+* `brisko_navigation`
+* `brisko_nav_menu`
+* `brisko_after_header`
+* `brisko_homepage_header`
+* `brisko_post_header`
+* `brisko_before_entry_meta`
+* `brisko_after_entry_meta`
+* `brisko_before_comments`
+* `brisko_after_comments`
+* `brisko_page_header`
+* `brisko_page_footer`
+* `brisko_after_post_content`
+* `brisko_before_sidebar`
+* `brisko_after_sidebar`
+* `brisko_before_footer`
+* `brisko_footer_credit`
+* `brisko_footer`
+* `brisko_after_footer`
+* Get a Visual Reference of all the Brisko Theme Actions with the [Brisko Hooks Display Plugin](https://wordpress.org/plugins/brisko-hooks-display/): .
 
 #### GPL-2.0 License
 Brisko WordPress Theme, Copyright 2020 Uriel Wilson.
@@ -61,7 +86,7 @@ Brisko is distributed under the terms of the GNU GPL.
 
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 
-This template is 100% FREE you are not required to **keep the footer attribution link**, but it would be nice if you did.
+This template is 100% FREE.
 
 
 #### Credits
