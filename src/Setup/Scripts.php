@@ -37,11 +37,11 @@ final class Scripts implements EnqueueInterface
 	 */
 	public function enqueue() {
 
-		if ( false === get_theme_mod( 'disable_bootstrap_js', true ) ) {
+		if ( true === get_theme_mod( 'enable_bootstrap_js', false ) ) {
 			wp_enqueue_script( 'brisko-bootstrap' );
 		}
 
-		if ( false === get_theme_mod( 'disable_navigation_js', true ) ) {
+		if ( true === get_theme_mod( 'enable_navigation_js', true ) ) {
 			wp_enqueue_script( 'brisko-navigation' );
 		}
 
