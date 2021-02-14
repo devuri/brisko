@@ -5,9 +5,19 @@
 
 ###  Modern, minimalist design, high-performance WordPress Elementor Starter Theme
 
-Brisko is a beautifully simple and lightweight WordPress theme that is optimized for speed and WordPress page builders like Elementor, you can use it as a foundation to build versatile layouts using Elementor Template Kits or the WordPress Block Patterns. This theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions, the color scheme can be easily customized to match Elementor Template Kits. The options are easy to manage using the live theme customizer.  Use the WordPress Customizer and Elementor page builder to create professional designs on a solid foundation. Check out our prebuilt website demos for inspiration. demo.wpbrisko.com
+Brisko is a beautifully simple and lightweight WordPress theme that is optimized for speed and WordPress page builders like Elementor, you can use it as a foundation to build versatile layouts using Elementor Template Kits or the WordPress Block Patterns. This theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions, the color scheme can be easily customized. The options are easy to manage using the live theme customizer.  Use the WordPress Customizer and Elementor page builder to create professional designs on a solid foundation. Check out our prebuilt website demos for inspiration. 
 
 For more information about the Brisko Theme please go to https://wpbrisko.com
+### Quick start
+How to Install Brisko.
+* Grab a copy from the WordPress Theme Directory [Download Brisko](https://wordpress.org/themes/brisko/)
+* Search in the WordPress Backend and Install from there [Adding New Themes](https://wordpress.org/support/article/using-themes/#adding-new-themes).
+* Download the .zip file Gihub Release Here [Releases](https://github.com/devuri/brisko/releases), If you use this option rename the theme to brisko.zip, (Adding New Themes by using cPanel) https://wordpress.org/support/article/using-themes/#adding-new-themes-by-using-cpanel
+
+### How to create Child Theme.
+* Use **Child Theme Generator Plugin:** You can use this plugin to quickly and easily generate a child theme https://wordpress.org/plugins/child-theme-generator/
+* You can get more information about child themes here https://developer.wordpress.org/themes/advanced-topics/child-themes/#how-to-create-a-child-theme,
+* Brisko Blog: This is a basic child theme based on Brisko https://github.com/devuri/brisko-blog
 
 ### Features
 * Includes Bootstrap v4
