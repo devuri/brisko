@@ -26,7 +26,7 @@ For more information about the Brisko Theme please go to https://wpbrisko.com
 ### Customizer Settings
 
 #### Easily Customize Settings
-* Global and Button Colors
+* Global Link and Button Colors
 * Navigation width
 * Set Page Width
 * Set Blog Width
