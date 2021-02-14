@@ -39,32 +39,32 @@ final class Styles implements EnqueueInterface
 	public function enqueue() {
 
 		// underscores.
-		if ( false === get_theme_mod( 'disable_underscores', false ) ) {
+		if ( true === get_theme_mod( 'enable_underscores', true ) ) {
 			wp_enqueue_style( 'underscores' );
 		}
 
 		// brisko.
-		if ( false === get_theme_mod( 'disable_brisko', false ) ) {
+		if ( true === get_theme_mod( 'enable_brisko', true ) ) {
 			wp_enqueue_style( 'brisko' );
 		}
 
 		// bootstrap grid.
-		if ( false === get_theme_mod( 'disable_bootstrap_grid', true ) ) {
+		if ( true === get_theme_mod( 'enable_bootstrap_grid', false ) ) {
 			wp_enqueue_style( 'bootstrap-grid' );
 		}
 
 		// bootstrap reboot.
-		if ( false === get_theme_mod( 'disable_bootstrap_reboot', true ) ) {
+		if ( true === get_theme_mod( 'enable_bootstrap_reboot', false ) ) {
 			wp_enqueue_style( 'bootstrap-reboot' );
 		}
 
 		// bootstrap.
-		if ( false === get_theme_mod( 'disable_bootstrap', false ) ) {
+		if ( true === get_theme_mod( 'enable_bootstrap', true ) ) {
 			wp_enqueue_style( 'bootstrap' );
 		}
 
 		// brisko theme styles.
-		if ( false === get_theme_mod( 'disable_theme_styles', false ) ) {
+		if ( true === get_theme_mod( 'enable_theme_styles', true ) ) {
 			wp_enqueue_style( 'brisko-theme' );
 		}
 
