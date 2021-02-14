@@ -1,3 +1,4 @@
+<?php brisko()->action( 'brisko_before_footer' ); ?>
 <footer id="colophon" class="site-footer this-site-footer bg-white <?php Brisko\Theme::options()->footer_top_margin(); ?>">
 	<?php brisko_footer(); ?>
 	<div align="center" class="site-info container">
@@ -7,3 +8,4 @@
 		</div><!-- .brisko-theme-credit -->
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
+<?php brisko()->action( 'brisko_after_footer' ); ?>

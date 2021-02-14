@@ -31,7 +31,7 @@ if ( ! function_exists( 'brisko' ) ) :
 endif;
 
 /**
- * Adds support for Elementor Header and Footer.
+ * Compatibility for Header Footer Blocks plugin.
  *
  * @link https://developers.elementor.com/theme-locations-api/registering-locations
  */
