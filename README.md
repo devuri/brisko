@@ -9,8 +9,43 @@ Brisko is a beautifully simple and lightweight WordPress theme that is optimized
 
 For more information about the Brisko Theme please go to https://wpbrisko.com
 
-![brisko-theme-v4-optimized](https://user-images.githubusercontent.com/4777400/98036232-b0746100-1de7-11eb-86b8-1ec3f9f52a59.png)
+### Features
+* Customizer Settings.
+* Jetpack Support.
+* Child Theme ready.
+* Elementor Support.
+* Landing Pages.
 
+# Customizer Settings
+
+### Easily Customize Settings
+* Global and Button Colors
+* Navigation width
+* Set Page Width
+* Set Blog Width
+* Disable/Enable Page Titles
+* Disable/Enable Sidebar
+* Custom Footer Text
+
+### Single Posts
+* Disable/Enable Featured Image
+* Disable/Enable Post Categories
+* Disable/Enable Post Categories
+* Disable/Enable Post Tags
+* Disable/Enable Previous and Next Navigation
+
+### Advanced Settings
+* Disable/Enable Theme Styles
+* Disable/Enable Site Title and Tagline
+* Disable/Enable Built in Menu
+* Disable/Enable Navigation Section
+* Disable/Enable Underscores
+* Disable/Enable Navigation JS
+* Disable/Enable Brisko Styles
+* Disable/Enable Full Bootstrap support
+* Disable/Enable Bootstrap Grid
+* Disable/Enable Bootstrap JS
+* Disable/Enable Footer Section
 
 #### GPL-2.0 License
 Brisko WordPress Theme, Copyright 2020 Uriel Wilson.
