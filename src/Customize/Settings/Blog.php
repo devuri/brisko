@@ -38,34 +38,26 @@ class Blog implements SettingsInterface
 		 */
 		( new Control() )->separator( $wp_customize, esc_html__( 'Blog', 'brisko' ), self::section() );
 
-		// Blog Title .
-		// Blog Layout .
-
-		// blog width.
+		// Blog Title.
 		$wp_customize->add_setting(
-			'blog_width', array(
-				'sanitize_callback' => 'sanitize_html_class',
-				'default'           => 'container',
+			'blog_title', array(
+				'default'           => '',
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 
 		$wp_customize->add_control(
-			'blog_width', array(
-				'label'       => esc_html__( 'Blog width', 'brisko' ),
-				'description' => esc_html__( 'set blog width', 'brisko' ),
+			'blog_title', array(
+				'label'       => esc_html__( 'Blog Title', 'brisko' ),
+				'description' => esc_html__( 'edit blog section title', 'brisko' ),
 				'section'     => self::section(),
-				'type'        => 'select',
-				'choices'     => array(
-					'container'       => esc_html__( 'Boxed', 'brisko' ),
-					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
-				),
+				'type'        => 'text',
 			)
 		);
 
-		/**
-		 * Disable Sidebar
-		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Sidebar', 'brisko' ), self::section() );
+		// Disable Sidebar.
 		$wp_customize->add_setting(
 			'disable_sidebar', array(
 				'default'           => absint( 0 ),
@@ -83,9 +75,6 @@ class Blog implements SettingsInterface
 			)
 		);
 
-		// Read More Button .
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Read More Button', 'brisko' ), self::section() );
-
 		// button border radius.
 		$wp_customize->add_setting(
 			'read_more_border_radius', array(
@@ -98,12 +87,100 @@ class Blog implements SettingsInterface
 
 		$wp_customize->add_control(
 			'read_more_border_radius', array(
-				'label'       => esc_html__( 'Border Radius', 'brisko' ),
-				'description' => esc_html__( 'set read more button border radius', 'brisko' ),
-				'section'     => self::section(),
-				'type'        => 'checkbox',
+				'label'   => esc_html__( 'Read More Button Radius', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
 			)
 		);
-		// background color.
+
+		/**
+		 * Separator Post Settings.
+		 */
+		( new Control() )->separator( $wp_customize, esc_html__( 'Post Details', 'brisko' ), self::section() );
+
+		/**
+		 * Featured image
+		 */
+		$wp_customize->add_setting(
+			'featured_image', array(
+				'default'           => sanitize_html_class( 'this-display-show' ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'sanitize_html_class',
+			)
+		);
+
+		$wp_customize->add_control(
+			'featured_image', array(
+				'label'       => esc_html__( 'Featured Image Display', 'brisko' ),
+				'description' => esc_html__( 'featured Image on single posts', 'brisko' ),
+				'section'     => self::section(),
+				'type'        => 'select',
+				'choices'     => array(
+					'this-display-show' => esc_html__( 'Display on single posts', 'brisko' ),
+					'this-display-none' => esc_html__( 'Remove on single posts', 'brisko' ),
+				),
+			)
+		);
+
+		/**
+		 * Post Details
+		 */
+		( new Control() )->header_title( $wp_customize, esc_html__( 'Post Details', 'brisko' ), self::section() );
+
+		// Display Post Categories .
+		$wp_customize->add_setting(
+			'display_post_categories', array(
+				'default'           => absint( 1 ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'display_post_categories', array(
+				'label'   => esc_html__( 'Display Categories', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
+		// Display tags.
+		$wp_customize->add_setting(
+			'display_tags', array(
+				'default'           => absint( 1 ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'display_tags', array(
+				'label'   => esc_html__( 'Display Tags', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
+		// Display previous and next post navigation.
+		$wp_customize->add_setting(
+			'display_previous_next', array(
+				'default'           => absint( 1 ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'display_previous_next', array(
+				'label'   => esc_html__( 'Display Previous and Next Navigation', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
 	}
 }
