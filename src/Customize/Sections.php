@@ -25,11 +25,11 @@ final class Sections {
 	private function __construct() {
 
 		$this->sections['general']    = 'General';
+		$this->sections['layout']     = 'Layout';
 		$this->sections['navigation'] = 'Navigation';
 		$this->sections['header']     = 'Header';
 		$this->sections['pages']      = 'Pages';
 		$this->sections['blog']       = 'Blog';
-		$this->sections['posts']      = 'Posts';
 		$this->sections['footer']     = 'Footer';
 		$this->sections['advanced']   = 'Advanced';
 
