@@ -41,7 +41,7 @@ class Header implements SettingsInterface
 		$wp_customize->add_setting(
 			'header_image_display', array(
 				'sanitize_callback' => 'sanitize_html_class',
-				'default'           => 'entire-site',
+				'default'           => 'this-entire-site',
 			)
 		);
 
