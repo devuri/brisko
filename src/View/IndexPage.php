@@ -37,4 +37,19 @@ class IndexPage extends Layout
 			$this->footer();
 	}
 
+	/**
+	 * Head section
+	 */
+	public function head() {
+
+		// check if sidebar or not .
+		$no_sidebar      = sanitize_html_class( 'col-md' );
+		$sidebar         = sanitize_html_class( 'col-md-8' );
+		$sidebar_display = ( ( $this->disable_sidebar() ) ? $no_sidebar : $sidebar );
+
+		// params .
+		$args = array( 'content_class' => $sidebar_display );
+		get_template_part( 'template-parts/head', 'archive', $args );
+	}
+
 }

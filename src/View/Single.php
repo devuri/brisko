@@ -2,6 +2,7 @@
 
 namespace Brisko\View;
 
+use Brisko\Brisko;
 use Brisko\Layout;
 
 class Single extends Layout
@@ -23,6 +24,9 @@ class Single extends Layout
 			the_post();
 			get_template_part( 'template-parts/content', 'single' );
 
+			// releated.
+			Brisko::related_content();
+
 			// custom action .
 			brisko_after_post_content();
 
@@ -42,6 +46,25 @@ class Single extends Layout
 		endwhile;
 
 		$this->footer();
+	}
+
+	/**
+	 * Head section
+	 *
+	 * @return void
+	 * @link https://developer.wordpress.org/reference/functions/get_template_part/
+	 */
+	public function head() {
+
+		// check if sidebar or not .
+		$no_sidebar      = sanitize_html_class( 'col-md' );
+		$sidebar         = sanitize_html_class( 'col-md-8' );
+		$sidebar_display = ( ( $this->disable_sidebar() ) ? $no_sidebar : $sidebar );
+
+		// params .
+		$args = array( 'content_class' => $sidebar_display );
+		get_template_part( 'template-parts/head', 'blog', $args );
+
 	}
 
 	/**
