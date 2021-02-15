@@ -36,26 +36,6 @@ class Navigation implements SettingsInterface
 		// Separator Header Navigation Settings.
 		( new Control() )->separator( $wp_customize, esc_html__( 'Navigation', 'brisko' ), self::section() );
 
-		$wp_customize->add_setting(
-			'navigation_width', array(
-				'sanitize_callback' => 'sanitize_html_class',
-				'default'           => 'container',
-			)
-		);
-
-		$wp_customize->add_control(
-			'navigation_width', array(
-				'label'       => esc_html__( 'Navigation width', 'brisko' ),
-				'description' => esc_html__( 'set menu navigation width', 'brisko' ),
-				'section'     => self::section(),
-				'type'        => 'select',
-				'choices'     => array(
-					'container'       => esc_html__( 'Boxed', 'brisko' ),
-					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
-				),
-			)
-		);
-
 		/**
 		 * Navigation background color
 		 */
