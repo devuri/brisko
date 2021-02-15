@@ -23,9 +23,29 @@ final class Activate implements SetupInterface
 	 * Theme Setup
 	 */
 	private function __construct() {
+		add_action( 'brisko_blog_title', array( $this, 'brisko_blog_title' ) );
 		add_action( 'after_setup_theme', array( $this, 'brisko_setup' ) );
 		add_action( 'after_setup_theme', array( $this, 'brisko_content_width' ), 0 );
 		add_action( 'widgets_init', array( $this, 'brisko_widgets_init' ) );
+	}
+
+	/**
+	 * Blog Title.
+	 *
+	 * @return void.
+	 */
+	public static function brisko_blog_title() {
+
+		if ( get_theme_mod( 'hide_blog_title', true ) ) {
+			return;
+		}
+
+		$get_title  = '<header>';
+		$get_title .= '<h3 class="page-title">';
+		$get_title .= esc_html( get_theme_mod( 'blog_title', get_bloginfo( 'name' ) . ' - blog' ) );
+		$get_title .= '</h3>';
+		$get_title .= '</header>';
+		print $get_title; // @codingStandardsIgnoreLine
 	}
 
 	/**
