@@ -25,6 +25,18 @@ class Advanced implements SettingsInterface
 	}
 
 	/**
+	 * Brisko Section
+	 */
+	public static function install_plugin() {
+
+		$button  = '<a href="' . esc_url( network_admin_url( 'plugin-install.php?tab=search&type=tag&s=brisko' ) ) . '" class="button button-secondary">';
+		$button .= 'Install Plugin';
+		$button .= '</a>';
+		return "<p>Get a Visual Representation of all the Brisko Theme Hooks.
+		Only the Admin user will be able to see the hooks visualization.</p>$button";
+	}
+
+	/**
 	 * Lets build out the customizer settings
 	 *
 	 * Create new customizer settings here is where we will add new panel sections
@@ -244,6 +256,15 @@ class Advanced implements SettingsInterface
 				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
+		);
+
+		( new Control() )->separator( $wp_customize, esc_html__( 'Plugins', 'brisko' ), self::section() );
+		// install plugin.
+		( new Control() )->header_title(
+			$wp_customize,
+			esc_html__( 'Brisko Hooks Plugin', 'brisko' ),
+			self::section(),
+			self::install_plugin(),
 		);
 
 	}
