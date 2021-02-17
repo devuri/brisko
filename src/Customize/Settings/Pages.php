@@ -48,7 +48,7 @@ class Pages implements SettingsInterface
 
 		$wp_customize->add_control(
 			'display_page_header', array(
-				'label'   => esc_html__( 'Display Page Tilte', 'brisko' ),
+				'label'   => esc_html__( 'Display Page Title', 'brisko' ),
 				'section' => self::section(),
 				'type'    => 'checkbox',
 			)
