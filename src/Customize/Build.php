@@ -2,6 +2,7 @@
 
 namespace Brisko\Customize;
 
+use Brisko\Customize\Settings\Pro;
 use Brisko\Customize\Settings\General;
 use Brisko\Customize\Settings\Layout;
 use Brisko\Customize\Settings\Header;
@@ -26,6 +27,7 @@ final class Build {
 	 * @param WP_Customize_Manager $wp_customize .
 	 */
 	public function settings( $wp_customize ) {
+		Pro::settings( $wp_customize );
 		General::settings( $wp_customize );
 		Layout::settings( $wp_customize );
 		Navigation::settings( $wp_customize );
