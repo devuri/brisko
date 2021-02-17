@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying Navigation
+ * Template part for displaying Navigation menu.
  *
  * @package brisko
  */
