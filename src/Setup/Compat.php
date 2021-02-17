@@ -56,7 +56,7 @@ final class Compat implements SetupInterface
 	 */
 	public function hfe_footer() {
 
-		if ( function_exists( 'hfe_header_enabled' ) && hfe_header_enabled() ) {
+		if ( function_exists( 'hfe_footer_enabled' ) && hfe_footer_enabled() ) {
 			add_action( 'hfe_footer', function() {
 				if ( ! get_theme_mod( 'disable_footer', false ) ) :
 					get_template_part( 'template-parts/footer', 'footer' );
