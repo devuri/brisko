@@ -60,7 +60,7 @@ add_action( 'customize_preview_init', 'brisko_customize_preview_js' );
 
 
 /**
- * Checkbox sanitization callback example.
+ * Checkbox sanitization.
  *
  * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
  * as a boolean value, either TRUE or FALSE.
@@ -72,4 +72,18 @@ add_action( 'customize_preview_init', 'brisko_customize_preview_js' );
 function brisko_sanitize_checkbox( $checked ) {
 	// Boolean check.
 	return ( ( isset( $checked ) && true == $checked ) ? true : false ); // @codingStandardsIgnoreLine
+}
+
+/**
+ * Number sanitization
+ *
+ * Sanitization callback for 'numbers'
+ *
+ * @param  string $number .
+ * @return $number .
+ */
+function brisko_sanitize_number( $number ) {
+	$number = wp_strip_all_tags( $number );
+	$number = preg_replace( '/[^0-9,]/', '', $number );
+	return $number;
 }
