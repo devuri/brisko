@@ -3,6 +3,7 @@
 namespace Brisko\Customize\Settings;
 
 use Brisko\Customize\Controls\Control;
+use Brisko\Customize\Controls\GroupSettings;
 use Brisko\Customize\Controls\SeparatorControl;
 use Brisko\Contracts\SettingsInterface;
 
@@ -162,6 +163,61 @@ class Footer implements SettingsInterface
 					'label'       => esc_html__( 'Border Color', 'brisko' ),
 					'description' => esc_html__( 'Set a Border Color', 'brisko' ),
 					'section'     => self::section(),
+				)
+			)
+		);
+
+		// Footer Padding.
+		$wp_customize->add_setting(
+			'footer_padding[top]', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_number',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_padding[right]', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_number',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_padding[bottom]', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_number',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_padding[left]', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_number',
+			)
+		);
+
+		$wp_customize->add_control(
+			new GroupSettings(
+				$wp_customize, 'footer_padding',
+				array(
+					'label'    => esc_html__( 'Footer Padding', 'brisko' ),
+					'section'  => self::section(),
+					'inline'   => true,
+					'type'     => 'number',
+					'settings' => array(
+						'top'    => 'footer_padding[top]',
+						'right'  => 'footer_padding[right]',
+						'bottom' => 'footer_padding[bottom]',
+						'left'   => 'footer_padding[left]',
+					),
 				)
 			)
 		);
