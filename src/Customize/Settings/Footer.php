@@ -277,5 +277,28 @@ class Footer implements SettingsInterface
 			)
 		);
 
+		// Custom CSS.
+		$wp_customize->add_setting(
+			'footer_css', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '0',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'wp_kses_post',
+			)
+		);
+
+		$wp_customize->add_control(
+			new \WP_Customize_Code_Editor_Control(
+				$wp_customize, 'footer_css',
+				array(
+					'label'     => esc_html__( 'Custom CSS', 'brisko' ),
+					'section'   => self::section(),
+					'inline'    => true,
+					'type'      => 'code_editor',
+					'code_type' => 'text/css',
+				)
+			)
+		);
+
 	}
 }
