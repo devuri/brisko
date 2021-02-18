@@ -67,12 +67,102 @@ class Footer implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'poweredby', array(
-				'label'       => esc_html__( 'Powered By', 'brisko' ),
-				'description' => esc_html__( 'edit Powered by section, html can be used', 'brisko' ),
-				'section'     => self::section(),
-				'settings'    => 'poweredby',
-				'type'        => 'textarea',
+			new \WP_Customize_Code_Editor_Control(
+				$wp_customize, 'poweredby',
+				array(
+					'label'       => esc_html__( 'Powered By', 'brisko' ),
+					'description' => esc_html__( 'edit Powered by section, html can be used', 'brisko' ),
+					'section'  => self::section(),
+					'inline'   => true,
+					'type'     => 'code_editor',
+					'code_type' => 'text/html',
+				)
+			)
+		);
+
+		( new Control() )->separator( $wp_customize, esc_html__( 'Advanced Settings', 'brisko' ), self::section() );
+
+		// Custom Text Color.
+		$wp_customize->add_setting(
+			'footer_text_color', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '#666666',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
+
+		$wp_customize->add_control(
+			new \WP_Customize_Color_Control(
+				$wp_customize, 'footer_text_color',
+				array(
+					'label'       => esc_html__( 'Text Color', 'brisko' ),
+					'description' => esc_html__( 'Set a Custom Text Color', 'brisko' ),
+					'section'     => self::section(),
+				)
+			)
+		);
+
+		// Footer Links color.
+		$wp_customize->add_setting(
+			'footer_links_color', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '#000000',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
+
+		$wp_customize->add_control(
+			new \WP_Customize_Color_Control(
+				$wp_customize, 'footer_links_color',
+				array(
+					'label'       => esc_html__( 'Link Color', 'brisko' ),
+					'description' => esc_html__( 'Set a Custom Links Color', 'brisko' ),
+					'section'     => self::section(),
+				)
+			)
+		);
+
+		// Custom Background Color.
+		$wp_customize->add_setting(
+			'footer_background_color', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '#000000',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
+
+		$wp_customize->add_control(
+			new \WP_Customize_Color_Control(
+				$wp_customize, 'footer_background_color',
+				array(
+					'label'       => esc_html__( 'Background Color', 'brisko' ),
+					'description' => esc_html__( 'Set a Custom Background Color', 'brisko' ),
+					'section'     => self::section(),
+				)
+			)
+		);
+
+		// Custom Border Color.
+		$wp_customize->add_setting(
+			'footer_border_color', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '#333333',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
+
+		$wp_customize->add_control(
+			new \WP_Customize_Color_Control(
+				$wp_customize, 'footer_border_color',
+				array(
+					'label'       => esc_html__( 'Border Color', 'brisko' ),
+					'description' => esc_html__( 'Set a Border Color', 'brisko' ),
+					'section'     => self::section(),
+				)
 			)
 		);
 
