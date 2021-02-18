@@ -222,5 +222,60 @@ class Footer implements SettingsInterface
 			)
 		);
 
+		// Footer Margin.
+		$wp_customize->add_setting(
+			'footer_margin[top]', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '0',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_number',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_margin[right]', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '0',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_number',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_margin[bottom]', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '0',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_number',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_margin[left]', array(
+				'capability'        => 'edit_theme_options',
+				'default'           => '0',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_number',
+			)
+		);
+
+		$wp_customize->add_control(
+			new GroupSettings(
+				$wp_customize, 'footer_margin',
+				array(
+					'label'    => esc_html__( 'Footer Margin', 'brisko' ),
+					'section'  => self::section(),
+					'inline'   => true,
+					'type'     => 'number',
+					'settings' => array(
+						'top'    => 'footer_margin[top]',
+						'right'  => 'footer_margin[right]',
+						'bottom' => 'footer_margin[bottom]',
+						'left'   => 'footer_margin[left]',
+					),
+				)
+			)
+		);
+
 	}
 }
