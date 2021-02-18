@@ -300,5 +300,24 @@ class Footer implements SettingsInterface
 			)
 		);
 
+		// CSS Classes.
+		$wp_customize->add_setting(
+			'footer_css_class', array(
+				'default'           => '',
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'sanitize_title',
+			)
+		);
+
+		$wp_customize->add_control(
+			'footer_css_class', array(
+				'label'       => esc_html__( 'CSS Classes', 'brisko' ),
+				'description' => esc_html__( 'add custom CSS Class to the footer section', 'brisko' ),
+				'section'     => self::section(),
+				'type'        => 'text',
+			)
+		);
+
 	}
 }
