@@ -103,12 +103,18 @@ final class Styles implements EnqueueInterface
 	public function custom_css() {
 
 		// Get the theme setting.
-		$bttns                 = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
-		$color                 = get_theme_mod( 'link_color', '#000000' );
-		$navigation_background = get_theme_mod( 'nav_background_color', '#fff' );
-		$nav_padding           = get_theme_mod( 'navigation_padding', 10 );
-		$nav_margin_bottom     = get_theme_mod( 'nav_margin_bottom', 2 );
-		$underline_post_links  = get_theme_mod( 'underline_post_links', true );
+		$bttns                   = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
+		$color                   = get_theme_mod( 'link_color', '#000000' );
+		$navigation_background   = get_theme_mod( 'nav_background_color', '#fff' );
+		$nav_padding             = get_theme_mod( 'navigation_padding', 10 );
+		$nav_margin_bottom       = get_theme_mod( 'nav_margin_bottom', 2 );
+		$underline_post_links    = get_theme_mod( 'underline_post_links', true );
+
+		// footer.
+		$footer_links            = get_theme_mod( 'footer_links_color', '#000000' );
+		$footer_text             = get_theme_mod( 'footer_text_color', '#000000' );
+		$footer_background_color = get_theme_mod( 'footer_background_color', '#000000' );
+		$footer_border_color     = get_theme_mod( 'footer_border_color', '#000000' );
 
 		// CSS array .
 		$custom_styles                   = array();
@@ -119,6 +125,10 @@ final class Styles implements EnqueueInterface
 		$custom_styles['nav_padding']    = ".brisko-navigation {padding: {$nav_padding}px;}";
 		$custom_styles['margin_bottom']  = ".brisko-navigation {margin-bottom: {$nav_margin_bottom}px;}";
 		$custom_styles['bttn_color']     = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color};}";
+		$custom_styles['footer_links']   = ".site-footer a{color: {$footer_links};}footer a:hover{color: {$footer_links};}";
+		$custom_styles['footer_text']   = ".site-footer {color: {$footer_text};}";
+		$custom_styles['footer_background'] = ".site-footer {background-color: {$footer_background_color};}";
+		$custom_styles['footer_border_color'] = ".site-footer {border-color: {$footer_border_color};}";
 
 		if ( false === $underline_post_links ) {
 			$custom_styles['underline_body_links'] = "body a{text-decoration: none;}"; // @codingStandardsIgnoreLine
