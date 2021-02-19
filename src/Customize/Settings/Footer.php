@@ -168,114 +168,16 @@ class Footer implements SettingsInterface
 		);
 
 		// Footer Padding.
-		$wp_customize->add_setting(
-			'footer_padding[top]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'footer_padding[right]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'footer_padding[bottom]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'footer_padding[left]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$wp_customize->add_control(
-			new GroupSettings(
-				$wp_customize, 'footer_padding',
-				array(
-					'label'    => esc_html__( 'Footer Padding', 'brisko' ),
-					'section'  => self::section(),
-					'inline'   => true,
-					'type'     => 'number',
-					'settings' => array(
-						'top'    => 'footer_padding[top]',
-						'right'  => 'footer_padding[right]',
-						'bottom' => 'footer_padding[bottom]',
-						'left'   => 'footer_padding[left]',
-					),
-				)
-			)
-		);
+		( new Settings( $wp_customize,
+			self::$transport,
+			self::section()
+		) )->padding( 'footer' );
 
 		// Footer Margin.
-		$wp_customize->add_setting(
-			'footer_margin[top]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'footer_margin[right]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'footer_margin[bottom]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'footer_margin[left]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$wp_customize->add_control(
-			new GroupSettings(
-				$wp_customize, 'footer_margin',
-				array(
-					'label'    => esc_html__( 'Footer Margin', 'brisko' ),
-					'section'  => self::section(),
-					'inline'   => true,
-					'type'     => 'number',
-					'settings' => array(
-						'top'    => 'footer_margin[top]',
-						'right'  => 'footer_margin[right]',
-						'bottom' => 'footer_margin[bottom]',
-						'left'   => 'footer_margin[left]',
-					),
-				)
-			)
-		);
+		( new Settings( $wp_customize,
+			self::$transport,
+			self::section()
+		) )->margin( 'footer' );
 
 		// Custom CSS.
 		$wp_customize->add_setting(
@@ -312,7 +214,7 @@ class Footer implements SettingsInterface
 
 		$wp_customize->add_control(
 			'footer_css_class', array(
-				'label'       => esc_html__( 'CSS Classes', 'brisko' ),
+				'label'       => esc_html__( 'Additional CSS class(es)', 'brisko' ),
 				'description' => esc_html__( 'add custom CSS Class to the footer section', 'brisko' ),
 				'section'     => self::section(),
 				'type'        => 'text',
