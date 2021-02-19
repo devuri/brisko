@@ -73,10 +73,10 @@ class Footer implements SettingsInterface
 				array(
 					'label'       => esc_html__( 'Powered By', 'brisko' ),
 					'description' => esc_html__( 'edit Powered by section, html can be used', 'brisko' ),
-					'section'  => self::section(),
-					'inline'   => true,
-					'type'     => 'code_editor',
-					'code_type' => 'text/html',
+					'section'     => self::section(),
+					'inline'      => true,
+					'type'        => 'code_editor',
+					'code_type'   => 'text/html',
 				)
 			)
 		);
@@ -168,16 +168,16 @@ class Footer implements SettingsInterface
 		);
 
 		// Footer Padding.
-		( new Settings( $wp_customize,
+		Settings::init( $wp_customize,
 			self::$transport,
 			self::section()
-		) )->padding( 'footer' );
+		)->element_space( 'footer_padding' );
 
 		// Footer Margin.
-		( new Settings( $wp_customize,
+		Settings::init( $wp_customize,
 			self::$transport,
 			self::section()
-		) )->margin( 'footer' );
+		)->element_space( 'footer_margin' );
 
 		// Custom CSS.
 		$wp_customize->add_setting(
