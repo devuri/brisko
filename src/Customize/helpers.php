@@ -75,6 +75,21 @@ function brisko_sanitize_checkbox( $checked ) {
 }
 
 /**
+ * Classes sanitization
+ *
+ * Sanitization callback for 'css classes'
+ *
+ * @param  string $classes .
+ * @return $classes comma separated values.
+ */
+function brisko_sanitize_classes( $classes ) {
+	$classes = sanitize_text_field( $classes );
+	$classes = explode( ',', $classes );
+	$classes = array_map( 'sanitize_title', $classes );
+	return implode( ',', $classes );
+}
+
+/**
  * Number sanitization
  *
  * Sanitization callback for 'numbers'
