@@ -129,7 +129,7 @@ class Footer implements SettingsInterface
 		$wp_customize->add_setting(
 			'footer_background_color', array(
 				'capability'        => 'edit_theme_options',
-				'default'           => '#000000',
+				'default'           => '#ffffff',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'sanitize_hex_color',
 			)
@@ -150,7 +150,7 @@ class Footer implements SettingsInterface
 		$wp_customize->add_setting(
 			'footer_border_color', array(
 				'capability'        => 'edit_theme_options',
-				'default'           => '#333333',
+				'default'           => '#e8e8e8',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'sanitize_hex_color',
 			)
@@ -171,7 +171,7 @@ class Footer implements SettingsInterface
 		$wp_customize->add_setting(
 			'footer_padding[top]', array(
 				'capability'        => 'edit_theme_options',
-				'default'           => '',
+				'default'           => '0',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'brisko_sanitize_number',
 			)
@@ -180,7 +180,7 @@ class Footer implements SettingsInterface
 		$wp_customize->add_setting(
 			'footer_padding[right]', array(
 				'capability'        => 'edit_theme_options',
-				'default'           => '',
+				'default'           => '0',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'brisko_sanitize_number',
 			)
@@ -189,7 +189,7 @@ class Footer implements SettingsInterface
 		$wp_customize->add_setting(
 			'footer_padding[bottom]', array(
 				'capability'        => 'edit_theme_options',
-				'default'           => '',
+				'default'           => '0',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'brisko_sanitize_number',
 			)
@@ -198,7 +198,7 @@ class Footer implements SettingsInterface
 		$wp_customize->add_setting(
 			'footer_padding[left]', array(
 				'capability'        => 'edit_theme_options',
-				'default'           => '',
+				'default'           => '0',
 				'transport'         => self::$transport,
 				'sanitize_callback' => 'brisko_sanitize_number',
 			)
@@ -306,7 +306,7 @@ class Footer implements SettingsInterface
 				'default'           => '',
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
-				'sanitize_callback' => 'sanitize_title',
+				'sanitize_callback' => 'brisko_sanitize_classes',
 			)
 		);
 
