@@ -73,10 +73,7 @@ class Header implements SettingsInterface
 				'description' => esc_html__( 'set width for the header image', 'brisko' ),
 				'section'     => self::section(),
 				'type'        => 'select',
-				'choices'     => array(
-					'container'       => esc_html__( 'Boxed', 'brisko' ),
-					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
-				),
+				'choices'     => brisko_layout_options(),
 			)
 		);
 	}

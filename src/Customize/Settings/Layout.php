@@ -52,10 +52,7 @@ class Layout implements SettingsInterface
 				'description' => esc_html__( 'set Navigation width', 'brisko' ),
 				'section'     => self::section(),
 				'type'        => 'select',
-				'choices'     => array(
-					'container'       => esc_html__( 'Boxed', 'brisko' ),
-					'container-fluid' => esc_html__( 'Full Width', 'brisko' ),
-				),
+				'choices'     => brisko_layout_options(),
 			)
 		);
 
@@ -73,10 +70,7 @@ class Layout implements SettingsInterface
 				'description' => esc_html__( 'set Blog width', 'brisko' ),
 				'section'     => self::section(),
 				'type'        => 'select',
-				'choices'     => array(
-					'container'       => esc_html__( 'Boxed', 'brisko' ),
-					'container-fluid' => esc_html__( 'Full Width', 'brisko' ),
-				),
+				'choices'     => brisko_layout_options(),
 			)
 		);
 
@@ -94,10 +88,7 @@ class Layout implements SettingsInterface
 				'description' => esc_html__( 'set Page width', 'brisko' ),
 				'section'     => self::section(),
 				'type'        => 'select',
-				'choices'     => array(
-					'container'       => esc_html__( 'Boxed', 'brisko' ),
-					'container-fluid' => esc_html__( 'Full Width', 'brisko' ),
-				),
+				'choices'     => brisko_layout_options(),
 			)
 		);
 
@@ -115,10 +106,7 @@ class Layout implements SettingsInterface
 				'description' => esc_html__( 'set Archives width', 'brisko' ),
 				'section'     => self::section(),
 				'type'        => 'select',
-				'choices'     => array(
-					'container'       => esc_html__( 'Boxed', 'brisko' ),
-					'container-fluid' => esc_html__( 'Full Width', 'brisko' ),
-				),
+				'choices'     => brisko_layout_options(),
 			)
 		);
 	}
