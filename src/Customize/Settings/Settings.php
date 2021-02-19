@@ -2,12 +2,17 @@
 
 namespace Brisko\Customize\Settings;
 
+use Brisko\Traits\Singleton;
 use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\GroupSettings;
 use Brisko\Customize\Controls\SeparatorControl;
+use Brisko\Contracts\SettingsBuilderInterface;
 
-class Settings
+class Settings implements SettingsBuilderInterface
 {
+
+	use Singleton;
+
 	/**
 	 * $wp_customize
 	 *
@@ -30,97 +35,53 @@ class Settings
 	public $section;
 
 	/**
+	 * Singleton
+	 *
+	 * @param WP_Customize_Control $wp_customize .
+	 * @param string               $transport .
+	 * @param string               $section .
+	 */
+	public static function init( $wp_customize, $transport, $section ) {
+		return new Settings( $wp_customize, $transport, $section );
+	}
+
+	/**
 	 * Construct
 	 *
 	 * @param WP_Customize_Control $wp_customize .
-	 * @param string $transport .
-	 * @param string $section .
+	 * @param string               $transport .
+	 * @param string               $section .
 	 */
-	public function __construct( $wp_customize, $transport, $section ) {
+	private function __construct( $wp_customize, $transport, $section ) {
 		$this->customize = $wp_customize;
 		$this->transport = $transport;
 		$this->section   = $section;
 	}
 
 	/**
-	 * Padding
+	 * Customizer control
 	 *
-	 * @param string $setting .
-	 *
-	 * @return void
+	 * @return WP_Customize_Control
 	 */
-	public function padding( $setting = 'footer' ) {
-
-		$title = ucfirst( $setting . ' Padding' );
-
-		$this->customize->add_setting(
-			$setting . '_padding[top]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => $this->transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$this->customize->add_setting(
-			$setting . '_padding[right]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => $this->transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$this->customize->add_setting(
-			$setting . '_padding[bottom]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => $this->transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$this->customize->add_setting(
-			$setting . '_padding[left]', array(
-				'capability'        => 'edit_theme_options',
-				'default'           => '0',
-				'transport'         => $this->transport,
-				'sanitize_callback' => 'brisko_sanitize_number',
-			)
-		);
-
-		$this->customize->add_control(
-			new GroupSettings(
-				$this->customize, $setting . '_padding',
-				array(
-					'label'    => esc_html( $title ),
-					'section'  => $this->section,
-					'inline'   => true,
-					'type'     => 'number',
-					'settings' => array(
-						'top'    => $setting . '_padding[top]',
-						'right'  => $setting . '_padding[right]',
-						'bottom' => $setting . '_padding[bottom]',
-						'left'   => $setting . '_padding[left]',
-					),
-				)
-			)
-		);
+	public function customizer() {
+		return $this->customize;
 	}
 
 	/**
-	 * Margin
+	 * Element Space
+	 *
+	 * Used for manrgin and padding like "footer_margin" and "footer_padding".
 	 *
 	 * @param string $setting .
 	 *
 	 * @return void
 	 */
-	public function margin( $setting = 'footer' ) {
+	public function element_space( $setting = 'footer_margin' ) {
 
-		$title = ucfirst( $setting . ' Margin' );
+		$title = ucwords( str_replace( '_', ' ', $setting ) );
 
-		$this->customize->add_setting(
-			$setting . '_margin[top]', array(
+		$this->customizer()->add_setting(
+			$setting . '[top]', array(
 				'capability'        => 'edit_theme_options',
 				'default'           => '0',
 				'transport'         => $this->transport,
@@ -128,8 +89,8 @@ class Settings
 			)
 		);
 
-		$this->customize->add_setting(
-			$setting . '_margin[right]', array(
+		$this->customizer()->add_setting(
+			$setting . '[right]', array(
 				'capability'        => 'edit_theme_options',
 				'default'           => '0',
 				'transport'         => $this->transport,
@@ -137,8 +98,8 @@ class Settings
 			)
 		);
 
-		$this->customize->add_setting(
-			$setting . '_margin[bottom]', array(
+		$this->customizer()->add_setting(
+			$setting . '[bottom]', array(
 				'capability'        => 'edit_theme_options',
 				'default'           => '0',
 				'transport'         => $this->transport,
@@ -146,8 +107,8 @@ class Settings
 			)
 		);
 
-		$this->customize->add_setting(
-			$setting . '_margin[left]', array(
+		$this->customizer()->add_setting(
+			$setting . '[left]', array(
 				'capability'        => 'edit_theme_options',
 				'default'           => '0',
 				'transport'         => $this->transport,
@@ -155,19 +116,19 @@ class Settings
 			)
 		);
 
-		$this->customize->add_control(
+		$this->customizer()->add_control(
 			new GroupSettings(
-				$this->customize, $setting . '_margin',
+				$this->customizer(), $setting,
 				array(
 					'label'    => esc_html( $title ),
 					'section'  => $this->section,
 					'inline'   => true,
 					'type'     => 'number',
 					'settings' => array(
-						'top'    => $setting . '_margin[top]',
-						'right'  => $setting . '_margin[right]',
-						'bottom' => $setting . '_margin[bottom]',
-						'left'   => $setting . '_margin[left]',
+						'top'    => $setting . '[top]',
+						'right'  => $setting . '[right]',
+						'bottom' => $setting . '[bottom]',
+						'left'   => $setting . '[left]',
 					),
 				)
 			)
