@@ -102,3 +102,19 @@ function brisko_sanitize_number( $number ) {
 	$number = preg_replace( '/[^0-9,]/', '', $number );
 	return $number;
 }
+
+
+/**
+ * Theme Layout options
+ *
+ * Used for Theme Layout Customizer.
+ *
+ * @return array .
+ */
+function brisko_layout_options() {
+	$options = array(
+		'container'       => esc_html__( 'Boxed', 'brisko' ),
+		'container-fluid' => esc_html__( 'Full Width', 'brisko' ),
+	);
+	return $options;
+}
