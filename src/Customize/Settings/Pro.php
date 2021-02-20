@@ -45,13 +45,14 @@ class Pro implements SettingsInterface
 
 		if ( is_brisko_pro() ) {
 
+			// Advanced options section.
 			$args = array(
 				'wp_customize' => $wp_customize,
 				'transport'    => self::$transport,
 				'section'      => self::section(),
+				'short_name'   => self::short_name(),
 			);
-
-			do_action( 'brisko_pro_panel', $args );
+			do_action( 'brisko_pro_options', $args );
 
 		} else {
 			( new Control() )->header_title(
