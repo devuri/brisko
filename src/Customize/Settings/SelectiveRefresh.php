@@ -7,12 +7,6 @@ use Brisko\Customize\Controls\SeparatorControl;
 
 class SelectiveRefresh
 {
-	/**
-	 * Brisko Section
-	 *
-	 * @var $section
-	 */
-	public static $section = 'brisko_section_general';
 
 	/**
 	 * Customizer transport
@@ -35,16 +29,24 @@ class SelectiveRefresh
 		 *
 		 * @link https://developer.wordpress.org/reference/classes/wp_customize_selective_refresh/add_partial/
 		 */
-		$wp_customize->get_setting( 'link_color' )->transport           = self::$transport;
-		$wp_customize->get_setting( 'nav_background_color' )->transport = self::$transport;
-		$wp_customize->get_setting( 'featured_image' )->transport       = self::$transport;
-		$wp_customize->get_setting( 'footer_copyright' )->transport     = self::$transport;
-		$wp_customize->get_setting( 'poweredby' )->transport            = self::$transport;
+		$wp_customize->get_setting( 'link_color' )->transport     = self::$transport;
+		$wp_customize->get_setting( 'featured_image' )->transport = self::$transport;
 
-		// .
+		// Header.
+		// Blog.
+		// General.
 		$wp_customize->get_setting( 'blogname' )->transport         = self::$transport;
 		$wp_customize->get_setting( 'blogdescription' )->transport  = self::$transport;
 		$wp_customize->get_setting( 'header_textcolor' )->transport = self::$transport;
+
+		// Navigation.
+		$wp_customize->get_setting( 'nav_background_color' )->transport = self::$transport;
+
+		// Footer.
+		$wp_customize->get_setting( 'footer_copyright' )->transport = self::$transport;
+		$wp_customize->get_setting( 'poweredby' )->transport        = self::$transport;
+
+		// Advanced.
 
 		if ( isset( $wp_customize->selective_refresh ) ) {
 
