@@ -215,7 +215,7 @@ class Footer implements SettingsInterface
 		$wp_customize->add_control(
 			'footer_css_class', array(
 				'label'       => esc_html__( 'Additional CSS class(es)', 'brisko' ),
-				'description' => esc_html__( 'add custom CSS Class to the footer section', 'brisko' ),
+				'description' => esc_html__( 'add custom CSS Class to the footer section, Separate multiple classes with a comma.', 'brisko' ),
 				'section'     => self::section(),
 				'type'        => 'text',
 			)
