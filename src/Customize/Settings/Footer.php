@@ -71,6 +71,13 @@ class Footer implements SettingsInterface
 
 		( new Control() )->separator( $wp_customize, esc_html__( 'Advanced Settings', 'brisko' ), self::section() );
 
+		( new Control() )->header_title(
+			$wp_customize,
+			esc_html__( 'Advanced Footer Options', 'brisko' ),
+			self::section(),
+			esc_html__( 'Colors, Borders, Padding, Margins, Custom CSS, HTML and other Settings.', 'brisko' ),
+		);
+
 		// Advanced options section.
 		$args = array(
 			'wp_customize' => $wp_customize,
@@ -79,6 +86,16 @@ class Footer implements SettingsInterface
 			'short_name'   => self::short_name(),
 		);
 		do_action( "brisko_advanced_options_{$args['short_name']}", $args );
+
+		// Install plugin.
+		if ( ! did_action( 'brisko_elements_loaded' ) ) :
+			( new Control() )->header_title(
+				$wp_customize,
+				esc_html__( 'Brisko Elements Plugin', 'brisko' ),
+				self::section(),
+				self::install_plugin(),
+			);
+		endif;
 
 	}
 }
