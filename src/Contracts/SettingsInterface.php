@@ -6,6 +6,11 @@ interface SettingsInterface
 {
 
 	/**
+	 * Brisko Section name only.
+	 */
+	public static function short_name();
+
+	/**
 	 * Brisko Section
 	 */
 	public static function section();
