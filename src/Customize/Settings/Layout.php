@@ -4,25 +4,13 @@ namespace Brisko\Customize\Settings;
 
 use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
+use Brisko\Customize\Traits\SettingsTrait;
 use Brisko\Contracts\SettingsInterface;
 
 class Layout implements SettingsInterface
 {
 
-	/**
-	 * Customizer transport
-	 *
-	 * @var $transport
-	 */
-	public static $transport = 'postMessage';
-
-	/**
-	 * Brisko Section
-	 */
-	public static function section() {
-		$class = new \ReflectionClass( new self() );
-		return 'brisko_section_' . strtolower( $class->getShortName() );
-	}
+	use SettingsTrait;
 
 	/**
 	 * Lets build out the customizer settings
