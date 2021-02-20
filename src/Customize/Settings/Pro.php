@@ -26,8 +26,8 @@ class Pro implements SettingsInterface
 		$upgrade_button .= 'Get More Options with Brisko Pro';
 		$upgrade_button .= '</a>';
 
-		return "<p>Purchase the Brisko Pro to get additional features and more customization options.
-		The Brisko Pro Plugin gives you alot more options and Widgets</p>
+		return "<p>Purchase Brisko Pro to get additional features and more customization options.
+		The Brisko Pro Plugin gives you alot more options and Widgets</p><pre> Requires Brisko v3.0^ </pre>
 		$upgrade_button";
 	}
 
