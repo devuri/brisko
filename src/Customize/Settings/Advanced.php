@@ -173,6 +173,24 @@ class Advanced implements SettingsInterface
 			)
 		);
 
+		// Enable Popper JS.
+		$wp_customize->add_setting(
+			'enable_popper_js', array(
+				'default'           => false,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'enable_popper_js', array(
+				'label'   => esc_html__( 'Popper JS', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
 		// Enable Bootstrap Reboot.
 		$wp_customize->add_setting(
 			'enable_bootstrap_reboot', array(
