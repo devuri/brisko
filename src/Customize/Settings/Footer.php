@@ -69,6 +69,24 @@ class Footer implements SettingsInterface
 			)
 		);
 
+		// footer_text_align.
+		$wp_customize->add_setting(
+			'footer_text_align', array(
+				'sanitize_callback' => 'sanitize_html_class',
+				'default'           => 'inherit',
+			)
+		);
+
+		$wp_customize->add_control(
+			'footer_text_align', array(
+				'label'       => esc_html__( 'Text Align', 'brisko' ),
+				'description' => esc_html__( 'set CSS text-align Property', 'brisko' ),
+				'section'     => self::section(),
+				'type'        => 'select',
+				'choices'     => brisko_text_align_options(),
+			)
+		);
+
 		( new Control() )->separator( $wp_customize, esc_html__( 'Advanced Settings', 'brisko' ), self::section() );
 
 		( new Control() )->header_title(
