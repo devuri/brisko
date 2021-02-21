@@ -116,7 +116,7 @@ final class Styles implements EnqueueInterface
 	/**
 	 * Custom Theme styles
 	 */
-	public function custom_css() {
+	public function custom_styles() {
 
 		// Get the theme setting.
 		$bttns                 = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
@@ -158,9 +158,33 @@ final class Styles implements EnqueueInterface
 		}
 
 		// css output.
-		$custom_styles = implode( '', $custom_styles );
+		return $custom_styles;
+	}
 
-		wp_add_inline_style( 'custom-styles', $custom_styles );
+	/**
+	 * CSS Minifier Compressor.
+	 *
+	 * @return string minified css output.
+	 */
+	private function minified_css() {
+
+		if ( ! is_array( $this->custom_styles() ) ) {
+			return false;
+		}
+
+		$css_styles = $this->custom_styles();
+		$css_styles = implode( "\n", $css_styles );
+
+		return $css_styles;
+	}
+
+	/**
+	 * Custom Theme styles
+	 */
+	public function custom_css() {
+
+		wp_add_inline_style( 'custom-styles', $this->minified_css() );
+
 	}
 
 }
