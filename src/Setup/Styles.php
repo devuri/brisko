@@ -98,6 +98,22 @@ final class Styles implements EnqueueInterface
 	}
 
 	/**
+	 * Get element space padding or margin.
+	 *
+	 * @param string $theme_mod .
+	 * @param string $default .
+	 * @return string .
+	 */
+	public function element_mod( $theme_mod = 'footer_padding', $default = '16px' ) {
+
+		if ( get_theme_mod( $theme_mod ) ) {
+			return implode( 'px ', get_theme_mod( $theme_mod ) ) . 'px';
+		}
+
+		return $default;
+	}
+
+	/**
 	 * Custom Theme styles
 	 */
 	public function custom_css() {
@@ -112,6 +128,9 @@ final class Styles implements EnqueueInterface
 
 		// footer.
 		$footer_links            = get_theme_mod( 'footer_links_color', '#000000' );
+		$footer_text_align       = get_theme_mod( 'footer_text_align', 'inherit' );
+		$footer_padding          = $this->element_mod( 'footer_padding', '16px' );
+		$footer_margin           = $this->element_mod( 'footer_margin', '0px' );
 		$footer_text             = get_theme_mod( 'footer_text_color', '#000000' );
 		$footer_background_color = get_theme_mod( 'footer_background_color', '#000000' );
 		$footer_border_color     = get_theme_mod( 'footer_border_color', '#000000' );
@@ -126,6 +145,9 @@ final class Styles implements EnqueueInterface
 		$custom_styles['margin_bottom']  = ".brisko-navigation {margin-bottom: {$nav_margin_bottom}px;}";
 		$custom_styles['bttn_color']     = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color};}";
 		$custom_styles['footer_links']   = ".site-footer a{color: {$footer_links};}footer a:hover{color: {$footer_links};}";
+		$custom_styles['footer_text_align']   = ".site-info {text-align: {$footer_text_align};}";
+		$custom_styles['footer_padding']   = ".site-footer {padding: {$footer_padding};}";
+		$custom_styles['footer_margin']   = ".site-footer {margin: {$footer_margin};}";
 		$custom_styles['footer_text']   = ".site-footer {color: {$footer_text};}";
 		$custom_styles['footer_background'] = ".site-footer {background-color: {$footer_background_color};}";
 		$custom_styles['footer_border_color'] = ".site-footer {border-color: {$footer_border_color};}";
