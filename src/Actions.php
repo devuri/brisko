@@ -30,6 +30,7 @@ final class Actions
 		$actions[] = 'brisko_after_header';
 		$actions[] = 'brisko_homepage_header';
 		$actions[] = 'brisko_post_header';
+		$actions[] = 'brisko_blog_title';
 		$actions[] = 'brisko_before_entry_meta';
 		$actions[] = 'brisko_after_entry_meta';
 		$actions[] = 'brisko_before_comments';

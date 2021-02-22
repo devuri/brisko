@@ -57,6 +57,24 @@ class Blog implements SettingsInterface
 			)
 		);
 
+		// Hide Blog Title.
+		$wp_customize->add_setting(
+			'hide_blog_title', array(
+				'default'           => true,
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'brisko_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'hide_blog_title', array(
+				'label'   => esc_html__( 'Hide Blog Title', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'checkbox',
+			)
+		);
+
 		// Disable Sidebar.
 		$wp_customize->add_setting(
 			'disable_sidebar', array(
