@@ -125,10 +125,13 @@ final class Styles implements EnqueueInterface
 		$nav_padding           = get_theme_mod( 'navigation_padding', 10 );
 		$nav_margin_bottom     = get_theme_mod( 'nav_margin_bottom', 2 );
 		$underline_post_links  = get_theme_mod( 'underline_post_links', true );
+		$archive_header_background  = get_theme_mod( 'archive_header_background', '#e3e3e3' );
+		$archive_header_text_color  = get_theme_mod( 'archive_header_text_color', '#000000' );
+		$archive_header_padding  = $this->element_mod( 'archive_header_padding', '0px' );
 
 		// footer.
 		$footer_links            = get_theme_mod( 'footer_links_color', '#000000' );
-		$footer_text_align       = get_theme_mod( 'footer_text_align', 'inherit' );
+		$footer_text_align       = get_theme_mod( 'footer_text_align', 'center' );
 		$footer_padding          = $this->element_mod( 'footer_padding', '16px' );
 		$footer_margin           = $this->element_mod( 'footer_margin', '0px' );
 		$footer_text             = get_theme_mod( 'footer_text_color', '#212529' );
@@ -141,6 +144,9 @@ final class Styles implements EnqueueInterface
 		$custom_styles['link_hover']          = "a:focus, a:hover {color: {$color};}";
 		$custom_styles['nav_links']           = "nav.main-navigation a:hover {color: {$color};background-color: #F8F9FA;}";
 		$custom_styles['nav_background']      = ".brisko-navigation {background-color: {$navigation_background};}";
+		$custom_styles['archive_header_background'] = ".archive-header {background-color: {$archive_header_background};}";
+		$custom_styles['archive_header_text_color'] = ".archive-header {color: {$archive_header_text_color};}";
+		$custom_styles['archive_header_padding'] = ".archive-header {padding: {$archive_header_padding};}";
 		$custom_styles['nav_padding']         = ".brisko-navigation {padding: {$nav_padding}px;}";
 		$custom_styles['margin_bottom']       = ".brisko-navigation {margin-bottom: {$nav_margin_bottom}px;}";
 		$custom_styles['bttn_color']          = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color};}";

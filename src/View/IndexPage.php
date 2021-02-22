@@ -24,7 +24,6 @@ class IndexPage extends Layout
 				</header>
 				<?php
 		endif;
-			do_action( 'brisko_blog_title' );
 			while ( have_posts() ) :
 				the_post();
 				get_template_part( 'template-parts/content', get_post_type() );
