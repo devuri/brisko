@@ -1,7 +1,7 @@
 === Brisko ===
 Contributors: icelayer
 Tested up to: 5.6
-Version: 2.7.0
+Version: 2.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -223,3 +223,25 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 * Add - new Archives width and Blog Posts width
 * Add - Settings\Layout remove Settings\Posts
 * Add - new Layout Panel
+
+= 2.7.0 =
+* Add - adds author avatar.
+* Add - add padding and margin
+* Add - add Text Align option
+* Add - new footer_width() option
+* Add - use new SettingsTrait
+* Add - adds short_name() to get class name.
+* Add - new add theme support for 'responsive-embeds', 'custom-spacing' and 'post-formats'
+* Add - new SettingsBuilderInterface
+* Add - new Settings class
+* Add - new layout helper brisko_layout_options()
+* Add - new Sanitization callback for 'css classes'
+* Add - adds CSS Classes settings
+* Add - add Custom CSS settings
+* Add - adds Footer Margin
+* Add - adds Footer Padding settings
+* Add - adds GroupSettings class, Custom control for grouped inputs
+* Add - Advanced color Settings
+* Add - new Number sanitization brisko_sanitize_number()
+* Add - Adds the new footer color settings
+* Add - New Footer Color settings
