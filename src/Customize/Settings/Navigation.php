@@ -47,7 +47,12 @@ class Navigation implements SettingsInterface
 			)
 		);
 
-		( new Control() )->separator( $wp_customize, esc_html__( 'Turn off Navigation', 'brisko' ), self::section() );
+		( new Control() )->separator(
+			$wp_customize,
+			esc_html__( 'Turn off Navigation', 'brisko' ),
+			self::section(),
+			'Brisko Elements Advanced Options',
+		);
 
 		// Advanced options section.
 		$args = array(
@@ -62,7 +67,7 @@ class Navigation implements SettingsInterface
 		if ( ! did_action( 'brisko_elements_loaded' ) ) :
 			( new Control() )->header_title(
 				$wp_customize,
-				esc_html__( 'Get Brisko Elements Plugin', 'brisko' ),
+				esc_html__( 'Get Brisko Elements Plugin for Navigation', 'brisko' ),
 				self::section(),
 				self::install_plugin(),
 			);
