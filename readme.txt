@@ -8,7 +8,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 == Description ==
 
-Brisko is a beautifully simple and lightweight WordPress theme that is optimized for speed and WordPress page builders like Elementor, you can use it as a foundation to build versatile layouts using Elementor Template Kits or the WordPress Block Patterns. This theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions, the color scheme can be easily customized to match Elementor Template Kits. The options are easy to manage using the live theme customizer.  Use the WordPress Customizer and Elementor page builder to create professional designs on a solid foundation. Check out our prebuilt website demos for inspiration. demo.wpbrisko.com
+Brisko is a beautifully simple and lightweight WordPress theme that is optimized for speed and WordPress page builders like Elementor, you can use it as a foundation to build versatile layouts using Elementor Template Kits or the WordPress Block Patterns. This theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions, the color scheme can be easily customized to match Elementor Template Kits. The options are easy to manage using the live theme customizer.  Use the WordPress Customizer and Elementor page builder to create professional designs on a solid foundation.
 
 For more information about the Brisko Theme please go to https://wpbrisko.com.
 
@@ -140,3 +140,86 @@ Source: https://github.com/gblazex/smoothscroll-for-websites
 * Fix Display Previous and Next Post Navigation
 * Fix Display Post Categories
 * Add Display Page Header
+
+= 0.9.9 =
+* Add - Footer Top Margin.
+* Fix - default setting for Featured Image Display
+
+= 1.0.5 =
+* Add - New customizer option Navigation background color
+* Add - Add $defualt arg
+* Fix - change Brisko Theme Options => Theme Options
+* Fix - override underscores page margin
+
+= 1.0.8 =
+* Add - New Enable Smooth scroll
+
+= 1.1.0 =
+* Add - add Underline Content Links in Customizer
+
+= 1.2.0 =
+* Fix - brisko() helper function
+
+= 1.3.1 =
+* Fix - Jetpack Autoload
+
+= 1.3.3 =
+* Add - new Settings to Disable Theme Styles: Useful for child themes.
+
+= 1.4.5 =
+* Add - support for WP-PageNavi Post Navigation
+
+= 1.4.6 =
+* Add - author urielwilson.com
+
+= 1.5.0 =
+* Add - new Customizer setting to Disable The Footer
+* Add - add brisko_navigation and brisko_nav_menu action when navigation is disabled.
+* Add - new Customizer settings to Turn off Navigation
+
+= 1.6.5 =
+* Add - Minify Brisko CSS and add bootstrap grid
+* Add - bootstrap-js
+* Add - Upgrade to Bootstrap v4.6.0
+* Add - new Advanced Settings
+
+= 1.7.0 =
+* Add - Disable Bootstrap Grid setting
+
+= 1.7.3 =
+* Add - add setting for Bootstrap Reboot
+* Add - add bootstrap-reboot
+* Fix - Fixes missing jquery in bootstrap js
+* Fix - fix ul ol indent
+
+= 1.7.5 =
+* Fix - none static method call
+
+= 1.8.0 =
+* Add - support Elementor Header and Footer theme do location.
+* Add - support for for elementor footer
+
+= 1.8.1 =
+* Add - Compatibility for Header Footer Blocks plugin
+
+= 1.9.0 =
+* Add - disable_ is now enable_
+
+= 1.9.6 =
+* Add - new Archives width and Blog Posts width
+* Add - Settings\Layout remove Settings\Posts
+* Add - new Layout Panel
+* Add - new helper is_brisko_pro()
+* Add - new brisko_related_content action
+* Fix - blank default option.
+
+= 2.0.3 =
+* Add - Premium option information.
+* Add - link to install brisko plugin
+* Add - new action brisko_blog_title
+* Add - setup Blog Title
+* Add - Hide Blog Title
+* Add - brisko pro
+* Add - new Archives width and Blog Posts width
+* Add - Settings\Layout remove Settings\Posts
+* Add - new Layout Panel
