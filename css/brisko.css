@@ -212,6 +212,22 @@ h2.post-title a {
 	color: #999;
 }
 
+.post-meta .photo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.entry-meta .photo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
 .tags-links {
 	font-size: initial;
 	color: #8e8e8e;
@@ -410,7 +426,7 @@ ol {
 
 .sidebar ul li {
 	border-bottom: solid thin #f0f0f0;
-	padding: 0.3em 0;
+	padding: .8em 0;
 }
 
 .widget-title {

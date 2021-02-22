@@ -4,6 +4,7 @@ namespace Brisko\Customize\Settings;
 
 use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
+use Brisko\Customize\Traits\SettingsTrait;
 use Brisko\Contracts\SettingsInterface;
 
 /**
@@ -13,20 +14,8 @@ use Brisko\Contracts\SettingsInterface;
  */
 class Pro implements SettingsInterface
 {
-	/**
-	 * Customizer transport
-	 *
-	 * @var $transport
-	 */
-	public static $transport = 'postMessage';
 
-	/**
-	 * Brisko Section
-	 */
-	public static function section() {
-		$class = new \ReflectionClass( new self() );
-			return 'brisko_section_' . strtolower( $class->getShortName() );
-	}
+	use SettingsTrait;
 
 	/**
 	 * Brisko Section
@@ -37,8 +26,8 @@ class Pro implements SettingsInterface
 		$upgrade_button .= 'Get More Options with Brisko Pro';
 		$upgrade_button .= '</a>';
 
-		return "<p>Purchase the Brisko Pro to get additional features and more customization options.
-		The Brisko Pro Plugin gives you alot more options and Widgets</p>
+		return "<p>Purchase Brisko Pro to get additional features and more customization options.
+		The Brisko Pro Plugin gives you alot more options and Widgets</p><pre> Requires Brisko v3.0^ </pre>
 		$upgrade_button";
 	}
 
@@ -56,13 +45,14 @@ class Pro implements SettingsInterface
 
 		if ( is_brisko_pro() ) {
 
+			// Advanced options section.
 			$args = array(
 				'wp_customize' => $wp_customize,
 				'transport'    => self::$transport,
 				'section'      => self::section(),
+				'short_name'   => self::short_name(),
 			);
-
-			do_action( 'brisko_pro_panel', $args );
+			do_action( 'brisko_pro_options', $args );
 
 		} else {
 			( new Control() )->header_title(

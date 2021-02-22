@@ -59,7 +59,6 @@
 }
 
 .this-site-footer {
-    border-top: 1px solid #E2E8F0;
-    padding: 1rem;
+    border-top: 1px solid;
     font-size: medium;
 }

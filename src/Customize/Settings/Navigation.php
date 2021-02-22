@@ -4,25 +4,13 @@ namespace Brisko\Customize\Settings;
 
 use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
+use Brisko\Customize\Traits\SettingsTrait;
 use Brisko\Contracts\SettingsInterface;
 
 class Navigation implements SettingsInterface
 {
 
-	/**
-	 * Customizer transport
-	 *
-	 * @var $transport
-	 */
-	public static $transport = 'postMessage';
-
-	/**
-	 * Brisko Section
-	 */
-	public static function section() {
-		$class = new \ReflectionClass( new self() );
-		return 'brisko_section_' . strtolower( $class->getShortName() );
-	}
+	use SettingsTrait;
 
 	/**
 	 * Lets build out the customizer settings
@@ -61,41 +49,24 @@ class Navigation implements SettingsInterface
 
 		( new Control() )->separator( $wp_customize, esc_html__( 'Turn off Navigation', 'brisko' ), self::section() );
 
-		// Disable Nav Menu .
-		$wp_customize->add_setting(
-			'disable_nav_menu', array(
-				'default'           => false,
-				'capability'        => 'edit_theme_options',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_checkbox',
-			)
+		// Advanced options section.
+		$args = array(
+			'wp_customize' => $wp_customize,
+			'transport'    => self::$transport,
+			'section'      => self::section(),
+			'short_name'   => self::short_name(),
 		);
+		do_action( "brisko_advanced_options_{$args['short_name']}", $args );
 
-		$wp_customize->add_control(
-			'disable_nav_menu', array(
-				'label'   => esc_html__( 'Disable Nav Menu Only', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
-			)
-		);
-
-		// Disable Navigation Section.
-		$wp_customize->add_setting(
-			'disable_navigation', array(
-				'default'           => false,
-				'capability'        => 'edit_theme_options',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_checkbox',
-			)
-		);
-
-		$wp_customize->add_control(
-			'disable_navigation', array(
-				'label'   => esc_html__( 'Disable Navigation Section', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
-			)
-		);
+		// Install plugin.
+		if ( ! did_action( 'brisko_elements_loaded' ) ) :
+			( new Control() )->header_title(
+				$wp_customize,
+				esc_html__( 'Get Brisko Elements Plugin', 'brisko' ),
+				self::section(),
+				self::install_plugin(),
+			);
+		endif;
 
 	}
 }

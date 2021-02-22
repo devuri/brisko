@@ -61,6 +61,12 @@ final class Activate implements SetupInterface
 		 */
 		load_theme_textdomain( 'brisko' );
 
+		// Support for responsive embedded content.
+		add_theme_support( 'responsive-embeds' );
+
+		// Support for blocks with padding controls.
+		add_theme_support( 'custom-spacing' );
+
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -86,7 +92,7 @@ final class Activate implements SetupInterface
 			)
 		);
 
-			/*
+		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
@@ -100,6 +106,24 @@ final class Activate implements SetupInterface
 				'caption',
 				'style',
 				'script',
+			)
+		);
+
+		/**
+		 * Add post-formats support.
+		 */
+		add_theme_support(
+			'post-formats',
+			array(
+				'link',
+				'aside',
+				'gallery',
+				'image',
+				'quote',
+				'status',
+				'video',
+				'audio',
+				'chat',
 			)
 		);
 

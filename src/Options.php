@@ -71,6 +71,13 @@ final class Options
 	}
 
 	/**
+	 * Footer width
+	 */
+	public function footer_width() {
+		echo esc_attr( get_theme_mod( 'footer_width', 'container' ) );
+	}
+
+	/**
 	 * Button border radius
 	 *
 	 * @param  integer $defualt .

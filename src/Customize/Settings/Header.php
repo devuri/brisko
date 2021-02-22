@@ -4,25 +4,13 @@ namespace Brisko\Customize\Settings;
 
 use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
+use Brisko\Customize\Traits\SettingsTrait;
 use Brisko\Contracts\SettingsInterface;
 
 class Header implements SettingsInterface
 {
 
-	/**
-	 * Customizer transport
-	 *
-	 * @var $transport
-	 */
-	public static $transport = 'postMessage';
-
-	/**
-	 * Brisko Section
-	 */
-	public static function section() {
-		$class = new \ReflectionClass( new self() );
-		return 'brisko_section_' . strtolower( $class->getShortName() );
-	}
+	use SettingsTrait;
 
 	/**
 	 * Lets build out the customizer settings
@@ -73,10 +61,7 @@ class Header implements SettingsInterface
 				'description' => esc_html__( 'set width for the header image', 'brisko' ),
 				'section'     => self::section(),
 				'type'        => 'select',
-				'choices'     => array(
-					'container'       => esc_html__( 'Boxed', 'brisko' ),
-					'container-fluid' => esc_html__( 'Full width', 'brisko' ),
-				),
+				'choices'     => brisko_layout_options(),
 			)
 		);
 	}

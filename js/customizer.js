@@ -140,4 +140,32 @@
 	  	} );
     } );
 
+	// Footer Links color.
+    wp.customize( 'footer_links_color', function( value ) {
+      value.bind( function( to ) {
+        $('.site-footer a').css('color', to );
+      } );
+    } );
+
+	// Footer Text color.
+    wp.customize( 'footer_text_color', function( value ) {
+      value.bind( function( to ) {
+        $('.site-footer').css('color', to );
+      } );
+    } );
+
+	// Footer background color.
+    wp.customize( 'footer_background_color', function( value ) {
+      value.bind( function( to ) {
+        $('.site-footer').css('background-color', to );
+      } );
+    } );
+
+	// Footer Border color.
+    wp.customize( 'footer_border_color', function( value ) {
+      value.bind( function( to ) {
+        $('.site-footer').css('border-color', to );
+      } );
+    } );
+
 }( jQuery ) );
