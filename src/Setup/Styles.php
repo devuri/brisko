@@ -131,9 +131,9 @@ final class Styles implements EnqueueInterface
 		$footer_text_align       = get_theme_mod( 'footer_text_align', 'inherit' );
 		$footer_padding          = $this->element_mod( 'footer_padding', '16px' );
 		$footer_margin           = $this->element_mod( 'footer_margin', '0px' );
-		$footer_text             = get_theme_mod( 'footer_text_color', '#000000' );
-		$footer_background_color = get_theme_mod( 'footer_background_color', '#000000' );
-		$footer_border_color     = get_theme_mod( 'footer_border_color', '#000000' );
+		$footer_text             = get_theme_mod( 'footer_text_color', '#212529' );
+		$footer_background_color = get_theme_mod( 'footer_background_color', '#fff' );
+		$footer_border_color     = get_theme_mod( 'footer_border_color', '#e2e8f0' );
 
 		// CSS array .
 		$custom_styles                        = array();
