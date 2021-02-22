@@ -36,6 +36,7 @@ final class Actions
 		$actions[] = 'brisko_after_comments';
 		$actions[] = 'brisko_page_header';
 		$actions[] = 'brisko_page_footer';
+		$actions[] = 'brisko_related_content';
 		$actions[] = 'brisko_after_post_content';
 		$actions[] = 'brisko_before_sidebar';
 		$actions[] = 'brisko_after_sidebar';

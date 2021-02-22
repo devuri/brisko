@@ -64,6 +64,13 @@ final class Options
 	}
 
 	/**
+	 * Archives width
+	 */
+	public function archive_width() {
+		echo esc_attr( get_theme_mod( 'archive_width', 'container' ) );
+	}
+
+	/**
 	 * Button border radius
 	 *
 	 * @param  integer $defualt .

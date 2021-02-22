@@ -24,4 +24,16 @@ final class Brisko
 		return Actions::get()->action( $action );
 	}
 
+	/**
+	 * Related Content.
+	 *
+	 * Adds Related Content in Brisko Pro.
+	 *
+	 * @return void.
+	 */
+	public static function related_content() {
+		$post = get_post();
+		do_action( 'brisko_related_content', $post );
+	}
+
 }

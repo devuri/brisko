@@ -33,10 +33,8 @@ class Footer implements SettingsInterface
 	 */
 	public static function settings( $wp_customize ) {
 
-		/**
-		 * Footer Settings
-		 */
-		( new Control() )->separator( $wp_customize, esc_html__( 'Footer', 'brisko' ), self::section() );
+		// Footer Settings.
+		( new Control() )->separator( $wp_customize, esc_html__( 'Footer Settings', 'brisko' ), self::section() );
 
 		// Copyright section .
 		$wp_customize->add_setting(
@@ -53,10 +51,11 @@ class Footer implements SettingsInterface
 				'label'       => esc_html__( 'Copyright Text', 'brisko' ),
 				'description' => esc_html__( 'edit footer section', 'brisko' ),
 				'section'     => self::section(),
-				'settings'    => 'footer_copyright',
+				'type'        => 'text',
 			)
 		);
 
+		( new Control() )->separator( $wp_customize, esc_html__( 'Powered by', 'brisko' ), self::section() );
 		// Powered By.
 		$wp_customize->add_setting(
 			'poweredby', array(

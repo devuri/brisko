@@ -59,8 +59,7 @@ class General implements SettingsInterface
 			)
 		);
 
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Other Settings', 'brisko' ), self::section() );
-
+		( new Control() )->separator( $wp_customize, esc_html__( 'Other Settings', 'brisko' ), self::section() );
 		// Underline Content Links.
 		$wp_customize->add_setting(
 			'underline_post_links', array(
