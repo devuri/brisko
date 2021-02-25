@@ -18,20 +18,6 @@ class Pro implements SettingsInterface
 	use SettingsTrait;
 
 	/**
-	 * Brisko Section
-	 */
-	public static function upgrade_message() {
-
-		$upgrade_button  = '<a href="' . esc_url( 'https://wpbrisko.com/upgrade/?utm_source=upgrade-to-pro' ) . '" target="_blank" class="button button-secondary">';
-		$upgrade_button .= 'Get More Options with Brisko Pro';
-		$upgrade_button .= '</a>';
-
-		return "<p>Purchase Brisko Pro to get additional features and more customization options.
-		The Brisko Pro Plugin gives you alot more options and Widgets</p><pre> Requires Brisko v3.0^ </pre>
-		$upgrade_button";
-	}
-
-	/**
 	 * Lets build out the customizer settings
 	 *
 	 * Create new customizer settings here is where we will add new panel sections
@@ -41,27 +27,31 @@ class Pro implements SettingsInterface
 	public static function settings( $wp_customize ) {
 
 		// Separator Pages Settings.
-		( new Control() )->separator( $wp_customize, esc_html__( 'Pro Options', 'brisko' ), self::section() );
+		( new Control() )->separator(
+			$wp_customize,
+			esc_html__( 'Pro Options and Features', 'brisko' ),
+			self::section(),
+			'Brisko Elements Pro Options',
+		);
 
-		if ( is_brisko_pro() ) {
+		// Advanced options section.
+		$args = array(
+			'wp_customize' => $wp_customize,
+			'transport'    => self::$transport,
+			'section'      => self::section(),
+			'short_name'   => self::short_name(),
+		);
+		do_action( 'brisko_pro_options', $args );
 
-			// Advanced options section.
-			$args = array(
-				'wp_customize' => $wp_customize,
-				'transport'    => self::$transport,
-				'section'      => self::section(),
-				'short_name'   => self::short_name(),
-			);
-			do_action( 'brisko_pro_options', $args );
-
-		} else {
+		// Install plugin.
+		if ( ! did_action( 'brisko_elements_loaded' ) ) :
 			( new Control() )->header_title(
 				$wp_customize,
-				esc_html__( ' » Get Brisko Pro', 'brisko' ),
+				esc_html__( 'Install Brisko Elements Add-On for Pro Options', 'brisko' ),
 				self::section(),
-				self::upgrade_message(),
+				self::install_plugin(),
 			);
-		}
+		endif;
 
 	}
 

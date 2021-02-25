@@ -46,20 +46,6 @@ function brisko_customize_partial_blogdescription() {
 }
 
 /**
- * Check if this is the Pro version.
- *
- * @return bool
- */
-function is_brisko_pro() {
-
-	if ( function_exists( 'do_brisko_pro' ) ) {
-		return true;
-	}
-
-	return false;
-}
-
-/**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function brisko_customize_preview_js() {
