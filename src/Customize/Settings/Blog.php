@@ -6,6 +6,7 @@ use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
 use Brisko\Customize\Traits\SettingsTrait;
 use Brisko\Contracts\SettingsInterface;
+use BriskoElement\Customize\Settings;
 
 class Blog implements SettingsInterface
 {
@@ -25,43 +26,6 @@ class Blog implements SettingsInterface
 		 * Archives Template Details
 		 */
 		( new Control() )->separator( $wp_customize, esc_html__( 'Blog', 'brisko' ), self::section() );
-
-		// Blog Title.
-		$wp_customize->add_setting(
-			'blog_title', array(
-				'default'           => '',
-				'capability'        => 'edit_theme_options',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'sanitize_text_field',
-			)
-		);
-
-		$wp_customize->add_control(
-			'blog_title', array(
-				'label'       => esc_html__( 'Blog Title', 'brisko' ),
-				'description' => esc_html__( 'edit blog section title', 'brisko' ),
-				'section'     => self::section(),
-				'type'        => 'text',
-			)
-		);
-
-		// Hide Blog Title.
-		$wp_customize->add_setting(
-			'hide_blog_title', array(
-				'default'           => true,
-				'capability'        => 'edit_theme_options',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'brisko_sanitize_checkbox',
-			)
-		);
-
-		$wp_customize->add_control(
-			'hide_blog_title', array(
-				'label'   => esc_html__( 'Hide Blog Title', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
-			)
-		);
 
 		// Disable Sidebar.
 		$wp_customize->add_setting(
@@ -187,6 +151,35 @@ class Blog implements SettingsInterface
 				'type'    => 'checkbox',
 			)
 		);
+
+		/**
+		 * Advanced Details
+		 */
+		( new Control() )->separator(
+			$wp_customize,
+			esc_html__( 'Advanced Details', 'brisko' ),
+			self::section(),
+			'Brisko Elements Advanced Options',
+		);
+
+		// Advanced options section.
+		$args = array(
+			'wp_customize' => $wp_customize,
+			'transport'    => self::$transport,
+			'section'      => self::section(),
+			'short_name'   => self::short_name(),
+		);
+		do_action( "brisko_advanced_options_{$args['short_name']}", $args );
+
+		// Install plugin.
+		if ( ! did_action( 'brisko_elements_loaded' ) ) :
+			( new Control() )->header_title(
+				$wp_customize,
+				esc_html__( 'Get Brisko Elements Plugin', 'brisko' ),
+				self::section(),
+				self::install_plugin(),
+			);
+		endif;
 
 	}
 }

@@ -73,7 +73,7 @@ class Footer implements SettingsInterface
 		$wp_customize->add_setting(
 			'footer_text_align', array(
 				'sanitize_callback' => 'sanitize_html_class',
-				'default'           => 'inherit',
+				'default'           => 'center',
 			)
 		);
 
@@ -87,7 +87,12 @@ class Footer implements SettingsInterface
 			)
 		);
 
-		( new Control() )->separator( $wp_customize, esc_html__( 'Advanced Settings', 'brisko' ), self::section() );
+		( new Control() )->separator(
+			$wp_customize,
+			esc_html__( 'Advanced Settings', 'brisko' ),
+			self::section(),
+			'Brisko Elements Advanced Options',
+		);
 
 		( new Control() )->header_title(
 			$wp_customize,

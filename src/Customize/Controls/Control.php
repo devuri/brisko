@@ -9,9 +9,10 @@ class Control {
 	 *
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 * @param string               $label .
+	 * @param string               $description .
 	 * @param string               $section .
 	 */
-	public function separator( $wp_customize, $label = 'Custom Label', $section = null ) {
+	public function separator( $wp_customize, $label = 'Custom Label',  $section = null, $description = '' ) {
 
 		$id = sanitize_title( $label );
 		$id = str_replace( '-', '_', $id );
@@ -27,6 +28,7 @@ class Control {
 				$wp_customize, $id,
 				array(
 					'label'   => esc_html( $label ),
+					'description' => $description,
 					'section' => $section,
 				)
 			)

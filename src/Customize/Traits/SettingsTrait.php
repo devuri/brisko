@@ -31,10 +31,20 @@ trait SettingsTrait {
 	 */
 	public static function install_plugin() {
 
+		$css_style = 'padding: 16px;border-radius: 2px;font-style: italic;';
+
 		$button  = '<a href="' . esc_url( network_admin_url( 'plugin-install.php?tab=search&type=tag&s=brisko' ) ) . '" class="button button-secondary">';
-		$button .= 'Install Plugin';
+		$button .= __( 'Install Plugin', 'brisko' );
 		$button .= '</a>';
-		return "<p>Get Advanced Options and Custom features. Install the Brisko Elements Plugin.</p>$button";
+
+		// render info.
+		return sprintf(
+			/* translators: %2$s: Plugin info. */
+			__( '<p style="%1$s"> %2$s </p> %3$s', 'brisko' ),
+			$css_style,
+			'Get ' . ucwords( self::short_name() ) . ' Options and Custom features. Install the Brisko Elements Plugin.',
+			$button,
+		);
 	}
 
 }

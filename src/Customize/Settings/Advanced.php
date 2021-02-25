@@ -22,7 +22,11 @@ class Advanced implements SettingsInterface
 	public static function settings( $wp_customize ) {
 
 		// Separator General Settings.
-		( new Control() )->separator( $wp_customize, esc_html__( 'Advanced', 'brisko' ), self::section() );
+		( new Control() )->separator(
+			$wp_customize, esc_html__( 'Advanced', 'brisko' ),
+			self::section(),
+			'Brisko Elements Advanced Options',
+		);
 
 		( new Control() )->header_title(
 			$wp_customize,
