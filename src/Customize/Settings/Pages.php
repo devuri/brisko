@@ -39,9 +39,10 @@ class Pages implements SettingsInterface
 			new ToggleControl(
 				$wp_customize, 'display_page_header',
 				array(
-					'label'   => esc_html__( 'Display Page Title', 'brisko' ),
-					'section' => self::section(),
-					'type'    => 'light', // light, ios, flat.
+					'label'       => esc_html__( 'Show Page Title', 'brisko' ),
+					'description' => esc_html__( 'display the page title for each page', 'brisko' ),
+					'section'     => self::section(),
+					'type'        => 'light', // light, ios, flat.
 				)
 			)
 		);
