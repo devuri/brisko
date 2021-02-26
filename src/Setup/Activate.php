@@ -28,6 +28,10 @@ final class Activate implements SetupInterface
 		add_action( 'after_setup_theme', array( $this, 'brisko_setup' ) );
 		add_action( 'after_setup_theme', array( $this, 'brisko_content_width' ), 0 );
 		add_action( 'widgets_init', array( $this, 'brisko_widgets_init' ) );
+
+		// The Excerp.
+		add_filter( 'excerpt_length', array( $this, 'set_excerpt_length' ), 99 );
+		add_filter( 'excerpt_more', array( $this, 'set_excerpt_more' ), 99 );
 	}
 
 	/**
@@ -56,6 +60,27 @@ final class Activate implements SetupInterface
 		}
 
 		echo esc_html( get_theme_mod( 'blog_subtitle', get_bloginfo( 'description' ) ) );
+	}
+
+	/**
+	 * Excerp Length.
+	 *
+	 * @param int $length .
+	 */
+	public function set_excerpt_length( $length ) { // @codingStandardsIgnoreLine
+		return get_theme_mod( 'set_excerpt_length', 30 );
+	}
+
+	/**
+	 * Excerp More.
+	 *
+	 * @param int $more .
+	 */
+	public function set_excerpt_more( $more ) { // @codingStandardsIgnoreLine
+		if ( is_admin() ) {
+			return $more;
+		}
+		return get_theme_mod( 'set_excerpt_more', '[…]' );
 	}
 
 	/**

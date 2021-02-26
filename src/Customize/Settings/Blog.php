@@ -63,6 +63,42 @@ class Blog implements SettingsInterface
 			)
 		);
 
+		// Excerp Length.
+		$wp_customize->add_setting(
+			'set_excerpt_length', array(
+				'default'           => absint( 24 ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_excerpt_length', array(
+				'label'   => esc_html__( 'Excerp Length', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'number',
+			)
+		);
+
+		// Excerp More.
+		$wp_customize->add_setting(
+			'set_excerpt_more', array(
+				'default'           => '[…]',
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'sanitize_text_field',
+			)
+		);
+
+		$wp_customize->add_control(
+			'set_excerpt_more', array(
+				'label'   => esc_html__( 'Excerp More', 'brisko' ),
+				'section' => self::section(),
+				'type'    => 'text',
+			)
+		);
+
 		/**
 		 * Separator Post Settings.
 		 */
