@@ -3,6 +3,7 @@
 namespace Brisko\Customize\Settings;
 
 use Brisko\Customize\Controls\Control;
+use Brisko\Customize\Controls\ToggleControl;
 use Brisko\Customize\Controls\SeparatorControl;
 use Brisko\Customize\Traits\SettingsTrait;
 use Brisko\Contracts\SettingsInterface;
@@ -35,10 +36,13 @@ class Pages implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'display_page_header', array(
-				'label'   => esc_html__( 'Display Page Title', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'display_page_header',
+				array(
+					'label'   => esc_html__( 'Display Page Title', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
