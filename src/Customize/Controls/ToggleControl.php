@@ -9,6 +9,13 @@ namespace Brisko\Customize\Controls;
  */
 class ToggleControl extends \WP_Customize_Control {
 
+	/**
+	 * Button Type.
+	 *
+	 * Uses light, ios, flat.
+	 *
+	 * @var string
+	 */
 	public $type = 'ios';
 
 	/**
@@ -16,12 +23,8 @@ class ToggleControl extends \WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		//wp_register_style( 'customizer-toggle-control', get_template_directory_uri() . '/js/customizer-toggle-control.js', array( 'jquery' ), Theme::VERSION );
 		wp_enqueue_script( 'customizer-toggle-control', get_template_directory_uri() . '/js/customizer/toggle-button-control.js', array( 'jquery' ), time(), true );
-		wp_enqueue_style( 'pure-css-toggle-buttons', get_template_directory_uri() . '/css/customizer/toggle-buttons.css', array(), time() );
-		//
-		// wp_enqueue_script( 'customizer-toggle-control', get_template_directory_uri() . '/js/customizer-toggle-control.js', array( 'jquery' ), rand(), true );
-		// wp_enqueue_style( 'pure-css-toggle-buttons', get_template_directory_uri() . '/pure-css-toggle-buttons/pure-css-togle-buttons.css' ), array(), rand() );
+		wp_enqueue_style( 'css-toggle-buttons', get_template_directory_uri() . '/css/customizer/toggle-buttons.css', array(), time() );
 
 		$css = '
 			.disabled-control-title {
@@ -46,7 +49,7 @@ class ToggleControl extends \WP_Customize_Control {
 			  background: #0085ba;
 			}
 		';
-		wp_add_inline_style( 'pure-css-toggle-buttons', $css );
+		wp_add_inline_style( 'css-toggle-buttons', $css );
 	}
 
 	/**
@@ -58,19 +61,25 @@ class ToggleControl extends \WP_Customize_Control {
 	public function render_content() {
 		?>
 		<label class="customize-toogle-label">
-			<div style="display:flex;flex-direction: row;justify-content: flex-start;">
-				<span class="toggle-control-title" style="flex: 2 0 0; vertical-align: middle;"><?php echo esc_html( $this->label ); ?></span>
-				<input id="cb<?php echo $this->instance_number; ?>" type="checkbox" class="tgl tgl-<?php echo $this->type; ?>" value="<?php echo esc_attr( $this->value() ); ?>"
+			<div
+				style="display:flex;flex-direction: row;justify-content: flex-start; padding: 4px;">
+				<span class="toggle-control-title"
+					style="flex: 2 0 0; vertical-align: middle; padding: 4px; font-size: medium;">
+					<?php echo esc_html( $this->label ); ?>
+				</span>
+				<input id="cb<?php echo esc_attr( $this->instance_number ); ?>"
+					type="checkbox" class="tgl tgl-<?php echo esc_attr( $this->type ); ?>"
+					value="<?php echo esc_attr( $this->value() ); ?>"
 					<?php
 						$this->link();
 						checked( $this->value() );
 					?>
 				/>
-				<label for="cb<?php echo $this->instance_number; ?>" class="tgl-btn"></label>
+				<label for="cb<?php echo esc_attr( $this->instance_number ); ?>" class="tgl-btn"></label>
 			</div>
 			<?php if ( ! empty( $this->description ) ) : ?>
-			<span class="description customize-control-description">
-				<?php echo $this->description; ?>
+			<span class="description customize-control-description" style="padding-left: 8px;">
+				<?php echo wp_kses_post( $this->description ); ?>
 			</span>
 			<?php endif; ?>
 		</label>
