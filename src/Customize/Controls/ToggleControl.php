@@ -64,7 +64,7 @@ class ToggleControl extends \WP_Customize_Control {
 			<div
 				style="display:flex;flex-direction: row;justify-content: flex-start; padding: 4px;">
 				<span class="toggle-control-title"
-					style="flex: 2 0 0; vertical-align: middle; padding: 4px; font-size: medium;">
+					style="flex: 2 0 0; vertical-align: middle; padding: 4px; font-size: 15px;">
 					<?php echo esc_html( $this->label ); ?>
 				</span>
 				<input id="cb<?php echo esc_attr( $this->instance_number ); ?>"
