@@ -4,6 +4,7 @@ namespace Brisko\Customize\Settings;
 
 use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
+use Brisko\Customize\Controls\ToggleControl;
 use Brisko\Customize\Traits\SettingsTrait;
 use Brisko\Contracts\SettingsInterface;
 use BriskoElement\Customize\Settings;
@@ -38,10 +39,13 @@ class Blog implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'disable_sidebar', array(
-				'label'   => esc_html__( 'Disable Sidebar', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'disable_sidebar',
+				array(
+					'label'   => esc_html__( 'Disable Sidebar', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
@@ -56,10 +60,14 @@ class Blog implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'read_more_border_radius', array(
-				'label'   => esc_html__( 'Read More Button Radius', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'read_more_border_radius',
+				array(
+					'label'       => esc_html__( 'Read More Button Radius', 'brisko' ),
+					'description' => esc_html__( 'Add Border Radius to the Read More Button', 'brisko' ),
+					'section'     => self::section(),
+					'type'        => 'light', // light, ios, flat.
+				)
 			)
 		);
 
@@ -132,7 +140,7 @@ class Blog implements SettingsInterface
 		/**
 		 * Post Details
 		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Post Content Details', 'brisko' ), self::section() );
+		( new Control() )->separator( $wp_customize, esc_html__( 'Post Content Details', 'brisko' ), self::section() );
 
 		// Display Post Categories .
 		$wp_customize->add_setting(
@@ -145,10 +153,13 @@ class Blog implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'display_post_categories', array(
-				'label'   => esc_html__( 'Show Categories', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'display_post_categories',
+				array(
+					'label'   => esc_html__( 'Show Categories', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
@@ -163,10 +174,13 @@ class Blog implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'display_tags', array(
-				'label'   => esc_html__( 'Show Tags', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'display_tags',
+				array(
+					'label'   => esc_html__( 'Show Tags', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
@@ -181,17 +195,20 @@ class Blog implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'display_previous_next', array(
-				'label'   => esc_html__( 'Show Previous and Next Navigation', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'display_previous_next',
+				array(
+					'label'   => esc_html__( 'Show Post Navigation', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
 		/**
 		 * Post Meta Info
 		 */
-		( new Control() )->header_title( $wp_customize, esc_html__( 'Post Meta Details', 'brisko' ), self::section() );
+		( new Control() )->separator( $wp_customize, esc_html__( 'Post Meta Details', 'brisko' ), self::section() );
 
 		// Posted on .
 		$wp_customize->add_setting(
@@ -204,10 +221,13 @@ class Blog implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'display_posted_on', array(
-				'label'   => esc_html__( 'Show Posted on', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'display_posted_on',
+				array(
+					'label'   => esc_html__( 'Show Posted on', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
@@ -222,10 +242,13 @@ class Blog implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'display_meta_date', array(
-				'label'   => esc_html__( 'Show Post Date', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'display_meta_date',
+				array(
+					'label'   => esc_html__( 'Show Post Date', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
@@ -240,10 +263,13 @@ class Blog implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'display_by_author', array(
-				'label'   => esc_html__( 'Show By Author', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'display_by_author',
+				array(
+					'label'   => esc_html__( 'Show By Author', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
@@ -258,10 +284,13 @@ class Blog implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'display_author_avatar', array(
-				'label'   => esc_html__( 'Show Author Avatar', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'display_author_avatar',
+				array(
+					'label'   => esc_html__( 'Show Author Avatar', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
@@ -276,10 +305,13 @@ class Blog implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'display_author_name', array(
-				'label'   => esc_html__( 'Show Author Name', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'display_author_name',
+				array(
+					'label'   => esc_html__( 'Show Author Name', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
