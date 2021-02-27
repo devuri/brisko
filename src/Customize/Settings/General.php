@@ -4,6 +4,7 @@ namespace Brisko\Customize\Settings;
 
 use Brisko\Customize\Controls\Control;
 use Brisko\Customize\Controls\SeparatorControl;
+use Brisko\Customize\Controls\ToggleControl;
 use Brisko\Customize\Traits\SettingsTrait;
 use Brisko\Contracts\SettingsInterface;
 
@@ -59,10 +60,13 @@ class General implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'underline_post_links', array(
-				'label'   => esc_html__( 'Underline Links', 'brisko' ),
-				'section' => self::section(),
-				'type'    => 'checkbox',
+			new ToggleControl(
+				$wp_customize, 'underline_post_links',
+				array(
+					'label'   => esc_html__( 'Underline Links', 'brisko' ),
+					'section' => self::section(),
+					'type'    => 'light', // light, ios, flat.
+				)
 			)
 		);
 
