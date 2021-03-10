@@ -9,7 +9,7 @@
 // @codingStandardsIgnoreFile
 
 /**
- * Brisko actions list
+ * Brisko actions list.
  */
 if ( ! function_exists( 'brisko_actions' ) ) :
 	function brisko_actions() {

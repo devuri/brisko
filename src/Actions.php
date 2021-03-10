@@ -21,7 +21,7 @@ final class Actions
 	 *
 	 * @return array $actions
 	 */
-	public function actions() {
+	public static function actions() {
 
 		$actions = array();
 
@@ -74,7 +74,7 @@ final class Actions
 			return false;
 		}
 		// check if this is valid action.
-		if ( in_array( $action, $this->actions(), true ) ) {
+		if ( in_array( $action, self::actions(), true ) ) {
 			do_action( $action );
 		}
 	}
