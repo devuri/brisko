@@ -43,7 +43,7 @@ trait SettingsTrait {
 			__( '<p style="%1$s"> %2$s </p> %3$s', 'brisko' ),
 			$css_style,
 			'Get ' . ucwords( self::short_name() ) . ' Options and Custom features. Install the Brisko Elements Plugin.',
-			$button,
+			$button
 		);
 	}
 

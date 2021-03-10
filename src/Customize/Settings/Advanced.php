@@ -25,14 +25,14 @@ class Advanced implements SettingsInterface
 		( new Control() )->separator(
 			$wp_customize, esc_html__( 'Advanced', 'brisko' ),
 			self::section(),
-			'Brisko Elements Advanced Options',
+			'Brisko Elements Advanced Options'
 		);
 
 		( new Control() )->header_title(
 			$wp_customize,
 			esc_html__( 'Advanced Settings', 'brisko' ),
 			self::section(),
-			esc_html__( 'Stylesheets, JavaScript and other Settings.', 'brisko' ),
+			esc_html__( 'Stylesheets, JavaScript and other Settings.', 'brisko' )
 		);
 
 		// Advanced options section.
@@ -50,7 +50,7 @@ class Advanced implements SettingsInterface
 				$wp_customize,
 				esc_html__( 'Install Brisko Elements Plugin', 'brisko' ),
 				self::section(),
-				self::install_plugin(),
+				self::install_plugin()
 			);
 		endif;
 

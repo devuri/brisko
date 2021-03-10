@@ -112,7 +112,7 @@ function brisko_section_info( $info = '' ) {
 		/* translators: %2$s: Plugin info. */
 		__( '<p style="%1$s"> %2$s </p>', 'brisko' ),
 		$css_style,
-		esc_html( $info ),
+		esc_html( $info )
 	);
 }
 

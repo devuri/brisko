@@ -322,7 +322,7 @@ class Blog implements SettingsInterface
 			$wp_customize,
 			esc_html__( 'Advanced Details', 'brisko' ),
 			self::section(),
-			'Brisko Elements Advanced Options',
+			'Brisko Elements Advanced Options'
 		);
 
 		// Advanced options section.
@@ -340,7 +340,7 @@ class Blog implements SettingsInterface
 				$wp_customize,
 				esc_html__( 'Get Brisko Elements Plugin', 'brisko' ),
 				self::section(),
-				self::install_plugin(),
+				self::install_plugin()
 			);
 		endif;
 
