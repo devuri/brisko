@@ -27,7 +27,7 @@ if ( ! function_exists( 'brisko_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'brisko' ),
+			esc_html_x( 'Posted on %s by', 'post date', 'brisko' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -64,7 +64,6 @@ if ( ! function_exists( 'brisko_posted_by' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo esc_html__( ' by ', 'brisko' );
 		echo get_avatar( get_the_author_meta( 'ID' ), 32 );
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
