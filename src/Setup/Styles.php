@@ -114,6 +114,19 @@ final class Styles implements EnqueueInterface
 	}
 
 	/**
+	 * Display
+	 *
+	 * @param string $display_item the theme mod.
+	 * @param string $class the class mod.
+	 */
+	private function meta_display( $display_item, $class = 'posted-on' ) {
+		if ( get_theme_mod( $display_item, false ) ) {
+			return '.' . "{$class}{display: none;}";
+		}
+		return '';
+	}
+
+	/**
 	 * Custom Theme styles
 	 */
 	public function custom_styles() {
@@ -128,6 +141,11 @@ final class Styles implements EnqueueInterface
 		$archive_header_background = get_theme_mod( 'archive_header_background', '#e3e3e3' );
 		$archive_header_text_color = get_theme_mod( 'archive_header_text_color', '#000000' );
 		$archive_header_padding    = $this->element_mod( 'archive_header_padding', '0px' );
+
+		// Post Details.
+		$posted = $this->meta_display( 'display_meta_date', 'posted-on' );
+		$avatar = $this->meta_display( 'display_author_avatar', 'avatar-32' );
+		$author = $this->meta_display( 'display_author_name', 'vcard' );
 
 		// footer.
 		$footer_links            = get_theme_mod( 'footer_links_color', '#000000' );
@@ -155,6 +173,9 @@ final class Styles implements EnqueueInterface
 		$custom_styles['footer_padding']            = ".site-footer {padding: {$footer_padding};}";
 		$custom_styles['footer_margin']             = ".site-footer {margin: {$footer_margin};}";
 		$custom_styles['footer_text']               = ".site-footer {color: {$footer_text};}";
+		$custom_styles['posted']                    = "{$posted}";
+		$custom_styles['avatar']                    = "{$avatar}";
+		$custom_styles['author']                    = "{$author}";
 		$custom_styles['footer_background']         = ".site-footer {background-color: {$footer_background_color};}";
 		$custom_styles['footer_border_color']       = ".site-footer {border-color: {$footer_border_color};}";
 

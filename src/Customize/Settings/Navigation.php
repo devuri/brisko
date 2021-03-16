@@ -51,7 +51,7 @@ class Navigation implements SettingsInterface
 			$wp_customize,
 			esc_html__( 'Turn off Navigation', 'brisko' ),
 			self::section(),
-			'Brisko Elements Advanced Options',
+			'Brisko Elements Advanced Options'
 		);
 
 		// Advanced options section.
@@ -69,7 +69,7 @@ class Navigation implements SettingsInterface
 				$wp_customize,
 				esc_html__( 'Get Brisko Elements Plugin for Navigation', 'brisko' ),
 				self::section(),
-				self::install_plugin(),
+				self::install_plugin()
 			);
 		endif;
 

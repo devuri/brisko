@@ -210,27 +210,6 @@ class Blog implements SettingsInterface
 		 */
 		( new Control() )->separator( $wp_customize, esc_html__( 'Post Meta Details', 'brisko' ), self::section() );
 
-		// Posted on .
-		$wp_customize->add_setting(
-			'display_posted_on', array(
-				'default'           => absint( 1 ),
-				'capability'        => 'edit_theme_options',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'absint',
-			)
-		);
-
-		$wp_customize->add_control(
-			new ToggleControl(
-				$wp_customize, 'display_posted_on',
-				array(
-					'label'   => esc_html__( 'Show Posted on', 'brisko' ),
-					'section' => self::section(),
-					'type'    => 'light', // light, ios, flat.
-				)
-			)
-		);
-
 		// Post Date.
 		$wp_customize->add_setting(
 			'display_meta_date', array(
@@ -246,27 +225,6 @@ class Blog implements SettingsInterface
 				$wp_customize, 'display_meta_date',
 				array(
 					'label'   => esc_html__( 'Show Post Date', 'brisko' ),
-					'section' => self::section(),
-					'type'    => 'light', // light, ios, flat.
-				)
-			)
-		);
-
-		// By Author.
-		$wp_customize->add_setting(
-			'display_by_author', array(
-				'default'           => absint( 1 ),
-				'capability'        => 'edit_theme_options',
-				'transport'         => self::$transport,
-				'sanitize_callback' => 'absint',
-			)
-		);
-
-		$wp_customize->add_control(
-			new ToggleControl(
-				$wp_customize, 'display_by_author',
-				array(
-					'label'   => esc_html__( 'Show By Author', 'brisko' ),
 					'section' => self::section(),
 					'type'    => 'light', // light, ios, flat.
 				)
@@ -322,7 +280,7 @@ class Blog implements SettingsInterface
 			$wp_customize,
 			esc_html__( 'Advanced Details', 'brisko' ),
 			self::section(),
-			'Brisko Elements Advanced Options',
+			'Brisko Elements Advanced Options'
 		);
 
 		// Advanced options section.
@@ -340,7 +298,7 @@ class Blog implements SettingsInterface
 				$wp_customize,
 				esc_html__( 'Get Brisko Elements Plugin', 'brisko' ),
 				self::section(),
-				self::install_plugin(),
+				self::install_plugin()
 			);
 		endif;
 

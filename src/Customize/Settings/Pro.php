@@ -31,7 +31,7 @@ class Pro implements SettingsInterface
 			$wp_customize,
 			esc_html__( 'Pro Options and Features', 'brisko' ),
 			self::section(),
-			'Brisko Elements Pro Options',
+			'Brisko Elements Pro Options'
 		);
 
 		// Advanced options section.
@@ -49,7 +49,7 @@ class Pro implements SettingsInterface
 				$wp_customize,
 				esc_html__( 'Install Brisko Elements Add-On for Pro Options', 'brisko' ),
 				self::section(),
-				self::install_plugin(),
+				self::install_plugin()
 			);
 		endif;
 

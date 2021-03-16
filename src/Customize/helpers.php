@@ -74,8 +74,8 @@ function brisko_sanitize_checkbox( $checked ) {
  *
  * Sanitization callback for 'css classes'
  *
- * @param  string $classes .
- * @return $classes comma separated values.
+ * @param string $classes .
+ * @return string $classes comma separated values.
  */
 function brisko_sanitize_classes( $classes ) {
 	$classes = sanitize_text_field( $classes );
@@ -89,8 +89,8 @@ function brisko_sanitize_classes( $classes ) {
  *
  * Sanitization callback for 'numbers'
  *
- * @param  string $number .
- * @return $number .
+ * @param string $number .
+ * @return string $number .
  */
 function brisko_sanitize_number( $number ) {
 	$number = sanitize_text_field( $number );
@@ -112,7 +112,7 @@ function brisko_section_info( $info = '' ) {
 		/* translators: %2$s: Plugin info. */
 		__( '<p style="%1$s"> %2$s </p>', 'brisko' ),
 		$css_style,
-		esc_html( $info ),
+		esc_html( $info )
 	);
 }
 
