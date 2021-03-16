@@ -30,7 +30,7 @@ final class Sections {
 		$this->sections['navigation'] = 'Navigation';
 		$this->sections['header']     = 'Header';
 		$this->sections['pages']      = 'Pages';
-		$this->sections['blog']       = 'Blog';
+		$this->sections['blog']       = 'Blog / Archive';
 		$this->sections['footer']     = 'Footer';
 		$this->sections['advanced']   = 'Advanced';
 

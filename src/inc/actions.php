@@ -7,6 +7,16 @@
  */
 
 // @codingStandardsIgnoreFile
+
+/**
+ * Brisko actions list
+ */
+if ( ! function_exists( 'brisko_actions' ) ) :
+	function brisko_actions() {
+		return Brisko\Actions::actions();
+	}
+endif;
+
 /**
  * Brisko_before_header
  */

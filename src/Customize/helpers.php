@@ -98,6 +98,23 @@ function brisko_sanitize_number( $number ) {
 	return (string) $number;
 }
 
+/**
+ * Quick Tip.
+ *
+ * @param string $info .
+ */
+function brisko_section_info( $info = '' ) {
+
+	$css_style = 'padding: 16px;border-radius: 2px;font-style: italic;';
+
+	// render info.
+	return sprintf(
+		/* translators: %2$s: Plugin info. */
+		__( '<p style="%1$s"> %2$s </p>', 'brisko' ),
+		$css_style,
+		esc_html( $info ),
+	);
+}
 
 /**
  * Theme Layout options
