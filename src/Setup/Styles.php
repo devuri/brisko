@@ -138,7 +138,7 @@ final class Styles implements EnqueueInterface
 		$nav_padding               = get_theme_mod( 'navigation_padding', 10 );
 		$nav_margin_bottom         = get_theme_mod( 'nav_margin_bottom', 2 );
 		$underline_post_links      = get_theme_mod( 'underline_post_links', true );
-		$archive_header_background = get_theme_mod( 'archive_header_background', '#e3e3e3' );
+		$archive_header_background = get_theme_mod( 'archive_header_background', '#ffffff' );
 		$archive_header_text_color = get_theme_mod( 'archive_header_text_color', '#000000' );
 		$archive_header_padding    = $this->element_mod( 'archive_header_padding', '0px' );
 
