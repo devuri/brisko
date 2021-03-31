@@ -53,11 +53,6 @@ final class Styles implements EnqueueInterface
 			wp_enqueue_style( 'bootstrap-grid' );
 		}
 
-		// bootstrap reboot.
-		if ( true === get_theme_mod( 'enable_bootstrap_reboot', false ) ) {
-			wp_enqueue_style( 'bootstrap-reboot' );
-		}
-
 		// bootstrap.
 		if ( true === get_theme_mod( 'enable_bootstrap', true ) ) {
 			wp_enqueue_style( 'bootstrap' );
@@ -84,8 +79,7 @@ final class Styles implements EnqueueInterface
 
 		// Bootstrap and underscores.
 		wp_register_style( 'underscores', get_template_directory_uri() . '/css/underscores.css', array(), Theme::VERSION );
-		wp_register_style( 'bootstrap-grid', get_template_directory_uri() . '/css/bootstrap/bootstrap-grid.css', array(), Theme::VERSION );
-		wp_register_style( 'bootstrap-reboot', get_template_directory_uri() . '/css/bootstrap/bootstrap-reboot.min.css', array(), Theme::VERSION );
+		wp_register_style( 'bootstrap-grid', get_template_directory_uri() . '/css/bootstrap/bootstrap-grid.min.css', array(), Theme::VERSION );
 		wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap/bootstrap.min.css', array(), Theme::VERSION );
 
 		// brisko .
@@ -138,7 +132,7 @@ final class Styles implements EnqueueInterface
 		$nav_padding               = get_theme_mod( 'navigation_padding', 10 );
 		$nav_margin_bottom         = get_theme_mod( 'nav_margin_bottom', 2 );
 		$underline_post_links      = get_theme_mod( 'underline_post_links', true );
-		$archive_header_background = get_theme_mod( 'archive_header_background', '#e3e3e3' );
+		$archive_header_background = get_theme_mod( 'archive_header_background', '#ffffff' );
 		$archive_header_text_color = get_theme_mod( 'archive_header_text_color', '#000000' );
 		$archive_header_padding    = $this->element_mod( 'archive_header_padding', '0px' );
 
