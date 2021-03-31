@@ -39,7 +39,7 @@ final class Theme
 	/**
 	 * Define Theme Version
 	 */
-	const VERSION = '2.8.1';
+	const VERSION = '2.9.0';
 
 	/**
 	 * [__construct description]
