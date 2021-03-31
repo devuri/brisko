@@ -42,9 +42,7 @@ final class Compat implements SetupInterface
 	public function hfe_header() {
 
 		if ( function_exists( 'hfe_header_enabled' ) && hfe_header_enabled() ) {
-			add_action( 'hfe_header', function() {
-				get_template_part( 'template-parts/header', 'header' );
-			}, 99 );  // @codingStandardsIgnoreLine
+			add_action( 'hfe_footer', array( $this, 'template_header' ), 99 );
 		}
 
 	}
@@ -56,12 +54,32 @@ final class Compat implements SetupInterface
 	 */
 	public function hfe_footer() {
 
-		if ( function_exists( 'hfe_footer_enabled' ) && hfe_footer_enabled() ) {
-			add_action( 'hfe_footer', function() {
-				if ( ! get_theme_mod( 'disable_footer', false ) ) :
-					get_template_part( 'template-parts/footer', 'footer' );
-				endif;
-			}, 99 );  // @codingStandardsIgnoreLine
+		if ( function_exists( 'hfe_render_before_footer' ) && hfe_is_before_footer_enabled() ) {
+			add_action( 'brisko_before_footer', 'hfe_render_before_footer' );
 		}
+
+		if ( function_exists( 'hfe_footer_enabled' ) && hfe_footer_enabled() ) {
+			add_action( 'hfe_footer', array( $this, 'template_footer' ), 99 );
+		}
+	}
+
+	/**
+	 * Brisko Header template
+	 *
+	 * @return void
+	 */
+	public function template_header() {
+		get_template_part( 'template-parts/header', 'header' );
+	}
+
+	/**
+	 * Brisko Footer template
+	 *
+	 * @return void
+	 */
+	public function template_footer() {
+		if ( ! get_theme_mod( 'disable_footer', false ) ) :
+			get_template_part( 'template-parts/footer', 'footer' );
+		endif;
 	}
 }
