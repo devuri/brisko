@@ -27,13 +27,17 @@ final class Brisko
 	/**
 	 * Related Content.
 	 *
-	 * Adds Related Content in Brisko Pro.
+	 * Adds Related Content in Brisko Plugin.
+	 *
+	 * Includes "get_post()" Retrieves post object.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/get_post/
+	 * @link https://gist.github.com/devuri/b0a86f75a86abfcdd7d41ed05e99de73
 	 *
 	 * @return void.
 	 */
 	public static function related_content() {
-		$post = get_post();
-		do_action( 'brisko_related_content', $post );
+		do_action( 'brisko_related_content', get_post() );
 	}
 
 }

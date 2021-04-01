@@ -39,7 +39,7 @@ final class Theme
 	/**
 	 * Define Theme Version
 	 */
-	const VERSION = '2.9.0';
+	const VERSION = '3.0.0';
 
 	/**
 	 * [__construct description]
@@ -79,6 +79,15 @@ final class Theme
 	 */
 	public static function header_image() {
 		return SiteHeader::get()->header_image();
+	}
+
+	/**
+	 * Archive Header
+	 *
+	 * @return SiteHeader .
+	 */
+	public static function archive_header() {
+		return SiteHeader::get()->archive();
 	}
 
 	/**

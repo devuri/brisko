@@ -25,6 +25,21 @@ final class Options
 	}
 
 	/**
+	 * Archive Header
+	 */
+	public function enable_archive_header() {
+		return boolval( get_theme_mod( 'enable_archive_header', false ) );
+	}
+
+	/**
+	 * Archive Header for Posts
+	 */
+	public function enable_post_header() {
+		return boolval( get_theme_mod( 'enable_post_header', false ) );
+	}
+
+
+	/**
 	 * Header Image width
 	 */
 	public function header_image_width() {
