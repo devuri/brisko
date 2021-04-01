@@ -8,6 +8,25 @@ class Archive extends Layout
 {
 
 	/**
+	 * Header title section.
+	 *
+	 * @return void
+	 */
+	public function header() {
+		?><div class="archive-header container-fluid">
+			<div class="archive-header-title container">
+				<h2>
+					<?php do_action( 'brisko_blog_title' ); ?>
+				</h2>
+				<p>
+					<?php do_action( 'brisko_blog_subtitle' ); ?>
+				</p>
+			</div>
+		</div>
+		<?php
+	}
+
+	/**
 	 * Display content
 	 */
 	public function view() {

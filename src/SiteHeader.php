@@ -3,6 +3,7 @@
 namespace Brisko;
 
 use Brisko\Traits\Singleton;
+use Brisko\View\Archive;
 
 /**
  * The SiteHeader class.
@@ -50,6 +51,23 @@ final class SiteHeader
 				?>
 			</div>
 		<?php
+	}
+
+	/**
+	 * Archive Header
+	 */
+	public function archive() {
+
+		if ( is_archive() && Options::get()->enable_archive_header() ) {
+			Archive::get()->header();
+			return;
+		}
+
+		if ( is_single() && Options::get()->enable_post_header() ) {
+			Archive::get()->header();
+			return;
+		}
+
 	}
 
 }

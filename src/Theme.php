@@ -82,6 +82,15 @@ final class Theme
 	}
 
 	/**
+	 * Archive Header
+	 *
+	 * @return SiteHeader .
+	 */
+	public static function archive_header() {
+		return SiteHeader::get()->archive();
+	}
+
+	/**
 	 * Displays an optional post thumbnail.
 	 */
 	public static function post_thumbnail() {
