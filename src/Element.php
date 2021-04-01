@@ -27,13 +27,9 @@ final class Element
 	 */
 	public function location( $location = null ) {
 
-		if ( ! function_exists( 'elementor_theme_do_location' ) ) :
-			return null;
-		endif;
+		if ( ! function_exists( 'elementor_theme_do_location' ) ) return null;
 
-		if ( is_null( $location ) ) :
-			return null;
-		endif;
+		if ( is_null( $location ) ) return null;
 
 		if ( elementor_theme_do_location( $location ) ) :
 			elementor_theme_do_location( $location );
