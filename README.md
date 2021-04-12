@@ -5,7 +5,7 @@
 
 ###  Modern, minimalist design, high-performance WordPress Elementor Starter Theme
 
-Brisko is a beautifully simple and lightweight WordPress theme that is optimized for speed and WordPress page builders like Elementor, you can use it as a foundation to build versatile layouts using Elementor Template Kits or the WordPress Block Patterns. This theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions, the color scheme can be easily customized. The options are easy to manage using the live theme customizer.  Use the WordPress Customizer and Elementor page builder to create professional designs on a solid foundation. Check out our prebuilt website demos for inspiration. 
+Brisko is a beautifully simple and lightweight WordPress theme that is optimized for speed and WordPress page builders like Elementor, you can use it as a foundation to build versatile layouts using Elementor Template Kits or the WordPress Block Patterns. This theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions, the color scheme can be easily customized. The options are easy to manage using the live theme customizer.  Use the WordPress Customizer and Elementor page builder to create professional designs on a solid foundation. Check out our prebuilt website demos for inspiration.
 
 For more information about the Brisko Theme please go to https://wpbrisko.com
 ### Quick start
@@ -67,27 +67,43 @@ How to Install Brisko.
 Built in child theme support, use Advanced Settings to disable/enable theme features, or replace the template parts.
 
 #### Built in Actions.
+
+> header
 * `brisko_before_header`
 * `brisko_custom_header`
 * `brisko_navigation`
 * `brisko_nav_menu`
 * `brisko_after_header`
 * `brisko_homepage_header`
+
+> post
 * `brisko_post_header`
+* `brisko_blog_title`
+* `brisko_blog_subtitle`
 * `brisko_before_entry_meta`
 * `brisko_after_entry_meta`
+* `brisko_related_content`
+* `brisko_after_post_content`
+
+> comments
 * `brisko_before_comments`
 * `brisko_after_comments`
+
+> page
 * `brisko_page_header`
 * `brisko_page_footer`
-* `brisko_after_post_content`
+
+> sidebar
 * `brisko_before_sidebar`
 * `brisko_after_sidebar`
+
+> footer
 * `brisko_before_footer`
 * `brisko_footer_credit`
 * `brisko_footer`
 * `brisko_after_footer`
-* Get a Visual Reference of all the Brisko Theme Actions with the [Brisko Hooks Display Plugin](https://wordpress.org/plugins/brisko-hooks-display/): .
+
+> Get a Visual Reference of all the Brisko Theme Actions with the [Brisko Hooks Display Plugin](https://wordpress.org/plugins/brisko-hooks-display/): .
 
 #### GPL-2.0 License
 Brisko WordPress Theme, Copyright 2020 Uriel Wilson.
