@@ -23,8 +23,6 @@ final class Actions
 	 */
 	public static function actions() {
 
-		$actions = array();
-
 		// header.
 		$actions[] = 'brisko_before_header';
 		$actions[] = 'brisko_custom_header';
