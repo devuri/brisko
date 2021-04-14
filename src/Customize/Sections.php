@@ -31,9 +31,25 @@ final class Sections {
 		$this->sections['header']     = 'Header';
 		$this->sections['pages']      = 'Pages';
 		$this->sections['blog']       = 'Blog / Archive';
-		$this->sections['footer']     = 'Footer';
-		$this->sections['advanced']   = 'Advanced';
 
+		if ( ! $this->is_disabled_footer() ) {
+			$this->sections['footer'] = 'Footer';
+		}
+
+		$this->sections['advanced'] = 'Advanced';
+
+	}
+
+	/**
+	 * Checks if the footer is disabled
+	 *
+	 * @return boolean
+	 */
+	protected static function is_disabled_footer() {
+		if ( get_theme_mod( 'disable_footer', false ) ) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
