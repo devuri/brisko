@@ -84,6 +84,8 @@ if ( ! function_exists( 'brisko_entry_footer' ) ) :
 				printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, Brisko\Theme::options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
+			do_action( 'brisko_before_tags' );
+
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'brisko' ) ); // @codingStandardsIgnoreLine
 			if ( $tags_list ) {

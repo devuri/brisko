@@ -139,4 +139,20 @@ final class Theme
 	public static function footer_credit() {
 		return Footer::get()->footer_credit();
 	}
+
+	/**
+	 * Easily enqueue  additional styles.
+	 *
+	 * @param  string $handle Name of the stylesheet. Should be unique.
+	 * @param  string $src    Full URL of the stylesheet, or path of the stylesheet.
+	 * @param  string $ver    Stylesheet version number, added to the URL as a query string for cache busting.
+	 * @param  array  $deps   An array of registered stylesheet handles this stylesheet depends on.
+	 * @return void
+	 */
+	public static function enqueue_style( $handle, $src, $ver = '', $deps = array() ) {
+		if ( empty( $ver ) ) {
+			$ver = Theme::VERSION;
+		}
+		wp_enqueue_style( $handle, get_stylesheet_directory_uri() . '/' . $src, $deps, $ver );
+	}
 }
