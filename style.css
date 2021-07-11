@@ -90,3 +90,45 @@ h6 {
 .site-main {
 	padding: 1.75rem;
 }
+
+.wp-post-author-meta-bio {
+	font-size:small;
+}
+
+.archive-description {
+    font-size: small;
+    margin-bottom: 3em;
+}
+
+.page-header h2 .page-title, .archive-title {
+    font-weight: inherit;
+    letter-spacing: 1px;
+}
+
+.widget-area h2 {
+    text-align: center;
+    padding: 20px;
+    border: solid thin #efefef;
+}
+
+.widget_recent_entries {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.16);
+}
+
+.sidebar {
+    margin-left: 0rem;
+    word-wrap: break-word;
+}
+
+.sidebar ul li {
+    border-bottom: solid thin #f0f0f0;
+    padding: 16px;
+}
+
+.widget_search {
+	padding-left: 10px;
+}
+
+.tagcloud {
+	padding: 10px;
+}
