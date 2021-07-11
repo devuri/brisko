@@ -37,6 +37,7 @@ final class Actions
 		$actions[] = 'brisko_blog_subtitle';
 		$actions[] = 'brisko_before_entry_meta';
 		$actions[] = 'brisko_after_entry_meta';
+		$actions[] = 'brisko_before_tags';
 		$actions[] = 'brisko_related_content';
 		$actions[] = 'brisko_after_post_content';
 
