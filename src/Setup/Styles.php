@@ -196,7 +196,7 @@ final class Styles implements EnqueueInterface
 		$css_styles = $this->custom_styles();
 		$css_styles = implode( "\n", $css_styles );
 
-		return $css_styles;
+		return $this->sanitize_css( $css_styles );
 	}
 
 	/**
@@ -208,4 +208,23 @@ final class Styles implements EnqueueInterface
 
 	}
 
+	/**
+	 * Sanitize CSS.
+	 *
+	 * For now just strip_tags (the WordPress way) and preg_replace to escape < in certain cases but might do full CSS escaping in the future, see:
+	 * https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#rule-4-css-encode-and-strictly-validate-before-inserting-untrusted-data-into-html-style-property-values
+	 * https://github.com/twigphp/Twig/blob/3.x/src/Extension/EscaperExtension.php#L300-L319
+	 * https://github.com/laminas/laminas-escaper/blob/2.8.x/src/Escaper.php#L205-L221
+	 * https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyles.php
+	 *
+	 * @param string $css the to be sanitized CSS.
+	 * @return string sanitized CSS.
+	 */
+	public function sanitize_css( $css ) {
+		$css = wp_strip_all_tags( $css );
+		if ( strpos( $css, '<' ) !== false ) {
+			$css = preg_replace( '#<(\/?\w+)#', '\00003C$1', $css );
+		}
+		return $css;
+	}
 }
