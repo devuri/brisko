@@ -149,3 +149,20 @@ function brisko_text_align_options() {
 	);
 	return $options;
 }
+
+/**
+ * Theme text-tranform choices
+ *
+ * Used for Theme text-tranform in the Customizer.
+ *
+ * @return array .
+ */
+function brisko_text_tranform_choices() {
+	$choices = array(
+		'none'       => esc_html__( 'none', 'brisko' ),
+		'capitalize' => esc_html__( 'Capitalize', 'brisko' ),
+		'uppercase'  => esc_html__( 'Uppercase', 'brisko' ),
+		'lowercase'  => esc_html__( 'Lowercase', 'brisko' ),
+	);
+	return $choices;
+}

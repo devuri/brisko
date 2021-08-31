@@ -140,6 +140,7 @@ final class Styles implements EnqueueInterface
 		$posted = $this->meta_display( 'display_meta_date', 'posted-on' );
 		$avatar = $this->meta_display( 'display_author_avatar', 'avatar-32' );
 		$author = $this->meta_display( 'display_author_name', 'vcard' );
+		$tags   = get_theme_mod( 'text_transform_tags', 'none' );
 
 		// footer.
 		$footer_links            = get_theme_mod( 'footer_links_color', '#000000' );
@@ -167,11 +168,12 @@ final class Styles implements EnqueueInterface
 		$custom_styles['footer_padding']            = ".site-footer {padding: {$footer_padding};}";
 		$custom_styles['footer_margin']             = ".site-footer {margin: {$footer_margin};}";
 		$custom_styles['footer_text']               = ".site-footer {color: {$footer_text};}";
-		$custom_styles['posted']                    = "{$posted}";
-		$custom_styles['avatar']                    = "{$avatar}";
-		$custom_styles['author']                    = "{$author}";
-		$custom_styles['footer_background']         = ".site-footer {background-color: {$footer_background_color};}";
-		$custom_styles['footer_border_color']       = ".site-footer {border-color: {$footer_border_color};}";
+		$custom_styles['tag_links']                 = ".tags-links {text-transform: {$tags};}";
+		// $custom_styles['posted']                 = "{$posted}"; // @codingStandardsIgnoreLine 
+		// $custom_styles['avatar']                 = "{$avatar}"; // @codingStandardsIgnoreLine
+		// $custom_styles['author']                 = "{$author}"; // @codingStandardsIgnoreLine
+		$custom_styles['footer_background']   = ".site-footer {background-color: {$footer_background_color};}";
+		$custom_styles['footer_border_color'] = ".site-footer {border-color: {$footer_border_color};}";
 
 		if ( false === $underline_post_links ) {
 			$custom_styles['underline_body_links'] = "body a{text-decoration: none;}"; // @codingStandardsIgnoreLine
@@ -196,7 +198,7 @@ final class Styles implements EnqueueInterface
 		$css_styles = $this->custom_styles();
 		$css_styles = implode( "\n", $css_styles );
 
-		return $css_styles;
+		return $this->sanitize_css( $css_styles );
 	}
 
 	/**
@@ -208,4 +210,23 @@ final class Styles implements EnqueueInterface
 
 	}
 
+	/**
+	 * Sanitize CSS.
+	 *
+	 * For now just strip_tags (the WordPress way) and preg_replace to escape < in certain cases but might do full CSS escaping in the future, see:
+	 * https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#rule-4-css-encode-and-strictly-validate-before-inserting-untrusted-data-into-html-style-property-values
+	 * https://github.com/twigphp/Twig/blob/3.x/src/Extension/EscaperExtension.php#L300-L319
+	 * https://github.com/laminas/laminas-escaper/blob/2.8.x/src/Escaper.php#L205-L221
+	 * https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyles.php
+	 *
+	 * @param string $css the to be sanitized CSS.
+	 * @return string sanitized CSS.
+	 */
+	public function sanitize_css( $css ) {
+		$css = wp_strip_all_tags( $css );
+		if ( strpos( $css, '<' ) !== false ) {
+			$css = preg_replace( '#<(\/?\w+)#', '\00003C$1', $css );
+		}
+		return $css;
+	}
 }

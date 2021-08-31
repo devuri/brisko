@@ -7,9 +7,9 @@
 >
 <title>Brisko - WordPress theme</title>
 	<paths>
-		<output>docs/.build</output>
+		<output>docs</output>
 	</paths>
-    <version number="3.0.2">
+    <version number="3.0.6">
         <api>
             <source dsn=".">
                 <path>src</path>
