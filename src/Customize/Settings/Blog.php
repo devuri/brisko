@@ -137,6 +137,24 @@ class Blog implements SettingsInterface
 			)
 		);
 
+		// text-transform on tags.
+		$wp_customize->add_setting(
+			'text_transform_tags', array(
+				'sanitize_callback' => 'sanitize_html_class',
+				'default'           => 'none',
+			)
+		);
+
+		$wp_customize->add_control(
+			'text_transform_tags', array(
+				'label'       => esc_html__( 'Post Tags text-transform', 'brisko' ),
+				'description' => esc_html__( 'set text-transform for post tags', 'brisko' ),
+				'section'     => self::section(),
+				'type'        => 'select',
+				'choices'     => brisko_text_tranform_choices(),
+			)
+		);
+
 		/**
 		 * Post Details
 		 */
