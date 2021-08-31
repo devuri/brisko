@@ -16,11 +16,11 @@ final class Sections {
 	private $sections = array();
 
 	/**
-	 * Create the customizer sections array
-	 * The keys should be lowercase single words,
-	 * these will be used to create sections
-	 * The array value can be mutitple words
-	 * these will be used for section title
+	 * Create the customizer sections array.
+	 *
+	 * The keys should be lowercase single words, these will be used
+	 * to create sections, The array value can be mutitple words
+	 * these will be used for section title.
 	 */
 	private function __construct() {
 

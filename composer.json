@@ -1,8 +1,8 @@
 {
     "autoload": {
-      "psr-4": {
-        "Brisko\\":"src"
-	},
+    	"psr-4": {
+        	"Brisko\\":"src"
+		},
 	  	"files": [
 			"src/Customize/helpers.php",
 			"src/inc/actions.php",
@@ -10,6 +10,6 @@
 		]
     },
     "config": {
-    "optimize-autoloader": true
+    	"optimize-autoloader": true
     }
 }
