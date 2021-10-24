@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'e9122ae3d8760167901fcc564665809e' => $baseDir . '/src/Customize/helpers.php',
-    '12534e0e28f71b5f4918fa2cb8b68fab' => $baseDir . '/src/inc/actions.php',
-    '30f493bd22578a96783edb4fcad2892b' => $baseDir . '/src/inc/template-tags.php',
+    '29af0ce36fd30ec1dd601a83530e7f7c' => $baseDir . '/src/Customize/helpers.php',
+    'bbef8a0ada288d9def5e32ab1fa9cc71' => $baseDir . '/src/inc/actions.php',
+    '0c3a3a5eed75282a80ae6f26209f2c76' => $baseDir . '/src/inc/template-tags.php',
 );

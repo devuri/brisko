@@ -51,7 +51,7 @@ final class Theme
 		Head::init();
 		Jetpack::init();
 		Customizer::init();
-		Compat::init();
+		// Compat::init();  @codingStandardsIgnoreLine
 	}
 
 	/**

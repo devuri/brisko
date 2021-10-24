@@ -1,24 +1,23 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => '1.3.1.x-dev',
-    'version' => '1.3.1.9999999-dev',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'pretty_version' => '3.0.7.x-dev',
+        'version' => '3.0.7.9999999-dev',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => 'c59283066ac11171f3570706e25b9714d65f3126',
+        'name' => 'devuri/brisko',
+        'dev' => false,
     ),
-    'reference' => 'ea058d56692890909a77d6c6057a10dd4d0aa6c4',
-    'name' => '__root__',
-  ),
-  'versions' => 
-  array (
-    '__root__' => 
-    array (
-      'pretty_version' => '1.3.1.x-dev',
-      'version' => '1.3.1.9999999-dev',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ea058d56692890909a77d6c6057a10dd4d0aa6c4',
+    'versions' => array(
+        'devuri/brisko' => array(
+            'pretty_version' => '3.0.7.x-dev',
+            'version' => '3.0.7.9999999-dev',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => 'c59283066ac11171f3570706e25b9714d65f3126',
+            'dev_requirement' => false,
+        ),
     ),
-  ),
 );

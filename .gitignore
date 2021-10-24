@@ -1,3 +1,13 @@
+/node_modules
+/tmp
+/bin
 /.github
 /.idea
-/bin
+/.phpunit.result.cache
+/.phpdoc
+/.vscode
+.env
+.env.backup
+.phpunit.result.cache
+npm-debug.log
+yarn-error.log

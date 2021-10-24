@@ -1,15 +1,59 @@
 {
+	"name": "devuri/brisko",
+	"description": "Lightweight WordPress Starter Theme, based on Underscores and Bootstrap 4",
+	"keywords": ["WordPress","Themes"],
+	"license": "GPL-2.0-only",
+	"authors": [
+		{
+			"name": "Uriel Wilson",
+			"email": "hello@urielwilson.com",
+			"homepage": "https://urielwilson.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.6"
+	},
     "autoload": {
-    	"psr-4": {
-        	"Brisko\\":"src"
-		},
-	  	"files": [
+		"files": [
 			"src/Customize/helpers.php",
 			"src/inc/actions.php",
 			"src/inc/template-tags.php"
-		]
+		],
+    	"psr-4": {
+        	"Brisko\\":"src"
+		}
     },
-    "config": {
-    	"optimize-autoloader": true
+	"require-dev": {
+		"brain/monkey": "2.*",
+		"fakerphp/faker": "^1.9.1",
+		"filp/whoops": "^2.14",
+		"johnpbloch/wordpress-core": "^5.8",
+		"phpstan/phpstan": "^0.12.99",
+		"phpunit/phpunit": "^9.0",
+		"symfony/var-dumper": "^5.3",
+		"szepeviktor/phpstan-wordpress": "^0.7.7"
+	},
+	"scripts": {
+		"build": [
+			"composer phpdoc",
+			"composer phpstan",
+			"composer no-dev"
+		],
+		"phpdoc": "php ./bin/phpdoc.phar",
+		"no-dev": "composer install --no-dev",
+		"phpstan": [
+		    "composer install",
+		    "@php ./vendor/bin/phpstan analyse"
+		],
+		"code-check": [
+		    "composer install",
+			"vendor/bin/phpstan analyse > phpstan-result-brisko.txt"
+		]
+	},
+	"config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     }
 }
