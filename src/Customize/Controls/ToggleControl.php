@@ -2,6 +2,8 @@
 
 namespace Brisko\Customize\Controls;
 
+use Brisko\Setup\Assets;
+
 /**
  * ToggleControl
  *
@@ -23,8 +25,8 @@ class ToggleControl extends \WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		wp_enqueue_script( 'customizer-toggle-control', get_template_directory_uri() . '/js/customizer/toggle-button-control.js', array( 'jquery' ), time(), true );
-		wp_enqueue_style( 'css-toggle-buttons', get_template_directory_uri() . '/css/customizer/toggle-buttons.css', array(), time() );
+		wp_enqueue_script( 'customizer-toggle-control', Assets::uri() . '/js/customizer/toggle-button-control.js', array( 'jquery' ), time(), true );
+		wp_enqueue_style( 'css-toggle-buttons', Assets::uri() . '/css/customizer/toggle-buttons.css', array(), time() );
 
 		$css = '
 			.disabled-control-title {

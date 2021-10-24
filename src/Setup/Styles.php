@@ -71,23 +71,31 @@ final class Styles implements EnqueueInterface
 	}
 
 	/**
-	 * Enqueue styles and script
+	 * Setup static CSS files.
+	 *
+	 * @return array .
+	 */
+	public static function css_files() {
+		return array(
+			'underscores'    => Assets::uri() . '/css/underscores.css',
+			'bootstrap-grid' => Assets::uri() . '/css/bootstrap/bootstrap-grid.min.css',
+			'bootstrap'      => Assets::uri() . '/css/bootstrap/bootstrap.min.css',
+			'brisko'         => Assets::uri() . '/css/brisko.min.css',
+			'custom-styles'  => Assets::uri() . '/css/custom-styles.css',
+			'brisko-theme'   => get_stylesheet_uri(),
+		);
+	}
+
+	/**
+	 * Register all styles
 	 *
 	 * @return void
 	 */
 	public function register() {
 
-		// Bootstrap and underscores.
-		wp_register_style( 'underscores', get_template_directory_uri() . '/css/underscores.css', array(), Theme::VERSION );
-		wp_register_style( 'bootstrap-grid', get_template_directory_uri() . '/css/bootstrap/bootstrap-grid.min.css', array(), Theme::VERSION );
-		wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap/bootstrap.min.css', array(), Theme::VERSION );
-
-		// brisko .
-		wp_register_style( 'brisko', get_template_directory_uri() . '/css/brisko.min.css', array(), Theme::VERSION );
-		wp_register_style( 'brisko-theme', get_stylesheet_uri(), array(), Theme::VERSION );
-
-		// custom .
-		wp_register_style( 'custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array(), Theme::VERSION );
+		foreach ( self::css_files() as $handle => $file ) {
+			wp_register_style( $handle, $file, array(), md5_file( $file ) );
+		}
 
 	}
 
@@ -169,7 +177,7 @@ final class Styles implements EnqueueInterface
 		$custom_styles['footer_margin']             = ".site-footer {margin: {$footer_margin};}";
 		$custom_styles['footer_text']               = ".site-footer {color: {$footer_text};}";
 		$custom_styles['tag_links']                 = ".tags-links {text-transform: {$tags};}";
-		// $custom_styles['posted']                 = "{$posted}"; // @codingStandardsIgnoreLine 
+		// $custom_styles['posted']                 = "{$posted}"; // @codingStandardsIgnoreLine
 		// $custom_styles['avatar']                 = "{$avatar}"; // @codingStandardsIgnoreLine
 		// $custom_styles['author']                 = "{$author}"; // @codingStandardsIgnoreLine
 		$custom_styles['footer_background']   = ".site-footer {background-color: {$footer_background_color};}";

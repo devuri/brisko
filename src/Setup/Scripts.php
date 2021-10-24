@@ -59,17 +59,42 @@ final class Scripts implements EnqueueInterface
 	}
 
 	/**
+	 * Setup static JS files.
+	 *
+	 * @return array .
+	 */
+	public static function js_files() {
+		return array(
+			'brisko-popper'        => Assets::uri() . '/js/bootstrap/popper.min.js',
+			'brisko-bootstrap'     => Assets::uri() . '/js/bootstrap/bootstrap.min.js',
+			'brisko-navigation'    => Assets::uri() . '/js/navigation.js',
+			'brisko-smooth-scroll' => Assets::uri() . '/js/smooth-scroll.js',
+		);
+	}
+
+	/**
 	 * Enqueue styles and script
 	 *
 	 * @return void
 	 */
 	public function register() {
 
-		wp_register_script( 'brisko-popper', get_template_directory_uri() . '/js/bootstrap/popper.min.js', array( 'jquery' ), Theme::VERSION, true );
-		wp_register_script( 'brisko-bootstrap', get_template_directory_uri() . '/js/bootstrap/bootstrap.min.js', array( 'jquery' ), Theme::VERSION, true );
-		wp_register_script( 'brisko-navigation', get_template_directory_uri() . '/js/navigation.js', array(), Theme::VERSION, true );
-		wp_register_script( 'brisko-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), Theme::VERSION, true );
+		wp_register_script( 'brisko-popper', Assets::uri() . '/js/bootstrap/popper.min.js', array( 'jquery' ), self::ver( 'brisko-popper' ), true );
+		wp_register_script( 'brisko-bootstrap', Assets::uri() . '/js/bootstrap/bootstrap.min.js', array( 'jquery' ), self::ver( 'brisko-bootstrap' ), true );
 
+		wp_register_script( 'brisko-navigation', Assets::uri() . '/js/navigation.js', array(), self::ver( 'brisko-navigation' ), true );
+		wp_register_script( 'brisko-smooth-scroll', Assets::uri() . '/js/smooth-scroll.js', array(), self::ver( 'brisko-smooth-scroll' ), true );
+
+	}
+
+	/**
+	 * Set file version.
+	 *
+	 * @param  string $handle .
+	 * @return string  .
+	 */
+	public static function ver( $handle ) {
+		return md5_file( self::js_files()[ $handle ] );
 	}
 
 }
