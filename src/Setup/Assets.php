@@ -12,6 +12,14 @@ final class Assets implements SetupInterface
 	use Singleton;
 
 	/**
+	 *  Assets scripts
+	 */
+	private function __construct() {
+		Styles::init();
+		Scripts::init();
+	}
+
+	/**
 	 * Singleton
 	 *
 	 * @return object
@@ -21,10 +29,12 @@ final class Assets implements SetupInterface
 	}
 
 	/**
-	 *  Assets scripts
+	 * Theme Assets uri.
+	 *
+	 * @return object
 	 */
-	private function __construct() {
-		Styles::init();
-		Scripts::init();
+	public static function uri() {
+		return get_stylesheet_directory_uri() . '/assets/static';
 	}
+
 }
