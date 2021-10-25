@@ -77,11 +77,11 @@ final class Styles implements EnqueueInterface
 	 */
 	public static function css_files() {
 		return array(
-			'underscores'    => Assets::uri() . '/css/underscores.css',
+			'underscores'    => Assets::uri() . '/css/underscores.min.css',
 			'bootstrap-grid' => Assets::uri() . '/css/bootstrap/bootstrap-grid.min.css',
 			'bootstrap'      => Assets::uri() . '/css/bootstrap/bootstrap.min.css',
 			'brisko'         => Assets::uri() . '/css/brisko.min.css',
-			'custom-styles'  => Assets::uri() . '/css/custom-styles.css',
+			'custom-styles'  => Assets::uri() . '/css/custom-styles.min.css',
 			'brisko-theme'   => get_stylesheet_uri(),
 		);
 	}
