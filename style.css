@@ -132,3 +132,7 @@ h6 {
 .tagcloud {
 	padding: 10px;
 }
+
+.wp-pagenavi{
+	margin-bottom: 1em;
+}
