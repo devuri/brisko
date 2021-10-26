@@ -19,12 +19,12 @@
 			the_title( sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		endif;
 		?>
-		<?php brisko_before_entry_meta(); ?>
+		<?php do_action( 'brisko_before_entry_meta' ); ?>
 			<div class="entry-meta ">
 			<?php brisko_posted_on(); ?>
 			<?php brisko_posted_by(); ?>
 			</div><!-- .entry-meta -->
-		<?php brisko_after_entry_meta(); ?>
+		<?php do_action( 'brisko_after_entry_meta' ); ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php

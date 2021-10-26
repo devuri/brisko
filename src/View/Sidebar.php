@@ -24,9 +24,9 @@ class Sidebar
 		/**
 		 * Sidebar
 		 */
-		brisko_before_sidebar();
+		do_action( 'brisko_before_sidebar' );
 		dynamic_sidebar( 'sidebar-1' );
-		brisko_after_sidebar();
+		do_action( 'brisko_after_sidebar' );
 
 		?>
 		</aside><!-- #secondary -->

@@ -8,7 +8,6 @@ class ComposerStaticInit65277b3585d1b2ae053b06fa818d4810
 {
     public static $files = array (
         '29af0ce36fd30ec1dd601a83530e7f7c' => __DIR__ . '/../..' . '/src/Customize/helpers.php',
-        'bbef8a0ada288d9def5e32ab1fa9cc71' => __DIR__ . '/../..' . '/src/inc/actions.php',
         '0c3a3a5eed75282a80ae6f26209f2c76' => __DIR__ . '/../..' . '/src/inc/template-tags.php',
     );
 

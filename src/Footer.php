@@ -26,9 +26,9 @@ final class Footer
 
 		if ( true === get_theme_mod( 'disable_footer', false ) ) :
 			brisko()->action( 'brisko_before_footer' );
-			brisko_footer();
+			do_action( 'brisko_footer' );
 			do_action( 'brisko_footer_credit' );
-			brisko()->action( 'brisko_after_footer' );
+			do_action( 'brisko_after_footer' );
 			return;
 		endif;
 

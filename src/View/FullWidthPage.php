@@ -32,7 +32,7 @@ class FullWidthPage extends Layout
 	 * Head section
 	 */
 	public function head() {
-		brisko_page_header(); ?>
+		do_action( 'brisko_page_header' ); ?>
 		<main id="primary" class="full-width-template">
 		<?php
 	}
@@ -44,6 +44,6 @@ class FullWidthPage extends Layout
 		?>
 			</main><!-- #main -->
 		<?php
-		brisko_page_footer();
+		do_action( 'brisko_page_footer' );
 	}
 }
