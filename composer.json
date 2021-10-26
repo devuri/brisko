@@ -17,7 +17,6 @@
     "autoload": {
 		"files": [
 			"src/Customize/helpers.php",
-			"src/inc/actions.php",
 			"src/inc/template-tags.php"
 		],
     	"psr-4": {

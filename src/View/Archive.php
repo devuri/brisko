@@ -32,7 +32,7 @@ class Archive extends Layout
 	public function view() {
 		$this->head();
 
-		brisko_post_header();
+		do_action( 'brisko_post_header' );
 
 		/**
 		 * Post content

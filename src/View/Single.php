@@ -15,7 +15,7 @@ class Single extends Layout
 
 		$this->head();
 
-		brisko_post_header();
+		do_action( 'brisko_post_header' );
 
 		/**
 		 * Post content
@@ -28,7 +28,7 @@ class Single extends Layout
 			Brisko::related_content();
 
 			// custom action .
-			brisko_after_post_content();
+			do_action( 'brisko_after_post_content' );
 
 			// the_post_navigation.
 			if ( get_theme_mod( 'display_previous_next', 1 ) ) {

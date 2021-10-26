@@ -1,6 +1,6 @@
 <?php brisko()->action( 'brisko_before_footer' ); ?>
 <footer id="colophon" class="site-footer this-site-footer <?php Brisko\Theme::options()->footer_top_margin(); ?>">
-	<?php brisko_footer(); ?>
+	<?php do_action( 'brisko_footer' ); ?>
 	<div class="site-info <?php Brisko\Theme::options()->footer_width(); ?>">
 		<div class="brisko-theme-credit">
 			<?php Brisko\Theme::footer_credit(); ?>
