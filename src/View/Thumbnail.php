@@ -16,7 +16,7 @@ class Thumbnail
 	public function thumbnail_singular() {
 		?>
 		<div class="post-thumbnail <?php Options::get()->post_thumbnail_display(); ?>">
-			<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'img-fluid' ) ); ?>
 		</div><!-- .post-thumbnail -->
 		<?php
 	}
@@ -32,7 +32,8 @@ class Thumbnail
 				the_post_thumbnail(
 					'post-thumbnail',
 					array(
-						'alt' => the_title_attribute(
+						'class' => 'img-fluid',
+						'alt'   => the_title_attribute(
 							array(
 								'echo' => false,
 							)
