@@ -135,10 +135,11 @@ endif;
  * @link https://wordpress.org/plugins/wp-pagenavi/
  */
 function brisko_posts_navigation() {
-	if ( function_exists( 'wp_pagenavi' ) ) :
+
+	if ( function_exists( 'wp_pagenavi' ) ) {
 		wp_pagenavi();
-		echo '<br>';
 		return;
-	endif;
+	}
+
 	the_posts_navigation();
 }
