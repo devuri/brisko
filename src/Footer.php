@@ -25,7 +25,7 @@ final class Footer
 		Element::get()->location( 'footer' );
 
 		if ( true === get_theme_mod( 'disable_footer', false ) ) :
-			brisko()->action( 'brisko_before_footer' );
+			do_action( 'brisko_before_footer' );
 			do_action( 'brisko_footer' );
 			do_action( 'brisko_footer_credit' );
 			do_action( 'brisko_after_footer' );
