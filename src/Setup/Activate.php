@@ -45,7 +45,7 @@ final class Activate implements SetupInterface
 			return;
 		}
 
-		echo esc_html( get_theme_mod( 'blog_title', get_bloginfo( 'name' ) . ' - blog' ) );
+		echo esc_html( get_theme_mod( 'blog_title' ) );
 	}
 
 	/**
@@ -59,7 +59,7 @@ final class Activate implements SetupInterface
 			return;
 		}
 
-		echo esc_html( get_theme_mod( 'blog_subtitle', get_bloginfo( 'description' ) ) );
+		echo esc_html( get_theme_mod( 'blog_subtitle' ) );
 	}
 
 	/**
