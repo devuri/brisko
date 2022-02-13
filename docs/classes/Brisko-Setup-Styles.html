@@ -141,6 +141,13 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Brisko-Setup-Styles.html#method_css_files">css_files()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Setup static CSS files.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Brisko-Setup-Styles.html#method_custom_css">custom_css()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -189,7 +196,7 @@ as final intentionally, it is not meant to be overridden.</dd>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Enqueue styles and script</dd>
+<dd>Register all styles</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Brisko-Setup-Styles.html#method_sanitize_css">sanitize_css()</a>
@@ -211,13 +218,6 @@ as final intentionally, it is not meant to be overridden.</dd>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Assets scripts</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/Brisko-Setup-Styles.html#method_meta_display">meta_display()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>Display</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/Brisko-Setup-Styles.html#method_minified_css">minified_css()</a>
@@ -243,6 +243,41 @@ as final intentionally, it is not meant to be overridden.</dd>
         class="phpdocumentor-element
             -method
             -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_css_files">
+        css_files()
+        <a href="classes/Brisko-Setup-Styles.html#method_css_files" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">78</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Setup static CSS files.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">css_files</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_custom_css">
@@ -252,7 +287,7 @@ as final intentionally, it is not meant to be overridden.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 </aside>
 
         <p class="phpdocumentor-summary">Custom Theme styles</p>
@@ -286,7 +321,7 @@ as final intentionally, it is not meant to be overridden.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">126</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 </aside>
 
         <p class="phpdocumentor-summary">Custom Theme styles</p>
@@ -320,7 +355,7 @@ as final intentionally, it is not meant to be overridden.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get element space padding or margin.</p>
@@ -481,10 +516,10 @@ as final intentionally, it is not meant to be overridden.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Enqueue styles and script</p>
+        <p class="phpdocumentor-summary">Register all styles</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -515,7 +550,7 @@ as final intentionally, it is not meant to be overridden.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">225</span>
+    <span class="phpdocumentor-element-found-in__line">214</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sanitize CSS.</p>
@@ -628,61 +663,6 @@ https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyl
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_meta_display">
-        meta_display()
-        <a href="classes/Brisko-Setup-Styles.html#method_meta_display" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">116</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Display</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">meta_display</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$display_item</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;posted-on&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$display_item</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>the theme mod.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$class</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;posted-on&#039;</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>the class mod.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_minified_css">
         minified_css()
         <a href="classes/Brisko-Setup-Styles.html#method_minified_css" class="headerlink"><i class="fas fa-link"></i></a>
@@ -690,7 +670,7 @@ https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyl
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">192</span>
+    <span class="phpdocumentor-element-found-in__line">181</span>
 </aside>
 
         <p class="phpdocumentor-summary">CSS Minifier Compressor.</p>

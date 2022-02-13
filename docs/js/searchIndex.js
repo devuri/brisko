@@ -456,86 +456,6 @@ Search.appendIndex(
             "summary": "Brisko\u0020Theme\u0020credit\u0020powered\u0020by",
             "url": "classes/Brisko-Footer.html#method_poweredby"
         },                {
-            "fqsen": "\\brisko_actions\u0028\u0029",
-            "name": "brisko_actions",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_actions"
-        },                {
-            "fqsen": "\\brisko_before_header\u0028\u0029",
-            "name": "brisko_before_header",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_before_header"
-        },                {
-            "fqsen": "\\brisko_custom_header\u0028\u0029",
-            "name": "brisko_custom_header",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_custom_header"
-        },                {
-            "fqsen": "\\brisko_after_header\u0028\u0029",
-            "name": "brisko_after_header",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_after_header"
-        },                {
-            "fqsen": "\\brisko_homepage_header\u0028\u0029",
-            "name": "brisko_homepage_header",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_homepage_header"
-        },                {
-            "fqsen": "\\brisko_post_header\u0028\u0029",
-            "name": "brisko_post_header",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_post_header"
-        },                {
-            "fqsen": "\\brisko_page_header\u0028\u0029",
-            "name": "brisko_page_header",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_page_header"
-        },                {
-            "fqsen": "\\brisko_page_footer\u0028\u0029",
-            "name": "brisko_page_footer",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_page_footer"
-        },                {
-            "fqsen": "\\brisko_after_entry_meta\u0028\u0029",
-            "name": "brisko_after_entry_meta",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_after_entry_meta"
-        },                {
-            "fqsen": "\\brisko_before_entry_meta\u0028\u0029",
-            "name": "brisko_before_entry_meta",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_before_entry_meta"
-        },                {
-            "fqsen": "\\brisko_after_post_content\u0028\u0029",
-            "name": "brisko_after_post_content",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_after_post_content"
-        },                {
-            "fqsen": "\\brisko_before_sidebar\u0028\u0029",
-            "name": "brisko_before_sidebar",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_before_sidebar"
-        },                {
-            "fqsen": "\\brisko_after_sidebar\u0028\u0029",
-            "name": "brisko_after_sidebar",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_after_sidebar"
-        },                {
-            "fqsen": "\\brisko_before_footer\u0028\u0029",
-            "name": "brisko_before_footer",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_before_footer"
-        },                {
-            "fqsen": "\\brisko_footer\u0028\u0029",
-            "name": "brisko_footer",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_footer"
-        },                {
-            "fqsen": "\\brisko_after_footer\u0028\u0029",
-            "name": "brisko_after_footer",
-            "summary": "",
-            "url": "namespaces/default.html#function_brisko_after_footer"
-        },                {
             "fqsen": "\\brisko_posted_on\u0028\u0029",
             "name": "brisko_posted_on",
             "summary": "Prints\u0020HTML\u0020with\u0020meta\u0020information\u0020for\u0020the\u0020current\u0020post\u002Ddate\/time.",
@@ -746,15 +666,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Assets.html"
         },                {
+            "fqsen": "\\Brisko\\Setup\\Assets\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Assets\u0020scripts",
+            "url": "classes/Brisko-Setup-Assets.html#method___construct"
+        },                {
             "fqsen": "\\Brisko\\Setup\\Assets\u003A\u003Ainit\u0028\u0029",
             "name": "init",
             "summary": "Singleton",
             "url": "classes/Brisko-Setup-Assets.html#method_init"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Assets\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Assets\u0020scripts",
-            "url": "classes/Brisko-Setup-Assets.html#method___construct"
+            "fqsen": "\\Brisko\\Setup\\Assets\u003A\u003Auri\u0028\u0029",
+            "name": "uri",
+            "summary": "Theme\u0020Assets\u0020uri.",
+            "url": "classes/Brisko-Setup-Assets.html#method_uri"
         },                {
             "fqsen": "\\Brisko\\Setup\\Body",
             "name": "Body",
@@ -896,10 +821,20 @@ Search.appendIndex(
             "summary": "Enqueue\u0020scripts.",
             "url": "classes/Brisko-Setup-Scripts.html#method_enqueue"
         },                {
+            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Ajs_files\u0028\u0029",
+            "name": "js_files",
+            "summary": "Setup\u0020static\u0020JS\u0020files.",
+            "url": "classes/Brisko-Setup-Scripts.html#method_js_files"
+        },                {
             "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aregister\u0028\u0029",
             "name": "register",
             "summary": "Enqueue\u0020styles\u0020and\u0020script",
             "url": "classes/Brisko-Setup-Scripts.html#method_register"
+        },                {
+            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aver\u0028\u0029",
+            "name": "ver",
+            "summary": "Set\u0020file\u0020version.",
+            "url": "classes/Brisko-Setup-Scripts.html#method_ver"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles",
             "name": "Styles",
@@ -921,20 +856,20 @@ Search.appendIndex(
             "summary": "Enqueue\u0020scripts.",
             "url": "classes/Brisko-Setup-Styles.html#method_enqueue"
         },                {
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Acss_files\u0028\u0029",
+            "name": "css_files",
+            "summary": "Setup\u0020static\u0020CSS\u0020files.",
+            "url": "classes/Brisko-Setup-Styles.html#method_css_files"
+        },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aregister\u0028\u0029",
             "name": "register",
-            "summary": "Enqueue\u0020styles\u0020and\u0020script",
+            "summary": "Register\u0020all\u0020styles",
             "url": "classes/Brisko-Setup-Styles.html#method_register"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aelement_mod\u0028\u0029",
             "name": "element_mod",
             "summary": "Get\u0020element\u0020space\u0020padding\u0020or\u0020margin.",
             "url": "classes/Brisko-Setup-Styles.html#method_element_mod"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Ameta_display\u0028\u0029",
-            "name": "meta_display",
-            "summary": "Display",
-            "url": "classes/Brisko-Setup-Styles.html#method_meta_display"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Acustom_styles\u0028\u0029",
             "name": "custom_styles",
