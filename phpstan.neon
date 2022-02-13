@@ -3,9 +3,12 @@ includes:
     - vendor/szepeviktor/phpstan-wordpress/extension.neon
 parameters:
     tmpDir: tmp
-    level: 4
+    level: 1
     inferPrivatePropertyTypeFromConstructor: true
     treatPhpDocTypesAsCertain: false
     checkMissingIterableValueType: false
+	excludePaths:
+		- src/Customize/helpers.php
+		- tests/*
     paths:
         - src
