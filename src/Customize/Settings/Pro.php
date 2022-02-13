@@ -35,16 +35,29 @@ class Pro implements SettingsInterface
 		);
 
 		// Advanced options section.
-		$args = array(
-			'wp_customize' => $wp_customize,
-			'transport'    => self::$transport,
-			'section'      => self::section(),
-			'short_name'   => self::short_name(),
+		do_action(
+			'brisko_pro_options',
+			array(
+				'wp_customize' => $wp_customize,
+				'transport'    => self::$transport,
+				'section'      => self::section(),
+				'short_name'   => self::short_name(),
+			)
 		);
-		do_action( 'brisko_pro_options', $args );
 
 		// Install plugin.
 		if ( ! did_action( 'brisko_elements_loaded' ) ) :
+
+			( new Control() )->separator( $wp_customize, esc_html__( 'Typography Options', 'brisko' ), self::section() );
+			( new Control() )->separator( $wp_customize, esc_html__( 'Featured Posts Slider', 'brisko' ), self::section() );
+			( new Control() )->separator( $wp_customize, esc_html__( 'Font Awesome Icons', 'brisko' ), self::section() );
+			( new Control() )->separator( $wp_customize, esc_html__( 'Google Fonts', 'brisko' ), self::section() );
+			( new Control() )->separator( $wp_customize, esc_html__( 'Author Bio', 'brisko' ), self::section() );
+			( new Control() )->separator( $wp_customize, esc_html__( 'Related Content', 'brisko' ), self::section() );
+			( new Control() )->separator( $wp_customize, esc_html__( 'Footer Widgets', 'brisko' ), self::section() );
+			( new Control() )->separator( $wp_customize, esc_html__( 'Scroll to Top', 'brisko' ), self::section() );
+			( new Control() )->separator( $wp_customize, esc_html__( 'Get Support', 'brisko' ), self::section() );
+
 			( new Control() )->header_title(
 				$wp_customize,
 				esc_html__( 'Install Brisko Elements Add-On for Pro Options', 'brisko' ),

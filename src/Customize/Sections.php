@@ -24,7 +24,7 @@ final class Sections {
 	 */
 	private function __construct() {
 
-		$this->sections['pro']        = 'Pro Add-Ons';
+		$this->sections['pro']        = 'Pro Elements';
 		$this->sections['general']    = 'General';
 		$this->sections['layout']     = 'Layout';
 		$this->sections['navigation'] = 'Navigation';
