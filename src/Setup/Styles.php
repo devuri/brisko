@@ -116,19 +116,6 @@ final class Styles implements EnqueueInterface
 	}
 
 	/**
-	 * Display
-	 *
-	 * @param string $display_item the theme mod.
-	 * @param string $class the class mod.
-	 */
-	private function meta_display( $display_item, $class = 'posted-on' ) {
-		if ( get_theme_mod( $display_item, false ) ) {
-			return '.' . "{$class}{display: none;}";
-		}
-		return '';
-	}
-
-	/**
 	 * Custom Theme styles
 	 */
 	public function custom_styles() {
@@ -143,12 +130,8 @@ final class Styles implements EnqueueInterface
 		$archive_header_background = get_theme_mod( 'archive_header_background', '#ffffff' );
 		$archive_header_text_color = get_theme_mod( 'archive_header_text_color', '#000000' );
 		$archive_header_padding    = $this->element_mod( 'archive_header_padding', '0px' );
-
-		// Post Details.
-		$posted = $this->meta_display( 'display_meta_date', 'posted-on' );
-		$avatar = $this->meta_display( 'display_author_avatar', 'avatar-32' );
-		$author = $this->meta_display( 'display_author_name', 'vcard' );
-		$tags   = get_theme_mod( 'text_transform_tags', 'none' );
+		$archive_header_margin     = $this->element_mod( 'archive_header_margin', '0px' );
+		$transform_tags            = get_theme_mod( 'text_transform_tags', 'none' );
 
 		// footer.
 		$footer_links            = get_theme_mod( 'footer_links_color', '#000000' );
@@ -168,6 +151,7 @@ final class Styles implements EnqueueInterface
 		$custom_styles['archive_header_background'] = ".archive-header {background-color: {$archive_header_background};}";
 		$custom_styles['archive_header_text_color'] = ".archive-header {color: {$archive_header_text_color};}";
 		$custom_styles['archive_header_padding']    = ".archive-header {padding: {$archive_header_padding};}";
+		$custom_styles['archive_header_margin']     = ".archive-header {margin: {$archive_header_margin};}";
 		$custom_styles['nav_padding']               = ".brisko-navigation {padding: {$nav_padding}px;}";
 		$custom_styles['margin_bottom']             = ".brisko-navigation {margin-bottom: {$nav_margin_bottom}px;}";
 		$custom_styles['bttn_color']                = "{$bttns} {display: inline-block;color: #fff;background-color: {$color}; border-color: {$color};}";
@@ -176,12 +160,9 @@ final class Styles implements EnqueueInterface
 		$custom_styles['footer_padding']            = ".site-footer {padding: {$footer_padding};}";
 		$custom_styles['footer_margin']             = ".site-footer {margin: {$footer_margin};}";
 		$custom_styles['footer_text']               = ".site-footer {color: {$footer_text};}";
-		$custom_styles['tag_links']                 = ".tags-links {text-transform: {$tags};}";
-		// $custom_styles['posted']                 = "{$posted}"; // @codingStandardsIgnoreLine
-		// $custom_styles['avatar']                 = "{$avatar}"; // @codingStandardsIgnoreLine
-		// $custom_styles['author']                 = "{$author}"; // @codingStandardsIgnoreLine
-		$custom_styles['footer_background']   = ".site-footer {background-color: {$footer_background_color};}";
-		$custom_styles['footer_border_color'] = ".site-footer {border-color: {$footer_border_color};}";
+		$custom_styles['tag_links']                 = ".tags-links {text-transform: {$transform_tags};}";
+		$custom_styles['footer_background']         = ".site-footer {background-color: {$footer_background_color};}";
+		$custom_styles['footer_border_color']       = ".site-footer {border-color: {$footer_border_color};}";
 
 		if ( false === $underline_post_links ) {
 			$custom_styles['underline_body_links'] = "body a{text-decoration: none;}"; // @codingStandardsIgnoreLine

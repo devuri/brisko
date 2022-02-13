@@ -98,7 +98,7 @@ class Footer implements SettingsInterface
 			$wp_customize,
 			esc_html__( 'Advanced Footer Options', 'brisko' ),
 			self::section(),
-			esc_html__( 'Colors, Borders, Padding, Margins, Custom CSS, HTML and other Settings.', 'brisko' )
+			esc_html__( 'Colors, Borders, Padding and Custom HTML.', 'brisko' )
 		);
 
 		// Advanced options section.
