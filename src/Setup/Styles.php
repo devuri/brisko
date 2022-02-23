@@ -80,6 +80,7 @@ final class Styles implements EnqueueInterface
 			'underscores'    => Assets::uri() . '/css/underscores.min.css',
 			'bootstrap-grid' => Assets::uri() . '/css/bootstrap/bootstrap-grid.min.css',
 			'bootstrap'      => Assets::uri() . '/css/bootstrap/bootstrap.min.css',
+			'uikit'          => Assets::uri() . '/css/uikit.min.css',
 			'brisko'         => Assets::uri() . '/css/brisko.min.css',
 			'custom-styles'  => Assets::uri() . '/css/custom-styles.min.css',
 			'brisko-theme'   => get_stylesheet_uri(),
