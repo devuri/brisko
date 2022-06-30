@@ -7,7 +7,7 @@
  *
  * https://developer.wordpress.org/reference/functions/do_action/
  *
- * @deprecated since 3.0.11
+ * @deprecated since 3.2.0
  * @package brisko
  */
 

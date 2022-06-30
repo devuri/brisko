@@ -8,7 +8,10 @@ parameters:
     treatPhpDocTypesAsCertain: false
     checkMissingIterableValueType: false
 	excludePaths:
-		- src/Customize/helpers.php
 		- tests/*
+		- node_modules/*
+		- bin/*
+		- languages/*
+		- vendor/*
     paths:
         - src
