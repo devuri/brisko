@@ -71,6 +71,7 @@ class ComposerStaticInite80901de46850d3f5555f8660274fb5b
         'Brisko\\View\\CanvasPage' => __DIR__ . '/../..' . '/src/View/CanvasPage.php',
         'Brisko\\View\\Excerpt' => __DIR__ . '/../..' . '/src/View/Excerpt.php',
         'Brisko\\View\\FullWidthPage' => __DIR__ . '/../..' . '/src/View/FullWidthPage.php',
+        'Brisko\\View\\HomePage' => __DIR__ . '/../..' . '/src/View/HomePage.php',
         'Brisko\\View\\IndexPage' => __DIR__ . '/../..' . '/src/View/IndexPage.php',
         'Brisko\\View\\Page' => __DIR__ . '/../..' . '/src/View/Page.php',
         'Brisko\\View\\Page404' => __DIR__ . '/../..' . '/src/View/Page404.php',

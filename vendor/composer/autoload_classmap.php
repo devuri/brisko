@@ -51,6 +51,7 @@ return array(
     'Brisko\\View\\CanvasPage' => $baseDir . '/src/View/CanvasPage.php',
     'Brisko\\View\\Excerpt' => $baseDir . '/src/View/Excerpt.php',
     'Brisko\\View\\FullWidthPage' => $baseDir . '/src/View/FullWidthPage.php',
+    'Brisko\\View\\HomePage' => $baseDir . '/src/View/HomePage.php',
     'Brisko\\View\\IndexPage' => $baseDir . '/src/View/IndexPage.php',
     'Brisko\\View\\Page' => $baseDir . '/src/View/Page.php',
     'Brisko\\View\\Page404' => $baseDir . '/src/View/Page404.php',

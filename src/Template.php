@@ -10,6 +10,7 @@ use Brisko\View\Single;
 use Brisko\View\Page404;
 use Brisko\View\Page;
 use Brisko\View\FullWidthPage;
+use Brisko\View\HomePage;
 use Brisko\View\CanvasPage;
 use Brisko\View\Search;
 
@@ -121,6 +122,17 @@ final class Template
 		get_header( 'canvas' );
 		CanvasPage::get()->view();
 		get_footer( 'canvas' );
+	}
+
+	/**
+	 * Brisko Canvas
+	 *
+	 * @return void
+	 */
+	public function home_page() {
+		get_header();
+		HomePage::get()->view();
+		get_footer();
 	}
 
 	/**
