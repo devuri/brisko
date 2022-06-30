@@ -16,6 +16,7 @@
 	},
     "autoload": {
 		"files": [
+			"src/Customize/actions.php",
 			"src/Customize/helpers.php",
 			"src/inc/template-tags.php"
 		],
@@ -23,11 +24,21 @@
         	"Brisko\\":"src"
 		}
     },
+	"autoload-dev": {
+		"files": [
+			"src/Customize/helpers.php",
+			"src/inc/template-tags.php"
+		],
+		"psr-4": {
+			"Brisko\\":"src"
+		}
+	},
 	"require-dev": {
 		"brain/monkey": "2.*",
 		"fakerphp/faker": "^1.9.1",
 		"filp/whoops": "^2.14",
 		"johnpbloch/wordpress-core": "^5.8",
+		"php-stubs/wordpress-stubs": "^5.9",
 		"phpstan/phpstan": "^0.12.99",
 		"phpunit/phpunit": "^9.0",
 		"symfony/var-dumper": "^5.3",
