@@ -12,7 +12,7 @@
 		}
 	],
     "require": {
-        "php": ">=5.6"
+        "php": "^7.3 || ^7.4"
     },
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
@@ -24,10 +24,16 @@
 		"build": [
 			"composer lint-php",
 			"composer wpcs",
+			"composer codefix",
 			"composer no-dev"
 		],
+		"codefix": [
+		    "composer install -q",
+		    "vendor/bin/php-cs-fixer fix src",
+		    "composer install --no-dev -q"
+		],
 		"no-dev": "composer install --no-dev",
-        "wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+        "wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --colors",
         "lint-php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor ."
     },
 	"config": {
