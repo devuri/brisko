@@ -12,7 +12,7 @@ class Control {
 	 * @param string               $description .
 	 * @param string               $section .
 	 */
-	public function separator( $wp_customize, $label = 'Custom Label',  $section = null, $description = '' ) {
+	public function separator( $wp_customize, $label = 'Custom Label', $section = null, $description = '' ) {
 
 		$id = sanitize_title( $label );
 		$id = str_replace( '-', '_', $id );
@@ -27,9 +27,9 @@ class Control {
 			new SeparatorControl(
 				$wp_customize, $id,
 				array(
-					'label'   => esc_html( $label ),
+					'label'       => esc_html( $label ),
 					'description' => $description,
-					'section' => $section,
+					'section'     => $section,
 				)
 			)
 		);
