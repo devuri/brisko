@@ -20,7 +20,6 @@
 		"phpstan/phpstan-strict-rules": "^1.3",
 		"szepeviktor/phpstan-wordpress": "^1.1",
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
-		"friendsofphp/php-cs-fixer": "^3.8",
 		"php-parallel-lint/php-parallel-lint": "^1.3",
 		"wptrt/wpthemereview": "^0.2.1"
 	},
@@ -31,11 +30,6 @@
 			"composer phpstan",
 			"composer codefix",
 			"composer no-dev"
-		],
-		"codefix": [
-		    "composer install -q",
-		    "vendor/bin/php-cs-fixer fix src",
-		    "composer install --no-dev -q"
 		],
 		"phpstan": [
 		    "composer install -q",
