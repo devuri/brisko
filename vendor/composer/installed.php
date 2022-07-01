@@ -1,7 +1,7 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '3.0.11.x-dev',
-        'version' => '3.0.11.9999999-dev',
+        'pretty_version' => '3.0.12.x-dev',
+        'version' => '3.0.12.9999999-dev',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,8 +11,8 @@
     ),
     'versions' => array(
         'devuri/brisko' => array(
-            'pretty_version' => '3.0.11.x-dev',
-            'version' => '3.0.11.9999999-dev',
+            'pretty_version' => '3.0.12.x-dev',
+            'version' => '3.0.12.9999999-dev',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
