@@ -10,6 +10,7 @@ use Brisko\View\Single;
 use Brisko\View\Page404;
 use Brisko\View\Page;
 use Brisko\View\FullWidthPage;
+use Brisko\View\HomePage;
 use Brisko\View\CanvasPage;
 use Brisko\View\Search;
 
@@ -39,9 +40,7 @@ final class Template
 	 * @package brisko
 	 */
 	public function index() {
-		get_header();
-		IndexPage::get()->view();
-		get_footer();
+		static::build('index');
 	}
 
 	/**
@@ -63,9 +62,7 @@ final class Template
 	 * @package brisko
 	 */
 	public function archive() {
-		get_header();
-		Archive::get()->view();
-		get_footer();
+		static::build('archive');
 	}
 
 	/**
@@ -76,9 +73,7 @@ final class Template
 	 * @package brisko
 	 */
 	public function single() {
-		get_header();
-		Single::get()->view();
-		get_footer();
+		static::build('single');
 	}
 
 	/**
@@ -89,9 +84,7 @@ final class Template
 	 * @package brisko
 	 */
 	public function page_404() {
-		get_header();
-		Page404::get()->view();
-		get_footer();
+		static::build('404');
 	}
 
 	/**
@@ -107,9 +100,7 @@ final class Template
 	 * @package brisko
 	 */
 	public function page() {
-		get_header();
-		Page::get()->view();
-		get_footer();
+		static::build('page');
 	}
 
 	/**
@@ -118,9 +109,16 @@ final class Template
 	 * @return void
 	 */
 	public function canvas_page() {
-		get_header( 'canvas' );
-		CanvasPage::get()->view();
-		get_footer( 'canvas' );
+		static::build('canvas');
+	}
+
+	/**
+	 * Brisko Canvas
+	 *
+	 * @return void
+	 */
+	public function home_page() {
+		static::build('home');
 	}
 
 	/**
@@ -129,9 +127,7 @@ final class Template
 	 * @return void
 	 */
 	public function full_width_page() {
-		get_header();
-		FullWidthPage::get()->view();
-		get_footer();
+		static::build('full-width');
 	}
 
 	/**
@@ -142,8 +138,57 @@ final class Template
 	 * @package brisko
 	 */
 	public function search() {
+		static::build('search');
+	}
+
+	/**
+	 * Load template view from Brisko\View.
+	 *
+	 * @param  string $template template item to load.
+	 *
+	 * @return null|object Brisko\View
+	 */
+	protected static function load( string $template ){
+		$templates = array(
+			'index' => IndexPage::get(),
+			'archive' => Archive::get(),
+			'single' => Single::get(),
+			'404' => Page404::get(),
+			'page' => Page::get(),
+			'canvas' => CanvasPage::get(),
+			'home' => HomePage::get(),
+			'full-width' => FullWidthPage::get(),
+			'search' => Search::get()
+		);
+
+		return $templates[$template] ?? null;
+	}
+
+	/**
+	 * Build the page item.
+	 *
+	 * @param  string $page the page type
+	 * @return void
+	 */
+	protected static function build( string $page )
+	{
+		// template view is missing.
+		if (! static::load($page)) {
+			get_header();
+			esc_html_e('theme template view is missing', 'brisko');
+			get_footer();
+		}
+
+		// canvas page.
+		if ( 'canvas' === $page) {
+			get_header( 'canvas' );
+			static::load($page)->view();
+			get_footer( 'canvas' );
+		}
+
+		// load template.
 		get_header();
-		Search::get()->view();
+		static::load($page)->view();
 		get_footer();
 	}
 
