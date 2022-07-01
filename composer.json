@@ -14,6 +14,16 @@
     "require": {
         "php": "^7.3 || ^7.4"
     },
+	"autoload": {
+		"files": [
+			"src/Customize/helpers.php",
+			"src/inc/actions.php",
+			"src/inc/template-tags.php"
+		],
+		"psr-4": {
+			"Brisko\\":"src"
+		}
+	},
 	"require-dev": {
 		"vimeo/psalm": "^4.24",
 		"phpstan/phpstan": "^1.7",
@@ -37,6 +47,7 @@
 		],
 		"no-dev": "composer install --no-dev",
         "wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --colors",
+        "autofix-cs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf -w",
         "lint-php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor ."
     },
 	"config": {
