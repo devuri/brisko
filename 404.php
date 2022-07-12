@@ -1,8 +1,8 @@
 <?php
 
-	use Brisko\Theme;
 
-	/**
-	 * 404 pages template
-	 */
-	Theme::template()->page_404();
+use Brisko\Theme;
+
+// 404 pages template
+
+Theme::template()->page_404();

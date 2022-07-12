@@ -1,10 +1,8 @@
 <?php
 /**
- * Template part for the head section of all pages
+ * Template part for the head section of all pages.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package brisko
+ * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
 ?>

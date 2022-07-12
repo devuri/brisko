@@ -1,8 +1,6 @@
 <?php
 /**
- * Template part for displaying full width page content in page-full-width.php
- *
- * @package brisko
+ * Template part for displaying full width page content in page-full-width.php.
  */
 
 ?>
@@ -11,12 +9,12 @@
 	<div class="full-width-content">
 		<?php
 		the_content();
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
+wp_link_pages(
+	[
+		'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),
+		'after'  => '</div>',
+	]
+);
+?>
 	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

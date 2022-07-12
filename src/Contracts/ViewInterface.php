@@ -4,7 +4,6 @@ namespace Brisko\Contracts;
 
 interface ViewInterface
 {
-
 	/**
 	 * Get the instance.
 	 */

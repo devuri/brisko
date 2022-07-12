@@ -6,19 +6,18 @@ use Brisko\Layout;
 
 class Search extends Layout
 {
-
 	/**
-	 * Display content
+	 * Display content.
 	 */
-	public function view() {
-
+	public function view()
+	{
 		$this->head();
 
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) { ?>
 			<header class="page-header">
 				<h3 class="page-title archive-title entry-meta">
 					<?php
-					/* translators: %s: search query. */
+					// translators: %s: search query.
 					printf( esc_html__( 'Search: %s', 'brisko' ), '<span>' . esc_html( get_bloginfo( 'name' ) ) . '</span>' );
 					?>
 				</h3>
@@ -26,7 +25,7 @@ class Search extends Layout
 				<br>
 				<h2 class="page-title archive-title">
 					<?php
-					/* translators: %s: search query. */
+					// translators: %s: search query.
 					printf( esc_html__( 'Search Results for: %s', 'brisko' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h2>
@@ -34,23 +33,22 @@ class Search extends Layout
 			<br/>
 			<?php
 			// Start the Loop.
-			while ( have_posts() ) :
-						the_post();
-						/**
-						 * Run the loop for the search to output the results.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-search.php and that will be used instead.
-						 */
-						get_template_part( 'template-parts/content', 'search' );
-			endwhile;
+			while ( have_posts() ) {
+				the_post();
+				/*
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', 'search' );
+			}
 
 			brisko_posts_navigation();
 
-		else :
-
+		} else {
 			get_template_part( 'template-parts/content', 'none' );
-		endif;
+		}
 
-			$this->footer();
+		$this->footer();
 	}
 }

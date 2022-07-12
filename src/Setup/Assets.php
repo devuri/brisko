@@ -2,29 +2,40 @@
 
 namespace Brisko\Setup;
 
-use Brisko\Traits\Singleton;
 use Brisko\Contracts\SetupInterface;
 use Brisko\Theme;
+use Brisko\Traits\Singleton;
 
-final class Assets implements SetupInterface
+class Assets implements SetupInterface
 {
-
 	use Singleton;
 
 	/**
-	 * Singleton
-	 *
-	 * @return object
+	 *  Assets scripts.
 	 */
-	public static function init() {
-		return new Assets();
+	private function __construct()
+	{
+		Styles::init();
+		Scripts::init();
 	}
 
 	/**
-	 *  Assets scripts
+	 * Singleton.
+	 *
+	 * @return object
 	 */
-	private function __construct() {
-		Styles::init();
-		Scripts::init();
+	public static function init()
+	{
+		return new self();
+	}
+
+	/**
+	 * Theme Assets uri.
+	 *
+	 * @return object
+	 */
+	public static function uri()
+	{
+		return get_stylesheet_directory_uri() . '/assets/static';
 	}
 }

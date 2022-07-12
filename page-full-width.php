@@ -1,13 +1,9 @@
 <?php
-	/**
-	 * Template Name: Brisko Full Width
-	 *
-	 * @package brisko
-	 */
+/**
+ * Template Name: Brisko Full Width.
+ */
 
-	use Brisko\Theme;
+use Brisko\Theme;
 
-	/**
-	 * Page Brisko Full Width
-	 */
-	Theme::template()->full_width_page();
+// Page Brisko Full Width
+Theme::template()->full_width_page();
