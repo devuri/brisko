@@ -36,6 +36,6 @@ class Assets implements SetupInterface
 	 */
 	public static function uri()
 	{
-		return get_stylesheet_directory_uri() . '/assets/static';
+		return get_template_directory_uri() . '/assets/static';
 	}
 }
