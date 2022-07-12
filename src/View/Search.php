@@ -19,15 +19,15 @@ class Search extends Layout
 					<?php
 					// translators: %s: search query.
 					printf( esc_html__( 'Search: %s', 'brisko' ), '<span>' . esc_html( get_bloginfo( 'name' ) ) . '</span>' );
-			?>
+					?>
 				</h3>
 				<?php get_search_form(); ?>
 				<br>
 				<h2 class="page-title archive-title">
 					<?php
-			// translators: %s: search query.
-			printf( esc_html__( 'Search Results for: %s', 'brisko' ), '<span>' . get_search_query() . '</span>' );
-			?>
+					// translators: %s: search query.
+					printf( esc_html__( 'Search Results for: %s', 'brisko' ), '<span>' . get_search_query() . '</span>' );
+					?>
 				</h2>
 			</header><!-- .page-header -->
 			<br/>

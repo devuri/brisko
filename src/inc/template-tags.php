@@ -123,7 +123,7 @@ if ( ! \function_exists( 'wp_body_open' ) ) {
 	 * @link https://make.wordpress.org/core/2019/04/24/miscellaneous-developer-updates-in-5-2/
 	 */
 	// function wp_body_open() {
-	// 	do_action( 'wp_body_open' );
+	// do_action( 'wp_body_open' );
 	// }
 }
 

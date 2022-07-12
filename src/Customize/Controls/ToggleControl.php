@@ -76,7 +76,7 @@ class ToggleControl extends \WP_Customize_Control
 					value="<?php echo esc_attr( $this->value() ); ?>"
 					<?php
 						$this->link();
-		checked( $this->value() ); ?>
+					checked( $this->value() ); ?>
 				/>
 				<label for="cb<?php echo esc_attr( $this->instance_number ); ?>" class="tgl-btn"></label>
 			</div>

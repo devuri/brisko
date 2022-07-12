@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '697fe565c00d35b524a55b1f90b3c9a663ced107',
+        'reference' => '4e3178a80097ec6c788d9b7e9c2e48693fa13cc6',
         'name' => 'devuri/brisko',
         'dev' => true,
     ),
@@ -109,7 +109,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '697fe565c00d35b524a55b1f90b3c9a663ced107',
+            'reference' => '4e3178a80097ec6c788d9b7e9c2e48693fa13cc6',
             'dev_requirement' => false,
         ),
         'dnoegel/php-xdg-base-dir' => array(

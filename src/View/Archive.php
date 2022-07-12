@@ -41,7 +41,7 @@ class Archive extends Layout
 			<header class="page-header">
 				<?php
 				the_archive_title( '<h2 class="page-title archive-title entry-meta">', '</h2> <br/>' );
-			the_archive_description( '<div class="archive-description">', '</div>' ); ?>
+				the_archive_description( '<div class="archive-description">', '</div>' ); ?>
 			</header><!-- .page-header -->
 			<?php
 			// Start the Loop
