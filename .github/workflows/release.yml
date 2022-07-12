@@ -33,5 +33,5 @@ jobs:
     - name: Upload zip to release
       uses: AButler/upload-release-assets@v2.0
       with:
-        files: 'easy-video-publisher.zip'
+        files: 'brisko.zip'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
