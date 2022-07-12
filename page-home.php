@@ -1,13 +1,9 @@
 <?php
-	/**
-	 * Template Name: Brisko Home Page
-	 *
-	 * @package brisko
-	 */
+/**
+ * Template Name: Brisko Home Page.
+ */
 
-	use Brisko\Theme;
+use Brisko\Theme;
 
-	/**
-	 * Home Page
-	 */
-	Theme::template()->home_page();
+// Home Page
+Theme::template()->home_page();

@@ -2,84 +2,84 @@
 
 namespace Brisko\Setup;
 
-use Brisko\Traits\Singleton;
 use Brisko\Contracts\SetupInterface;
+use Brisko\Traits\Singleton;
 
 /**
  * The Compatibility class.
  *
  * Used for for Header Footer Blocks plugin.
- *
- * @package brisko
  */
-final class Compat implements SetupInterface
+class Compat implements SetupInterface
 {
-
 	use Singleton;
 
 	/**
-	 * Get Class
-	 *
-	 * @return Compat ..
+	 * [__construct description].
 	 */
-	public static function init() {
-		return new self();
-	}
-
-	/**
-	 * [__construct description]
-	 */
-	private function __construct() {
+	private function __construct()
+	{
 		$this->hfe_header();
 		$this->hfe_footer();
 	}
 
 	/**
-	 * Compatibility for Header Footer Blocks plugin
+	 * Get Class.
 	 *
-	 * @link https://wordpress.org/plugins/header-footer-elementor
+	 * @return Compat ..
 	 */
-	public function hfe_header() {
-
-		if ( function_exists( 'hfe_header_enabled' ) && hfe_header_enabled() ) {
-			add_action( 'hfe_footer', array( $this, 'template_header' ), 99 );
-		}
-
+	public static function init()
+	{
+		return new self();
 	}
 
 	/**
-	 * Compatibility for Header Footer Blocks plugin
+	 * Compatibility for Header Footer Blocks plugin.
 	 *
-	 * @link https://wordpress.org/plugins/header-footer-elementor
+	 * @see https://wordpress.org/plugins/header-footer-elementor
 	 */
-	public function hfe_footer() {
+	public function hfe_header()
+	{
+		if ( \function_exists( 'hfe_header_enabled' ) && hfe_header_enabled() ) {
+			add_action( 'hfe_footer', [ $this, 'template_header' ], 99 );
+		}
+	}
 
-		if ( function_exists( 'hfe_render_before_footer' ) && hfe_is_before_footer_enabled() ) {
+	/**
+	 * Compatibility for Header Footer Blocks plugin.
+	 *
+	 * @see https://wordpress.org/plugins/header-footer-elementor
+	 */
+	public function hfe_footer()
+	{
+		if ( \function_exists( 'hfe_render_before_footer' ) && hfe_is_before_footer_enabled() ) {
 			add_action( 'brisko_before_footer', 'hfe_render_before_footer' );
 		}
 
-		if ( function_exists( 'hfe_footer_enabled' ) && hfe_footer_enabled() ) {
-			add_action( 'hfe_footer', array( $this, 'template_footer' ), 99 );
+		if ( \function_exists( 'hfe_footer_enabled' ) && hfe_footer_enabled() ) {
+			add_action( 'hfe_footer', [ $this, 'template_footer' ], 99 );
 		}
 	}
 
 	/**
-	 * Brisko Header template
+	 * Brisko Header template.
 	 *
 	 * @return void
 	 */
-	public function template_header() {
+	public function template_header()
+	{
 		get_template_part( 'template-parts/header', 'header' );
 	}
 
 	/**
-	 * Brisko Footer template
+	 * Brisko Footer template.
 	 *
 	 * @return void
 	 */
-	public function template_footer() {
-		if ( ! get_theme_mod( 'disable_footer', false ) ) :
+	public function template_footer()
+	{
+		if ( ! get_theme_mod( 'disable_footer', false ) ) {
 			get_template_part( 'template-parts/footer', 'footer' );
-		endif;
+		}
 	}
 }

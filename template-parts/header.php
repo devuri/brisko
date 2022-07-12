@@ -1,8 +1,6 @@
 <?php
 /**
- * Template part for displaying Header
- *
- * @package brisko
+ * Template part for displaying Header.
  */
 
 ?>
@@ -16,6 +14,6 @@
 	<?php Brisko\Theme::header_image(); ?>
 </header><!-- #masthead -->
 <?php do_action( 'brisko_after_header' ); ?>
-<?php if ( is_front_page() && is_home() ) :
+<?php if ( is_front_page() && is_home() ) {
 	do_action( 'brisko_homepage_header' );
-endif; ?>
+} ?>

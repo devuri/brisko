@@ -8,20 +8,18 @@ use Brisko\Traits\Singleton;
  * The main Actions class.
  *
  * Used for Actions
- *
- * @package brisko
  */
-final class Actions
+class Actions
 {
-
 	use Singleton;
 
 	/**
-	 * List of available actions
+	 * List of available actions.
 	 *
 	 * @return array $actions
 	 */
-	public static function actions() {
+	public static function actions()
+	{
 
 		// header.
 		$actions[] = 'brisko_before_header';
@@ -63,19 +61,20 @@ final class Actions
 	}
 
 	/**
-	 * Creates a Theme action
+	 * Creates a Theme action.
 	 *
-	 * @param  string $action the name of the action.
-	 * @return void|false
+	 * @param string $action the name of the action.
+	 *
+	 * @return false|void
 	 */
-	public function action( $action = false ) {
+	public function action( $action = false )
+	{
 		if ( false === $action ) {
 			return false;
 		}
 		// check if this is valid action.
-		if ( in_array( $action, self::actions(), true ) ) {
+		if ( \in_array( $action, self::actions(), true ) ) {
 			do_action( $action );
 		}
 	}
-
 }

@@ -6,13 +6,13 @@ use Brisko\Layout;
 
 class Archive extends Layout
 {
-
 	/**
 	 * Header title section.
 	 *
 	 * @return void
 	 */
-	public function header() {
+	public function header()
+	{
 		?><div class="archive-header container-fluid">
 			<div class="archive-header-title container">
 				<h2>
@@ -27,27 +27,25 @@ class Archive extends Layout
 	}
 
 	/**
-	 * Display content
+	 * Display content.
 	 */
-	public function view() {
+	public function view()
+	{
 		$this->head();
 
 		do_action( 'brisko_post_header' );
 
-		/**
-		 * Post content
-		 */
-		if ( have_posts() ) :
+		// Post content
+		if ( have_posts() ) {
 			?>
 			<header class="page-header">
 				<?php
 				the_archive_title( '<h2 class="page-title archive-title entry-meta">', '</h2> <br/>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+			the_archive_description( '<div class="archive-description">', '</div>' ); ?>
 			</header><!-- .page-header -->
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
+			// Start the Loop
+			while ( have_posts() ) {
 				the_post();
 
 				/*
@@ -56,13 +54,12 @@ class Archive extends Layout
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', get_post_type() );
-			endwhile;
-				brisko_posts_navigation();
-		else :
+			}
+			brisko_posts_navigation();
+		} else {
 			get_template_part( 'template-parts/content', 'none' );
-		endif;
+		}
 
 		$this->footer();
 	}
-
 }

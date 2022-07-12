@@ -2,48 +2,46 @@
 
 namespace Brisko\View;
 
-use Brisko\Theme;
 use Brisko\Layout;
 
 class HomePage extends Layout
 {
-
 	/**
-	 * Display content
+	 * Display content.
 	 */
-	public function view() {
-
+	public function view()
+	{
 		$this->head();
 
 		// Add a slider.
 		do_action( 'brisko_home_page_slider' );
 
-		/**
-		 * Page content
-		 */
-		while ( have_posts() ) :
+		// Page content
+		while ( have_posts() ) {
 			the_post();
 			get_template_part( 'template-parts/content', 'page' );
-			if ( comments_open() || get_comments_number() ) :
+			if ( comments_open() || get_comments_number() ) {
 				comments_template();
-			endif;
-		endwhile;
+			}
+		}
 
 		$this->footer();
 	}
 
 	/**
-	 * Head section
+	 * Head section.
 	 */
-	public function head() {
+	public function head()
+	{
 		do_action( 'brisko_page_header' );
 		get_template_part( 'template-parts/head', 'page' );
 	}
 
 	/**
-	 * Footer section
+	 * Footer section.
 	 */
-	public function footer() {
+	public function footer()
+	{
 		?>
 			</main><!-- #main -->
 		<?php

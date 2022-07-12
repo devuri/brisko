@@ -87,7 +87,6 @@ return (new PhpCsFixer\Config())
 		'nullable_type_declaration_for_default_null_value' => true,
 		'return_type_declaration' => true,
 		//'single_line_throw' => true,
-		'void_return' => true,
 
 		// Import
 		'fully_qualified_strict_types' => true,

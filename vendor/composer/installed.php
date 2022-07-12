@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => 'dev-3.2.0-add-build',
+        'version' => 'dev-3.2.0-add-build',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b546161d4f10e09410b4e7b3e1d27a61d867c043',
+        'reference' => '697fe565c00d35b524a55b1f90b3c9a663ced107',
         'name' => 'devuri/brisko',
         'dev' => true,
     ),
@@ -104,12 +104,12 @@
             'dev_requirement' => true,
         ),
         'devuri/brisko' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'dev-3.2.0-add-build',
+            'version' => 'dev-3.2.0-add-build',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b546161d4f10e09410b4e7b3e1d27a61d867c043',
+            'reference' => '697fe565c00d35b524a55b1f90b3c9a663ced107',
             'dev_requirement' => false,
         ),
         'dnoegel/php-xdg-base-dir' => array(

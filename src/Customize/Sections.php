@@ -4,16 +4,16 @@ namespace Brisko\Customize;
 
 use Brisko\Traits\Singleton;
 
-final class Sections {
-
+class Sections
+{
 	use Singleton;
 
 	/**
-	 * $sections
+	 * $sections.
 	 *
-	 * @var array $sections
+	 * @var array
 	 */
-	private $sections = array();
+	private $sections = [];
 
 	/**
 	 * Create the customizer sections array.
@@ -22,8 +22,8 @@ final class Sections {
 	 * to create sections, The array value can be mutitple words
 	 * these will be used for section title.
 	 */
-	private function __construct() {
-
+	private function __construct()
+	{
 		$this->sections['pro']        = 'Pro Elements';
 		$this->sections['general']    = 'General';
 		$this->sections['layout']     = 'Layout';
@@ -37,23 +37,10 @@ final class Sections {
 		}
 
 		$this->sections['advanced'] = 'Advanced';
-
 	}
 
 	/**
-	 * Checks if the footer is disabled
-	 *
-	 * @return boolean
-	 */
-	protected static function is_disabled_footer() {
-		if ( get_theme_mod( 'disable_footer', false ) ) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * Lets define customizer sections
+	 * Lets define customizer sections.
 	 *
 	 * Here is where we will add new panel sections
 	 *
@@ -61,8 +48,22 @@ final class Sections {
 	 *
 	 * @return array $sections
 	 */
-	public function sections() {
+	public function sections()
+	{
 		return $this->sections;
 	}
 
+	/**
+	 * Checks if the footer is disabled.
+	 *
+	 * @return bool
+	 */
+	protected static function is_disabled_footer()
+	{
+		if ( get_theme_mod( 'disable_footer', false ) ) {
+			return true;
+		}
+
+		return false;
+	}
 }

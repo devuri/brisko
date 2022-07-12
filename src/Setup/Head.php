@@ -2,39 +2,42 @@
 
 namespace Brisko\Setup;
 
-use Brisko\Traits\Singleton;
 use Brisko\Contracts\SetupInterface;
+use Brisko\Traits\Singleton;
 
-final class Head implements SetupInterface
+class Head implements SetupInterface
 {
-
 	use Singleton;
 
 	/**
-	 * Singleton
-	 *
-	 * @return object
+	 *  Constructor.
 	 */
-	public static function init() {
-		return new Head();
+	private function __construct()
+	{
+		add_action( 'wp_head', [ $this, 'brisko_pingback_header' ] );
+		add_filter( 'body_class', [ $this, 'brisko_body_classes' ] );
+		add_action( 'after_setup_theme', [ $this, 'brisko_custom_header_setup' ] );
 	}
 
 	/**
-	 *  Constructor
+	 * Singleton.
+	 *
+	 * @return object
 	 */
-	private function __construct() {
-		add_action( 'wp_head', array( $this, 'brisko_pingback_header' ) );
-		add_filter( 'body_class', array( $this, 'brisko_body_classes' ) );
-		add_action( 'after_setup_theme', array( $this, 'brisko_custom_header_setup' ) );
+	public static function init()
+	{
+		return new self();
 	}
 
 	/**
 	 * Adds custom classes to the array of body classes.
 	 *
 	 * @param array $classes Classes for the body element.
+	 *
 	 * @return array
 	 */
-	public function brisko_body_classes( $classes ) {
+	public function brisko_body_classes( $classes )
+	{
 		// Adds a class of hfeed to non-singular pages.
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
@@ -44,13 +47,15 @@ final class Head implements SetupInterface
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			$classes[] = 'no-sidebar';
 		}
+
 		return $classes;
 	}
 
 	/**
 	 * Add a pingback url auto-discovery header for single posts, pages, or attachments.
 	 */
-	public function brisko_pingback_header() {
+	public function brisko_pingback_header()
+	{
 		if ( is_singular() && pings_open() ) {
 			printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 		}
@@ -61,21 +66,22 @@ final class Head implements SetupInterface
 	 *
 	 * @uses brisko_header_style()
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+	 * @see https://developer.wordpress.org/themes/functionality/custom-headers/
 	 */
-	public function brisko_custom_header_setup() {
+	public function brisko_custom_header_setup()
+	{
 		add_theme_support(
 			'custom-header',
 			apply_filters(
 				'brisko_custom_header_args',
-				array(
+				[
 					'default-image'      => '',
 					'default-text-color' => '000000',
 					'width'              => 1200,
 					'height'             => 250,
 					'flex-height'        => true,
-					'wp-head-callback'   => array( $this, 'brisko_header_style' ),
-				)
+					'wp-head-callback'   => [ $this, 'brisko_header_style' ],
+				]
 			)
 		);
 	}
@@ -85,7 +91,8 @@ final class Head implements SetupInterface
 	 *
 	 * @see brisko_custom_header_setup().
 	 */
-	public function brisko_header_style() {
+	public function brisko_header_style()
+	{
 		$header_text_color = get_header_textcolor();
 
 		/*
@@ -101,7 +108,7 @@ final class Head implements SetupInterface
 		<style type="text/css">
 		<?php
 		// Has the text been hidden?
-		if ( ! display_header_text() ) :
+		if ( ! display_header_text() ) {
 			?>
 			.site-title,
 			.site-description {
@@ -109,16 +116,16 @@ final class Head implements SetupInterface
 				clip: rect(1px, 1px, 1px, 1px);
 				}
 			<?php
-			// If the user has set a custom color for the text use that.
-		else :
+		// If the user has set a custom color for the text use that.
+		} else {
 			?>
 			.site-title a,
 			.site-description {
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}
-		<?php endif; ?>
+		<?php
+		} ?>
 		</style>
 		<?php
 	}
-
 }
