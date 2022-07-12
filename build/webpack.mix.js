@@ -5,6 +5,7 @@ mix.setPublicPath('build').version()
 mix.options({ manifest: false })
 
 mix.copy('vendor', 'build/brisko/vendor')
+mix.copy('template-parts', 'build/brisko/template-parts')
 mix.copy('src', 'build/brisko/src')
 mix.copy('assets', 'build/brisko/assets')
 
@@ -15,6 +16,7 @@ mix.copy([
     'footer.php',
     'footer-canvas.php',
     'functions.php',
+    'header.php',
     'header-canvas.php',
     'index.php',
     'LICENSE',

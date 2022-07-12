@@ -93,7 +93,7 @@ class SelectiveRefresh
 					'render_callback' => 'brisko_customize_partial_blogdescription',
 				)
 			);
-		}
+		}//end if
 
 	}
 }

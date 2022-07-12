@@ -27,7 +27,8 @@ class Pages implements SettingsInterface
 
 		// Display Page Header.
 		$wp_customize->add_setting(
-			'display_page_header', array(
+			'display_page_header',
+			array(
 				'default'           => absint( 0 ),
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
@@ -37,12 +38,14 @@ class Pages implements SettingsInterface
 
 		$wp_customize->add_control(
 			new ToggleControl(
-				$wp_customize, 'display_page_header',
+				$wp_customize,
+				'display_page_header',
 				array(
 					'label'       => esc_html__( 'Show Page Title', 'brisko' ),
 					'description' => esc_html__( 'display the page title for each page', 'brisko' ),
 					'section'     => self::section(),
-					'type'        => 'light', // light, ios, flat.
+					'type'        => 'light',
+				// light, ios, flat.
 				)
 			)
 		);

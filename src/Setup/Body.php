@@ -45,10 +45,12 @@ final class Body implements SetupInterface
 	 */
 	public function body_class() {
 			// Add more body classes by filter.
-			add_filter( 'body_class', function( $classes ) {
-				return array_merge( $classes, self::add_css_class() );
-			}
-		);
+			add_filter(
+				'body_class',
+				function( $classes ) {
+					return array_merge( $classes, self::add_css_class() );
+				}
+			);
 	}
 
 }

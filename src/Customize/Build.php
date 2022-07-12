@@ -49,7 +49,8 @@ final class Build {
 		foreach ( Sections::get()->sections() as $sectkey => $section ) {
 
 			// build out each section.
-			$wp_customize->add_section( 'brisko_section_' . trim( $sectkey ),
+			$wp_customize->add_section(
+				'brisko_section_' . trim( $sectkey ),
 				array(
 					'title'      => esc_html( ' » ' . trim( ucwords( $section ) ) ),
 					'capability' => 'edit_theme_options',

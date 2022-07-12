@@ -27,7 +27,8 @@ class Footer implements SettingsInterface
 
 		// Copyright section .
 		$wp_customize->add_setting(
-			'footer_copyright', array(
+			'footer_copyright',
+			array(
 				'default'           => wp_kses_post( 'Copyright © 2020 ' . get_bloginfo( 'name' ) . '.' ),
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
@@ -36,7 +37,8 @@ class Footer implements SettingsInterface
 		);
 
 		$wp_customize->add_control(
-			'footer_copyright', array(
+			'footer_copyright',
+			array(
 				'label'       => esc_html__( 'Copyright Text', 'brisko' ),
 				'description' => esc_html__( 'edit footer section', 'brisko' ),
 				'section'     => self::section(),
@@ -47,7 +49,8 @@ class Footer implements SettingsInterface
 		( new Control() )->separator( $wp_customize, esc_html__( 'Powered by', 'brisko' ), self::section() );
 		// Powered By.
 		$wp_customize->add_setting(
-			'poweredby', array(
+			'poweredby',
+			array(
 				'default'           => wp_kses_post( ' | Powered by <a href="https://wpbrisko.com">Brisko WordPress Theme</a>' ),
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
@@ -57,7 +60,8 @@ class Footer implements SettingsInterface
 
 		$wp_customize->add_control(
 			new \WP_Customize_Code_Editor_Control(
-				$wp_customize, 'poweredby',
+				$wp_customize,
+				'poweredby',
 				array(
 					'label'       => esc_html__( 'Powered By', 'brisko' ),
 					'description' => esc_html__( 'edit Powered by section, html can be used', 'brisko' ),
@@ -71,14 +75,16 @@ class Footer implements SettingsInterface
 
 		// footer_text_align.
 		$wp_customize->add_setting(
-			'footer_text_align', array(
+			'footer_text_align',
+			array(
 				'sanitize_callback' => 'sanitize_html_class',
 				'default'           => 'center',
 			)
 		);
 
 		$wp_customize->add_control(
-			'footer_text_align', array(
+			'footer_text_align',
+			array(
 				'label'       => esc_html__( 'Text Align', 'brisko' ),
 				'description' => esc_html__( 'set CSS text-align Property', 'brisko' ),
 				'section'     => self::section(),

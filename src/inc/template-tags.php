@@ -122,10 +122,11 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	 * Shim for sites older than 5.2.
 	 *
 	 * @link https://core.trac.wordpress.org/ticket/12563
+	 * @link https://make.wordpress.org/core/2019/04/24/miscellaneous-developer-updates-in-5-2/
 	 */
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
-	}
+	// function wp_body_open() {
+	// 	do_action( 'wp_body_open' );
+	// }
 endif;
 
 

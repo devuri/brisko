@@ -29,7 +29,8 @@ class General implements SettingsInterface
 		 * Link Color
 		 */
 		$wp_customize->add_setting(
-			'link_color', array(
+			'link_color',
+			array(
 				'capability'        => 'manage_options',
 				'default'           => '#000000',
 				'transport'         => self::$transport,
@@ -39,7 +40,8 @@ class General implements SettingsInterface
 
 		$wp_customize->add_control(
 			new \WP_Customize_Color_Control(
-				$wp_customize, 'link_color',
+				$wp_customize,
+				'link_color',
 				array(
 					'label'       => esc_html__( 'Link Color', 'brisko' ),
 					'description' => esc_html__( 'Select a color', 'brisko' ),
@@ -51,7 +53,8 @@ class General implements SettingsInterface
 		( new Control() )->separator( $wp_customize, esc_html__( 'Other Settings', 'brisko' ), self::section() );
 		// Underline Content Links.
 		$wp_customize->add_setting(
-			'underline_post_links', array(
+			'underline_post_links',
+			array(
 				'default'           => true,
 				'capability'        => 'edit_theme_options',
 				'transport'         => self::$transport,
@@ -61,11 +64,13 @@ class General implements SettingsInterface
 
 		$wp_customize->add_control(
 			new ToggleControl(
-				$wp_customize, 'underline_post_links',
+				$wp_customize,
+				'underline_post_links',
 				array(
 					'label'   => esc_html__( 'Underline Links', 'brisko' ),
 					'section' => self::section(),
-					'type'    => 'light', // light, ios, flat.
+					'type'    => 'light',
+				// light, ios, flat.
 				)
 			)
 		);

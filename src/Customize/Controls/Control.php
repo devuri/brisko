@@ -19,13 +19,15 @@ class Control {
 		$id = $id . '_separator_control';
 
 		$wp_customize->add_setting(
-			$id, array(
+			$id,
+			array(
 				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 		$wp_customize->add_control(
 			new SeparatorControl(
-				$wp_customize, $id,
+				$wp_customize,
+				$id,
 				array(
 					'label'       => esc_html( $label ),
 					'description' => $description,
@@ -50,13 +52,15 @@ class Control {
 		$id = $id . '_heading_control';
 
 		$wp_customize->add_setting(
-			$id, array(
+			$id,
+			array(
 				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
 		$wp_customize->add_control(
 			new HeaderControl(
-				$wp_customize, $id,
+				$wp_customize,
+				$id,
 				array(
 					'label'       => esc_html( $label ),
 					'section'     => $section,

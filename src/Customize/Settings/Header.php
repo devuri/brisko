@@ -27,14 +27,16 @@ class Header implements SettingsInterface
 		 * Header Image
 		 */
 		$wp_customize->add_setting(
-			'header_image_display', array(
+			'header_image_display',
+			array(
 				'sanitize_callback' => 'sanitize_html_class',
 				'default'           => 'this-entire-site',
 			)
 		);
 
 		$wp_customize->add_control(
-			'header_image_display', array(
+			'header_image_display',
+			array(
 				'label'       => esc_html__( 'Header Image', 'brisko' ),
 				'description' => esc_html__( 'display settings for the header image', 'brisko' ),
 				'section'     => self::section(),
@@ -49,14 +51,16 @@ class Header implements SettingsInterface
 
 		// Header Image width.
 		$wp_customize->add_setting(
-			'header_image_width', array(
+			'header_image_width',
+			array(
 				'sanitize_callback' => 'sanitize_html_class',
 				'default'           => 'container',
 			)
 		);
 
 		$wp_customize->add_control(
-			'header_image_width', array(
+			'header_image_width',
+			array(
 				'label'       => esc_html__( 'Header Image width', 'brisko' ),
 				'description' => esc_html__( 'set width for the header image', 'brisko' ),
 				'section'     => self::section(),

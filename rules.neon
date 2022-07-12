@@ -16,7 +16,6 @@ parameters:
 		illegalConstructorMethodCall: %featureToggles.bleedingEdge%
 
 rules:
-	- PHPStan\Rules\BooleansInConditions\BooleanInBooleanNotRule
 	- PHPStan\Rules\BooleansInConditions\BooleanInTernaryOperatorRule
 	- PHPStan\Rules\Classes\RequireParentConstructCallRule
 	- PHPStan\Rules\DisallowedConstructs\DisallowedBacktickRule

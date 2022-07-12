@@ -151,7 +151,7 @@ final class Theme
 	 */
 	public static function enqueue_style( $handle, $src, $ver = '', $deps = array() ) {
 		if ( empty( $ver ) ) {
-			$ver = Theme::VERSION;
+			$ver = self::VERSION;
 		}
 		wp_enqueue_style( $handle, get_stylesheet_directory_uri() . '/' . $src, $deps, $ver );
 	}

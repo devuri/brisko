@@ -1,12 +1,11 @@
 {
     "name": "brisko",
-    "description": "Easy Video Publisher",
+    "description": "Lightweight WordPress Starter Theme, based on Underscores and Bootstrap 4",
     "license": "GPL-2.0-only",
     "author": "Uriel Wilson",
     "keywords": [
         "WordPress",
-        "youtube",
-        "publisher"
+        "Themes"
     ],
     "homepage": "https://github.com/devuri/brisko",
     "repository": {
