@@ -25,11 +25,11 @@
         }
     },
     "autoload-dev": {
-		"files": [
-			"src/Customize/helpers.php",
-			"src/inc/actions.php",
-			"src/inc/template-tags.php"
-		],
+        "files": [
+            "src/Customize/helpers.php",
+            "src/inc/actions.php",
+            "src/inc/template-tags.php"
+        ],
         "psr-4": {
             "Brisko\\Tests\\": "tests/"
         }
@@ -75,17 +75,17 @@
         ],
         "phpdoc": "@php ./bin/phpdoc",
         "no-dev": "composer install --no-dev",
-		"phpstan": [
+        "phpstan": [
             "composer require --dev szepeviktor/phpstan-wordpress -q",
             "@php ./vendor/bin/phpstan analyse"
         ],
-		"psalm": "vendor/bin/psalm",
-		"psalm-secure": "vendor/bin/psalm --taint-analysis",
-		"psalm-info": "vendor/bin/psalm --show-info=true",
-		"psalm-autofix": [
-			"composer install -q",
-			"vendor/bin/psalm --alter --issues=InvalidNullableReturnType,MismatchingDocblockReturnType,InvalidReturnType,InvalidFalsableReturnType,LessSpecificReturnType,MissingParamType"
-		],
+        "psalm": "vendor/bin/psalm",
+        "psalm-secure": "vendor/bin/psalm --taint-analysis",
+        "psalm-info": "vendor/bin/psalm --show-info=true",
+        "psalm-autofix": [
+            "composer install -q",
+            "vendor/bin/psalm --alter --issues=InvalidNullableReturnType,MismatchingDocblockReturnType,InvalidReturnType,InvalidFalsableReturnType,LessSpecificReturnType,MissingParamType"
+        ],
         "setup-local-wp": "bash bin/install-wp-tests.sh wordpress_testdb root password 127.0.0.1 latest",
         "setup-github-wp": "bash bin/install-wp-tests.sh wordpress_test root root 127.0.0.1 latest",
         "lint":[
@@ -95,11 +95,11 @@
             "composer psalm",
             "composer no-dev -q"
         ],
-		"codefix":[
+        "codefix":[
             "composer php-cs-fixer",
             "composer no-dev -q"
         ],
-		"php-cs-fixer": [
+        "php-cs-fixer": [
             "composer require --dev friendsofphp/php-cs-fixer -q",
             "vendor/bin/php-cs-fixer fix",
             "composer remove --dev friendsofphp/php-cs-fixer -q",

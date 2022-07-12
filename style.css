@@ -1,16 +1,16 @@
 /*!
-Theme Name: 	Brisko
-Author: 		Uriel Wilson
-Description: 	Brisko is a beautifully simple responsive and lightweight WordPress theme that is fast and optimized for WordPress page builders, you can use it as a foundation to build versatile layouts using modern page builders like Elementor, Gutenberg etc. this theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions.
-Version: 		3.2.1
+Theme Name:     Brisko
+Author:         Uriel Wilson
+Description:    Brisko is a beautifully simple responsive and lightweight WordPress theme that is fast and optimized for WordPress page builders, you can use it as a foundation to build versatile layouts using modern page builders like Elementor, Gutenberg etc. this theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions.
+Version:        3.2.1
 Tested up to:   6.0
 Requires PHP:   5.6
-Text Domain: 	brisko
-Tags: 			custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-Author URI: 	https://urielwilson.com
-Theme URI: 		https://wpbrisko.com
-License:		GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:    brisko
+Tags:           custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Author URI:     https://urielwilson.com
+Theme URI:      https://wpbrisko.com
+License:        GNU General Public License v2 or later
+License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 
 Brisko WordPress Theme, Copyright 2020 Uriel Wilson.
 Brisko is distributed under the terms of the GNU GPL.
@@ -30,51 +30,51 @@ WordPress Customizer Toggle Control is distributed under the terms of the GNU GP
 */
 
 body a {
-	color: #000000;
-	text-decoration: none;
-	background-color: transparent;
-	line-height: 1.75;
-	-webkit-font-smoothing: antialiased;
-	transition: all .25s;
+    color: #000000;
+    text-decoration: none;
+    background-color: transparent;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    transition: all .25s;
 }
 
 body a {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .post-article a {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .comments-area a {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* body a:hover {
-	text-decoration: none;
+    text-decoration: none;
 } */
 
 .container {
-	width: 100%;
-	padding-right: 0;
-	padding-left: 0;
-	margin-right: auto;
-	margin-left: auto;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .site-main {
-	padding: 1.75rem;
+    padding: 1.75rem;
 }
 
 .post,
 .page {
-	margin: 0 0 0em;
+    margin: 0 0 0em;
 }
 
 .sticky {
-	display: block;
-	border: solid thin #d0d0d0;
-	padding: 2rem;
+    display: block;
+    border: solid thin #d0d0d0;
+    padding: 2rem;
 }
 
 h1,
@@ -83,56 +83,56 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 800;
-	line-height: inherit;
+    font-weight: 800;
+    line-height: inherit;
 }
 
 .site-main {
-	padding: 1.75rem;
+    padding: 1.75rem;
 }
 
 .wp-post-author-meta-bio {
-	font-size:small;
+    font-size:small;
 }
 
 .archive-description {
-	font-size: small;
-	margin-bottom: 3em;
+    font-size: small;
+    margin-bottom: 3em;
 }
 
 .page-header h2 .page-title, .archive-title {
-	font-weight: inherit;
-	letter-spacing: 1px;
+    font-weight: inherit;
+    letter-spacing: 1px;
 }
 
 .widget-area h2 {
-	text-align: center;
-	padding: 20px;
-	border: solid thin #efefef;
+    text-align: center;
+    padding: 20px;
+    border: solid thin #efefef;
 }
 
 .widget_recent_entries {
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,.16);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.16);
 }
 
 .sidebar {
-	margin-left: 0rem;
-	word-wrap: break-word;
+    margin-left: 0rem;
+    word-wrap: break-word;
 }
 
 .sidebar ul li {
-	border-bottom: solid thin #f0f0f0;
-	padding: 16px;
+    border-bottom: solid thin #f0f0f0;
+    padding: 16px;
 }
 
 .widget_search {
-	padding-left: 10px;
+    padding-left: 10px;
 }
 
 .tagcloud {
-	padding: 10px;
+    padding: 10px;
 }
 
 .wp-pagenavi{
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 }
