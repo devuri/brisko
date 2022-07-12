@@ -1,0 +1,38 @@
+{
+    "name": "brisko",
+    "description": "Easy Video Publisher",
+    "license": "GPL-2.0-only",
+    "author": "Uriel Wilson",
+    "keywords": [
+        "WordPress",
+        "youtube",
+        "publisher"
+    ],
+    "homepage": "https://github.com/devuri/brisko",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/devuri/brisko.git"
+    },
+    "bugs": {
+        "url": "https://github.com/devuri/brisko/issues"
+    },
+    "devDependencies": {
+        "dir-archiver": "^1.1.1",
+        "laravel-mix": "^6.0.43"
+    },
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "hot": "mix watch --hot",
+        "prod": "mix --production",
+        "production": "mix --production",
+        "bundle": "dir-archiver --src . --dest ./brisko.zip --exclude .git .wordpress-org .github .phpdoc build node_modules asset/src tests tmp report docs bin .vscode .idea .gitattributes .phpcs.xml.dist .php-cs-fixer.php stubs.php .gitignore README.md CHANGELOG.md composer.json composer.lock package.json package-lock.json .travis.yml phpcs.xml ISSUE_TEMPLATE.md CODE_OF_CONDUCT.md phpunit.xml .phpunit.result.cache phpdoc.xml psalm.xml rules.neon phpstan.neon webpack.mix.js",
+        "prebuild": "npm rm -rf build/brisko",
+        "build": "mix --mix-config=build/webpack.mix.js --production",
+        "postbuild": "npm run bundle --silent"
+    },
+    "dependencies": {
+        "jquery": "^3.6.0"
+    }
+}
