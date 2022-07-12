@@ -5,12 +5,12 @@ namespace Brisko\Customize\Controls;
 use Brisko\Setup\Assets;
 
 /**
- * ToggleControl
+ * ToggleControl.
  *
- * @link https://github.com/soderlind/class-customizer-toggle-control
+ * @see https://github.com/soderlind/class-customizer-toggle-control
  */
-class ToggleControl extends \WP_Customize_Control {
-
+class ToggleControl extends \WP_Customize_Control
+{
 	/**
 	 * Button Type.
 	 *
@@ -23,10 +23,10 @@ class ToggleControl extends \WP_Customize_Control {
 	/**
 	 * Enqueue scripts/styles.
 	 */
-	public function enqueue() {
-
-		wp_enqueue_script( 'customizer-toggle-control', Assets::uri() . '/js/customizer/toggle-button-control.js', array( 'jquery' ), time(), true );
-		wp_enqueue_style( 'css-toggle-buttons', Assets::uri() . '/css/customizer/toggle-buttons.css', array(), time() );
+	public function enqueue()
+	{
+		wp_enqueue_script( 'customizer-toggle-control', Assets::uri() . '/js/customizer/toggle-button-control.js', [ 'jquery' ], time(), true );
+		wp_enqueue_style( 'css-toggle-buttons', Assets::uri() . '/css/customizer/toggle-buttons.css', [], time() );
 
 		$css = '
 			.disabled-control-title {
@@ -58,9 +58,11 @@ class ToggleControl extends \WP_Customize_Control {
 	 * Render the control's content.
 	 *
 	 * @author soderlind
+	 *
 	 * @version 1.2.0
 	 */
-	public function render_content() {
+	public function render_content()
+	{
 		?>
 		<label class="customize-toogle-label">
 			<div
@@ -74,18 +76,16 @@ class ToggleControl extends \WP_Customize_Control {
 					value="<?php echo esc_attr( $this->value() ); ?>"
 					<?php
 						$this->link();
-						checked( $this->value() );
-					?>
+					checked( $this->value() ); ?>
 				/>
 				<label for="cb<?php echo esc_attr( $this->instance_number ); ?>" class="tgl-btn"></label>
 			</div>
-			<?php if ( ! empty( $this->description ) ) : ?>
+			<?php if ( ! empty( $this->description ) ) { ?>
 			<span class="description customize-control-description" style="padding-left: 8px;">
 				<?php echo wp_kses_post( $this->description ); ?>
 			</span>
-			<?php endif; ?>
+			<?php } ?>
 		</label>
 		<?php
 	}
-
 }

@@ -1,13 +1,9 @@
 <?php
-	/**
-	 * Template Name: Brisko Canvas
-	 *
-	 * @package brisko
-	 */
+/**
+ * Template Name: Brisko Canvas.
+ */
 
-	use Brisko\Theme;
+use Brisko\Theme;
 
-	/**
-	 * Page Brisko Full Width
-	 */
-	Theme::template()->canvas_page();
+// Page Brisko Full Width
+Theme::template()->canvas_page();

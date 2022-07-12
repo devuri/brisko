@@ -6,21 +6,20 @@ use Brisko\Traits\Singleton;
 
 /**
  * The Brisko class.
- *
- * @package brisko
  */
-final class Brisko
+class Brisko
 {
-
 	use Singleton;
 
 	/**
-	 * Theme Actions
+	 * Theme Actions.
 	 *
-	 * @param  string $action the name of the action.
+	 * @param string $action the name of the action.
+	 *
 	 * @return Actions .
 	 */
-	public function action( $action = null ) {
+	public function action( $action = null )
+	{
 		return Actions::get()->action( $action );
 	}
 
@@ -31,13 +30,13 @@ final class Brisko
 	 *
 	 * Includes "get_post()" Retrieves post object.
 	 *
-	 * @link https://developer.wordpress.org/reference/functions/get_post/
-	 * @link https://gist.github.com/devuri/b0a86f75a86abfcdd7d41ed05e99de73
+	 * @see https://developer.wordpress.org/reference/functions/get_post/
+	 * @see https://gist.github.com/devuri/b0a86f75a86abfcdd7d41ed05e99de73
 	 *
 	 * @return void.
 	 */
-	public static function related_content() {
+	public static function related_content()
+	{
 		do_action( 'brisko_related_content', get_post() );
 	}
-
 }

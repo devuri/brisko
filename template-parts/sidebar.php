@@ -1,10 +1,8 @@
 <?php
 /**
- * Template part for the sidebar
+ * Template part for the sidebar.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package brisko
+ * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
 ?>

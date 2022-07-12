@@ -5,11 +5,11 @@
         xmlns="https://www.phpdoc.org"
         xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd"
 >
-<title>Brisko - WordPress theme</title>
+<title>Brisko</title>
 	<paths>
 		<output>docs</output>
 	</paths>
-    <version number="3.0.12">
+    <version number="3.2.1">
         <api>
             <source dsn=".">
                 <path>src</path>

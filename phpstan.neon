@@ -1,14 +1,19 @@
 includes:
     - vendor/phpstan/phpstan/conf/bleedingEdge.neon
     - vendor/szepeviktor/phpstan-wordpress/extension.neon
+    - rules.neon
 parameters:
     tmpDir: tmp
-    level: 1
+    level: 4
     inferPrivatePropertyTypeFromConstructor: true
     treatPhpDocTypesAsCertain: false
     checkMissingIterableValueType: false
-	excludePaths:
-		- src/Customize/helpers.php
-		- tests/*
+    excludePaths:
+        - tmp/*
+        - node_modules/*
+        - bin/*
+        - languages/*
+        - vendor/*
     paths:
         - src
+        - tests

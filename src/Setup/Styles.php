@@ -2,41 +2,43 @@
 
 namespace Brisko\Setup;
 
-use Brisko\Traits\Singleton;
 use Brisko\Contracts\EnqueueInterface;
 use Brisko\Theme;
+use Brisko\Traits\Singleton;
 
-final class Styles implements EnqueueInterface
+class Styles implements EnqueueInterface
 {
-
 	use Singleton;
 
 	/**
-	 * Singleton
-	 *
-	 * @return object
+	 *  Assets scripts.
 	 */
-	public static function init() {
-		return new self();
+	private function __construct()
+	{
+
+		// register.
+		add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
+
+		// enqueue.
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
 	}
 
 	/**
-	 *  Assets scripts
+	 * Singleton.
+	 *
+	 * @return object
 	 */
-	private function __construct() {
-
-		// register.
-		add_action( 'wp_enqueue_scripts', array( $this, 'register' ) );
-
-		// enqueue.
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'custom_css' ) );
+	public static function init()
+	{
+		return new self();
 	}
 
 	/**
 	 * Enqueue scripts.
 	 */
-	public function enqueue() {
+	public function enqueue()
+	{
 
 		// underscores.
 		if ( true === get_theme_mod( 'enable_underscores', true ) ) {
@@ -75,39 +77,41 @@ final class Styles implements EnqueueInterface
 	 *
 	 * @return array .
 	 */
-	public static function css_files() {
-		return array(
+	public static function css_files()
+	{
+		return [
 			'underscores'    => Assets::uri() . '/css/underscores.min.css',
 			'bootstrap-grid' => Assets::uri() . '/css/bootstrap/bootstrap-grid.min.css',
 			'bootstrap'      => Assets::uri() . '/css/bootstrap/bootstrap.min.css',
+			'uikit'          => Assets::uri() . '/css/uikit.min.css',
 			'brisko'         => Assets::uri() . '/css/brisko.min.css',
 			'custom-styles'  => Assets::uri() . '/css/custom-styles.min.css',
 			'brisko-theme'   => get_stylesheet_uri(),
-		);
+		];
 	}
 
 	/**
-	 * Register all styles
+	 * Register all styles.
 	 *
 	 * @return void
 	 */
-	public function register() {
-
+	public function register()
+	{
 		foreach ( self::css_files() as $handle => $file ) {
-			wp_register_style( $handle, $file, array(), md5_file( $file ) );
+			wp_register_style( $handle, $file, [], md5_file( $file ) );
 		}
-
 	}
 
 	/**
 	 * Get element space padding or margin.
 	 *
 	 * @param string $theme_mod .
-	 * @param string $default .
+	 * @param string $default   .
+	 *
 	 * @return string .
 	 */
-	public function element_mod( $theme_mod = 'footer_padding', $default = '16px' ) {
-
+	public function element_mod( $theme_mod = 'footer_padding', $default = '16px' )
+	{
 		if ( get_theme_mod( $theme_mod ) ) {
 			return implode( 'px ', get_theme_mod( $theme_mod ) ) . 'px';
 		}
@@ -116,9 +120,10 @@ final class Styles implements EnqueueInterface
 	}
 
 	/**
-	 * Custom Theme styles
+	 * Custom Theme styles.
 	 */
-	public function custom_styles() {
+	public function custom_styles()
+	{
 
 		// Get the theme setting.
 		$bttns                     = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
@@ -143,7 +148,7 @@ final class Styles implements EnqueueInterface
 		$footer_border_color     = get_theme_mod( 'footer_border_color', '#e2e8f0' );
 
 		// CSS array .
-		$custom_styles                              = array();
+		$custom_styles                              = [];
 		$custom_styles['links']                     = "body a{color: {$color};}body a:hover{color: {$color};}";
 		$custom_styles['link_hover']                = "a:focus, a:hover {color: {$color};}";
 		$custom_styles['nav_links']                 = "nav.main-navigation a:hover {color: {$color};background-color: #F8F9FA;}";
@@ -174,29 +179,11 @@ final class Styles implements EnqueueInterface
 	}
 
 	/**
-	 * CSS Minifier Compressor.
-	 *
-	 * @return string minified css output.
+	 * Custom Theme styles.
 	 */
-	private function minified_css() {
-
-		if ( ! is_array( $this->custom_styles() ) ) {
-			return false;
-		}
-
-		$css_styles = $this->custom_styles();
-		$css_styles = implode( "\n", $css_styles );
-
-		return $this->sanitize_css( $css_styles );
-	}
-
-	/**
-	 * Custom Theme styles
-	 */
-	public function custom_css() {
-
+	public function custom_css()
+	{
 		wp_add_inline_style( 'custom-styles', $this->minified_css() );
-
 	}
 
 	/**
@@ -209,13 +196,33 @@ final class Styles implements EnqueueInterface
 	 * https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyles.php
 	 *
 	 * @param string $css the to be sanitized CSS.
+	 *
 	 * @return string sanitized CSS.
 	 */
-	public function sanitize_css( $css ) {
+	public function sanitize_css( $css )
+	{
 		$css = wp_strip_all_tags( $css );
-		if ( strpos( $css, '<' ) !== false ) {
+		if ( false !== strpos( $css, '<' ) ) {
 			$css = preg_replace( '#<(\/?\w+)#', '\00003C$1', $css );
 		}
+
 		return $css;
+	}
+
+	/**
+	 * CSS Minifier Compressor.
+	 *
+	 * @return string minified css output.
+	 */
+	private function minified_css()
+	{
+		if ( ! \is_array( $this->custom_styles() ) ) {
+			return false;
+		}
+
+		$css_styles = $this->custom_styles();
+		$css_styles = implode( "\n", $css_styles );
+
+		return $this->sanitize_css( $css_styles );
 	}
 }

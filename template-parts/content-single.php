@@ -1,10 +1,8 @@
 <?php
 /**
- * Template part for displaying single posts
+ * Template part for displaying single posts.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package brisko
+ * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
 ?>
@@ -13,12 +11,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		if ( is_singular() ) :
+		if ( is_singular() ) {
 			the_title( '<h2 class="post-title">', '</h2>' );
-		else :
+		} else {
 			the_title( sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-		endif;
-		?>
+		}
+?>
 		<?php do_action( 'brisko_before_entry_meta' ); ?>
 			<div class="entry-meta ">
 			<?php brisko_posted_on(); ?>
@@ -28,21 +26,21 @@
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'brisko' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-		?>
+the_content(
+	sprintf(
+		wp_kses(
+			// translators: %s: Name of current post. Only visible to screen readers
+			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'brisko' ),
+			[
+				'span' => [
+					'class' => [],
+				],
+			]
+		),
+		wp_kses_post( get_the_title() )
+	)
+);
+?>
 	</div><!-- .entry-content -->
 	<footer class="entry-footer ">
 		<?php brisko_entry_footer(); ?>

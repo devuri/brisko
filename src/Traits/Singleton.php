@@ -22,28 +22,29 @@
  *
  * If you specifically need multiple objects, then use a normal class.
  *
- * @package brisko
- * @link https://github.com/rtCamp/blank-theme/tree/master/inc/traits
+ * @see https://github.com/rtCamp/blank-theme/tree/master/inc/traits
  */
 
 namespace Brisko\Traits;
 
-trait Singleton {
-
+trait Singleton
+{
 	/**
-	 * Protected class constructor to prevent direct object creation
+	 * Protected class constructor to prevent direct object creation.
 	 *
 	 * This is meant to be overridden in the classes which implement
 	 * this trait. This is ideal for doing stuff that you only want to
 	 * do once, such as hooking into actions and filters, etc.
 	 */
-	protected function __construct() {
+	protected function __construct()
+	{
 	}
 
 	/**
-	 * Prevent object cloning
+	 * Prevent object cloning.
 	 */
-	final protected function __clone() {
+	final protected function __clone()
+	{
 	}
 
 	/**
@@ -53,14 +54,15 @@ trait Singleton {
 	 *
 	 * @return object Singleton instance of the class.
 	 */
-	final public static function get() {
+	final public static function get()
+	{
 
 		/**
 		 * Collection of instance.
 		 *
 		 * @var array
 		 */
-		static $instance = array();
+		static $instance = [];
 
 		/**
 		 * If this trait is implemented in a class which has multiple
@@ -70,16 +72,12 @@ trait Singleton {
 		 * a key=>value pair for each `classname => instance` in self::$_instance
 		 * for each sub-class.
 		 */
-		$called_class = get_called_class();
+		$called_class = static::class;
 
 		if ( ! isset( $instance[ $called_class ] ) ) {
-
 			$instance[ $called_class ] = new $called_class();
-
 		}
 
 		return $instance[ $called_class ];
-
 	}
-
 }

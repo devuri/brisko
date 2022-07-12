@@ -1,56 +1,115 @@
 {
-	"name": "devuri/brisko",
-	"description": "Lightweight WordPress Starter Theme, based on Underscores and Bootstrap 4",
-	"keywords": ["WordPress","Themes"],
-	"license": "GPL-2.0-only",
-	"authors": [
-		{
-			"name": "Uriel Wilson",
-			"email": "hello@urielwilson.com",
-			"homepage": "https://urielwilson.com",
-			"role": "Developer"
-		}
-	],
-	"require": {
-		"php": ">=5.6"
-	},
+    "name": "devuri/brisko",
+    "description": "Lightweight WordPress Starter Theme, based on Underscores and Bootstrap 4",
+    "keywords": ["WordPress","Themes"],
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "Uriel Wilson",
+            "email": "hello@urielwilson.com",
+            "homepage": "https://urielwilson.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
     "autoload": {
+        "files": [
+            "src/Customize/helpers.php",
+            "src/inc/actions.php",
+            "src/inc/template-tags.php"
+        ],
+        "psr-4": {
+            "Brisko\\":"src"
+        }
+    },
+    "autoload-dev": {
 		"files": [
 			"src/Customize/helpers.php",
+			"src/inc/actions.php",
 			"src/inc/template-tags.php"
 		],
-    	"psr-4": {
-        	"Brisko\\":"src"
-		}
+        "psr-4": {
+            "Brisko\\Tests\\": "tests/"
+        }
     },
-	"require-dev": {
-		"brain/monkey": "2.*",
-		"fakerphp/faker": "^1.9.1",
-		"filp/whoops": "^2.14",
-		"johnpbloch/wordpress-core": "^5.8",
-		"phpstan/phpstan": "^0.12.99",
-		"phpunit/phpunit": "^9.0",
-		"symfony/var-dumper": "^5.3",
-		"szepeviktor/phpstan-wordpress": "^0.7.7"
-	},
-	"scripts": {
-		"build": [
-			"composer phpdoc",
-			"composer phpstan",
-			"composer no-dev"
-		],
-		"phpdoc": "php ./bin/phpdoc.phar",
-		"no-dev": "composer install --no-dev",
+    "require-dev": {
+        "brain/monkey": "^2.6",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+        "php-parallel-lint/php-parallel-lint": "^1.3",
+        "php-stubs/wordpress-stubs": "^6.0",
+        "phpstan/phpstan": "^1.8",
+        "phpstan/phpstan-strict-rules": "^1.3",
+        "szepeviktor/phpstan-wordpress": "^1.1",
+        "vimeo/psalm": "^4.24",
+        "wptrt/wpthemereview": "^0.2.1",
+        "yoast/phpunit-polyfills": "^1.0"
+    },
+    "scripts": {
+        "wpcs-lint":[
+            "composer install -q",
+            "phpcs -ns src",
+            "phpcs -ns template-parts"
+        ],
+        "wpcs-lint-all":[
+            "composer install -q",
+            "phpcs -s src",
+            "phpcs -ns template-parts"
+        ],
+        "wpcs-fix":[
+            "composer install -q",
+            "phpcbf src",
+            "phpcbf template-parts"
+        ],
+        "build": [
+            "composer install -q",
+            "composer wpcs-lint",
+            "composer lint",
+            "composer install -q",
+            "composer lint",
+            "composer phpdoc -q",
+            "composer no-dev -q",
+            "npm install",
+            "npm run build"
+        ],
+        "phpdoc": "@php ./bin/phpdoc",
+        "no-dev": "composer install --no-dev",
 		"phpstan": [
-		    "composer install",
-		    "@php ./vendor/bin/phpstan analyse"
+            "composer require --dev szepeviktor/phpstan-wordpress -q",
+            "@php ./vendor/bin/phpstan analyse"
+        ],
+		"psalm": "vendor/bin/psalm",
+		"psalm-secure": "vendor/bin/psalm --taint-analysis",
+		"psalm-info": "vendor/bin/psalm --show-info=true",
+		"psalm-autofix": [
+			"composer install -q",
+			"vendor/bin/psalm --alter --issues=InvalidNullableReturnType,MismatchingDocblockReturnType,InvalidReturnType,InvalidFalsableReturnType,LessSpecificReturnType,MissingParamType"
 		],
-		"code-check": [
-		    "composer install",
-			"vendor/bin/phpstan analyse > phpstan-result-brisko.txt"
-		]
-	},
-	"config": {
+        "setup-local-wp": "bash bin/install-wp-tests.sh wordpress_testdb root password 127.0.0.1 latest",
+        "setup-github-wp": "bash bin/install-wp-tests.sh wordpress_test root root 127.0.0.1 latest",
+        "lint":[
+            "composer install -q",
+            "composer phpstan",
+            "composer psalm-secure",
+            "composer psalm",
+            "composer no-dev -q"
+        ],
+		"codefix":[
+            "composer php-cs-fixer",
+            "composer no-dev -q"
+        ],
+		"php-cs-fixer": [
+            "composer require --dev friendsofphp/php-cs-fixer -q",
+            "vendor/bin/php-cs-fixer fix",
+            "composer remove --dev friendsofphp/php-cs-fixer -q",
+            "composer install --no-dev -q"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true

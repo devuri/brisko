@@ -2,53 +2,57 @@
 
 namespace Brisko\Setup;
 
-use Brisko\Traits\Singleton;
 use Brisko\Contracts\SetupInterface;
+use Brisko\Traits\Singleton;
 
-final class Body implements SetupInterface
+class Body implements SetupInterface
 {
-
 	use Singleton;
 
 	/**
-	 * Get Class
-	 *
-	 * @return Body ..
+	 * [__construct description].
 	 */
-	public static function init() {
-		return new Body();
-	}
-
-	/**
-	 * [__construct description]
-	 */
-	private function __construct() {
+	private function __construct()
+	{
 		$this->body_class();
 	}
 
 	/**
-	 * Lets define css classes
+	 * Get Class.
 	 *
-	 * Here is where we will add new css classes to the body_class
-	 *
-	 * @return array $class
+	 * @return Body ..
 	 */
-	private function add_css_class() {
-
-		$class[] = 'brisko-font';
-		$class[] = 'brisko-font-style';
-		return $class;
+	public static function init()
+	{
+		return new self();
 	}
 
 	/**
-	 * Add Body Classes
+	 * Add Body Classes.
 	 */
-	public function body_class() {
-			// Add more body classes by filter.
-			add_filter( 'body_class', function( $classes ) {
+	public function body_class()
+	{
+		// Add more body classes by filter.
+		add_filter(
+			'body_class',
+			function( $classes ) {
 				return array_merge( $classes, self::add_css_class() );
 			}
 		);
 	}
 
+	/**
+	 * Lets define css classes.
+	 *
+	 * Here is where we will add new css classes to the body_class
+	 *
+	 * @return array $class
+	 */
+	private function add_css_class()
+	{
+		$class[] = 'brisko-font';
+		$class[] = 'brisko-font-style';
+
+		return $class;
+	}
 }

@@ -2,38 +2,37 @@
 
 namespace Brisko\Setup;
 
-use Brisko\Traits\Singleton;
 use Brisko\Contracts\SetupInterface;
+use Brisko\Traits\Singleton;
 
 /**
  * The main Jetpack class.
  *
  * Used for Jetpack compatibility
  * this will load the Jetpack compatibility file.
- *
- * @package brisko
  */
-final class Jetpack implements SetupInterface
+class Jetpack implements SetupInterface
 {
-
 	use Singleton;
 
 	/**
-	 * Singleton
-	 *
-	 * @return object
+	 *  Constructor.
 	 */
-	public static function init() {
-		return new Jetpack();
+	private function __construct()
+	{
+		if ( \defined( '\JETPACK__VERSION' ) ) {
+			add_action( 'after_setup_theme', [ $this, 'jetpack_setup' ] );
+		}
 	}
 
 	/**
-	 *  Constructor
+	 * Singleton.
+	 *
+	 * @return object
 	 */
-	private function __construct() {
-		if ( defined( '\JETPACK__VERSION' ) ) {
-			add_action( 'after_setup_theme', array( $this, 'jetpack_setup' ) );
-		}
+	public static function init()
+	{
+		return new self();
 	}
 
 	/**
@@ -43,15 +42,16 @@ final class Jetpack implements SetupInterface
 	 * See: https://jetpack.com/support/responsive-videos/
 	 * See: https://jetpack.com/support/content-options/
 	 */
-	public function jetpack_setup() {
+	public function jetpack_setup()
+	{
 		// Add theme support for Infinite Scroll.
 		add_theme_support(
 			'infinite-scroll',
-			array(
+			[
 				'container' => 'primary',
-				'render'    => array( $this, 'infinite_scroll_render' ),
+				'render'    => [ $this, 'infinite_scroll_render' ],
 				'footer'    => 'page',
-			)
+			]
 		);
 
 		// Add theme support for Responsive Videos.
@@ -60,36 +60,36 @@ final class Jetpack implements SetupInterface
 		// Add theme support for Content Options.
 		add_theme_support(
 			'jetpack-content-options',
-			array(
-				'post-details'    => array(
+			[
+				'post-details'    => [
 					'stylesheet' => 'brisko-style',
 					'date'       => '.posted-on',
 					'categories' => '.cat-links',
 					'tags'       => '.tags-links',
 					'author'     => '.byline',
 					'comment'    => '.comments-link',
-				),
-				'featured-images' => array(
+				],
+				'featured-images' => [
 					'archive' => true,
 					'post'    => true,
 					'page'    => true,
-				),
-			)
+				],
+			]
 		);
 	}
 
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	public function infinite_scroll_render() {
+	public function infinite_scroll_render()
+	{
 		while ( have_posts() ) {
 			the_post();
-			if ( is_search() ) :
+			if ( is_search() ) {
 				get_template_part( 'template-parts/content', 'search' );
-			else :
+			} else {
 				get_template_part( 'template-parts/content', get_post_type() );
-			endif;
+			}
 		}
 	}
-
 }

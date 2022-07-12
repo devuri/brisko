@@ -2,36 +2,37 @@
 
 namespace Brisko\Setup;
 
-use Brisko\Traits\Singleton;
 use Brisko\Contracts\SetupInterface;
+use Brisko\Traits\Singleton;
 
-final class Activate implements SetupInterface
+class Activate implements SetupInterface
 {
-
 	use Singleton;
 
 	/**
-	 * Singleton
-	 *
-	 * @return object
+	 * Theme Setup.
 	 */
-	public static function init() {
-		return new Activate();
+	private function __construct()
+	{
+		add_action( 'brisko_blog_title', [ $this, 'blog_title' ] );
+		add_action( 'brisko_blog_subtitle', [ $this, 'blog_subtitle' ] );
+		add_action( 'after_setup_theme', [ $this, 'brisko_setup' ] );
+		add_action( 'after_setup_theme', [ $this, 'brisko_content_width' ], 0 );
+		add_action( 'widgets_init', [ $this, 'brisko_widgets_init' ] );
+
+		// The Excerp.
+		add_filter( 'excerpt_length', [ $this, 'set_excerpt_length' ], 99 );
+		add_filter( 'excerpt_more', [ $this, 'set_excerpt_more' ], 99 );
 	}
 
 	/**
-	 * Theme Setup
+	 * Singleton.
+	 *
+	 * @return object
 	 */
-	private function __construct() {
-		add_action( 'brisko_blog_title', array( $this, 'blog_title' ) );
-		add_action( 'brisko_blog_subtitle', array( $this, 'blog_subtitle' ) );
-		add_action( 'after_setup_theme', array( $this, 'brisko_setup' ) );
-		add_action( 'after_setup_theme', array( $this, 'brisko_content_width' ), 0 );
-		add_action( 'widgets_init', array( $this, 'brisko_widgets_init' ) );
-
-		// The Excerp.
-		add_filter( 'excerpt_length', array( $this, 'set_excerpt_length' ), 99 );
-		add_filter( 'excerpt_more', array( $this, 'set_excerpt_more' ), 99 );
+	public static function init()
+	{
+		return new self();
 	}
 
 	/**
@@ -39,8 +40,8 @@ final class Activate implements SetupInterface
 	 *
 	 * @return void.
 	 */
-	public static function blog_title() {
-
+	public static function blog_title()
+	{
 		if ( get_theme_mod( 'hide_blog_title', true ) ) {
 			return;
 		}
@@ -53,8 +54,8 @@ final class Activate implements SetupInterface
 	 *
 	 * @return void.
 	 */
-	public static function blog_subtitle() {
-
+	public static function blog_subtitle()
+	{
 		if ( get_theme_mod( 'hide_blog_subtitle', true ) ) {
 			return;
 		}
@@ -67,7 +68,8 @@ final class Activate implements SetupInterface
 	 *
 	 * @param int $length .
 	 */
-	public function set_excerpt_length( $length ) { // @codingStandardsIgnoreLine
+	public function set_excerpt_length( $length )
+	{ // @codingStandardsIgnoreLine
 		return get_theme_mod( 'set_excerpt_length', 30 );
 	}
 
@@ -76,10 +78,12 @@ final class Activate implements SetupInterface
 	 *
 	 * @param int $more .
 	 */
-	public function set_excerpt_more( $more ) { // @codingStandardsIgnoreLine
+	public function set_excerpt_more( $more )
+	{ // @codingStandardsIgnoreLine
 		if ( is_admin() ) {
 			return $more;
 		}
+
 		return get_theme_mod( 'set_excerpt_more', '[…]' );
 	}
 
@@ -90,10 +94,9 @@ final class Activate implements SetupInterface
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	public function brisko_setup() {
-		/*
-		 * Make theme available for translation.
-		 */
+	public function brisko_setup()
+	{
+		// Make theme available for translation.
 		load_theme_textdomain( 'brisko' );
 
 		// Support for responsive embedded content.
@@ -122,9 +125,9 @@ final class Activate implements SetupInterface
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
-			array(
+			[
 				'menu-1' => esc_html__( 'Primary', 'brisko' ),
-			)
+			]
 		);
 
 		/*
@@ -133,7 +136,7 @@ final class Activate implements SetupInterface
 		 */
 		add_theme_support(
 			'html5',
-			array(
+			[
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -141,15 +144,13 @@ final class Activate implements SetupInterface
 				'caption',
 				'style',
 				'script',
-			)
+			]
 		);
 
-		/**
-		 * Add post-formats support.
-		 */
+		// Add post-formats support.
 		add_theme_support(
 			'post-formats',
-			array(
+			[
 				'link',
 				'aside',
 				'gallery',
@@ -159,7 +160,7 @@ final class Activate implements SetupInterface
 				'video',
 				'audio',
 				'chat',
-			)
+			]
 		);
 
 		// Set up the WordPress core custom background feature.
@@ -167,29 +168,29 @@ final class Activate implements SetupInterface
 			'custom-background',
 			apply_filters(
 				'brisko_custom_background_args',
-				array(
+				[
 					'default-color' => '#f3f3f3',
 					'default-image' => '',
-				)
+				]
 			)
 		);
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
+		/*
 		 * Add support for core custom logo.
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support(
 			'custom-logo',
-			array(
+			[
 				'height'      => 250,
 				'width'       => 250,
 				'flex-width'  => true,
 				'flex-height' => true,
-			)
+			]
 		);
 	}
 
@@ -201,7 +202,8 @@ final class Activate implements SetupInterface
 	 *
 	 * @global int $content_width
 	 */
-	public function brisko_content_width() {
+	public function brisko_content_width()
+	{
 		// This variable is intended to be overruled from themes.
 		// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
@@ -211,11 +213,12 @@ final class Activate implements SetupInterface
 	/**
 	 * Register widget area.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+	 * @see https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
 	 */
-	public function brisko_widgets_init() {
+	public function brisko_widgets_init()
+	{
 		register_sidebar(
-			array(
+			[
 				'name'          => esc_html__( 'Sidebar', 'brisko' ),
 				'id'            => 'sidebar-1',
 				'description'   => esc_html__( 'Add widgets here.', 'brisko' ),
@@ -223,8 +226,7 @@ final class Activate implements SetupInterface
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
-			)
+			]
 		);
 	}
-
 }

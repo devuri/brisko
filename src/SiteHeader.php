@@ -10,18 +10,16 @@ use Brisko\View\Archive;
  *
  * Used for the <header> section
  * <header id="masthead" class="site-header">
- *
- * @package brisko
  */
-final class SiteHeader
+class SiteHeader
 {
-
 	use Singleton;
 
 	/**
-	 * Site Header
+	 * Site Header.
 	 */
-	public function site_header() {
+	public function site_header()
+	{
 
 		// elementor header.
 		Element::get()->location( 'header' );
@@ -30,10 +28,10 @@ final class SiteHeader
 	}
 
 	/**
-	 * Header Image
+	 * Header Image.
 	 */
-	public function header_image() {
-
+	public function header_image()
+	{
 		if ( 'this-disabled' === Options::get()->header_image_display() ) {
 			return false;
 		}
@@ -42,32 +40,29 @@ final class SiteHeader
 			if ( false === is_front_page() ) {
 				return false;
 			}
-		}
-
-		?>
+		} ?>
 			<div class="<?php Options::get()->header_image_width(); ?> brisko-header-img" style="padding:0px">
 				<?php
-					the_header_image_tag( array( 'class' => 'brisko-header-img' ) );
-				?>
+					the_header_image_tag( [ 'class' => 'brisko-header-img' ] ); ?>
 			</div>
 		<?php
 	}
 
 	/**
-	 * Archive Header
+	 * Archive Header.
 	 */
-	public function archive() {
-
+	public function archive()
+	{
 		if ( is_archive() && Options::get()->enable_archive_header() ) {
 			Archive::get()->header();
+
 			return;
 		}
 
 		if ( is_single() && Options::get()->enable_post_header() ) {
 			Archive::get()->header();
+
 			return;
 		}
-
 	}
-
 }

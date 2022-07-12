@@ -2,10 +2,9 @@
 
 namespace Brisko\Customize\Settings;
 
-use Brisko\Customize\Controls\Control;
-use Brisko\Customize\Controls\SeparatorControl;
-use Brisko\Customize\Traits\SettingsTrait;
 use Brisko\Contracts\SettingsInterface;
+use Brisko\Customize\Controls\Control;
+use Brisko\Customize\Traits\SettingsTrait;
 
 /**
  * Get the Brisko Pro Add-on.
@@ -14,17 +13,17 @@ use Brisko\Contracts\SettingsInterface;
  */
 class Pro implements SettingsInterface
 {
-
 	use SettingsTrait;
 
 	/**
-	 * Lets build out the customizer settings
+	 * Lets build out the customizer settings.
 	 *
 	 * Create new customizer settings here is where we will add new panel sections
 	 *
 	 * @param WP_Customize_Manager $wp_customize .
 	 */
-	public static function settings( $wp_customize ) {
+	public static function settings( $wp_customize )
+	{
 
 		// Separator Pages Settings.
 		( new Control() )->separator(
@@ -37,17 +36,16 @@ class Pro implements SettingsInterface
 		// Advanced options section.
 		do_action(
 			'brisko_pro_options',
-			array(
+			[
 				'wp_customize' => $wp_customize,
 				'transport'    => self::$transport,
 				'section'      => self::section(),
 				'short_name'   => self::short_name(),
-			)
+			]
 		);
 
 		// Install plugin.
-		if ( ! did_action( 'brisko_elements_loaded' ) ) :
-
+		if ( ! did_action( 'brisko_elements_loaded' ) ) {
 			( new Control() )->separator( $wp_customize, esc_html__( 'Typography Options', 'brisko' ), self::section() );
 			( new Control() )->separator( $wp_customize, esc_html__( 'Featured Posts Slider', 'brisko' ), self::section() );
 			( new Control() )->separator( $wp_customize, esc_html__( 'Font Awesome Icons', 'brisko' ), self::section() );
@@ -64,8 +62,6 @@ class Pro implements SettingsInterface
 				self::section(),
 				self::install_plugin()
 			);
-		endif;
-
+		}
 	}
-
 }
