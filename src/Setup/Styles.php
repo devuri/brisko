@@ -79,7 +79,7 @@ class Styles implements EnqueueInterface
 	 */
 	public static function css_files()
 	{
-		return [
+		$files = [
 			'underscores'    => Assets::uri() . '/css/underscores.min.css',
 			'bootstrap-grid' => Assets::uri() . '/css/bootstrap/bootstrap-grid.min.css',
 			'bootstrap'      => Assets::uri() . '/css/bootstrap/bootstrap.min.css',
@@ -88,6 +88,8 @@ class Styles implements EnqueueInterface
 			'custom-styles'  => Assets::uri() . '/css/custom-styles.min.css',
 			'brisko-theme'   => get_stylesheet_uri(),
 		];
+
+		return apply_filters( 'brisko_css_assets', $files );
 	}
 
 	/**
@@ -97,6 +99,10 @@ class Styles implements EnqueueInterface
 	 */
 	public function register()
 	{
+		if ( empty( self::css_files()) || ! self::css_files() ) {
+			return null;
+		}
+
 		foreach ( self::css_files() as $handle => $file ) {
 			wp_register_style( $handle, $file, [], md5_file( $file ) );
 		}
@@ -170,8 +176,8 @@ class Styles implements EnqueueInterface
 		$custom_styles['footer_border_color']       = ".site-footer {border-color: {$footer_border_color};}";
 
 		if ( false === $underline_post_links ) {
-			$custom_styles['underline_body_links'] = "body a{text-decoration: none;}"; 
-			$custom_styles['underline_post_links'] = ".post-article a {text-decoration: none;}"; 
+			$custom_styles['underline_body_links'] = "body a{text-decoration: none;}";
+			$custom_styles['underline_post_links'] = ".post-article a {text-decoration: none;}";
 		}
 
 		// css output.
