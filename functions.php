@@ -41,5 +41,5 @@ if ( did_action( 'elementor/loaded' ) ) {
 		function ( $elementor_theme_manager ) {
 			$elementor_theme_manager->register_location( 'header' );
 			$elementor_theme_manager->register_location( 'footer' );
-		} ); // @codingStandardsIgnoreLine
+		} ); 
 }

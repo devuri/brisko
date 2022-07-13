@@ -69,7 +69,7 @@ class Activate implements SetupInterface
 	 * @param int $length .
 	 */
 	public function set_excerpt_length( $length )
-	{ // @codingStandardsIgnoreLine
+	{
 		return get_theme_mod( 'set_excerpt_length', 30 );
 	}
 
@@ -79,7 +79,7 @@ class Activate implements SetupInterface
 	 * @param int $more .
 	 */
 	public function set_excerpt_more( $more )
-	{ // @codingStandardsIgnoreLine
+	{
 		if ( is_admin() ) {
 			return $more;
 		}

@@ -77,7 +77,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			// translators: used between list items, there is a space after the comma
-			$categories_list = get_the_category_list( esc_html__( '  ', 'brisko' ) ); // @codingStandardsIgnoreLine
+			$categories_list = get_the_category_list( esc_html__( '  ', 'brisko' ) ); 
 			if ( $categories_list ) {
 				// translators: 1: list of categories.
 				printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, Brisko\Theme::options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -86,7 +86,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
 			do_action( 'brisko_before_tags' );
 
 			// translators: used between list items, there is a space after the comma
-			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'brisko' ) ); // @codingStandardsIgnoreLine
+			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'brisko' ) ); 
 			if ( $tags_list ) {
 				// translators: 1: list of tags.
 				printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, Brisko\Theme::options()->display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

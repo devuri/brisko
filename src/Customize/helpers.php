@@ -75,7 +75,7 @@ function brisko_customize_preview_js()
 function brisko_sanitize_checkbox( $checked )
 {
 	// Boolean check.
-	return  ( isset( $checked ) && true == $checked ) ? true : false; // @codingStandardsIgnoreLine
+	return  ( isset( $checked ) && true == $checked ) ? true : false; 
 }
 
 /**

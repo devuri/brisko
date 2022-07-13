@@ -41,7 +41,7 @@ class Footer
 	 */
 	public function footer_credit()
 	{
-		printf( esc_html__( '%1$s %2$s %3$s', 'brisko' ), wp_kses_post( $this->copyright() ), '   ', wp_kses_post( $this->poweredby() ) ); // @codingStandardsIgnoreLine
+		printf( esc_html__( '%1$s %2$s %3$s', 'brisko' ), wp_kses_post( $this->copyright() ), '   ', wp_kses_post( $this->poweredby() ) ); 
 	}
 
 	/**
@@ -52,7 +52,7 @@ class Footer
 	public function copyright()
 	{
 		if ( false !== get_theme_mod( 'footer_copyright' ) ) {
-			$copyright = '<span class="brisko-footer-copyright">' . esc_html( get_theme_mod( 'footer_copyright' ) ) . '</span>'; // @codingStandardsIgnoreLine
+			$copyright = '<span class="brisko-footer-copyright">' . esc_html( get_theme_mod( 'footer_copyright' ) ) . '</span>'; 
 		} else {
 			$copyright = get_bloginfo( 'name' );
 		}

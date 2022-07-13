@@ -170,8 +170,8 @@ class Styles implements EnqueueInterface
 		$custom_styles['footer_border_color']       = ".site-footer {border-color: {$footer_border_color};}";
 
 		if ( false === $underline_post_links ) {
-			$custom_styles['underline_body_links'] = "body a{text-decoration: none;}"; // @codingStandardsIgnoreLine
-			$custom_styles['underline_post_links'] = ".post-article a {text-decoration: none;}"; // @codingStandardsIgnoreLine
+			$custom_styles['underline_body_links'] = "body a{text-decoration: none;}"; 
+			$custom_styles['underline_post_links'] = ".post-article a {text-decoration: none;}"; 
 		}
 
 		// css output.
