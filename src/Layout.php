@@ -25,12 +25,13 @@ class Layout implements ViewInterface
 	}
 
 	/**
-	 * Display content
+	 * Display content.
+	 *
 	 * this here for PHP compatability, will be declared in child class.
 	 */
 	public function view()
 	{
-		// return the view .
+		print( 'method Layout::view() must be overridden in a subclass.' );
 	}
 
 	/**
