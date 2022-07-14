@@ -95,7 +95,11 @@
             "composer psalm",
             "composer no-dev -q"
         ],
-        "codefix":[
+		"codefix":[
+            "composer php-cs-fixer",
+            "composer no-dev -q"
+        ],
+        "phpcs-fix":[
             "composer php-cs-fixer",
             "composer no-dev -q"
         ],

@@ -20,6 +20,7 @@
 	<config name="ignore_warnings_on_exit" value="1"/>
 
 	<rule ref="WordPress">
+		<exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed"/>
 		<exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine"/>
 		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine"/>
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.ExtraSpaceAfterCloseParenthesis"/>

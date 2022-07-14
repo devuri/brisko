@@ -195,8 +195,8 @@ return (new PhpCsFixer\Config())
 
 	])
     ->setLineEnding("\n")
-	->setIndent("\t")
-    //->setIndent(str_repeat(' ', 4))
+	//->setIndent("\t")
+    ->setIndent(str_repeat(' ', 4))
     ->setUsingCache(false)
     ->setRiskyAllowed(true)
     ->setFinder($finder);
