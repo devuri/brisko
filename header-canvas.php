@@ -23,5 +23,5 @@
 	</a>
 <?php Brisko\Theme::header_image(); ?>
 <?php if ( is_front_page() && is_home() ) {
-	brisko_homepage_header();
+    brisko_homepage_header();
 } ?>

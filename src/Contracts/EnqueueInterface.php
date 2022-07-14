@@ -4,18 +4,18 @@ namespace Brisko\Contracts;
 
 interface EnqueueInterface
 {
-	/**
-	 * Initialize instance.
-	 */
-	public static function init();
+    /**
+     * Initialize instance.
+     */
+    public static function init();
 
-	/**
-	 * Enqueue.
-	 */
-	public function enqueue();
+    /**
+     * Enqueue.
+     */
+    public function enqueue();
 
-	/**
-	 * Register.
-	 */
-	public function register();
+    /**
+     * Register.
+     */
+    public function register();
 }

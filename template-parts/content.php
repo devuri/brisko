@@ -14,13 +14,13 @@
 			<?php the_title( '<h2 class="post-title">', '</h2>' ); ?>
 				<?php
 		} else {
-			the_title( sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		    the_title( sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		}
 ?>
 		<?php do_action( 'brisko_before_entry_meta' ); ?>
 			<div class="entry-meta ">
 				<?php
-		brisko_posted_on();
+        brisko_posted_on();
 brisko_posted_by();
 ?>
 			</div><!-- .entry-meta -->
@@ -28,26 +28,26 @@ brisko_posted_by();
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
-		if ( is_singular() ) {
-			the_content(
-				sprintf(
-					wp_kses(
-						// translators: %s: Name of current post. Only visible to screen readers
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'brisko' ),
-						[
-							'span' => [
-								'class' => [],
-							],
-						]
-					),
-					wp_kses_post( get_the_title() )
-				)
-			); ?>
+        if ( is_singular() ) {
+            the_content(
+                sprintf(
+                    wp_kses(
+                        // translators: %s: Name of current post. Only visible to screen readers
+                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'brisko' ),
+                        [
+                            'span' => [
+                                'class' => [],
+                            ],
+                        ]
+                    ),
+                    wp_kses_post( get_the_title() )
+                )
+            ); ?>
 			<footer class="entry-footer ">
 				<?php brisko_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
 		<?php
-		} else { ?>
+        } else { ?>
 			<div class="post-excerpt" style="font-size: unset;">
 				<?php Brisko\Theme::excerpt(); ?>
 			</div>
@@ -58,12 +58,12 @@ brisko_posted_by();
 	</div><!-- read-more -->
 	<?php } ?>
 	<?php
-		wp_link_pages(
-			[
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),
-				'after'  => '</div>',
-			]
-		);
+        wp_link_pages(
+            [
+                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),
+                'after'  => '</div>',
+            ]
+        );
 ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

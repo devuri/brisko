@@ -15,5 +15,5 @@
 </header><!-- #masthead -->
 <?php do_action( 'brisko_after_header' ); ?>
 <?php if ( is_front_page() && is_home() ) {
-	do_action( 'brisko_homepage_header' );
+    do_action( 'brisko_homepage_header' );
 } ?>

@@ -11,12 +11,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-			the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+            the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 ?>
 		<?php do_action( 'brisko_before_entry_meta' ); ?>
 			<div class="entry-meta ">
 				<?php
-		brisko_posted_on();
+        brisko_posted_on();
 brisko_posted_by();
 ?>
 			</div><!-- .entry-meta -->

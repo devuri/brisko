@@ -22,133 +22,133 @@ use Brisko\View\Single;
  */
 class Template
 {
-	use Singleton;
+    use Singleton;
 
-	/**
-	 * The main template file.
-	 *
-	 * This is the most generic template file in a WordPress theme
-	 * and one of the two required files for a theme (the other being style.css).
-	 * It is used to display a page when nothing more specific matches a query.
-	 * E.g., it puts together the home page when no home.php file exists.
-	 *
-	 * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
-	 */
-	public function index()
-	{
-		get_header();
-		IndexPage::get()->view();
-		get_footer();
-	}
+    /**
+     * The main template file.
+     *
+     * This is the most generic template file in a WordPress theme
+     * and one of the two required files for a theme (the other being style.css).
+     * It is used to display a page when nothing more specific matches a query.
+     * E.g., it puts together the home page when no home.php file exists.
+     *
+     * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
+     */
+    public function index()
+    {
+        get_header();
+        IndexPage::get()->view();
+        get_footer();
+    }
 
-	/**
-	 * The sidebar containing the main widget area.
-	 *
-	 * @see https://developer.wordpress.org/themes/basics/template-files/#template-partials
-	 */
-	public function sidebar()
-	{
-		Sidebar::get()->view();
-	}
+    /**
+     * The sidebar containing the main widget area.
+     *
+     * @see https://developer.wordpress.org/themes/basics/template-files/#template-partials
+     */
+    public function sidebar()
+    {
+        Sidebar::get()->view();
+    }
 
-	/**
-	 * The template for displaying archive pages.
-	 *
-	 * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
-	 */
-	public function archive()
-	{
-		get_header();
-		Archive::get()->view();
-		get_footer();
-	}
+    /**
+     * The template for displaying archive pages.
+     *
+     * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
+     */
+    public function archive()
+    {
+        get_header();
+        Archive::get()->view();
+        get_footer();
+    }
 
-	/**
-	 * The template for displaying all single posts.
-	 *
-	 * @see https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
-	 */
-	public function single()
-	{
-		get_header();
-		Single::get()->view();
-		get_footer();
-	}
+    /**
+     * The template for displaying all single posts.
+     *
+     * @see https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+     */
+    public function single()
+    {
+        get_header();
+        Single::get()->view();
+        get_footer();
+    }
 
-	/**
-	 * The template for displaying 404 pages (not found).
-	 *
-	 * @see https://codex.wordpress.org/Creating_an_Error_404_Page
-	 */
-	public function page_404()
-	{
-		get_header();
-		Page404::get()->view();
-		get_footer();
-	}
+    /**
+     * The template for displaying 404 pages (not found).
+     *
+     * @see https://codex.wordpress.org/Creating_an_Error_404_Page
+     */
+    public function page_404()
+    {
+        get_header();
+        Page404::get()->view();
+        get_footer();
+    }
 
-	/**
-	 * The template for displaying all pages.
-	 *
-	 * This is the template that displays all pages by default.
-	 * Please note that this is the WordPress construct of pages
-	 * and that other 'pages' on your WordPress site may use a
-	 * different template.
-	 *
-	 * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
-	 */
-	public function page()
-	{
-		get_header();
-		Page::get()->view();
-		get_footer();
-	}
+    /**
+     * The template for displaying all pages.
+     *
+     * This is the template that displays all pages by default.
+     * Please note that this is the WordPress construct of pages
+     * and that other 'pages' on your WordPress site may use a
+     * different template.
+     *
+     * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
+     */
+    public function page()
+    {
+        get_header();
+        Page::get()->view();
+        get_footer();
+    }
 
-	/**
-	 * Brisko Canvas.
-	 *
-	 * @return void
-	 */
-	public function canvas_page()
-	{
-		get_header( 'canvas' );
-		CanvasPage::get()->view();
-		get_footer( 'canvas' );
-	}
+    /**
+     * Brisko Canvas.
+     *
+     * @return void
+     */
+    public function canvas_page()
+    {
+        get_header( 'canvas' );
+        CanvasPage::get()->view();
+        get_footer( 'canvas' );
+    }
 
-	/**
-	 * Brisko Canvas.
-	 *
-	 * @return void
-	 */
-	public function home_page()
-	{
-		get_header();
-		HomePage::get()->view();
-		get_footer();
-	}
+    /**
+     * Brisko Canvas.
+     *
+     * @return void
+     */
+    public function home_page()
+    {
+        get_header();
+        HomePage::get()->view();
+        get_footer();
+    }
 
-	/**
-	 * Full Width.
-	 *
-	 * @return void
-	 */
-	public function full_width_page()
-	{
-		get_header();
-		FullWidthPage::get()->view();
-		get_footer();
-	}
+    /**
+     * Full Width.
+     *
+     * @return void
+     */
+    public function full_width_page()
+    {
+        get_header();
+        FullWidthPage::get()->view();
+        get_footer();
+    }
 
-	/**
-	 * The template for displaying search results pages.
-	 *
-	 * @see https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
-	 */
-	public function search()
-	{
-		get_header();
-		Search::get()->view();
-		get_footer();
-	}
+    /**
+     * The template for displaying search results pages.
+     *
+     * @see https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+     */
+    public function search()
+    {
+        get_header();
+        Search::get()->view();
+        get_footer();
+    }
 }

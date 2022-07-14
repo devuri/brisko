@@ -9,7 +9,7 @@ use Brisko\Setup\Assets;
  */
 function brisko_customize_partial_copyright()
 {
-	echo esc_html( get_theme_mod( 'footer_copyright' ) );
+    echo esc_html( get_theme_mod( 'footer_copyright' ) );
 }
 
 /**
@@ -19,7 +19,7 @@ function brisko_customize_partial_copyright()
  */
 function brisko_customize_partial_poweredby()
 {
-	echo wp_kses_post( get_theme_mod( 'poweredby' ) );
+    echo wp_kses_post( get_theme_mod( 'poweredby' ) );
 }
 
 /**
@@ -29,7 +29,7 @@ function brisko_customize_partial_poweredby()
  */
 function brisko_footer_padding_partial()
 {
-	get_template_part( 'template-parts/footer', 'footer' );
+    get_template_part( 'template-parts/footer', 'footer' );
 }
 
 /**
@@ -39,7 +39,7 @@ function brisko_footer_padding_partial()
  */
 function brisko_customize_partial_blogname()
 {
-	bloginfo( 'name' );
+    bloginfo( 'name' );
 }
 
 /**
@@ -49,7 +49,7 @@ function brisko_customize_partial_blogname()
  */
 function brisko_customize_partial_blogdescription()
 {
-	bloginfo( 'description' );
+    bloginfo( 'description' );
 }
 
 /**
@@ -57,7 +57,7 @@ function brisko_customize_partial_blogdescription()
  */
 function brisko_customize_preview_js()
 {
-	wp_enqueue_script( 'brisko-customizer', Assets::uri() . '/js/customizer.js', [ 'customize-preview' ], Brisko\Theme::VERSION, true );
+    wp_enqueue_script( 'brisko-customizer', Assets::uri() . '/js/customizer.js', [ 'customize-preview' ], Brisko\Theme::VERSION, true );
 }
 
 /**
@@ -74,8 +74,8 @@ function brisko_customize_preview_js()
  */
 function brisko_sanitize_checkbox( $checked )
 {
-	// Boolean check.
-	return  ( isset( $checked ) && true == $checked ) ? true : false; 
+    // Boolean check.
+    return ( isset( $checked ) && true == $checked ) ? true : false;
 }
 
 /**
@@ -89,11 +89,11 @@ function brisko_sanitize_checkbox( $checked )
  */
 function brisko_sanitize_classes( $classes )
 {
-	$classes = sanitize_text_field( $classes );
-	$classes = explode( ',', $classes );
-	$classes = array_map( 'sanitize_title', $classes );
+    $classes = sanitize_text_field( $classes );
+    $classes = explode( ',', $classes );
+    $classes = array_map( 'sanitize_title', $classes );
 
-	return implode( ',', $classes );
+    return implode( ',', $classes );
 }
 
 /**
@@ -107,10 +107,10 @@ function brisko_sanitize_classes( $classes )
  */
 function brisko_sanitize_number( $number )
 {
-	$number = sanitize_text_field( $number );
-	$number = \intval( $number );
+    $number = sanitize_text_field( $number );
+    $number = \intval( $number );
 
-	return (string) $number;
+    return (string) $number;
 }
 
 /**
@@ -120,15 +120,15 @@ function brisko_sanitize_number( $number )
  */
 function brisko_section_info( $info = '' )
 {
-	$css_style = 'padding: 16px;border-radius: 2px;font-style: italic;';
+    $css_style = 'padding: 16px;border-radius: 2px;font-style: italic;';
 
-	// render info.
-	return sprintf(
-		// translators: %2$s: Plugin info.
-		__( '<p style="%1$s"> %2$s </p>', 'brisko' ),
-		$css_style,
-		esc_html( $info )
-	);
+    // render info.
+    return sprintf(
+        // translators: %2$s: Plugin info.
+        __( '<p style="%1$s"> %2$s </p>', 'brisko' ),
+        $css_style,
+        esc_html( $info )
+    );
 }
 
 /**
@@ -140,10 +140,10 @@ function brisko_section_info( $info = '' )
  */
 function brisko_layout_options()
 {
-	return [
-		'container'       => esc_html__( 'Boxed', 'brisko' ),
-		'container-fluid' => esc_html__( 'Full Width', 'brisko' ),
-	];
+    return [
+        'container'       => esc_html__( 'Boxed', 'brisko' ),
+        'container-fluid' => esc_html__( 'Full Width', 'brisko' ),
+    ];
 }
 
 /**
@@ -155,14 +155,14 @@ function brisko_layout_options()
  */
 function brisko_text_align_options()
 {
-	return [
-		'left'    => esc_html__( 'Left: Align the text to the left', 'brisko' ),
-		'right'   => esc_html__( 'Right: Aligns the text to the right', 'brisko' ),
-		'center'  => esc_html__( 'Center: Centers the text', 'brisko' ),
-		'justify' => esc_html__( 'Justify: Stretches the text equal width', 'brisko' ),
-		'initial' => esc_html__( 'Initial: Sets to its default value', 'brisko' ),
-		'inherit' => esc_html__( 'Inherit: Inherits from its parent element', 'brisko' ),
-	];
+    return [
+        'left'    => esc_html__( 'Left: Align the text to the left', 'brisko' ),
+        'right'   => esc_html__( 'Right: Aligns the text to the right', 'brisko' ),
+        'center'  => esc_html__( 'Center: Centers the text', 'brisko' ),
+        'justify' => esc_html__( 'Justify: Stretches the text equal width', 'brisko' ),
+        'initial' => esc_html__( 'Initial: Sets to its default value', 'brisko' ),
+        'inherit' => esc_html__( 'Inherit: Inherits from its parent element', 'brisko' ),
+    ];
 }
 
 /**
@@ -174,10 +174,10 @@ function brisko_text_align_options()
  */
 function brisko_text_tranform_choices()
 {
-	return [
-		'none'       => esc_html__( 'none', 'brisko' ),
-		'capitalize' => esc_html__( 'Capitalize', 'brisko' ),
-		'uppercase'  => esc_html__( 'Uppercase', 'brisko' ),
-		'lowercase'  => esc_html__( 'Lowercase', 'brisko' ),
-	];
+    return [
+        'none'       => esc_html__( 'none', 'brisko' ),
+        'capitalize' => esc_html__( 'Capitalize', 'brisko' ),
+        'uppercase'  => esc_html__( 'Uppercase', 'brisko' ),
+        'lowercase'  => esc_html__( 'Lowercase', 'brisko' ),
+    ];
 }

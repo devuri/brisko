@@ -8,34 +8,34 @@ use Brisko\Traits\Singleton;
 
 class Assets implements SetupInterface
 {
-	use Singleton;
+    use Singleton;
 
-	/**
-	 *  Assets scripts.
-	 */
-	private function __construct()
-	{
-		Styles::init();
-		Scripts::init();
-	}
+    /**
+     *  Assets scripts.
+     */
+    private function __construct()
+    {
+        Styles::init();
+        Scripts::init();
+    }
 
-	/**
-	 * Singleton.
-	 *
-	 * @return object
-	 */
-	public static function init()
-	{
-		return new self();
-	}
+    /**
+     * Singleton.
+     *
+     * @return object
+     */
+    public static function init()
+    {
+        return new self();
+    }
 
-	/**
-	 * Theme Assets uri.
-	 *
-	 * @return object
-	 */
-	public static function uri()
-	{
-		return get_template_directory_uri() . '/assets/static';
-	}
+    /**
+     * Theme Assets uri.
+     *
+     * @return object
+     */
+    public static function uri()
+    {
+        return get_template_directory_uri() . '/assets/static';
+    }
 }
