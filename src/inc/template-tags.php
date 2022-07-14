@@ -142,3 +142,14 @@ function brisko_posts_navigation()
 
     the_posts_navigation();
 }
+
+/**
+ * Check if PHP 5.6
+ */
+function brisko_is_php5_6()
+{
+	if ( '5.6.39' === phpversion() ) {
+		return true;
+	}
+	return false;
+}
