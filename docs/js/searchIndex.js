@@ -546,6 +546,11 @@ Search.appendIndex(
             "summary": "Post\u0020Navigation.",
             "url": "namespaces/default.html#function_brisko_posts_navigation"
         },                {
+            "fqsen": "\\brisko_is_php5_6\u0028\u0029",
+            "name": "brisko_is_php5_6",
+            "summary": "Check\u0020if\u0020PHP\u00205.6",
+            "url": "namespaces/default.html#function_brisko_is_php5_6"
+        },                {
             "fqsen": "\\Brisko\\Layout",
             "name": "Layout",
             "summary": "The\u0020main\u0020theme\u0020Layout\u0020class.",
@@ -558,7 +563,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Brisko\\Layout\u003A\u003Aview\u0028\u0029",
             "name": "view",
-            "summary": "Display\u0020content\nthis\u0020here\u0020for\u0020PHP\u0020compatability,\u0020will\u0020be\u0020declared\u0020in\u0020child\u0020class.",
+            "summary": "Display\u0020content.",
             "url": "classes/Brisko-Layout.html#method_view"
         },                {
             "fqsen": "\\Brisko\\Layout\u003A\u003Adisable_sidebar\u0028\u0029",

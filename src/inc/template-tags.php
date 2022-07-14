@@ -47,7 +47,7 @@ if ( ! \function_exists( 'brisko_posted_on' ) ) {
             '</span>'
         );
 
-        echo '<span class="posted-on">' . esc_html( $posted_on ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo '<span class="posted-on">' . wp_kses_post( $posted_on ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 }
 
@@ -125,7 +125,6 @@ if ( ! \function_exists( 'wp_body_open' ) && ! \defined( 'BRISKO_TEST_MODE' ) ) 
         do_action( 'wp_body_open' );
     }
 }
-
 
 /**
  * Post Navigation.
