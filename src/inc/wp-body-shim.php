@@ -8,6 +8,7 @@
  * @see https://core.trac.wordpress.org/ticket/12563
  * @see https://make.wordpress.org/core/2019/04/24/miscellaneous-developer-updates-in-5-2/
  */
+
 if ( ! \function_exists( 'wp_body_open' ) ) {
 
     function wp_body_open()
