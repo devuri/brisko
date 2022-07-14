@@ -9,8 +9,8 @@ class Control
      *
      * @param WP_Customize_Manager $wp_customize Theme Customizer object.
      * @param string               $label        .
-     * @param string               $section  .
-     * @param string               $description      .
+     * @param string               $section      .
+     * @param string               $description  .
      */
     public function separator( $wp_customize, $label = 'Custom Label', $section = null, $description = '' )
     {
