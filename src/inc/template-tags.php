@@ -113,19 +113,6 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
     }
 }
 
-if ( ! \function_exists( 'wp_body_open' ) && ! \defined( 'BRISKO_TEST_MODE' ) ) {
-    /**
-     * Shim for sites older than 5.2.
-     *
-     * @see https://core.trac.wordpress.org/ticket/12563
-     * @see https://make.wordpress.org/core/2019/04/24/miscellaneous-developer-updates-in-5-2/
-     */
-    function wp_body_open()
-    {
-        do_action( 'wp_body_open' );
-    }
-}
-
 /**
  * Post Navigation.
  *
