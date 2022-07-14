@@ -11,24 +11,24 @@ use Brisko\Setup\Assets;
  */
 class ToggleControl extends \WP_Customize_Control
 {
-	/**
-	 * Button Type.
-	 *
-	 * Uses light, ios, flat.
-	 *
-	 * @var string
-	 */
-	public $type = 'ios';
+    /**
+     * Button Type.
+     *
+     * Uses light, ios, flat.
+     *
+     * @var string
+     */
+    public $type = 'ios';
 
-	/**
-	 * Enqueue scripts/styles.
-	 */
-	public function enqueue()
-	{
-		wp_enqueue_script( 'customizer-toggle-control', Assets::uri() . '/js/customizer/toggle-button-control.js', [ 'jquery' ], time(), true );
-		wp_enqueue_style( 'css-toggle-buttons', Assets::uri() . '/css/customizer/toggle-buttons.css', [], time() );
+    /**
+     * Enqueue scripts/styles.
+     */
+    public function enqueue()
+    {
+        wp_enqueue_script( 'customizer-toggle-control', Assets::uri() . '/js/customizer/toggle-button-control.js', [ 'jquery' ], time(), true );
+        wp_enqueue_style( 'css-toggle-buttons', Assets::uri() . '/css/customizer/toggle-buttons.css', [], time() );
 
-		$css = '
+        $css = '
 			.disabled-control-title {
 				color: #a0a5aa;
 			}
@@ -51,19 +51,19 @@ class ToggleControl extends \WP_Customize_Control
 			  background: #0085ba;
 			}
 		';
-		wp_add_inline_style( 'css-toggle-buttons', $css );
-	}
+        wp_add_inline_style( 'css-toggle-buttons', $css );
+    }
 
-	/**
-	 * Render the control's content.
-	 *
-	 * @author soderlind
-	 *
-	 * @version 1.2.0
-	 */
-	public function render_content()
-	{
-		?>
+    /**
+     * Render the control's content.
+     *
+     * @author soderlind
+     *
+     * @version 1.2.0
+     */
+    public function render_content()
+    {
+        ?>
 		<label class="customize-toogle-label">
 			<div
 				style="display:flex;flex-direction: row;justify-content: flex-start; padding: 4px;">
@@ -75,8 +75,8 @@ class ToggleControl extends \WP_Customize_Control
 					type="checkbox" class="tgl tgl-<?php echo esc_attr( $this->type ); ?>"
 					value="<?php echo esc_attr( $this->value() ); ?>"
 					<?php
-						$this->link();
-					checked( $this->value() ); ?>
+                        $this->link();
+        checked( $this->value() ); ?>
 				/>
 				<label for="cb<?php echo esc_attr( $this->instance_number ); ?>" class="tgl-btn"></label>
 			</div>
@@ -87,5 +87,5 @@ class ToggleControl extends \WP_Customize_Control
 			<?php } ?>
 		</label>
 		<?php
-	}
+    }
 }

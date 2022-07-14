@@ -11,31 +11,31 @@ use Brisko\Traits\Singleton;
  */
 class Element
 {
-	use Singleton;
+    use Singleton;
 
-	/**
-	 * Elementor theme do location.
-	 *
-	 * Wrapper for elementor_theme_do_location.
-	 *
-	 * @param string $location sets the location.
-	 *
-	 * @see https://developers.elementor.com/theme-locations-api/displaying-locations/
-	 *
-	 * @return null|void
-	 */
-	public function location( $location = null )
-	{
-		if ( ! \function_exists( 'elementor_theme_do_location' ) ) {
-			return null;
-		}
+    /**
+     * Elementor theme do location.
+     *
+     * Wrapper for elementor_theme_do_location.
+     *
+     * @param string $location sets the location.
+     *
+     * @see https://developers.elementor.com/theme-locations-api/displaying-locations/
+     *
+     * @return null|void
+     */
+    public function location( $location = null )
+    {
+        if ( ! \function_exists( 'elementor_theme_do_location' ) ) {
+            return null;
+        }
 
-		if ( \is_null( $location ) ) {
-			return null;
-		}
+        if ( \is_null( $location ) ) {
+            return null;
+        }
 
-		if ( elementor_theme_do_location( $location ) ) {
-			elementor_theme_do_location( $location );
-		}
-	}
+        if ( elementor_theme_do_location( $location ) ) {
+            elementor_theme_do_location( $location );
+        }
+    }
 }

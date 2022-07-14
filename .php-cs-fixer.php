@@ -51,7 +51,7 @@ return (new PhpCsFixer\Config())
 		'self_accessor' => true,
 		'single_class_element_per_statement' => true,
 		'single_trait_insert_per_statement' => true,
-		'visibility_required' => true,
+		//'visibility_required' => true,
 
 		// Comment.
 		//'multiline_comment_opening_closing' => true,
@@ -160,7 +160,7 @@ return (new PhpCsFixer\Config())
 		'phpdoc_types' => true,
 		'phpdoc_types_order' => true,
 		'phpdoc_var_annotation_correct_order' => true,
-		'phpdoc_var_without_name' => true,
+		//'phpdoc_var_without_name' => true,
 
 		// Return Notation.
 		'no_useless_return' => true,
@@ -195,8 +195,8 @@ return (new PhpCsFixer\Config())
 
 	])
     ->setLineEnding("\n")
-	->setIndent("\t")
-    //->setIndent(str_repeat(' ', 4))
+	//->setIndent("\t")
+    ->setIndent(str_repeat(' ', 4))
     ->setUsingCache(false)
     ->setRiskyAllowed(true)
     ->setFinder($finder);

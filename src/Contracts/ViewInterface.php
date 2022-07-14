@@ -4,23 +4,23 @@ namespace Brisko\Contracts;
 
 interface ViewInterface
 {
-	/**
-	 * Get the instance.
-	 */
-	public static function get();
+    /**
+     * Get the instance.
+     */
+    public static function get();
 
-	/**
-	 * The view.
-	 */
-	public function view();
+    /**
+     * The view.
+     */
+    public function view();
 
-	/**
-	 * Head.
-	 */
-	public function head();
+    /**
+     * Head.
+     */
+    public function head();
 
-	/**
-	 * The Footer.
-	 */
-	public function footer();
+    /**
+     * The Footer.
+     */
+    public function footer();
 }

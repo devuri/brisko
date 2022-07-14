@@ -3,8 +3,10 @@ includes:
     - vendor/szepeviktor/phpstan-wordpress/extension.neon
     - rules.neon
 parameters:
+    bootstrapFiles:
+        - tests/stubs.php
     tmpDir: tmp
-    level: 4
+    level: 1
     inferPrivatePropertyTypeFromConstructor: true
     treatPhpDocTypesAsCertain: false
     checkMissingIterableValueType: false

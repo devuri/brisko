@@ -14,33 +14,33 @@ use Brisko\Traits\Singleton;
  */
 class Navigation
 {
-	use Singleton;
+    use Singleton;
 
-	/**
-	 * Navigation.
-	 */
-	public function navigation()
-	{
-		if ( true === get_theme_mod( 'disable_navigation', false ) ) {
-			do_action( 'brisko_navigation' );
+    /**
+     * Navigation.
+     */
+    public function navigation()
+    {
+        if ( true === get_theme_mod( 'disable_navigation', false ) ) {
+            do_action( 'brisko_navigation' );
 
-			return;
-		}
+            return;
+        }
 
-		get_template_part( 'template-parts/navigation', 'navigation' );
-	}
+        get_template_part( 'template-parts/navigation', 'navigation' );
+    }
 
-	/**
-	 * Navigation Menu.
-	 */
-	public function nav_menu()
-	{
-		if ( true === get_theme_mod( 'disable_nav_menu', false ) ) {
-			do_action( 'brisko_nav_menu' );
+    /**
+     * Navigation Menu.
+     */
+    public function nav_menu()
+    {
+        if ( true === get_theme_mod( 'disable_nav_menu', false ) ) {
+            do_action( 'brisko_nav_menu' );
 
-			return;
-		}
+            return;
+        }
 
-		get_template_part( 'template-parts/nav' );
-	}
+        get_template_part( 'template-parts/nav' );
+    }
 }
