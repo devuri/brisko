@@ -113,8 +113,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
     }
 }
 
-
-if ( ! \function_exists( 'wp_body_open' ) ) {
+if ( ! \function_exists( 'wp_body_open' ) && ! \defined( 'EVP_TEST_MODE' ) ) {
     /**
      * Shim for sites older than 5.2.
      *

@@ -32,7 +32,7 @@ class Sections
         $this->sections['pages']      = 'Pages';
         $this->sections['blog']       = 'Blog / Archive';
 
-        if ( ! $this->is_disabled_footer() ) {
+        if ( ! self::is_disabled_footer() ) {
             $this->sections['footer'] = 'Footer';
         }
 
