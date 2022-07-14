@@ -27,7 +27,7 @@ class Styles implements EnqueueInterface
     /**
      * Singleton.
      *
-     * @return object
+     * @return self
      */
     public static function init()
     {
@@ -218,7 +218,7 @@ class Styles implements EnqueueInterface
     /**
      * CSS Minifier Compressor.
      *
-     * @return string minified css output.
+     * @return false|string minified css output.
      */
     private function minified_css()
     {

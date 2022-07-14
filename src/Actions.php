@@ -16,10 +16,13 @@ class Actions
     /**
      * List of available actions.
      *
-     * @return array $actions
+     * @return (mixed|string)[] $actions
+     *
+     * @psalm-return array<mixed|string>
      */
     public static function actions()
     {
+		$actions = null;
 
         // header.
         $actions[] = 'brisko_before_header';
@@ -63,7 +66,7 @@ class Actions
     /**
      * Creates a Theme action.
      *
-     * @param string $action the name of the action.
+     * @param bool|string $action the name of the action.
      *
      * @return false|void
      */

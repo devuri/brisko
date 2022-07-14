@@ -46,7 +46,7 @@ class Theme
     /**
      * Setup Theme.
      *
-     * @return object ..
+     * @return self ..
      */
     public static function setup()
     {

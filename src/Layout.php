@@ -18,6 +18,8 @@ class Layout implements ViewInterface
      * Layout background.
      *
      * @return string
+     *
+     * @psalm-return 'bg-white'
      */
     public function main_class()
     {

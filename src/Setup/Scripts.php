@@ -25,7 +25,7 @@ class Scripts implements EnqueueInterface
     /**
      * Singleton.
      *
-     * @return object
+     * @return self
      */
     public static function init()
     {
@@ -61,7 +61,9 @@ class Scripts implements EnqueueInterface
     /**
      * Setup static JS files.
      *
-     * @return array .
+     * @return string[] .
+     *
+     * @psalm-return array{'brisko-popper': string, 'brisko-bootstrap': string, 'brisko-uikit': string, 'brisko-navigation': string, 'brisko-smooth-scroll': string}
      */
     public static function js_files()
     {

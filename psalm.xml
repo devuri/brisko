@@ -11,6 +11,7 @@
         <directory name="src" />
     </projectFiles>
 	<stubs>
+		<file name="tests/stubs.php" />
 		<file name="vendor/szepeviktor/phpstan-wordpress/bootstrap.php" />
 		<file name="vendor/php-stubs/wordpress-stubs/wordpress-stubs.php" />
 	</stubs>

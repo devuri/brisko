@@ -22,7 +22,7 @@ class Assets implements SetupInterface
     /**
      * Singleton.
      *
-     * @return object
+     * @return self
      */
     public static function init()
     {
@@ -32,7 +32,7 @@ class Assets implements SetupInterface
     /**
      * Theme Assets uri.
      *
-     * @return object
+     * @return string
      */
     public static function uri()
     {

@@ -28,7 +28,7 @@ class Activate implements SetupInterface
     /**
      * Singleton.
      *
-     * @return object
+     * @return self
      */
     public static function init()
     {

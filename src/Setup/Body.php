@@ -46,7 +46,9 @@ class Body implements SetupInterface
      *
      * Here is where we will add new css classes to the body_class
      *
-     * @return array $class
+     * @return (mixed|string)[] $class
+     *
+     * @psalm-return array<'brisko-font'|'brisko-font-style'|mixed>
      */
     private function add_css_class()
     {

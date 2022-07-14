@@ -103,7 +103,7 @@ function brisko_sanitize_classes( $classes )
  *
  * @param string $number .
  *
- * @return string $number .
+ * @return numeric-string $number .
  */
 function brisko_sanitize_number( $number )
 {
@@ -136,7 +136,9 @@ function brisko_section_info( $info = '' )
  *
  * Used for Theme Layout Customizer.
  *
- * @return array .
+ * @return string[] .
+ *
+ * @psalm-return array{container: string, 'container-fluid': string}
  */
 function brisko_layout_options()
 {
@@ -151,7 +153,9 @@ function brisko_layout_options()
  *
  * Used for Theme Layout Customizer.
  *
- * @return array .
+ * @return string[] .
+ *
+ * @psalm-return array{left: string, right: string, center: string, justify: string, initial: string, inherit: string}
  */
 function brisko_text_align_options()
 {
@@ -170,7 +174,9 @@ function brisko_text_align_options()
  *
  * Used for Theme text-tranform in the Customizer.
  *
- * @return array .
+ * @return string[] .
+ *
+ * @psalm-return array{none: string, capitalize: string, uppercase: string, lowercase: string}
  */
 function brisko_text_tranform_choices()
 {
