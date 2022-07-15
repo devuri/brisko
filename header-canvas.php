@@ -4,7 +4,7 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @see https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @see https://developer.wordpress.org/themes/basics/template-files/
  */
 
 ?><!DOCTYPE html>

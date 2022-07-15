@@ -44,7 +44,7 @@ class Template
     /**
      * The sidebar containing the main widget area.
      *
-     * @see https://developer.wordpress.org/themes/basics/template-files/#template-partials
+     * @see https://developer.wordpress.org/themes/basics/template-files/
      */
     public function sidebar()
     {
