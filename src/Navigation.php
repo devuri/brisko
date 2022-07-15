@@ -2,7 +2,7 @@
 
 namespace Brisko;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 /**
  * The main Navigation class.
@@ -14,7 +14,7 @@ use Brisko\Traits\Singleton;
  */
 class Navigation
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Navigation.

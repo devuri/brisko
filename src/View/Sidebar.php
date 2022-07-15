@@ -2,11 +2,11 @@
 
 namespace Brisko\View;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Sidebar
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Display content.

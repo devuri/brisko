@@ -3,11 +3,11 @@
 namespace Brisko\View;
 
 use Brisko\Options;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Thumbnail
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Thumbnail for single.

@@ -3,7 +3,7 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 /**
  * The Compatibility class.
@@ -12,7 +12,7 @@ use Brisko\Traits\Singleton;
  */
 class Compat implements SetupInterface
 {
-    use Singleton;
+    use Instance;
 
     /**
      * [__construct description].

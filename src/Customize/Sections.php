@@ -2,11 +2,11 @@
 
 namespace Brisko\Customize;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Sections
 {
-    use Singleton;
+    use Instance;
 
     /**
      * $sections.

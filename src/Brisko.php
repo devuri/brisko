@@ -2,14 +2,14 @@
 
 namespace Brisko;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 /**
  * The Brisko class.
  */
 class Brisko
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Theme Actions.

@@ -1,8 +1,6 @@
 <?php
 
 
-use Brisko\Theme;
-
 // Sidebar template
 
-Theme::template()->sidebar();
+Brisko\Theme::template()->sidebar();

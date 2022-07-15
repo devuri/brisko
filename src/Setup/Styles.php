@@ -4,11 +4,11 @@ namespace Brisko\Setup;
 
 use Brisko\Contracts\EnqueueInterface;
 use Brisko\Theme;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Styles implements EnqueueInterface
 {
-    use Singleton;
+    use Instance;
 
     /**
      *  Assets scripts.

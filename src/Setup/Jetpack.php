@@ -3,7 +3,7 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 /**
  * The main Jetpack class.
@@ -13,7 +13,7 @@ use Brisko\Traits\Singleton;
  */
 class Jetpack implements SetupInterface
 {
-    use Singleton;
+    use Instance;
 
     /**
      *  Constructor.

@@ -1,8 +1,5 @@
 <?php
 
-
-use Brisko\Theme;
-
 // Archive pages template
 
-Theme::template()->archive();
+Brisko\Theme::template()->archive();

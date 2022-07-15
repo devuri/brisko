@@ -12,11 +12,11 @@ use Brisko\Customize\Settings\Navigation;
 use Brisko\Customize\Settings\Pages;
 use Brisko\Customize\Settings\Pro;
 use Brisko\Customize\Settings\SelectiveRefresh;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Build
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Lets build out the customizer sections.

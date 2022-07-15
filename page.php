@@ -1,8 +1,5 @@
 <?php
 
-
-use Brisko\Theme;
-
 // Page
 
-Theme::template()->page();
+Brisko\Theme::template()->page();

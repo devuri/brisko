@@ -3,11 +3,11 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\EnqueueInterface;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Scripts implements EnqueueInterface
 {
-    use Singleton;
+    use Instance;
 
     /**
      *  Assets scripts.

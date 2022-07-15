@@ -2,7 +2,7 @@
 
 namespace Brisko;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 use Brisko\View\Archive;
 use Brisko\View\CanvasPage;
 use Brisko\View\FullWidthPage;
@@ -22,7 +22,7 @@ use Brisko\View\Single;
  */
 class Template
 {
-    use Singleton;
+    use Instance;
 
     /**
      * The main template file.
