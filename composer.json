@@ -41,6 +41,7 @@
         "wptrt/wpthemereview": "^0.2.1"
     },
     "scripts": {
+		"wpcs":"composer wpcs-lint",
         "wpcs-lint":[
             "composer install -q",
             "phpcs -ns src",
