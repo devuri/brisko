@@ -24,6 +24,34 @@ class Template
 {
     use Instance;
 
+	/**
+	 * Load header template.
+	 *
+	 * @param  string $name  The name of the specialised header.
+	 * @param  array  $args  Additional arguments passed to the header template.
+	 * @return void|false    Void on success, false if the template does not exist.
+	 *
+	 * @see https://developer.wordpress.org/reference/functions/get_header/
+	 */
+	public static function header( $name = null, $args = array() )
+	{
+		get_header( $name, $args );
+	}
+
+	/**
+	 * Load footer template.
+	 *
+	 * @param  string $name  The name of the specialised footer.
+	 * @param  array  $args   Additional arguments passed to the footer template.
+	 * @return void|false    Void on success, false if the template does not exist.
+	 *
+	 * @see https://developer.wordpress.org/reference/functions/get_header/
+	 */
+	public static function footer( $name = null, $args = array() )
+	{
+		get_footer( $name, $args );
+	}
+
     /**
      * The main template file.
      *
@@ -36,9 +64,9 @@ class Template
      */
     public function index()
     {
-        get_header();
+        self::header();
         IndexPage::get()->view();
-        get_footer();
+        self::footer();
     }
 
     /**
@@ -58,9 +86,9 @@ class Template
      */
     public function archive()
     {
-        get_header();
+        self::header();
         Archive::get()->view();
-        get_footer();
+        self::footer();
     }
 
     /**
@@ -70,9 +98,9 @@ class Template
      */
     public function single()
     {
-        get_header();
+        self::header();
         Single::get()->view();
-        get_footer();
+        self::footer();
     }
 
     /**
@@ -82,9 +110,9 @@ class Template
      */
     public function page_404()
     {
-        get_header();
+        self::header();
         Page404::get()->view();
-        get_footer();
+        self::footer();
     }
 
     /**
@@ -99,9 +127,9 @@ class Template
      */
     public function page()
     {
-        get_header();
+        self::header();
         Page::get()->view();
-        get_footer();
+        self::footer();
     }
 
     /**
@@ -111,9 +139,9 @@ class Template
      */
     public function canvas_page()
     {
-        get_header( 'canvas' );
+        self::header( 'canvas' );
         CanvasPage::get()->view();
-        get_footer( 'canvas' );
+        self::footer( 'canvas' );
     }
 
     /**
@@ -123,9 +151,9 @@ class Template
      */
     public function home_page()
     {
-        get_header();
+        self::header();
         HomePage::get()->view();
-        get_footer();
+        self::footer();
     }
 
     /**
@@ -135,9 +163,9 @@ class Template
      */
     public function full_width_page()
     {
-        get_header();
+        self::header();
         FullWidthPage::get()->view();
-        get_footer();
+        self::footer();
     }
 
     /**
@@ -147,8 +175,8 @@ class Template
      */
     public function search()
     {
-        get_header();
+        self::header();
         Search::get()->view();
-        get_footer();
+        self::footer();
     }
 }
