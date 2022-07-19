@@ -2,7 +2,7 @@
 
 namespace Brisko;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 /**
  * The Element class.
@@ -11,7 +11,7 @@ use Brisko\Traits\Singleton;
  */
 class Element
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Elementor theme do location.

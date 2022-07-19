@@ -3,11 +3,11 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Body implements SetupInterface
 {
-    use Singleton;
+    use Instance;
 
     /**
      * [__construct description].

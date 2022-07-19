@@ -2,7 +2,7 @@
 
 namespace Brisko;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 /**
  * The main Options class.
@@ -12,7 +12,7 @@ use Brisko\Traits\Singleton;
  */
 class Options
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Header Image.

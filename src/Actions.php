@@ -2,7 +2,7 @@
 
 namespace Brisko;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 /**
  * The main Actions class.
@@ -11,7 +11,7 @@ use Brisko\Traits\Singleton;
  */
 class Actions
 {
-    use Singleton;
+    use Instance;
 
     /**
      * List of available actions.

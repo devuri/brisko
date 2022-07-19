@@ -1,8 +1,8 @@
 <?php
+/**
+ * The template for displaying the search results pages.
+ *
+ * @see https://developer.wordpress.org/themes/basics/template-files/
+ */
 
-
-use Brisko\Theme;
-
-// Search results pages
-
-Theme::template()->search();
+Brisko\Theme::template()->search();

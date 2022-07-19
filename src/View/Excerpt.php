@@ -2,11 +2,11 @@
 
 namespace Brisko\View;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Excerpt
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Displays an optional post excerpt.

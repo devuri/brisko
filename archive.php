@@ -1,8 +1,8 @@
 <?php
+/**
+ * The template for displaying the Archive pages.
+ *
+ * @see https://developer.wordpress.org/themes/basics/template-files/
+ */
 
-
-use Brisko\Theme;
-
-// Archive pages template
-
-Theme::template()->archive();
+Brisko\Theme::template()->archive();

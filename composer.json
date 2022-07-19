@@ -41,6 +41,8 @@
         "wptrt/wpthemereview": "^0.2.1"
     },
     "scripts": {
+		"wpcore":"composer require --dev johnpbloch/wordpress-core",
+		"wpcs":"composer wpcs-lint",
         "wpcs-lint":[
             "composer install -q",
             "phpcs -ns src",

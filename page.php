@@ -1,8 +1,8 @@
 <?php
+/**
+ * The template for displaying the pages.
+ *
+ * @see https://developer.wordpress.org/themes/basics/template-files/
+ */
 
-
-use Brisko\Theme;
-
-// Page
-
-Theme::template()->page();
+Brisko\Theme::template()->page();

@@ -3,11 +3,11 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Head implements SetupInterface
 {
-    use Singleton;
+    use Instance;
 
     /**
      *  Constructor.

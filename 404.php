@@ -1,8 +1,8 @@
 <?php
+/**
+ * The template for displaying the 404 page.
+ *
+ * @see https://developer.wordpress.org/themes/basics/template-files/
+ */
 
-
-use Brisko\Theme;
-
-// 404 pages template
-
-Theme::template()->page_404();
+Brisko\Theme::template()->page_404();

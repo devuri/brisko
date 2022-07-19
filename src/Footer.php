@@ -2,7 +2,7 @@
 
 namespace Brisko;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 /**
  * The Footer class.
@@ -11,7 +11,7 @@ use Brisko\Traits\Singleton;
  */
 class Footer
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Site Footer.

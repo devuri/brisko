@@ -1,8 +1,8 @@
 <?php
+/**
+ * The template for displaying the sidebar.
+ *
+ * @see https://developer.wordpress.org/themes/basics/template-files/
+ */
 
-
-use Brisko\Theme;
-
-// Sidebar template
-
-Theme::template()->sidebar();
+Brisko\Theme::template()->sidebar();

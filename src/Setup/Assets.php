@@ -4,11 +4,11 @@ namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
 use Brisko\Theme;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Assets implements SetupInterface
 {
-    use Singleton;
+    use Instance;
 
     /**
      *  Assets scripts.

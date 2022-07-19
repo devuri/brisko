@@ -3,11 +3,11 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 class Activate implements SetupInterface
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Theme Setup.

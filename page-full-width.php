@@ -1,9 +1,10 @@
 <?php
 /**
  * Template Name: Brisko Full Width.
+ *
+ * The template for displaying the Brisko Full Width Page.
+ *
+ * @see https://developer.wordpress.org/themes/basics/template-files/
  */
 
-use Brisko\Theme;
-
-// Page Brisko Full Width
-Theme::template()->full_width_page();
+Brisko\Theme::template()->full_width_page();

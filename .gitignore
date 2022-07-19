@@ -4,7 +4,6 @@ asset/dist/
 /asset/mix-manifest.json
 build/brisko/
 vendor/
-composer.lock
 report/
 .wp-develop/
 brisko.zip

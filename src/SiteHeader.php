@@ -2,7 +2,7 @@
 
 namespace Brisko;
 
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 use Brisko\View\Archive;
 
 /**
@@ -13,7 +13,7 @@ use Brisko\View\Archive;
  */
 class SiteHeader
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Site Header.

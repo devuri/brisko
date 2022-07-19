@@ -3,7 +3,7 @@
 namespace Brisko;
 
 use Brisko\Contracts\ViewInterface;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 
 /**
  * The main theme Layout class.
@@ -12,7 +12,7 @@ use Brisko\Traits\Singleton;
  */
 class Layout implements ViewInterface
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Layout background.

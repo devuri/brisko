@@ -9,7 +9,7 @@ use Brisko\Setup\Body;
 use Brisko\Setup\Compat;
 use Brisko\Setup\Head;
 use Brisko\Setup\Jetpack;
-use Brisko\Traits\Singleton;
+use Brisko\Traits\Instance;
 use Brisko\View\Excerpt;
 use Brisko\View\Thumbnail;
 
@@ -22,7 +22,7 @@ use Brisko\View\Thumbnail;
  */
 class Theme
 {
-    use Singleton;
+    use Instance;
 
     /**
      * Define Theme Version.
