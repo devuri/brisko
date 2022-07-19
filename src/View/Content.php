@@ -19,7 +19,7 @@ class Content
     public function view()
     {
         if ( get_theme_mod( 'enable_pure_content', false ) ) {
-            echo wp_kses_post( $this->the_content() );
+            echo $this->the_content(); // @codingStandardsIgnoreLine.
         } else {
             the_content();
         }

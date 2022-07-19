@@ -906,6 +906,11 @@ Search.appendIndex(
             "summary": "Set\u0020file\u0020version.",
             "url": "classes/Brisko-Setup-Scripts.html#method_ver"
         },                {
+            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Abootstrap5\u0028\u0029",
+            "name": "bootstrap5",
+            "summary": "",
+            "url": "classes/Brisko-Setup-Scripts.html#method_bootstrap5"
+        },                {
             "fqsen": "\\Brisko\\Setup\\Styles",
             "name": "Styles",
             "summary": "",
@@ -955,6 +960,11 @@ Search.appendIndex(
             "name": "sanitize_css",
             "summary": "Sanitize\u0020CSS.",
             "url": "classes/Brisko-Setup-Styles.html#method_sanitize_css"
+        },                {
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Abootstrap5\u0028\u0029",
+            "name": "bootstrap5",
+            "summary": "Adds\u0020Bootstrap\u00205\u0020support.",
+            "url": "classes/Brisko-Setup-Styles.html#method_bootstrap5"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aminified_css\u0028\u0029",
             "name": "minified_css",
