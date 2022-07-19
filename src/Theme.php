@@ -27,30 +27,30 @@ class Theme
     /**
      * Define Theme Version.
      */
-    const VERSION = '3.2.2';
+    const VERSION = '3.3.0';
 
     /**
      * [__construct description].
      */
     private function __construct()
     {
-		// empty.
+        // empty.
     }
 
     /**
      * Setup Theme.
      *
-     * @return self ..
+     * @return void
      */
     public static function setup()
     {
-		Activate::init();
-		Assets::init();
-		Body::init();
-		Head::init();
-		Jetpack::init();
-		Customizer::init();
-		// Compat::init();  @codingStandardsIgnoreLine
+        Activate::init();
+        Assets::init();
+        Body::init();
+        Head::init();
+        Jetpack::init();
+        Customizer::init();
+        // Compat::init();  @codingStandardsIgnoreLine
     }
 
     /**
@@ -129,7 +129,7 @@ class Theme
         return Template::get();
     }
 
-	/**
+    /**
      * Template.
      *
      * @return Template

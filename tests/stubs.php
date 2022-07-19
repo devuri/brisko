@@ -11,7 +11,6 @@ if ( ! \defined('BRISKO_TEST_MODE')) {
  */
 function hfe_is_before_footer_enabled()
 {
-
 }
 
 /**
@@ -21,5 +20,4 @@ function hfe_is_before_footer_enabled()
  */
 function hfe_render_before_footer()
 {
-	//
 }

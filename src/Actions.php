@@ -22,7 +22,7 @@ class Actions
      */
     public static function actions()
     {
-		$actions = null;
+        $actions = null;
 
         // header.
         $actions[] = 'brisko_before_header';
