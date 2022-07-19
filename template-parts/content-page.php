@@ -14,14 +14,21 @@
 	<?php Brisko\Theme::post_thumbnail(); ?>
 	<div class="entry-content">
 		<?php
-        the_content();
-wp_link_pages(
-    [
-        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),
-        'after'  => '</div>',
-    ]
-);
-?>
+		/**
+		 * pure content will bypass `the_content` and use `get_the_content`
+		 * works better for pure content management and will not break html.
+		 *
+		 * note: filters on `the_content` will not work.
+		 *
+		 */
+		Brisko\Theme::content();
+			wp_link_pages(
+			    [
+			        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),
+			        'after'  => '</div>',
+			    ]
+			);
+		?>
 	</div><!-- .entry-content -->
 	<?php if ( get_edit_post_link() ) { ?>
 		<footer class="entry-footer">

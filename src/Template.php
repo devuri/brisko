@@ -9,6 +9,7 @@ use Brisko\View\FullWidthPage;
 use Brisko\View\HomePage;
 use Brisko\View\IndexPage;
 use Brisko\View\Page;
+use Brisko\View\Content;
 use Brisko\View\Page404;
 use Brisko\View\Search;
 use Brisko\View\Sidebar;
@@ -50,6 +51,16 @@ class Template
 	public static function footer( $name = null, $args = array() )
 	{
 		get_footer( $name, $args );
+	}
+
+	/**
+	 * Displays the post content.
+	 *
+	 * @return void
+	 */
+	public static function content()
+	{
+		Content::get()->view();
 	}
 
     /**
