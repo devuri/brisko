@@ -65,16 +65,6 @@ class Template
         Content::get()->view();
     }
 
-	/**
-	 * Displays the post content.
-	 *
-	 * @return void
-	 */
-	public static function content()
-	{
-		Content::get()->view();
-	}
-
     /**
      * The main template file.
      *
