@@ -5,6 +5,7 @@ namespace Brisko;
 use Brisko\Traits\Instance;
 use Brisko\View\Archive;
 use Brisko\View\CanvasPage;
+use Brisko\View\Content;
 use Brisko\View\FullWidthPage;
 use Brisko\View\HomePage;
 use Brisko\View\IndexPage;
@@ -25,33 +26,45 @@ class Template
 {
     use Instance;
 
-	/**
-	 * Load header template.
-	 *
-	 * @param  string $name  The name of the specialised header.
-	 * @param  array  $args  Additional arguments passed to the header template.
-	 * @return void|false    Void on success, false if the template does not exist.
-	 *
-	 * @see https://developer.wordpress.org/reference/functions/get_header/
-	 */
-	public static function header( $name = null, $args = array() )
-	{
-		get_header( $name, $args );
-	}
+    /**
+     * Load header template.
+     *
+     * @param string $name The name of the specialised header.
+     * @param array  $args Additional arguments passed to the header template.
+     *
+     * @return false|void Void on success, false if the template does not exist.
+     *
+     * @see https://developer.wordpress.org/reference/functions/get_header/
+     */
+    public static function header( $name = null, $args = [] )
+    {
+        get_header( $name, $args );
+    }
 
-	/**
-	 * Load footer template.
-	 *
-	 * @param  string $name  The name of the specialised footer.
-	 * @param  array  $args   Additional arguments passed to the footer template.
-	 * @return void|false    Void on success, false if the template does not exist.
-	 *
-	 * @see https://developer.wordpress.org/reference/functions/get_header/
-	 */
-	public static function footer( $name = null, $args = array() )
-	{
-		get_footer( $name, $args );
-	}
+    /**
+     * Load footer template.
+     *
+     * @param string $name The name of the specialised footer.
+     * @param array  $args Additional arguments passed to the footer template.
+     *
+     * @return false|void Void on success, false if the template does not exist.
+     *
+     * @see https://developer.wordpress.org/reference/functions/get_header/
+     */
+    public static function footer( $name = null, $args = [] )
+    {
+        get_footer( $name, $args );
+    }
+
+    /**
+     * Displays the post content.
+     *
+     * @return void
+     */
+    public static function content()
+    {
+        Content::get()->view();
+    }
 
 	/**
 	 * Displays the post content.

@@ -90,7 +90,7 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/Brisko-Traits-Singleton.html"><abbr title="\Brisko\Traits\Singleton">Singleton</abbr></a>                    </span>
+                            <a href="classes/Brisko-Traits-Instance.html"><abbr title="\Brisko\Traits\Instance">Instance</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
@@ -132,13 +132,11 @@
 <dd>Footer credit section.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Traits-Singleton.html#method_get">get()</a>
+    <a href="classes/Brisko-Traits-Instance.html#method_get">get()</a>
     <span>
-                        &nbsp;: object    </span>
+                        &nbsp;: <a href="classes/Brisko-Contracts-ThemeInterface.html"><abbr title="\Brisko\Contracts\ThemeInterface">ThemeInterface</abbr></a>    </span>
 </dt>
-<dd>This method returns new or existing Singleton instance
-of the class for which it is called. This method is set
-as final intentionally, it is not meant to be overridden.</dd>
+<dd>Instantiate.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Brisko-Footer.html#method_poweredby">poweredby()</a>
@@ -153,20 +151,6 @@ as final intentionally, it is not meant to be overridden.</dd>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Site Footer.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Brisko-Traits-Singleton.html#method___clone">__clone()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>Prevent object cloning.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Brisko-Traits-Singleton.html#method___construct">__construct()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>Protected class constructor to prevent direct object creation.</dd>
 
         </dl>
 
@@ -254,25 +238,23 @@ as final intentionally, it is not meant to be overridden.</dd>
         class="phpdocumentor-element
             -method
             -public
-                                    -static            -final        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_get">
         get()
-        <a href="classes/Brisko-Traits-Singleton.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Brisko-Traits-Instance.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/Singleton.php"><a href="files/src-traits-singleton.html"><abbr title="src/Traits/Singleton.php">Singleton.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/Instance.php"><a href="files/src-traits-instance.html"><abbr title="src/Traits/Instance.php">Instance.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
-        <p class="phpdocumentor-summary">This method returns new or existing Singleton instance
-of the class for which it is called. This method is set
-as final intentionally, it is not meant to be overridden.</p>
+        <p class="phpdocumentor-summary">Instantiate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__final">final</span>    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Brisko-Contracts-ThemeInterface.html"><abbr title="\Brisko\Contracts\ThemeInterface">ThemeInterface</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -280,10 +262,9 @@ as final intentionally, it is not meant to be overridden.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">object</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Brisko-Contracts-ThemeInterface.html"><abbr title="\Brisko\Contracts\ThemeInterface">ThemeInterface</abbr></a></span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Singleton instance of the class.</p>
-</section>
+            <section class="phpdocumentor-description"></section>
 
     
 </article>
@@ -345,77 +326,6 @@ as final intentionally, it is not meant to be overridden.</p>
                 <span class="phpdocumentor-signature__name">site_footer</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                -final        "
->
-    <h4 class="phpdocumentor-element__name" id="method___clone">
-        __clone()
-        <a href="classes/Brisko-Traits-Singleton.html#method___clone" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/Singleton.php"><a href="files/src-traits-singleton.html"><abbr title="src/Traits/Singleton.php">Singleton.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">46</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Prevent object cloning.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__final">final</span>        <span class="phpdocumentor-signature__name">__clone</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method___construct">
-        __construct()
-        <a href="classes/Brisko-Traits-Singleton.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/Singleton.php"><a href="files/src-traits-singleton.html"><abbr title="src/Traits/Singleton.php">Singleton.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">39</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Protected class constructor to prevent direct object creation.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"><p>This is meant to be overridden in the classes which implement
-this trait. This is ideal for doing stuff that you only want to
-do once, such as hooking into actions and filters, etc.</p>
-</section>
 
     
     
