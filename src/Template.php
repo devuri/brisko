@@ -10,7 +10,6 @@ use Brisko\View\FullWidthPage;
 use Brisko\View\HomePage;
 use Brisko\View\IndexPage;
 use Brisko\View\Page;
-use Brisko\View\Content;
 use Brisko\View\Page404;
 use Brisko\View\Search;
 use Brisko\View\Sidebar;
