@@ -48,5 +48,30 @@ class Pages implements SettingsInterface
                 ]
             )
         );
+
+		// Pure content output.
+		$wp_customize->add_setting(
+			'enable_pure_content',
+			[
+				'default'           => absint( 0 ),
+				'capability'        => 'edit_theme_options',
+				'transport'         => self::$transport,
+				'sanitize_callback' => 'absint',
+			]
+		);
+
+		$wp_customize->add_control(
+			new ToggleControl(
+				$wp_customize,
+				'enable_pure_content',
+				[
+					'label'       => esc_html__( 'Enable Pure Content (recommended)', 'brisko' ),
+					'description' => esc_html__( 'Pure content will bypass `the_content` and use `get_the_content`, works better when using html, and fixes bootstrap style issues. Note: this will bypass filters that apply to the_content', 'brisko' ),
+					'section'     => self::section(),
+					'type'        => 'light',
+					// light, ios, flat.
+				]
+			)
+		);
     }
 }
