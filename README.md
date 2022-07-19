@@ -21,7 +21,7 @@ How to Install Brisko.
 * Brisko Blog: This is a basic child theme based on Brisko https://github.com/devuri/brisko-blog
 
 ### Features
-* Includes Bootstrap v4
+* Includes Bootstrap
 * Customizer Settings
 * Jetpack Support
 * Child Theme ready
