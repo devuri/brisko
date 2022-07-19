@@ -152,7 +152,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/default.html#function_brisko_sanitize_number">brisko_sanitize_number()</a>
     <span>
-                        &nbsp;: string    </span>
+                        &nbsp;: mixed    </span>
 </dt>
 <dd>Number sanitization.</dd>
 
@@ -166,21 +166,21 @@
             <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/default.html#function_brisko_layout_options">brisko_layout_options()</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
 <dd>Theme Layout options.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/default.html#function_brisko_text_align_options">brisko_text_align_options()</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
 <dd>Theme Layout options.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/default.html#function_brisko_text_tranform_choices">brisko_text_tranform_choices()</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
 <dd>Theme text-tranform choices.</dd>
 
@@ -443,7 +443,7 @@ as a boolean value, either TRUE or FALSE.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">brisko_sanitize_number</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$number</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                <span class="phpdocumentor-signature__name">brisko_sanitize_number</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$number</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"><p>Sanitization callback for 'numbers'</p>
 </section>
@@ -509,20 +509,35 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Customize/helpers.php"><a href="files/src-customize-helpers.html"><abbr title="src/Customize/helpers.php">helpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">141</span>
+    <span class="phpdocumentor-element-found-in__line">143</span>
 </aside>
 
         <p class="phpdocumentor-summary">Theme Layout options.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">brisko_layout_options</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                <span class="phpdocumentor-signature__name">brisko_layout_options</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
 
         <section class="phpdocumentor-description"><p>Used for Theme Layout Customizer.</p>
 </section>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">psalm-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>array{container: string, 'container-fluid': string}</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
     
 </article>
@@ -534,20 +549,35 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Customize/helpers.php"><a href="files/src-customize-helpers.html"><abbr title="src/Customize/helpers.php">helpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">160</span>
 </aside>
 
         <p class="phpdocumentor-summary">Theme Layout options.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">brisko_text_align_options</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                <span class="phpdocumentor-signature__name">brisko_text_align_options</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
 
         <section class="phpdocumentor-description"><p>Used for Theme Layout Customizer.</p>
 </section>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">psalm-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>array{left: string, right: string, center: string, justify: string, initial: string, inherit: string}</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
     
 </article>
@@ -559,20 +589,35 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Customize/helpers.php"><a href="files/src-customize-helpers.html"><abbr title="src/Customize/helpers.php">helpers.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">175</span>
+    <span class="phpdocumentor-element-found-in__line">181</span>
 </aside>
 
         <p class="phpdocumentor-summary">Theme text-tranform choices.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">brisko_text_tranform_choices</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                <span class="phpdocumentor-signature__name">brisko_text_tranform_choices</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
 
         <section class="phpdocumentor-description"><p>Used for Theme text-tranform in the Customizer.</p>
 </section>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">psalm-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>array{none: string, capitalize: string, uppercase: string, lowercase: string}</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
     
 </article>

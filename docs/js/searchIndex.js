@@ -548,7 +548,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\brisko_is_php5_6\u0028\u0029",
             "name": "brisko_is_php5_6",
-            "summary": "Check\u0020if\u0020PHP\u00205.6",
+            "summary": "Check\u0020if\u0020PHP\u00205.6.",
             "url": "namespaces/default.html#function_brisko_is_php5_6"
         },                {
             "fqsen": "\\Brisko\\Layout",
@@ -986,6 +986,21 @@ Search.appendIndex(
             "summary": "The\u0020main\u0020Template\u0020class.",
             "url": "classes/Brisko-Template.html"
         },                {
+            "fqsen": "\\Brisko\\Template\u003A\u003Aheader\u0028\u0029",
+            "name": "header",
+            "summary": "Load\u0020header\u0020template.",
+            "url": "classes/Brisko-Template.html#method_header"
+        },                {
+            "fqsen": "\\Brisko\\Template\u003A\u003Afooter\u0028\u0029",
+            "name": "footer",
+            "summary": "Load\u0020footer\u0020template.",
+            "url": "classes/Brisko-Template.html#method_footer"
+        },                {
+            "fqsen": "\\Brisko\\Template\u003A\u003Acontent\u0028\u0029",
+            "name": "content",
+            "summary": "Displays\u0020the\u0020post\u0020content.",
+            "url": "classes/Brisko-Template.html#method_content"
+        },                {
             "fqsen": "\\Brisko\\Template\u003A\u003Aindex\u0028\u0029",
             "name": "index",
             "summary": "The\u0020main\u0020template\u0020file.",
@@ -1091,6 +1106,11 @@ Search.appendIndex(
             "summary": "Template.",
             "url": "classes/Brisko-Theme.html#method_template"
         },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003Acontent\u0028\u0029",
+            "name": "content",
+            "summary": "Template.",
+            "url": "classes/Brisko-Theme.html#method_content"
+        },                {
             "fqsen": "\\Brisko\\Theme\u003A\u003Afooter\u0028\u0029",
             "name": "footer",
             "summary": "Footer.",
@@ -1110,26 +1130,6 @@ Search.appendIndex(
             "name": "VERSION",
             "summary": "Define\u0020Theme\u0020Version.",
             "url": "classes/Brisko-Theme.html#constant_VERSION"
-        },                {
-            "fqsen": "\\Brisko\\Traits\\Singleton",
-            "name": "Singleton",
-            "summary": "",
-            "url": "classes/Brisko-Traits-Singleton.html"
-        },                {
-            "fqsen": "\\Brisko\\Traits\\Singleton\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Protected\u0020class\u0020constructor\u0020to\u0020prevent\u0020direct\u0020object\u0020creation.",
-            "url": "classes/Brisko-Traits-Singleton.html#method___construct"
-        },                {
-            "fqsen": "\\Brisko\\Traits\\Singleton\u003A\u003A__clone\u0028\u0029",
-            "name": "__clone",
-            "summary": "Prevent\u0020object\u0020cloning.",
-            "url": "classes/Brisko-Traits-Singleton.html#method___clone"
-        },                {
-            "fqsen": "\\Brisko\\Traits\\Singleton\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "This\u0020method\u0020returns\u0020new\u0020or\u0020existing\u0020Singleton\u0020instance\nof\u0020the\u0020class\u0020for\u0020which\u0020it\u0020is\u0020called.\u0020This\u0020method\u0020is\u0020set\nas\u0020final\u0020intentionally,\u0020it\u0020is\u0020not\u0020meant\u0020to\u0020be\u0020overridden.",
-            "url": "classes/Brisko-Traits-Singleton.html#method_get"
         },                {
             "fqsen": "\\Brisko\\View\\Archive",
             "name": "Archive",
@@ -1320,6 +1320,46 @@ Search.appendIndex(
             "name": "post_thumbnail",
             "summary": "Displays\u0020an\u0020optional\u0020post\u0020thumbnail.",
             "url": "classes/Brisko-View-Thumbnail.html#method_post_thumbnail"
+        },                {
+            "fqsen": "\\Brisko\\Contracts\\ThemeInterface",
+            "name": "ThemeInterface",
+            "summary": "",
+            "url": "classes/Brisko-Contracts-ThemeInterface.html"
+        },                {
+            "fqsen": "\\Brisko\\Contracts\\ThemeInterface\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Initialize\u0020instance.",
+            "url": "classes/Brisko-Contracts-ThemeInterface.html#method_get"
+        },                {
+            "fqsen": "\\wp_body_open\u0028\u0029",
+            "name": "wp_body_open",
+            "summary": "",
+            "url": "namespaces/default.html#function_wp_body_open"
+        },                {
+            "fqsen": "\\Brisko\\Traits\\Instance",
+            "name": "Instance",
+            "summary": "",
+            "url": "classes/Brisko-Traits-Instance.html"
+        },                {
+            "fqsen": "\\Brisko\\Traits\\Instance\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Instantiate.",
+            "url": "classes/Brisko-Traits-Instance.html#method_get"
+        },                {
+            "fqsen": "\\Brisko\\View\\Content",
+            "name": "Content",
+            "summary": "",
+            "url": "classes/Brisko-View-Content.html"
+        },                {
+            "fqsen": "\\Brisko\\View\\Content\u003A\u003Aview\u0028\u0029",
+            "name": "view",
+            "summary": "Display\u0020content\u0020only.",
+            "url": "classes/Brisko-View-Content.html#method_view"
+        },                {
+            "fqsen": "\\Brisko\\View\\Content\u003A\u003Athe_content\u0028\u0029",
+            "name": "the_content",
+            "summary": "Display\u0020content.",
+            "url": "classes/Brisko-View-Content.html#method_the_content"
         },                {
             "fqsen": "\\",
             "name": "\\",

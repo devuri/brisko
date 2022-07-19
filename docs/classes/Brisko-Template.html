@@ -90,13 +90,13 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/Brisko-Traits-Singleton.html"><abbr title="\Brisko\Traits\Singleton">Singleton</abbr></a>                    </span>
+                            <a href="classes/Brisko-Traits-Instance.html"><abbr title="\Brisko\Traits\Instance">Instance</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
             <p class="phpdocumentor-summary">The main Template class.</p>
@@ -133,6 +133,20 @@ to instantiate and access the views.</p>
 <dd>Brisko Canvas.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Brisko-Template.html#method_content">content()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Displays the post content.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Brisko-Template.html#method_footer">footer()</a>
+    <span>
+                        &nbsp;: false|void    </span>
+</dt>
+<dd>Load footer template.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Brisko-Template.html#method_full_width_page">full_width_page()</a>
     <span>
                         &nbsp;: void    </span>
@@ -140,13 +154,18 @@ to instantiate and access the views.</p>
 <dd>Full Width.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Traits-Singleton.html#method_get">get()</a>
+    <a href="classes/Brisko-Traits-Instance.html#method_get">get()</a>
     <span>
-                        &nbsp;: object    </span>
+                        &nbsp;: <a href="classes/Brisko-Contracts-ThemeInterface.html"><abbr title="\Brisko\Contracts\ThemeInterface">ThemeInterface</abbr></a>    </span>
 </dt>
-<dd>This method returns new or existing Singleton instance
-of the class for which it is called. This method is set
-as final intentionally, it is not meant to be overridden.</dd>
+<dd>Instantiate.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Brisko-Template.html#method_header">header()</a>
+    <span>
+                        &nbsp;: false|void    </span>
+</dt>
+<dd>Load header template.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Brisko-Template.html#method_home_page">home_page()</a>
@@ -197,20 +216,6 @@ as final intentionally, it is not meant to be overridden.</dd>
 </dt>
 <dd>The template for displaying all single posts.</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Brisko-Traits-Singleton.html#method___clone">__clone()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>Prevent object cloning.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Brisko-Traits-Singleton.html#method___construct">__construct()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>Protected class constructor to prevent direct object creation.</dd>
-
         </dl>
 
 
@@ -237,7 +242,7 @@ as final intentionally, it is not meant to be overridden.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 </aside>
 
         <p class="phpdocumentor-summary">The template for displaying archive pages.</p>
@@ -286,7 +291,7 @@ as final intentionally, it is not meant to be overridden.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">112</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 </aside>
 
         <p class="phpdocumentor-summary">Brisko Canvas.</p>
@@ -311,6 +316,111 @@ as final intentionally, it is not meant to be overridden.</dd>
         class="phpdocumentor-element
             -method
             -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_content">
+        content()
+        <a href="classes/Brisko-Template.html#method_content" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">63</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Displays the post content.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">content</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_footer">
+        footer()
+        <a href="classes/Brisko-Template.html#method_footer" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">53</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Load footer template.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">footer</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$args</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the specialised footer.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Additional arguments passed to the footer template.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://developer.wordpress.org/reference/functions/get_header/"><abbr title="https://developer.wordpress.org/reference/functions/get_header/">https://developer.wordpress.org/reference/functions/get_header/</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">false|void</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Void on success, false if the template does not exist.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_full_width_page">
@@ -320,7 +430,7 @@ as final intentionally, it is not meant to be overridden.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">177</span>
 </aside>
 
         <p class="phpdocumentor-summary">Full Width.</p>
@@ -345,25 +455,23 @@ as final intentionally, it is not meant to be overridden.</dd>
         class="phpdocumentor-element
             -method
             -public
-                                    -static            -final        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_get">
         get()
-        <a href="classes/Brisko-Traits-Singleton.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Brisko-Traits-Instance.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/Singleton.php"><a href="files/src-traits-singleton.html"><abbr title="src/Traits/Singleton.php">Singleton.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/Instance.php"><a href="files/src-traits-instance.html"><abbr title="src/Traits/Instance.php">Instance.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
-        <p class="phpdocumentor-summary">This method returns new or existing Singleton instance
-of the class for which it is called. This method is set
-as final intentionally, it is not meant to be overridden.</p>
+        <p class="phpdocumentor-summary">Instantiate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__final">final</span>    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Brisko-Contracts-ThemeInterface.html"><abbr title="\Brisko\Contracts\ThemeInterface">ThemeInterface</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -371,9 +479,79 @@ as final intentionally, it is not meant to be overridden.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">object</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Brisko-Contracts-ThemeInterface.html"><abbr title="\Brisko\Contracts\ThemeInterface">ThemeInterface</abbr></a></span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Singleton instance of the class.</p>
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_header">
+        header()
+        <a href="classes/Brisko-Template.html#method_header" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">38</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Load header template.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">header</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$args</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the specialised header.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Additional arguments passed to the header template.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://developer.wordpress.org/reference/functions/get_header/"><abbr title="https://developer.wordpress.org/reference/functions/get_header/">https://developer.wordpress.org/reference/functions/get_header/</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">false|void</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Void on success, false if the template does not exist.</p>
 </section>
 
     
@@ -391,7 +569,7 @@ as final intentionally, it is not meant to be overridden.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 </aside>
 
         <p class="phpdocumentor-summary">Brisko Canvas.</p>
@@ -425,7 +603,7 @@ as final intentionally, it is not meant to be overridden.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 </aside>
 
         <p class="phpdocumentor-summary">The main template file.</p>
@@ -478,7 +656,7 @@ E.g., it puts together the home page when no home.php file exists.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 </aside>
 
         <p class="phpdocumentor-summary">The template for displaying all pages.</p>
@@ -531,7 +709,7 @@ different template.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 </aside>
 
         <p class="phpdocumentor-summary">The template for displaying 404 pages (not found).</p>
@@ -580,7 +758,7 @@ different template.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 </aside>
 
         <p class="phpdocumentor-summary">The template for displaying search results pages.</p>
@@ -629,7 +807,7 @@ different template.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 </aside>
 
         <p class="phpdocumentor-summary">The sidebar containing the main widget area.</p>
@@ -678,7 +856,7 @@ different template.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Template.php"><a href="files/src-template.html"><abbr title="src/Template.php">Template.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
         <p class="phpdocumentor-summary">The template for displaying all single posts.</p>
@@ -706,77 +884,6 @@ different template.</p>
 
                                     </dd>
                         </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                -final        "
->
-    <h4 class="phpdocumentor-element__name" id="method___clone">
-        __clone()
-        <a href="classes/Brisko-Traits-Singleton.html#method___clone" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/Singleton.php"><a href="files/src-traits-singleton.html"><abbr title="src/Traits/Singleton.php">Singleton.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">46</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Prevent object cloning.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__final">final</span>        <span class="phpdocumentor-signature__name">__clone</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method___construct">
-        __construct()
-        <a href="classes/Brisko-Traits-Singleton.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/Singleton.php"><a href="files/src-traits-singleton.html"><abbr title="src/Traits/Singleton.php">Singleton.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">39</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Protected class constructor to prevent direct object creation.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"><p>This is meant to be overridden in the classes which implement
-this trait. This is ideal for doing stuff that you only want to
-do once, such as hooking into actions and filters, etc.</p>
-</section>
-
-    
-    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
