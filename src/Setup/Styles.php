@@ -34,48 +34,6 @@ class Styles implements EnqueueInterface
         return new self();
     }
 
-	/**
-	 * Adds Bootstrap 5 support.
-	 *
-	 * Implements theme mods for the following:
-	 *
-	 * bootstrap5-grid
-	 * bootstrap5-grid-rtl
-	 * bootstrap5
-	 * bootstrap5-rtl
-	 * bootstrap5-utilities
-	 * bootstrap5-utilities-rtl
-	 *
-	 * @return void
-	 */
-	protected static function bootstrap5()
-	{
-		if ( true === get_theme_mod( 'enable_bootstrap5_grid', false ) ) {
-			wp_enqueue_style( 'bootstrap5-grid' );
-		}
-
-		if ( true === get_theme_mod( 'enable_bootstrap5_grid_rtl', false ) ) {
-			wp_enqueue_style( 'bootstrap5-grid-rtl' );
-		}
-
-		if ( true === get_theme_mod( 'enable_bootstrap5', false ) ) {
-			wp_enqueue_style( 'bootstrap5' );
-		}
-
-		if ( true === get_theme_mod( 'enable_bootstrap5_rtl', false ) ) {
-			wp_enqueue_style( 'bootstrap5-rtl' );
-		}
-
-		if ( true === get_theme_mod( 'enable_bootstrap5_utilities', false ) ) {
-			wp_enqueue_style( 'bootstrap5-utilities' );
-		}
-
-		if ( true === get_theme_mod( 'enable_bootstrap5_utilities_rtl', false ) ) {
-			wp_enqueue_style( 'bootstrap5-utilities-rtl' );
-		}
-
-	}
-
     /**
      * Enqueue scripts.
      */
@@ -92,8 +50,8 @@ class Styles implements EnqueueInterface
             wp_enqueue_style( 'brisko' );
         }
 
-		// bootstrap 5.
-		self::bootstrap5();
+        // bootstrap 5.
+        self::bootstrap5();
 
         // bootstrap grid.
         if ( true === get_theme_mod( 'enable_bootstrap_grid', false ) ) {
@@ -125,22 +83,22 @@ class Styles implements EnqueueInterface
     public static function css_files()
     {
         $files = [
-            'underscores'    => Assets::uri() . '/css/underscores.min.css',
-			// bootstrap 5.
-            'bootstrap5-grid'=> Assets::uri() . '/css/bootstrap5/bootstrap-grid.min.css',
-            'bootstrap5-grid-rtl'=> Assets::uri() . '/css/bootstrap5/bootstrap-grid.rtl.min.css',
-			'bootstrap5'     => Assets::uri() . '/css/bootstrap5/bootstrap.min.css',
-			'bootstrap5-rtl'     => Assets::uri() . '/css/bootstrap5/bootstrap.rtl.min.css',
-			'bootstrap5-utilities'=> Assets::uri() . '/css/bootstrap5/bootstrap-utilities.min.css',
-			'bootstrap5-utilities-rtl' => Assets::uri() . '/css/bootstrap5/bootstrap-utilities.rtl.min.css',
-			// bootstrap 4.
-            'bootstrap-grid' => Assets::uri() . '/css/bootstrap/bootstrap-grid.min.css',
-            'bootstrap'      => Assets::uri() . '/css/bootstrap/bootstrap.min.css',
-			// uikit.
-            'uikit'          => Assets::uri() . '/css/uikit.min.css',
-            'brisko'         => Assets::uri() . '/css/brisko.min.css',
-            'custom-styles'  => Assets::uri() . '/css/custom-styles.min.css',
-            'brisko-theme'   => get_stylesheet_uri(),
+            'underscores'              => Assets::uri() . '/css/underscores.min.css',
+            // bootstrap 5.
+            'bootstrap5-grid'          => Assets::uri() . '/css/bootstrap5/bootstrap-grid.min.css',
+            'bootstrap5-grid-rtl'      => Assets::uri() . '/css/bootstrap5/bootstrap-grid.rtl.min.css',
+            'bootstrap5'               => Assets::uri() . '/css/bootstrap5/bootstrap.min.css',
+            'bootstrap5-rtl'           => Assets::uri() . '/css/bootstrap5/bootstrap.rtl.min.css',
+            'bootstrap5-utilities'     => Assets::uri() . '/css/bootstrap5/bootstrap-utilities.min.css',
+            'bootstrap5-utilities-rtl' => Assets::uri() . '/css/bootstrap5/bootstrap-utilities.rtl.min.css',
+            // bootstrap 4.
+            'bootstrap-grid'           => Assets::uri() . '/css/bootstrap/bootstrap-grid.min.css',
+            'bootstrap'                => Assets::uri() . '/css/bootstrap/bootstrap.min.css',
+            // uikit.
+            'uikit'                    => Assets::uri() . '/css/uikit.min.css',
+            'brisko'                   => Assets::uri() . '/css/brisko.min.css',
+            'custom-styles'            => Assets::uri() . '/css/custom-styles.min.css',
+            'brisko-theme'             => get_stylesheet_uri(),
         ];
 
         return apply_filters( 'brisko_css_assets', $files );
@@ -267,6 +225,47 @@ class Styles implements EnqueueInterface
         }
 
         return $css;
+    }
+
+    /**
+     * Adds Bootstrap 5 support.
+     *
+     * Implements theme mods for the following:
+     *
+     * bootstrap5-grid
+     * bootstrap5-grid-rtl
+     * bootstrap5
+     * bootstrap5-rtl
+     * bootstrap5-utilities
+     * bootstrap5-utilities-rtl
+     *
+     * @return void
+     */
+    protected static function bootstrap5()
+    {
+        if ( true === get_theme_mod( 'enable_bootstrap5_grid', false ) ) {
+            wp_enqueue_style( 'bootstrap5-grid' );
+        }
+
+        if ( true === get_theme_mod( 'enable_bootstrap5_grid_rtl', false ) ) {
+            wp_enqueue_style( 'bootstrap5-grid-rtl' );
+        }
+
+        if ( true === get_theme_mod( 'enable_bootstrap5', false ) ) {
+            wp_enqueue_style( 'bootstrap5' );
+        }
+
+        if ( true === get_theme_mod( 'enable_bootstrap5_rtl', false ) ) {
+            wp_enqueue_style( 'bootstrap5-rtl' );
+        }
+
+        if ( true === get_theme_mod( 'enable_bootstrap5_utilities', false ) ) {
+            wp_enqueue_style( 'bootstrap5-utilities' );
+        }
+
+        if ( true === get_theme_mod( 'enable_bootstrap5_utilities_rtl', false ) ) {
+            wp_enqueue_style( 'bootstrap5-utilities-rtl' );
+        }
     }
 
     /**

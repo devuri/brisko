@@ -58,21 +58,6 @@ class Scripts implements EnqueueInterface
         }
     }
 
-	protected static function bootstrap5()
-	{
-		if ( true === get_theme_mod( 'enable_bootstrap5_js', false ) ) {
-            wp_enqueue_script( 'brisko-bootstrap5' );
-        }
-
-		if ( true === get_theme_mod( 'enable_bootstrap5_bundle_js', false ) ) {
-            wp_enqueue_script( 'brisko-bootstrap5_bundle' );
-        }
-
-		if ( true === get_theme_mod( 'enable_bootstrap5_esm_js', false ) ) {
-            wp_enqueue_script( 'brisko-bootstrap5_esm' );
-        }
-	}
-
     /**
      * Setup static JS files.
      *
@@ -83,16 +68,16 @@ class Scripts implements EnqueueInterface
     public static function js_files()
     {
         return [
-			// bootstrap 5.
-			'brisko-bootstrap5'     => Assets::uri() . '/js/bootstrap5/bootstrap.min.js',
+            // bootstrap 5.
+            'brisko-bootstrap5'        => Assets::uri() . '/js/bootstrap5/bootstrap.min.js',
             'brisko-bootstrap5-bundle' => Assets::uri() . '/js/bootstrap5/bootstrap.bundle.min.js',
             'brisko-bootstrap5-esm'    => Assets::uri() . '/js/bootstrap5/bootstrap.esm.min.js',
-			// bootstrap 4.
-            'brisko-popper'        => Assets::uri() . '/js/bootstrap/popper.min.js',
-            'brisko-bootstrap'     => Assets::uri() . '/js/bootstrap/bootstrap.min.js',
-            'brisko-uikit'         => Assets::uri() . '/js/uikit.min.js',
-            'brisko-navigation'    => Assets::uri() . '/js/navigation.js',
-            'brisko-smooth-scroll' => Assets::uri() . '/js/smooth-scroll.js',
+            // bootstrap 4.
+            'brisko-popper'            => Assets::uri() . '/js/bootstrap/popper.min.js',
+            'brisko-bootstrap'         => Assets::uri() . '/js/bootstrap/bootstrap.min.js',
+            'brisko-uikit'             => Assets::uri() . '/js/uikit.min.js',
+            'brisko-navigation'        => Assets::uri() . '/js/navigation.js',
+            'brisko-smooth-scroll'     => Assets::uri() . '/js/smooth-scroll.js',
         ];
     }
 
@@ -106,10 +91,10 @@ class Scripts implements EnqueueInterface
         wp_register_script( 'brisko-popper', Assets::uri() . '/js/bootstrap/popper.min.js', [ 'jquery' ], self::ver( 'brisko-popper' ), true );
         wp_register_script( 'brisko-bootstrap', Assets::uri() . '/js/bootstrap/bootstrap.min.js', [ 'jquery' ], self::ver( 'brisko-bootstrap' ), true );
 
-		// bootstrap 5
-		wp_register_script( 'brisko-bootstrap5', Assets::uri() . '/js/bootstrap5/bootstrap.min.js', [], self::ver( 'brisko-bootstrap5' ), true );
-		wp_register_script( 'brisko-bootstrap5-bundle', Assets::uri() . '/js/bootstrap5/bootstrap.bundle.min.js', [], self::ver( 'brisko-bootstrap5-bundle' ), true );
-		wp_register_script( 'brisko-bootstrap5-esm', Assets::uri() . '/js/bootstrap5/bootstrap.esm.min.js', [], self::ver( 'brisko-bootstrap5-esm' ), true );
+        // bootstrap 5
+        wp_register_script( 'brisko-bootstrap5', Assets::uri() . '/js/bootstrap5/bootstrap.min.js', [], self::ver( 'brisko-bootstrap5' ), true );
+        wp_register_script( 'brisko-bootstrap5-bundle', Assets::uri() . '/js/bootstrap5/bootstrap.bundle.min.js', [], self::ver( 'brisko-bootstrap5-bundle' ), true );
+        wp_register_script( 'brisko-bootstrap5-esm', Assets::uri() . '/js/bootstrap5/bootstrap.esm.min.js', [], self::ver( 'brisko-bootstrap5-esm' ), true );
 
         wp_register_script( 'brisko-navigation', Assets::uri() . '/js/navigation.js', [], self::ver( 'brisko-navigation' ), true );
         wp_register_script( 'brisko-smooth-scroll', Assets::uri() . '/js/smooth-scroll.js', [], self::ver( 'brisko-smooth-scroll' ), true );
@@ -125,5 +110,20 @@ class Scripts implements EnqueueInterface
     public static function ver( $handle )
     {
         return md5_file( self::js_files()[ $handle ] );
+    }
+
+    protected static function bootstrap5()
+    {
+        if ( true === get_theme_mod( 'enable_bootstrap5_js', false ) ) {
+            wp_enqueue_script( 'brisko-bootstrap5' );
+        }
+
+        if ( true === get_theme_mod( 'enable_bootstrap5_bundle_js', false ) ) {
+            wp_enqueue_script( 'brisko-bootstrap5_bundle' );
+        }
+
+        if ( true === get_theme_mod( 'enable_bootstrap5_esm_js', false ) ) {
+            wp_enqueue_script( 'brisko-bootstrap5_esm' );
+        }
     }
 }
