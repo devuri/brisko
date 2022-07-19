@@ -55,6 +55,8 @@ class Styles implements EnqueueInterface
             wp_enqueue_style( 'bootstrap-grid' );
         }
 
+        // TODO add bootstrap 5.
+
         // bootstrap.
         if ( true === get_theme_mod( 'enable_bootstrap', true ) ) {
             wp_enqueue_style( 'bootstrap' );

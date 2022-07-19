@@ -34,13 +34,7 @@ class Theme
      */
     private function __construct()
     {
-        Activate::init();
-        Assets::init();
-        Body::init();
-        Head::init();
-        Jetpack::init();
-        Customizer::init();
-        // Compat::init();  @codingStandardsIgnoreLine
+		// empty.
     }
 
     /**
@@ -50,7 +44,13 @@ class Theme
      */
     public static function setup()
     {
-        return new self();
+		Activate::init();
+		Assets::init();
+		Body::init();
+		Head::init();
+		Jetpack::init();
+		Customizer::init();
+		// Compat::init();  @codingStandardsIgnoreLine
     }
 
     /**
@@ -127,6 +127,16 @@ class Theme
     public static function template()
     {
         return Template::get();
+    }
+
+	/**
+     * Template.
+     *
+     * @return Template
+     */
+    public static function content()
+    {
+        return static::template()->content();
     }
 
     /**
