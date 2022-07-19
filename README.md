@@ -13,6 +13,7 @@ How to Install Brisko.
 * Grab a copy from the WordPress Theme Directory [Download Brisko](https://wordpress.org/themes/brisko/)
 * Search in the WordPress Backend and Install from there [Adding New Themes](https://wordpress.org/support/article/using-themes/#adding-new-themes).
 * Download the .zip file Gihub Release Here [Releases](https://github.com/devuri/brisko/releases), If you use this option rename the theme to brisko.zip, (Adding New Themes by using cPanel) https://wordpress.org/support/article/using-themes/#adding-new-themes-by-using-cpanel
+* Enable Pure Content, Pure content will bypass `the_content` and use `get_the_content`, see [#124](https://github.com/devuri/brisko/issues/124) 
 
 ### How to create Child Theme.
 * Use **Child Theme Generator Plugin:** You can use this plugin to quickly and easily generate a child theme https://wordpress.org/plugins/child-theme-generator/
