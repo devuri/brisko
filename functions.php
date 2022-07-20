@@ -44,6 +44,13 @@ if ( did_action( 'elementor/loaded' ) ) {
         } );
 }
 
+/**
+ * Disable wpautop.
+ *
+ * @link https://developer.wordpress.org/reference/functions/wpautop/
+ * @link https://stackoverflow.com/questions/20760598/how-to-remove-extra-p-p-tags-in-wordpress-post-and-pages
+ */
+remove_filter( 'the_content', 'wpautop' );
 
 // // Brisko has a simple filter 'brisko_css_assets' to programmatically remove styles.
 // // Note that we can also use wp_deregister_style() or wp_dequeue_style()
