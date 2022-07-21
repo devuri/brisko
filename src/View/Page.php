@@ -16,7 +16,7 @@ class Page extends Layout
         // Page content
         while ( have_posts() ) {
             the_post();
-            get_template_part( 'template-parts/content', 'page' );
+            self::template_part();
             if ( comments_open() || get_comments_number() ) {
                 comments_template();
             }
@@ -43,5 +43,17 @@ class Page extends Layout
 			</main><!-- #main -->
 		<?php
         do_action( 'brisko_page_footer' );
+    }
+
+    /**
+     * Page template part.
+     *
+     * @return void
+     */
+    protected static function template_part()
+    {
+        $post_id = get_the_ID();
+        do_action( "brisko_page_{$post_id}" );
+        get_template_part( 'template-parts/content', 'page' );
     }
 }
