@@ -47,6 +47,7 @@
     "scripts": {
 		"wpcore":"composer require --dev johnpbloch/wordpress-core",
 		"wpcs":"composer wpcs-lint",
+		"wpcs-all":"composer wpcs-lint-all",
         "wpcs-lint":[
             "composer install -q",
             "phpcs -ns src",

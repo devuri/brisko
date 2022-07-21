@@ -44,7 +44,7 @@ if ( did_action( 'elementor/loaded' ) ) {
         } );
 }
 
-/**
+/*
  * Disable wpautop.
  *
  * @link https://developer.wordpress.org/reference/functions/wpautop/

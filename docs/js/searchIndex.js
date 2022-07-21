@@ -1261,6 +1261,11 @@ Search.appendIndex(
             "summary": "Footer\u0020section.",
             "url": "classes/Brisko-View-Page.html#method_footer"
         },                {
+            "fqsen": "\\Brisko\\View\\Page\u003A\u003Atemplate_part\u0028\u0029",
+            "name": "template_part",
+            "summary": "Page\u0020template\u0020part.",
+            "url": "classes/Brisko-View-Page.html#method_template_part"
+        },                {
             "fqsen": "\\Brisko\\View\\Page404",
             "name": "Page404",
             "summary": "The\u0020main\u0020theme\u0020Layout\u0020class.",
