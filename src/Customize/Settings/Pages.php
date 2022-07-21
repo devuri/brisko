@@ -66,7 +66,7 @@ class Pages implements SettingsInterface
                 'enable_pure_content',
                 [
                     'label'       => esc_html__( 'Enable Pure Content (recommended)', 'brisko' ),
-                    'description' => esc_html__( 'Pure content will bypass `the_content` and use `get_the_content`, works better when using html, and fixes bootstrap style issues. Note: this will bypass filters that apply to the_content', 'brisko' ),
+                    'description' => esc_html__( 'Pure content will bypass `the_content` and use `get_the_content`, works better when using html, and fixes bootstrap style issues. Note: this will bypass filters that apply to the_content, some page builders will not work.', 'brisko' ),
                     'section'     => self::section(),
                     'type'        => 'light',
                     // light, ios, flat.
