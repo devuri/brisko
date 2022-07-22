@@ -109,7 +109,7 @@ class Scripts implements EnqueueInterface
      */
     public static function ver( $handle )
     {
-        return md5_file( self::js_files()[ $handle ] );
+        return md5( self::js_files()[ $handle ] );
     }
 
     protected static function bootstrap5()

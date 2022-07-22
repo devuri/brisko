@@ -116,7 +116,7 @@ class Styles implements EnqueueInterface
         }
 
         foreach ( self::css_files() as $handle => $file ) {
-            wp_register_style( $handle, $file, [], md5_file( $file ) );
+            wp_register_style( $handle, $file, [], md5( $file ) );
         }
     }
 
