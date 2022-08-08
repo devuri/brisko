@@ -27,14 +27,37 @@ class Theme
     /**
      * Define Theme Version.
      */
-    const VERSION = '3.3.3';
+    const VERSION = '3.5.0';
+
+    protected static $dir;
+    protected $activate;
+    protected $assets;
+    protected $body;
+    protected $head;
+    protected $jetpack;
+    protected $customizer;
+    protected $compat;
 
     /**
      * [__construct description].
+     *
+     * @param mixed $dir
      */
-    private function __construct()
+    /**
+     * construct.
+     *
+     * @param string $dir the theme dir path.
+     */
+    public function __construct( $dir )
     {
-        // empty.
+        static::$dir      = $dir;
+        $this->activate   = new Activate();
+        $this->assets     = new Assets();
+        $this->body       = new Body();
+        $this->head       = new Head();
+        $this->jetpack    = new Jetpack();
+        $this->customizer = new Customizer();
+        // $this->compat = new Compat(); @codingStandardsIgnoreLine
     }
 
     /**
@@ -42,15 +65,37 @@ class Theme
      *
      * @return void
      */
-    public static function setup()
+    public function setup()
     {
-        Activate::init();
-        Assets::init();
-        Body::init();
-        Head::init();
-        Jetpack::init();
-        Customizer::init();
-        // Compat::init();  @codingStandardsIgnoreLine
+        $this->activate->init();
+        $this->assets->init();
+        $this->body->init();
+        $this->head->init();
+        $this->jetpack->init();
+        $this->customizer->init();
+        // $this->compat->init(); @codingStandardsIgnoreLine
+    }
+
+    /**
+     * Dir path.
+     *
+     * @return string
+     */
+    public static function dir_path()
+    {
+        return static::$dir;
+    }
+
+    /**
+     * Theme Actions.
+     *
+     * @param string $action the name of the action.
+     *
+     * @return Actions .
+     */
+    public function action( $action = null )
+    {
+        return Actions::get()->action( $action );
     }
 
     /**

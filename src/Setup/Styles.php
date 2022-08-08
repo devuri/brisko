@@ -4,34 +4,19 @@ namespace Brisko\Setup;
 
 use Brisko\Contracts\EnqueueInterface;
 use Brisko\Theme;
-use Brisko\Traits\Instance;
 
 class Styles implements EnqueueInterface
 {
-    use Instance;
-
     /**
-     *  Assets scripts.
+     * Styles.
+     *
+     * @return void
      */
-    private function __construct()
+    public function init()
     {
-
-        // register.
         add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
-
-        // enqueue.
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
-    }
-
-    /**
-     * Singleton.
-     *
-     * @return self
-     */
-    public static function init()
-    {
-        return new self();
     }
 
     /**

@@ -3,16 +3,15 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Instance;
 
 class Activate implements SetupInterface
 {
-    use Instance;
-
     /**
-     * Theme Setup.
+     * Activate.
+     *
+     * @return void
      */
-    private function __construct()
+    public function init()
     {
         add_action( 'brisko_blog_title', [ $this, 'blog_title' ] );
         add_action( 'brisko_blog_subtitle', [ $this, 'blog_subtitle' ] );
@@ -23,16 +22,6 @@ class Activate implements SetupInterface
         // The Excerp.
         add_filter( 'excerpt_length', [ $this, 'set_excerpt_length' ], 99 );
         add_filter( 'excerpt_more', [ $this, 'set_excerpt_more' ], 99 );
-    }
-
-    /**
-     * Singleton.
-     *
-     * @return self
-     */
-    public static function init()
-    {
-        return new self();
     }
 
     /**

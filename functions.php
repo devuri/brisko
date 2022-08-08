@@ -10,9 +10,6 @@
  */
 require __DIR__ . '/vendor/autoload.php';
 
-// Load Theme
-Brisko\Theme::setup();
-
 if ( ! \function_exists( 'brisko' ) ) {
     /**
      * Get the Brisko Theme.
@@ -23,9 +20,12 @@ if ( ! \function_exists( 'brisko' ) ) {
      */
     function brisko()
     {
-        return Brisko\Brisko::get();
+        return new Brisko\Theme( __DIR__ );
     }
 }
+
+// Theme setup.
+brisko()->setup();
 
 // load customizer preview.
 add_action( 'customize_preview_init', 'brisko_customize_preview_js' );

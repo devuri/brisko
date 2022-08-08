@@ -3,30 +3,19 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Instance;
 
 class Head implements SetupInterface
 {
-    use Instance;
-
     /**
-     *  Constructor.
+     * Head.
+     *
+     * @return void
      */
-    private function __construct()
+    public function init()
     {
         add_action( 'wp_head', [ $this, 'brisko_pingback_header' ] );
         add_filter( 'body_class', [ $this, 'brisko_body_classes' ] );
         add_action( 'after_setup_theme', [ $this, 'brisko_custom_header_setup' ] );
-    }
-
-    /**
-     * Singleton.
-     *
-     * @return self
-     */
-    public static function init()
-    {
-        return new self();
     }
 
     /**

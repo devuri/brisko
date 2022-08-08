@@ -3,28 +3,17 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Instance;
 
 class Body implements SetupInterface
 {
-    use Instance;
-
-    /**
-     * [__construct description].
-     */
-    private function __construct()
-    {
-        $this->body_class();
-    }
-
     /**
      * Get Class.
      *
-     * @return Body ..
+     * @return void
      */
-    public static function init()
+    public function init()
     {
-        return new self();
+        $this->body_class();
     }
 
     /**

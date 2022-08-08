@@ -7,22 +7,15 @@ use Brisko\Contracts\SetupInterface;
 class Customizer implements SetupInterface
 {
     /**
-     * Register the Customizer.
-     */
-    public function __construct()
-    {
-        add_action( 'customize_register', [ $this, 'brisko_customizer' ] );
-    }
-    /**
      * Initialize the Customizer.
      *
      * @see Theme __construct
      *
-     * @return Customizer
+     * @return void
      */
-    public static function init()
+    public function init()
     {
-        return new self();
+        add_action( 'customize_register', [ $this, 'brisko_customizer' ] );
     }
 
     /**

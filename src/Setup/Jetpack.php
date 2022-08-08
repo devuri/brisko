@@ -3,7 +3,6 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Instance;
 
 /**
  * The main Jetpack class.
@@ -13,26 +12,16 @@ use Brisko\Traits\Instance;
  */
 class Jetpack implements SetupInterface
 {
-    use Instance;
-
     /**
-     *  Constructor.
+     * Jetpack.
+     *
+     * @return void
      */
-    private function __construct()
+    public function init()
     {
         if ( \defined( '\JETPACK__VERSION' ) ) {
             add_action( 'after_setup_theme', [ $this, 'jetpack_setup' ] );
         }
-    }
-
-    /**
-     * Singleton.
-     *
-     * @return self
-     */
-    public static function init()
-    {
-        return new self();
     }
 
     /**

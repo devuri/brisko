@@ -7,5 +7,5 @@ interface SetupInterface
     /**
      * Initialize instance.
      */
-    public static function init();
+    public function init();
 }
