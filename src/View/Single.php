@@ -21,8 +21,17 @@ class Single extends Layout
             the_post();
             get_template_part( 'template-parts/content', 'single' );
 
-            // releated.
-            Brisko::related_content();
+            /*
+             * Related Content.
+             *
+             * Adds Related Content in Brisko Plugin.
+             *
+             * Includes "get_post()" Retrieves post object.
+             *
+             * @see https://developer.wordpress.org/reference/functions/get_post/
+             * @see https://gist.github.com/devuri/b0a86f75a86abfcdd7d41ed05e99de73
+             */
+            do_action( 'brisko_related_content', get_post() );
 
             // custom action .
             do_action( 'brisko_after_post_content' );
