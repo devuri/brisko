@@ -3,7 +3,6 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\EnqueueInterface;
-use Brisko\Traits\Instance;
 
 class Scripts implements EnqueueInterface
 {
@@ -14,7 +13,7 @@ class Scripts implements EnqueueInterface
      */
     public function init()
     {
-		add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
+        add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
     }
 

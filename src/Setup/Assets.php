@@ -4,7 +4,6 @@ namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
 use Brisko\Theme;
-use Brisko\Traits\Instance;
 
 class Assets implements SetupInterface
 {
@@ -15,8 +14,8 @@ class Assets implements SetupInterface
      */
     public function init()
     {
-		(new Styles())->init();
-		(new Scripts())->init();
+        ( new Styles() )->init();
+        ( new Scripts() )->init();
     }
 
     /**

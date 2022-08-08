@@ -3,7 +3,6 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Instance;
 
 /**
  * The Compatibility class.
@@ -19,8 +18,8 @@ class Compat implements SetupInterface
      */
     public function init()
     {
-		$this->hfe_header();
-		$this->hfe_footer();
+        $this->hfe_header();
+        $this->hfe_footer();
     }
 
     /**

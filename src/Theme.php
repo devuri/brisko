@@ -24,44 +24,41 @@ class Theme
 {
     use Instance;
 
-	protected static $dir;
-	protected $activate;
-	protected $assets;
-	protected $body;
-	protected $head;
-	protected $jetpack;
-	protected $customizer;
-	protected $compat;
-
     /**
      * Define Theme Version.
      */
     const VERSION = '3.3.3';
 
+    protected static $dir;
+    protected $activate;
+    protected $assets;
+    protected $body;
+    protected $head;
+    protected $jetpack;
+    protected $customizer;
+    protected $compat;
+
     /**
      * [__construct description].
+     *
+     * @param mixed $dir
+     */
+    /**
+     * construct.
+     *
+     * @param string $dir the theme dir path.
      */
     public function __construct( $dir )
     {
-		static::$dir = $dir;
-		$this->activate = new Activate();
-		$this->assets = new Assets();
-		$this->body = new Body();
-		$this->head = new Head();
-		$this->jetpack = new Jetpack();
-		$this->customizer = new Customizer();
-		// $this->compat = new Compat(); @codingStandardsIgnoreLine
+        static::$dir      = $dir;
+        $this->activate   = new Activate();
+        $this->assets     = new Assets();
+        $this->body       = new Body();
+        $this->head       = new Head();
+        $this->jetpack    = new Jetpack();
+        $this->customizer = new Customizer();
+        // $this->compat = new Compat(); @codingStandardsIgnoreLine
     }
-
-	/**
-	 * Dir path.
-	 *
-	 * @return string
-	 */
-	public static function dir_path()
-	{
-		return static::$dir;
-	}
 
     /**
      * Setup Theme.
@@ -70,13 +67,23 @@ class Theme
      */
     public function setup()
     {
-		$this->activate->init();
-		$this->assets->init();
-		$this->body->init();
-		$this->head->init();
-		$this->jetpack->init();
-		$this->customizer->init();
-		// $this->compat->init(); @codingStandardsIgnoreLine
+        $this->activate->init();
+        $this->assets->init();
+        $this->body->init();
+        $this->head->init();
+        $this->jetpack->init();
+        $this->customizer->init();
+        // $this->compat->init(); @codingStandardsIgnoreLine
+    }
+
+    /**
+     * Dir path.
+     *
+     * @return string
+     */
+    public static function dir_path()
+    {
+        return static::$dir;
     }
 
     /**

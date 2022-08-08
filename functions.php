@@ -25,8 +25,7 @@ if ( ! \function_exists( 'brisko' ) ) {
      */
     function brisko()
     {
-		$brisko = new Brisko\Theme( __DIR__ );
-        return $brisko;
+        return new Brisko\Theme( __DIR__ );
     }
 }
 

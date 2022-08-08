@@ -4,7 +4,6 @@ namespace Brisko\Setup;
 
 use Brisko\Contracts\EnqueueInterface;
 use Brisko\Theme;
-use Brisko\Traits\Instance;
 
 class Styles implements EnqueueInterface
 {
@@ -15,9 +14,9 @@ class Styles implements EnqueueInterface
      */
     public function init()
     {
-		add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
+        add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
+        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
+        add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
     }
 
     /**

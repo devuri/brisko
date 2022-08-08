@@ -3,7 +3,6 @@
 namespace Brisko\Setup;
 
 use Brisko\Contracts\SetupInterface;
-use Brisko\Traits\Instance;
 
 /**
  * The main Jetpack class.
@@ -20,7 +19,7 @@ class Jetpack implements SetupInterface
      */
     public function init()
     {
-		if ( \defined( '\JETPACK__VERSION' ) ) {
+        if ( \defined( '\JETPACK__VERSION' ) ) {
             add_action( 'after_setup_theme', [ $this, 'jetpack_setup' ] );
         }
     }
