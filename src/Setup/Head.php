@@ -7,26 +7,16 @@ use Brisko\Traits\Instance;
 
 class Head implements SetupInterface
 {
-    use Instance;
-
     /**
-     *  Constructor.
-     */
-    private function __construct()
-    {
-        add_action( 'wp_head', [ $this, 'brisko_pingback_header' ] );
-        add_filter( 'body_class', [ $this, 'brisko_body_classes' ] );
-        add_action( 'after_setup_theme', [ $this, 'brisko_custom_header_setup' ] );
-    }
-
-    /**
-     * Singleton.
+     * Head.
      *
-     * @return self
+     * @return void
      */
-    public static function init()
+    public function init()
     {
-        return new self();
+		add_action( 'wp_head', [ $this, 'brisko_pingback_header' ] );
+		add_filter( 'body_class', [ $this, 'brisko_body_classes' ] );
+		add_action( 'after_setup_theme', [ $this, 'brisko_custom_header_setup' ] );
     }
 
     /**

@@ -8,25 +8,15 @@ use Brisko\Traits\Instance;
 
 class Assets implements SetupInterface
 {
-    use Instance;
-
     /**
-     *  Assets scripts.
-     */
-    private function __construct()
-    {
-        Styles::init();
-        Scripts::init();
-    }
-
-    /**
-     * Singleton.
+     * Assets.
      *
-     * @return self
+     * @return void
      */
-    public static function init()
+    public function init()
     {
-        return new self();
+		(new Styles())->init();
+		(new Scripts())->init();
     }
 
     /**

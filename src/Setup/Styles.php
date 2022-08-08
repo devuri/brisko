@@ -8,30 +8,16 @@ use Brisko\Traits\Instance;
 
 class Styles implements EnqueueInterface
 {
-    use Instance;
-
     /**
-     *  Assets scripts.
-     */
-    private function __construct()
-    {
-
-        // register.
-        add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
-
-        // enqueue.
-        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
-        add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
-    }
-
-    /**
-     * Singleton.
+     * Styles.
      *
-     * @return self
+     * @return void
      */
-    public static function init()
+    public function init()
     {
-        return new self();
+		add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
     }
 
     /**

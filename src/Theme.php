@@ -24,6 +24,15 @@ class Theme
 {
     use Instance;
 
+	protected static $dir;
+	protected $activate;
+	protected $assets;
+	protected $body;
+	protected $head;
+	protected $jetpack;
+	protected $customizer;
+	protected $compat;
+
     /**
      * Define Theme Version.
      */
@@ -32,25 +41,42 @@ class Theme
     /**
      * [__construct description].
      */
-    private function __construct()
+    public function __construct( $dir )
     {
-        // empty.
+		static::$dir = $dir;
+		$this->activate = new Activate();
+		$this->assets = new Assets();
+		$this->body = new Body();
+		$this->head = new Head();
+		$this->jetpack = new Jetpack();
+		$this->customizer = new Customizer();
+		// $this->compat = new Compat(); @codingStandardsIgnoreLine
     }
+
+	/**
+	 * Dir path.
+	 *
+	 * @return string
+	 */
+	public static function dir_path()
+	{
+		return static::$dir;
+	}
 
     /**
      * Setup Theme.
      *
      * @return void
      */
-    public static function setup()
+    public function setup()
     {
-        Activate::init();
-        Assets::init();
-        Body::init();
-        Head::init();
-        Jetpack::init();
-        Customizer::init();
-        // Compat::init();  @codingStandardsIgnoreLine
+		$this->activate->init();
+		$this->assets->init();
+		$this->body->init();
+		$this->head->init();
+		$this->jetpack->init();
+		$this->customizer->init();
+		// $this->compat->init(); @codingStandardsIgnoreLine
     }
 
     /**

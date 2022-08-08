@@ -11,7 +11,9 @@
 require __DIR__ . '/vendor/autoload.php';
 
 // Load Theme
-Brisko\Theme::setup();
+$brisko = new Brisko\Theme( __DIR__ );
+
+$brisko->setup();
 
 if ( ! \function_exists( 'brisko' ) ) {
     /**
@@ -23,7 +25,8 @@ if ( ! \function_exists( 'brisko' ) ) {
      */
     function brisko()
     {
-        return Brisko\Brisko::get();
+		$brisko = new Brisko\Theme( __DIR__ );
+        return $brisko;
     }
 }
 

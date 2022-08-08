@@ -7,32 +7,22 @@ use Brisko\Traits\Instance;
 
 class Activate implements SetupInterface
 {
-    use Instance;
-
     /**
-     * Theme Setup.
-     */
-    private function __construct()
-    {
-        add_action( 'brisko_blog_title', [ $this, 'blog_title' ] );
-        add_action( 'brisko_blog_subtitle', [ $this, 'blog_subtitle' ] );
-        add_action( 'after_setup_theme', [ $this, 'brisko_setup' ] );
-        add_action( 'after_setup_theme', [ $this, 'brisko_content_width' ], 0 );
-        add_action( 'widgets_init', [ $this, 'brisko_widgets_init' ] );
-
-        // The Excerp.
-        add_filter( 'excerpt_length', [ $this, 'set_excerpt_length' ], 99 );
-        add_filter( 'excerpt_more', [ $this, 'set_excerpt_more' ], 99 );
-    }
-
-    /**
-     * Singleton.
+     * Activate.
      *
-     * @return self
+     * @return void
      */
-    public static function init()
+    public function init()
     {
-        return new self();
+		add_action( 'brisko_blog_title', [ $this, 'blog_title' ] );
+		add_action( 'brisko_blog_subtitle', [ $this, 'blog_subtitle' ] );
+		add_action( 'after_setup_theme', [ $this, 'brisko_setup' ] );
+		add_action( 'after_setup_theme', [ $this, 'brisko_content_width' ], 0 );
+		add_action( 'widgets_init', [ $this, 'brisko_widgets_init' ] );
+
+		// The Excerp.
+		add_filter( 'excerpt_length', [ $this, 'set_excerpt_length' ], 99 );
+		add_filter( 'excerpt_more', [ $this, 'set_excerpt_more' ], 99 );
     }
 
     /**
