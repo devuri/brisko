@@ -16,21 +16,6 @@ Search.appendIndex(
             "summary": "Creates\u0020a\u0020Theme\u0020action.",
             "url": "classes/Brisko-Actions.html#method_action"
         },                {
-            "fqsen": "\\Brisko\\Brisko",
-            "name": "Brisko",
-            "summary": "The\u0020Brisko\u0020class.",
-            "url": "classes/Brisko-Brisko.html"
-        },                {
-            "fqsen": "\\Brisko\\Brisko\u003A\u003Aaction\u0028\u0029",
-            "name": "action",
-            "summary": "Theme\u0020Actions.",
-            "url": "classes/Brisko-Brisko.html#method_action"
-        },                {
-            "fqsen": "\\Brisko\\Brisko\u003A\u003Arelated_content\u0028\u0029",
-            "name": "related_content",
-            "summary": "Related\u0020Content.",
-            "url": "classes/Brisko-Brisko.html#method_related_content"
-        },                {
             "fqsen": "\\Brisko\\Contracts\\EnqueueInterface",
             "name": "EnqueueInterface",
             "summary": "",
@@ -190,11 +175,6 @@ Search.appendIndex(
             "name": "Customizer",
             "summary": "",
             "url": "classes/Brisko-Customize-Customizer.html"
-        },                {
-            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Register\u0020the\u0020Customizer.",
-            "url": "classes/Brisko-Customize-Customizer.html#method___construct"
         },                {
             "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Ainit\u0028\u0029",
             "name": "init",
@@ -701,14 +681,9 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Activate.html"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Activate\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Theme\u0020Setup.",
-            "url": "classes/Brisko-Setup-Activate.html#method___construct"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Activate\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "Singleton.",
+            "summary": "Activate.",
             "url": "classes/Brisko-Setup-Activate.html#method_init"
         },                {
             "fqsen": "\\Brisko\\Setup\\Activate\u003A\u003Ablog_title\u0028\u0029",
@@ -751,14 +726,9 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Assets.html"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Assets\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Assets\u0020scripts.",
-            "url": "classes/Brisko-Setup-Assets.html#method___construct"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Assets\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "Singleton.",
+            "summary": "Assets.",
             "url": "classes/Brisko-Setup-Assets.html#method_init"
         },                {
             "fqsen": "\\Brisko\\Setup\\Assets\u003A\u003Auri\u0028\u0029",
@@ -770,11 +740,6 @@ Search.appendIndex(
             "name": "Body",
             "summary": "",
             "url": "classes/Brisko-Setup-Body.html"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Body\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "\u005B__construct\u0020description\u005D.",
-            "url": "classes/Brisko-Setup-Body.html#method___construct"
         },                {
             "fqsen": "\\Brisko\\Setup\\Body\u003A\u003Ainit\u0028\u0029",
             "name": "init",
@@ -795,11 +760,6 @@ Search.appendIndex(
             "name": "Compat",
             "summary": "The\u0020Compatibility\u0020class.",
             "url": "classes/Brisko-Setup-Compat.html"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Compat\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "\u005B__construct\u0020description\u005D.",
-            "url": "classes/Brisko-Setup-Compat.html#method___construct"
         },                {
             "fqsen": "\\Brisko\\Setup\\Compat\u003A\u003Ainit\u0028\u0029",
             "name": "init",
@@ -831,14 +791,9 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Head.html"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Head\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor.",
-            "url": "classes/Brisko-Setup-Head.html#method___construct"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Head\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "Singleton.",
+            "summary": "Head.",
             "url": "classes/Brisko-Setup-Head.html#method_init"
         },                {
             "fqsen": "\\Brisko\\Setup\\Head\u003A\u003Abrisko_body_classes\u0028\u0029",
@@ -866,14 +821,9 @@ Search.appendIndex(
             "summary": "The\u0020main\u0020Jetpack\u0020class.",
             "url": "classes/Brisko-Setup-Jetpack.html"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Jetpack\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor.",
-            "url": "classes/Brisko-Setup-Jetpack.html#method___construct"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Jetpack\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "Singleton.",
+            "summary": "Jetpack.",
             "url": "classes/Brisko-Setup-Jetpack.html#method_init"
         },                {
             "fqsen": "\\Brisko\\Setup\\Jetpack\u003A\u003Ajetpack_setup\u0028\u0029",
@@ -891,14 +841,9 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Scripts.html"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Assets\u0020scripts.",
-            "url": "classes/Brisko-Setup-Scripts.html#method___construct"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "Singleton.",
+            "summary": "Scripts.",
             "url": "classes/Brisko-Setup-Scripts.html#method_init"
         },                {
             "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aenqueue\u0028\u0029",
@@ -931,14 +876,9 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Styles.html"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Assets\u0020scripts.",
-            "url": "classes/Brisko-Setup-Styles.html#method___construct"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "Singleton.",
+            "summary": "Styles.",
             "url": "classes/Brisko-Setup-Styles.html#method_init"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aenqueue\u0028\u0029",
@@ -1083,13 +1023,23 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Brisko\\Theme\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "\u005B__construct\u0020description\u005D.",
+            "summary": "construct.",
             "url": "classes/Brisko-Theme.html#method___construct"
         },                {
             "fqsen": "\\Brisko\\Theme\u003A\u003Asetup\u0028\u0029",
             "name": "setup",
             "summary": "Setup\u0020Theme.",
             "url": "classes/Brisko-Theme.html#method_setup"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003Adir_path\u0028\u0029",
+            "name": "dir_path",
+            "summary": "Dir\u0020path.",
+            "url": "classes/Brisko-Theme.html#method_dir_path"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003Aaction\u0028\u0029",
+            "name": "action",
+            "summary": "Theme\u0020Actions.",
+            "url": "classes/Brisko-Theme.html#method_action"
         },                {
             "fqsen": "\\Brisko\\Theme\u003A\u003Aheader\u0028\u0029",
             "name": "header",
@@ -1155,6 +1105,46 @@ Search.appendIndex(
             "name": "VERSION",
             "summary": "Define\u0020Theme\u0020Version.",
             "url": "classes/Brisko-Theme.html#constant_VERSION"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003A\u0024dir",
+            "name": "dir",
+            "summary": "",
+            "url": "classes/Brisko-Theme.html#property_dir"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003A\u0024activate",
+            "name": "activate",
+            "summary": "",
+            "url": "classes/Brisko-Theme.html#property_activate"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003A\u0024assets",
+            "name": "assets",
+            "summary": "",
+            "url": "classes/Brisko-Theme.html#property_assets"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003A\u0024body",
+            "name": "body",
+            "summary": "",
+            "url": "classes/Brisko-Theme.html#property_body"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003A\u0024head",
+            "name": "head",
+            "summary": "",
+            "url": "classes/Brisko-Theme.html#property_head"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003A\u0024jetpack",
+            "name": "jetpack",
+            "summary": "",
+            "url": "classes/Brisko-Theme.html#property_jetpack"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003A\u0024customizer",
+            "name": "customizer",
+            "summary": "",
+            "url": "classes/Brisko-Theme.html#property_customizer"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003A\u0024compat",
+            "name": "compat",
+            "summary": "",
+            "url": "classes/Brisko-Theme.html#property_compat"
         },                {
             "fqsen": "\\Brisko\\Traits\\Instance",
             "name": "Instance",

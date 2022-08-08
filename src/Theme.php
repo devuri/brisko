@@ -27,7 +27,7 @@ class Theme
     /**
      * Define Theme Version.
      */
-    const VERSION = '3.3.3';
+    const VERSION = '3.5.0';
 
     protected static $dir;
     protected $activate;
