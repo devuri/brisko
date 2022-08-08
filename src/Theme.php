@@ -39,11 +39,6 @@ class Theme
     protected $compat;
 
     /**
-     * [__construct description].
-     *
-     * @param mixed $dir
-     */
-    /**
      * construct.
      *
      * @param string $dir the theme dir path.
