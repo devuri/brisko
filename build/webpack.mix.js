@@ -7,7 +7,7 @@ mix.options({ manifest: false })
 mix.copy('vendor', 'build/brisko/vendor')
 mix.copy('template-parts', 'build/brisko/template-parts')
 mix.copy('src', 'build/brisko/src')
-mix.copy('assets', 'build/brisko/assets')
+mix.copy('assets/dist', 'build/brisko/assets/dist')
 
 mix.copy([
     '404.php',
