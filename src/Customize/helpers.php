@@ -57,7 +57,7 @@ function brisko_customize_partial_blogdescription()
  */
 function brisko_customize_preview_js()
 {
-    wp_enqueue_script( 'brisko-customizer', Assets::uri('/js/customizer.js'), [ 'customize-preview' ], Brisko\Theme::VERSION, true );
+    wp_enqueue_script( 'brisko-customizer', Assets::uri( 'js/customizer.js' ), [ 'customize-preview' ], Brisko\Theme::VERSION, true );
 }
 
 /**

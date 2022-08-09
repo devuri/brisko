@@ -68,21 +68,21 @@ class Styles implements EnqueueInterface
     public static function css_files()
     {
         $files = [
-            'underscores'              => Assets::uri('css/underscores.min.css'),
+            'underscores'              => Assets::uri( 'css/underscores.min.css' ),
             // bootstrap 5.
-            'bootstrap5-grid'          => Assets::uri('bootstrap5/css/bootstrap-grid.min.css'),
-            'bootstrap5-grid-rtl'      => Assets::uri('bootstrap5/css/bootstrap-grid.rtl.min.css'),
-            'bootstrap5'               => Assets::uri('bootstrap5/css/bootstrap.min.css'),
-            'bootstrap5-rtl'           => Assets::uri('bootstrap5/css/bootstrap.rtl.min.css'),
-            'bootstrap5-utilities'     => Assets::uri('bootstrap5/css/bootstrap-utilities.min.css'),
-            'bootstrap5-utilities-rtl' => Assets::uri('bootstrap5/css/bootstrap-utilities.rtl.min.css'),
+            'bootstrap5-grid'          => Assets::uri( 'bootstrap5/css/bootstrap-grid.min.css' ),
+            'bootstrap5-grid-rtl'      => Assets::uri( 'bootstrap5/css/bootstrap-grid.rtl.min.css' ),
+            'bootstrap5'               => Assets::uri( 'bootstrap5/css/bootstrap.min.css' ),
+            'bootstrap5-rtl'           => Assets::uri( 'bootstrap5/css/bootstrap.rtl.min.css' ),
+            'bootstrap5-utilities'     => Assets::uri( 'bootstrap5/css/bootstrap-utilities.min.css' ),
+            'bootstrap5-utilities-rtl' => Assets::uri( 'bootstrap5/css/bootstrap-utilities.rtl.min.css' ),
             // bootstrap 4.
-            'bootstrap-grid'           => Assets::uri('bootstrap/css/bootstrap-grid.min.css'),
-            'bootstrap'                => Assets::uri('bootstrap/css/bootstrap.min.css'),
+            'bootstrap-grid'           => Assets::uri( 'bootstrap/css/bootstrap-grid.min.css' ),
+            'bootstrap'                => Assets::uri( 'bootstrap/css/bootstrap.min.css' ),
             // uikit.
-            'uikit'                    => Assets::uri('uikit/css/uikit.min.css'),
-            'brisko'                   => Assets::uri('css/brisko.min.css'),
-            'custom-styles'            => Assets::uri('css/custom-styles.min.css'),
+            'uikit'                    => Assets::uri( 'uikit/css/uikit.min.css' ),
+            'brisko'                   => Assets::uri( 'css/brisko.min.css' ),
+            'custom-styles'            => Assets::uri( 'css/custom-styles.min.css' ),
             'brisko-theme'             => get_stylesheet_uri(),
         ];
 
