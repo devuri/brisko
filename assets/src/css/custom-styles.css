@@ -1,0 +1,64 @@
+/*!
+ * Brisko CSS (https://wpbrisko.com/)
+ * Copyright 2020 Uriel Wilson
+ * @link https://github.com/devuri/brisko
+ * License: GNU General Public License v2.0 (https://github.com/devuri/brisko/blob/master/LICENSE)
+ */
+
+.this-body-color {
+	color: #333;
+}
+.this-container {
+	max-width: 1200px;
+}
+
+.this-margin-top {
+	margin-top: 2rem;
+}
+
+.this-secondary-font {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.this-display-show {
+	display: initial;
+}
+
+.this-display-none {
+    display: none;
+}
+
+.this-border-bottom {
+    border-bottom: solid thin #f0f0f0;
+}
+
+.this-home-page-only {
+	display: none;
+}
+
+.this-entire-site {
+	display: inherit;
+}
+
+.this-disabled {
+	display: none;
+}
+
+.this-box-shadow {
+	margin-bottom: 0.2em;
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075)
+}
+
+.this-button-border-radius {
+	border-radius: 2rem;
+}
+
+.brisko-font-size {
+	font-size: 1.2rem;
+	line-height: 1.75;
+}
+
+.this-site-footer {
+    border-top: 1px solid;
+    font-size: medium;
+}
