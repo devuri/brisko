@@ -85,7 +85,7 @@ class Styles implements EnqueueInterface
     /**
      * Enqueue scripts.
      */
-    protected function enqueue()
+    public function enqueue()
     {
         self::mod( 'milligram', 'enable_milligram' );
         self::mod( 'uikit', 'enable_uikit' );
