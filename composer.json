@@ -74,6 +74,7 @@
             "composer phpdoc -q",
             "composer no-dev -q",
             "npm install",
+            "npm run asset:build",
             "npm run build"
         ],
         "test":[

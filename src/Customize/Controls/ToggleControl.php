@@ -25,8 +25,8 @@ class ToggleControl extends \WP_Customize_Control
      */
     public function enqueue()
     {
-        wp_enqueue_script( 'customizer-toggle-control', Assets::uri() . '/js/customizer/toggle-button-control.js', [ 'jquery' ], time(), true );
-        wp_enqueue_style( 'css-toggle-buttons', Assets::uri() . '/css/customizer/toggle-buttons.css', [], time() );
+        wp_enqueue_script( 'customizer-toggle-control', Assets::uri('/js/toggle-button-control.js'), [ 'jquery' ], time(), true );
+        wp_enqueue_style( 'css-toggle-buttons', Assets::uri('/css/toggle-buttons.css'), [], time() );
 
         $css = '
 			.disabled-control-title {
