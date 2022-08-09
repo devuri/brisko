@@ -851,20 +851,10 @@ Search.appendIndex(
             "summary": "Enqueue\u0020scripts.",
             "url": "classes/Brisko-Setup-Scripts.html#method_enqueue"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Ajs_files\u0028\u0029",
-            "name": "js_files",
-            "summary": "Setup\u0020static\u0020JS\u0020files.",
-            "url": "classes/Brisko-Setup-Scripts.html#method_js_files"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aregister\u0028\u0029",
             "name": "register",
             "summary": "Enqueue\u0020styles\u0020and\u0020script.",
             "url": "classes/Brisko-Setup-Scripts.html#method_register"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aver\u0028\u0029",
-            "name": "ver",
-            "summary": "Set\u0020file\u0020version.",
-            "url": "classes/Brisko-Setup-Scripts.html#method_ver"
         },                {
             "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Abootstrap5\u0028\u0029",
             "name": "bootstrap5",
@@ -1030,6 +1020,11 @@ Search.appendIndex(
             "name": "setup",
             "summary": "Setup\u0020Theme.",
             "url": "classes/Brisko-Theme.html#method_setup"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003Aversion\u0028\u0029",
+            "name": "version",
+            "summary": "Get\u0020theme\u0020version.",
+            "url": "classes/Brisko-Theme.html#method_version"
         },                {
             "fqsen": "\\Brisko\\Theme\u003A\u003Adir_path\u0028\u0029",
             "name": "dir_path",

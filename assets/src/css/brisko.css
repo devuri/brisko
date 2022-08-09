@@ -226,7 +226,7 @@ h2.post-title a {
     border-radius: 50%;
     margin-left: 4px;
     margin-right: 4px;
-    margin-bottom: -4px;
+    /* margin-bottom: -4px; */
 }
 
 .tags-links {
