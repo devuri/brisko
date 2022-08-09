@@ -71,30 +71,15 @@ class Theme
         // $this->compat->init(); @codingStandardsIgnoreLine
     }
 
-	/**
-	 * Get theme version.
-	 *
-	 * @return string
-	 */
-	public function version()
-	{
-		return self::VERSION;
-	}
-
-	/**
-	 * Setup a style mod.
-	 *
-	 * @param  string  $mod     the theme_mod name example 'enable_bootstrap'
-	 * @param  string  $handle  the enqueue handle example 'bootstrap'
-	 * @param  bool $default true|false if this shopuld be enabled by default.
-	 * @return void
-	 */
-	public static function css_mod( $mod, $handle, $default = false )
-	{
-        if ( true === get_theme_mod( $mod, $default ) ) {
-            wp_enqueue_style( $handle );
-        }
-	}
+    /**
+     * Get theme version.
+     *
+     * @return string
+     */
+    public function version()
+    {
+        return self::VERSION;
+    }
 
     /**
      * Dir path.

@@ -30,11 +30,11 @@ class Scripts implements EnqueueInterface
             wp_enqueue_script( 'brisko-bootstrap' );
         }
 
-		if ( true === get_theme_mod( 'enable_uikit_js', false ) ) {
+        if ( true === get_theme_mod( 'enable_uikit_js', false ) ) {
             wp_enqueue_script( 'uikit-js' );
         }
 
-		if ( true === get_theme_mod( 'enable_uikit_icons_js', false ) ) {
+        if ( true === get_theme_mod( 'enable_uikit_icons_js', false ) ) {
             wp_enqueue_script( 'uikit-icons' );
         }
 
@@ -61,9 +61,9 @@ class Scripts implements EnqueueInterface
         wp_register_script( 'brisko-popper', Assets::uri( 'bootstrap/js/popper.min.js' ), [ 'jquery' ], md5( 'brisko-popper' ), true );
         wp_register_script( 'brisko-bootstrap', Assets::uri( 'bootstrap/js/bootstrap.min.js' ), [ 'jquery' ], md5( 'brisko-bootstrap' ), true );
 
-		// uikit.
-		wp_register_script( 'uikit-js', Assets::uri( 'uikit/js/uikit.min.js' ), [], md5( 'uikit-js' ), true );
-		wp_register_script( 'uikit-icons', Assets::uri( 'uikit/js/uikit-icons.min.js' ), [], md5( 'uikit-icons' ), true );
+        // uikit.
+        wp_register_script( 'uikit-js', Assets::uri( 'uikit/js/uikit.min.js' ), [], md5( 'uikit-js' ), true );
+        wp_register_script( 'uikit-icons', Assets::uri( 'uikit/js/uikit-icons.min.js' ), [], md5( 'uikit-icons' ), true );
 
         // bootstrap 5
         wp_register_script( 'brisko-bootstrap5', Assets::uri( 'bootstrap5/js/bootstrap.min.js' ), [], md5( 'brisko-bootstrap5' ), true );

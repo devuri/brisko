@@ -25,7 +25,7 @@ if ( ! \function_exists( 'brisko' ) ) {
 }
 
 // Theme version.
-define( 'BRISKO_VERSION', brisko()->version() );
+\define( 'BRISKO_VERSION', brisko()->version() );
 
 // Theme setup.
 brisko()->setup();
