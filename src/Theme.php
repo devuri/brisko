@@ -71,6 +71,16 @@ class Theme
         // $this->compat->init(); @codingStandardsIgnoreLine
     }
 
+	/**
+	 * Get theme version.
+	 *
+	 * @return string
+	 */
+	public function version()
+	{
+		return self::VERSION;
+	}
+
     /**
      * Dir path.
      *
