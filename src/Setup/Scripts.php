@@ -63,7 +63,7 @@ class Scripts implements EnqueueInterface
             'brisko-popper'            => Assets::uri( 'js/bootstrap/popper.min.js' ),
             'brisko-bootstrap'         => Assets::uri( 'js/bootstrap/bootstrap.min.js' ),
             'brisko-uikit'             => Assets::uri( 'js/uikit.min.js' ),
-            'brisko-navigation'        => Assets::uri( 'js/navigation.js' ),
+            'brisko-navigation'        => Assets::uri( 'js/navigation.min.js' ),
             'brisko-smooth-scroll'     => Assets::uri( 'js/smooth-scroll.js' ),
         ];
     }
