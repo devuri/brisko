@@ -53,6 +53,11 @@ class Styles implements EnqueueInterface
             wp_enqueue_style( 'brisko-theme' );
         }
 
+		// uikit styles.
+        if ( true === get_theme_mod( 'enable_uikit', true ) ) {
+            wp_enqueue_style( 'uikit' );
+        }
+
         // custom styles.
         wp_enqueue_style( 'custom-styles' );
 
