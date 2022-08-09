@@ -25,6 +25,9 @@ mix.js(js_assets + 'customizer.js', dist + 'js/customizer.min.js')
 	.js(js_assets + 'smooth-scroll.js', dist + 'js/smooth-scroll.min.js')
 	.js(js_assets + 'toggle-button-control.js', dist + 'js/toggle-button-control.min.js')
 
+// milligram.
+mix.copy('assets/src/milligram/', 'assets/dist/milligram/');
+
 // uikit.
 mix.copy('assets/src/uikit/', 'assets/dist/uikit/');
 

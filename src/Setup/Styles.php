@@ -35,6 +35,11 @@ class Styles implements EnqueueInterface
             wp_enqueue_style( 'brisko' );
         }
 
+		// milligram.
+        if ( true === get_theme_mod( 'enable_milligram', false ) ) {
+            wp_enqueue_style( 'milligram' );
+        }
+
         // bootstrap 5.
         self::bootstrap5();
 
@@ -54,7 +59,7 @@ class Styles implements EnqueueInterface
         }
 
 		// uikit styles.
-        if ( true === get_theme_mod( 'enable_uikit', true ) ) {
+        if ( true === get_theme_mod( 'enable_uikit', false ) ) {
             wp_enqueue_style( 'uikit' );
         }
 
