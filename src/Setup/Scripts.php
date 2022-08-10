@@ -62,19 +62,36 @@ class Scripts implements EnqueueInterface
      */
     public function register()
     {
-        wp_register_script( 'popperjs', Assets::uri( 'bootstrap/js/popper.min.js' ), [ 'jquery' ], md5( 'popperjs' ), true );
-        wp_register_script( 'bootstrapjs', Assets::uri( 'bootstrap/js/bootstrap.min.js' ), [ 'jquery' ], md5( 'bootstrapjs' ), true );
+        self::register_script( 'popperjs', 'bootstrap/js/popper.min.js', [ 'jquery' ] );
+		self::register_script( 'bootstrapjs', 'bootstrap/js/bootstrap.min.js', [ 'jquery' ] );
 
         // uikit.
-        wp_register_script( 'uikitjs', Assets::uri( 'uikit/js/uikit.min.js' ), [], md5( 'uikitjs' ), true );
-        wp_register_script( 'uikit-icons', Assets::uri( 'uikit/js/uikit-icons.min.js' ), [], md5( 'uikit-icons' ), true );
+        self::register_script( 'uikitjs', 'uikit/js/uikit.min.js' );
+        self::register_script( 'uikit-icons', 'uikit/js/uikit-icons.min.js' );
 
         // bootstrap 5
-        wp_register_script( 'bootstrap5js', Assets::uri( 'bootstrap5/js/bootstrap.min.js' ), [], md5( 'bootstrap5js' ), true );
-        wp_register_script( 'bootstrap5js-bundle', Assets::uri( 'bootstrap5/js/bootstrap.bundle.min.js' ), [], md5( 'bootstrap5js-bundle' ), true );
-        wp_register_script( 'bootstrap5js-esm', Assets::uri( 'bootstrap5/js/bootstrap.esm.min.js' ), [], md5( 'bootstrap5js-esm' ), true );
+        self::register_script( 'bootstrap5js', 'bootstrap5/js/bootstrap.min.js' );
+        self::register_script( 'bootstrap5js-bundle', 'bootstrap5/js/bootstrap.bundle.min.js' );
+        self::register_script( 'bootstrap5js-esm', 'bootstrap5/js/bootstrap.esm.min.js' );
 
-        wp_register_script( 'navigationjs', Assets::uri( 'js/navigation.min.js' ), [], md5( 'navigationjs' ), true );
-        wp_register_script( 'smooth-scrolljs', Assets::uri( 'js/smooth-scroll.min.js' ), [], md5( 'smooth-scrolljs' ), true );
+		self::register_script( 'navigationjs', 'js/navigation.min.js' );
+		self::register_script( 'smooth-scrolljs', 'js/smooth-scroll.min.js' );
+
     }
+
+	/**
+	 * Register a new script.
+	 *
+	 * @param  string  $handle    Name of the script. Should be unique.
+	 * @param  string  $src       path of the script relative to the Theme directory.
+	 * @param  array   $deps      An array of registered script handles this script depends on.
+	 * @param  boolean $in_footer Whether to enqueue the script before </body> instead of in the <head>.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/wp_register_script/
+	 * @return void
+	 */
+	protected static function register_script( $handle, $src, $deps = [], $in_footer = true )
+	{
+		wp_register_script( $handle, Assets::uri( $src ), $deps, md5( $handle ), $in_footer );
+	}
 }
