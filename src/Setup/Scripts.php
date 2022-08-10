@@ -75,6 +75,6 @@ class Scripts implements EnqueueInterface
         wp_register_script( 'bootstrap5js-esm', Assets::uri( 'bootstrap5/js/bootstrap.esm.min.js' ), [], md5( 'bootstrap5js-esm' ), true );
 
         wp_register_script( 'navigationjs', Assets::uri( 'js/navigation.min.js' ), [], md5( 'navigationjs' ), true );
-        wp_register_script( 'smooth-scrolljs', Assets::uri( 'js/smooth-scroll.js' ), [], md5( 'smooth-scrolljs' ), true );
+        wp_register_script( 'smooth-scrolljs', Assets::uri( 'js/smooth-scroll.min.js' ), [], md5( 'smooth-scrolljs' ), true );
     }
 }
