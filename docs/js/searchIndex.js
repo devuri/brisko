@@ -861,6 +861,11 @@ Search.appendIndex(
             "summary": "Enqueue\u0020styles\u0020and\u0020script.",
             "url": "classes/Brisko-Setup-Scripts.html#method_register"
         },                {
+            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aregister_script\u0028\u0029",
+            "name": "register_script",
+            "summary": "Register\u0020a\u0020new\u0020script.",
+            "url": "classes/Brisko-Setup-Scripts.html#method_register_script"
+        },                {
             "fqsen": "\\Brisko\\Setup\\Styles",
             "name": "Styles",
             "summary": "",
