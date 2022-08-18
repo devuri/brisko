@@ -21,10 +21,17 @@ class Assets implements SetupInterface
     /**
      * Theme Assets uri.
      *
+     * @param string     $asset path to the asset like: assets/dist/style.css
+     * @param null|mixed $path
+     *
      * @return string
      */
-    public static function uri()
+    public static function uri( $asset, $path = null )
     {
-        return get_template_directory_uri() . '/assets/static';
+        if ( $path ) {
+            return $path . $asset;
+        }
+
+        return get_template_directory_uri() . '/assets/dist/' . $asset;
     }
 }

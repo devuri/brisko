@@ -24,6 +24,9 @@ if ( ! \function_exists( 'brisko' ) ) {
     }
 }
 
+// Theme version.
+\define( 'BRISKO_VERSION', brisko()->version() );
+
 // Theme setup.
 brisko()->setup();
 
@@ -51,31 +54,3 @@ if ( did_action( 'elementor/loaded' ) ) {
  * @link https://stackoverflow.com/questions/20760598/how-to-remove-extra-p-p-tags-in-wordpress-post-and-pages
  */
 remove_filter( 'the_content', 'wpautop' );
-
-// // Brisko has a simple filter 'brisko_css_assets' to programmatically remove styles.
-// // Note that we can also use wp_deregister_style() or wp_dequeue_style()
-// // consult the WordPress documentation for more on how to use these.
-// // But for now we will be using the filter hook.
-// add_filter('brisko_css_assets', function($files)
-// {
-// 	//return null; // remove all items.
-//
-// 	// remove all items by name.
-// 	// unset($files['underscores']);
-// 	// unset($files['bootstrap-grid']);
-// 	// unset($files['bootstrap']);
-// 	// unset($files['uikit']);
-// 	// unset($files['brisko']);
-// 	// unset($files['custom-styles']);
-// 	// unset($files['brisko-theme']);
-//
-// 	// remove single item by name.
-// 	unset($files['brisko']);
-//
-// 	// remove two or more items by name.
-// 	unset($files['bootstrap-grid']);
-// 	unset($files['bootstrap']);
-//
-// 	return $files; // if we only want to remove one item return the array.
-//
-// });

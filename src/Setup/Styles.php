@@ -20,38 +20,92 @@ class Styles implements EnqueueInterface
     }
 
     /**
+     * Register all styles.
+     *
+     * @return null|void
+     */
+    public function register()
+    {
+        if ( empty( self::style_files() ) || ! self::style_files() ) {
+            return null;
+        }
+
+        foreach ( self::style_files() as $handle => $file ) {
+            wp_register_style( $handle, $file, [], md5( $file ) );
+        }
+    }
+
+    /**
+     * Custom Theme styles.
+     */
+    public function custom_css()
+    {
+        wp_add_inline_style( 'custom-styles', $this->minified_css() );
+    }
+
+    /**
+     * Sanitize CSS.
+     *
+     * For now just strip_tags (the WordPress way) and preg_replace to escape < in certain cases but might do full CSS escaping in the future, see:
+     * https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#rule-4-css-encode-and-strictly-validate-before-inserting-untrusted-data-into-html-style-property-values
+     * https://github.com/twigphp/Twig/blob/3.x/src/Extension/EscaperExtension.php#L300-L319
+     * https://github.com/laminas/laminas-escaper/blob/2.8.x/src/Escaper.php#L205-L221
+     * https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyles.php
+     *
+     * @param string $css the to be sanitized CSS.
+     *
+     * @return string sanitized CSS.
+     */
+    public function sanitize_css( $css )
+    {
+        $css = wp_strip_all_tags( $css );
+        if ( false !== strpos( $css, '<' ) ) {
+            $css = preg_replace( '#<(\/?\w+)#', '\00003C$1', $css );
+        }
+
+        return $css;
+    }
+
+    /**
+     * Setup a style mod.
+     *
+     * @param string $handle  the enqueue handle example 'bootstrap'
+     * @param string $mod     the theme_mod name example 'enable_bootstrap'
+     * @param bool   $default true|false if this shopuld be enabled by default.
+     *
+     * @return void
+     */
+    public static function mod( $handle, $mod, $default = false )
+    {
+        if ( true === get_theme_mod( $mod, $default ) ) {
+            wp_enqueue_style( $handle );
+        }
+    }
+
+    /**
      * Enqueue scripts.
      */
     public function enqueue()
     {
-
-        // underscores.
-        if ( true === get_theme_mod( 'enable_underscores', true ) ) {
-            wp_enqueue_style( 'underscores' );
-        }
-
-        // brisko.
-        if ( true === get_theme_mod( 'enable_brisko', true ) ) {
-            wp_enqueue_style( 'brisko' );
-        }
-
-        // bootstrap 5.
-        self::bootstrap5();
-
-        // bootstrap grid.
-        if ( true === get_theme_mod( 'enable_bootstrap_grid', false ) ) {
-            wp_enqueue_style( 'bootstrap-grid' );
-        }
+        self::mod( 'milligram', 'enable_milligram' );
+        self::mod( 'uikit', 'enable_uikit' );
 
         // bootstrap.
-        if ( true === get_theme_mod( 'enable_bootstrap', true ) ) {
-            wp_enqueue_style( 'bootstrap' );
-        }
+        self::mod( 'bootstrap', 'enable_bootstrap', true );
+        self::mod( 'bootstrap-grid', 'enable_bootstrap_grid' );
 
-        // brisko theme styles.
-        if ( true === get_theme_mod( 'enable_theme_styles', true ) ) {
-            wp_enqueue_style( 'brisko-theme' );
-        }
+        // theme.
+        self::mod( 'brisko-theme', 'enable_theme_styles', true );
+        self::mod( 'underscores', 'enable_underscores', true );
+        self::mod( 'brisko', 'enable_brisko', true );
+
+        // bootstrap 5.
+        self::mod( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
+        self::mod( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
+        self::mod( 'bootstrap5', 'enable_bootstrap5' );
+        self::mod( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
+        self::mod( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
+        self::mod( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
 
         // custom styles.
         wp_enqueue_style( 'custom-styles' );
@@ -65,44 +119,26 @@ class Styles implements EnqueueInterface
      *
      * @return array .
      */
-    public static function css_files()
+    protected static function style_files()
     {
         $files = [
-            'underscores'              => Assets::uri() . '/css/underscores.min.css',
-            // bootstrap 5.
-            'bootstrap5-grid'          => Assets::uri() . '/css/bootstrap5/bootstrap-grid.min.css',
-            'bootstrap5-grid-rtl'      => Assets::uri() . '/css/bootstrap5/bootstrap-grid.rtl.min.css',
-            'bootstrap5'               => Assets::uri() . '/css/bootstrap5/bootstrap.min.css',
-            'bootstrap5-rtl'           => Assets::uri() . '/css/bootstrap5/bootstrap.rtl.min.css',
-            'bootstrap5-utilities'     => Assets::uri() . '/css/bootstrap5/bootstrap-utilities.min.css',
-            'bootstrap5-utilities-rtl' => Assets::uri() . '/css/bootstrap5/bootstrap-utilities.rtl.min.css',
-            // bootstrap 4.
-            'bootstrap-grid'           => Assets::uri() . '/css/bootstrap/bootstrap-grid.min.css',
-            'bootstrap'                => Assets::uri() . '/css/bootstrap/bootstrap.min.css',
-            // uikit.
-            'uikit'                    => Assets::uri() . '/css/uikit.min.css',
-            'brisko'                   => Assets::uri() . '/css/brisko.min.css',
-            'custom-styles'            => Assets::uri() . '/css/custom-styles.min.css',
+            'bootstrap5-grid'          => Assets::uri( 'bootstrap5/css/bootstrap-grid.min.css' ),
+            'bootstrap5-grid-rtl'      => Assets::uri( 'bootstrap5/css/bootstrap-grid.rtl.min.css' ),
+            'bootstrap5'               => Assets::uri( 'bootstrap5/css/bootstrap.min.css' ),
+            'bootstrap5-rtl'           => Assets::uri( 'bootstrap5/css/bootstrap.rtl.min.css' ),
+            'bootstrap5-utilities'     => Assets::uri( 'bootstrap5/css/bootstrap-utilities.min.css' ),
+            'bootstrap5-utilities-rtl' => Assets::uri( 'bootstrap5/css/bootstrap-utilities.rtl.min.css' ),
+            'bootstrap-grid'           => Assets::uri( 'bootstrap/css/bootstrap-grid.min.css' ),
+            'bootstrap'                => Assets::uri( 'bootstrap/css/bootstrap.min.css' ),
+            'uikit'                    => Assets::uri( 'uikit/css/uikit.min.css' ),
+            'milligram'                => Assets::uri( 'milligram/css/milligram.min.css' ),
+            'brisko'                   => Assets::uri( 'css/brisko.min.css' ),
+            'custom-styles'            => Assets::uri( 'css/custom-styles.min.css' ),
+            'underscores'              => Assets::uri( 'css/underscores.min.css' ),
             'brisko-theme'             => get_stylesheet_uri(),
         ];
 
-        return apply_filters( 'brisko_css_assets', $files );
-    }
-
-    /**
-     * Register all styles.
-     *
-     * @return null|void
-     */
-    public function register()
-    {
-        if ( empty( self::css_files() ) || ! self::css_files() ) {
-            return null;
-        }
-
-        foreach ( self::css_files() as $handle => $file ) {
-            wp_register_style( $handle, $file, [], md5( $file ) );
-        }
+        return apply_filters( 'brisko_style_assets', $files );
     }
 
     /**
@@ -113,7 +149,7 @@ class Styles implements EnqueueInterface
      *
      * @return string .
      */
-    public function element_mod( $theme_mod = 'footer_padding', $default = '16px' )
+    protected function element_mod( $theme_mod = 'footer_padding', $default = '16px' )
     {
         if ( get_theme_mod( $theme_mod ) ) {
             return implode( 'px ', get_theme_mod( $theme_mod ) ) . 'px';
@@ -125,7 +161,7 @@ class Styles implements EnqueueInterface
     /**
      * Custom Theme styles.
      */
-    public function custom_styles()
+    private function custom_styles()
     {
 
         // Get the theme setting.
@@ -182,78 +218,6 @@ class Styles implements EnqueueInterface
     }
 
     /**
-     * Custom Theme styles.
-     */
-    public function custom_css()
-    {
-        wp_add_inline_style( 'custom-styles', $this->minified_css() );
-    }
-
-    /**
-     * Sanitize CSS.
-     *
-     * For now just strip_tags (the WordPress way) and preg_replace to escape < in certain cases but might do full CSS escaping in the future, see:
-     * https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#rule-4-css-encode-and-strictly-validate-before-inserting-untrusted-data-into-html-style-property-values
-     * https://github.com/twigphp/Twig/blob/3.x/src/Extension/EscaperExtension.php#L300-L319
-     * https://github.com/laminas/laminas-escaper/blob/2.8.x/src/Escaper.php#L205-L221
-     * https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyles.php
-     *
-     * @param string $css the to be sanitized CSS.
-     *
-     * @return string sanitized CSS.
-     */
-    public function sanitize_css( $css )
-    {
-        $css = wp_strip_all_tags( $css );
-        if ( false !== strpos( $css, '<' ) ) {
-            $css = preg_replace( '#<(\/?\w+)#', '\00003C$1', $css );
-        }
-
-        return $css;
-    }
-
-    /**
-     * Adds Bootstrap 5 support.
-     *
-     * Implements theme mods for the following:
-     *
-     * bootstrap5-grid
-     * bootstrap5-grid-rtl
-     * bootstrap5
-     * bootstrap5-rtl
-     * bootstrap5-utilities
-     * bootstrap5-utilities-rtl
-     *
-     * @return void
-     */
-    protected static function bootstrap5()
-    {
-        if ( true === get_theme_mod( 'enable_bootstrap5_grid', false ) ) {
-            wp_enqueue_style( 'bootstrap5-grid' );
-        }
-
-        if ( true === get_theme_mod( 'enable_bootstrap5_grid_rtl', false ) ) {
-            wp_enqueue_style( 'bootstrap5-grid-rtl' );
-        }
-
-        if ( true === get_theme_mod( 'enable_bootstrap5', false ) ) {
-            wp_enqueue_style( 'bootstrap5' );
-        }
-
-        if ( true === get_theme_mod( 'enable_bootstrap5_rtl', false ) ) {
-            wp_enqueue_style( 'bootstrap5-rtl' );
-        }
-
-        if ( true === get_theme_mod( 'enable_bootstrap5_utilities', false ) ) {
-            wp_enqueue_style( 'bootstrap5-utilities' );
-        }
-
-        if ( true === get_theme_mod( 'enable_bootstrap5_utilities_rtl', false ) ) {
-            wp_enqueue_style( 'bootstrap5-utilities-rtl' );
-        }
-    }
-
-    /**
      * CSS Minifier Compressor.
      *
      * @return false|string minified css output.
@@ -264,9 +228,9 @@ class Styles implements EnqueueInterface
             return false;
         }
 
-        $css_styles = $this->custom_styles();
-        $css_styles = implode( "\n", $css_styles );
+        $style_styles = $this->custom_styles();
+        $style_styles = implode( "\n", $style_styles );
 
-        return $this->sanitize_css( $css_styles );
+        return $this->sanitize_css( $style_styles );
     }
 }

@@ -18,52 +18,41 @@ class Scripts implements EnqueueInterface
     }
 
     /**
-     * Enqueue scripts.
+     * Setup a style mod.
+     *
+     * @param string $handle  the enqueue handle example 'bootstrap'
+     * @param string $mod     the theme_mod name example 'enable_bootstrap'
+     * @param bool   $default true|false if this shopuld be enabled by default.
+     *
+     * @return void
      */
-    public function enqueue()
+    public static function mod( $handle, $mod, $default = false )
     {
-        if ( true === get_theme_mod( 'enable_popper_js', false ) ) {
-            wp_enqueue_script( 'brisko-popper' );
-        }
-
-        if ( true === get_theme_mod( 'enable_bootstrap_js', false ) ) {
-            wp_enqueue_script( 'brisko-bootstrap' );
-        }
-
-        if ( true === get_theme_mod( 'enable_navigation_js', true ) ) {
-            wp_enqueue_script( 'brisko-navigation' );
-        }
-
-        if ( true === get_theme_mod( 'enable_smooth_scroll', false ) ) {
-            wp_enqueue_script( 'brisko-smooth-scroll' );
-        }
-
-        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-            wp_enqueue_script( 'comment-reply' );
+        if ( true === get_theme_mod( $mod, $default ) ) {
+            wp_enqueue_script( $handle );
         }
     }
 
     /**
-     * Setup static JS files.
-     *
-     * @return string[] .
-     *
-     * @psalm-return array{'brisko-popper': string, 'brisko-bootstrap': string, 'brisko-uikit': string, 'brisko-navigation': string, 'brisko-smooth-scroll': string}
+     * Enqueue scripts.
      */
-    public static function js_files()
+    public function enqueue()
     {
-        return [
-            // bootstrap 5.
-            'brisko-bootstrap5'        => Assets::uri() . '/js/bootstrap5/bootstrap.min.js',
-            'brisko-bootstrap5-bundle' => Assets::uri() . '/js/bootstrap5/bootstrap.bundle.min.js',
-            'brisko-bootstrap5-esm'    => Assets::uri() . '/js/bootstrap5/bootstrap.esm.min.js',
-            // bootstrap 4.
-            'brisko-popper'            => Assets::uri() . '/js/bootstrap/popper.min.js',
-            'brisko-bootstrap'         => Assets::uri() . '/js/bootstrap/bootstrap.min.js',
-            'brisko-uikit'             => Assets::uri() . '/js/uikit.min.js',
-            'brisko-navigation'        => Assets::uri() . '/js/navigation.js',
-            'brisko-smooth-scroll'     => Assets::uri() . '/js/smooth-scroll.js',
-        ];
+        self::mod( 'navigationjs', 'enable_navigation_js', true );
+        self::mod( 'popperjs', 'enable_popper_js' );
+        self::mod( 'bootstrapjs', 'enable_bootstrap_js' );
+        self::mod( 'uikitjs', 'enable_uikit_js' );
+        self::mod( 'uikit-icons', 'enable_uikit_icons_js' );
+        self::mod( 'smooth-scrolljs', 'enable_smooth_scroll' );
+
+        // bootstrap 5.
+        self::mod( 'bootstrap5js', 'enable_bootstrap5_js' );
+        self::mod( 'bootstrap5js-bundle', 'enable_bootstrap5_bundle_js' );
+        self::mod( 'bootstrap5js-esm', 'enable_bootstrap5_esm_js' );
+
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
     }
 
     /**
@@ -73,42 +62,36 @@ class Scripts implements EnqueueInterface
      */
     public function register()
     {
-        wp_register_script( 'brisko-popper', Assets::uri() . '/js/bootstrap/popper.min.js', [ 'jquery' ], self::ver( 'brisko-popper' ), true );
-        wp_register_script( 'brisko-bootstrap', Assets::uri() . '/js/bootstrap/bootstrap.min.js', [ 'jquery' ], self::ver( 'brisko-bootstrap' ), true );
+        self::register_script( 'popperjs', 'bootstrap/js/popper.min.js', [ 'jquery' ] );
+        self::register_script( 'bootstrapjs', 'bootstrap/js/bootstrap.min.js', [ 'jquery' ] );
+
+        // uikit.
+        self::register_script( 'uikitjs', 'uikit/js/uikit.min.js' );
+        self::register_script( 'uikit-icons', 'uikit/js/uikit-icons.min.js' );
 
         // bootstrap 5
-        wp_register_script( 'brisko-bootstrap5', Assets::uri() . '/js/bootstrap5/bootstrap.min.js', [], self::ver( 'brisko-bootstrap5' ), true );
-        wp_register_script( 'brisko-bootstrap5-bundle', Assets::uri() . '/js/bootstrap5/bootstrap.bundle.min.js', [], self::ver( 'brisko-bootstrap5-bundle' ), true );
-        wp_register_script( 'brisko-bootstrap5-esm', Assets::uri() . '/js/bootstrap5/bootstrap.esm.min.js', [], self::ver( 'brisko-bootstrap5-esm' ), true );
+        self::register_script( 'bootstrap5js', 'bootstrap5/js/bootstrap.min.js' );
+        self::register_script( 'bootstrap5js-bundle', 'bootstrap5/js/bootstrap.bundle.min.js' );
+        self::register_script( 'bootstrap5js-esm', 'bootstrap5/js/bootstrap.esm.min.js' );
 
-        wp_register_script( 'brisko-navigation', Assets::uri() . '/js/navigation.js', [], self::ver( 'brisko-navigation' ), true );
-        wp_register_script( 'brisko-smooth-scroll', Assets::uri() . '/js/smooth-scroll.js', [], self::ver( 'brisko-smooth-scroll' ), true );
+        self::register_script( 'navigationjs', 'js/navigation.min.js' );
+        self::register_script( 'smooth-scrolljs', 'js/smooth-scroll.min.js' );
     }
 
     /**
-     * Set file version.
+     * Register a new script.
      *
-     * @param string $handle .
+     * @param string $handle    Name of the script. Should be unique.
+     * @param string $src       path of the script relative to the Theme directory.
+     * @param array  $deps      An array of registered script handles this script depends on.
+     * @param bool   $in_footer Whether to enqueue the script before </body> instead of in the <head>.
      *
-     * @return string .
+     * @see https://developer.wordpress.org/reference/functions/wp_register_script/
+     *
+     * @return void
      */
-    public static function ver( $handle )
+    protected static function register_script( $handle, $src, $deps = [], $in_footer = true )
     {
-        return md5( self::js_files()[ $handle ] );
-    }
-
-    protected static function bootstrap5()
-    {
-        if ( true === get_theme_mod( 'enable_bootstrap5_js', false ) ) {
-            wp_enqueue_script( 'brisko-bootstrap5' );
-        }
-
-        if ( true === get_theme_mod( 'enable_bootstrap5_bundle_js', false ) ) {
-            wp_enqueue_script( 'brisko-bootstrap5_bundle' );
-        }
-
-        if ( true === get_theme_mod( 'enable_bootstrap5_esm_js', false ) ) {
-            wp_enqueue_script( 'brisko-bootstrap5_esm' );
-        }
+        wp_register_script( $handle, Assets::uri( $src ), $deps, md5( $handle ), $in_footer );
     }
 }

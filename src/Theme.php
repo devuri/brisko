@@ -27,7 +27,7 @@ class Theme
     /**
      * Define Theme Version.
      */
-    const VERSION = '3.5.0';
+    const VERSION = '3.6.1';
 
     protected static $dir;
     protected $activate;
@@ -69,6 +69,16 @@ class Theme
         $this->jetpack->init();
         $this->customizer->init();
         // $this->compat->init(); @codingStandardsIgnoreLine
+    }
+
+    /**
+     * Get theme version.
+     *
+     * @return string
+     */
+    public function version()
+    {
+        return self::VERSION;
     }
 
     /**

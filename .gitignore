@@ -1,6 +1,7 @@
 node_modules/
 tmp/
 asset/dist/
+assets/dist/
 /asset/mix-manifest.json
 build/brisko/
 vendor/
