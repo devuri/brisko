@@ -105,6 +105,15 @@ Built in child theme support, use Advanced Settings to disable/enable theme feat
 * `brisko_footer`
 * `brisko_after_footer`
 
+#### Filter hooks.
+
+> footer
+* `brisko_copyright`
+* `brisko_poweredby`
+
+> Customizer sections
+* `brisko_sections`
+
 > Get a Visual Reference of all the Brisko Theme Actions with the [Brisko Hooks Display Plugin](https://wordpress.org/plugins/brisko-hooks-display/): .
 
 #### GPL-2.0 License
