@@ -36,4 +36,3 @@ jobs:
       with:
         files: 'brisko.zip'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        release-tag: v3.6.2
