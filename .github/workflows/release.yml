@@ -28,6 +28,7 @@ jobs:
         node-version: 16.x
         cache: npm
     - run: npm install
+    - run: npm run asset:build
     - run: npm run build
 
     - name: Upload zip to release
