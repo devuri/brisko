@@ -57,7 +57,7 @@ class Footer
             $copyright = get_bloginfo( 'name' );
         }
 
-        return $copyright;
+        return apply_filters( 'brisko_copyright', $copyright );
     }
 
     /**
@@ -73,6 +73,6 @@ class Footer
             $poweredby = ' | Powered by <a href="https://wpbrisko.com">Brisko WordPress Theme</a>';
         }
 
-        return $poweredby;
+        return apply_filters( 'brisko_poweredby', $poweredby );
     }
 }

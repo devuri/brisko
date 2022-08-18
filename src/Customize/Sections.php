@@ -50,7 +50,7 @@ class Sections
      */
     public function sections()
     {
-        return $this->sections;
+		return apply_filters( 'brisko_sections', $this->sections );
     }
 
     /**
