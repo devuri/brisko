@@ -10,20 +10,6 @@
  */
 require __DIR__ . '/vendor/autoload.php';
 
-if ( ! \function_exists( 'brisko' ) ) {
-    /**
-     * Get the Brisko Theme.
-     *
-     * Helper function to get the Bisko Theme Object.
-     *
-     * @return Brisko
-     */
-    function brisko()
-    {
-        return new Brisko\Theme( __DIR__ );
-    }
-}
-
 // Theme version.
 \define( 'BRISKO_VERSION', brisko()->version() );
 
