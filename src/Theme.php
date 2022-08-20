@@ -55,6 +55,20 @@ class Theme
         // $this->compat = new Compat(); @codingStandardsIgnoreLine
     }
 
+	public function component( $name = null )
+	{
+		$components = [
+			'activate'   => $this->activate,
+			'assets'     => $this->assets,
+			'body'       => $this->body,
+			'head'       => $this->head,
+			'jetpack'    => $this->jetpack,
+			'customizer' => $this->customizer,
+		];
+
+		return $components[ $name ];
+	}
+
     /**
      * Setup Theme.
      *
@@ -62,13 +76,12 @@ class Theme
      */
     public function setup()
     {
-        $this->activate->init();
-        $this->assets->init();
-        $this->body->init();
-        $this->head->init();
-        $this->jetpack->init();
-        $this->customizer->init();
-        // $this->compat->init(); @codingStandardsIgnoreLine
+        $this->component( 'activate' )->init();
+        $this->component( 'assets' )->init();
+        $this->component( 'body' )->init();
+        $this->component( 'head' )->init();
+        $this->component( 'jetpack' )->init();
+        $this->component( 'customizer' )->init();
     }
 
     /**
