@@ -571,6 +571,11 @@ Search.appendIndex(
             "summary": "Head\u0020section.",
             "url": "classes/Brisko-Layout.html#method_head"
         },                {
+            "fqsen": "\\Brisko\\Layout\u003A\u003Asanitize\u0028\u0029",
+            "name": "sanitize",
+            "summary": "Sanitize\u0020string",
+            "url": "classes/Brisko-Layout.html#method_sanitize"
+        },                {
             "fqsen": "\\Brisko\\Layout\u003A\u003Asidebar\u0028\u0029",
             "name": "sidebar",
             "summary": "Get\u0020the\u0020sidebar.",
@@ -846,10 +851,10 @@ Search.appendIndex(
             "summary": "Scripts.",
             "url": "classes/Brisko-Setup-Scripts.html#method_init"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Amod\u0028\u0029",
-            "name": "mod",
+            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aenqueue_script\u0028\u0029",
+            "name": "enqueue_script",
             "summary": "Setup\u0020a\u0020style\u0020mod.",
-            "url": "classes/Brisko-Setup-Scripts.html#method_mod"
+            "url": "classes/Brisko-Setup-Scripts.html#method_enqueue_script"
         },                {
             "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aenqueue\u0028\u0029",
             "name": "enqueue",
@@ -891,10 +896,10 @@ Search.appendIndex(
             "summary": "Sanitize\u0020CSS.",
             "url": "classes/Brisko-Setup-Styles.html#method_sanitize_css"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Amod\u0028\u0029",
-            "name": "mod",
-            "summary": "Setup\u0020a\u0020style\u0020mod.",
-            "url": "classes/Brisko-Setup-Styles.html#method_mod"
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aenqueue_style\u0028\u0029",
+            "name": "enqueue_style",
+            "summary": "Setup\u0020a\u0020style\u0020based\u0020on\u0020mod.",
+            "url": "classes/Brisko-Setup-Styles.html#method_enqueue_style"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aenqueue\u0028\u0029",
             "name": "enqueue",
