@@ -5,7 +5,7 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php Brisko\Theme::post_thumbnail(); ?>
+	<?php brisko()::post_thumbnail(); ?>
 	<div class="full-width-content">
 		<?php
         /**
@@ -14,7 +14,7 @@
          *
          * note: filters on `the_content` will not work.
          */
-        Brisko\Theme::content();
+        brisko()::content();
 wp_link_pages(
     [
         'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),

@@ -5,7 +5,7 @@
 
 ?>
 <div id="navigation" class="align-items-center brisko-navigation">
-	<div class="<?php Brisko\Theme::options()->navigation_width(); ?> d-flex flex-column flex-md-row align-items-center">
+	<div class="<?php brisko()::options()->navigation_width(); ?> d-flex flex-column flex-md-row align-items-center">
 		<div class="mr-md-auto d-flex flex-column flex-md-row align-items-center">
 			<?php if ( has_custom_logo() ) { ?>
 				<div id="the-logo">

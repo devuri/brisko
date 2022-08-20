@@ -7,7 +7,7 @@
 
 ?>
 <div class="post-article">
-	<?php Brisko\Theme::post_thumbnail(); ?>
+	<?php brisko()::post_thumbnail(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
@@ -25,7 +25,7 @@ brisko_posted_by();
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
 		<div class="read-more ">
-			<a class="more-link <?php echo esc_html( Brisko\Theme::options()->button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
+			<a class="more-link <?php echo esc_html( brisko()::options()->button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
 			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
 		</a>
 	</div>
