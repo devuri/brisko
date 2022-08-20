@@ -74,6 +74,7 @@ class Layout implements ViewInterface
 
 	/**
 	 * Sanitize string
+     *
 	 * @param  string $string
 	 * @return string
 	 */

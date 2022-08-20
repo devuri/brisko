@@ -516,6 +516,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#function_brisko_after_footer"
         },                {
+            "fqsen": "\\brisko\u0028\u0029",
+            "name": "brisko",
+            "summary": "Get\u0020the\u0020Brisko\u0020Theme.",
+            "url": "namespaces/default.html#function_brisko"
+        },                {
             "fqsen": "\\brisko_posted_on\u0028\u0029",
             "name": "brisko_posted_on",
             "summary": "Prints\u0020HTML\u0020with\u0020meta\u0020information\u0020for\u0020the\u0020current\u0020post\u002Ddate\/time.",
@@ -1025,6 +1030,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "construct.",
             "url": "classes/Brisko-Theme.html#method___construct"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003Acomponent\u0028\u0029",
+            "name": "component",
+            "summary": "",
+            "url": "classes/Brisko-Theme.html#method_component"
         },                {
             "fqsen": "\\Brisko\\Theme\u003A\u003Asetup\u0028\u0029",
             "name": "setup",
