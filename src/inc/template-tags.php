@@ -13,8 +13,8 @@ if ( ! \function_exists( 'brisko' ) ) {
     function brisko( $mode = null )
     {
 		$modes = [
-			'template' => Brisko\Options::get(),
-			'options'  => Brisko\Template::get(),
+			'template' => Brisko\Template::get(),
+			'options'  => Brisko\Options::get(),
 		];
 
 		if ( $mode ) {
