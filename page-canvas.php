@@ -7,4 +7,4 @@
  * @see https://developer.wordpress.org/themes/basics/template-files/
  */
 
-Brisko\Theme::template()->canvas_page();
+brisko('template')->canvas_page();

@@ -5,4 +5,4 @@
  * @see https://developer.wordpress.org/themes/basics/template-files/
  */
 
-Brisko\Theme::template()->search();
+brisko('template')->search();

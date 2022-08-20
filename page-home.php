@@ -7,4 +7,4 @@
  * @see https://developer.wordpress.org/themes/basics/template-files/
  */
 
-Brisko\Theme::template()->home_page();
+brisko('template')->home_page();
