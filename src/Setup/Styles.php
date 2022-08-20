@@ -49,7 +49,7 @@ class Styles implements EnqueueInterface
 	/**
      * Setup a style based on mod.
      *
-     * @param string $asset_url  the stylesheet url
+     * @param string $asset  the stylesheet url
      * @param string $mod     the theme_mod name example 'enable_bootstrap'
      * @param bool   $default true|false if this shopuld be enabled by default.
      *
@@ -58,7 +58,7 @@ class Styles implements EnqueueInterface
 	public static function editor_style( $asset, $mod, $default = false )
     {
         if ( true === get_theme_mod( $mod, $default ) ) {
-            add_editor_style( self::style_files($asset) );
+            add_editor_style( self::style_files( $asset ) );
         }
     }
 
@@ -160,6 +160,8 @@ class Styles implements EnqueueInterface
     /**
      * Setup static CSS files.
      *
+     * @param string|null $style style handle example 'bootstrap'
+     *
      * @return array .
      */
     protected static function style_files( $style = null )
@@ -182,8 +184,8 @@ class Styles implements EnqueueInterface
         ];
 
 		// get a single stylesheet url.
-		if ($style) {
-			return $files[$style];
+		if ( $style ) {
+			return $files[ $style ];
 		}
 
         return apply_filters( 'brisko_style_assets', $files );

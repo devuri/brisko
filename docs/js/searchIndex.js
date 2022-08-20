@@ -886,6 +886,16 @@ Search.appendIndex(
             "summary": "Styles.",
             "url": "classes/Brisko-Setup-Styles.html#method_init"
         },                {
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Asetup_theme_editor_styles\u0028\u0029",
+            "name": "setup_theme_editor_styles",
+            "summary": "",
+            "url": "classes/Brisko-Setup-Styles.html#method_setup_theme_editor_styles"
+        },                {
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aeditor_style\u0028\u0029",
+            "name": "editor_style",
+            "summary": "Setup\u0020a\u0020style\u0020based\u0020on\u0020mod.",
+            "url": "classes/Brisko-Setup-Styles.html#method_editor_style"
+        },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aregister\u0028\u0029",
             "name": "register",
             "summary": "Register\u0020all\u0020styles.",
