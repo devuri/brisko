@@ -67,7 +67,7 @@ class Styles implements EnqueueInterface
     }
 
     /**
-     * Setup a style mod.
+     * Setup a style based on mod.
      *
      * @param string $handle  the enqueue handle example 'bootstrap'
      * @param string $mod     the theme_mod name example 'enable_bootstrap'
@@ -75,7 +75,7 @@ class Styles implements EnqueueInterface
      *
      * @return void
      */
-    public static function mod( $handle, $mod, $default = false )
+    public static function enqueue_style( $handle, $mod, $default = false )
     {
         if ( true === get_theme_mod( $mod, $default ) ) {
             wp_enqueue_style( $handle );
@@ -87,25 +87,25 @@ class Styles implements EnqueueInterface
      */
     public function enqueue()
     {
-        self::mod( 'milligram', 'enable_milligram' );
-        self::mod( 'uikit', 'enable_uikit' );
+        self::enqueue_style( 'milligram', 'enable_milligram' );
+        self::enqueue_style( 'uikit', 'enable_uikit' );
 
         // bootstrap.
-        self::mod( 'bootstrap', 'enable_bootstrap', true );
-        self::mod( 'bootstrap-grid', 'enable_bootstrap_grid' );
+        self::enqueue_style( 'bootstrap', 'enable_bootstrap', true );
+        self::enqueue_style( 'bootstrap-grid', 'enable_bootstrap_grid' );
 
         // theme.
-        self::mod( 'brisko-theme', 'enable_theme_styles', true );
-        self::mod( 'underscores', 'enable_underscores', true );
-        self::mod( 'brisko', 'enable_brisko', true );
+        self::enqueue_style( 'brisko-theme', 'enable_theme_styles', true );
+        self::enqueue_style( 'underscores', 'enable_underscores', true );
+        self::enqueue_style( 'brisko', 'enable_brisko', true );
 
         // bootstrap 5.
-        self::mod( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
-        self::mod( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
-        self::mod( 'bootstrap5', 'enable_bootstrap5' );
-        self::mod( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
-        self::mod( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
-        self::mod( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
+        self::enqueue_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
+        self::enqueue_style( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
+        self::enqueue_style( 'bootstrap5', 'enable_bootstrap5' );
+        self::enqueue_style( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
+        self::enqueue_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
+        self::enqueue_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
 
         // custom styles.
         wp_enqueue_style( 'custom-styles' );
@@ -214,7 +214,7 @@ class Styles implements EnqueueInterface
         }
 
         // css output.
-        return $custom_styles;
+        return apply_filters( 'brisko_custom_styles', $custom_styles );
     }
 
     /**

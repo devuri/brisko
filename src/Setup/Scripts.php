@@ -26,7 +26,7 @@ class Scripts implements EnqueueInterface
      *
      * @return void
      */
-    public static function mod( $handle, $mod, $default = false )
+    public static function enqueue_script( $handle, $mod, $default = false )
     {
         if ( true === get_theme_mod( $mod, $default ) ) {
             wp_enqueue_script( $handle );
@@ -38,17 +38,17 @@ class Scripts implements EnqueueInterface
      */
     public function enqueue()
     {
-        self::mod( 'navigationjs', 'enable_navigation_js', true );
-        self::mod( 'popperjs', 'enable_popper_js' );
-        self::mod( 'bootstrapjs', 'enable_bootstrap_js' );
-        self::mod( 'uikitjs', 'enable_uikit_js' );
-        self::mod( 'uikit-icons', 'enable_uikit_icons_js' );
-        self::mod( 'smooth-scrolljs', 'enable_smooth_scroll' );
+        self::enqueue_script( 'navigationjs', 'enable_navigation_js', true );
+        self::enqueue_script( 'popperjs', 'enable_popper_js' );
+        self::enqueue_script( 'bootstrapjs', 'enable_bootstrap_js' );
+        self::enqueue_script( 'uikitjs', 'enable_uikit_js' );
+        self::enqueue_script( 'uikit-icons', 'enable_uikit_icons_js' );
+        self::enqueue_script( 'smooth-scrolljs', 'enable_smooth_scroll' );
 
         // bootstrap 5.
-        self::mod( 'bootstrap5js', 'enable_bootstrap5_js' );
-        self::mod( 'bootstrap5js-bundle', 'enable_bootstrap5_bundle_js' );
-        self::mod( 'bootstrap5js-esm', 'enable_bootstrap5_esm_js' );
+        self::enqueue_script( 'bootstrap5js', 'enable_bootstrap5_js' );
+        self::enqueue_script( 'bootstrap5js-bundle', 'enable_bootstrap5_bundle_js' );
+        self::enqueue_script( 'bootstrap5js-esm', 'enable_bootstrap5_esm_js' );
 
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
             wp_enqueue_script( 'comment-reply' );
