@@ -516,6 +516,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#function_brisko_after_footer"
         },                {
+            "fqsen": "\\brisko\u0028\u0029",
+            "name": "brisko",
+            "summary": "Get\u0020the\u0020Brisko\u0020Theme.",
+            "url": "namespaces/default.html#function_brisko"
+        },                {
             "fqsen": "\\brisko_posted_on\u0028\u0029",
             "name": "brisko_posted_on",
             "summary": "Prints\u0020HTML\u0020with\u0020meta\u0020information\u0020for\u0020the\u0020current\u0020post\u002Ddate\/time.",
@@ -570,6 +575,11 @@ Search.appendIndex(
             "name": "head",
             "summary": "Head\u0020section.",
             "url": "classes/Brisko-Layout.html#method_head"
+        },                {
+            "fqsen": "\\Brisko\\Layout\u003A\u003Asanitize\u0028\u0029",
+            "name": "sanitize",
+            "summary": "Sanitize\u0020string",
+            "url": "classes/Brisko-Layout.html#method_sanitize"
         },                {
             "fqsen": "\\Brisko\\Layout\u003A\u003Asidebar\u0028\u0029",
             "name": "sidebar",
@@ -846,10 +856,10 @@ Search.appendIndex(
             "summary": "Scripts.",
             "url": "classes/Brisko-Setup-Scripts.html#method_init"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Amod\u0028\u0029",
-            "name": "mod",
+            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aenqueue_script\u0028\u0029",
+            "name": "enqueue_script",
             "summary": "Setup\u0020a\u0020style\u0020mod.",
-            "url": "classes/Brisko-Setup-Scripts.html#method_mod"
+            "url": "classes/Brisko-Setup-Scripts.html#method_enqueue_script"
         },                {
             "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aenqueue\u0028\u0029",
             "name": "enqueue",
@@ -876,6 +886,16 @@ Search.appendIndex(
             "summary": "Styles.",
             "url": "classes/Brisko-Setup-Styles.html#method_init"
         },                {
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Asetup_theme_editor_styles\u0028\u0029",
+            "name": "setup_theme_editor_styles",
+            "summary": "",
+            "url": "classes/Brisko-Setup-Styles.html#method_setup_theme_editor_styles"
+        },                {
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aeditor_style\u0028\u0029",
+            "name": "editor_style",
+            "summary": "Setup\u0020a\u0020style\u0020based\u0020on\u0020mod.",
+            "url": "classes/Brisko-Setup-Styles.html#method_editor_style"
+        },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aregister\u0028\u0029",
             "name": "register",
             "summary": "Register\u0020all\u0020styles.",
@@ -891,10 +911,10 @@ Search.appendIndex(
             "summary": "Sanitize\u0020CSS.",
             "url": "classes/Brisko-Setup-Styles.html#method_sanitize_css"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Amod\u0028\u0029",
-            "name": "mod",
-            "summary": "Setup\u0020a\u0020style\u0020mod.",
-            "url": "classes/Brisko-Setup-Styles.html#method_mod"
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aenqueue_style\u0028\u0029",
+            "name": "enqueue_style",
+            "summary": "Setup\u0020a\u0020style\u0020based\u0020on\u0020mod.",
+            "url": "classes/Brisko-Setup-Styles.html#method_enqueue_style"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aenqueue\u0028\u0029",
             "name": "enqueue",
@@ -1020,6 +1040,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "construct.",
             "url": "classes/Brisko-Theme.html#method___construct"
+        },                {
+            "fqsen": "\\Brisko\\Theme\u003A\u003Acomponent\u0028\u0029",
+            "name": "component",
+            "summary": "",
+            "url": "classes/Brisko-Theme.html#method_component"
         },                {
             "fqsen": "\\Brisko\\Theme\u003A\u003Asetup\u0028\u0029",
             "name": "setup",

@@ -7,4 +7,4 @@
  * @see https://developer.wordpress.org/themes/basics/template-files/
  */
 
-Brisko\Theme::template()->full_width_page();
+brisko('template')->full_width_page();

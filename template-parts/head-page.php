@@ -6,4 +6,4 @@
  */
 
 ?>
-<main id="primary" class="site-main <?php Brisko\Theme::options()->page_width(); ?> bg-white">
+<main id="primary" class="site-main <?php brisko()::options()->page_width(); ?> bg-white">

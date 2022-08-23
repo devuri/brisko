@@ -427,8 +427,13 @@ ol {
 
 .sidebar ul li {
 	border-bottom: solid thin #f0f0f0;
-	padding: .8em 0;
+    padding: 16px;
 }
+
+/* .sidebar ul li {
+    border-bottom: thin solid #f0f0f0;
+    padding: 0.8em 0;
+} */
 
 .widget-title {
 	padding-bottom: 0.5em;

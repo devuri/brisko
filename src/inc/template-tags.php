@@ -1,4 +1,30 @@
 <?php
+
+if ( ! \function_exists( 'brisko' ) ) {
+    /**
+     * Get the Brisko Theme.
+     *
+     * Helper function to get the Bisko Theme Object.
+     *
+     *  @param  string $mode static call
+     *
+     * @return Brisko
+     */
+    function brisko( $mode = null )
+    {
+		$modes = [
+			'template' => Brisko\Template::get(),
+			'options'  => Brisko\Options::get(),
+		];
+
+		if ( $mode ) {
+			return $modes[ $mode ];
+		}
+
+        return new Brisko\Theme( dirname( dirname( dirname( __FILE__ ) ) ) );
+    }
+}
+
 /**
  * Custom template tags for this theme.
  *
@@ -79,7 +105,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
             $categories_list = get_the_category_list( ' ' );
             if ( $categories_list ) {
                 // translators: 1: list of categories.
-                printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, Brisko\Theme::options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, brisko()::options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
 
             do_action( 'brisko_before_tags' );
@@ -88,7 +114,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
             $tags_list = get_the_tag_list( ' ' );
             if ( $tags_list ) {
                 // translators: 1: list of tags.
-                printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, Brisko\Theme::options()->display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, brisko()::options()->display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
         }
 

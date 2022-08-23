@@ -5,4 +5,4 @@
  * @see https://developer.wordpress.org/themes/basics/template-files/
  */
 
-Brisko\Theme::template()->page_404();
+brisko('template')->page_404();

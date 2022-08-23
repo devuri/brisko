@@ -17,6 +17,49 @@ class Styles implements EnqueueInterface
         add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
+        add_action( 'after_setup_theme', [ $this, 'setup_theme_editor_styles' ] );
+
+    }
+
+	public function setup_theme_editor_styles()
+	{
+		add_theme_support( 'editor-styles' );
+
+		static::editor_style( 'milligram', 'enable_milligram' );
+		static::editor_style( 'uikit', 'enable_uikit' );
+
+		// bootstrap.
+		static::editor_style( 'bootstrap', 'enable_bootstrap', true );
+		static::editor_style( 'bootstrap-grid', 'enable_bootstrap_grid' );
+
+		// theme.
+		static::editor_style( 'brisko-theme', 'enable_theme_styles', true );
+		static::editor_style( 'underscores', 'enable_underscores', true );
+		static::editor_style( 'brisko', 'enable_brisko', true );
+
+		// bootstrap 5.
+		static::editor_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
+		static::editor_style( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
+		static::editor_style( 'bootstrap5', 'enable_bootstrap5' );
+		static::editor_style( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
+		static::editor_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
+		static::editor_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
+	}
+
+	/**
+     * Setup a style based on mod.
+     *
+     * @param string $asset  the stylesheet url
+     * @param string $mod     the theme_mod name example 'enable_bootstrap'
+     * @param bool   $default true|false if this shopuld be enabled by default.
+     *
+     * @return void
+     */
+	public static function editor_style( $asset, $mod, $default = false )
+    {
+        if ( true === get_theme_mod( $mod, $default ) ) {
+            add_editor_style( self::style_files( $asset ) );
+        }
     }
 
     /**
@@ -67,7 +110,7 @@ class Styles implements EnqueueInterface
     }
 
     /**
-     * Setup a style mod.
+     * Setup a style based on mod.
      *
      * @param string $handle  the enqueue handle example 'bootstrap'
      * @param string $mod     the theme_mod name example 'enable_bootstrap'
@@ -75,7 +118,7 @@ class Styles implements EnqueueInterface
      *
      * @return void
      */
-    public static function mod( $handle, $mod, $default = false )
+    public static function enqueue_style( $handle, $mod, $default = false )
     {
         if ( true === get_theme_mod( $mod, $default ) ) {
             wp_enqueue_style( $handle );
@@ -87,25 +130,25 @@ class Styles implements EnqueueInterface
      */
     public function enqueue()
     {
-        self::mod( 'milligram', 'enable_milligram' );
-        self::mod( 'uikit', 'enable_uikit' );
+        self::enqueue_style( 'milligram', 'enable_milligram' );
+        self::enqueue_style( 'uikit', 'enable_uikit' );
 
         // bootstrap.
-        self::mod( 'bootstrap', 'enable_bootstrap', true );
-        self::mod( 'bootstrap-grid', 'enable_bootstrap_grid' );
+        self::enqueue_style( 'bootstrap', 'enable_bootstrap', true );
+        self::enqueue_style( 'bootstrap-grid', 'enable_bootstrap_grid' );
 
         // theme.
-        self::mod( 'brisko-theme', 'enable_theme_styles', true );
-        self::mod( 'underscores', 'enable_underscores', true );
-        self::mod( 'brisko', 'enable_brisko', true );
+        self::enqueue_style( 'brisko-theme', 'enable_theme_styles', true );
+        self::enqueue_style( 'underscores', 'enable_underscores', true );
+        self::enqueue_style( 'brisko', 'enable_brisko', true );
 
         // bootstrap 5.
-        self::mod( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
-        self::mod( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
-        self::mod( 'bootstrap5', 'enable_bootstrap5' );
-        self::mod( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
-        self::mod( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
-        self::mod( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
+        self::enqueue_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
+        self::enqueue_style( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
+        self::enqueue_style( 'bootstrap5', 'enable_bootstrap5' );
+        self::enqueue_style( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
+        self::enqueue_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
+        self::enqueue_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
 
         // custom styles.
         wp_enqueue_style( 'custom-styles' );
@@ -117,9 +160,11 @@ class Styles implements EnqueueInterface
     /**
      * Setup static CSS files.
      *
+     * @param string|null $style style handle example 'bootstrap'
+     *
      * @return array .
      */
-    protected static function style_files()
+    protected static function style_files( $style = null )
     {
         $files = [
             'bootstrap5-grid'          => Assets::uri( 'bootstrap5/css/bootstrap-grid.min.css' ),
@@ -137,6 +182,11 @@ class Styles implements EnqueueInterface
             'underscores'              => Assets::uri( 'css/underscores.min.css' ),
             'brisko-theme'             => get_stylesheet_uri(),
         ];
+
+		// get a single stylesheet url.
+		if ( $style ) {
+			return $files[ $style ];
+		}
 
         return apply_filters( 'brisko_style_assets', $files );
     }
@@ -214,7 +264,7 @@ class Styles implements EnqueueInterface
         }
 
         // css output.
-        return $custom_styles;
+        return apply_filters( 'brisko_custom_styles', $custom_styles );
     }
 
     /**
