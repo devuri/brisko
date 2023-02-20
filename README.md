@@ -5,7 +5,19 @@
 
 ###  Modern, minimalist design, high-performance WordPress Elementor Starter Theme
 
-Brisko is a beautifully simple and lightweight WordPress theme that is optimized for speed and WordPress page builders like Elementor, you can use it as a foundation to build versatile layouts using Elementor Template Kits or the WordPress Block Patterns. This theme is suitable for personal blogs, business, agency, restaurant, simple blog, life coach, portfolio, charity, and more. Brisko can be extended with plugins or child themes using any of the many included actions, the color scheme can be easily customized. The options are easy to manage using the live theme customizer.  Use the WordPress Customizer and Elementor page builder to create professional designs on a solid foundation. Check out our prebuilt website demos for inspiration.
+Brisko is a lightweight and easy-to-use WordPress theme that is optimized for speed and designed to work with WordPress page builders such as Elementor. Its versatility makes it suitable for a variety of applications, including personal blogs, business websites, agency pages, restaurant menus, life coaching services, portfolios, charities, and more.
+
+The theme offers users a range of customization options, including the ability to change the color scheme, add custom CSS, and upload a custom logo. These customization options can be easily managed through the live theme customizer, allowing you to see your changes in real-time.
+
+Brisko is also compatible with a variety of WordPress plugins, including Jetpack, Yoast SEO, and Contact Form 7. This allows you to add additional functionality and customization options as needed, without having to switch themes or modify the code.
+
+One of the key features of Brisko is its compatibility with Elementor, which provides users with even more design options and a powerful drag-and-drop interface. This makes it easy to create professional-looking designs without needing advanced coding skills.
+
+The theme is optimized for speed, which ensures that your website loads quickly and efficiently, providing a better user experience and potentially boosting your SEO rankings.
+
+To help users get started, Brisko comes with prebuilt website demos that you can use as inspiration for your own website design. With the WordPress Customizer and Elementor page builder, you have all the tools you need to create a professional-looking website that reflects your brand identity and meets your specific needs.
+
+Overall, Brisko is a reliable and user-friendly WordPress theme that offers a variety of customization options and is optimized for speed. Its compatibility with Elementor and other plugins provides users with additional design options and functionality, making it an excellent choice for anyone looking to create a professional-looking website.
 
 For more information about the Brisko Theme please go to https://wpbrisko.com
 ### Quick start
