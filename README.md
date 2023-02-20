@@ -9,7 +9,7 @@ Brisko is a lightweight and easy-to-use WordPress theme that is optimized for sp
 
 The theme offers users a range of customization options, including the ability to change the color scheme, add custom CSS, and upload a custom logo. These customization options can be easily managed through the live theme customizer, allowing you to see your changes in real-time.
 
-Brisko is also compatible with a variety of WordPress plugins, including Jetpack, Yoast SEO, and Contact Form 7. This allows you to add additional functionality and customization options as needed, without having to switch themes or modify the code.
+Brisko is also compatible with a variety of WordPress plugins. This allows you to add additional functionality and customization options as needed, without having to switch themes or modify the code.
 
 One of the key features of Brisko is its compatibility with Elementor, which provides users with even more design options and a powerful drag-and-drop interface. This makes it easy to create professional-looking designs without needing advanced coding skills.
 
