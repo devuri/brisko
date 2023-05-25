@@ -1,38 +1,71 @@
-name: Build Release
-
+#
+# This runs after changes are merged to `master`.
+#
+name: 🚀 Deploy Release
 on:
-  release:
-    types: [ published ]
+  pull_request:
+    types:
+      - closed
   workflow_dispatch:
 
 jobs:
-  build-release:
+  if_merged:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - uses: "shivammathur/setup-php@v2"
-      with:
-        php-version: "7.4"
-        extensions: pcov
+    - run: echo The PR was merged
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run release-please
+        uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          command: manifest
+          default-branch: master
 
-    - name: Install dependencies
-      uses: ramsey/composer-install@v1
-      with:
-        composer-options: '-oa --no-dev'
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Setup Node 16.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16.x
-        cache: npm
-    - run: npm install
-    - run: npm run asset:build
-    - run: npm run build
+      - name: Setup PHP 7.4
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+          extensions: pcov
 
-    - name: Upload zip to release
-      uses: AButler/upload-release-assets@v2.0
-      with:
-        files: 'brisko.zip'
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install PHP dependencies
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: ramsey/composer-install@v1
+        with:
+          composer-options: '-oa --no-dev'
+
+      - name: Install and Setup Node 16.x
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install NPM dependencies
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          npm install
+
+      - name: Setup Node 16.x
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          npm run asset:build
+    
+      - name: Build The Artifact
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          npm run build
+
+      - name: Upload zip to release
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: AButler/upload-release-assets@v2.0
+        with:
+          files: 'brisko.zip'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          release-tag: ${{ steps.release.outputs.tag_name }}
