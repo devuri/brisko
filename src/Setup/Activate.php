@@ -91,6 +91,9 @@ class Activate implements SetupInterface
         // Support for responsive embedded content.
         add_theme_support( 'responsive-embeds' );
 
+		// Full-Width Gutenberg Blocks.
+		// add_theme_support( 'align-wide' );
+
         // Support for blocks with padding controls.
         add_theme_support( 'custom-spacing' );
 

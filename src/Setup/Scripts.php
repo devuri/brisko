@@ -22,7 +22,7 @@ class Scripts implements EnqueueInterface
      *
      * @param string $handle  the enqueue handle example 'bootstrap'
      * @param string $mod     the theme_mod name example 'enable_bootstrap'
-     * @param bool   $default true|false if this shopuld be enabled by default.
+     * @param bool   $default true|false if this should be enabled by default.
      *
      * @return void
      */

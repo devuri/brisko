@@ -27,7 +27,7 @@ class Theme
     /**
      * Define Theme Version.
      */
-    const VERSION = '3.7.0';
+    const VERSION = '3.7.2';
 
     protected static $dir;
     protected $activate;
@@ -82,6 +82,32 @@ class Theme
         $this->component( 'head' )->init();
         $this->component( 'jetpack' )->init();
         $this->component( 'customizer' )->init();
+
+		/*
+		 * Disable wpautop.
+		 *
+		 * @link https://developer.wordpress.org/reference/functions/wpautop/
+		 * @link https://stackoverflow.com/questions/20760598/how-to-remove-extra-p-p-tags-in-wordpress-post-and-pages
+		 */
+		remove_filter( 'the_content', 'wpautop' );
+
+		// load customizer preview.
+		add_action( 'customize_preview_init', 'brisko_customize_preview_js' );
+
+		/*
+		 * Compatibility for Elementor Header and Footer.
+		 *
+		 * @link https://developers.elementor.com/theme-locations-api/registering-locations
+		 */
+		if ( did_action( 'elementor/loaded' ) ) {
+		    add_action(
+		        'elementor/theme/register_locations',
+		        function ( $elementor_theme_manager ) {
+		            $elementor_theme_manager->register_location( 'header' );
+		            $elementor_theme_manager->register_location( 'footer' );
+                }
+            );
+		}
     }
 
     /**
