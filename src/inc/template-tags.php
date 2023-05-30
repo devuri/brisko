@@ -1,5 +1,11 @@
 <?php
 
+use Brisko\Options;
+use Brisko\Thumbnail;
+use Brisko\SiteHeader;
+use Brisko\Navigation;
+use Brisko\Footer;
+
 if ( ! \function_exists( 'brisko' ) ) {
     /**
      * Get the Brisko Theme.
@@ -104,7 +110,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
             $categories_list = get_the_category_list( ' ' );
             if ( $categories_list ) {
                 // translators: 1: list of categories.
-                printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, brisko()::options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, brisko_options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
 
             do_action( 'brisko_before_tags' );
@@ -113,7 +119,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
             $tags_list = get_the_tag_list( ' ' );
             if ( $tags_list ) {
                 // translators: 1: list of tags.
-                printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, brisko()::options()->display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, brisko_options()->display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
         }
 
@@ -210,7 +216,7 @@ function brisko_layout_head( $header_type = null )
 		do_action( 'brisko_page_header' );
 
 		?>
-		<main id="primary" class="site-main <?php brisko()::options()->page_width(); ?> bg-white">
+		<main id="primary" class="site-main <?php brisko_options()->page_width(); ?> bg-white">
 		<?php
 	} elseif ( 'archive' === $header_type ) {
 		get_template_part( 'template-parts/head', 'archive', $args );
@@ -269,4 +275,63 @@ function brisko_layout_content()
 	} else {
 		the_content();
 	}
+}
+
+/**
+ * Displays an optional post excerpt.
+ */
+function brisko_excerpt()
+{
+	if ( false === get_theme_mod( 'blog_excerpt', true ) ) {
+		return false;
+	}
+	the_excerpt();
+}
+
+/**
+ * Theme Options.
+ *
+ * @return Options .
+ */
+function brisko_options()
+{
+	return Options::get();
+}
+
+/**
+ * Displays an optional post thumbnail.
+ */
+function brisko_post_thumbnail()
+{
+	Thumbnail::get()->post_thumbnail();
+}
+
+/**
+ * Footer.
+ *
+ * @return Footer
+ */
+function brisko_footer()
+{
+	return Footer::get();
+}
+
+/**
+ * Theme Navigation.
+ *
+ * @return Navigation .
+ */
+function brisko_navigation()
+{
+	return Navigation::get()->navigation();
+}
+
+/**
+ * Theme Header.
+ *
+ * @return SiteHeader .
+ */
+function brisko_header()
+{
+	return SiteHeader::get();
 }

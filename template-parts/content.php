@@ -7,7 +7,7 @@
 
 ?>
 <div class="post-article">
-	<?php brisko()::post_thumbnail(); ?>
+	<?php brisko_post_thumbnail(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( is_singular() ) { ?>
@@ -49,10 +49,10 @@ brisko_posted_by();
 		<?php
         } else { ?>
 			<div class="post-excerpt" style="font-size: unset;">
-				<?php brisko()::excerpt(); ?>
+				<?php brisko_excerpt(); ?>
 			</div>
 		<div class="read-more ">
-			<a class="more-link <?php echo esc_html( brisko()::options()->button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
+			<a class="more-link <?php echo esc_html( brisko_options()->button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
 			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
 		</a>
 	</div><!-- read-more -->

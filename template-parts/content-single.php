@@ -7,7 +7,7 @@
 
 ?>
 <div class="post-article">
-	<?php brisko()::post_thumbnail(); ?>
+	<?php brisko_post_thumbnail(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php

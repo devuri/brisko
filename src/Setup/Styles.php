@@ -18,7 +18,6 @@ class Styles implements EnqueueInterface
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
         add_action( 'after_setup_theme', [ $this, 'setup_theme_editor_styles' ] );
-
     }
 
 	public function setup_theme_editor_styles()

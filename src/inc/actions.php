@@ -119,15 +119,6 @@ if ( ! \function_exists( 'brisko_before_footer' ) ) {
     }
 }
 
-// brisko_footer
-if ( ! \function_exists( 'brisko_footer' ) ) {
-    function brisko_footer()
-    {
-        // after the opening <footer> tag.
-        do_action( 'brisko_footer' );
-    }
-}
-
 // brisko_after_footer
 if ( ! \function_exists( 'brisko_after_footer' ) ) {
     function brisko_after_footer()

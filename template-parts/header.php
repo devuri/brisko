@@ -10,8 +10,8 @@
 <?php do_action( 'brisko_before_header' ); ?>
 <?php do_action( 'brisko_custom_header' ); ?>
 <header id="masthead" class="site-header">
-	<?php brisko()::navigation(); ?>
-	<?php brisko()::header_image(); ?>
+	<?php brisko_navigation(); ?>
+	<?php brisko_header()->header_image(); ?>
 </header><!-- #masthead -->
 <?php do_action( 'brisko_after_header' ); ?>
 <?php if ( is_front_page() && is_home() ) {
