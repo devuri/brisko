@@ -16,7 +16,7 @@
         "url": "https://github.com/devuri/brisko/issues"
     },
     "devDependencies": {
-        "dir-archiver": "^1.1.1",
+        "dir-archiver": "^2.1.0",
         "laravel-mix": "^6.0.49"
     },
     "scripts": {
@@ -27,10 +27,10 @@
         "prod": "mix --production",
         "production": "mix --production",
         "asset:build": "mix --mix-config=assets/src/webpack.mix.js --production",
-        "bundle": "dir-archiver --src . --dest ./brisko.zip --exclude .stylelintrc.json .eslintrc .git .wordpress-org .github .phpdoc build node_modules asset/src tests tmp report docs bin .vscode .idea .gitattributes .phpcs.xml.dist .php-cs-fixer.php stubs.php .gitignore README.md CHANGELOG.md composer.json composer.lock package.json package-lock.json .travis.yml phpcs.xml ISSUE_TEMPLATE.md CODE_OF_CONDUCT.md phpunit.xml .phpunit.result.cache phpdoc.xml psalm.xml rules.neon phpstan.neon webpack.mix.js",
+        "bundle": "dir-archiver --src . --dest ./brisko.zip --exclude .stylelintrc.json .eslintrc .git .wordpress-org .github .phpdoc build node_modules asset/src tests tmp report docs bin .vscode .idea .gitattributes .phpcs.xml.dist .php-cs-fixer.php stubs.php .gitignore README.md CHANGELOG.md composer.json composer.lock package.json package-lock.json .travis.yml phpcs.xml ISSUE_TEMPLATE.md CODE_OF_CONDUCT.md phpunit.xml .phpunit.result.cache phpdoc.xml psalm.xml rules.neon phpstan.neon",
         "prebuild": "npm rm -rf build/brisko",
         "build": "mix --mix-config=build/webpack.mix.js --production",
-        "postbuild": "npm run bundle --silent"
+        "postbuild": "npm run bundle"
     },
     "dependencies": {
         "bootstrap": "^5.2.0",

@@ -74,7 +74,6 @@
             "composer lint",
             "composer install -q",
             "composer lint",
-            "composer phpdoc -q",
             "composer no-dev -q",
             "npm install",
             "npm run asset:build",
@@ -100,7 +99,6 @@
             "vendor/bin/phpunit --group integration",
             "composer no-dev -q"
         ],
-        "phpdoc": "@php ./bin/phpdoc",
         "no-dev": "composer install --no-dev",
         "phpstan:lint": "@php ./vendor/bin/phpstan",
         "phpstan": "composer install && composer phpstan:lint",
