@@ -20,7 +20,7 @@
          *
          * note: filters on `the_content` will not work.
          */
-        brisko()::content();
+        brisko_layout_content();
 wp_link_pages(
     [
         'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),

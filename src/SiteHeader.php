@@ -54,15 +54,36 @@ class SiteHeader
     public function archive()
     {
         if ( is_archive() && Options::get()->enable_archive_header() ) {
-            Archive::get()->header();
+            self::archive_header();
 
             return;
         }
 
         if ( is_single() && Options::get()->enable_post_header() ) {
-            Archive::get()->header();
+            self::archive_header();
 
             return;
         }
+    }
+
+	/**
+     * Header title section.
+     *
+     * @return void
+     */
+    protected static function archive_header()
+    {
+        ?>
+        <div class="archive-header container-fluid">
+			<div class="archive-header-title container">
+				<h2>
+					<?php do_action( 'brisko_blog_title' ); ?>
+				</h2>
+				<p>
+					<?php do_action( 'brisko_blog_subtitle' ); ?>
+				</p>
+			</div>
+		</div>
+		<?php
     }
 }

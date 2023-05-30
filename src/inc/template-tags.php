@@ -13,8 +13,7 @@ if ( ! \function_exists( 'brisko' ) ) {
     function brisko( $mode = null )
     {
 		$modes = [
-			'template' => Brisko\Template::get(),
-			'options'  => Brisko\Options::get(),
+			'options' => Brisko\Options::get(),
 		];
 
 		if ( $mode ) {
@@ -165,4 +164,109 @@ function brisko_is_php5_6()
     }
 
     return false;
+}
+
+/**
+ * Get the sidebar.
+ *
+ * @return void
+ */
+function brisko_sidebar()
+{
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		?>
+	   <aside id="secondary" class="widget-area">
+	   <?php
+	   /**
+	    * Sidebar.
+	    */
+	   do_action( 'brisko_before_sidebar' );
+	   dynamic_sidebar( 'sidebar-1' );
+	   do_action( 'brisko_after_sidebar' ); ?>
+	   </aside><!-- #secondary -->
+	   <?php
+	}
+}
+
+/**
+ * Head section.
+ *
+ * @param  string|null $header_type
+ *
+ * @return void
+ */
+function brisko_layout_head( $header_type = null )
+{
+	// check if sidebar or not .
+	if ( get_theme_mod( 'disable_sidebar' ) ) {
+		$display_col = sanitize_html_class( 'col-md' );
+	} else {
+		$display_col = sanitize_html_class( 'col-md-8' );
+	}
+	$args = [ 'content_class' => $display_col ];
+
+	if ( 'page' === $header_type ) {
+
+		do_action( 'brisko_page_header' );
+
+		?>
+		<main id="primary" class="site-main <?php brisko()::options()->page_width(); ?> bg-white">
+		<?php
+	} elseif ( 'archive' === $header_type ) {
+		get_template_part( 'template-parts/head', 'archive', $args );
+	} else {
+		get_template_part( 'template-parts/head', 'blog', $args );
+	}
+}
+
+/**
+ * Get the sidebar.
+ */
+function brisko_layout_sidebar()
+{
+	if ( 1 === get_theme_mod( 'disable_sidebar', false ) ) {
+		return true;
+	}
+	get_template_part( 'template-parts/sidebar' );
+}
+
+
+/**
+ * Footer section.
+ *
+ * @param  string|null $footer_type
+ * @return void
+ */
+function brisko_layout_footer( $footer_type = null )
+{
+	if ( 'page' === $footer_type ) {
+		?>
+		</main><!-- #main -->
+		<?php
+		do_action( 'brisko_page_footer' );
+	} else {
+		?>
+		</div><!-- col 8 -->
+				<?php brisko_layout_sidebar(); ?>
+			</div><!-- row -->
+		</main><!-- #main -->
+		<?php
+	}
+}
+
+/**
+ * Display content only.
+ *
+ * pure content will bypass `the_content` and use `get_the_content`
+ * works better for pure content management and will not break html.
+ *
+ * note: filters on `the_content` will not work.
+ */
+function brisko_layout_content()
+{
+	if ( get_theme_mod( 'enable_pure_content', false ) ) {
+		echo get_the_content( null, false ); // @codingStandardsIgnoreLine.
+	} else {
+		the_content();
+	}
 }

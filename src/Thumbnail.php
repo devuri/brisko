@@ -1,6 +1,6 @@
 <?php
 
-namespace Brisko\View;
+namespace Brisko;
 
 use Brisko\Options;
 use Brisko\Traits\Instance;

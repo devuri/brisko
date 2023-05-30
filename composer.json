@@ -42,11 +42,10 @@
         "brain/monkey": "^2.6",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
         "php-parallel-lint/php-parallel-lint": "^1.3",
-        "php-stubs/wordpress-stubs": "^6.1",
-        "phpstan/phpstan": "^1.9",
-        "phpstan/phpstan-strict-rules": "^1.4",
+        "php-stubs/wordpress-stubs": "^6.2",
+        "phpstan/phpstan-strict-rules": "1.4.4",
         "symfony/var-dumper": "^5.4",
-        "szepeviktor/phpstan-wordpress": "^1.1",
+        "szepeviktor/phpstan-wordpress": "^1.3",
         "wptrt/wpthemereview": "^0.2.1",
         "yoast/phpunit-polyfills": "^1.0"
     },
@@ -103,14 +102,8 @@
         ],
         "phpdoc": "@php ./bin/phpdoc",
         "no-dev": "composer install --no-dev",
-        "phpstan-install": [
-            "composer require --dev phpstan/phpstan -q",
-            "composer require --dev phpstan/phpstan-strict-rules -q",
-            "composer require --dev php-stubs/wordpress-stubs -q",
-            "composer require --dev szepeviktor/phpstan-wordpress -q"
-        ],
         "phpstan:lint": "@php ./vendor/bin/phpstan",
-        "phpstan": "composer phpstan-install && composer phpstan:lint",
+        "phpstan": "composer install && composer phpstan:lint",
         "psalm-install": [
             "composer require --dev vimeo/psalm -q"
         ],

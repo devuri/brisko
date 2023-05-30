@@ -10,8 +10,6 @@ use Brisko\Setup\Compat;
 use Brisko\Setup\Head;
 use Brisko\Setup\Jetpack;
 use Brisko\Traits\Instance;
-use Brisko\View\Excerpt;
-use Brisko\View\Thumbnail;
 
 /**
  * The main Brisko theme class.
@@ -195,7 +193,10 @@ class Theme
      */
     public static function excerpt()
     {
-        Excerpt::get()->post_excerpt();
+		if ( false === get_theme_mod( 'blog_excerpt', true ) ) {
+            return false;
+        }
+        the_excerpt();
     }
 
     /**
@@ -206,26 +207,6 @@ class Theme
     public static function options()
     {
         return Options::get();
-    }
-
-    /**
-     * Template.
-     *
-     * @return Template
-     */
-    public static function template()
-    {
-        return Template::get();
-    }
-
-    /**
-     * Template.
-     *
-     * @return Template
-     */
-    public static function content()
-    {
-        return static::template()->content();
     }
 
     /**
