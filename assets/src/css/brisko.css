@@ -90,7 +90,7 @@
  --------------------------------------------------------------*/
 @media screen and (min-width: 960px) {
      .alignwide, .alignfull {
-          width:  100vw;
+          /* width:  100vw; */
           max-width:  100vw;
           margin-left:  calc(50% - 50vw);
      }
