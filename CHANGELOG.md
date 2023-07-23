@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.0.1](https://github.com/devuri/brisko/compare/4.0.0...4.0.1) (2023-07-23)
+
+
+### Bug Fixes
+
+* remove `width:  100vw` it causes overflow in the browser ([9e190b7](https://github.com/devuri/brisko/commit/9e190b75688a66a9bdc78b466dddb4bdb886b71a))
+
+
+### Miscellaneous Chores
+
+* version bump 4.0.1 ([44c2ce6](https://github.com/devuri/brisko/commit/44c2ce63cc60dd8990f4984a788d1bb57869da39))
+
 ## [4.0.0](https://github.com/devuri/brisko/compare/3.8.0...4.0.0) (2023-07-23)
 
 
