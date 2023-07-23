@@ -9,7 +9,7 @@
 
 ?>
 </div><!-- #page -->
-<?php brisko()::footer(); ?>
+<?php brisko_footer()->site_footer();; ?>
 	<?php wp_footer(); ?>
 	</body>
 </html>

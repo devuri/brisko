@@ -10,8 +10,6 @@ use Brisko\Setup\Compat;
 use Brisko\Setup\Head;
 use Brisko\Setup\Jetpack;
 use Brisko\Traits\Instance;
-use Brisko\View\Excerpt;
-use Brisko\View\Thumbnail;
 
 /**
  * The main Brisko theme class.
@@ -27,7 +25,7 @@ class Theme
     /**
      * Define Theme Version.
      */
-    const VERSION = '3.8.0';
+    const VERSION = '4.0';
 
     protected static $dir;
     protected $activate;
@@ -140,112 +138,6 @@ class Theme
     public function action( $action = null )
     {
         return Actions::get()->action( $action );
-    }
-
-    /**
-     * Theme Header.
-     *
-     * @return SiteHeader .
-     */
-    public static function header()
-    {
-        return SiteHeader::get()->site_header();
-    }
-
-    /**
-     * Theme Navigation.
-     *
-     * @return Navigation .
-     */
-    public static function navigation()
-    {
-        return Navigation::get()->navigation();
-    }
-
-    /**
-     * Theme Header.
-     *
-     * @return SiteHeader .
-     */
-    public static function header_image()
-    {
-        return SiteHeader::get()->header_image();
-    }
-
-    /**
-     * Archive Header.
-     *
-     * @return SiteHeader .
-     */
-    public static function archive_header()
-    {
-        return SiteHeader::get()->archive();
-    }
-
-    /**
-     * Displays an optional post thumbnail.
-     */
-    public static function post_thumbnail()
-    {
-        Thumbnail::get()->post_thumbnail();
-    }
-
-    /**
-     * Displays an optional post excerpt.
-     */
-    public static function excerpt()
-    {
-        Excerpt::get()->post_excerpt();
-    }
-
-    /**
-     * Theme Options.
-     *
-     * @return Options .
-     */
-    public static function options()
-    {
-        return Options::get();
-    }
-
-    /**
-     * Template.
-     *
-     * @return Template
-     */
-    public static function template()
-    {
-        return Template::get();
-    }
-
-    /**
-     * Template.
-     *
-     * @return Template
-     */
-    public static function content()
-    {
-        return static::template()->content();
-    }
-
-    /**
-     * Footer.
-     *
-     * @return Footer
-     */
-    public static function footer()
-    {
-        return Footer::get()->site_footer();
-    }
-
-    /**
-     * Footer Credit.
-     *
-     * @return string
-     */
-    public static function footer_credit()
-    {
-        return Footer::get()->footer_credit();
     }
 
     /**

@@ -18,4 +18,4 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-<?php brisko()::header(); ?>
+<?php brisko_header()->site_header(); ?>

@@ -21,7 +21,7 @@
 	<a class="skip-link screen-reader-text" href="#primary">
 		<?php esc_html_e( 'Skip to content', 'brisko' ); ?>
 	</a>
-<?php brisko()::header_image(); ?>
+<?php brisko_header()->header_image(); ?>
 <?php if ( is_front_page() && is_home() ) {
     brisko_homepage_header();
 } ?>

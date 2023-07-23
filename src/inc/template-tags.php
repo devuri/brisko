@@ -1,5 +1,11 @@
 <?php
 
+use Brisko\Options;
+use Brisko\Thumbnail;
+use Brisko\SiteHeader;
+use Brisko\Navigation;
+use Brisko\Footer;
+
 if ( ! \function_exists( 'brisko' ) ) {
     /**
      * Get the Brisko Theme.
@@ -13,8 +19,7 @@ if ( ! \function_exists( 'brisko' ) ) {
     function brisko( $mode = null )
     {
 		$modes = [
-			'template' => Brisko\Template::get(),
-			'options'  => Brisko\Options::get(),
+			'options' => Brisko\Options::get(),
 		];
 
 		if ( $mode ) {
@@ -105,7 +110,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
             $categories_list = get_the_category_list( ' ' );
             if ( $categories_list ) {
                 // translators: 1: list of categories.
-                printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, brisko()::options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, brisko_options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
 
             do_action( 'brisko_before_tags' );
@@ -114,7 +119,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
             $tags_list = get_the_tag_list( ' ' );
             if ( $tags_list ) {
                 // translators: 1: list of tags.
-                printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, brisko()::options()->display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, brisko_options()->display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
         }
 
@@ -165,4 +170,180 @@ function brisko_is_php5_6()
     }
 
     return false;
+}
+
+/**
+ * Get the sidebar.
+ *
+ * @return void
+ */
+function brisko_sidebar()
+{
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		?>
+	   <aside id="secondary" class="widget-area">
+	   <?php
+	   /**
+	    * Sidebar.
+	    */
+	   do_action( 'brisko_before_sidebar' );
+	   dynamic_sidebar( 'sidebar-1' );
+	   do_action( 'brisko_after_sidebar' ); ?>
+	   </aside><!-- #secondary -->
+	   <?php
+	}
+}
+
+/**
+ * Head section.
+ *
+ * @param  string|null $header_type
+ *
+ * @return void
+ */
+function brisko_layout_head( $header_type = null )
+{
+	// check if sidebar or not .
+	if ( get_theme_mod( 'disable_sidebar' ) ) {
+		$display_col = sanitize_html_class( 'col-md' );
+	} else {
+		$display_col = sanitize_html_class( 'col-md-8' );
+	}
+	$args = [ 'content_class' => $display_col ];
+
+	if ( 'page' === $header_type ) {
+
+		do_action( 'brisko_page_header' );
+
+		?>
+		<main id="primary" class="site-main <?php brisko_options()->page_width(); ?> bg-white">
+		<?php
+	} elseif ( 'full-width' === $header_type ) {
+		do_action( 'brisko_page_header' );
+
+		?>
+		<main id="primary" class="full-width-template bg-white">
+		<?php
+	} elseif ( 'canvas' === $header_type ) {
+		do_action( 'brisko_page_header' );
+
+		?>
+		<main id="primary" class="full-width-template bg-white">
+		<?php
+	} elseif ( 'archive' === $header_type ) {
+		get_template_part( 'template-parts/head', 'archive', $args );
+	} else {
+		get_template_part( 'template-parts/head', 'blog', $args );
+	}
+}
+
+/**
+ * Get the sidebar.
+ */
+function brisko_layout_sidebar()
+{
+	if ( 1 === get_theme_mod( 'disable_sidebar', false ) ) {
+		return true;
+	}
+	get_template_part( 'template-parts/sidebar' );
+}
+
+
+/**
+ * Footer section.
+ *
+ * @param  string|null $footer_type
+ * @return void
+ */
+function brisko_layout_footer( $footer_type = null )
+{
+	if ( 'page' === $footer_type ) {
+		?>
+		</main><!-- #main -->
+		<?php
+		do_action( 'brisko_page_footer' );
+	} else {
+		?>
+		</div><!-- col 8 -->
+				<?php brisko_layout_sidebar(); ?>
+			</div><!-- row -->
+		</main><!-- #main -->
+		<?php
+	}
+}
+
+/**
+ * Display content only.
+ *
+ * pure content will bypass `the_content` and use `get_the_content`
+ * works better for pure content management and will not break html.
+ *
+ * note: filters on `the_content` will not work.
+ */
+function brisko_layout_content()
+{
+	if ( get_theme_mod( 'enable_pure_content', false ) ) {
+		echo get_the_content( null, false ); // @codingStandardsIgnoreLine.
+	} else {
+		the_content();
+	}
+}
+
+/**
+ * Displays an optional post excerpt.
+ */
+function brisko_excerpt()
+{
+	if ( false === get_theme_mod( 'blog_excerpt', true ) ) {
+		return false;
+	}
+	the_excerpt();
+}
+
+/**
+ * Theme Options.
+ *
+ * @return Options .
+ */
+function brisko_options()
+{
+	return Options::get();
+}
+
+/**
+ * Displays an optional post thumbnail.
+ */
+function brisko_post_thumbnail()
+{
+	Thumbnail::get()->post_thumbnail();
+}
+
+/**
+ * Footer.
+ *
+ * @return Footer
+ */
+function brisko_footer()
+{
+	return Footer::get();
+}
+
+/**
+ * Theme Navigation.
+ *
+ * @return Navigation .
+ */
+function brisko_navigation()
+{
+	return Navigation::get()->navigation();
+}
+
+/**
+ * Theme Header.
+ *
+ * @return SiteHeader .
+ */
+function brisko_header()
+{
+	return SiteHeader::get();
 }

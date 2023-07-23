@@ -5,4 +5,4 @@
  * @see https://developer.wordpress.org/themes/basics/template-files/
  */
 
-brisko('template')->sidebar();
+brisko_sidebar();

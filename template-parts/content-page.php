@@ -8,10 +8,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="page-header <?php echo esc_attr( brisko()::options()->display_page_header() ); ?>">
+	<header class="page-header <?php echo esc_attr( brisko_options()->display_page_header() ); ?>">
 		<?php the_title( '<h2 class="page-title archive-title entry-meta">', '</h2>' ); ?>
 	</header><!-- .entry-header -->
-	<?php brisko()::post_thumbnail(); ?>
+	<?php brisko_post_thumbnail(); ?>
 	<div class="entry-content">
 		<?php
         /**
@@ -20,7 +20,7 @@
          *
          * note: filters on `the_content` will not work.
          */
-        brisko()::content();
+        brisko_layout_content();
 wp_link_pages(
     [
         'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brisko' ),
