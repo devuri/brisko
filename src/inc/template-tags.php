@@ -12,7 +12,7 @@ if ( ! \function_exists( 'brisko' ) ) {
      *
      * Helper function to get the Bisko Theme Object.
      *
-     *  @param  string $mode static call
+     *  @param  string $mode static call.
      *
      * @return Brisko
      */
