@@ -8,10 +8,9 @@
  */
 get_header( 'canvas' );
 
-do_action( 'brisko_page_header' ); ?>
-<main id="primary" class="full-width-template bg-white">
-<?php
-	 // Page content
+brisko_layout_head( 'canvas' );
+
+	// Page content
 	while ( have_posts() ) {
 		the_post();
 			get_template_part( 'template-parts/content', 'full-width' );
@@ -20,9 +19,6 @@ do_action( 'brisko_page_header' ); ?>
 	 	}
 	}
 
-?>
-</main><!-- #main -->
-<?php
-do_action( 'brisko_page_footer' );
+brisko_layout_footer( 'page' );
 
 get_footer( 'canvas' );

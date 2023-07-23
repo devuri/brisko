@@ -9,7 +9,7 @@
 
 get_header();
 
-brisko_layout_head( 'page' );
+brisko_layout_head( 'full-width' );
 
     // Page content
     while ( have_posts() ) {

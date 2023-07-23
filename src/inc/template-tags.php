@@ -218,6 +218,18 @@ function brisko_layout_head( $header_type = null )
 		?>
 		<main id="primary" class="site-main <?php brisko_options()->page_width(); ?> bg-white">
 		<?php
+	} elseif ( 'full-width' === $header_type ) {
+		do_action( 'brisko_page_header' );
+
+		?>
+		<main id="primary" class="full-width-template bg-white">
+		<?php
+	} elseif ( 'canvas' === $header_type ) {
+		do_action( 'brisko_page_header' );
+
+		?>
+		<main id="primary" class="full-width-template bg-white">
+		<?php
 	} elseif ( 'archive' === $header_type ) {
 		get_template_part( 'template-parts/head', 'archive', $args );
 	} else {
