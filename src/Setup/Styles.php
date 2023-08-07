@@ -111,14 +111,19 @@ class Styles implements EnqueueInterface
     /**
      * Setup a style based on mod.
      *
-     * @param string $handle  the enqueue handle example 'bootstrap'
-     * @param string $mod     the theme_mod name example 'enable_bootstrap'
-     * @param bool   $default true|false if this shopuld be enabled by default.
+     * @param string       $handle  the enqueue handle example 'bootstrap'
+     * @param string|false $mod     the theme_mod name example 'enable_bootstrap', use false to override
+     * @param bool         $default true|false if this shopuld be enabled by default.
      *
      * @return void
      */
     public static function enqueue_style( $handle, $mod, $default = false )
     {
+		if ( false === $mod ) {
+			wp_enqueue_style( $handle );
+			return;
+		}
+
         if ( true === get_theme_mod( $mod, $default ) ) {
             wp_enqueue_style( $handle );
         }
@@ -148,6 +153,9 @@ class Styles implements EnqueueInterface
         self::enqueue_style( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
         self::enqueue_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
         self::enqueue_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
+
+		// 'normalizer'
+		self::enqueue_style( 'normalizer', false );
 
         // custom styles.
         wp_enqueue_style( 'custom-styles' );
@@ -179,6 +187,7 @@ class Styles implements EnqueueInterface
             'brisko'                   => Assets::uri( 'css/brisko.min.css' ),
             'custom-styles'            => Assets::uri( 'css/custom-styles.min.css' ),
             'underscores'              => Assets::uri( 'css/underscores.min.css' ),
+            'normalizer'               => Assets::uri( 'css/normalize.min.css' ),
             'brisko-theme'             => get_stylesheet_uri(),
         ];
 
