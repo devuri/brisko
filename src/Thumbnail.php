@@ -2,7 +2,6 @@
 
 namespace Brisko;
 
-use Brisko\Options;
 use Brisko\Traits\Instance;
 
 class Thumbnail

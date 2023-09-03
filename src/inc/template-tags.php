@@ -1,10 +1,10 @@
 <?php
 
-use Brisko\Options;
-use Brisko\Thumbnail;
-use Brisko\SiteHeader;
-use Brisko\Navigation;
 use Brisko\Footer;
+use Brisko\Navigation;
+use Brisko\Options;
+use Brisko\SiteHeader;
+use Brisko\Thumbnail;
 
 if ( ! \function_exists( 'brisko' ) ) {
     /**
@@ -12,25 +12,25 @@ if ( ! \function_exists( 'brisko' ) ) {
      *
      * Helper function to get the Bisko Theme Object.
      *
-     *  @param  string $mode static call.
+     * @param string $mode static call.
      *
      * @return Brisko
      */
     function brisko( $mode = null )
     {
-		$modes = [
-			'options' => Brisko\Options::get(),
-		];
+        $modes = [
+            'options' => Brisko\Options::get(),
+        ];
 
-		if ( $mode ) {
-			return $modes[ $mode ];
-		}
+        if ( $mode ) {
+            return $modes[ $mode ];
+        }
 
-        return new Brisko\Theme( dirname( dirname( dirname( __FILE__ ) ) ) );
+        return new Brisko\Theme( \dirname( __FILE__, 3 ) );
     }
 }
 
-/**
+/*
  * Custom template tags for this theme.
  *
  * Eventually, some of the functionality here could be replaced by core features.
@@ -179,62 +179,61 @@ function brisko_is_php5_6()
  */
 function brisko_sidebar()
 {
-	if ( is_active_sidebar( 'sidebar-1' ) ) {
-		?>
+    if ( is_active_sidebar( 'sidebar-1' ) ) {
+        ?>
 	   <aside id="secondary" class="widget-area">
 	   <?php
-	   /**
-	    * Sidebar.
-	    */
-	   do_action( 'brisko_before_sidebar' );
-	   dynamic_sidebar( 'sidebar-1' );
-	   do_action( 'brisko_after_sidebar' ); ?>
+       /**
+        * Sidebar.
+        */
+       do_action( 'brisko_before_sidebar' );
+        dynamic_sidebar( 'sidebar-1' );
+        do_action( 'brisko_after_sidebar' ); ?>
 	   </aside><!-- #secondary -->
 	   <?php
-	}
+    }
 }
 
 /**
  * Head section.
  *
- * @param  string|null $header_type
+ * @param null|string $header_type
  *
  * @return void
  */
 function brisko_layout_head( $header_type = null )
 {
-	// check if sidebar or not .
-	if ( get_theme_mod( 'disable_sidebar' ) ) {
-		$display_col = sanitize_html_class( 'col-md' );
-	} else {
-		$display_col = sanitize_html_class( 'col-md-8' );
-	}
-	$args = [ 'content_class' => $display_col ];
+    // check if sidebar or not .
+    if ( get_theme_mod( 'disable_sidebar' ) ) {
+        $display_col = sanitize_html_class( 'col-md' );
+    } else {
+        $display_col = sanitize_html_class( 'col-md-8' );
+    }
+    $args = [ 'content_class' => $display_col ];
 
-	if ( 'page' === $header_type ) {
+    if ( 'page' === $header_type ) {
+        do_action( 'brisko_page_header' );
 
-		do_action( 'brisko_page_header' );
-
-		?>
+        ?>
 		<main id="primary" class="site-main <?php brisko_options()->page_width(); ?> bg-white">
 		<?php
-	} elseif ( 'full-width' === $header_type ) {
-		do_action( 'brisko_page_header' );
+    } elseif ( 'full-width' === $header_type ) {
+        do_action( 'brisko_page_header' );
 
-		?>
+        ?>
 		<main id="primary" class="full-width-template bg-white">
 		<?php
-	} elseif ( 'canvas' === $header_type ) {
-		do_action( 'brisko_page_header' );
+    } elseif ( 'canvas' === $header_type ) {
+        do_action( 'brisko_page_header' );
 
-		?>
+        ?>
 		<main id="primary" class="full-width-template bg-white">
 		<?php
-	} elseif ( 'archive' === $header_type ) {
-		get_template_part( 'template-parts/head', 'archive', $args );
-	} else {
-		get_template_part( 'template-parts/head', 'blog', $args );
-	}
+    } elseif ( 'archive' === $header_type ) {
+        get_template_part( 'template-parts/head', 'archive', $args );
+    } else {
+        get_template_part( 'template-parts/head', 'blog', $args );
+    }
 }
 
 /**
@@ -242,34 +241,35 @@ function brisko_layout_head( $header_type = null )
  */
 function brisko_layout_sidebar()
 {
-	if ( 1 === get_theme_mod( 'disable_sidebar', false ) ) {
-		return true;
-	}
-	get_template_part( 'template-parts/sidebar' );
+    if ( 1 === get_theme_mod( 'disable_sidebar', false ) ) {
+        return true;
+    }
+    get_template_part( 'template-parts/sidebar' );
 }
 
 
 /**
  * Footer section.
  *
- * @param  string|null $footer_type
+ * @param null|string $footer_type
+ *
  * @return void
  */
 function brisko_layout_footer( $footer_type = null )
 {
-	if ( 'page' === $footer_type ) {
-		?>
+    if ( 'page' === $footer_type ) {
+        ?>
 		</main><!-- #main -->
 		<?php
-		do_action( 'brisko_page_footer' );
-	} else {
-		?>
+        do_action( 'brisko_page_footer' );
+    } else {
+        ?>
 		</div><!-- col 8 -->
 				<?php brisko_layout_sidebar(); ?>
 			</div><!-- row -->
 		</main><!-- #main -->
 		<?php
-	}
+    }
 }
 
 /**
@@ -282,11 +282,11 @@ function brisko_layout_footer( $footer_type = null )
  */
 function brisko_layout_content()
 {
-	if ( get_theme_mod( 'enable_pure_content', false ) ) {
-		echo get_the_content( null, false ); // @codingStandardsIgnoreLine.
-	} else {
-		the_content();
-	}
+    if ( get_theme_mod( 'enable_pure_content', false ) ) {
+        echo get_the_content( null, false ); // @codingStandardsIgnoreLine.
+    } else {
+        the_content();
+    }
 }
 
 /**
@@ -294,10 +294,10 @@ function brisko_layout_content()
  */
 function brisko_excerpt()
 {
-	if ( false === get_theme_mod( 'blog_excerpt', true ) ) {
-		return false;
-	}
-	the_excerpt();
+    if ( false === get_theme_mod( 'blog_excerpt', true ) ) {
+        return false;
+    }
+    the_excerpt();
 }
 
 /**
@@ -307,7 +307,7 @@ function brisko_excerpt()
  */
 function brisko_options()
 {
-	return Options::get();
+    return Options::get();
 }
 
 /**
@@ -315,7 +315,7 @@ function brisko_options()
  */
 function brisko_post_thumbnail()
 {
-	Thumbnail::get()->post_thumbnail();
+    Thumbnail::get()->post_thumbnail();
 }
 
 /**
@@ -325,7 +325,7 @@ function brisko_post_thumbnail()
  */
 function brisko_footer()
 {
-	return Footer::get();
+    return Footer::get();
 }
 
 /**
@@ -335,7 +335,7 @@ function brisko_footer()
  */
 function brisko_navigation()
 {
-	return Navigation::get()->navigation();
+    return Navigation::get()->navigation();
 }
 
 /**
@@ -345,5 +345,5 @@ function brisko_navigation()
  */
 function brisko_header()
 {
-	return SiteHeader::get();
+    return SiteHeader::get();
 }

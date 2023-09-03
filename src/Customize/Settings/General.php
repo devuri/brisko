@@ -21,7 +21,6 @@ class General implements SettingsInterface
      */
     public static function settings( $wp_customize )
     {
-
         // Separator General Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'General', 'brisko' ), self::section() );
 

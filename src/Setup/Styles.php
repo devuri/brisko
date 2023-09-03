@@ -20,41 +20,41 @@ class Styles implements EnqueueInterface
         add_action( 'after_setup_theme', [ $this, 'setup_theme_editor_styles' ] );
     }
 
-	public function setup_theme_editor_styles()
-	{
-		add_theme_support( 'editor-styles' );
+    public function setup_theme_editor_styles()
+    {
+        add_theme_support( 'editor-styles' );
 
-		static::editor_style( 'milligram', 'enable_milligram' );
-		static::editor_style( 'uikit', 'enable_uikit' );
+        static::editor_style( 'milligram', 'enable_milligram' );
+        static::editor_style( 'uikit', 'enable_uikit' );
 
-		// bootstrap.
-		static::editor_style( 'bootstrap', 'enable_bootstrap', self::maybe() );
-		static::editor_style( 'bootstrap-grid', 'enable_bootstrap_grid' );
+        // bootstrap.
+        static::editor_style( 'bootstrap', 'enable_bootstrap', self::maybe() );
+        static::editor_style( 'bootstrap-grid', 'enable_bootstrap_grid' );
 
-		// theme.
-		static::editor_style( 'brisko-theme', 'enable_theme_styles', self::maybe() );
-		static::editor_style( 'underscores', 'enable_underscores', self::maybe() );
-		static::editor_style( 'brisko', 'enable_brisko', self::maybe());
+        // theme.
+        static::editor_style( 'brisko-theme', 'enable_theme_styles', self::maybe() );
+        static::editor_style( 'underscores', 'enable_underscores', self::maybe() );
+        static::editor_style( 'brisko', 'enable_brisko', self::maybe() );
 
-		// bootstrap 5.
-		static::editor_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
-		static::editor_style( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
-		static::editor_style( 'bootstrap5', 'enable_bootstrap5' );
-		static::editor_style( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
-		static::editor_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
-		static::editor_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
-	}
+        // bootstrap 5.
+        static::editor_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
+        static::editor_style( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
+        static::editor_style( 'bootstrap5', 'enable_bootstrap5' );
+        static::editor_style( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
+        static::editor_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
+        static::editor_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
+    }
 
-	/**
+    /**
      * Setup a style based on mod.
      *
-     * @param string $asset  the stylesheet url
+     * @param string $asset   the stylesheet url
      * @param string $mod     the theme_mod name example 'enable_bootstrap'
      * @param bool   $default true|false if this shopuld be enabled by default.
      *
      * @return void
      */
-	public static function editor_style( $asset, $mod, $default = false )
+    public static function editor_style( $asset, $mod, $default = false )
     {
         if ( true === get_theme_mod( $mod, $default ) ) {
             add_editor_style( self::style_files( $asset ) );
@@ -112,17 +112,18 @@ class Styles implements EnqueueInterface
      * Setup a style based on mod.
      *
      * @param string       $handle  the enqueue handle example 'bootstrap'
-     * @param string|false $mod     the theme_mod name example 'enable_bootstrap', use false to override
+     * @param false|string $mod     the theme_mod name example 'enable_bootstrap', use false to override
      * @param bool         $default true|false if this should be enabled by default.
      *
      * @return void
      */
     public static function enqueue_style( $handle, $mod, $default = false )
     {
-		if ( false === $mod ) {
-			wp_enqueue_style( $handle );
-			return;
-		}
+        if ( false === $mod ) {
+            wp_enqueue_style( $handle );
+
+            return;
+        }
 
         if ( true === get_theme_mod( $mod, $default ) ) {
             wp_enqueue_style( $handle );
@@ -154,8 +155,8 @@ class Styles implements EnqueueInterface
         self::enqueue_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
         self::enqueue_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
 
-		// 'normalizer'
-		self::enqueue_style( 'normalizer', self::maybe() );
+        // 'normalizer'
+        self::enqueue_style( 'normalizer', self::maybe() );
 
         // custom styles.
         wp_enqueue_style( 'custom-styles' );
@@ -167,7 +168,7 @@ class Styles implements EnqueueInterface
     /**
      * Setup static CSS files.
      *
-     * @param string|null $style style handle example 'bootstrap'
+     * @param null|string $style style handle example 'bootstrap'
      *
      * @return array .
      */
@@ -191,10 +192,10 @@ class Styles implements EnqueueInterface
             'brisko-theme'             => get_stylesheet_uri(),
         ];
 
-		// get a single stylesheet url.
-		if ( $style ) {
-			return $files[ $style ];
-		}
+        // get a single stylesheet url.
+        if ( $style ) {
+            return $files[ $style ];
+        }
 
         return apply_filters( 'brisko_style_assets', $files );
     }
@@ -221,7 +222,6 @@ class Styles implements EnqueueInterface
      */
     private function custom_styles()
     {
-
         // Get the theme setting.
         $bttns                     = 'button, input[type="button"], input[type="reset"], input[type="submit"]';
         $color                     = get_theme_mod( 'link_color', '#000000' );
@@ -292,25 +292,24 @@ class Styles implements EnqueueInterface
         return $this->sanitize_css( $style_styles );
     }
 
-	/**
-	 * Check if the 'brisko_elements_loaded' action has been executed.
-	 *
-	 * Determine whether to load theme modifications by default.
-	 *
-	 * This method checks if the 'brisko_elements_loaded' action has been executed. If the action
-	 * has not been fired, it indicates that the Brisko Elements plugin is not active. In this case,
-	 * we need to load certain theme modifications like theme styles by default. However, if the
-	 * action has been fired, it means the plugin is active and can control theme mods, so we return
-	 * false to prevent default loading.
-	 *
-	 * @return bool Returns true if the 'brisko_elements_loaded' action has NOT been executed,
-	 *              indicating the need to load theme modifications by default. Returns false if
-	 *              the action has been fired, indicating that the plugin can control theme mods,
-	 *              and we should not load them by default.
-	 */
-	private static function maybe()
-	{
-	    return !did_action('brisko_elements_loaded');
-	}
-
+    /**
+     * Check if the 'brisko_elements_loaded' action has been executed.
+     *
+     * Determine whether to load theme modifications by default.
+     *
+     * This method checks if the 'brisko_elements_loaded' action has been executed. If the action
+     * has not been fired, it indicates that the Brisko Elements plugin is not active. In this case,
+     * we need to load certain theme modifications like theme styles by default. However, if the
+     * action has been fired, it means the plugin is active and can control theme mods, so we return
+     * false to prevent default loading.
+     *
+     * @return bool Returns true if the 'brisko_elements_loaded' action has NOT been executed,
+     *              indicating the need to load theme modifications by default. Returns false if
+     *              the action has been fired, indicating that the plugin can control theme mods,
+     *              and we should not load them by default.
+     */
+    private static function maybe()
+    {
+        return ! did_action( 'brisko_elements_loaded' );
+    }
 }

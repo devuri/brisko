@@ -21,7 +21,6 @@ class Blog implements SettingsInterface
      */
     public static function settings( $wp_customize )
     {
-
         // Archives Template Details
         ( new Control() )->separator( $wp_customize, esc_html__( 'Blog', 'brisko' ), self::section() );
 

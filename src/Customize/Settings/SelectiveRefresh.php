@@ -45,7 +45,6 @@ class SelectiveRefresh
         // Advanced.
 
         if ( isset( $wp_customize->selective_refresh ) ) {
-
             // copyright.
             $wp_customize->selective_refresh->add_partial(
                 'footer_copyright',

@@ -19,7 +19,6 @@ class Header implements SettingsInterface
      */
     public static function settings( $wp_customize )
     {
-
         // Separator Header Image Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'Header Image', 'brisko' ), self::section() );
         // Header Image
