@@ -28,13 +28,13 @@ class Styles implements EnqueueInterface
 		static::editor_style( 'uikit', 'enable_uikit' );
 
 		// bootstrap.
-		static::editor_style( 'bootstrap', 'enable_bootstrap', true );
+		static::editor_style( 'bootstrap', 'enable_bootstrap', self::maybe() );
 		static::editor_style( 'bootstrap-grid', 'enable_bootstrap_grid' );
 
 		// theme.
-		static::editor_style( 'brisko-theme', 'enable_theme_styles', true );
-		static::editor_style( 'underscores', 'enable_underscores', true );
-		static::editor_style( 'brisko', 'enable_brisko', true );
+		static::editor_style( 'brisko-theme', 'enable_theme_styles', self::maybe() );
+		static::editor_style( 'underscores', 'enable_underscores', self::maybe() );
+		static::editor_style( 'brisko', 'enable_brisko', self::maybe());
 
 		// bootstrap 5.
 		static::editor_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
@@ -113,7 +113,7 @@ class Styles implements EnqueueInterface
      *
      * @param string       $handle  the enqueue handle example 'bootstrap'
      * @param string|false $mod     the theme_mod name example 'enable_bootstrap', use false to override
-     * @param bool         $default true|false if this shopuld be enabled by default.
+     * @param bool         $default true|false if this should be enabled by default.
      *
      * @return void
      */
@@ -138,13 +138,13 @@ class Styles implements EnqueueInterface
         self::enqueue_style( 'uikit', 'enable_uikit' );
 
         // bootstrap.
-        self::enqueue_style( 'bootstrap', 'enable_bootstrap', true );
-        self::enqueue_style( 'bootstrap-grid', 'enable_bootstrap_grid' );
+        self::enqueue_style( 'bootstrap', 'enable_bootstrap', self::maybe() );
+        self::enqueue_style( 'bootstrap-grid', 'enable_bootstrap_grid', self::maybe() );
 
         // theme.
-        self::enqueue_style( 'brisko-theme', 'enable_theme_styles', true );
-        self::enqueue_style( 'underscores', 'enable_underscores', true );
-        self::enqueue_style( 'brisko', 'enable_brisko', true );
+        self::enqueue_style( 'brisko-theme', 'enable_theme_styles', self::maybe() );
+        self::enqueue_style( 'underscores', 'enable_underscores', self::maybe() );
+        self::enqueue_style( 'brisko', 'enable_brisko', self::maybe() );
 
         // bootstrap 5.
         self::enqueue_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
@@ -155,7 +155,7 @@ class Styles implements EnqueueInterface
         self::enqueue_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
 
 		// 'normalizer'
-		self::enqueue_style( 'normalizer', false );
+		self::enqueue_style( 'normalizer', self::maybe() );
 
         // custom styles.
         wp_enqueue_style( 'custom-styles' );
@@ -291,4 +291,26 @@ class Styles implements EnqueueInterface
 
         return $this->sanitize_css( $style_styles );
     }
+
+	/**
+	 * Check if the 'brisko_elements_loaded' action has been executed.
+	 *
+	 * Determine whether to load theme modifications by default.
+	 *
+	 * This method checks if the 'brisko_elements_loaded' action has been executed. If the action
+	 * has not been fired, it indicates that the Brisko Elements plugin is not active. In this case,
+	 * we need to load certain theme modifications like theme styles by default. However, if the
+	 * action has been fired, it means the plugin is active and can control theme mods, so we return
+	 * false to prevent default loading.
+	 *
+	 * @return bool Returns true if the 'brisko_elements_loaded' action has NOT been executed,
+	 *              indicating the need to load theme modifications by default. Returns false if
+	 *              the action has been fired, indicating that the plugin can control theme mods,
+	 *              and we should not load them by default.
+	 */
+	private static function maybe()
+	{
+	    return !did_action('brisko_elements_loaded');
+	}
+
 }

@@ -20,7 +20,7 @@ class Actions
      *
      * @psalm-return array<mixed|string>
      */
-    public static function actions()
+    public function get_brisko_actions()
     {
         $actions = null;
 
@@ -76,7 +76,7 @@ class Actions
             return false;
         }
         // check if this is valid action.
-        if ( \in_array( $action, self::actions(), true ) ) {
+        if ( \in_array( $action, $this->get_brisko_actions(), true ) ) {
             do_action( $action );
         }
     }
