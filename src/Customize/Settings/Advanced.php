@@ -19,7 +19,6 @@ class Advanced implements SettingsInterface
      */
     public static function settings( $wp_customize )
     {
-
         // Separator General Settings.
         ( new Control() )->separator(
             $wp_customize,

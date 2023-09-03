@@ -47,7 +47,6 @@ class Build
     public function sections( $wp_customize )
     {
         foreach ( Sections::get()->sections() as $sectkey => $section ) {
-
             // build out each section.
             $wp_customize->add_section(
                 'brisko_section_' . trim( $sectkey ),

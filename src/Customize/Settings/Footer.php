@@ -20,7 +20,6 @@ class Footer implements SettingsInterface
      */
     public static function settings( $wp_customize )
     {
-
         // Footer Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'Footer Settings', 'brisko' ), self::section() );
 

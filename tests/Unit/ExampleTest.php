@@ -6,6 +6,7 @@ use Tests\BriskoTest;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class ExampleTest extends BriskoTest

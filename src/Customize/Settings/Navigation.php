@@ -20,7 +20,6 @@ class Navigation implements SettingsInterface
      */
     public static function settings( $wp_customize )
     {
-
         // Separator Header Navigation Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'Navigation', 'brisko' ), self::section() );
 

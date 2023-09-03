@@ -18,7 +18,6 @@ class Footer
      */
     public function site_footer()
     {
-
         // elementor footer.
         Element::get()->location( 'footer' );
 

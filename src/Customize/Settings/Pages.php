@@ -20,7 +20,6 @@ class Pages implements SettingsInterface
      */
     public static function settings( $wp_customize )
     {
-
         // Separator Pages Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'Pages', 'brisko' ), self::section() );
 

@@ -18,6 +18,7 @@ mix.css(assets + 'brisko.css', dist + 'css/brisko.min.css')
 	.css(assets + 'custom-styles.css', dist + 'css/custom-styles.min.css')
 	.css(assets + 'toggle-buttons.css', dist + 'css/toggle-buttons.min.css')
 	.css(assets + 'underscores.css', dist + 'css/underscores.min.css')
+	.css(assets + 'normalize.css', dist + 'css/normalize.min.css')
 
 // JS.
 mix.js(js_assets + 'customizer.js', dist + 'js/customizer.min.js')

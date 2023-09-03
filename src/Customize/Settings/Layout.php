@@ -19,7 +19,6 @@ class Layout implements SettingsInterface
      */
     public static function settings( $wp_customize )
     {
-
         // Layout Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'Layout', 'brisko' ), self::section() );
 

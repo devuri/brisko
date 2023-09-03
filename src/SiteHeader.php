@@ -20,7 +20,6 @@ class SiteHeader
      */
     public function site_header()
     {
-
         // elementor header.
         Element::get()->location( 'header' );
 
@@ -66,7 +65,7 @@ class SiteHeader
         }
     }
 
-	/**
+    /**
      * Header title section.
      *
      * @return void

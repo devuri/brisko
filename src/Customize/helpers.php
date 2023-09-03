@@ -143,8 +143,8 @@ function brisko_section_info( $info = '' )
 function brisko_layout_options()
 {
     return [
-        'container'       => esc_html__( 'Boxed', 'brisko' ),
-        'container-fluid' => esc_html__( 'Full Width', 'brisko' ),
+        'container'           => esc_html__( 'Boxed', 'brisko' ),
+        'container-fluid'     => esc_html__( 'Full Width', 'brisko' ),
         'full-width-template' => esc_html__( 'Max Width', 'brisko' ),
     ];
 }

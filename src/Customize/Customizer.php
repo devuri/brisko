@@ -54,7 +54,6 @@ class Customizer implements SetupInterface
      */
     public function brisko_customizer( $wp_customize )
     {
-
         // Add Panel .
         $this->brisko_theme_panel( $wp_customize );
 
