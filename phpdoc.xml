@@ -7,7 +7,7 @@
 >
 <title>Brisko</title>
 	<paths>
-		<output>docs</output>
+		<output>docs/code</output>
 	</paths>
     <version number="3.3.0">
         <api>
