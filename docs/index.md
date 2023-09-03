@@ -9,11 +9,11 @@
 ## Documentation
 
 - [Release Notes](https://github.com/devuri/brisko/releases/)
-- [Contribute](https://docs.wpbrisko.com/brisko/contribute/)
-- [Code Reference](https://docs.wpbrisko.com/brisko/code/)
+- [Contribute](https://docs.wpbrisko.com/contribute/)
+- [Code Reference](https://docs.wpbrisko.com/code/)
 
 ## Extend Brisko Theme
-- [Hooks for Developers](https://docs.wpbrisko.com/brisko/hooks/)
+- [Hooks for Developers](https://docs.wpbrisko.com/hooks/)
 
 ## Support
 
