@@ -248,12 +248,9 @@ When contributing to our project, please follow these guidelines to foster a pos
 
 ## Miscellaneous
 
-**Available CLI commands:**
+**Available CLI Composer Commands:**
 
 These are some of the CLI commands are available and tailored for WordPress theme development :
-
-
-## Available CLI Composer Commands
 
 1. **wpcore**
    - Command: `composer wpcore`
