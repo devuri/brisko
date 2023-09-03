@@ -7,6 +7,8 @@ use Brisko\Theme;
 
 class Styles implements EnqueueInterface
 {
+	protected $style_files = [];
+
     /**
      * Styles.
      *
@@ -48,7 +50,7 @@ class Styles implements EnqueueInterface
     /**
      * Setup a style based on mod.
      *
-     * @param string $asset   the stylesheet url
+     * @param string $asset   the registered style name
      * @param string $mod     the theme_mod name example 'enable_bootstrap'
      * @param bool   $default true|false if this shopuld be enabled by default.
      *
@@ -57,7 +59,7 @@ class Styles implements EnqueueInterface
     public static function editor_style( $asset, $mod, $default = false )
     {
         if ( true === get_theme_mod( $mod, $default ) ) {
-            add_editor_style( self::style_files( $asset ) );
+            add_editor_style( $this->get_style_files( $asset ) );
         }
     }
 
@@ -72,10 +74,35 @@ class Styles implements EnqueueInterface
             return null;
         }
 
-        foreach ( self::style_files() as $handle => $file ) {
+		foreach ( self::style_files() as $handle => $file ) {
+
+			if ( ! is_string($handle) ) {
+				$handle = md5( $file );
+			}
+
+			$handle = sanitize_title( $handle );
+
+			$file = esc_url( $file, [ 'https', 'http'] );
+
+			$this->style_files[$handle] = $file;
+
             wp_register_style( $handle, $file, [], md5( $file ) );
         }
     }
+
+	public function get_style_files( ?string $style = null )
+	{
+		if ( is_null($style) ){
+			return $this->style_files;
+		}
+
+		// get a single stylesheet url.
+		if ( $style && isset( $this->style_files[ $style ] ) ) {
+			$this->style_files[ $style ];
+		}
+
+		return null;
+	}
 
     /**
      * Custom Theme styles.
@@ -192,12 +219,7 @@ class Styles implements EnqueueInterface
             'brisko-theme'             => get_stylesheet_uri(),
         ];
 
-        // get a single stylesheet url.
-        if ( $style ) {
-            return $files[ $style ];
-        }
-
-        return apply_filters( 'brisko_style_assets', $files );
+        return apply_filters( 'brisko_style_files', $files );
     }
 
     /**
