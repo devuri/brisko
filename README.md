@@ -2,6 +2,9 @@
 > This is the development version and contains features that may be in various stages of development. If you want to use this on a live website download here: [Brisko](https://wordpress.org/themes/brisko/).
 
 
+> Documentation details, please refer the [official documentation](https://docs.wpbrisko.com/).
+
+
 #  Brisko WordPress Theme
 
 ###  Modern, minimalist design, high-performance WordPress Elementor Starter Theme
@@ -128,6 +131,10 @@ Built in child theme support, use Advanced Settings to disable/enable theme feat
 * `brisko_sections`
 
 > Get a Visual Reference of all the Brisko Theme Actions with the [Brisko Hooks Display Plugin](https://wordpress.org/plugins/brisko-hooks-display/): .
+
+#### Documentation
+
+For detailed docs, please refer the [official documentation](https://docs.wpbrisko.com/).
 
 #### GPL-2.0 License
 Brisko WordPress Theme, Copyright 2020 Uriel Wilson.
