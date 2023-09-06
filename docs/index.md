@@ -8,13 +8,13 @@
 
 ## Documentation
 
-- [Release Notes](https://github.com/devuri/brisko/releases/)
-- [Contribute](https://docs.wpbrisko.com/contribute/)
-- [Code Reference](https://docs.wpbrisko.com/code/)
+- [Release Notes](https://github.com/devuri/brisko/releases)
+- [Contribute](https://docs.wpbrisko.com/contribute)
+- [Code Reference](https://docs.wpbrisko.com/code)
 
 ## Extend Brisko Theme
-- [Hooks for Developers](https://docs.wpbrisko.com/hooks/)
-- [Customization Options](https://docs.wpbrisko.com/customizer/)
+- [Hooks for Developers](https://docs.wpbrisko.com/hooks)
+- [Customization Options](https://docs.wpbrisko.com/customizer)
 
 ## Support
 
