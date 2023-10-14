@@ -73,7 +73,9 @@ class Theme
          * @link https://developer.wordpress.org/reference/functions/wpautop/
          * @link https://stackoverflow.com/questions/20760598/how-to-remove-extra-p-p-tags-in-wordpress-post-and-pages
          */
-        remove_filter( 'the_content', 'wpautop' );
+        if( get_theme_mod( 'disable_wpautop' ) ) {
+			remove_filter( 'the_content', 'wpautop' );
+		}
 
         // load customizer preview.
         add_action( 'customize_preview_init', 'brisko_customize_preview_js' );

@@ -71,5 +71,30 @@ class General implements SettingsInterface
                 ]
             )
         );
+
+		// Removes extra <p> </p> tags in post and pages
+        $wp_customize->add_setting(
+            'disable_wpautop',
+            [
+                'default'           => false,
+                'capability'        => 'edit_theme_options',
+                'transport'         => self::$transport,
+                'sanitize_callback' => 'brisko_sanitize_checkbox',
+            ]
+        );
+
+        $wp_customize->add_control(
+            new ToggleControl(
+                $wp_customize,
+                'disable_wpautop',
+                [
+                    'label'   => esc_html__( 'Disable Auto Paragraph', 'brisko' ),
+					'description' => esc_html__( 'Removes extra <p> </p> tags in post and pages, by default WordPress replaces double line breaks with paragraph elements.', 'brisko' ),
+                    'section' => self::section(),
+                    'type'    => 'light',
+                    // light, ios, flat.
+                ]
+            )
+        );
     }
 }
