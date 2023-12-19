@@ -89,14 +89,14 @@
  	Full-Width Gutenberg Blocks.
  --------------------------------------------------------------*/
 .alignwide, .alignfull {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+	margin-left: calc(50% - 49.4vw);
+	margin-right: calc(50% - 49.4vw);
   max-width: 100vw;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 .alignfull img {
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 /*--------------------------------------------------------------
@@ -461,7 +461,7 @@ ol {
   --------------------------------------------------------------*/
 
 .wp-block-button__link {
-	color: #ffffff !important;
+	color: #ffffff;
 	background-color: #32373c;
 	border: none;
 	border-radius: 28px;
