@@ -82,7 +82,8 @@ class Activate implements SetupInterface
      * Note that this function is hooked into the after_setup_theme hook, which
      * runs before the init hook. The init hook is too late for some features, such
      * as indicating support for post thumbnails.
-     * @link https://developer.wordpress.org/reference/functions/add_theme_support/
+     *
+     * @see https://developer.wordpress.org/reference/functions/add_theme_support/
      */
     public function brisko_setup()
     {

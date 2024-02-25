@@ -16,13 +16,13 @@ if ( ! \function_exists( 'brisko' ) ) {
      */
     function brisko()
     {
-		static $_brisko = null;
+        static $_brisko = null;
 
-		if ( is_null( $_brisko ) ) {
-			$_brisko = new Brisko\Theme();
-		}
+        if ( \is_null( $_brisko ) ) {
+            $_brisko = new Brisko\Theme();
+        }
 
-		return $_brisko;
+        return $_brisko;
     }
 }
 
