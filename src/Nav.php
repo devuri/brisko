@@ -12,7 +12,7 @@ namespace Brisko;
  */
 class Nav
 {
-    public function __construct( ?array $args = null )
+    public function __construct( array $args = [] )
     {
         $this->nav_args = [
             'menu'                 => '',
@@ -35,9 +35,9 @@ class Nav
         ];
     }
 
-    public function nav_menu( ?array $nav_args = null )
+    public function nav_menu( array $nav_args = [] )
     {
-        if ( ! \is_null( $nav_args ) && \is_array( $nav_args ) ) {
+        if ( ! \empty( $nav_args ) && \is_array( $nav_args ) ) {
             return wp_nav_menu( $nav_args );
         }
 

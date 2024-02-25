@@ -80,7 +80,7 @@ class Styles implements EnqueueInterface
         }
     }
 
-    public function get_style_files( ?string $style = null )
+    public function get_style_files( string $style = null )
     {
         if ( \is_null( $style ) ) {
             return $this->style_files;
@@ -229,7 +229,7 @@ class Styles implements EnqueueInterface
         return $default;
     }
 
-    protected function set_css_files(): ?array
+    protected function set_css_files()
     {
         $brisko_css = self::style_files();
 
