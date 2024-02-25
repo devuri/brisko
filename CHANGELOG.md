@@ -1,5 +1,31 @@
 # Changelog
 
+## [5.1.0](https://github.com/devuri/brisko/compare/5.0.0...5.1.0) (2024-02-25)
+
+
+### Features
+
+* adds `brisko_customizer_setting` action hook ([d6d76d7](https://github.com/devuri/brisko/commit/d6d76d7d39eea39d066e1d6b37c9cce44a39765d))
+* adds `disable_wpautop` Removes extra &lt;p&gt; tags in post and pages ([3839a6c](https://github.com/devuri/brisko/commit/3839a6cee208573cf3d2d623c89113a04b385550))
+
+
+### Bug Fixes
+
+* fixes editor styles ([4835fc6](https://github.com/devuri/brisko/commit/4835fc6849172e73ca4e2ceb2867991213b5312a))
+* main Navigation compatible with bootstrap ([271fd63](https://github.com/devuri/brisko/commit/271fd6361077eecc1c4f97873b1e2d32d958f3ed))
+* update alignwide to fix scroll bar at the bottom ([8c39a19](https://github.com/devuri/brisko/commit/8c39a1982a6ee91e047fd9ddac15aa7f70c73e16))
+* update init in `setup()` ([334f5a4](https://github.com/devuri/brisko/commit/334f5a4bfac50ef2c9412f5d3063eb145d5006ca))
+
+
+### Miscellaneous Chores
+
+* build ([505b9c3](https://github.com/devuri/brisko/commit/505b9c3ed0142b88b09824db38d4dcf8316b000e))
+* build ([7bd1a76](https://github.com/devuri/brisko/commit/7bd1a76117ce1beb61c6da29c3b1753e6b8d5f99))
+* build ([1795b52](https://github.com/devuri/brisko/commit/1795b52bcc2ed5ea78560b4a153fb66248c030b4))
+* build ([ace3e7e](https://github.com/devuri/brisko/commit/ace3e7e74b10b44de0730c6524f123e512d21804))
+* build docs ([19c19fc](https://github.com/devuri/brisko/commit/19c19fcd6f16b3935d2b038359e52e5ecdac19ba))
+* vbump `5.1.0` ([1c2b121](https://github.com/devuri/brisko/commit/1c2b12118aba733c4fb3241f95b2aa072defbb98))
+
 ## [5.0.0](https://github.com/devuri/brisko/compare/4.0.1...5.0.0) (2023-09-03)
 
 
