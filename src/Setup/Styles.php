@@ -7,7 +7,7 @@ use Brisko\Theme;
 
 class Styles implements EnqueueInterface
 {
-	protected $style_files = [];
+    protected $style_files = [];
 
     public function __construct()
     {
@@ -75,24 +75,24 @@ class Styles implements EnqueueInterface
      */
     public function register()
     {
-		foreach ( $this->style_files as $handle => $file ) {
+        foreach ( $this->style_files as $handle => $file ) {
             wp_register_style( $handle, $file, [], md5( $file ) );
         }
     }
 
-	public function get_style_files( ?string $style = null )
-	{
-		if ( is_null($style) ){
-			return $this->style_files;
-		}
+    public function get_style_files( ?string $style = null )
+    {
+        if ( \is_null( $style ) ) {
+            return $this->style_files;
+        }
 
-		// get a single stylesheet url.
-		if ( $style && isset( $this->style_files[ $style ] ) ) {
-			$this->style_files[ $style ];
-		}
+        // get a single stylesheet url.
+        if ( $style && isset( $this->style_files[ $style ] ) ) {
+            $this->style_files[ $style ];
+        }
 
-		return null;
-	}
+        return null;
+    }
 
     /**
      * Custom Theme styles.
@@ -209,9 +209,7 @@ class Styles implements EnqueueInterface
             'brisko-theme'             => get_stylesheet_uri(),
         ];
 
-        $brisko_style_files =  apply_filters( 'brisko_style_files', $files );
-
-        return $brisko_style_files;
+        return apply_filters( 'brisko_style_files', $files );
     }
 
     /**
@@ -229,6 +227,19 @@ class Styles implements EnqueueInterface
         }
 
         return $default;
+    }
+
+    protected function set_css_files(): ?array
+    {
+        $brisko_css = self::style_files();
+
+        if ( ! $brisko_css ) {
+            $this->css_files = null;
+        } else {
+            $this->css_files = $brisko_css;
+        }
+
+        return $this->css_files;
     }
 
     /**
@@ -325,18 +336,5 @@ class Styles implements EnqueueInterface
     private static function maybe()
     {
         return ! did_action( 'brisko_elements_loaded' );
-    }
-
-	protected function set_css_files(): ?array
-    {
-        $brisko_css = self::style_files();
-
-        if ( ! $brisko_css ) {
-            $this->css_files = null;
-        } else {
-            $this->css_files = $brisko_css;
-        }
-
-        return $this->css_files;
     }
 }

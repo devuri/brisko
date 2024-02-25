@@ -72,7 +72,7 @@ class General implements SettingsInterface
             )
         );
 
-		// Removes extra <p> </p> tags in post and pages
+        // Removes extra <p> </p> tags in post and pages
         $wp_customize->add_setting(
             'disable_wpautop',
             [
@@ -88,10 +88,10 @@ class General implements SettingsInterface
                 $wp_customize,
                 'disable_wpautop',
                 [
-                    'label'   => esc_html__( 'Disable Auto Paragraph', 'brisko' ),
-					'description' => esc_html__( 'Removes extra <p> </p> tags in post and pages, by default WordPress replaces double line breaks with paragraph elements.', 'brisko' ),
-                    'section' => self::section(),
-                    'type'    => 'light',
+                    'label'       => esc_html__( 'Disable Auto Paragraph', 'brisko' ),
+                    'description' => esc_html__( 'Removes extra <p> </p> tags in post and pages, by default WordPress replaces double line breaks with paragraph elements.', 'brisko' ),
+                    'section'     => self::section(),
+                    'type'        => 'light',
                     // light, ios, flat.
                 ]
             )
