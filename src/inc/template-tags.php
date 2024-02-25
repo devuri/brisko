@@ -12,21 +12,17 @@ if ( ! \function_exists( 'brisko' ) ) {
      *
      * Helper function to get the Bisko Theme Object.
      *
-     * @param string $mode static call.
-     *
      * @return Brisko
      */
-    function brisko( $mode = null )
+    function brisko()
     {
-        $modes = [
-            'options' => Brisko\Options::get(),
-        ];
+        static $_brisko = null;
 
-        if ( $mode ) {
-            return $modes[ $mode ];
+        if ( \is_null( $_brisko ) ) {
+            $_brisko = new Brisko\Theme();
         }
 
-        return new Brisko\Theme( \dirname( __FILE__, 3 ) );
+        return $_brisko;
     }
 }
 
@@ -210,6 +206,8 @@ function brisko_layout_head( $header_type = null )
         $display_col = sanitize_html_class( 'col-md-8' );
     }
     $args = [ 'content_class' => $display_col ];
+
+    do_action( 'brisko_layout_header', get_the_ID() );
 
     if ( 'page' === $header_type ) {
         do_action( 'brisko_page_header' );

@@ -27,7 +27,6 @@ class Theme
      */
     const VERSION = '5.0.0';
 
-    protected static $dir;
     protected $activate;
     protected $assets;
     protected $body;
@@ -38,12 +37,9 @@ class Theme
 
     /**
      * construct.
-     *
-     * @param string $dir the theme dir path.
      */
-    public function __construct( $dir )
+    public function __construct()
     {
-        static::$dir      = $dir;
         $this->activate   = new Activate();
         $this->assets     = new Assets();
         $this->body       = new Body();
@@ -60,12 +56,12 @@ class Theme
      */
     public function setup()
     {
-        $this->component( 'activate' )->init();
-        $this->component( 'assets' )->init();
-        $this->component( 'body' )->init();
-        $this->component( 'head' )->init();
-        $this->component( 'jetpack' )->init();
-        $this->component( 'customizer' )->init();
+		$this->activate->init(),
+		$this->assets->init(),
+		$this->body->init(),
+		$this->head->init(),
+		$this->jetpack->init(),
+		$this->customizer->init(),
 
         /*
          * Disable wpautop.
@@ -73,7 +69,9 @@ class Theme
          * @link https://developer.wordpress.org/reference/functions/wpautop/
          * @link https://stackoverflow.com/questions/20760598/how-to-remove-extra-p-p-tags-in-wordpress-post-and-pages
          */
-        remove_filter( 'the_content', 'wpautop' );
+        if ( get_theme_mod( 'disable_wpautop' ) ) {
+            remove_filter( 'the_content', 'wpautop' );
+        }
 
         // load customizer preview.
         add_action( 'customize_preview_init', 'brisko_customize_preview_js' );
@@ -94,20 +92,6 @@ class Theme
         }
     }
 
-    public function component( $name = null )
-    {
-        $components = [
-            'activate'   => $this->activate,
-            'assets'     => $this->assets,
-            'body'       => $this->body,
-            'head'       => $this->head,
-            'jetpack'    => $this->jetpack,
-            'customizer' => $this->customizer,
-        ];
-
-        return $components[ $name ];
-    }
-
     /**
      * Get theme version.
      *
@@ -116,16 +100,6 @@ class Theme
     public function version()
     {
         return self::VERSION;
-    }
-
-    /**
-     * Dir path.
-     *
-     * @return string
-     */
-    public static function dir_path()
-    {
-        return static::$dir;
     }
 
     /**

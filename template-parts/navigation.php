@@ -5,7 +5,8 @@
 
 ?>
 <div id="navigation" class="align-items-center brisko-navigation">
-	<div class="<?php brisko_options()->navigation_width(); ?> d-flex flex-column flex-md-row align-items-center">
+	<nav class="navbar navbar-expand-md navbar-light bg-white">
+	<div class="<?php brisko_options()->navigation_width(); ?>">
 		<div class="mr-md-auto d-flex flex-column flex-md-row align-items-center">
 			<?php if ( has_custom_logo() ) { ?>
 				<div id="the-logo">
@@ -29,4 +30,5 @@ if ( $brisko_description || is_customize_preview() ) {
 		</div>
 			<?php Brisko\Navigation::get()->nav_menu(); ?>
 	</div>
+</nav>
 </div>

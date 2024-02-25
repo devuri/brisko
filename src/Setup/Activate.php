@@ -82,6 +82,8 @@ class Activate implements SetupInterface
      * Note that this function is hooked into the after_setup_theme hook, which
      * runs before the init hook. The init hook is too late for some features, such
      * as indicating support for post thumbnails.
+     *
+     * @see https://developer.wordpress.org/reference/functions/add_theme_support/
      */
     public function brisko_setup()
     {
@@ -92,7 +94,7 @@ class Activate implements SetupInterface
         add_theme_support( 'responsive-embeds' );
 
         // Full-Width Gutenberg Blocks.
-        // add_theme_support( 'align-wide' );
+        add_theme_support( 'align-wide' );
 
         // Support for blocks with padding controls.
         add_theme_support( 'custom-spacing' );

@@ -59,7 +59,7 @@ if ( post_password_required() ) {
 			<?php
         }
     }
-    // Check for have_comments().
-    comment_form();
+// Check for have_comments().
+comment_form();
 ?>
 </div><!-- #comments -->

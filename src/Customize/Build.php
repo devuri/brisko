@@ -37,6 +37,8 @@ class Build
         Footer::settings( $wp_customize );
         Advanced::settings( $wp_customize );
         SelectiveRefresh::settings( $wp_customize );
+
+        do_action( 'brisko_customizer_setting', $wp_customize );
     }
 
     /**

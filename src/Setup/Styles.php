@@ -7,6 +7,13 @@ use Brisko\Theme;
 
 class Styles implements EnqueueInterface
 {
+    protected $style_files = [];
+
+    public function __construct()
+    {
+        $this->style_files = $this->set_css_files();
+    }
+
     /**
      * Styles.
      *
@@ -24,40 +31,40 @@ class Styles implements EnqueueInterface
     {
         add_theme_support( 'editor-styles' );
 
-        static::editor_style( 'milligram', 'enable_milligram' );
-        static::editor_style( 'uikit', 'enable_uikit' );
+        $this->editor_style( 'milligram', 'enable_milligram' );
+        $this->editor_style( 'uikit', 'enable_uikit' );
 
         // bootstrap.
-        static::editor_style( 'bootstrap', 'enable_bootstrap', self::maybe() );
-        static::editor_style( 'bootstrap-grid', 'enable_bootstrap_grid' );
+        $this->editor_style( 'bootstrap', 'enable_bootstrap', self::maybe() );
+        $this->editor_style( 'bootstrap-grid', 'enable_bootstrap_grid' );
 
         // theme.
-        static::editor_style( 'brisko-theme', 'enable_theme_styles', self::maybe() );
-        static::editor_style( 'underscores', 'enable_underscores', self::maybe() );
-        static::editor_style( 'brisko', 'enable_brisko', self::maybe() );
+        $this->editor_style( 'brisko-theme', 'enable_theme_styles', self::maybe() );
+        $this->editor_style( 'underscores', 'enable_underscores', self::maybe() );
+        $this->editor_style( 'brisko', 'enable_brisko', self::maybe() );
 
         // bootstrap 5.
-        static::editor_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
-        static::editor_style( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
-        static::editor_style( 'bootstrap5', 'enable_bootstrap5' );
-        static::editor_style( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
-        static::editor_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
-        static::editor_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
+        $this->editor_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
+        $this->editor_style( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
+        $this->editor_style( 'bootstrap5', 'enable_bootstrap5' );
+        $this->editor_style( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
+        $this->editor_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
+        $this->editor_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
     }
 
     /**
      * Setup a style based on mod.
      *
-     * @param string $asset   the stylesheet url
+     * @param string $asset   the registered style name
      * @param string $mod     the theme_mod name example 'enable_bootstrap'
      * @param bool   $default true|false if this shopuld be enabled by default.
      *
      * @return void
      */
-    public static function editor_style( $asset, $mod, $default = false )
+    public function editor_style( $asset, $mod, $default = false )
     {
         if ( true === get_theme_mod( $mod, $default ) ) {
-            add_editor_style( self::style_files( $asset ) );
+            add_editor_style( $this->style_files[ $asset ] );
         }
     }
 
@@ -68,13 +75,23 @@ class Styles implements EnqueueInterface
      */
     public function register()
     {
-        if ( empty( self::style_files() ) || ! self::style_files() ) {
-            return null;
-        }
-
-        foreach ( self::style_files() as $handle => $file ) {
+        foreach ( $this->style_files as $handle => $file ) {
             wp_register_style( $handle, $file, [], md5( $file ) );
         }
+    }
+
+    public function get_style_files( ?string $style = null )
+    {
+        if ( \is_null( $style ) ) {
+            return $this->style_files;
+        }
+
+        // get a single stylesheet url.
+        if ( $style && isset( $this->style_files[ $style ] ) ) {
+            $this->style_files[ $style ];
+        }
+
+        return null;
     }
 
     /**
@@ -192,12 +209,7 @@ class Styles implements EnqueueInterface
             'brisko-theme'             => get_stylesheet_uri(),
         ];
 
-        // get a single stylesheet url.
-        if ( $style ) {
-            return $files[ $style ];
-        }
-
-        return apply_filters( 'brisko_style_assets', $files );
+        return apply_filters( 'brisko_style_files', $files );
     }
 
     /**
@@ -215,6 +227,19 @@ class Styles implements EnqueueInterface
         }
 
         return $default;
+    }
+
+    protected function set_css_files(): ?array
+    {
+        $brisko_css = self::style_files();
+
+        if ( ! $brisko_css ) {
+            $this->css_files = null;
+        } else {
+            $this->css_files = $brisko_css;
+        }
+
+        return $this->css_files;
     }
 
     /**
