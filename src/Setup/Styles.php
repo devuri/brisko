@@ -7,7 +7,8 @@ use Brisko\Theme;
 
 class Styles implements EnqueueInterface
 {
-    protected $style_files = [];
+    protected $style_files;
+    protected $css_files;
 
     public function __construct()
     {
