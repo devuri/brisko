@@ -25,7 +25,7 @@ class Theme
     /**
      * Define Theme Version.
      */
-    const VERSION = '5.0.0';
+    const VERSION = '5.1.0';
 
     protected $activate;
     protected $assets;
