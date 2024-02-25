@@ -871,6 +871,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Styles.html"
         },                {
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Brisko-Setup-Styles.html#method___construct"
+        },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Ainit\u0028\u0029",
             "name": "init",
             "summary": "Styles.",
@@ -890,6 +895,11 @@ Search.appendIndex(
             "name": "register",
             "summary": "Register\u0020all\u0020styles.",
             "url": "classes/Brisko-Setup-Styles.html#method_register"
+        },                {
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aget_style_files\u0028\u0029",
+            "name": "get_style_files",
+            "summary": "",
+            "url": "classes/Brisko-Setup-Styles.html#method_get_style_files"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Acustom_css\u0028\u0029",
             "name": "custom_css",
@@ -911,15 +921,20 @@ Search.appendIndex(
             "summary": "Enqueue\u0020scripts.",
             "url": "classes/Brisko-Setup-Styles.html#method_enqueue"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Astyle_files\u0028\u0029",
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003A\u0024style_files",
             "name": "style_files",
-            "summary": "Setup\u0020static\u0020CSS\u0020files.",
-            "url": "classes/Brisko-Setup-Styles.html#method_style_files"
+            "summary": "",
+            "url": "classes/Brisko-Setup-Styles.html#property_style_files"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aelement_mod\u0028\u0029",
             "name": "element_mod",
             "summary": "Get\u0020element\u0020space\u0020padding\u0020or\u0020margin.",
             "url": "classes/Brisko-Setup-Styles.html#method_element_mod"
+        },                {
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aset_css_files\u0028\u0029",
+            "name": "set_css_files",
+            "summary": "",
+            "url": "classes/Brisko-Setup-Styles.html#method_set_css_files"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Acustom_styles\u0028\u0029",
             "name": "custom_styles",
@@ -935,6 +950,11 @@ Search.appendIndex(
             "name": "maybe",
             "summary": "Check\u0020if\u0020the\u0020\u0027brisko_elements_loaded\u0027\u0020action\u0020has\u0020been\u0020executed.",
             "url": "classes/Brisko-Setup-Styles.html#method_maybe"
+        },                {
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003A\u0024css_files",
+            "name": "css_files",
+            "summary": "",
+            "url": "classes/Brisko-Setup-Styles.html#property_css_files"
         },                {
             "fqsen": "\\Brisko\\SiteHeader",
             "name": "SiteHeader",
@@ -976,20 +996,10 @@ Search.appendIndex(
             "summary": "Setup\u0020Theme.",
             "url": "classes/Brisko-Theme.html#method_setup"
         },                {
-            "fqsen": "\\Brisko\\Theme\u003A\u003Acomponent\u0028\u0029",
-            "name": "component",
-            "summary": "",
-            "url": "classes/Brisko-Theme.html#method_component"
-        },                {
             "fqsen": "\\Brisko\\Theme\u003A\u003Aversion\u0028\u0029",
             "name": "version",
             "summary": "Get\u0020theme\u0020version.",
             "url": "classes/Brisko-Theme.html#method_version"
-        },                {
-            "fqsen": "\\Brisko\\Theme\u003A\u003Adir_path\u0028\u0029",
-            "name": "dir_path",
-            "summary": "Dir\u0020path.",
-            "url": "classes/Brisko-Theme.html#method_dir_path"
         },                {
             "fqsen": "\\Brisko\\Theme\u003A\u003Aaction\u0028\u0029",
             "name": "action",
@@ -1005,11 +1015,6 @@ Search.appendIndex(
             "name": "VERSION",
             "summary": "Define\u0020Theme\u0020Version.",
             "url": "classes/Brisko-Theme.html#constant_VERSION"
-        },                {
-            "fqsen": "\\Brisko\\Theme\u003A\u003A\u0024dir",
-            "name": "dir",
-            "summary": "",
-            "url": "classes/Brisko-Theme.html#property_dir"
         },                {
             "fqsen": "\\Brisko\\Theme\u003A\u003A\u0024activate",
             "name": "activate",
@@ -1075,6 +1080,31 @@ Search.appendIndex(
             "name": "get",
             "summary": "Instantiate.",
             "url": "classes/Brisko-Traits-Instance.html#method_get"
+        },                {
+            "fqsen": "\\Brisko\\Nav",
+            "name": "Nav",
+            "summary": "The\u0020main\u0020Navigation\u0020class.",
+            "url": "classes/Brisko-Nav.html"
+        },                {
+            "fqsen": "\\Brisko\\Nav\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Initializes\u0020the\u0020class\u0020with\u0020default\u0020navigation\u0020settings.",
+            "url": "classes/Brisko-Nav.html#method___construct"
+        },                {
+            "fqsen": "\\Brisko\\Nav\u003A\u003Anav_menu\u0028\u0029",
+            "name": "nav_menu",
+            "summary": "",
+            "url": "classes/Brisko-Nav.html#method_nav_menu"
+        },                {
+            "fqsen": "\\Brisko\\Nav\u003A\u003Anav_default\u0028\u0029",
+            "name": "nav_default",
+            "summary": "",
+            "url": "classes/Brisko-Nav.html#method_nav_default"
+        },                {
+            "fqsen": "\\Brisko\\Nav\u003A\u003A\u0024nav_args",
+            "name": "nav_args",
+            "summary": "",
+            "url": "classes/Brisko-Nav.html#property_nav_args"
         },                {
             "fqsen": "\\",
             "name": "\\",

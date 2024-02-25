@@ -56,12 +56,12 @@ class Theme
      */
     public function setup()
     {
-		$this->activate->init(),
-		$this->assets->init(),
-		$this->body->init(),
-		$this->head->init(),
-		$this->jetpack->init(),
-		$this->customizer->init(),
+		$this->activate->init();
+		$this->assets->init();
+		$this->body->init();
+		$this->head->init();
+		$this->jetpack->init();
+		$this->customizer->init();
 
         /*
          * Disable wpautop.
