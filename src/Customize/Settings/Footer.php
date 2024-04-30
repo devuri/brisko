@@ -28,7 +28,7 @@ class Footer implements SettingsInterface
             'footer_copyright',
             [
                 'default'           => wp_kses_post( 'Copyright © 2020 ' . get_bloginfo( 'name' ) . '.' ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'sanitize_text_field',
             ]
@@ -50,7 +50,7 @@ class Footer implements SettingsInterface
             'poweredby',
             [
                 'default'           => wp_kses_post( ' | Powered by <a href="https://wpbrisko.com">Brisko WordPress Theme</a>' ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'wp_kses_post',
             ]

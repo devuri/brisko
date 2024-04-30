@@ -13,6 +13,8 @@ trait SettingsTrait
      */
     public static $transport = 'postMessage';
 
+    public static $capability = 'edit_theme_options';
+
     /**
      * Brisko Section name only.
      */

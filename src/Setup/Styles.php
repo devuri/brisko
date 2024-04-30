@@ -81,9 +81,9 @@ class Styles implements EnqueueInterface
         }
     }
 
-    public function get_style_files( string $style = null )
+    public function get_style_files( string $style = '' )
     {
-        if ( \is_null( $style ) ) {
+        if ( empty( $style ) ) {
             return $this->style_files;
         }
 

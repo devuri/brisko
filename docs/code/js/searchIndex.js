@@ -76,21 +76,6 @@ Search.appendIndex(
             "summary": "Initialize\u0020instance.",
             "url": "classes/Brisko-Contracts-ThemeInterface.html#method_get"
         },                {
-            "fqsen": "\\Brisko\\Customize\\Build",
-            "name": "Build",
-            "summary": "",
-            "url": "classes/Brisko-Customize-Build.html"
-        },                {
-            "fqsen": "\\Brisko\\Customize\\Build\u003A\u003Asettings\u0028\u0029",
-            "name": "settings",
-            "summary": "Lets\u0020build\u0020out\u0020the\u0020customizer\u0020sections.",
-            "url": "classes/Brisko-Customize-Build.html#method_settings"
-        },                {
-            "fqsen": "\\Brisko\\Customize\\Build\u003A\u003Asections\u0028\u0029",
-            "name": "sections",
-            "summary": "Sections.",
-            "url": "classes/Brisko-Customize-Build.html#method_sections"
-        },                {
             "fqsen": "\\Brisko\\Customize\\Controls\\Control",
             "name": "Control",
             "summary": "",
@@ -151,25 +136,65 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Customize-Customizer.html"
         },                {
-            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Ainit\u0028\u0029",
-            "name": "init",
-            "summary": "Initialize\u0020the\u0020Customizer.",
-            "url": "classes/Brisko-Customize-Customizer.html#method_init"
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#method___construct"
         },                {
-            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Abrisko_theme_panel\u0028\u0029",
-            "name": "brisko_theme_panel",
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Aregister\u0028\u0029",
+            "name": "register",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#method_register"
+        },                {
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Abuild_customizer\u0028\u0029",
+            "name": "build_customizer",
             "summary": "Create\u0020Brisko\u0020Theme\u0020Panel.",
-            "url": "classes/Brisko-Customize-Customizer.html#method_brisko_theme_panel"
+            "url": "classes/Brisko-Customize-Customizer.html#method_build_customizer"
         },                {
-            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Abuild\u0028\u0029",
-            "name": "build",
-            "summary": "Build\u0020Class.",
-            "url": "classes/Brisko-Customize-Customizer.html#method_build"
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Aset_customizer\u0028\u0029",
+            "name": "set_customizer",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#method_set_customizer"
         },                {
-            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Abrisko_customizer\u0028\u0029",
-            "name": "brisko_customizer",
-            "summary": "Theme\u0020Customizer.",
-            "url": "classes/Brisko-Customize-Customizer.html#method_brisko_customizer"
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Aget_sections\u0028\u0029",
+            "name": "get_sections",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#method_get_sections"
+        },                {
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Ahumanize\u0028\u0029",
+            "name": "humanize",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#method_humanize"
+        },                {
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Ais_disabled_footer\u0028\u0029",
+            "name": "is_disabled_footer",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#method_is_disabled_footer"
+        },                {
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003AOPTIONS_CAPABILITY",
+            "name": "OPTIONS_CAPABILITY",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#constant_OPTIONS_CAPABILITY"
+        },                {
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003ATHEME_PANEL_NAME",
+            "name": "THEME_PANEL_NAME",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#constant_THEME_PANEL_NAME"
+        },                {
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003ASECTIONS_FILTER",
+            "name": "SECTIONS_FILTER",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#constant_SECTIONS_FILTER"
+        },                {
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003A\u0024customizer",
+            "name": "customizer",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#property_customizer"
+        },                {
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003A\u0024sections",
+            "name": "sections",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Customizer.html#property_sections"
         },                {
             "fqsen": "\\brisko_customize_partial_copyright\u0028\u0029",
             "name": "brisko_customize_partial_copyright",
@@ -235,26 +260,6 @@ Search.appendIndex(
             "name": "brisko_text_tranform_choices",
             "summary": "Theme\u0020text\u002Dtranform\u0020choices.",
             "url": "namespaces/default.html#function_brisko_text_tranform_choices"
-        },                {
-            "fqsen": "\\Brisko\\Customize\\Sections",
-            "name": "Sections",
-            "summary": "",
-            "url": "classes/Brisko-Customize-Sections.html"
-        },                {
-            "fqsen": "\\Brisko\\Customize\\Sections\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Create\u0020the\u0020customizer\u0020sections\u0020array.",
-            "url": "classes/Brisko-Customize-Sections.html#method___construct"
-        },                {
-            "fqsen": "\\Brisko\\Customize\\Sections\u003A\u003A\u0024sections",
-            "name": "sections",
-            "summary": "\u0024sections.",
-            "url": "classes/Brisko-Customize-Sections.html#property_sections"
-        },                {
-            "fqsen": "\\Brisko\\Customize\\Sections\u003A\u003Ais_disabled_footer\u0028\u0029",
-            "name": "is_disabled_footer",
-            "summary": "Checks\u0020if\u0020the\u0020footer\u0020is\u0020disabled.",
-            "url": "classes/Brisko-Customize-Sections.html#method_is_disabled_footer"
         },                {
             "fqsen": "\\Brisko\\Customize\\Settings\\Advanced",
             "name": "Advanced",
@@ -385,6 +390,11 @@ Search.appendIndex(
             "name": "transport",
             "summary": "Customizer\u0020transport.",
             "url": "classes/Brisko-Customize-Traits-SettingsTrait.html#property_transport"
+        },                {
+            "fqsen": "\\Brisko\\Customize\\Traits\\SettingsTrait\u003A\u003A\u0024capability",
+            "name": "capability",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Traits-SettingsTrait.html#property_capability"
         },                {
             "fqsen": "\\Brisko\\Element",
             "name": "Element",
@@ -1121,15 +1131,15 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/brisko-contracts.html"
         },                {
-            "fqsen": "\\Brisko\\Customize",
-            "name": "Customize",
-            "summary": "",
-            "url": "namespaces/brisko-customize.html"
-        },                {
             "fqsen": "\\Brisko\\Customize\\Controls",
             "name": "Controls",
             "summary": "",
             "url": "namespaces/brisko-customize-controls.html"
+        },                {
+            "fqsen": "\\Brisko\\Customize",
+            "name": "Customize",
+            "summary": "",
+            "url": "namespaces/brisko-customize.html"
         },                {
             "fqsen": "\\Brisko\\Customize\\Settings",
             "name": "Settings",

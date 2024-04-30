@@ -28,7 +28,7 @@ class Pages implements SettingsInterface
             'display_page_header',
             [
                 'default'           => absint( 0 ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'absint',
             ]
@@ -53,7 +53,7 @@ class Pages implements SettingsInterface
             'enable_pure_content',
             [
                 'default'           => absint( 0 ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'absint',
             ]

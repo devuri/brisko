@@ -2,65 +2,115 @@
 
 namespace Brisko\Customize;
 
-use Brisko\Contracts\SetupInterface;
+use Brisko\Customize\Settings\Advanced;
+use Brisko\Customize\Settings\Blog;
+use Brisko\Customize\Settings\Footer;
+use Brisko\Customize\Settings\General;
+use Brisko\Customize\Settings\Header;
+use Brisko\Customize\Settings\Layout;
+use Brisko\Customize\Settings\Navigation;
+use Brisko\Customize\Settings\Pages;
+use Brisko\Customize\Settings\Pro;
+use Brisko\Customize\Settings\SelectiveRefresh;
+use WP_Customize_Manager;
 
-class Customizer implements SetupInterface
+class Customizer
 {
-    /**
-     * Initialize the Customizer.
-     *
-     * @see Theme __construct
-     *
-     * @return void
-     */
+    const OPTIONS_CAPABILITY = 'edit_theme_options';
+    const THEME_PANEL_NAME   = 'brisko_theme_panel';
+    const SECTIONS_FILTER    = 'brisko_sections';
+    protected $customizer;
+    protected $sections;
+
+    public function __construct()
+    {
+        // sections to register
+        $this->sections['pro']        = esc_html__( 'Pro Elements' );
+        $this->sections['general']    = esc_html__( 'General' );
+        $this->sections['layout']     = esc_html__( 'Layout' );
+        $this->sections['navigation'] = esc_html__( 'Navigation' );
+        $this->sections['header']     = esc_html__( 'Header' );
+        $this->sections['pages']      = esc_html__( 'Pages' );
+        $this->sections['blog']       = esc_html__( 'Blog / Archive' );
+
+        if ( ! self::is_disabled_footer() ) {
+            $this->sections['footer'] = esc_html__( 'Footer' );
+        }
+
+        $this->sections['advanced'] = esc_html__( 'Advanced' );
+    }
+
     public function init()
     {
-        add_action( 'customize_register', [ $this, 'brisko_customizer' ] );
+        add_action( 'customize_register', [ $this, 'build_customizer' ] );
     }
 
     /**
      * Create Brisko Theme Panel.
      *
-     * @param WP_Customize_Manager $wp_customize .
+     * @param WP_Customize_Manager $wp_customizer .
      */
-    public function brisko_theme_panel( $wp_customize )
+    public function build_customizer( $wp_customizer )
     {
-        $wp_customize->add_panel(
-            'brisko_theme_panel',
+        $this->set_customizer( $wp_customizer );
+
+        $this->customizer->add_panel(
+            self::THEME_PANEL_NAME,
             [
                 'priority'       => 10,
-                'capability'     => 'edit_theme_options',
+                'capability'     => self::OPTIONS_CAPABILITY,
                 'theme_supports' => '',
                 'title'          => esc_html__( 'Theme Options', 'brisko' ),
             ]
         );
+
+        // register sections.
+        foreach ( $this->get_sections() as $skey => $section ) {
+            $this->customizer->add_section(
+                'brisko_section_' . $skey,
+                [
+                    'title'      => ' » ' . $section,
+                    'capability' => self::OPTIONS_CAPABILITY,
+                    'panel'      => self::THEME_PANEL_NAME,
+                ]
+            );
+        } // foreach
+
+        // Pro::settings( $this->customizer );
+        General::settings( $this->customizer );
+        Layout::settings( $this->customizer );
+        Navigation::settings( $this->customizer );
+        Header::settings( $this->customizer );
+        Pages::settings( $this->customizer );
+        Blog::settings( $this->customizer );
+        Footer::settings( $this->customizer );
+        Advanced::settings( $this->customizer );
+        SelectiveRefresh::settings( $this->customizer );
+
+        // do_action( 'brisko_customizer_setting', $this->customizer );
     }
 
-    /**
-     * Build Class.
-     *
-     * @return object .
-     */
-    public function build()
+    public function set_customizer( WP_Customize_Manager $wp_customizer )
     {
-        return Build::get();
+        $this->customizer = $wp_customizer;
     }
 
-    /**
-     * Theme Customizer.
-     * Add postMessage support for site title and description for the Theme Customizer.
-     *
-     * @param WP_Customize_Manager $wp_customize .
-     */
-    public function brisko_customizer( $wp_customize )
+    public function get_sections()
     {
-        // Add Panel .
-        $this->brisko_theme_panel( $wp_customize );
+        return apply_filters( self::SECTIONS_FILTER, $this->sections );
+    }
 
-        // Sections
-        $this->build()->sections( $wp_customize );
+    private function humanize( $section_name )
+    {
+        return ucwords( $section_name );
+    }
 
-        // Settings
-        $this->build()->settings( $wp_customize );
+    private static function is_disabled_footer()
+    {
+        if ( get_theme_mod( 'disable_footer', false ) ) {
+            return true;
+        }
+
+        return false;
     }
 }

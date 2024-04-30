@@ -13,8 +13,8 @@ $navigation = new Brisko\Nav();
 <div class="navbar-collapse collapse" id="navbarCollapse" style="">
 	<nav id="site-navigation" class="my-2 my-md-0 mr-md-3 main-navigation">
 		<?php
-			// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo $navigation->nav_menu();
-		?>
+            // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo $navigation->nav_menu();
+?>
 	</nav>
 </div>
