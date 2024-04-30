@@ -1,6 +1,5 @@
 node_modules/
 tmp/
-build/
 asset/dist/
 assets/dist/
 /asset/mix-manifest.json

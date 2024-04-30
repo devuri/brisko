@@ -40,7 +40,7 @@ class Customizer
         $this->sections['advanced'] = esc_html__( 'Advanced' );
     }
 
-    public function register()
+    public function init()
     {
         add_action( 'customize_register', [ $this, 'build_customizer' ] );
     }
