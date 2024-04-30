@@ -117,22 +117,18 @@
         </div>
     
     
-            <span class="phpdocumentor-element__extends">
-            Uses
-                            <a href="classes/Brisko-Traits-Instance.html"><abbr title="\Brisko\Traits\Instance">Instance</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">The main Options class.</p>
+            <p class="phpdocumentor-summary">Handles the theme options.</p>
 
-    <section class="phpdocumentor-description"><p>We will use this as the entry point
-for all theme options ( get_theme_mod() ).</p>
+    <section class="phpdocumentor-description"><p>This class serves as the entry point for all theme options using get_theme_mod.</p>
 </section>
 
 
@@ -148,117 +144,33 @@ for all theme options ( get_theme_mod() ).</p>
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_archive_width">archive_width()</a>
+                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Brisko-Options.html#property_theme_options">$theme_options</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Brisko-Options.html#method_get">get()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Archives width.</dd>
+<dd>Get a single theme option value.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_blog_width">blog_width()</a>
+    <a href="classes/Brisko-Options.html#method_init">init()</a>
+    <span>
+                                &nbsp;: self    </span>
+</dt>
+<dd>Initializes and returns an instance of this class.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Brisko-Options.html#method_set_theme_options">set_theme_options()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Blog width.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_button_border_radius">button_border_radius()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>Button border radius.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_display_page_header">display_page_header()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Display Page header.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_display_post_categories">display_post_categories()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Display Post Categories.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_display_tags">display_tags()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Display tags.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_enable_archive_header">enable_archive_header()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Archive Header.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_enable_post_header">enable_post_header()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Archive Header for Posts.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_footer_top_margin">footer_top_margin()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Footer Top Margin.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_footer_width">footer_width()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Footer width.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Traits-Instance.html#method_get">get()</a>
-    <span>
-                                &nbsp;: <a href="classes/Brisko-Contracts-ThemeInterface.html"><abbr title="\Brisko\Contracts\ThemeInterface">ThemeInterface</abbr></a>    </span>
-</dt>
-<dd>Instantiate.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_header_image_display">header_image_display()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Header Image.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_header_image_width">header_image_width()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Header Image width.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_navigation_width">navigation_width()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Navigation width.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_page_width">page_width()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Page width.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Options.html#method_post_thumbnail_display">post_thumbnail_display()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Navigation width.</dd>
+<dd>Initialize theme options by fetching them from WordPress.</dd>
 
         </dl>
 
@@ -267,6 +179,46 @@ for all theme options ( get_theme_mod() ).</p>
         
 
         
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/Brisko-Options.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_theme_options">
+        $theme_options
+        <a href="classes/Brisko-Options.html#property_theme_options" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">15</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$theme_options</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+        <section class="phpdocumentor-description"><p>Theme options array.</p>
+</section>
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
@@ -279,98 +231,32 @@ for all theme options ( get_theme_mod() ).</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_archive_width">
-        archive_width()
-        <a href="classes/Brisko-Options.html#method_archive_width" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_get">
+        get()
+        <a href="classes/Brisko-Options.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Archives width.</p>
+        <p class="phpdocumentor-summary">Get a single theme option value.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">archive_width</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_blog_width">
-        blog_width()
-        <a href="classes/Brisko-Options.html#method_blog_width" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">81</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Blog width.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">blog_width</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_button_border_radius">
-        button_border_radius()
-        <a href="classes/Brisko-Options.html#method_button_border_radius" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">109</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Button border radius.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">button_border_radius</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defualt</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$theme_mod</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$defualt</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$theme_mod</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>.</p>
+                    <section class="phpdocumentor-description"><p>The theme mod to retrieve.</p>
 </section>
 
             </dd>
@@ -379,9 +265,9 @@ for all theme options ( get_theme_mod() ).</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>.</p>
+            <section class="phpdocumentor-description"><p>The value of the specified theme mod.</p>
 </section>
 
     
@@ -390,262 +276,31 @@ for all theme options ( get_theme_mod() ).</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_display_page_header">
-        display_page_header()
-        <a href="classes/Brisko-Options.html#method_display_page_header" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">61</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Display Page header.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">display_page_header</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_display_post_categories">
-        display_post_categories()
-        <a href="classes/Brisko-Options.html#method_display_post_categories" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">142</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Display Post Categories.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">display_post_categories</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_display_tags">
-        display_tags()
-        <a href="classes/Brisko-Options.html#method_display_tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">130</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Display tags.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">display_tags</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_enable_archive_header">
-        enable_archive_header()
-        <a href="classes/Brisko-Options.html#method_enable_archive_header" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">28</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Archive Header.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">enable_archive_header</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_enable_post_header">
-        enable_post_header()
-        <a href="classes/Brisko-Options.html#method_enable_post_header" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">36</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Archive Header for Posts.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">enable_post_header</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_footer_top_margin">
-        footer_top_margin()
-        <a href="classes/Brisko-Options.html#method_footer_top_margin" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">154</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Footer Top Margin.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">footer_top_margin</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_footer_width">
-        footer_width()
-        <a href="classes/Brisko-Options.html#method_footer_width" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">97</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Footer width.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">footer_width</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_get">
-        get()
-        <a href="classes/Brisko-Traits-Instance.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_init">
+        init()
+        <a href="classes/Brisko-Options.html#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/Instance.php"><a href="files/src-traits-instance.html"><abbr title="src/Traits/Instance.php">Instance.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Instantiate.</p>
+        <p class="phpdocumentor-summary">Initializes and returns an instance of this class.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">get</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Brisko-Contracts-ThemeInterface.html"><abbr title="\Brisko\Contracts\ThemeInterface">ThemeInterface</abbr></a></span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">init</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Brisko-Contracts-ThemeInterface.html"><abbr title="\Brisko\Contracts\ThemeInterface">ThemeInterface</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type">self</span>
             &mdash;
         
     
@@ -656,9 +311,9 @@ for all theme options ( get_theme_mod() ).</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_header_image_display">
-        header_image_display()
-        <a href="classes/Brisko-Options.html#method_header_image_display" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_set_theme_options">
+        set_theme_options()
+        <a href="classes/Brisko-Options.html#method_set_theme_options" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
@@ -667,143 +322,11 @@ for all theme options ( get_theme_mod() ).</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Header Image.</p>
+        <p class="phpdocumentor-summary">Initialize theme options by fetching them from WordPress.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">header_image_display</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_header_image_width">
-        header_image_width()
-        <a href="classes/Brisko-Options.html#method_header_image_width" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">45</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Header Image width.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">header_image_width</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_navigation_width">
-        navigation_width()
-        <a href="classes/Brisko-Options.html#method_navigation_width" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">53</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Navigation width.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">navigation_width</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_page_width">
-        page_width()
-        <a href="classes/Brisko-Options.html#method_page_width" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">73</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Page width.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">page_width</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_post_thumbnail_display">
-        post_thumbnail_display()
-        <a href="classes/Brisko-Options.html#method_post_thumbnail_display" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Options.php"><a href="files/src-options.html"><abbr title="src/Options.php">Options.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">121</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Navigation width.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">post_thumbnail_display</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">set_theme_options</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
     

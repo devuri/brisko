@@ -106,7 +106,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
             $categories_list = get_the_category_list( ' ' );
             if ( $categories_list ) {
                 // translators: 1: list of categories.
-                printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, brisko_options()->display_post_categories() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, esc_attr( brisko_options( 'display_post_categories' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
 
             do_action( 'brisko_before_tags' );
@@ -115,7 +115,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
             $tags_list = get_the_tag_list( ' ' );
             if ( $tags_list ) {
                 // translators: 1: list of tags.
-                printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, brisko_options()->display_tags() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                printf( '<br/><span class="tags-links %2$s">' . esc_html__( 'Tags: %1$s ', 'brisko' ) . '</span>', $tags_list, esc_attr( brisko_options( 'display_tags' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
         }
 
@@ -213,7 +213,7 @@ function brisko_layout_head( $header_type = null )
         do_action( 'brisko_page_header' );
 
         ?>
-		<main id="primary" class="site-main <?php brisko_options()->page_width(); ?> bg-white">
+		<main id="primary" class="site-main <?php echo esc_attr( brisko_options( 'page_width' ) ); ?> bg-white">
 		<?php
     } elseif ( 'full-width' === $header_type ) {
         do_action( 'brisko_page_header' );
@@ -301,11 +301,13 @@ function brisko_excerpt()
 /**
  * Theme Options.
  *
+ * @param string $theme_mod .
+ *
  * @return Options .
  */
-function brisko_options()
+function brisko_options( string $theme_mod )
 {
-    return Options::get();
+    return Options::init()->get( $theme_mod );
 }
 
 /**

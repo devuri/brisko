@@ -14,7 +14,7 @@ class Thumbnail
     public function thumbnail_singular()
     {
         ?>
-		<div class="post-thumbnail <?php Options::get()->post_thumbnail_display(); ?>">
+		<div class="post-thumbnail <?php echo esc_attr( brisko_options( 'featured_image' ) ); ?>">
 			<?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'img-fluid' ] ); ?>
 		</div><!-- .post-thumbnail -->
 		<?php

@@ -3,18 +3,18 @@ Search.appendIndex(
                 {
             "fqsen": "\\Brisko\\Actions",
             "name": "Actions",
-            "summary": "The\u0020main\u0020Actions\u0020class.",
+            "summary": "Manages\u0020theme\u0020actions.",
             "url": "classes/Brisko-Actions.html"
         },                {
             "fqsen": "\\Brisko\\Actions\u003A\u003Aget_brisko_actions\u0028\u0029",
             "name": "get_brisko_actions",
-            "summary": "List\u0020of\u0020available\u0020actions.",
+            "summary": "Retrieves\u0020the\u0020list\u0020of\u0020theme\u002Dspecific\u0020actions.",
             "url": "classes/Brisko-Actions.html#method_get_brisko_actions"
         },                {
-            "fqsen": "\\Brisko\\Actions\u003A\u003Aaction\u0028\u0029",
-            "name": "action",
-            "summary": "Creates\u0020a\u0020Theme\u0020action.",
-            "url": "classes/Brisko-Actions.html#method_action"
+            "fqsen": "\\Brisko\\Actions\u003A\u003Ado_action\u0028\u0029",
+            "name": "do_action",
+            "summary": "Executes\u0020a\u0020specified\u0020action\u0020if\u0020it\u0020exists\u0020in\u0020the\u0020list\u0020of\u0020theme\u0020actions.",
+            "url": "classes/Brisko-Actions.html#method_do_action"
         },                {
             "fqsen": "\\Brisko\\Contracts\\EnqueueInterface",
             "name": "EnqueueInterface",
@@ -141,10 +141,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Customize-Customizer.html#method___construct"
         },                {
-            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Aregister\u0028\u0029",
-            "name": "register",
+            "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
             "summary": "",
-            "url": "classes/Brisko-Customize-Customizer.html#method_register"
+            "url": "classes/Brisko-Customize-Customizer.html#method_init"
         },                {
             "fqsen": "\\Brisko\\Customize\\Customizer\u003A\u003Abuild_customizer\u0028\u0029",
             "name": "build_customizer",
@@ -603,83 +603,28 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Brisko\\Options",
             "name": "Options",
-            "summary": "The\u0020main\u0020Options\u0020class.",
+            "summary": "Handles\u0020the\u0020theme\u0020options.",
             "url": "classes/Brisko-Options.html"
         },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Aheader_image_display\u0028\u0029",
-            "name": "header_image_display",
-            "summary": "Header\u0020Image.",
-            "url": "classes/Brisko-Options.html#method_header_image_display"
+            "fqsen": "\\Brisko\\Options\u003A\u003Aset_theme_options\u0028\u0029",
+            "name": "set_theme_options",
+            "summary": "Initialize\u0020theme\u0020options\u0020by\u0020fetching\u0020them\u0020from\u0020WordPress.",
+            "url": "classes/Brisko-Options.html#method_set_theme_options"
         },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Aenable_archive_header\u0028\u0029",
-            "name": "enable_archive_header",
-            "summary": "Archive\u0020Header.",
-            "url": "classes/Brisko-Options.html#method_enable_archive_header"
+            "fqsen": "\\Brisko\\Options\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Get\u0020a\u0020single\u0020theme\u0020option\u0020value.",
+            "url": "classes/Brisko-Options.html#method_get"
         },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Aenable_post_header\u0028\u0029",
-            "name": "enable_post_header",
-            "summary": "Archive\u0020Header\u0020for\u0020Posts.",
-            "url": "classes/Brisko-Options.html#method_enable_post_header"
+            "fqsen": "\\Brisko\\Options\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "Initializes\u0020and\u0020returns\u0020an\u0020instance\u0020of\u0020this\u0020class.",
+            "url": "classes/Brisko-Options.html#method_init"
         },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Aheader_image_width\u0028\u0029",
-            "name": "header_image_width",
-            "summary": "Header\u0020Image\u0020width.",
-            "url": "classes/Brisko-Options.html#method_header_image_width"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Anavigation_width\u0028\u0029",
-            "name": "navigation_width",
-            "summary": "Navigation\u0020width.",
-            "url": "classes/Brisko-Options.html#method_navigation_width"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Adisplay_page_header\u0028\u0029",
-            "name": "display_page_header",
-            "summary": "Display\u0020Page\u0020header.",
-            "url": "classes/Brisko-Options.html#method_display_page_header"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Apage_width\u0028\u0029",
-            "name": "page_width",
-            "summary": "Page\u0020width.",
-            "url": "classes/Brisko-Options.html#method_page_width"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Ablog_width\u0028\u0029",
-            "name": "blog_width",
-            "summary": "Blog\u0020width.",
-            "url": "classes/Brisko-Options.html#method_blog_width"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Aarchive_width\u0028\u0029",
-            "name": "archive_width",
-            "summary": "Archives\u0020width.",
-            "url": "classes/Brisko-Options.html#method_archive_width"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Afooter_width\u0028\u0029",
-            "name": "footer_width",
-            "summary": "Footer\u0020width.",
-            "url": "classes/Brisko-Options.html#method_footer_width"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Abutton_border_radius\u0028\u0029",
-            "name": "button_border_radius",
-            "summary": "Button\u0020border\u0020radius.",
-            "url": "classes/Brisko-Options.html#method_button_border_radius"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Apost_thumbnail_display\u0028\u0029",
-            "name": "post_thumbnail_display",
-            "summary": "Navigation\u0020width.",
-            "url": "classes/Brisko-Options.html#method_post_thumbnail_display"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Adisplay_tags\u0028\u0029",
-            "name": "display_tags",
-            "summary": "Display\u0020tags.",
-            "url": "classes/Brisko-Options.html#method_display_tags"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Adisplay_post_categories\u0028\u0029",
-            "name": "display_post_categories",
-            "summary": "Display\u0020Post\u0020Categories.",
-            "url": "classes/Brisko-Options.html#method_display_post_categories"
-        },                {
-            "fqsen": "\\Brisko\\Options\u003A\u003Afooter_top_margin\u0028\u0029",
-            "name": "footer_top_margin",
-            "summary": "Footer\u0020Top\u0020Margin.",
-            "url": "classes/Brisko-Options.html#method_footer_top_margin"
+            "fqsen": "\\Brisko\\Options\u003A\u003A\u0024theme_options",
+            "name": "theme_options",
+            "summary": "",
+            "url": "classes/Brisko-Options.html#property_theme_options"
         },                {
             "fqsen": "\\Brisko\\Setup\\Activate",
             "name": "Activate",
