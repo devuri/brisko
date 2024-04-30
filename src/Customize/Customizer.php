@@ -25,13 +25,15 @@ class Customizer
     public function __construct()
     {
         // sections to register
-        $this->sections['pro']        = esc_html__( 'Pro Elements' );
-        $this->sections['general']    = esc_html__( 'General' );
-        $this->sections['layout']     = esc_html__( 'Layout' );
-        $this->sections['navigation'] = esc_html__( 'Navigation' );
-        $this->sections['header']     = esc_html__( 'Header' );
-        $this->sections['pages']      = esc_html__( 'Pages' );
-        $this->sections['blog']       = esc_html__( 'Blog / Archive' );
+        $this->sections = [
+            'pro'        => esc_html__( 'Pro Elements' ),
+            'general'    => esc_html__( 'General' ),
+            'layout'     => esc_html__( 'Layout' ),
+            'navigation' => esc_html__( 'Navigation' ),
+            'header'     => esc_html__( 'Header' ),
+            'pages'      => esc_html__( 'Pages' ),
+            'blog'       => esc_html__( 'Blog / Archive' ),
+        ];
 
         if ( ! self::is_disabled_footer() ) {
             $this->sections['footer'] = esc_html__( 'Footer' );
@@ -87,7 +89,7 @@ class Customizer
         Advanced::settings( $this->customizer );
         SelectiveRefresh::settings( $this->customizer );
 
-        // do_action( 'brisko_customizer_setting', $this->customizer );
+        // do_action( 'brisko_customizer_settings', $this->customizer );
     }
 
     public function set_customizer( WP_Customize_Manager $wp_customizer )

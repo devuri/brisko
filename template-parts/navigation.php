@@ -6,7 +6,7 @@
 ?>
 <div id="navigation" class="align-items-center brisko-navigation">
 	<nav class="navbar navbar-expand-md navbar-light bg-white">
-	<div class="<?php echo esc_attr( brisko_options('navigation_width') ); ?>">
+	<div class="<?php echo esc_attr( brisko_options( 'navigation_width' ) ); ?>">
 		<div class="mr-md-auto d-flex flex-column flex-md-row align-items-center">
 			<?php if ( has_custom_logo() ) { ?>
 				<div id="the-logo">
@@ -20,11 +20,11 @@
 					<?php
                         $brisko_description = get_bloginfo( 'description', 'display' );
 if ( $brisko_description || is_customize_preview() ) {
-    ?>
+						?>
 						<small class="site-description text-muted align-items-center">
 							<?php echo esc_html( $brisko_description ); ?>
 						</small>
-					<?php
+										<?php
 } ?>
 			</div>
 		</div>
