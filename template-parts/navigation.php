@@ -6,7 +6,7 @@
 ?>
 <div id="navigation" class="align-items-center brisko-navigation">
 	<nav class="navbar navbar-expand-md navbar-light bg-white">
-	<div class="<?php brisko_options()->navigation_width(); ?>">
+	<div class="<?php echo esc_attr( brisko_options('navigation_width') ); ?>">
 		<div class="mr-md-auto d-flex flex-column flex-md-row align-items-center">
 			<?php if ( has_custom_logo() ) { ?>
 				<div id="the-logo">

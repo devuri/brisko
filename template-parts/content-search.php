@@ -25,7 +25,7 @@ brisko_posted_by();
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
 		<div class="read-more ">
-			<a class="more-link <?php echo esc_html( brisko_options()->button_border_radius() ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
+			<a class="more-link <?php echo esc_html( brisko_options('button_border_radius') ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
 			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
 		</a>
 	</div>

@@ -31,16 +31,16 @@ class SiteHeader
      */
     public function header_image()
     {
-        if ( 'this-disabled' === Options::get()->header_image_display() ) {
+        if ( 'this-disabled' === brisko_options( 'header_image_display' ) ) {
             return false;
         }
 
-        if ( 'this-home-page-only' === Options::get()->header_image_display() ) {
+        if ( 'this-home-page-only' === brisko_options( 'header_image_display' ) ) {
             if ( false === is_front_page() ) {
                 return false;
             }
         } ?>
-			<div class="<?php Options::get()->header_image_width(); ?> brisko-header-img" style="padding:0px">
+			<div class="<?php echo esc_attr( brisko_options( 'header_image_width' ) ); ?> brisko-header-img" style="padding:0px">
 				<?php
                     the_header_image_tag( [ 'class' => 'brisko-header-img' ] ); ?>
 			</div>
@@ -52,13 +52,13 @@ class SiteHeader
      */
     public function archive()
     {
-        if ( is_archive() && Options::get()->enable_archive_header() ) {
+        if ( is_archive() && brisko_options( 'enable_archive_header' ) ) {
             self::archive_header();
 
             return;
         }
 
-        if ( is_single() && Options::get()->enable_post_header() ) {
+        if ( is_single() && brisko_options( 'enable_post_header' ) ) {
             self::archive_header();
 
             return;
