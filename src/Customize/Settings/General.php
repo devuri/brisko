@@ -53,7 +53,7 @@ class General implements SettingsInterface
             'underline_post_links',
             [
                 'default'           => true,
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'brisko_sanitize_checkbox',
             ]
@@ -77,7 +77,7 @@ class General implements SettingsInterface
             'disable_wpautop',
             [
                 'default'           => false,
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'brisko_sanitize_checkbox',
             ]

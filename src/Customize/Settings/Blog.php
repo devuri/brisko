@@ -29,7 +29,7 @@ class Blog implements SettingsInterface
             'disable_sidebar',
             [
                 'default'           => absint( 0 ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'absint',
             ]
@@ -53,7 +53,7 @@ class Blog implements SettingsInterface
             'read_more_border_radius',
             [
                 'default'           => absint( 1 ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'absint',
             ]
@@ -78,7 +78,7 @@ class Blog implements SettingsInterface
             'set_excerpt_length',
             [
                 'default'           => absint( 24 ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'absint',
             ]
@@ -98,7 +98,7 @@ class Blog implements SettingsInterface
             'set_excerpt_more',
             [
                 'default'           => '[…]',
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'sanitize_text_field',
             ]
@@ -121,7 +121,7 @@ class Blog implements SettingsInterface
             'featured_image',
             [
                 'default'           => sanitize_html_class( 'this-display-show' ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'sanitize_html_class',
             ]
@@ -169,7 +169,7 @@ class Blog implements SettingsInterface
             'display_post_categories',
             [
                 'default'           => absint( 1 ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'absint',
             ]
@@ -193,7 +193,7 @@ class Blog implements SettingsInterface
             'display_tags',
             [
                 'default'           => absint( 1 ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'absint',
             ]
@@ -217,7 +217,7 @@ class Blog implements SettingsInterface
             'display_previous_next',
             [
                 'default'           => absint( 1 ),
-                'capability'        => 'edit_theme_options',
+                'capability'        => self::$capability,
                 'transport'         => self::$transport,
                 'sanitize_callback' => 'absint',
             ]
