@@ -1,5 +1,6 @@
 {
     "name": "devuri/brisko",
+    "type": "wordpress-theme",
     "description": "Lightweight WordPress Starter Theme, based on Underscores and Bootstrap 4",
     "keywords": [
         "WordPress",
