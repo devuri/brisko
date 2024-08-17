@@ -42,13 +42,17 @@ class Options
     /**
      * Get a single theme option value.
      *
-     * @param string $theme_mod The theme mod to retrieve.
+     * @param string $key_id The theme mod to retrieve.
      *
      * @return mixed The value of the specified theme mod.
      */
-    public function get( string $theme_mod )
+    public function get( string $key_id )
     {
-        return $this->theme_options[ $theme_mod ];
+		if ( isset( $this->theme_options[ $key_id ] ) ) {
+			return $this->theme_options[ $key_id ];
+		}
+
+        return null;
     }
 
     /**
