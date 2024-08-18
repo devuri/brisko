@@ -38,16 +38,16 @@ if ( ! \function_exists( 'brisko_posted_on' ) ) {
      */
     function brisko_posted_on()
     {
-		if ( ! get_theme_mod( 'display_post_date' ) ) {
-	        return null;
-	    }
+        if ( ! get_theme_mod( 'display_post_date' ) ) {
+            return null;
+        }
 
         $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
         if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
             $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
         }
 
-        $time_string = sprintf(
+        $time_string = \sprintf(
             $time_string,
             esc_attr( get_the_date( DATE_W3C ) ),
             esc_html( get_the_date() ),
@@ -55,14 +55,14 @@ if ( ! \function_exists( 'brisko_posted_on' ) ) {
             esc_html( get_the_modified_date() )
         );
 
-        $posted_on = sprintf(
+        $posted_on = \sprintf(
             // translators: %s: post date.
             esc_html_x( 'Posted on %s by', 'post date', 'brisko' ),
             '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
         );
 
         edit_post_link(
-            sprintf(
+            \sprintf(
                 wp_kses(
                     // translators: %s: Name of current post. Only visible to screen readers
                     __( ' Edit <span class=" screen-reader-text"> %s </span>', 'brisko' ),
@@ -88,11 +88,11 @@ if ( ! \function_exists( 'brisko_posted_by' ) ) {
      */
     function brisko_posted_by()
     {
-		if ( ! get_theme_mod( 'display_post_author' ) ) {
-	        return null;
-	    }
+        if ( ! get_theme_mod( 'display_post_author' ) ) {
+            return null;
+        }
 
-        $byline = sprintf(
+        $byline = \sprintf(
             // translators: %s: post author.
             esc_html_x( '%s', 'post author', 'brisko' ), // phpcs:ignore
             '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
@@ -111,8 +111,8 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
     {
         // Hide category and tag text for pages.
         if ( 'post' === get_post_type() ) {
-            $categories_list = get_the_category_list( ' ' );
-			$display_post_categories = get_theme_mod( 'display_post_categories' );
+            $categories_list         = get_the_category_list( ' ' );
+            $display_post_categories = get_theme_mod( 'display_post_categories' );
             if ( $categories_list && $display_post_categories ) {
                 // translators: 1: list of categories.
                 printf( '<div class="cat-links entry-meta %2$s">' . esc_html__( 'Posted in %1$s', 'brisko' ) . '</div>', $categories_list, esc_attr( brisko_options( 'display_post_categories' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -131,7 +131,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
         if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
             echo '<span class="comments-link">';
             comments_popup_link(
-                sprintf(
+                \sprintf(
                     wp_kses(
                         // translators: %s: post title
                         __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'brisko' ),
@@ -155,7 +155,7 @@ if ( ! \function_exists( 'brisko_entry_footer' ) ) {
  * This function displays the post date and author, if enabled in the theme customizer.
  * If both are disabled, it triggers the 'brisko_entry_meta' action and returns null.
  *
- * @return void|null Returns null if both post date and author are disabled.
+ * @return null|void Returns null if both post date and author are disabled.
  */
 function brisko_entry_meta()
 {
@@ -164,6 +164,7 @@ function brisko_entry_meta()
 
     if ( ! $display_author && ! $display_date ) {
         do_action( 'brisko_entry_meta' );
+
         return null;
     }
     ?>
@@ -182,14 +183,14 @@ function brisko_entry_meta()
  * is enabled in the theme customizer. If either is disabled, it returns
  * a style attribute to unset margin, otherwise returns null.
  *
- * @return string|null Inline CSS if needed, or null if both options are enabled.
+ * @return null|string Inline CSS if needed, or null if both options are enabled.
  */
 function brisko_entry_content_css()
 {
     $display_author = get_theme_mod( 'display_post_author' );
-    $display_date = get_theme_mod( 'display_post_date' );
+    $display_date   = get_theme_mod( 'display_post_date' );
 
-	if ( $display_author || $display_date ) {
+    if ( $display_author || $display_date ) {
         return null;
     }
 

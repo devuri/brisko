@@ -45,7 +45,7 @@ trait SettingsTrait
         $button .= '</a>';
 
         // render info.
-        return sprintf(
+        return \sprintf(
             // translators: %2$s: Plugin info.
             __( '<p style="%1$s"> %2$s </p> %3$s', 'brisko' ),
             $css_style,

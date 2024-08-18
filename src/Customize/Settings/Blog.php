@@ -188,7 +188,7 @@ class Blog implements SettingsInterface
             )
         );
 
-		// Disable Post Date.
+        // Disable Post Date.
         $wp_customize->add_setting(
             'display_post_date',
             [
@@ -212,7 +212,7 @@ class Blog implements SettingsInterface
             )
         );
 
-		// Disable Post Author .
+        // Disable Post Author .
         $wp_customize->add_setting(
             'display_post_author',
             [

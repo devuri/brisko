@@ -14,7 +14,7 @@
         if ( is_singular() ) {
             the_title( '<h2 class="post-title">', '</h2>' );
         } else {
-            the_title( sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+            the_title( \sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
         }
 ?>
 		<?php do_action( 'brisko_before_entry_meta' ); ?>
@@ -24,7 +24,7 @@
 	<div class="entry-content">
 		<?php
 the_content(
-    sprintf(
+    \sprintf(
         wp_kses(
             // translators: %s: Name of current post. Only visible to screen readers
             __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'brisko' ),

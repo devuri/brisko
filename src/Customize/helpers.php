@@ -123,7 +123,7 @@ function brisko_section_info( $info = '' )
     $css_style = 'padding: 16px;border-radius: 2px;font-style: italic;';
 
     // render info.
-    return sprintf(
+    return \sprintf(
         // translators: %2$s: Plugin info.
         __( '<p style="%1$s"> %2$s </p>', 'brisko' ),
         $css_style,

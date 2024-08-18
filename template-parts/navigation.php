@@ -20,7 +20,7 @@
 					<?php
                         $brisko_description = get_bloginfo( 'description', 'display' );
 if ( $brisko_description || is_customize_preview() ) {
-						?>
+    ?>
 						<small class="site-description text-muted align-items-center">
 							<?php echo esc_html( $brisko_description ); ?>
 						</small>
