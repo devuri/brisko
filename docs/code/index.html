@@ -340,6 +340,20 @@
 <dd>Prints HTML with meta information for the categories, tags and comments.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/default.html#function_brisko_entry_meta">brisko_entry_meta()</a>
+    <span>
+                                &nbsp;: null|void    </span>
+</dt>
+<dd>Outputs the entry meta information for posts.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/default.html#function_brisko_entry_content_css">brisko_entry_content_css()</a>
+    <span>
+                                &nbsp;: null|string    </span>
+</dt>
+<dd>Generates inline CSS for entry content based on theme settings.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/default.html#function_brisko_posts_navigation">brisko_posts_navigation()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -1372,7 +1386,7 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 
     </aside>
 
@@ -1400,7 +1414,7 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 
     </aside>
 
@@ -1421,6 +1435,73 @@ as a boolean value, either TRUE or FALSE.</p>
     
 </article>
                     <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_brisko_entry_meta">
+        brisko_entry_meta()
+        <a href="namespaces/default.html#function_brisko_entry_meta" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">160</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Outputs the entry meta information for posts.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                    <span class="phpdocumentor-signature__name">brisko_entry_meta</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">null|void</span></code>
+
+        <section class="phpdocumentor-description"><p>This function displays the post date and author, if enabled in the theme customizer.
+If both are disabled, it triggers the 'brisko_entry_meta' action and returns null.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">null|void</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Returns null if both post date and author are disabled.</p>
+</section>
+
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_brisko_entry_content_css">
+        brisko_entry_content_css()
+        <a href="namespaces/default.html#function_brisko_entry_content_css" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">188</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Generates inline CSS for entry content based on theme settings.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                    <span class="phpdocumentor-signature__name">brisko_entry_content_css</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">null|string</span></code>
+
+        <section class="phpdocumentor-description"><p>This function checks whether the display of the post author or post date
+is enabled in the theme customizer. If either is disabled, it returns
+a style attribute to unset margin, otherwise returns null.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">null|string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Inline CSS if needed, or null if both options are enabled.</p>
+</section>
+
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
     <h4 class="phpdocumentor-element__name" id="function_brisko_posts_navigation">
         brisko_posts_navigation()
         <a href="namespaces/default.html#function_brisko_posts_navigation" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1428,7 +1509,7 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">205</span>
 
     </aside>
 
@@ -1470,7 +1551,7 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">219</span>
 
     </aside>
 
@@ -1498,7 +1579,7 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 
     </aside>
 
@@ -1526,7 +1607,7 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">254</span>
 
     </aside>
 
@@ -1564,7 +1645,7 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">240</span>
+    <span class="phpdocumentor-element-found-in__line">294</span>
 
     </aside>
 
@@ -1592,7 +1673,7 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">256</span>
+    <span class="phpdocumentor-element-found-in__line">310</span>
 
     </aside>
 
@@ -1630,7 +1711,7 @@ as a boolean value, either TRUE or FALSE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">281</span>
+    <span class="phpdocumentor-element-found-in__line">335</span>
 
     </aside>
 
@@ -1662,7 +1743,7 @@ works better for pure content management and will not break html.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">293</span>
+    <span class="phpdocumentor-element-found-in__line">347</span>
 
     </aside>
 
@@ -1690,7 +1771,7 @@ works better for pure content management and will not break html.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">308</span>
+    <span class="phpdocumentor-element-found-in__line">362</span>
 
     </aside>
 
@@ -1732,7 +1813,7 @@ works better for pure content management and will not break html.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">316</span>
+    <span class="phpdocumentor-element-found-in__line">370</span>
 
     </aside>
 
@@ -1760,7 +1841,7 @@ works better for pure content management and will not break html.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">326</span>
+    <span class="phpdocumentor-element-found-in__line">380</span>
 
     </aside>
 
@@ -1788,7 +1869,7 @@ works better for pure content management and will not break html.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">336</span>
+    <span class="phpdocumentor-element-found-in__line">390</span>
 
     </aside>
 
@@ -1818,7 +1899,7 @@ works better for pure content management and will not break html.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/inc/template-tags.php"><a href="files/src-inc-template-tags.html"><abbr title="src/inc/template-tags.php">template-tags.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">346</span>
+    <span class="phpdocumentor-element-found-in__line">400</span>
 
     </aside>
 

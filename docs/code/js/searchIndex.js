@@ -516,6 +516,16 @@ Search.appendIndex(
             "summary": "Prints\u0020HTML\u0020with\u0020meta\u0020information\u0020for\u0020the\u0020categories,\u0020tags\u0020and\u0020comments.",
             "url": "namespaces/default.html#function_brisko_entry_footer"
         },                {
+            "fqsen": "\\brisko_entry_meta\u0028\u0029",
+            "name": "brisko_entry_meta",
+            "summary": "Outputs\u0020the\u0020entry\u0020meta\u0020information\u0020for\u0020posts.",
+            "url": "namespaces/default.html#function_brisko_entry_meta"
+        },                {
+            "fqsen": "\\brisko_entry_content_css\u0028\u0029",
+            "name": "brisko_entry_content_css",
+            "summary": "Generates\u0020inline\u0020CSS\u0020for\u0020entry\u0020content\u0020based\u0020on\u0020theme\u0020settings.",
+            "url": "namespaces/default.html#function_brisko_entry_content_css"
+        },                {
             "fqsen": "\\brisko_posts_navigation\u0028\u0029",
             "name": "brisko_posts_navigation",
             "summary": "Post\u0020Navigation.",
