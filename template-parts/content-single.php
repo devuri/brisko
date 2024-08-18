@@ -18,10 +18,7 @@
         }
 ?>
 		<?php do_action( 'brisko_before_entry_meta' ); ?>
-			<div class="entry-meta ">
-			<?php brisko_posted_on(); ?>
-			<?php brisko_posted_by(); ?>
-			</div><!-- .entry-meta -->
+			<?php brisko_entry_meta(); ?>
 		<?php do_action( 'brisko_after_entry_meta' ); ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">

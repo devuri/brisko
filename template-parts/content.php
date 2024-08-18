@@ -18,13 +18,10 @@
 		}
 ?>
 		<?php do_action( 'brisko_before_entry_meta' ); ?>
-			<div class="entry-meta ">
-				<?php brisko_posted_on(); ?> <?php brisko_posted_by(); ?>
-				<?php do_action( 'brisko_entry_meta' ); ?>
-			</div><!-- .entry-meta -->
+			<?php brisko_entry_meta(); ?>
 		<?php do_action( 'brisko_after_entry_meta' ); ?>
 	</header><!-- .entry-header -->
-	<div class="entry-content">
+	<div class="entry-content" <?php brisko_entry_content_css(); ?>>
 		<?php
         if ( is_singular() ) {
             the_content(
@@ -49,7 +46,8 @@
 			<div class="post-excerpt" style="font-size: unset;">
 				<?php brisko_excerpt(); ?>
 			</div>
-		<div class="read-more ">
+			<p/>
+		<div class="read-more">
 			<a class="more-link <?php echo esc_html( brisko_options( 'button_border_radius' ) ); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
 			<?php echo esc_html__( 'Read More', 'brisko' ); ?>
 		</a>
