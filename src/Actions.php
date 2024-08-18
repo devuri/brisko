@@ -35,6 +35,7 @@ class Actions
             'brisko_blog_title',
             'brisko_blog_subtitle',
             'brisko_before_entry_meta',
+            'brisko_entry_meta',
             'brisko_after_entry_meta',
             'brisko_before_tags',
             'brisko_related_content',

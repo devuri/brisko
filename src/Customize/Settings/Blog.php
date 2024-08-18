@@ -188,6 +188,54 @@ class Blog implements SettingsInterface
             )
         );
 
+        // Disable Post Date.
+        $wp_customize->add_setting(
+            'display_post_date',
+            [
+                'default'           => absint( 1 ),
+                'capability'        => self::$capability,
+                'transport'         => self::$transport,
+                'sanitize_callback' => 'absint',
+            ]
+        );
+
+        $wp_customize->add_control(
+            new ToggleControl(
+                $wp_customize,
+                'display_post_date',
+                [
+                    'label'   => esc_html__( 'Show Post Date', 'brisko' ),
+                    'section' => self::section(),
+                    'type'    => 'light',
+                    // light, ios, flat.
+                ]
+            )
+        );
+
+        // Disable Post Author .
+        $wp_customize->add_setting(
+            'display_post_author',
+            [
+                'default'           => absint( 1 ),
+                'capability'        => self::$capability,
+                'transport'         => self::$transport,
+                'sanitize_callback' => 'absint',
+            ]
+        );
+
+        $wp_customize->add_control(
+            new ToggleControl(
+                $wp_customize,
+                'display_post_author',
+                [
+                    'label'   => esc_html__( 'Show Post Author', 'brisko' ),
+                    'section' => self::section(),
+                    'type'    => 'light',
+                    // light, ios, flat.
+                ]
+            )
+        );
+
         // Display tags.
         $wp_customize->add_setting(
             'display_tags',

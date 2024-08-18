@@ -33,8 +33,10 @@ class Options
             'read_more_border_radius'  => get_theme_mod( 'read_more_border_radius', 'this-button-border-radius-none' ),
             // post_thumbnail_display.
             'featured_image'           => get_theme_mod( 'featured_image', 'container' ),
+            'display_post_date'        => get_theme_mod( 'disable_post_date', true ),
+            'display_post_author'      => get_theme_mod( 'disable_post_author', true ),
             'display_tags'             => get_theme_mod( 'display_tags', 'this-display-show' ),
-            'display_post_categories'  => get_theme_mod( 'display_post_categories', '' ),
+            'display_post_categories'  => get_theme_mod( 'display_post_categories' ),
             'footer_remove_top_margin' => get_theme_mod( 'footer_remove_top_margin', 'this-margin-top' ),
         ];
     }
@@ -48,9 +50,9 @@ class Options
      */
     public function get( string $key_id )
     {
-		if ( isset( $this->theme_options[ $key_id ] ) ) {
-			return $this->theme_options[ $key_id ];
-		}
+        if ( isset( $this->theme_options[ $key_id ] ) ) {
+            return $this->theme_options[ $key_id ];
+        }
 
         return null;
     }
