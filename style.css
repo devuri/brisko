@@ -29,6 +29,13 @@ https://github.com/soderlind/class-customizer-toggle-control, (C) 2016 Per Soder
 WordPress Customizer Toggle Control is distributed under the terms of the GNU GPL v2 or later.
 */
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body a {
     color: #000000;
     text-decoration: none;
