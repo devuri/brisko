@@ -10,15 +10,11 @@
 		"spacing": {
 			"units": ["px", "rem", "em", "%", "vh", "vw"]
 		},
-		"typography": {
-			"fontFamilies": [
-				{
-					"fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Arial', sans-serif",
-					"name": "Brisko Default Fonts",
-					"slug": "brisko-font"
-				}
-			]
-		},
 		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Arial', sans-serif"
+		}
 	}
 }

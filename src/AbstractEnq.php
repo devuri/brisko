@@ -7,7 +7,7 @@ use Brisko\Setup\Assets;
 
 abstract class AbstractEnq implements EnqueueInterface
 {
-	/**
+    /**
      * Theme Base css.
      */
     const CORE_CSS = 'brisko-core';
