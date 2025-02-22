@@ -1,7 +1,4 @@
-#
-# This runs after changes are merged to `master`.
-#
-name: 🚀 Deploy Release
+name: 🚀 Release
 on:
   pull_request:
     types:
@@ -17,25 +14,25 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Run release-please
-        uses: google-github-actions/release-please-action@v4
+      - name:  Create Release 🟢
+        uses: googleapis/release-please-action@v4
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           command: manifest
           default-branch: master
 
-      - name: Checkout
+      - name: Checkout 📁
         uses: actions/checkout@v3
 
-      - name: Setup PHP 7.4
+      - name: Setup PHP 8.1 🛠️
         if: ${{ steps.release.outputs.releases_created }}
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "7.4"
+          php-version: "8.1"
           extensions: pcov
 
-      - name: Install PHP dependencies
+      - name: Install PHP dependencies 🔄
         if: ${{ steps.release.outputs.releases_created }}
         uses: ramsey/composer-install@v1
         with:
@@ -56,16 +53,21 @@ jobs:
         if: ${{ steps.release.outputs.releases_created }}
         run: |
           npm run asset:build
-    
-      - name: Build The Artifact
+
+      - name: Build The Artifact 📦
         if: ${{ steps.release.outputs.releases_created }}
         run: |
           php bin/zipit
 
-      - name: Upload zip to release
+      - name: Build Directory 📦 📁
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          php bin/zipit copy
+
+      - name: 🌐 Upload zip to release
         if: ${{ steps.release.outputs.releases_created }}
         uses: AButler/upload-release-assets@v2.0
         with:
-          files: './build/brisko.zip'
+          files: './build/brisko.zip;CHANGELOG.md;LICENSE'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           release-tag: ${{ steps.release.outputs.tag_name }}
