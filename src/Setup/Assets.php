@@ -32,6 +32,10 @@ class Assets implements SetupInterface
             return $path . $asset;
         }
 
+        if ( \defined( 'WP_BRISKO_DEBUG' ) && WP_BRISKO_DEBUG ) {
+            return get_template_directory_uri() . '/assets/src/' . $asset;
+        }
+
         return get_template_directory_uri() . '/assets/dist/' . $asset;
     }
 }

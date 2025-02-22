@@ -801,16 +801,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Scripts.html"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Ainit\u0028\u0029",
-            "name": "init",
-            "summary": "Scripts.",
-            "url": "classes/Brisko-Setup-Scripts.html#method_init"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aenqueue_script\u0028\u0029",
-            "name": "enqueue_script",
-            "summary": "Setup\u0020a\u0020style\u0020mod.",
-            "url": "classes/Brisko-Setup-Scripts.html#method_enqueue_script"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aenqueue\u0028\u0029",
             "name": "enqueue",
             "summary": "Enqueue\u0020scripts.",
@@ -818,18 +808,8 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aregister\u0028\u0029",
             "name": "register",
-            "summary": "Enqueue\u0020styles\u0020and\u0020script.",
+            "summary": "Register\u0020scripts.",
             "url": "classes/Brisko-Setup-Scripts.html#method_register"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Aregister_script\u0028\u0029",
-            "name": "register_script",
-            "summary": "Register\u0020a\u0020new\u0020script.",
-            "url": "classes/Brisko-Setup-Scripts.html#method_register_script"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Scripts\u003A\u003Amaybe\u0028\u0029",
-            "name": "maybe",
-            "summary": "Check\u0020if\u0020the\u0020\u0027brisko_elements_loaded\u0027\u0020action\u0020has\u0020been\u0020executed.",
-            "url": "classes/Brisko-Setup-Scripts.html#method_maybe"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles",
             "name": "Styles",
@@ -851,75 +831,35 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Styles.html#method_setup_theme_editor_styles"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aeditor_style\u0028\u0029",
-            "name": "editor_style",
-            "summary": "Setup\u0020a\u0020style\u0020based\u0020on\u0020mod.",
-            "url": "classes/Brisko-Setup-Styles.html#method_editor_style"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aregister\u0028\u0029",
             "name": "register",
             "summary": "Register\u0020all\u0020styles.",
             "url": "classes/Brisko-Setup-Styles.html#method_register"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aget_style_files\u0028\u0029",
-            "name": "get_style_files",
-            "summary": "",
-            "url": "classes/Brisko-Setup-Styles.html#method_get_style_files"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Acustom_css\u0028\u0029",
             "name": "custom_css",
             "summary": "Custom\u0020Theme\u0020styles.",
             "url": "classes/Brisko-Setup-Styles.html#method_custom_css"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Asanitize_css\u0028\u0029",
-            "name": "sanitize_css",
-            "summary": "Sanitize\u0020CSS.",
-            "url": "classes/Brisko-Setup-Styles.html#method_sanitize_css"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aenqueue_style\u0028\u0029",
-            "name": "enqueue_style",
-            "summary": "Setup\u0020a\u0020style\u0020based\u0020on\u0020mod.",
-            "url": "classes/Brisko-Setup-Styles.html#method_enqueue_style"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aenqueue\u0028\u0029",
             "name": "enqueue",
             "summary": "Enqueue\u0020scripts.",
             "url": "classes/Brisko-Setup-Styles.html#method_enqueue"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003A\u0024style_files",
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Astyle_files\u0028\u0029",
             "name": "style_files",
-            "summary": "",
-            "url": "classes/Brisko-Setup-Styles.html#property_style_files"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aelement_mod\u0028\u0029",
-            "name": "element_mod",
-            "summary": "Get\u0020element\u0020space\u0020padding\u0020or\u0020margin.",
-            "url": "classes/Brisko-Setup-Styles.html#method_element_mod"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aset_css_files\u0028\u0029",
-            "name": "set_css_files",
-            "summary": "",
-            "url": "classes/Brisko-Setup-Styles.html#method_set_css_files"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Acustom_styles\u0028\u0029",
-            "name": "custom_styles",
-            "summary": "Custom\u0020Theme\u0020styles.",
-            "url": "classes/Brisko-Setup-Styles.html#method_custom_styles"
+            "summary": "Setup\u0020static\u0020CSS\u0020files.",
+            "url": "classes/Brisko-Setup-Styles.html#method_style_files"
         },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Aminified_css\u0028\u0029",
             "name": "minified_css",
             "summary": "CSS\u0020Minifier\u0020Compressor.",
             "url": "classes/Brisko-Setup-Styles.html#method_minified_css"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Amaybe\u0028\u0029",
-            "name": "maybe",
-            "summary": "Check\u0020if\u0020the\u0020\u0027brisko_elements_loaded\u0027\u0020action\u0020has\u0020been\u0020executed.",
-            "url": "classes/Brisko-Setup-Styles.html#method_maybe"
-        },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003A\u0024css_files",
-            "name": "css_files",
-            "summary": "",
-            "url": "classes/Brisko-Setup-Styles.html#property_css_files"
+            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Acustom_styles\u0028\u0029",
+            "name": "custom_styles",
+            "summary": "Custom\u0020Theme\u0020styles.",
+            "url": "classes/Brisko-Setup-Styles.html#method_custom_styles"
         },                {
             "fqsen": "\\Brisko\\SiteHeader",
             "name": "SiteHeader",
@@ -1070,6 +1010,86 @@ Search.appendIndex(
             "name": "nav_args",
             "summary": "",
             "url": "classes/Brisko-Nav.html#property_nav_args"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq",
+            "name": "AbstractEnq",
+            "summary": "",
+            "url": "classes/Brisko-AbstractEnq.html"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "Initialize\u0020instance.",
+            "url": "classes/Brisko-AbstractEnq.html#method_init"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aenqueue_script\u0028\u0029",
+            "name": "enqueue_script",
+            "summary": "Setup\u0020a\u0020style\u0020mod.",
+            "url": "classes/Brisko-AbstractEnq.html#method_enqueue_script"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aget_style_files\u0028\u0029",
+            "name": "get_style_files",
+            "summary": "",
+            "url": "classes/Brisko-AbstractEnq.html#method_get_style_files"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aenqueue_style\u0028\u0029",
+            "name": "enqueue_style",
+            "summary": "Setup\u0020a\u0020style\u0020based\u0020on\u0020mod.",
+            "url": "classes/Brisko-AbstractEnq.html#method_enqueue_style"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aeditor_style\u0028\u0029",
+            "name": "editor_style",
+            "summary": "Setup\u0020a\u0020style\u0020based\u0020on\u0020mod.",
+            "url": "classes/Brisko-AbstractEnq.html#method_editor_style"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aenqueue\u0028\u0029",
+            "name": "enqueue",
+            "summary": "Enqueue\u0020scripts.",
+            "url": "classes/Brisko-AbstractEnq.html#method_enqueue"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aregister\u0028\u0029",
+            "name": "register",
+            "summary": "Register\u0020scripts.",
+            "url": "classes/Brisko-AbstractEnq.html#method_register"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aregister_script\u0028\u0029",
+            "name": "register_script",
+            "summary": "Register\u0020a\u0020new\u0020script.",
+            "url": "classes/Brisko-AbstractEnq.html#method_register_script"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aelement_mod\u0028\u0029",
+            "name": "element_mod",
+            "summary": "Get\u0020element\u0020space\u0020padding\u0020or\u0020margin.",
+            "url": "classes/Brisko-AbstractEnq.html#method_element_mod"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aset_css_files\u0028\u0029",
+            "name": "set_css_files",
+            "summary": "",
+            "url": "classes/Brisko-AbstractEnq.html#method_set_css_files"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Asanitize_css\u0028\u0029",
+            "name": "sanitize_css",
+            "summary": "Sanitize\u0020CSS.",
+            "url": "classes/Brisko-AbstractEnq.html#method_sanitize_css"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003A\u0024style_files",
+            "name": "style_files",
+            "summary": "",
+            "url": "classes/Brisko-AbstractEnq.html#property_style_files"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Amaybe\u0028\u0029",
+            "name": "maybe",
+            "summary": "Check\u0020if\u0020the\u0020\u0027brisko_elements_loaded\u0027\u0020action\u0020has\u0020been\u0020executed.",
+            "url": "classes/Brisko-AbstractEnq.html#method_maybe"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003ACORE_CSS",
+            "name": "CORE_CSS",
+            "summary": "Theme\u0020Base\u0020css.",
+            "url": "classes/Brisko-AbstractEnq.html#constant_CORE_CSS"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003A\u0024css_files",
+            "name": "css_files",
+            "summary": "",
+            "url": "classes/Brisko-AbstractEnq.html#property_css_files"
         },                {
             "fqsen": "\\",
             "name": "\\",

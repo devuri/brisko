@@ -109,6 +109,9 @@
         <h2 class="phpdocumentor-content__title">
     Styles
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Brisko-AbstractEnq.html"><abbr title="\Brisko\AbstractEnq">AbstractEnq</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -117,9 +120,6 @@
                             </ul>
         </div>
     
-            <span class="phpdocumentor-element__implements">
-            implements
-                            <a href="classes/Brisko-Contracts-EnqueueInterface.html"><abbr title="\Brisko\Contracts\EnqueueInterface">EnqueueInterface</abbr></a>                    </span>
     
     </h2>
 
@@ -138,18 +138,6 @@
 
 
 
-<h3 id="interfaces_class_traits">
-    Interfaces, Classes, Traits and Enums
-    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
-</h3>
-
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Brisko-Contracts-EnqueueInterface.html"><abbr title="\Brisko\Contracts\EnqueueInterface">EnqueueInterface</abbr></a></dt>
-        <dd></dd>
-    
-    
-    
-    </dl>
 
 
 <h3 id="toc">
@@ -158,15 +146,22 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/Brisko-AbstractEnq.html#constant_CORE_CSS">CORE_CSS</a>
+    <span>
+        &nbsp;= &#039;brisko-core&#039;                            </span>
+</dt>
+<dd>Theme Base css.</dd>
+
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Brisko-Setup-Styles.html#property_css_files">$css_files</a>
+    <a href="classes/Brisko-AbstractEnq.html#property_css_files">$css_files</a>
     <span>
                         &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Brisko-Setup-Styles.html#property_style_files">$style_files</a>
+    <a href="classes/Brisko-AbstractEnq.html#property_style_files">$style_files</a>
     <span>
                         &nbsp;: mixed            </span>
 </dt>
@@ -187,7 +182,7 @@
 <dd>Custom Theme styles.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Setup-Styles.html#method_editor_style">editor_style()</a>
+    <a href="classes/Brisko-AbstractEnq.html#method_editor_style">editor_style()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
@@ -201,14 +196,21 @@
 <dd>Enqueue scripts.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Setup-Styles.html#method_enqueue_style">enqueue_style()</a>
+    <a href="classes/Brisko-AbstractEnq.html#method_enqueue_script">enqueue_script()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Setup a style mod.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Brisko-AbstractEnq.html#method_enqueue_style">enqueue_style()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Setup a style based on mod.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Setup-Styles.html#method_get_style_files">get_style_files()</a>
+    <a href="classes/Brisko-AbstractEnq.html#method_get_style_files">get_style_files()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
@@ -224,16 +226,9 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Brisko-Setup-Styles.html#method_register">register()</a>
     <span>
-                                &nbsp;: null|void    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd>Register all styles.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Brisko-Setup-Styles.html#method_sanitize_css">sanitize_css()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>Sanitize CSS.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Brisko-Setup-Styles.html#method_setup_theme_editor_styles">setup_theme_editor_styles()</a>
@@ -243,14 +238,42 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Brisko-Setup-Styles.html#method_element_mod">element_mod()</a>
+    <a href="classes/Brisko-AbstractEnq.html#method_element_mod">element_mod()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Get element space padding or margin.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Brisko-Setup-Styles.html#method_set_css_files">set_css_files()</a>
+    <a href="classes/Brisko-AbstractEnq.html#method_maybe">maybe()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Check if the &#039;brisko_elements_loaded&#039; action has been executed.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Brisko-Setup-Styles.html#method_minified_css">minified_css()</a>
+    <span>
+                                &nbsp;: false|string    </span>
+</dt>
+<dd>CSS Minifier Compressor.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Brisko-AbstractEnq.html#method_register_script">register_script()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Register a new script.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Brisko-AbstractEnq.html#method_sanitize_css">sanitize_css()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Sanitize CSS.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Brisko-AbstractEnq.html#method_set_css_files">set_css_files()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
@@ -270,25 +293,46 @@
 </dt>
 <dd>Custom Theme styles.</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/Brisko-Setup-Styles.html#method_maybe">maybe()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>Check if the &#039;brisko_elements_loaded&#039; action has been executed.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/Brisko-Setup-Styles.html#method_minified_css">minified_css()</a>
-    <span>
-                                &nbsp;: false|string    </span>
-</dt>
-<dd>CSS Minifier Compressor.</dd>
-
         </dl>
 
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/Brisko-Setup-Styles.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_CORE_CSS">
+        CORE_CSS
+        <a href="classes/Brisko-AbstractEnq.html#constant_CORE_CSS" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">13</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Theme Base css.</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">CORE_CSS</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;brisko-core&#039;</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
         
     <section class="phpdocumentor-properties">
@@ -305,14 +349,14 @@
 >
     <h4 class="phpdocumentor-element__name" id="property_css_files">
         $css_files
-        <a href="classes/Brisko-Setup-Styles.html#property_css_files" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Brisko-AbstractEnq.html#property_css_files" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -339,14 +383,14 @@
 >
     <h4 class="phpdocumentor-element__name" id="property_style_files">
         $style_files
-        <a href="classes/Brisko-Setup-Styles.html#property_style_files" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Brisko-AbstractEnq.html#property_style_files" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
@@ -384,7 +428,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
@@ -417,7 +461,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -445,12 +489,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_editor_style">
         editor_style()
-        <a href="classes/Brisko-Setup-Styles.html#method_editor_style" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Brisko-AbstractEnq.html#method_editor_style" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -486,7 +530,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>true|false if this shopuld be enabled by default.</p>
+                    <section class="phpdocumentor-description"><p>true|false if this should be enabled by default.</p>
 </section>
 
             </dd>
@@ -513,7 +557,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
@@ -539,14 +583,77 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_enqueue_style">
-        enqueue_style()
-        <a href="classes/Brisko-Setup-Styles.html#method_enqueue_style" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_enqueue_script">
+        enqueue_script()
+        <a href="classes/Brisko-AbstractEnq.html#method_enqueue_script" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Setup a style mod.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">enqueue_script</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$handle</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mod</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$handle</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the enqueue handle example 'bootstrap'</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$mod</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the theme_mod name example 'enable_bootstrap'</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$default</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>true|false if this should be enabled by default.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_enqueue_style">
+        enqueue_style()
+        <a href="classes/Brisko-AbstractEnq.html#method_enqueue_style" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
@@ -604,12 +711,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_get_style_files">
         get_style_files()
-        <a href="classes/Brisko-Setup-Styles.html#method_get_style_files" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Brisko-AbstractEnq.html#method_get_style_files" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -653,7 +760,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -686,7 +793,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -694,69 +801,16 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">register</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">null|void</span></code>
+                    <span class="phpdocumentor-signature__name">register</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">null|void</span>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_sanitize_css">
-        sanitize_css()
-        <a href="classes/Brisko-Setup-Styles.html#method_sanitize_css" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">119</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Sanitize CSS.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">sanitize_css</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$css</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-        <section class="phpdocumentor-description"><p>For now just strip_tags (the WordPress way) and preg_replace to escape &lt; in certain cases but might do full CSS escaping in the future, see:
-https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#rule-4-css-encode-and-strictly-validate-before-inserting-untrusted-data-into-html-style-property-values
-https://github.com/twigphp/Twig/blob/3.x/src/Extension/EscaperExtension.php#L300-L319
-https://github.com/laminas/laminas-escaper/blob/2.8.x/src/Escaper.php#L205-L221
-https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyles.php</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$css</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>the to be sanitized CSS.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>sanitized CSS.</p>
-</section>
-
     
 </article>
                     <article
@@ -772,7 +826,7 @@ https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyl
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -800,12 +854,12 @@ https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyl
 >
     <h4 class="phpdocumentor-element__name" id="method_element_mod">
         element_mod()
-        <a href="classes/Brisko-Setup-Styles.html#method_element_mod" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Brisko-AbstractEnq.html#method_element_mod" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 
@@ -852,136 +906,23 @@ https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyl
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_set_css_files">
-        set_css_files()
-        <a href="classes/Brisko-Setup-Styles.html#method_set_css_files" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">233</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">set_css_files</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_style_files">
-        style_files()
-        <a href="classes/Brisko-Setup-Styles.html#method_style_files" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">193</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Setup static CSS files.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">style_files</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$style</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$style</span>
-                : <span class="phpdocumentor-signature__argument__return-type">null|string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>style handle example 'bootstrap'</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>.</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_custom_styles">
-        custom_styles()
-        <a href="classes/Brisko-Setup-Styles.html#method_custom_styles" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">249</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Custom Theme styles.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">custom_styles</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
                                     -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_maybe">
         maybe()
-        <a href="classes/Brisko-Setup-Styles.html#method_maybe" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Brisko-AbstractEnq.html#method_maybe" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">337</span>
+    <span class="phpdocumentor-element-found-in__line">202</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Check if the &#039;brisko_elements_loaded&#039; action has been executed.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">maybe</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"><p>Determine whether to load theme modifications by default.</p>
@@ -1009,7 +950,7 @@ and we should not load them by default.</p>
                     <article
         class="phpdocumentor-element
             -method
-            -private
+            -protected
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_minified_css">
@@ -1019,14 +960,14 @@ and we should not load them by default.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">309</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">CSS Minifier Compressor.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">minified_css</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|string</span></code>
 
     
@@ -1039,6 +980,256 @@ and we should not load them by default.</p>
             <section class="phpdocumentor-description"><p>minified css output.</p>
 </section>
 
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_register_script">
+        register_script()
+        <a href="classes/Brisko-AbstractEnq.html#method_register_script" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">116</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Register a new script.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">register_script</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$handle</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$src</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deps</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$in_footer</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$handle</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Name of the script. Should be unique.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$src</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>path of the script relative to the Theme directory.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deps</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An array of registered script handles this script depends on.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$in_footer</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Whether to enqueue the script before </body> instead of in the <head>.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://developer.wordpress.org/reference/functions/wp_register_script/"><abbr title="https://developer.wordpress.org/reference/functions/wp_register_script/">https://developer.wordpress.org/reference/functions/wp_register_script/</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_sanitize_css">
+        sanitize_css()
+        <a href="classes/Brisko-AbstractEnq.html#method_sanitize_css" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">164</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sanitize CSS.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">sanitize_css</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$css</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"><p>For now just strip_tags (the WordPress way) and preg_replace to escape &lt; in certain cases but might do full CSS escaping in the future, see:
+https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#rule-4-css-encode-and-strictly-validate-before-inserting-untrusted-data-into-html-style-property-values
+https://github.com/twigphp/Twig/blob/3.x/src/Extension/EscaperExtension.php#L300-L319
+https://github.com/laminas/laminas-escaper/blob/2.8.x/src/Escaper.php#L205-L221
+https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyles.php</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$css</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the to be sanitized CSS.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>sanitized CSS.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_set_css_files">
+        set_css_files()
+        <a href="classes/Brisko-AbstractEnq.html#method_set_css_files" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AbstractEnq.php"><a href="files/src-abstractenq.html"><abbr title="src/AbstractEnq.php">AbstractEnq.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">138</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">set_css_files</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_style_files">
+        style_files()
+        <a href="classes/Brisko-Setup-Styles.html#method_style_files" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">93</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Setup static CSS files.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">style_files</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$style</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$style</span>
+                : <span class="phpdocumentor-signature__argument__return-type">null|string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Style handle, e.g., 'bootstrap'.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_custom_styles">
+        custom_styles()
+        <a href="classes/Brisko-Setup-Styles.html#method_custom_styles" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Setup/Styles.php"><a href="files/src-setup-styles.html"><abbr title="src/Setup/Styles.php">Styles.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">135</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Custom Theme styles.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">custom_styles</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
     
 </article>
             </section>
