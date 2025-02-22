@@ -22,25 +22,10 @@
 				<directory name="src" />
 			</errorLevel>
 		</UndefinedDocblockClass>
-		<UndefinedClass>
-			<errorLevel type="suppress">
-				<referencedClass name="WP_Error" />
-			</errorLevel>
-		</UndefinedClass>
-		<UnresolvableInclude>
-			<errorLevel type="suppress">
-  			<directory name="src" />
-  		  </errorLevel>
-		</UnresolvableInclude>
 		<MissingReturnType>
 			<errorLevel type="suppress">
   			<directory name="src" />
   		  </errorLevel>
 		</MissingReturnType>
-		<UndefinedFunction>
-			<errorLevel type="suppress">
-				<referencedFunction name="apply_filters" />
-			</errorLevel>
-		</UndefinedFunction>
 	</issueHandlers>
 </psalm>
