@@ -79,7 +79,8 @@
             "composer no-dev -q",
             "npm install",
             "npm run asset:build",
-            "npm run build"
+			"php bin/zipit",
+			"php bin/zipit copy"
         ],
         "test": [
             "composer install -q",

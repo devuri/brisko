@@ -13,6 +13,15 @@ let js_assets = 'assets/src/js/'
 // dist dir.
 let dist = 'assets/dist/'
 
+// core + grid.
+mix.combine(
+	[
+		assets + 'core.css',
+		'assets/src/bootstrap/css/bootstrap-grid.css'
+	],
+	dist + 'css/core.min.css'
+);
+
 // brisko.
 mix.css(assets + 'brisko.css', dist + 'css/brisko.min.css')
 	.css(assets + 'custom-styles.css', dist + 'css/custom-styles.min.css')
@@ -34,6 +43,3 @@ mix.copy('assets/src/uikit/', 'assets/dist/uikit/');
 
 // bootstrap.
 mix.copy('assets/src/bootstrap/', 'assets/dist/bootstrap/');
-
-// bootstrap 5.
-mix.copy('assets/src/bootstrap5/', 'assets/dist/bootstrap5/');

@@ -26,11 +26,7 @@
         "hot": "mix watch --hot",
         "prod": "mix --production",
         "production": "mix --production",
-        "asset:build": "mix --mix-config=assets/src/webpack.mix.js --production",
-        "bundle": "dir-archiver --src . --dest ./brisko.zip --exclude wp-themeunittestdata.xml .stylelintrc.json release-please-config.json .release-please-manifest.json .eslintrc .git .wordpress-org .github .phpdoc build node_modules asset/src tests tmp report docs bin .vscode .idea .gitattributes .phpcs.xml.dist .php-cs-fixer.php stubs.php .gitignore README.md CHANGELOG.md composer.json composer.lock package.json package-lock.json .travis.yml phpcs.xml ISSUE_TEMPLATE.md CODE_OF_CONDUCT.md phpunit.xml .phpunit.result.cache phpdoc.xml psalm.xml rules.neon phpstan.neon",
-        "prebuild": "npm rm -rf build/brisko",
-        "build": "mix --mix-config=build/webpack.mix.js --production",
-        "postbuild": "npm run bundle"
+		"asset:build": "mix --mix-config=assets/src/webpack.mix.js --production"
     },
     "dependencies": {
         "bootstrap": "^5.2.0",
