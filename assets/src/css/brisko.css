@@ -215,7 +215,7 @@ h2.post-title a {
 
 .more-link {
     padding: 0.7em 0.8em;
-    border: solid thin var(--border-color);
+    /* border: solid thin var(--border-color); */
     text-transform: lowercase;
 }
 
@@ -229,7 +229,7 @@ h2.post-title a {
 
 .entry-meta {
     width: 100%;
-    border: solid thin var(--border-color);
+    /* border: solid thin var(--border-color); */
     border-left: none;
     border-right: none;
     padding: 8px;

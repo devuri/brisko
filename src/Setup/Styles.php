@@ -2,14 +2,11 @@
 
 namespace Brisko\Setup;
 
-use Brisko\Contracts\EnqueueInterface;
+use Brisko\AbstractEnq;
 use Brisko\Theme;
 
-class Styles implements EnqueueInterface
+class Styles extends AbstractEnq
 {
-    protected $style_files;
-    protected $css_files;
-
     public function __construct()
     {
         $this->style_files = $this->set_css_files();
@@ -35,44 +32,14 @@ class Styles implements EnqueueInterface
         $this->editor_style( 'milligram', 'enable_milligram' );
         $this->editor_style( 'uikit', 'enable_uikit' );
 
-        // bootstrap.
-        $this->editor_style( 'bootstrap', 'enable_bootstrap', self::maybe() );
-        $this->editor_style( 'bootstrap-grid', 'enable_bootstrap_grid' );
-
         // theme.
-        $this->editor_style( 'brisko-theme', 'enable_theme_styles', self::maybe() );
         $this->editor_style( 'underscores', 'enable_underscores', self::maybe() );
         $this->editor_style( 'brisko', 'enable_brisko', self::maybe() );
-
-        // bootstrap 5.
-        $this->editor_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
-        $this->editor_style( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
-        $this->editor_style( 'bootstrap5', 'enable_bootstrap5' );
-        $this->editor_style( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
-        $this->editor_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
-        $this->editor_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
-    }
-
-    /**
-     * Setup a style based on mod.
-     *
-     * @param string $asset   the registered style name
-     * @param string $mod     the theme_mod name example 'enable_bootstrap'
-     * @param bool   $default true|false if this shopuld be enabled by default.
-     *
-     * @return void
-     */
-    public function editor_style( $asset, $mod, $default = false )
-    {
-        if ( true === get_theme_mod( $mod, $default ) ) {
-            add_editor_style( $this->style_files[ $asset ] );
-        }
+        $this->editor_style( self::CORE_CSS, 'enable_core', true );
     }
 
     /**
      * Register all styles.
-     *
-     * @return null|void
      */
     public function register()
     {
@@ -81,71 +48,12 @@ class Styles implements EnqueueInterface
         }
     }
 
-    public function get_style_files( string $style = '' )
-    {
-        if ( empty( $style ) ) {
-            return $this->style_files;
-        }
-
-        // get a single stylesheet url.
-        if ( $style && isset( $this->style_files[ $style ] ) ) {
-            $this->style_files[ $style ];
-        }
-
-        return null;
-    }
-
     /**
      * Custom Theme styles.
      */
     public function custom_css()
     {
         wp_add_inline_style( 'custom-styles', $this->minified_css() );
-    }
-
-    /**
-     * Sanitize CSS.
-     *
-     * For now just strip_tags (the WordPress way) and preg_replace to escape < in certain cases but might do full CSS escaping in the future, see:
-     * https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#rule-4-css-encode-and-strictly-validate-before-inserting-untrusted-data-into-html-style-property-values
-     * https://github.com/twigphp/Twig/blob/3.x/src/Extension/EscaperExtension.php#L300-L319
-     * https://github.com/laminas/laminas-escaper/blob/2.8.x/src/Escaper.php#L205-L221
-     * https://plugins.svn.wordpress.org/autoptimize/tags/2.8.0/classes/autoptimizeStyles.php
-     *
-     * @param string $css the to be sanitized CSS.
-     *
-     * @return string sanitized CSS.
-     */
-    public function sanitize_css( $css )
-    {
-        $css = wp_strip_all_tags( $css );
-        if ( false !== strpos( $css, '<' ) ) {
-            $css = preg_replace( '#<(\/?\w+)#', '\00003C$1', $css );
-        }
-
-        return $css;
-    }
-
-    /**
-     * Setup a style based on mod.
-     *
-     * @param string       $handle  the enqueue handle example 'bootstrap'
-     * @param false|string $mod     the theme_mod name example 'enable_bootstrap', use false to override
-     * @param bool         $default true|false if this should be enabled by default.
-     *
-     * @return void
-     */
-    public static function enqueue_style( $handle, $mod, $default = false )
-    {
-        if ( false === $mod ) {
-            wp_enqueue_style( $handle );
-
-            return;
-        }
-
-        if ( true === get_theme_mod( $mod, $default ) ) {
-            wp_enqueue_style( $handle );
-        }
     }
 
     /**
@@ -161,17 +69,9 @@ class Styles implements EnqueueInterface
         self::enqueue_style( 'bootstrap-grid', 'enable_bootstrap_grid', self::maybe() );
 
         // theme.
-        self::enqueue_style( 'brisko-theme', 'enable_theme_styles', self::maybe() );
         self::enqueue_style( 'underscores', 'enable_underscores', self::maybe() );
         self::enqueue_style( 'brisko', 'enable_brisko', self::maybe() );
-
-        // bootstrap 5.
-        self::enqueue_style( 'bootstrap5-grid', 'enable_bootstrap5_grid' );
-        self::enqueue_style( 'bootstrap5-grid-rtl', 'enable_bootstrap5_grid_rtl' );
-        self::enqueue_style( 'bootstrap5', 'enable_bootstrap5' );
-        self::enqueue_style( 'bootstrap5-rtl', 'enable_bootstrap5_rtl' );
-        self::enqueue_style( 'bootstrap5-utilities', 'enable_bootstrap5_utilities' );
-        self::enqueue_style( 'bootstrap5-utilities-rtl', 'enable_bootstrap5_utilities_rtl' );
+        self::enqueue_style( self::CORE_CSS, 'enable_core', true );
 
         // 'normalizer'
         self::enqueue_style( 'normalizer', self::maybe() );
@@ -186,61 +86,47 @@ class Styles implements EnqueueInterface
     /**
      * Setup static CSS files.
      *
-     * @param null|string $style style handle example 'bootstrap'
+     * @param null|string $style Style handle, e.g., 'bootstrap'.
      *
-     * @return array .
+     * @return array
      */
-    protected static function style_files( $style = null )
+    protected function style_files( $style = null )
     {
-        $files = [
-            'bootstrap5-grid'          => Assets::uri( 'bootstrap5/css/bootstrap-grid.min.css' ),
-            'bootstrap5-grid-rtl'      => Assets::uri( 'bootstrap5/css/bootstrap-grid.rtl.min.css' ),
-            'bootstrap5'               => Assets::uri( 'bootstrap5/css/bootstrap.min.css' ),
-            'bootstrap5-rtl'           => Assets::uri( 'bootstrap5/css/bootstrap.rtl.min.css' ),
-            'bootstrap5-utilities'     => Assets::uri( 'bootstrap5/css/bootstrap-utilities.min.css' ),
-            'bootstrap5-utilities-rtl' => Assets::uri( 'bootstrap5/css/bootstrap-utilities.rtl.min.css' ),
-            'bootstrap-grid'           => Assets::uri( 'bootstrap/css/bootstrap-grid.min.css' ),
-            'bootstrap'                => Assets::uri( 'bootstrap/css/bootstrap.min.css' ),
-            'uikit'                    => Assets::uri( 'uikit/css/uikit.min.css' ),
-            'milligram'                => Assets::uri( 'milligram/css/milligram.min.css' ),
-            'brisko'                   => Assets::uri( 'css/brisko.min.css' ),
-            'custom-styles'            => Assets::uri( 'css/custom-styles.min.css' ),
-            'underscores'              => Assets::uri( 'css/underscores.min.css' ),
-            'normalizer'               => Assets::uri( 'css/normalize.min.css' ),
-            'brisko-theme'             => get_stylesheet_uri(),
+        $styles = [
+            'uikit'         => 'uikit/css/uikit',
+            'milligram'     => 'milligram/css/milligram',
+            'brisko'        => 'css/brisko',
+            'custom-styles' => 'css/custom-styles',
+            'underscores'   => 'css/underscores',
+            'normalizer'    => 'css/normalize',
+            self::CORE_CSS  => 'css/core',
         ];
 
-        return apply_filters( 'brisko_style_files', $files );
+        $files     = [];
+        $src_files = [];
+        foreach ( $styles as $key => $path ) {
+            $files[ $key ]     = Assets::uri( "$path.min.css" );
+            $src_files[ $key ] = Assets::uri( "$path.css" );
+        }
+
+        return apply_filters( 'brisko_style_files', \defined( 'WP_BRISKO_DEBUG' ) && WP_BRISKO_DEBUG ? $src_files : $files );
     }
 
     /**
-     * Get element space padding or margin.
+     * CSS Minifier Compressor.
      *
-     * @param string $theme_mod .
-     * @param string $default   .
-     *
-     * @return string .
+     * @return false|string minified css output.
      */
-    protected function element_mod( $theme_mod = 'footer_padding', $default = '16px' )
+    protected function minified_css()
     {
-        if ( get_theme_mod( $theme_mod ) ) {
-            return implode( 'px ', get_theme_mod( $theme_mod ) ) . 'px';
+        if ( ! \is_array( $this->custom_styles() ) ) {
+            return false;
         }
 
-        return $default;
-    }
+        $style_styles = $this->custom_styles();
+        $style_styles = implode( "\n", $style_styles );
 
-    protected function set_css_files()
-    {
-        $brisko_css = self::style_files();
-
-        if ( ! $brisko_css ) {
-            $this->css_files = null;
-        } else {
-            $this->css_files = $brisko_css;
-        }
-
-        return $this->css_files;
+        return $this->sanitize_css( $style_styles );
     }
 
     /**
@@ -299,43 +185,5 @@ class Styles implements EnqueueInterface
 
         // css output.
         return apply_filters( 'brisko_custom_styles', $custom_styles );
-    }
-
-    /**
-     * CSS Minifier Compressor.
-     *
-     * @return false|string minified css output.
-     */
-    private function minified_css()
-    {
-        if ( ! \is_array( $this->custom_styles() ) ) {
-            return false;
-        }
-
-        $style_styles = $this->custom_styles();
-        $style_styles = implode( "\n", $style_styles );
-
-        return $this->sanitize_css( $style_styles );
-    }
-
-    /**
-     * Check if the 'brisko_elements_loaded' action has been executed.
-     *
-     * Determine whether to load theme modifications by default.
-     *
-     * This method checks if the 'brisko_elements_loaded' action has been executed. If the action
-     * has not been fired, it indicates that the Brisko Elements plugin is not active. In this case,
-     * we need to load certain theme modifications like theme styles by default. However, if the
-     * action has been fired, it means the plugin is active and can control theme mods, so we return
-     * false to prevent default loading.
-     *
-     * @return bool Returns true if the 'brisko_elements_loaded' action has NOT been executed,
-     *              indicating the need to load theme modifications by default. Returns false if
-     *              the action has been fired, indicating that the plugin can control theme mods,
-     *              and we should not load them by default.
-     */
-    private static function maybe()
-    {
-        return ! did_action( 'brisko_elements_loaded' );
     }
 }
