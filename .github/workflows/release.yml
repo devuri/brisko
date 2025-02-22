@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run release-please
-        uses: google-github-actions/release-please-action@v3
+        uses: google-github-actions/release-please-action@v4
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -60,12 +60,12 @@ jobs:
       - name: Build The Artifact
         if: ${{ steps.release.outputs.releases_created }}
         run: |
-          npm run build
+          php bin/zipit
 
       - name: Upload zip to release
         if: ${{ steps.release.outputs.releases_created }}
         uses: AButler/upload-release-assets@v2.0
         with:
-          files: 'brisko.zip'
+          files: './build/brisko.zip'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           release-tag: ${{ steps.release.outputs.tag_name }}
