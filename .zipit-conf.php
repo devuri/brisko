@@ -3,6 +3,8 @@
 return [
     'baseDir' => __DIR__,
     'files' => [
+		'parts',
+		'templates',
         'assets/dist',
 		'template-parts',
 		'vendor',
