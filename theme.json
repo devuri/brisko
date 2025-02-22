@@ -1,0 +1,24 @@
+{
+	"version": 3,
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"settings": {
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "960px",
+			"wideSize": "1140px"
+		},
+		"spacing": {
+			"units": ["px", "rem", "em", "%", "vh", "vw"]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Arial', sans-serif",
+					"name": "Brisko Default Fonts",
+					"slug": "brisko-font"
+				}
+			]
+		},
+		"useRootPaddingAwareAlignments": true
+	}
+}
