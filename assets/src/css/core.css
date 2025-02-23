@@ -112,8 +112,8 @@ html, body {
     overflow: hidden;
 }
 
-.alignwide {
+/* .alignwide {
     max-width: 90vw;
     margin-left: calc(50% - 39vw);
     margin-right: calc(50% - 39vw);
-}
+} */

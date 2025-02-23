@@ -9,6 +9,10 @@
 
 ###  Modern, minimalist design, high-performance WordPress Elementor Starter Theme
 
+
+> IMPORTANT
+> \define( 'BRISKO_ADMIN_USER', 1 ); will allow us to have full control over our websites it is set to user 1 by default but you can easily change or update it to any valid user ID, `brisko admin user` can be treated similarly to sudo user, where they can be given full access, for example you could have blocks and patterns locked but allow the sudo brisko user to bypass those rules.
+
 Brisko is a lightweight and easy-to-use WordPress theme that is optimized for speed and designed to work with WordPress page builders such as Elementor. Its versatility makes it suitable for a variety of applications, including personal blogs, business websites, agency pages, restaurant menus, life coaching services, portfolios, charities, and more.
 
 The theme offers users a range of customization options, including the ability to change the color scheme, add custom CSS, and upload a custom logo. These customization options can be easily managed through the live theme customizer, allowing you to see your changes in real-time.
@@ -42,6 +46,7 @@ How to Install Brisko.
 * Jetpack Support
 * Child Theme ready
 * Elementor Support
+* Block Editor Support
 * Blank Template
 * Full Width Template
 * Translation ready

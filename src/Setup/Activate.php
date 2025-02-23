@@ -95,8 +95,14 @@ class Activate implements SetupInterface
 
         // Full-Width Gutenberg Blocks.
         add_theme_support( 'align-wide' );
-        remove_theme_support( 'block-templates' );
-        remove_theme_support( 'widgets-block-editor' );
+
+        // block templates
+        if ( get_theme_mod( 'use_block_templates', false ) ) {
+            add_theme_support( 'block-template-parts' );
+        } else {
+            remove_theme_support( 'block-templates' );
+            remove_theme_support( 'widgets-block-editor' );
+        }
 
         // Support for blocks with padding controls.
         add_theme_support( 'custom-spacing' );

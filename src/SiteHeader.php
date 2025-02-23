@@ -20,6 +20,12 @@ class SiteHeader
      */
     public function site_header()
     {
+        if ( get_theme_mod( 'use_block_templates', false ) ) {
+            block_template_part( 'header' );
+
+            return;
+        }
+
         // elementor header.
         Element::get()->location( 'header' );
 
