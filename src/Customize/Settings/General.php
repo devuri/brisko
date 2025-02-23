@@ -24,7 +24,7 @@ class General implements SettingsInterface
         // Separator General Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'General', 'brisko' ), self::section() );
 
-		// Underline Content Links.
+        // Underline Content Links.
         $wp_customize->add_setting(
             'use_block_templates',
             [
@@ -41,7 +41,7 @@ class General implements SettingsInterface
                 'use_block_templates',
                 [
                     'label'       => esc_html__( 'Use Block Templates', 'brisko' ),
-					'description' => esc_html__( 'When "Use Block Templates" is enabled, the theme functions in block theme mode, providing full access to the powerful block editor experience. If disabled, you can still utilize block theme features, but the theme will operate in hybrid mode.', 'brisko' ),
+                    'description' => esc_html__( 'When "Use Block Templates" is enabled, the theme functions in block theme mode, providing full access to the powerful block editor experience. If disabled, you can still utilize block theme features, but the theme will operate in hybrid mode.', 'brisko' ),
                     'section'     => self::section(),
                     'type'        => 'light',
                     // light, ios, flat.
@@ -122,8 +122,7 @@ class General implements SettingsInterface
             )
         );
 
-
-		// Load user assets
+        // Load user assets
         $wp_customize->add_setting(
             'enqueue_user_assets',
             [

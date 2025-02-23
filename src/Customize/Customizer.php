@@ -87,9 +87,9 @@ class Customizer
         }
         Advanced::settings( $this->customizer );
 
-		if ( ! get_theme_mod( 'use_block_templates', false ) ) {
-			SelectiveRefresh::settings( $this->customizer );
-		}
+        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+            SelectiveRefresh::settings( $this->customizer );
+        }
 
         // do_action( 'brisko_customizer_settings', $this->customizer );
     }

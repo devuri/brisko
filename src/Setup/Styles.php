@@ -21,9 +21,9 @@ class Styles extends AbstractEnq
     {
         add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
-		if ( ! get_theme_mod( 'use_block_templates', false ) ) {
-			add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
-		}
+        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+            add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
+        }
         add_action( 'after_setup_theme', [ $this, 'setup_theme_editor_styles' ] );
     }
 

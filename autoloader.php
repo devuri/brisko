@@ -74,7 +74,7 @@ class Autoloader
      *
      * @return self
      */
-    public function addNamespace(string $prefix, string $baseDir = null, bool $prepend = false): self
+    public function addNamespace(string $prefix, ?string $baseDir = null, bool $prepend = false): self
     {
         $prefix = trim($prefix, '\\') . '\\';
 

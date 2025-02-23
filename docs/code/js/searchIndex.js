@@ -1046,6 +1046,11 @@ Search.appendIndex(
             "summary": "Register\u0020scripts.",
             "url": "classes/Brisko-AbstractEnq.html#method_register"
         },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aenqueue_user_assets\u0028\u0029",
+            "name": "enqueue_user_assets",
+            "summary": "",
+            "url": "classes/Brisko-AbstractEnq.html#method_enqueue_user_assets"
+        },                {
             "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aregister_script\u0028\u0029",
             "name": "register_script",
             "summary": "Register\u0020a\u0020new\u0020script.",

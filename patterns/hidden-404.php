@@ -2,7 +2,7 @@
 /**
  * Title: Hidden 404
  * Slug: brisko/hidden-404
- * Inserter: no
+ * Inserter: no.
  */
 ?>
 <!-- wp:spacer {"height":"var(--wp--preset--spacing--30)"} -->

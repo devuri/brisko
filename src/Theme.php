@@ -63,10 +63,10 @@ class Theme
         $this->jetpack->init();
         $this->customizer->init();
 
-		// define sudo user.
-		if ( ! defined( 'BRISKO_ADMIN_USER' ) ) {
-			\define( 'BRISKO_ADMIN_USER', 1 );
-		}
+        // define sudo user.
+        if ( ! \defined( 'BRISKO_ADMIN_USER' ) ) {
+            \define( 'BRISKO_ADMIN_USER', 1 );
+        }
 
         /*
          * Disable wpautop.
@@ -96,34 +96,34 @@ class Theme
             );
         }
 
-		/**
-		 * Filters the block editor settings to restrict certain capabilities for non-admin users.
-		 *
-		 * This filter modifies the block editor settings to disable block locking and code editing.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @param array  $settings Block editor settings.
-		 * @param string $context  The editor context (e.g., 'post', 'site').
-		 *
-		 * @return array Modified block editor settings.
-		 */
-		add_filter(
+        /*
+         * Filters the block editor settings to restrict certain capabilities for non-admin users.
+         *
+         * This filter modifies the block editor settings to disable block locking and code editing.
+         *
+         * @since 1.0.0
+         *
+         * @param array  $settings Block editor settings.
+         * @param string $context  The editor context (e.g., 'post', 'site').
+         *
+         * @return array Modified block editor settings.
+         */
+        add_filter(
             'block_editor_settings_all',
             function ( $settings, $context ) {
-		    $admin_user_id   = defined( 'BRISKO_ADMIN_USER' ) && is_numeric( BRISKO_ADMIN_USER ) ? (int) BRISKO_ADMIN_USER : null;
-		    $current_user_id = get_current_user_id();
+                $admin_user_id   = \defined( 'BRISKO_ADMIN_USER' ) && is_numeric( BRISKO_ADMIN_USER ) ? (int) BRISKO_ADMIN_USER : null;
+                $current_user_id = get_current_user_id();
 
-			if ( current_user_can( 'edit_theme_options' ) && $current_user_id === $admin_user_id ) {
-					return $settings;
-		    }
+                if ( current_user_can( 'edit_theme_options' ) && $current_user_id === $admin_user_id ) {
+                    return $settings;
+                }
 
-		    if ( $current_user_id !== $admin_user_id ) {
-					$settings['canLockBlocks']      = false;
-					$settings['codeEditingEnabled'] = false;
-		    }
+                if ( $current_user_id !== $admin_user_id ) {
+                    $settings['canLockBlocks']      = false;
+                    $settings['codeEditingEnabled'] = false;
+                }
 
-		    return $settings;
+                return $settings;
             },
             10,
             2

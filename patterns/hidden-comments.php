@@ -2,7 +2,7 @@
 /**
  * Title: Hidden Comments
  * Slug: brisko/hidden-comments
- * Inserter: no
+ * Inserter: no.
  */
 ?>
 <!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->

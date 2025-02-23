@@ -15,12 +15,12 @@
 		<!-- wp:paragraph {"align":"right"} -->
 		<p class="has-text-align-right">
 		<?php
-		printf(
-			/* Translators: WordPress link. */
-			esc_html__( 'Powered by %s', 'brisko' ),
-			'<a href="' . esc_url( __( 'https://wpbrisko.com', 'brisko' ) ) . '" rel="nofollow">Brisko WordPress Theme</a>'
-		)
-		?>
+        printf(
+            // Translators: WordPress link.
+            esc_html__( 'Powered by %s', 'brisko' ),
+            '<a href="' . esc_url( __( 'https://wpbrisko.com', 'brisko' ) ) . '" rel="nofollow">Brisko WordPress Theme</a>'
+        );
+?>
 		</p>
 		<!-- /wp:paragraph -->
 	</div>

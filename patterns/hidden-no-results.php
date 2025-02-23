@@ -2,7 +2,7 @@
 /**
  * Title: Hidden No Results Content
  * Slug: brisko/hidden-no-results-content
- * Inserter: no
+ * Inserter: no.
  */
 ?>
 <!-- wp:paragraph -->
