@@ -40,9 +40,10 @@ class General implements SettingsInterface
                 $wp_customize,
                 'use_block_templates',
                 [
-                    'label'   => esc_html__( 'Use Block Templates', 'brisko' ),
-                    'section' => self::section(),
-                    'type'    => 'light',
+                    'label'       => esc_html__( 'Use Block Templates', 'brisko' ),
+					'description' => esc_html__( 'When "Use Block Templates" is enabled, the theme functions in block theme mode, providing full access to the powerful block editor experience. If disabled, you can still utilize block theme features, but the theme will operate in hybrid mode.', 'brisko' ),
+                    'section'     => self::section(),
+                    'type'        => 'light',
                     // light, ios, flat.
                 ]
             )
