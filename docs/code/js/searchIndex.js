@@ -811,11 +811,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Styles.html#method___construct"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Ainit\u0028\u0029",
-            "name": "init",
-            "summary": "Styles.",
-            "url": "classes/Brisko-Setup-Styles.html#method_init"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Asetup_theme_editor_styles\u0028\u0029",
             "name": "setup_theme_editor_styles",
             "summary": "",
@@ -1045,6 +1040,16 @@ Search.appendIndex(
             "name": "register",
             "summary": "Register\u0020scripts.",
             "url": "classes/Brisko-AbstractEnq.html#method_register"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Acustom_css\u0028\u0029",
+            "name": "custom_css",
+            "summary": "Custom\u0020Theme\u0020styles.",
+            "url": "classes/Brisko-AbstractEnq.html#method_custom_css"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Asetup_theme_editor_styles\u0028\u0029",
+            "name": "setup_theme_editor_styles",
+            "summary": "",
+            "url": "classes/Brisko-AbstractEnq.html#method_setup_theme_editor_styles"
         },                {
             "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aenqueue_user_assets\u0028\u0029",
             "name": "enqueue_user_assets",

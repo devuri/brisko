@@ -12,31 +12,15 @@ class Styles extends AbstractEnq
         $this->style_files = $this->set_css_files();
     }
 
-    /**
-     * Styles.
-     *
-     * @return void
-     */
-    public function init()
-    {
-        add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
-        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
-        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
-            add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
-        }
-        add_action( 'after_setup_theme', [ $this, 'setup_theme_editor_styles' ] );
-    }
-
     public function setup_theme_editor_styles()
     {
-        add_theme_support( 'editor-styles' );
+        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+            $this->editor_style( 'milligram', 'enable_milligram' );
+            $this->editor_style( 'uikit', 'enable_uikit' );
+            $this->editor_style( 'underscores', 'enable_underscores', self::maybe() );
+            $this->editor_style( 'brisko', 'enable_brisko', self::maybe() );
+        }
 
-        $this->editor_style( 'milligram', 'enable_milligram' );
-        $this->editor_style( 'uikit', 'enable_uikit' );
-
-        // theme.
-        $this->editor_style( 'underscores', 'enable_underscores', self::maybe() );
-        $this->editor_style( 'brisko', 'enable_brisko', self::maybe() );
         $this->editor_style( self::CORE_CSS, 'enable_core', true );
     }
 
@@ -63,26 +47,20 @@ class Styles extends AbstractEnq
      */
     public function enqueue()
     {
-        self::enqueue_style( 'milligram', 'enable_milligram' );
-        self::enqueue_style( 'uikit', 'enable_uikit' );
+        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+            self::enqueue_style( 'milligram', 'enable_milligram' );
+            self::enqueue_style( 'uikit', 'enable_uikit' );
+            self::enqueue_style( 'underscores', 'enable_underscores', self::maybe() );
+            self::enqueue_style( 'brisko', 'enable_brisko', self::maybe() );
+        }
 
-        // bootstrap.
-        self::enqueue_style( 'bootstrap', 'enable_bootstrap', self::maybe() );
-        self::enqueue_style( 'bootstrap-grid', 'enable_bootstrap_grid', self::maybe() );
-
-        // theme.
-        self::enqueue_style( 'underscores', 'enable_underscores', self::maybe() );
-        self::enqueue_style( 'brisko', 'enable_brisko', self::maybe() );
         self::enqueue_style( self::CORE_CSS, 'enable_core', true );
-
-        // 'normalizer'
         self::enqueue_style( 'normalizer', self::maybe() );
 
-        // custom styles.
-        wp_enqueue_style( 'custom-styles' );
-
-        // rtl .
-        wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
+        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+            wp_enqueue_style( 'custom-styles' );
+            wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
+        }
     }
 
     /**

@@ -21,6 +21,10 @@ abstract class AbstractEnq implements EnqueueInterface
     {
         add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
+        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+            add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
+        }
+        add_action( 'after_setup_theme', [ $this, 'setup_theme_editor_styles' ] );
 
         if ( get_theme_mod( 'enqueue_user_assets', false ) ) {
             add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_user_assets' ] );
@@ -104,6 +108,20 @@ abstract class AbstractEnq implements EnqueueInterface
      * Register scripts.
      */
     abstract public function register();
+
+    /**
+     * Custom Theme styles.
+     */
+    public function custom_css()
+    {
+        // implemented in styles class
+    }
+
+    public function setup_theme_editor_styles()
+    {
+        // implemented in styles class
+    }
+
 
     public function enqueue_user_assets()
     {

@@ -5,8 +5,10 @@ return [
     'files' => [
 		'parts',
 		'patterns',
+		'styles',
 		'templates',
         'assets/dist',
+        'assets/fonts',
 		'template-parts',
         'src',
 
