@@ -121,5 +121,31 @@ class General implements SettingsInterface
                 ]
             )
         );
+
+
+		// Load user assets
+        $wp_customize->add_setting(
+            'enqueue_user_assets',
+            [
+                'default'           => false,
+                'capability'        => self::$capability,
+                'transport'         => self::$transport,
+                'sanitize_callback' => 'brisko_sanitize_checkbox',
+            ]
+        );
+
+        $wp_customize->add_control(
+            new ToggleControl(
+                $wp_customize,
+                'enqueue_user_assets',
+                [
+                    'label'       => esc_html__( 'Enqueue Extra assets', 'brisko' ),
+                    'description' => esc_html__( 'Allows for extra styles and scripts in the wp-content/brisko/assets directory, the theme automatically load them if they exist.', 'brisko' ),
+                    'section'     => self::section(),
+                    'type'        => 'light',
+                    // light, ios, flat.
+                ]
+            )
+        );
     }
 }
