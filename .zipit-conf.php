@@ -7,11 +7,11 @@ return [
 		'templates',
         'assets/dist',
 		'template-parts',
-		'vendor',
         'src',
 
 		// theme files
 		'404.php',
+		'autoloader.php',
 		'archive.php',
 		'comments.php',
 		'footer.php',

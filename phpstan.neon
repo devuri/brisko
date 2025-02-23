@@ -11,6 +11,7 @@ parameters:
     treatPhpDocTypesAsCertain: false
     checkMissingIterableValueType: false
     excludePaths:
+        - autoloader.php
         - src/inc/wp-body-shim.php
         - tmp/*
         - node_modules/*
