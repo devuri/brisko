@@ -18,6 +18,11 @@ class Footer
      */
     public function site_footer()
     {
+		if ( get_theme_mod( 'use_block_templates', false ) ) {
+			block_template_part( 'footer' );
+			return;
+		}
+
         // elementor footer.
         Element::get()->location( 'footer' );
 

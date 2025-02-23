@@ -24,6 +24,30 @@ class General implements SettingsInterface
         // Separator General Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'General', 'brisko' ), self::section() );
 
+		// Underline Content Links.
+        $wp_customize->add_setting(
+            'use_block_templates',
+            [
+                'default'           => false,
+                'capability'        => self::$capability,
+                'transport'         => self::$transport,
+                'sanitize_callback' => 'brisko_sanitize_checkbox',
+            ]
+        );
+
+        $wp_customize->add_control(
+            new ToggleControl(
+                $wp_customize,
+                'use_block_templates',
+                [
+                    'label'   => esc_html__( 'Use Block Templates', 'brisko' ),
+                    'section' => self::section(),
+                    'type'    => 'light',
+                    // light, ios, flat.
+                ]
+            )
+        );
+
         // Link Color
         $wp_customize->add_setting(
             'link_color',

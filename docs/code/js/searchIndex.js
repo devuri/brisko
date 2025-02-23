@@ -341,16 +341,6 @@ Search.appendIndex(
             "summary": "Lets\u0020build\u0020out\u0020the\u0020customizer\u0020settings.",
             "url": "classes/Brisko-Customize-Settings-Pages.html#method_settings"
         },                {
-            "fqsen": "\\Brisko\\Customize\\Settings\\Pro",
-            "name": "Pro",
-            "summary": "Get\u0020the\u0020Brisko\u0020Pro\u0020Add\u002Don.",
-            "url": "classes/Brisko-Customize-Settings-Pro.html"
-        },                {
-            "fqsen": "\\Brisko\\Customize\\Settings\\Pro\u003A\u003Asettings\u0028\u0029",
-            "name": "settings",
-            "summary": "Lets\u0020build\u0020out\u0020the\u0020customizer\u0020settings.",
-            "url": "classes/Brisko-Customize-Settings-Pro.html#method_settings"
-        },                {
             "fqsen": "\\Brisko\\Customize\\Settings\\SelectiveRefresh",
             "name": "SelectiveRefresh",
             "summary": "",
@@ -885,6 +875,11 @@ Search.appendIndex(
             "name": "archive_header",
             "summary": "Header\u0020title\u0020section.",
             "url": "classes/Brisko-SiteHeader.html#method_archive_header"
+        },                {
+            "fqsen": "\\BRISKO_ADMIN_USER",
+            "name": "BRISKO_ADMIN_USER",
+            "summary": "",
+            "url": "namespaces/default.html#constant_BRISKO_ADMIN_USER"
         },                {
             "fqsen": "\\Brisko\\Theme",
             "name": "Theme",

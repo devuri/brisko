@@ -25,7 +25,6 @@ class Customizer
     {
         // sections to register
         $this->sections = [
-            'pro'        => esc_html__( 'Pro Elements' ),
             'general'    => esc_html__( 'General' ),
             'layout'     => esc_html__( 'Layout' ),
             'navigation' => esc_html__( 'Navigation' ),
@@ -78,14 +77,19 @@ class Customizer
         } // foreach
 
         General::settings( $this->customizer );
-        Layout::settings( $this->customizer );
-        Navigation::settings( $this->customizer );
-        Header::settings( $this->customizer );
-        Pages::settings( $this->customizer );
-        Blog::settings( $this->customizer );
-        Footer::settings( $this->customizer );
+        if (! get_theme_mod( 'use_block_templates', false ) ) {
+            Layout::settings( $this->customizer );
+            Navigation::settings( $this->customizer );
+            Header::settings( $this->customizer );
+            Pages::settings( $this->customizer );
+            Blog::settings( $this->customizer );
+            Footer::settings( $this->customizer );
+        }
         Advanced::settings( $this->customizer );
-        SelectiveRefresh::settings( $this->customizer );
+
+		if (! get_theme_mod( 'use_block_templates', false ) ) {
+			SelectiveRefresh::settings( $this->customizer );
+		}
 
         // do_action( 'brisko_customizer_settings', $this->customizer );
     }

@@ -4,6 +4,7 @@ return [
     'baseDir' => __DIR__,
     'files' => [
 		'parts',
+		'patterns',
 		'templates',
         'assets/dist',
 		'template-parts',
