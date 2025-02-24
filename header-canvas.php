@@ -17,6 +17,7 @@
 </head>
 <body <?php body_class( 'brisko-font brisko-font-style' ); ?>>
 <?php wp_body_open(); ?>
+<?php do_action( 'brisko_after_body_open' ); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary">
 		<?php esc_html_e( 'Skip to content', 'brisko' ); ?>

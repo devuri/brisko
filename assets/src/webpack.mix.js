@@ -38,6 +38,9 @@ mix.js(js_assets + 'customizer.js', dist + 'js/customizer.min.js')
 // milligram.
 mix.copy('assets/src/milligram/', 'assets/dist/milligram/');
 
+// fonts
+mix.copy('assets/src/fonts/', 'assets/fonts/');
+
 // uikit.
 mix.copy('assets/src/uikit/', 'assets/dist/uikit/');
 

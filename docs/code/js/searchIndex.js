@@ -301,6 +301,11 @@ Search.appendIndex(
             "summary": "Lets\u0020build\u0020out\u0020the\u0020customizer\u0020settings.",
             "url": "classes/Brisko-Customize-Settings-General.html#method_settings"
         },                {
+            "fqsen": "\\Brisko\\Customize\\Settings\\General\u003A\u003Ahybrid_mode_settings\u0028\u0029",
+            "name": "hybrid_mode_settings",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Settings-General.html#method_hybrid_mode_settings"
+        },                {
             "fqsen": "\\Brisko\\Customize\\Settings\\Header",
             "name": "Header",
             "summary": "",
@@ -376,6 +381,16 @@ Search.appendIndex(
             "summary": "Brisko\u0020Section.",
             "url": "classes/Brisko-Customize-Traits-SettingsTrait.html#method_install_plugin"
         },                {
+            "fqsen": "\\Brisko\\Customize\\Traits\\SettingsTrait\u003A\u003Ainfo_css_style\u0028\u0029",
+            "name": "info_css_style",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Traits-SettingsTrait.html#method_info_css_style"
+        },                {
+            "fqsen": "\\Brisko\\Customize\\Traits\\SettingsTrait\u003A\u003Ainfo_note\u0028\u0029",
+            "name": "info_note",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Traits-SettingsTrait.html#method_info_note"
+        },                {
             "fqsen": "\\Brisko\\Customize\\Traits\\SettingsTrait\u003A\u003A\u0024transport",
             "name": "transport",
             "summary": "Customizer\u0020transport.",
@@ -420,6 +435,11 @@ Search.appendIndex(
             "name": "poweredby",
             "summary": "Brisko\u0020Theme\u0020credit\u0020powered\u0020by.",
             "url": "classes/Brisko-Footer.html#method_poweredby"
+        },                {
+            "fqsen": "\\Brisko\\Footer\u003A\u003Ablock_footer\u0028\u0029",
+            "name": "block_footer",
+            "summary": "",
+            "url": "classes/Brisko-Footer.html#method_block_footer"
         },                {
             "fqsen": "\\brisko_before_header\u0028\u0029",
             "name": "brisko_before_header",
@@ -811,11 +831,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Brisko-Setup-Styles.html#method___construct"
         },                {
-            "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Ainit\u0028\u0029",
-            "name": "init",
-            "summary": "Styles.",
-            "url": "classes/Brisko-Setup-Styles.html#method_init"
-        },                {
             "fqsen": "\\Brisko\\Setup\\Styles\u003A\u003Asetup_theme_editor_styles\u0028\u0029",
             "name": "setup_theme_editor_styles",
             "summary": "",
@@ -870,6 +885,11 @@ Search.appendIndex(
             "name": "archive",
             "summary": "Archive\u0020Header.",
             "url": "classes/Brisko-SiteHeader.html#method_archive"
+        },                {
+            "fqsen": "\\Brisko\\SiteHeader\u003A\u003Ablock_header\u0028\u0029",
+            "name": "block_header",
+            "summary": "",
+            "url": "classes/Brisko-SiteHeader.html#method_block_header"
         },                {
             "fqsen": "\\Brisko\\SiteHeader\u003A\u003Aarchive_header\u0028\u0029",
             "name": "archive_header",
@@ -1045,6 +1065,16 @@ Search.appendIndex(
             "name": "register",
             "summary": "Register\u0020scripts.",
             "url": "classes/Brisko-AbstractEnq.html#method_register"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Acustom_css\u0028\u0029",
+            "name": "custom_css",
+            "summary": "Custom\u0020Theme\u0020styles.",
+            "url": "classes/Brisko-AbstractEnq.html#method_custom_css"
+        },                {
+            "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Asetup_theme_editor_styles\u0028\u0029",
+            "name": "setup_theme_editor_styles",
+            "summary": "",
+            "url": "classes/Brisko-AbstractEnq.html#method_setup_theme_editor_styles"
         },                {
             "fqsen": "\\Brisko\\AbstractEnq\u003A\u003Aenqueue_user_assets\u0028\u0029",
             "name": "enqueue_user_assets",

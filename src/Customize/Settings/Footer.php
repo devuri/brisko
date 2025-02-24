@@ -98,6 +98,16 @@ class Footer implements SettingsInterface
             'Brisko Elements Advanced Options'
         );
 
+        if ( get_theme_mod( 'use_block_footer', false ) ) {
+            self::info_note(
+                $wp_customize,
+                'block_footer',
+                __( '<strong>Note:</strong> Some Settings are disabled when "Enable Block Footer Area" is set.', 'textdomain' )
+            );
+
+            return;
+        }
+
         ( new Control() )->header_title(
             $wp_customize,
             esc_html__( 'Advanced Footer Options', 'brisko' ),

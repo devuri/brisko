@@ -8,6 +8,10 @@ class Scripts extends AbstractEnq
 {
     public function enqueue()
     {
+        if ( get_theme_mod( 'use_block_templates', false ) ) {
+            return;
+        }
+
         self::enqueue_script( 'uikitjs', 'enable_uikit_js' );
         self::enqueue_script( 'uikit-icons', 'enable_uikit_icons_js' );
 

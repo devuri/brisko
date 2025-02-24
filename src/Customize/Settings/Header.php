@@ -21,6 +21,17 @@ class Header implements SettingsInterface
     {
         // Separator Header Image Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'Header Image', 'brisko' ), self::section() );
+
+        if ( get_theme_mod( 'use_block_header', false ) ) {
+            self::info_note(
+                $wp_customize,
+                'block_header',
+                __( '<strong>Note:</strong> Some Settings are disabled when "Enable Block Header Area" is set', 'brisko' )
+            );
+
+            return;
+        }
+
         // Header Image
         $wp_customize->add_setting(
             'header_image_display',

@@ -17,5 +17,7 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<?php do_action( 'brisko_after_body_open' ); ?>
 <div id="page" class="site">
+	<div class="wp-site-blocks">
 <?php brisko_header()->site_header(); ?>

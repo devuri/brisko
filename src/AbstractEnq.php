@@ -21,6 +21,10 @@ abstract class AbstractEnq implements EnqueueInterface
     {
         add_action( 'wp_enqueue_scripts', [ $this, 'register' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
+        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+            add_action( 'wp_enqueue_scripts', [ $this, 'custom_css' ] );
+        }
+        add_action( 'after_setup_theme', [ $this, 'setup_theme_editor_styles' ] );
 
         if ( get_theme_mod( 'enqueue_user_assets', false ) ) {
             add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_user_assets' ] );
@@ -105,39 +109,64 @@ abstract class AbstractEnq implements EnqueueInterface
      */
     abstract public function register();
 
+    /**
+     * Custom Theme styles.
+     */
+    public function custom_css()
+    {
+        // implemented in styles class
+    }
+
+    public function setup_theme_editor_styles()
+    {
+        // implemented in styles class
+    }
+
     public function enqueue_user_assets()
     {
-        $user_assets_dir = WP_CONTENT_DIR . '/brisko/assets/';
-        $user_assets_url = content_url( '/brisko/assets/' );
+        $user_assets_base_dir = WP_CONTENT_DIR . '/brisko_assets/';
+        $user_assets_base_url = content_url( '/brisko_assets/' );
 
         if ( ! get_theme_mod( 'enqueue_user_assets', false ) ) {
             return;
         }
 
-        // Allowed file types
-        $allowed_extensions = [ 'css', 'js' ];
+        $asset_types = [
+            'css' => 'css',
+            'js'  => 'js',
+        ];
 
-        // Check if the directory exists
-        if ( is_dir( $user_assets_dir ) ) {
-            $files = scandir( $user_assets_dir );
-            foreach ( $files as $file ) {
-                $file_path = $user_assets_dir . $file;
-                $file_url  = $user_assets_url . $file;
+        foreach ( $asset_types as $type => $subdir ) {
+            $dir_path = $user_assets_base_dir . $subdir . '/';
+            $dir_url  = $user_assets_base_url . $subdir . '/';
 
-                // Get file extension
-                $file_ext = pathinfo( $file, PATHINFO_EXTENSION );
+            // @codingStandardsIgnoreLine
+            if ( is_dir( $dir_path ) && ( $files = scandir( $dir_path ) ) ) {
+                foreach ( $files as $file ) {
+                    if ( '.' === $file || '..' === $file ) {
+                        continue;
+                    }
 
-                // Only process allowed file types
-                if ( \in_array( $file_ext, $allowed_extensions, true ) && is_file( $file_path ) ) {
-                    if ( 'css' === $file_ext ) {
-                        wp_enqueue_style( 'brisko-site-' . sanitize_title( $file ), $file_url, [], filemtime( $file_path ) );
-                    } elseif ( 'js' === $file_ext ) {
-                        wp_enqueue_script( 'brisko-site-' . sanitize_title( $file ), $file_url, [], filemtime( $file_path ), true );
+                    $file_path = $dir_path . $file;
+                    $file_url  = $dir_url . $file;
+                    $file_ext  = pathinfo( $file, PATHINFO_EXTENSION );
+
+                    if ( is_file( $file_path ) && $file_ext === $type ) {
+                        $handle  = 'brisko-site-' . sanitize_title( $file );
+                        $version = filemtime( $file_path );
+                        $deps    = ( 'js' === $file_ext ) ? [ 'jquery' ] : [];
+
+                        if ( 'css' === $file_ext ) {
+                            wp_enqueue_style( $handle, $file_url, [], $version );
+                        } elseif ( 'js' === $file_ext ) {
+                            wp_enqueue_script( $handle, $file_url, $deps, $version, true );
+                        }
                     }
                 }
             }
         }
     }
+
 
     /**
      * Register a new script.

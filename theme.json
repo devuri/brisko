@@ -10,6 +10,187 @@
 		"spacing": {
 			"units": ["px", "rem", "em", "%", "vh", "vw"]
 		},
+		"typography": {
+			"dropCap": false,
+			"fluid": true,
+			"fontFamilies": [
+				{
+					"fontFace": [
+						{
+							"fontFamily": "DM Sans",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/dm-sans/DMSans-Regular.woff2"
+							]
+						},
+						{
+							"fontFamily": "DM Sans",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/dm-sans/DMSans-Regular-Italic.woff2"
+							]
+						},
+						{
+							"fontFamily": "DM Sans",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/dm-sans/DMSans-Bold.woff2"
+							]
+						},
+						{
+							"fontFamily": "DM Sans",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/dm-sans/DMSans-Bold-Italic.woff2"
+							]
+						}
+					],
+					"fontFamily": "\"DM Sans\", sans-serif",
+					"name": "DM Sans",
+					"slug": "dm-sans"
+				},
+				{
+					"fontFace": [
+						{
+							"fontDisplay": "block",
+							"fontFamily": "IBM Plex Mono",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "300",
+							"src": [
+								"file:./assets/fonts/ibm-plex-mono/IBMPlexMono-Light.woff2"
+							]
+						},
+						{
+							"fontDisplay": "block",
+							"fontFamily": "IBM Plex Mono",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/ibm-plex-mono/IBMPlexMono-Regular.woff2"
+							]
+						},
+						{
+							"fontDisplay": "block",
+							"fontFamily": "IBM Plex Mono",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/ibm-plex-mono/IBMPlexMono-Italic.woff2"
+							]
+						},
+						{
+							"fontDisplay": "block",
+							"fontFamily": "IBM Plex Mono",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/ibm-plex-mono/IBMPlexMono-Bold.woff2"
+							]
+						}
+					],
+					"fontFamily": "'IBM Plex Mono', monospace",
+					"name": "IBM Plex Mono",
+					"slug": "ibm-plex-mono"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Inter",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "200 900",
+							"src": [
+								"file:./assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf"
+							]
+						}
+					],
+					"fontFamily": "\"Inter\", sans-serif",
+					"name": "Inter",
+					"slug": "inter"
+				},
+				{
+					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+					"name": "System Font",
+					"slug": "system-font"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "200 900",
+							"src": [
+								"file:./assets/fonts/source-serif-pro/SourceSerif4Variable-Roman.ttf.woff2"
+							]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "200 900",
+							"src": [
+								"file:./assets/fonts/source-serif-pro/SourceSerif4Variable-Italic.ttf.woff2"
+							]
+						}
+					],
+					"fontFamily": "\"Source Serif Pro\", serif",
+					"name": "Source Serif Pro",
+					"slug": "source-serif-pro"
+				}
+			],
+			"fontSizes": [
+				{
+					"fluid": {
+						"min": "0.875rem",
+						"max": "1rem"
+					},
+					"size": "1rem",
+					"slug": "small"
+				},
+				{
+					"fluid": {
+						"min": "1rem",
+						"max": "1.125rem"
+					},
+					"size": "1.125rem",
+					"slug": "medium"
+				},
+				{
+					"fluid": {
+						"min": "1.75rem",
+						"max": "1.875rem"
+					},
+					"size": "1.75rem",
+					"slug": "large"
+				},
+				{
+					"fluid": false,
+					"size": "2.25rem",
+					"slug": "x-large"
+				},
+				{
+					"fluid": {
+						"min": "6.1rem",
+						"max": "10rem"
+					},
+					"size": "10rem",
+					"slug": "xx-large"
+				}
+			]
+		},
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {

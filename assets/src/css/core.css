@@ -8,6 +8,10 @@ html, body {
 	transition: all 0.25s ease-in-out;
 }
 
+.wp-site-blocks {
+    padding-bottom: 0px;
+}
+
 /* body a {
     color: #000000;
     text-decoration: underline;
@@ -31,7 +35,8 @@ html, body {
 
 
 .post, .page {
-    margin: 0 0 1em;
+    margin: 0px;
+    /* margin: 0 0 1em; */
 }
 
 .sticky {
