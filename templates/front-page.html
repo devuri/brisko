@@ -1,70 +1,89 @@
-
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"brisko","tagName":"header"} /-->
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--70)">
+<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--70)"><!-- wp:group {"lock":{"move":true,"remove":false},"metadata":{"name":"Hero"},"align":"full","gradient":"very-light-gray-to-cyan-bluish-gray","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-very-light-gray-to-cyan-bluish-gray-gradient-background has-background"><!-- wp:columns {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}}} -->
+<div class="wp-block-columns" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"4em"}}} -->
+<h1 class="wp-block-heading has-text-align-center" style="font-size:4em">Empowering Brand<br>with Cutting-Edge<br><em>Design</em>&nbsp;Solutions</h1>
+<!-- /wp:heading -->
 
-<!-- wp:group {"tagName":"section","align":"full","className":"hero-section"} -->
-<section class="hero-section">
-    <!-- wp:heading {"level":1,"textAlign":"center"} -->
-    <h1 class="has-text-align-center">Welcome to Our Website</h1>
-    <!-- /wp:heading -->
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"600px"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"align":"center","fontSize":"small","fontFamily":"dm-sans"} -->
+<p class="has-text-align-center has-dm-sans-font-family has-small-font-size">Bring your vision to life with Rivor. We seamlessly merge design, strategy, and technology to craft impactful digital experiences that elevate your brand.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
-    <!-- wp:paragraph {"align":"center"} -->
-    <p class="has-text-align-center">Your tagline or short introduction goes here.</p>
-    <!-- /wp:paragraph -->
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"white","textColor":"contrast","className":"is-style-fill","style":{"border":{"radius":"4px"},"typography":{"textTransform":"uppercase"}},"fontFamily":"dm-sans"} -->
+<div class="wp-block-button is-style-fill has-dm-sans-font-family" style="text-transform:uppercase"><a class="wp-block-button__link has-contrast-color has-white-background-color has-text-color has-background wp-element-button" style="border-radius:4px">Get Started</a></div>
+<!-- /wp:button -->
 
-    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-    <div class="wp-block-buttons">
-        <!-- wp:button {"backgroundColor":"primary","textColor":"white"} -->
-        <div class="wp-block-button"><a class="wp-block-button__link has-white-color has-primary-background-color has-text-color has-background">Get Started</a></div>
-        <!-- /wp:button -->
-    </div>
-    <!-- /wp:buttons -->
-</section>
+<!-- wp:button {"backgroundColor":"contrast","textColor":"white","className":"is-style-fill","style":{"border":{"radius":"4px"},"typography":{"textTransform":"uppercase"}},"fontFamily":"dm-sans"} -->
+<div class="wp-block-button is-style-fill has-dm-sans-font-family" style="text-transform:uppercase"><a class="wp-block-button__link has-white-color has-contrast-background-color has-text-color has-background wp-element-button" style="border-radius:4px">Our Services</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","metadata":{"name":"Solutions"},"align":"full","style":{"spacing":{"margin":{"top":"0px"}}},"backgroundColor":"white","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-white-background-color has-background" style="margin-top:0px"><!-- wp:columns {"verticalAlignment":null,"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}}} -->
+<div class="wp-block-columns" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"4em"}}} -->
+<h1 class="wp-block-heading has-text-align-center" style="font-size:4em">Discover our Solutions</h1>
+<!-- /wp:heading --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"bottom"} -->
+<div class="wp-block-column is-vertically-aligned-bottom"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
+<div class="wp-block-group"><!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right","verticalAlignment":"bottom"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"contrast","textColor":"white","className":"is-style-fill","style":{"border":{"radius":"4px"},"typography":{"textTransform":"uppercase"}},"fontFamily":"dm-sans"} -->
+<div class="wp-block-button is-style-fill has-dm-sans-font-family" style="text-transform:uppercase"><a class="wp-block-button__link has-white-color has-contrast-background-color has-text-color has-background wp-element-button" style="border-radius:4px">>>   View all services</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","className":"cta-section","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}},"color":{"gradient":"linear-gradient(268deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)"}},"textColor":"contrast"} -->
+<section class="wp-block-group alignfull cta-section has-contrast-color has-text-color has-background has-link-color" style="background:linear-gradient(268deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)"><!-- wp:heading {"textAlign":"center"} -->
+<h2 class="wp-block-heading has-text-align-center">Join Us Today</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"textTransform":"capitalize"}},"fontFamily":"dm-sans"} -->
+<p class="has-text-align-center has-dm-sans-font-family" style="text-transform:capitalize">Sign up to receive updates and exclusives</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"white","textColor":"contrast","className":"is-style-fill","style":{"border":{"radius":"4px"},"typography":{"textTransform":"uppercase"}},"fontFamily":"dm-sans"} -->
+<div class="wp-block-button is-style-fill has-dm-sans-font-family" style="text-transform:uppercase"><a class="wp-block-button__link has-contrast-color has-white-background-color has-text-color has-background wp-element-button" style="border-radius:4px">Sign Up</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></section>
 <!-- /wp:group -->
 
 <!-- wp:group {"tagName":"section","align":"full","className":"featured-content"} -->
-<section class="featured-content">
-    <!-- wp:heading {"level":2,"textAlign":"center"} -->
-    <h2 class="has-text-align-center">Featured Posts</h2>
-    <!-- /wp:heading -->
-
-    <!-- wp:query {"query":{"perPage":3,"orderBy":"date","order":"desc"}} -->
-    <div class="wp-block-query">
-        <!-- wp:post-template -->
-        <article>
-            <!-- wp:post-title {"isLink":true} /-->
-            <!-- wp:post-excerpt /-->
-            <!-- wp:post-date /-->
-        </article>
-        <!-- /wp:post-template -->
-    </div>
-    <!-- /wp:query -->
-</section>
+<section class="wp-block-group alignfull featured-content"><!-- wp:heading {"textAlign":"center"} -->
+<h2 class="wp-block-heading has-text-align-center">Featured Posts</h2>
+<!-- /wp:heading --></section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","align":"full","className":"cta-section"} -->
-<section class="cta-section">
-    <!-- wp:heading {"level":2,"textAlign":"center"} -->
-    <h2 class="has-text-align-center">Join Us Today</h2>
-    <!-- /wp:heading -->
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
 
-    <!-- wp:paragraph {"align":"center"} -->
-    <p class="has-text-align-center">Sign up to receive updates and exclusive content.</p>
-    <!-- /wp:paragraph -->
+<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:query {"queryId":22,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"metadata":{"categories":["posts"],"patternName":"core/query-grid-posts","name":"Grid"},"align":"wide"} -->
+<div class="wp-block-query alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":"3"}} -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px","right":"30px","bottom":"30px","left":"30px"}}},"layout":{"inherit":false}} -->
+<div class="wp-block-group" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px"><!-- wp:post-featured-image /-->
 
-    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-    <div class="wp-block-buttons">
-        <!-- wp:button {"backgroundColor":"secondary","textColor":"white"} -->
-        <div class="wp-block-button"><a class="wp-block-button__link has-white-color has-secondary-background-color has-text-color has-background">Sign Up</a></div>
-        <!-- /wp:button -->
-    </div>
-    <!-- /wp:buttons -->
-</section>
+<!-- wp:post-title {"isLink":true} /--></div>
+<!-- /wp:group -->
+<!-- /wp:post-template --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></main>
 <!-- /wp:group -->
 
-</main>
-<!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"brisko","tagName":"footer"} /-->
