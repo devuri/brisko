@@ -102,7 +102,7 @@ class Footer implements SettingsInterface
             self::info_note(
                 $wp_customize,
                 'block_footer',
-                __( '<strong>Note:</strong> Some Settings are disabled when "Enable Block Footer Area" is set.', 'textdomain' )
+                __( '<strong>Note:</strong> Some Settings are disabled when "Enable Block Footer Area" is set.', 'brisko' )
             );
 
             return;
