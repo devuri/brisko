@@ -34,6 +34,16 @@ class Advanced implements SettingsInterface
             esc_html__( 'Stylesheets, JavaScript and other Settings.', 'brisko' )
         );
 
+        if ( get_theme_mod( 'use_block_templates', false ) ) {
+            self::info_note(
+                $wp_customize,
+                'block_advanced',
+                __( '<strong>Note:</strong> Some Advanced Settings are disabled when "Use Block Templates" is set', 'brisko' )
+            );
+
+            return;
+        }
+
         // Advanced options section.
         $args = [
             'wp_customize' => $wp_customize,
