@@ -74,7 +74,7 @@ class General implements SettingsInterface
             )
         );
 
-		// Display the Hooks.
+        // Display the Hooks.
         $wp_customize->add_setting(
             'display_brisko_hooks',
             [
@@ -85,15 +85,15 @@ class General implements SettingsInterface
             ]
         );
 
-		$wp_customize->add_control(
+        $wp_customize->add_control(
             new ToggleControl(
                 $wp_customize,
                 'display_brisko_hooks',
                 [
-                    'label'   => esc_html__( 'Display Action/Filter Hooks', 'brisko' ),
-					'description' => esc_html__( 'Requires the Brisko Elements Plugin', 'brisko' ),
-                    'section' => self::section(),
-                    'type'    => 'light',
+                    'label'       => esc_html__( 'Display Action/Filter Hooks', 'brisko' ),
+                    'description' => esc_html__( 'Requires the Brisko Elements Plugin', 'brisko' ),
+                    'section'     => self::section(),
+                    'type'        => 'light',
                     // light, ios, flat.
                 ]
             )
