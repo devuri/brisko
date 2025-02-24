@@ -44,7 +44,7 @@ class Footer
      */
     public function footer_credit()
     {
-        printf( esc_html__( '%1$s %2$s %3$s', 'brisko' ), wp_kses_post( $this->copyright() ), '   ', wp_kses_post( $this->poweredby() ) );
+        printf( '%1$s %2$s %3$s', wp_kses_post( $this->copyright() ), '   ', wp_kses_post( $this->poweredby() ) );
     }
 
     /**
