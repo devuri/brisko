@@ -58,7 +58,10 @@ class Styles extends AbstractEnq
         self::enqueue_style( 'normalizer', self::maybe() );
 
         if ( ! get_theme_mod( 'use_block_templates', false ) ) {
-            wp_enqueue_style( 'custom-styles' );
+            if ( get_theme_mod( 'use_custom_styles', false ) ) {
+                wp_enqueue_style( 'custom-styles' );
+            }
+
             wp_style_add_data( 'brisko-style', 'rtl', 'replace' );
         }
     }
