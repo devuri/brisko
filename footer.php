@@ -8,6 +8,7 @@
  */
 
 ?>
+</div><!-- #wp-site-block -->
 </div><!-- #page -->
 <?php brisko_footer()->site_footer(); ?>
 	<?php wp_footer(); ?>

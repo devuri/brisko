@@ -18,10 +18,8 @@ class Footer
      */
     public function site_footer()
     {
-        if ( get_theme_mod( 'use_block_templates', false ) ) {
-            block_template_part( 'footer' );
-
-            return;
+        if ( get_theme_mod( 'use_block_footer', false ) ) {
+            self::block_footer();
         }
 
         // elementor footer.
@@ -79,5 +77,13 @@ class Footer
         }
 
         return apply_filters( 'brisko_poweredby', $poweredby );
+    }
+
+    protected static function block_footer()
+    {
+        ?><footer class="wp-block-template-part site-footer">
+			<?php block_footer_area(); ?>
+		</footer>
+        <?php
     }
 }

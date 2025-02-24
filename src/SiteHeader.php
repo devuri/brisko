@@ -20,8 +20,15 @@ class SiteHeader
      */
     public function site_header()
     {
-        if ( get_theme_mod( 'use_block_templates', false ) ) {
-            block_template_part( 'header' );
+        // $patterns = \WP_Block_Patterns_Registry::get_instance()->get_all_registered();
+
+        if ( get_theme_mod( 'use_block_header', false ) ) {
+            do_action( 'brisko_before_header' );
+            self::block_header();
+            do_action( 'brisko_after_header' );
+            if ( is_front_page() && is_home() ) {
+                do_action( 'brisko_homepage_header' );
+            }
 
             return;
         }
@@ -46,11 +53,11 @@ class SiteHeader
                 return false;
             }
         } ?>
-			<div class="<?php echo esc_attr( brisko_options( 'header_image_width' ) ); ?> brisko-header-img" style="padding:0px">
-				<?php
+            <div class="<?php echo esc_attr( brisko_options( 'header_image_width' ) ); ?> brisko-header-img" style="padding:0px">
+                <?php
                     the_header_image_tag( [ 'class' => 'brisko-header-img' ] ); ?>
-			</div>
-		<?php
+            </div>
+        <?php
     }
 
     /**
@@ -71,6 +78,15 @@ class SiteHeader
         }
     }
 
+    protected static function block_header()
+    {
+        ?>
+        <header class="wp-block-template-part site-header">
+        <?php block_header_area(); ?>
+        </header>
+        <?php
+    }
+
     /**
      * Header title section.
      *
@@ -80,15 +96,15 @@ class SiteHeader
     {
         ?>
         <div class="archive-header container-fluid">
-			<div class="archive-header-title container">
-				<h2>
-					<?php do_action( 'brisko_blog_title' ); ?>
-				</h2>
-				<p>
-					<?php do_action( 'brisko_blog_subtitle' ); ?>
-				</p>
-			</div>
-		</div>
-		<?php
+            <div class="archive-header-title container">
+                <h2>
+                    <?php do_action( 'brisko_blog_title' ); ?>
+                </h2>
+                <p>
+                    <?php do_action( 'brisko_blog_subtitle' ); ?>
+                </p>
+            </div>
+        </div>
+        <?php
     }
 }
