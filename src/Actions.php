@@ -23,6 +23,7 @@ class Actions
     {
         return [
             // Header actions
+            'brisko_after_body_open',
             'brisko_before_header',
             'brisko_custom_header',
             'brisko_navigation',
