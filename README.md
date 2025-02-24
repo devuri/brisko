@@ -14,9 +14,6 @@ Brisko is a lightweight and easy-to-use WordPress theme optimized for speed and 
 
 With its modern architecture, Brisko now fully supports block-based styling, theme.json, and an improved main options handler. It also introduces enhanced support for block headers and footers.
 
-
-
-
 ## Key Features
 - **Block Editor Support** – Full compatibility with WordPress block editor (FSE mode supported).
 - **Elementor Support** – Works seamlessly with Elementor for advanced page-building.
@@ -27,9 +24,9 @@ With its modern architecture, Brisko now fully supports block-based styling, the
 - **Standalone Autoloader** – Improved file structure for better efficiency.
 - **Additional Hooks & Actions** – More flexibility with `brisko_after_body_open`, `brisko_customizer_setting`, and `brisko_entry_meta` hooks.
 - **Enqueue Extra Assets** – Option to include additional scripts and styles.
-- **Disable WP Auto-P** – Removes extra paragraph (`<p>`) tags in posts and pages.
 
-> Brisko 6.0 introduces major changes, including **block-based styling, Bootstrap grid-only integration, improved theme settings, and FSE mode support**. This version enhances flexibility and performance, making Brisko a powerful choice for modern WordPress websites.
+> Brisko 6.0 introduces major changes, including **block-based styling, Bootstrap grid-only integration, improved theme settings, and FSE mode support**.
+
 
 ## Quick Start
 ### How to Install Brisko
@@ -41,7 +38,6 @@ With its modern architecture, Brisko now fully supports block-based styling, the
 ### How to Create a Child Theme
 - Use **Child Theme Generator Plugin**: [Download Plugin](https://wordpress.org/plugins/child-theme-generator/)
 - Read the official WordPress documentation: [How to Create a Child Theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/#how-to-create-a-child-theme)
-- Brisko Blog: Basic Brisko child theme example: [GitHub Repository](https://github.com/devuri/brisko-blog)
 
 ## Customizer Settings
 Brisko provides an extensive set of customization options, allowing you to control various aspects of your theme:
@@ -65,7 +61,6 @@ Brisko provides an extensive set of customization options, allowing you to contr
 - Disable/Enable Brisko styles
 - Disable/Enable Bootstrap grid
 - Enable Block Header & Block Footer
-- Disable WP Auto-P to remove extra `<p>` tags
 
 ## Custom Headers and Footers
 - Supports Full Site Editing (FSE) for custom headers and footers
@@ -76,20 +71,45 @@ Brisko provides an extensive set of customization options, allowing you to contr
 Brisko includes various action and filter hooks for enhanced customization.
 
 ### **Action Hooks**
-- `brisko_after_body_open`
-- `brisko_customizer_setting`
-- `brisko_entry_meta`
-- `brisko_before_header`, `brisko_after_header`
-- `brisko_before_footer`, `brisko_after_footer`
-- `brisko_page_header`, `brisko_page_footer`
-- `brisko_before_comments`, `brisko_after_comments`
+- **Header Actions**
+  - `brisko_after_body_open`
+  - `brisko_before_header`
+  - `brisko_custom_header`
+  - `brisko_navigation`
+  - `brisko_nav_menu`
+  - `brisko_after_header`
+  - `brisko_homepage_header`
+- **Post Actions**
+  - `brisko_post_header`
+  - `brisko_blog_title`
+  - `brisko_blog_subtitle`
+  - `brisko_before_entry_meta`
+  - `brisko_entry_meta`
+  - `brisko_after_entry_meta`
+  - `brisko_before_tags`
+  - `brisko_related_content`
+  - `brisko_after_post_content`
+- **Comments Actions**
+  - `brisko_before_comments`
+  - `brisko_after_comments`
+- **Page Actions**
+  - `brisko_page_header`
+  - `brisko_page_footer`
+- **Sidebar Actions**
+  - `brisko_before_sidebar`
+  - `brisko_after_sidebar`
+- **Footer Actions**
+  - `brisko_before_footer`
+  - `brisko_footer_credit`
+  - `brisko_footer`
+  - `brisko_after_footer`
 
 ### **Filter Hooks**
 - `brisko_copyright`
 - `brisko_poweredby`
 - `brisko_sections` (Customizer sections)
 
-Get a visual reference of Brisko’s theme actions with the [Brisko Hooks Display Plugin](https://wordpress.org/plugins/brisko-hooks-display/).
+Get a visual reference of Brisko’s theme actions with the [Brisko Elements Plugin](https://wordpress.org/plugins/brisko-hooks-display/).
 
 ## Theme Documentation
 For detailed documentation, visit the [official documentation page](https://docs.wpbrisko.com/).
@@ -103,3 +123,4 @@ Distributed under the **GNU GPL v2.0**: [Read More](http://www.gnu.org/licenses/
 - [WordPress Underscores](http://underscores.me/)
 - [Bootstrap Grid](http://getbootstrap.com/)
 - [SmoothScroll](https://github.com/gblazex/smoothscroll-for-websites)
+
