@@ -5,7 +5,7 @@
 
 # Brisko WordPress Theme
 
-### Modern, minimalist design, high-performance WordPress Block & Elementor Starter Theme
+### Modern, minimalist design, high-performance WordPress Theme
 
 > **IMPORTANT**
 > `define( 'BRISKO_ADMIN_USER', 1 );` allows full control over the website. It is set to user ID 1 by default but can be changed to any valid user ID. This functions similarly to a "sudo" user, allowing that user to bypass certain restrictions like locked blocks and patterns.
