@@ -19,5 +19,5 @@
 <?php wp_body_open(); ?>
 <?php do_action( 'brisko_after_body_open' ); ?>
 <div id="page" class="site">
-	<div class="wp-site-blocks">
+<?php brisko_site_blocks_open(); ?>
 <?php brisko_header()->site_header(); ?>

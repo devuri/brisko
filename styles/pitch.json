@@ -32,10 +32,6 @@
 				}
 			]
 		},
-		"layout": {
-			"contentSize": "min(640px, 90vw)",
-			"wideSize": "90vw"
-		},
 		"spacing": {
 			"spacingScale": {
 				"steps": 7

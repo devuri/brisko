@@ -6,6 +6,16 @@ use Brisko\Options;
 use Brisko\SiteHeader;
 use Brisko\Thumbnail;
 
+
+function brisko_site_blocks_open()
+{
+    if (get_theme_mod( 'use_block_templates', false ) || get_theme_mod( 'use_block_header', false )) {
+        ?><div class="wp-site-blocks"><?php
+    } else {
+        ?><div class="brisko-site-blocks"><?php
+    }
+}
+
 if ( ! \function_exists( 'brisko' ) ) {
     /**
      * Get the Brisko Theme.
@@ -217,14 +227,13 @@ function brisko_sidebar()
 {
     if ( is_active_sidebar( 'sidebar-1' ) ) {
         ?>
-	        <aside id="secondary" class="widget-area">
-	            <?php
-                    do_action( 'brisko_before_sidebar' );
+	   <aside id="secondary" class="widget-area">
+	   <?php
+        do_action( 'brisko_before_sidebar' );
         dynamic_sidebar( 'sidebar-1' );
-        do_action( 'brisko_after_sidebar' );
-        ?>
-	        </aside><!-- #secondary -->
-	    <?php
+        do_action( 'brisko_after_sidebar' ); ?>
+	   </aside><!-- #secondary -->
+	   <?php
     }
 }
 
