@@ -1,5 +1,18 @@
 # Changelog
 
+## [6.0.1](https://github.com/devuri/brisko/compare/6.0.0...6.0.1) (2025-02-25)
+
+
+### Bug Fixes
+
+* adds `brisko_site_blocks_open` will remove top margin in classic ([0ba5660](https://github.com/devuri/brisko/commit/0ba5660647f23c7139f8e79dad50ee10942991a7))
+* updated layout wideSize ([a99b41b](https://github.com/devuri/brisko/commit/a99b41bb45191a4eb12452e9a436181cb5204baa))
+
+
+### Miscellaneous Chores
+
+* v6.0.1 ([bc5f5b2](https://github.com/devuri/brisko/commit/bc5f5b2732b109293a078f6a181eaa16a683d52d))
+
 ## [6.0.0](https://github.com/devuri/brisko/compare/5.0.0...6.0.0) (2025-02-24)
 
 
