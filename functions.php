@@ -17,6 +17,9 @@ $loader = Brisko\Autoloader::init()
 
 // Theme version.
 \define( 'BRISKO_VERSION', brisko()->version() );
+// \define( 'BRISKO_DEBUG', defined( 'WP_DEBUG' ) && true === constant('WP_DEBUG') );
+// \define( 'BRISKO_DIR', trailingslashit( get_template_directory() ) );
+// \define( 'BRISKO_URL', trailingslashit( get_template_directory_uri() ) );
 
 // Theme setup.
 brisko()->setup();
