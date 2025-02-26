@@ -5,17 +5,17 @@
   "settings": {
     "color": {
       "palette": [
-        { "slug": "heather-50", "color": "#f6f7f8", "name": "Heather 50" },
-        { "slug": "heather-100", "color": "#e9edf0", "name": "Heather 100" },
-        { "slug": "heather-200", "color": "#d9dfe4", "name": "Heather 200" },
-        { "slug": "heather-300", "color": "#bfc9d1", "name": "Heather 300" },
-        { "slug": "heather-400", "color": "#abb8c3", "name": "Heather 400" },
-        { "slug": "heather-500", "color": "#8898a9", "name": "Heather 500" },
-        { "slug": "heather-600", "color": "#76849a", "name": "Heather 600" },
-        { "slug": "heather-700", "color": "#6a768b", "name": "Heather 700" },
-        { "slug": "heather-800", "color": "#5a6273", "name": "Heather 800" },
-        { "slug": "heather-900", "color": "#4a515e", "name": "Heather 900" },
-        { "slug": "heather-950", "color": "#30343b", "name": "Heather 950" }
+        { "slug": "brisko-50", "color": "#f6f7f8", "name": "Heather 50" },
+        { "slug": "brisko-100", "color": "#e9edf0", "name": "Heather 100" },
+        { "slug": "brisko-200", "color": "#d9dfe4", "name": "Heather 200" },
+        { "slug": "brisko-300", "color": "#bfc9d1", "name": "Heather 300" },
+        { "slug": "brisko-400", "color": "#abb8c3", "name": "Heather 400" },
+        { "slug": "brisko-500", "color": "#8898a9", "name": "Heather 500" },
+        { "slug": "brisko-600", "color": "#76849a", "name": "Heather 600" },
+        { "slug": "brisko-700", "color": "#6a768b", "name": "Heather 700" },
+        { "slug": "brisko-800", "color": "#5a6273", "name": "Heather 800" },
+        { "slug": "brisko-900", "color": "#4a515e", "name": "Heather 900" },
+        { "slug": "brisko-950", "color": "#30343b", "name": "Heather 950" }
       ],
       "gradients": [
         {
@@ -108,17 +108,17 @@
       },
       "link": {
         "color": {
-          "text": "var(--wp--preset--color--heather-600)"
+          "text": "var(--wp--preset--color--brisko-600)"
         },
         ":hover": {
           "color": {
-            "text": "var(--wp--preset--color--heather-950)"
+            "text": "var(--wp--preset--color--brisko-950)"
           }
         }
       },
       "heading": {
         "color": {
-          "text": "var(--wp--preset--color--heather-800)"
+          "text": "var(--wp--preset--color--brisko-800)"
         }
       }
     },
@@ -128,7 +128,7 @@
           "radius": "0px"
         },
         "color": {
-          "text": "var(--wp--preset--color--heather-950)"
+          "text": "var(--wp--preset--color--brisko-950)"
         },
         "spacing": {
           "padding": {
@@ -144,12 +144,12 @@
           "radius": "6px"
         },
         "color": {
-          "background": "var(--wp--preset--color--heather-700)",
+          "background": "var(--wp--preset--color--brisko-700)",
           "text": "#ffffff"
         },
         ":hover": {
           "color": {
-            "text": "var(--wp--preset--color--heather-950)"
+            "text": "var(--wp--preset--color--brisko-950)"
           }
         }
       },
