@@ -118,7 +118,7 @@
         },
         "spacing": {
           "padding": {
-            "top": "20px",
+            "top": "4px",
             "right": "0px",
             "bottom": "0px",
             "left": "0px"
