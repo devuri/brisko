@@ -9,10 +9,13 @@ use Brisko\Thumbnail;
 
 function brisko_site_blocks_open()
 {
-    if (get_theme_mod( 'use_block_templates', false ) || get_theme_mod( 'use_block_header', false )) {
-        ?><div class="wp-site-blocks"><?php
+    if ( get_theme_mod( 'use_block_templates', false ) || get_theme_mod( 'use_block_header', false ) ) {
+        ?><div class="wp-site-blocks">
+        <?php
     } else {
-        ?><div class="brisko-site-blocks"><?php
+        ?>
+        <div class="brisko-site-blocks">
+        <?php
     }
 }
 

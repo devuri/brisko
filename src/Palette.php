@@ -9,18 +9,19 @@ class Palette
     /**
      * Generate a Palette-style colors based on a base hex color.
      *
-     * @param string $colorName The name of the color.
-     * @param string $baseHex   The base hex color (e.g., #04e200).
+     * @param string $base_hex   The base hex color (e.g., #04e200).
+     * @param string $color_name The name of the color.
      *
      * @throws InvalidArgumentException If an invalid hex color is provided.
      *
      * @return array The generated color palette.
      */
-    public static function generate(string $baseHex, string $colorName): array
+    public static function generate( string $base_hex, string $color_name ): array
     {
-        $baseHex = self::sanitizeHex($baseHex);
+        $base_hex = self::sanitize_hex( $base_hex );
 
-        [$r, $g, $b] = self::hexToRgb($baseHex);
+        // [$r, $g, $b] = self::hex_to_rgb( $base_hex );
+		list($r, $g, $b) = self::hex_to_rgb( $base_hex );
 
         $shades = [
             50  => 0.05,
@@ -38,15 +39,15 @@ class Palette
 
         $palette = [];
 
-        foreach ($shades as $shade => $factor) {
-            $palette[$shade] = self::rgbToHex(
-                self::adjustColorComponent($r, $factor),
-                self::adjustColorComponent($g, $factor),
-                self::adjustColorComponent($b, $factor)
+        foreach ( $shades as $shade => $factor ) {
+            $palette[ $shade ] = self::rgb_to_hex(
+                self::adjust_color_component( $r, $factor ),
+                self::adjust_color_component( $g, $factor ),
+                self::adjust_color_component( $b, $factor )
             );
         }
 
-        return [$colorName => $palette];
+        return [ $color_name => $palette ];
     }
 
     /**
@@ -58,20 +59,20 @@ class Palette
      *
      * @return string The sanitized 6-character hex code.
      */
-    private static function sanitizeHex(string $hex): string
+    private static function sanitize_hex( string $hex ): string
     {
-        $hex = ltrim($hex, '#');
+        $hex = ltrim( $hex, '#' );
 
         // Convert 3-character hex to 6-character hex
-        if (3 === \strlen($hex)) {
-            $hex = preg_replace('/(.)/', '$1$1', $hex);
+        if ( 3 === \strlen( $hex ) ) {
+            $hex = preg_replace( '/(.)/', '$1$1', $hex );
         }
 
-        if ( ! preg_match('/^[a-fA-F0-9]{6}$/', $hex)) {
-            throw new InvalidArgumentException('Invalid hex color format.');
+        if ( ! preg_match( '/^[a-fA-F0-9]{6}$/', $hex ) ) {
+            throw new InvalidArgumentException( 'Invalid hex color format.' );
         }
 
-        return strtolower($hex);
+        return strtolower( $hex );
     }
 
     /**
@@ -81,9 +82,9 @@ class Palette
      *
      * @return array An array containing RGB values.
      */
-    private static function hexToRgb(string $hex): array
+    private static function hex_to_rgb( string $hex ): array
     {
-        return sscanf($hex, "%02x%02x%02x");
+        return sscanf( $hex, '%02x%02x%02x' );
     }
 
     /**
@@ -95,9 +96,9 @@ class Palette
      *
      * @return string The hex color.
      */
-    private static function rgbToHex(int $r, int $g, int $b): string
+    private static function rgb_to_hex( int $r, int $g, int $b ): string
     {
-        return \sprintf("#%02x%02x%02x", $r, $g, $b);
+        return \sprintf( '#%02x%02x%02x', $r, $g, $b );
     }
 
     /**
@@ -108,9 +109,9 @@ class Palette
      *
      * @return int The adjusted color component.
      */
-    private static function adjustColorComponent(int $component, float $factor): int
+    private static function adjust_color_component( int $component, float $factor ): int
     {
-        return max(0, min(255, round($component * $factor + (255 * (1 - $factor)))));
+        return max( 0, min( 255, round( $component * $factor + ( 255 * ( 1 - $factor ) ) ) ) );
     }
 }
 

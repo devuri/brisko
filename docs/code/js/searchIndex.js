@@ -506,6 +506,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#function_brisko_after_footer"
         },                {
+            "fqsen": "\\brisko_site_blocks_open\u0028\u0029",
+            "name": "brisko_site_blocks_open",
+            "summary": "",
+            "url": "namespaces/default.html#function_brisko_site_blocks_open"
+        },                {
             "fqsen": "\\brisko\u0028\u0029",
             "name": "brisko",
             "summary": "Get\u0020the\u0020Brisko\u0020Theme.",
@@ -1120,6 +1125,36 @@ Search.appendIndex(
             "name": "css_files",
             "summary": "",
             "url": "classes/Brisko-AbstractEnq.html#property_css_files"
+        },                {
+            "fqsen": "\\Brisko\\Palette",
+            "name": "Palette",
+            "summary": "",
+            "url": "classes/Brisko-Palette.html"
+        },                {
+            "fqsen": "\\Brisko\\Palette\u003A\u003Agenerate\u0028\u0029",
+            "name": "generate",
+            "summary": "Generate\u0020a\u0020Palette\u002Dstyle\u0020colors\u0020based\u0020on\u0020a\u0020base\u0020hex\u0020color.",
+            "url": "classes/Brisko-Palette.html#method_generate"
+        },                {
+            "fqsen": "\\Brisko\\Palette\u003A\u003Asanitize_hex\u0028\u0029",
+            "name": "sanitize_hex",
+            "summary": "Sanitize\u0020and\u0020normalize\u0020a\u0020hex\u0020color\u0020code.",
+            "url": "classes/Brisko-Palette.html#method_sanitize_hex"
+        },                {
+            "fqsen": "\\Brisko\\Palette\u003A\u003Ahex_to_rgb\u0028\u0029",
+            "name": "hex_to_rgb",
+            "summary": "Convert\u0020a\u0020hex\u0020color\u0020to\u0020an\u0020RGB\u0020array.",
+            "url": "classes/Brisko-Palette.html#method_hex_to_rgb"
+        },                {
+            "fqsen": "\\Brisko\\Palette\u003A\u003Argb_to_hex\u0028\u0029",
+            "name": "rgb_to_hex",
+            "summary": "Convert\u0020RGB\u0020values\u0020to\u0020a\u0020hex\u0020color\u0020string.",
+            "url": "classes/Brisko-Palette.html#method_rgb_to_hex"
+        },                {
+            "fqsen": "\\Brisko\\Palette\u003A\u003Aadjust_color_component\u0028\u0029",
+            "name": "adjust_color_component",
+            "summary": "Adjust\u0020an\u0020RGB\u0020color\u0020component\u0020based\u0020on\u0020a\u0020lightness\u0020factor.",
+            "url": "classes/Brisko-Palette.html#method_adjust_color_component"
         },                {
             "fqsen": "\\",
             "name": "\\",
