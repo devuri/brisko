@@ -16,7 +16,7 @@
 		<p class="has-text-align-right">
 		<?php
         printf(
-            // Translators: WordPress link.
+            // Translators: Brisko link.
             esc_html__( 'Powered by %s', 'brisko' ),
             '<a href="' . esc_url( __( 'https://wpbrisko.com', 'brisko' ) ) . '" rel="nofollow">Brisko WordPress Theme</a>'
         );

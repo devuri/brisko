@@ -1,5 +1,30 @@
 # Changelog
 
+## [6.1.2](https://github.com/devuri/brisko/compare/6.1.1...6.1.2) (2025-03-04)
+
+
+### Bug Fixes
+
+* nav update ([3b8ae79](https://github.com/devuri/brisko/commit/3b8ae79a1d2b88aad284c049e78c559e4f7d2a12))
+
+
+### Miscellaneous Chores
+
+* build ([14d8462](https://github.com/devuri/brisko/commit/14d846259fd6c471f6286fd01f137a3613322f21))
+* version bump 6.1.2 ([55cd66f](https://github.com/devuri/brisko/commit/55cd66fb8cabc8abe33648dbd00484fcb7bb6f04))
+
+## [6.1.1](https://github.com/devuri/brisko/compare/6.1.0...6.1.1) (2025-03-04)
+
+
+### Bug Fixes
+
+* `use_custom_styles` is true by default ([a3d8fbf](https://github.com/devuri/brisko/commit/a3d8fbfe697715de3c49098eb30f8242ab54ce1e))
+
+
+### Miscellaneous Chores
+
+* 6.1.1 ([569c3fb](https://github.com/devuri/brisko/commit/569c3fb634230b1c77cf69f948118eee0a9dd47e))
+
 ## [6.1.0](https://github.com/devuri/brisko/compare/6.0.1...6.1.0) (2025-03-04)
 
 
