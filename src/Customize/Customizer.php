@@ -77,7 +77,7 @@ class Customizer
         } // foreach
 
         General::settings( $this->customizer );
-        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+        if ( ! is_brisko_hybrid_fse() ) {
             Layout::settings( $this->customizer );
             Navigation::settings( $this->customizer );
             Header::settings( $this->customizer );
@@ -87,7 +87,7 @@ class Customizer
         }
         Advanced::settings( $this->customizer );
 
-        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+        if ( ! is_brisko_hybrid_fse() ) {
             SelectiveRefresh::settings( $this->customizer );
         }
 

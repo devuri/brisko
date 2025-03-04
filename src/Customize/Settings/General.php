@@ -228,7 +228,7 @@ class General implements SettingsInterface
             )
         );
 
-        if ( ! get_theme_mod( 'enable_hybrid_mode', false ) ) {
+        if ( ! is_brisko_hybrid_fse() ) {
             // FSE Layouts
             $wp_customize->add_setting(
                 'enable_fse_layout',
@@ -246,7 +246,7 @@ class General implements SettingsInterface
                     'enable_fse_layout',
                     [
                         'label'       => esc_html__( 'Enable FSE Layouts', 'brisko' ),
-                        'description' => esc_html__( 'Sets up support for full width etc.', 'brisko' ),
+                        'description' => esc_html__( 'Sets up support for full width etc, (custom styles required).', 'brisko' ),
                         'section'     => self::section(),
                         'type'        => 'light',
                         // light, ios, flat.
@@ -255,29 +255,31 @@ class General implements SettingsInterface
             );
         }
 
-        // Custom Styles
-        $wp_customize->add_setting(
-            'use_custom_styles',
-            [
-                'default'           => false,
-                'capability'        => self::$capability,
-                'transport'         => self::$transport,
-                'sanitize_callback' => 'brisko_sanitize_checkbox',
-            ]
-        );
-
-        $wp_customize->add_control(
-            new ToggleControl(
-                $wp_customize,
+        if ( ! is_brisko_hybrid_fse() ) {
+            // Custom Styles
+            $wp_customize->add_setting(
                 'use_custom_styles',
                 [
-                    'label'       => esc_html__( 'Enable Custom Styles', 'brisko' ),
-                    'description' => esc_html__( 'Custom Styles, may not be needed in hybrid theme mode or FSE mode.', 'brisko' ),
-                    'section'     => self::section(),
-                    'type'        => 'light',
-                    // light, ios, flat.
+                    'default'           => false,
+                    'capability'        => self::$capability,
+                    'transport'         => self::$transport,
+                    'sanitize_callback' => 'brisko_sanitize_checkbox',
                 ]
-            )
-        );
+            );
+
+            $wp_customize->add_control(
+                new ToggleControl(
+                    $wp_customize,
+                    'use_custom_styles',
+                    [
+                        'label'       => esc_html__( 'Enable Custom Styles', 'brisko' ),
+                        'description' => esc_html__( 'Custom Styles, may not be needed in hybrid theme mode or FSE mode.', 'brisko' ),
+                        'section'     => self::section(),
+                        'type'        => 'light',
+                        // light, ios, flat.
+                    ]
+                )
+            );
+        }
     }
 }
