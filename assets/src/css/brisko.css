@@ -101,20 +101,19 @@ pre {
     grid-gap: 1.5em;
 }
 
-.alignfull {
+/* .alignfull {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     max-width: 100vw;
     width: 100vw;
     overflow: hidden;
-}
+} */
 
-.alignwide {
-    /*max-width: var(--wp--style--global--wide-size);*/
+/* .alignwide {
     max-width: 90vw;
     margin-left: calc(50% - 39vw);
     margin-right: calc(50% - 39vw);
-}
+} */
 
 /*.editor-content > *:not(.alignfull) {
   width: 100%;
