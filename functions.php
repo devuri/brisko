@@ -12,7 +12,7 @@ $loader = Brisko\Autoloader::init()
     ->addFiles([
         "src/Customize/helpers.php",
         "src/inc/actions.php",
-        "src/inc/template-tags.php",
+        "src/inc/functions.php",
     ]);
 
 // Theme version.
