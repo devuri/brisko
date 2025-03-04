@@ -100,14 +100,8 @@ class Activate implements SetupInterface
         add_theme_support( 'responsive-embeds' );
         add_theme_support( 'custom-spacing' );
 
-        // block templates
-        if ( get_theme_mod( 'use_block_templates', false ) ) {
-            // setup block templates.
-            add_theme_support( 'block-template-parts' );
-        } else {
-            remove_theme_support( 'block-templates' );
-            remove_theme_support( 'widgets-block-editor' );
-        }
+        // Support block templates
+        self::add_support_block_template_parts();
 
         // Support for blocks with padding controls.
         add_theme_support( 'custom-spacing' );
@@ -235,5 +229,23 @@ class Activate implements SetupInterface
                 'after_title'   => '</h2>',
             ]
         );
+    }
+
+    protected static function add_support_block_template_parts()
+    {
+        if ( get_theme_mod( 'use_block_templates', false ) ) {
+            add_theme_support( 'block-template-parts' );
+
+            return;
+        }
+
+        if ( get_theme_mod( 'enable_hybrid_mode', false ) ) {
+            add_theme_support( 'block-template-parts' );
+
+            return;
+        }
+
+        remove_theme_support( 'block-templates' );
+        remove_theme_support( 'widgets-block-editor' );
     }
 }
