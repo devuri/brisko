@@ -1,5 +1,35 @@
 # Changelog
 
+## [6.1.0](https://github.com/devuri/brisko/compare/6.0.1...6.1.0) (2025-03-04)
+
+
+### Features
+
+* add more basic styles ([fa6d029](https://github.com/devuri/brisko/commit/fa6d029b9122b8dac983dd6263edb063a3abdd58))
+* add style heather ([3e1a822](https://github.com/devuri/brisko/commit/3e1a8228d2ee3aed00e168b80ccbb35d06a051bb))
+* adds new settings to enable hybrid theme mode ([e63dc26](https://github.com/devuri/brisko/commit/e63dc26819753ac81cf04c4fe5d30e1b1f2bb193))
+* adds new styles ([3dcb322](https://github.com/devuri/brisko/commit/3dcb32282d9f43e62f6bc11a520c49949ebab900))
+* adds Palette-style Generator ([cbe8d1b](https://github.com/devuri/brisko/commit/cbe8d1b612c5a018e5e2843aea32951a113d40d0))
+
+
+### Bug Fixes
+
+* 4px top margin ([44dc4be](https://github.com/devuri/brisko/commit/44dc4bec14abbd0a362890d5d19345fc337f02b3))
+* adds core_css block styles ([91f5978](https://github.com/devuri/brisko/commit/91f59786b74f0778fbdedd226819d6224b6c110a))
+* better Support for block templates ([01cbb81](https://github.com/devuri/brisko/commit/01cbb8161d06e36eb12c35ea72dfc13f1da6dd17))
+* new `src/inc/template-tags.php` is now `src/inc/functions.php` ([5338feb](https://github.com/devuri/brisko/commit/5338febfd0f0831e92de961570857796cfbada63))
+* no page titles needed ([7c47128](https://github.com/devuri/brisko/commit/7c47128621e088b614dc50d9e6e0752517522161))
+* remove `.alignfull` and `.alignwide` ([3dec2ad](https://github.com/devuri/brisko/commit/3dec2adef1d0ef0896fe097f40bd13e59f7f1e14))
+* simpler format for hot swaps ([6691d7c](https://github.com/devuri/brisko/commit/6691d7ccac9ca1d5fad1c2853ce249bf85bec537))
+* update `main` group in templates ([280e9a3](https://github.com/devuri/brisko/commit/280e9a3df349be78dd859685a0cd89f6da682fa7))
+
+
+### Miscellaneous Chores
+
+* build ([f9695dc](https://github.com/devuri/brisko/commit/f9695dc41c3cfcc7d5b5460779bc76f18c204398))
+* build ([7f27b92](https://github.com/devuri/brisko/commit/7f27b928a2e93f57665d609a922070ef2e1be948))
+* build ([fa3b4c2](https://github.com/devuri/brisko/commit/fa3b4c21c4c337bef6454f57f40e949718056d78))
+
 ## [6.0.1](https://github.com/devuri/brisko/compare/6.0.0...6.0.1) (2025-02-25)
 
 
