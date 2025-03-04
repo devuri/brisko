@@ -63,7 +63,7 @@ Brisko provides an extensive set of customization options, allowing you to contr
 - Enable Block Header & Block Footer
 
 ## Custom Headers and Footers
-- Supports Full Site Editing (FSE) for custom headers and footers
+- Supports Full Site Editing (FSE)
 - Works with **Elementor Pro’s Theme Builder** ([Watch Tutorial](https://www.youtube.com/watch?v=Q7fyn0MMe_s))
 - Compatible with **Header, Footer & Blocks Plugin** ([Download Plugin](https://wordpress.org/plugins/header-footer-elementor))
 
