@@ -20,6 +20,10 @@ class SelectiveRefresh
      */
     public static function settings( $wp_customize )
     {
+        if ( get_theme_mod( 'use_block_templates', false ) || get_theme_mod( 'enable_hybrid_mode', false ) ) {
+            return;
+        }
+
         /*
          * Customize_Selective_Refresh
          *

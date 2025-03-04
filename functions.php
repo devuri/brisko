@@ -12,11 +12,14 @@ $loader = Brisko\Autoloader::init()
     ->addFiles([
         "src/Customize/helpers.php",
         "src/inc/actions.php",
-        "src/inc/template-tags.php",
+        "src/inc/functions.php",
     ]);
 
 // Theme version.
 \define( 'BRISKO_VERSION', brisko()->version() );
+// \define( 'BRISKO_DEBUG', defined( 'WP_DEBUG' ) && true === constant('WP_DEBUG') );
+// \define( 'BRISKO_DIR', trailingslashit( get_template_directory() ) );
+// \define( 'BRISKO_URL', trailingslashit( get_template_directory_uri() ) );
 
 // Theme setup.
 brisko()->setup();

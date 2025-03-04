@@ -22,11 +22,11 @@ class Header implements SettingsInterface
         // Separator Header Image Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'Header Image', 'brisko' ), self::section() );
 
-        if ( get_theme_mod( 'use_block_header', false ) ) {
+        if ( get_theme_mod( 'enable_hybrid_mode', false ) ) {
             self::info_note(
                 $wp_customize,
                 'block_header',
-                __( '<strong>Note:</strong> Some Settings are disabled when "Enable Block Header Area" is set', 'brisko' )
+                __( '<strong>Note:</strong> Some Settings are disabled when "Hybrid Mode is Enabled" is set', 'brisko' )
             );
 
             return;

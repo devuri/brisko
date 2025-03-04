@@ -11,7 +11,7 @@
 					"slug": "base"
 				},
 				{
-					"color": "#2500ff",
+					"color": "#30343b",
 					"name": "Contrast",
 					"slug": "contrast"
 				},
@@ -21,7 +21,7 @@
 					"slug": "primary"
 				},
 				{
-					"color": "#2500ff",
+					"color": "#30343b",
 					"name": "Secondary",
 					"slug": "secondary"
 				},

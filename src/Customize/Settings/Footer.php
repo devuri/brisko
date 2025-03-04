@@ -23,6 +23,16 @@ class Footer implements SettingsInterface
         // Footer Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'Footer Settings', 'brisko' ), self::section() );
 
+        if ( get_theme_mod( 'enable_hybrid_mode', false ) ) {
+            self::info_note(
+                $wp_customize,
+                'block_header',
+                __( '<strong>Note:</strong> Some Settings are disabled when "Hybrid Mode is Enabled" is set', 'brisko' )
+            );
+
+            return;
+        }
+
         // Copyright section .
         $wp_customize->add_setting(
             'footer_copyright',
@@ -97,16 +107,6 @@ class Footer implements SettingsInterface
             self::section(),
             'Brisko Elements Advanced Options'
         );
-
-        if ( get_theme_mod( 'use_block_footer', false ) ) {
-            self::info_note(
-                $wp_customize,
-                'block_footer',
-                __( '<strong>Note:</strong> Some Settings are disabled when "Enable Block Footer Area" is set.', 'brisko' )
-            );
-
-            return;
-        }
 
         ( new Control() )->header_title(
             $wp_customize,

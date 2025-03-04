@@ -301,6 +301,11 @@ Search.appendIndex(
             "summary": "Lets\u0020build\u0020out\u0020the\u0020customizer\u0020settings.",
             "url": "classes/Brisko-Customize-Settings-General.html#method_settings"
         },                {
+            "fqsen": "\\Brisko\\Customize\\Settings\\General\u003A\u003Aglobal_link_color_settings\u0028\u0029",
+            "name": "global_link_color_settings",
+            "summary": "",
+            "url": "classes/Brisko-Customize-Settings-General.html#method_global_link_color_settings"
+        },                {
             "fqsen": "\\Brisko\\Customize\\Settings\\General\u003A\u003Ahybrid_mode_settings\u0028\u0029",
             "name": "hybrid_mode_settings",
             "summary": "",
@@ -506,101 +511,6 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#function_brisko_after_footer"
         },                {
-            "fqsen": "\\brisko\u0028\u0029",
-            "name": "brisko",
-            "summary": "Get\u0020the\u0020Brisko\u0020Theme.",
-            "url": "namespaces/default.html#function_brisko"
-        },                {
-            "fqsen": "\\brisko_posted_on\u0028\u0029",
-            "name": "brisko_posted_on",
-            "summary": "Prints\u0020HTML\u0020with\u0020meta\u0020information\u0020for\u0020the\u0020current\u0020post\u002Ddate\/time.",
-            "url": "namespaces/default.html#function_brisko_posted_on"
-        },                {
-            "fqsen": "\\brisko_posted_by\u0028\u0029",
-            "name": "brisko_posted_by",
-            "summary": "Prints\u0020HTML\u0020with\u0020meta\u0020information\u0020for\u0020the\u0020current\u0020author.",
-            "url": "namespaces/default.html#function_brisko_posted_by"
-        },                {
-            "fqsen": "\\brisko_entry_footer\u0028\u0029",
-            "name": "brisko_entry_footer",
-            "summary": "Prints\u0020HTML\u0020with\u0020meta\u0020information\u0020for\u0020the\u0020categories,\u0020tags\u0020and\u0020comments.",
-            "url": "namespaces/default.html#function_brisko_entry_footer"
-        },                {
-            "fqsen": "\\brisko_entry_meta\u0028\u0029",
-            "name": "brisko_entry_meta",
-            "summary": "Outputs\u0020the\u0020entry\u0020meta\u0020information\u0020for\u0020posts.",
-            "url": "namespaces/default.html#function_brisko_entry_meta"
-        },                {
-            "fqsen": "\\brisko_entry_content_css\u0028\u0029",
-            "name": "brisko_entry_content_css",
-            "summary": "Generates\u0020inline\u0020CSS\u0020for\u0020entry\u0020content\u0020based\u0020on\u0020theme\u0020settings.",
-            "url": "namespaces/default.html#function_brisko_entry_content_css"
-        },                {
-            "fqsen": "\\brisko_posts_navigation\u0028\u0029",
-            "name": "brisko_posts_navigation",
-            "summary": "Post\u0020Navigation.",
-            "url": "namespaces/default.html#function_brisko_posts_navigation"
-        },                {
-            "fqsen": "\\brisko_is_php5_6\u0028\u0029",
-            "name": "brisko_is_php5_6",
-            "summary": "Check\u0020if\u0020PHP\u00205.6.",
-            "url": "namespaces/default.html#function_brisko_is_php5_6"
-        },                {
-            "fqsen": "\\brisko_sidebar\u0028\u0029",
-            "name": "brisko_sidebar",
-            "summary": "Get\u0020the\u0020sidebar.",
-            "url": "namespaces/default.html#function_brisko_sidebar"
-        },                {
-            "fqsen": "\\brisko_layout_head\u0028\u0029",
-            "name": "brisko_layout_head",
-            "summary": "Head\u0020section.",
-            "url": "namespaces/default.html#function_brisko_layout_head"
-        },                {
-            "fqsen": "\\brisko_layout_sidebar\u0028\u0029",
-            "name": "brisko_layout_sidebar",
-            "summary": "Get\u0020the\u0020sidebar.",
-            "url": "namespaces/default.html#function_brisko_layout_sidebar"
-        },                {
-            "fqsen": "\\brisko_layout_footer\u0028\u0029",
-            "name": "brisko_layout_footer",
-            "summary": "Footer\u0020section.",
-            "url": "namespaces/default.html#function_brisko_layout_footer"
-        },                {
-            "fqsen": "\\brisko_layout_content\u0028\u0029",
-            "name": "brisko_layout_content",
-            "summary": "Display\u0020content\u0020only.",
-            "url": "namespaces/default.html#function_brisko_layout_content"
-        },                {
-            "fqsen": "\\brisko_excerpt\u0028\u0029",
-            "name": "brisko_excerpt",
-            "summary": "Displays\u0020an\u0020optional\u0020post\u0020excerpt.",
-            "url": "namespaces/default.html#function_brisko_excerpt"
-        },                {
-            "fqsen": "\\brisko_options\u0028\u0029",
-            "name": "brisko_options",
-            "summary": "Theme\u0020Options.",
-            "url": "namespaces/default.html#function_brisko_options"
-        },                {
-            "fqsen": "\\brisko_post_thumbnail\u0028\u0029",
-            "name": "brisko_post_thumbnail",
-            "summary": "Displays\u0020an\u0020optional\u0020post\u0020thumbnail.",
-            "url": "namespaces/default.html#function_brisko_post_thumbnail"
-        },                {
-            "fqsen": "\\brisko_footer\u0028\u0029",
-            "name": "brisko_footer",
-            "summary": "Footer.",
-            "url": "namespaces/default.html#function_brisko_footer"
-        },                {
-            "fqsen": "\\brisko_navigation\u0028\u0029",
-            "name": "brisko_navigation",
-            "summary": "Theme\u0020Navigation.",
-            "url": "namespaces/default.html#function_brisko_navigation"
-        },                {
-            "fqsen": "\\brisko_header\u0028\u0029",
-            "name": "brisko_header",
-            "summary": "Theme\u0020Header.",
-            "url": "namespaces/default.html#function_brisko_header"
-        },                {
             "fqsen": "\\wp_body_open\u0028\u0029",
             "name": "wp_body_open",
             "summary": "",
@@ -690,6 +600,11 @@ Search.appendIndex(
             "name": "brisko_widgets_init",
             "summary": "Register\u0020widget\u0020area.",
             "url": "classes/Brisko-Setup-Activate.html#method_brisko_widgets_init"
+        },                {
+            "fqsen": "\\Brisko\\Setup\\Activate\u003A\u003Aadd_support_block_template_parts\u0028\u0029",
+            "name": "add_support_block_template_parts",
+            "summary": "",
+            "url": "classes/Brisko-Setup-Activate.html#method_add_support_block_template_parts"
         },                {
             "fqsen": "\\Brisko\\Setup\\Assets",
             "name": "Assets",
@@ -1120,6 +1035,141 @@ Search.appendIndex(
             "name": "css_files",
             "summary": "",
             "url": "classes/Brisko-AbstractEnq.html#property_css_files"
+        },                {
+            "fqsen": "\\Brisko\\Palette",
+            "name": "Palette",
+            "summary": "",
+            "url": "classes/Brisko-Palette.html"
+        },                {
+            "fqsen": "\\Brisko\\Palette\u003A\u003Agenerate\u0028\u0029",
+            "name": "generate",
+            "summary": "Generate\u0020a\u0020Palette\u002Dstyle\u0020colors\u0020based\u0020on\u0020a\u0020base\u0020hex\u0020color.",
+            "url": "classes/Brisko-Palette.html#method_generate"
+        },                {
+            "fqsen": "\\Brisko\\Palette\u003A\u003Asanitize_hex\u0028\u0029",
+            "name": "sanitize_hex",
+            "summary": "Sanitize\u0020and\u0020normalize\u0020a\u0020hex\u0020color\u0020code.",
+            "url": "classes/Brisko-Palette.html#method_sanitize_hex"
+        },                {
+            "fqsen": "\\Brisko\\Palette\u003A\u003Ahex_to_rgb\u0028\u0029",
+            "name": "hex_to_rgb",
+            "summary": "Convert\u0020a\u0020hex\u0020color\u0020to\u0020an\u0020RGB\u0020array.",
+            "url": "classes/Brisko-Palette.html#method_hex_to_rgb"
+        },                {
+            "fqsen": "\\Brisko\\Palette\u003A\u003Argb_to_hex\u0028\u0029",
+            "name": "rgb_to_hex",
+            "summary": "Convert\u0020RGB\u0020values\u0020to\u0020a\u0020hex\u0020color\u0020string.",
+            "url": "classes/Brisko-Palette.html#method_rgb_to_hex"
+        },                {
+            "fqsen": "\\Brisko\\Palette\u003A\u003Aadjust_color_component\u0028\u0029",
+            "name": "adjust_color_component",
+            "summary": "Adjust\u0020an\u0020RGB\u0020color\u0020component\u0020based\u0020on\u0020a\u0020lightness\u0020factor.",
+            "url": "classes/Brisko-Palette.html#method_adjust_color_component"
+        },                {
+            "fqsen": "\\brisko_site_blocks_open\u0028\u0029",
+            "name": "brisko_site_blocks_open",
+            "summary": "",
+            "url": "namespaces/default.html#function_brisko_site_blocks_open"
+        },                {
+            "fqsen": "\\brisko\u0028\u0029",
+            "name": "brisko",
+            "summary": "Get\u0020the\u0020Brisko\u0020Theme.",
+            "url": "namespaces/default.html#function_brisko"
+        },                {
+            "fqsen": "\\brisko_posted_on\u0028\u0029",
+            "name": "brisko_posted_on",
+            "summary": "Prints\u0020HTML\u0020with\u0020meta\u0020information\u0020for\u0020the\u0020current\u0020post\u002Ddate\/time.",
+            "url": "namespaces/default.html#function_brisko_posted_on"
+        },                {
+            "fqsen": "\\brisko_posted_by\u0028\u0029",
+            "name": "brisko_posted_by",
+            "summary": "Prints\u0020HTML\u0020with\u0020meta\u0020information\u0020for\u0020the\u0020current\u0020author.",
+            "url": "namespaces/default.html#function_brisko_posted_by"
+        },                {
+            "fqsen": "\\brisko_entry_footer\u0028\u0029",
+            "name": "brisko_entry_footer",
+            "summary": "Prints\u0020HTML\u0020with\u0020meta\u0020information\u0020for\u0020the\u0020categories,\u0020tags\u0020and\u0020comments.",
+            "url": "namespaces/default.html#function_brisko_entry_footer"
+        },                {
+            "fqsen": "\\brisko_entry_meta\u0028\u0029",
+            "name": "brisko_entry_meta",
+            "summary": "Outputs\u0020the\u0020entry\u0020meta\u0020information\u0020for\u0020posts.",
+            "url": "namespaces/default.html#function_brisko_entry_meta"
+        },                {
+            "fqsen": "\\brisko_entry_content_css\u0028\u0029",
+            "name": "brisko_entry_content_css",
+            "summary": "Generates\u0020inline\u0020CSS\u0020for\u0020entry\u0020content\u0020based\u0020on\u0020theme\u0020settings.",
+            "url": "namespaces/default.html#function_brisko_entry_content_css"
+        },                {
+            "fqsen": "\\brisko_posts_navigation\u0028\u0029",
+            "name": "brisko_posts_navigation",
+            "summary": "Post\u0020Navigation.",
+            "url": "namespaces/default.html#function_brisko_posts_navigation"
+        },                {
+            "fqsen": "\\brisko_is_php5_6\u0028\u0029",
+            "name": "brisko_is_php5_6",
+            "summary": "Check\u0020if\u0020PHP\u00205.6.",
+            "url": "namespaces/default.html#function_brisko_is_php5_6"
+        },                {
+            "fqsen": "\\brisko_sidebar\u0028\u0029",
+            "name": "brisko_sidebar",
+            "summary": "Get\u0020the\u0020sidebar.",
+            "url": "namespaces/default.html#function_brisko_sidebar"
+        },                {
+            "fqsen": "\\brisko_layout_head\u0028\u0029",
+            "name": "brisko_layout_head",
+            "summary": "Head\u0020section.",
+            "url": "namespaces/default.html#function_brisko_layout_head"
+        },                {
+            "fqsen": "\\brisko_layout_sidebar\u0028\u0029",
+            "name": "brisko_layout_sidebar",
+            "summary": "Get\u0020the\u0020sidebar.",
+            "url": "namespaces/default.html#function_brisko_layout_sidebar"
+        },                {
+            "fqsen": "\\brisko_layout_footer\u0028\u0029",
+            "name": "brisko_layout_footer",
+            "summary": "Footer\u0020section.",
+            "url": "namespaces/default.html#function_brisko_layout_footer"
+        },                {
+            "fqsen": "\\brisko_layout_content\u0028\u0029",
+            "name": "brisko_layout_content",
+            "summary": "Display\u0020content\u0020only.",
+            "url": "namespaces/default.html#function_brisko_layout_content"
+        },                {
+            "fqsen": "\\brisko_excerpt\u0028\u0029",
+            "name": "brisko_excerpt",
+            "summary": "Displays\u0020an\u0020optional\u0020post\u0020excerpt.",
+            "url": "namespaces/default.html#function_brisko_excerpt"
+        },                {
+            "fqsen": "\\brisko_options\u0028\u0029",
+            "name": "brisko_options",
+            "summary": "Theme\u0020Options.",
+            "url": "namespaces/default.html#function_brisko_options"
+        },                {
+            "fqsen": "\\brisko_post_thumbnail\u0028\u0029",
+            "name": "brisko_post_thumbnail",
+            "summary": "Displays\u0020an\u0020optional\u0020post\u0020thumbnail.",
+            "url": "namespaces/default.html#function_brisko_post_thumbnail"
+        },                {
+            "fqsen": "\\brisko_footer\u0028\u0029",
+            "name": "brisko_footer",
+            "summary": "Footer.",
+            "url": "namespaces/default.html#function_brisko_footer"
+        },                {
+            "fqsen": "\\brisko_navigation\u0028\u0029",
+            "name": "brisko_navigation",
+            "summary": "Theme\u0020Navigation.",
+            "url": "namespaces/default.html#function_brisko_navigation"
+        },                {
+            "fqsen": "\\brisko_header\u0028\u0029",
+            "name": "brisko_header",
+            "summary": "Theme\u0020Header.",
+            "url": "namespaces/default.html#function_brisko_header"
+        },                {
+            "fqsen": "\\is_brisko_hybrid_fse\u0028\u0029",
+            "name": "is_brisko_hybrid_fse",
+            "summary": "",
+            "url": "namespaces/default.html#function_is_brisko_hybrid_fse"
         },                {
             "fqsen": "\\",
             "name": "\\",

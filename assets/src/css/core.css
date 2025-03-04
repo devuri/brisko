@@ -109,7 +109,7 @@ html, body {
     grid-gap: 1.5em;
 }
 
-.alignfull {
+/* .alignfull {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     max-width: 100vw;
@@ -117,8 +117,171 @@ html, body {
     overflow: hidden;
 }
 
-/* .alignwide {
+.alignwide {
     max-width: 90vw;
     margin-left: calc(50% - 39vw);
     margin-right: calc(50% - 39vw);
 } */
+
+
+
+
+/*
+======================================
+ WordPress Block Editor Styles
+======================================
+
+Description:
+    This refines various WordPress block editor elements
+    to ensure consistent spacing, clean typography, and better alignment.
+    It addresses common issues like tight spacing, inconsistent alignment,
+    and lack of responsive control for wide/full-width blocks.
+*/
+
+/*--------------------------------------------------------------
+1. General Block Spacing & Typography
+--------------------------------------------------------------*/
+
+:where(.wp-site-blocks) > * {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.wp-block-paragraph {
+    margin-bottom: 1.5em;
+}
+
+.wp-block-list,
+.wp-block-quote,
+.wp-block-pullquote {
+    margin-bottom: 1.5em;
+}
+
+.wp-block-heading {
+    margin: 1.5em 0 0.5em;
+}
+
+/*--------------------------------------------------------------
+2. Image, Figure, and Media Blocks
+--------------------------------------------------------------*/
+
+.wp-block-image {
+    margin-bottom: 1.5em;
+}
+
+.wp-block-image figcaption {
+    font-size: 0.9em;
+    text-align: center;
+    color: #666;
+    margin-top: 0.5em;
+}
+
+/*--------------------------------------------------------------
+4. Group Blocks & Inner Containers
+--------------------------------------------------------------*/
+
+/* .wp-block-group {
+    padding: 2em;
+    margin-bottom: 2em;
+    border-radius: 6px;
+} */
+
+.wp-block-group__inner-container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+5. Columns & Media/Text Blocks
+--------------------------------------------------------------*/
+
+/* .wp-block-column {
+    padding: 1em;
+}
+
+.wp-block-media-text {
+    margin-bottom: 2em;
+}
+.wp-block-media-text .wp-block-media-text__content {
+    padding: 1em;
+} */
+
+/*--------------------------------------------------------------
+6. Buttons & Form Styles
+--------------------------------------------------------------*/
+
+.wp-block-button__link {
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* .wp-block-button__link:hover,
+.wp-block-button__link:focus {
+    background-color: #004da8;
+} */
+
+.wp-block-search input[type="search"],
+.wp-block-search__inside-wrapper input[type="search"] {
+    width: 100%;
+    padding: 0.75em;
+    /* border: 1px solid #ccc; */
+    margin-bottom: 1em;
+}
+
+/*--------------------------------------------------------------
+7. Tables & Quotes
+--------------------------------------------------------------*/
+
+.wp-block-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+    border: 1px solid #ddd;
+    padding: 0.75em;
+}
+
+blockquote.wp-block-quote {
+    padding-left: 1em;
+    font-style: italic;
+}
+
+/*--------------------------------------------------------------
+8. Responsive Adjustments
+--------------------------------------------------------------*/
+
+/* @media (max-width: 768px) {
+    .wp-block-column {
+        margin-bottom: 1em;
+    }
+
+    .wp-block-group {
+        padding: 1em;
+    }
+
+    .wp-block-heading h2,
+    .wp-block-heading h3 {
+        font-size: 1.2em;
+    }
+} */
+
+/*--------------------------------------------------------------
+9. Additional Utilities (Optional)
+--------------------------------------------------------------*/
+
+/* Utility class to hide elements visually but keep for screen readers */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important; /* Added to prevent shift */
+    border: 0 !important;
+}

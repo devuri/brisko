@@ -47,7 +47,7 @@ class Styles extends AbstractEnq
      */
     public function enqueue()
     {
-        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+        if ( ! is_brisko_hybrid_fse() ) {
             self::enqueue_style( 'milligram', 'enable_milligram' );
             self::enqueue_style( 'uikit', 'enable_uikit' );
             self::enqueue_style( 'underscores', 'enable_underscores', self::maybe() );
@@ -55,9 +55,12 @@ class Styles extends AbstractEnq
         }
 
         self::enqueue_style( self::CORE_CSS, 'enable_core', true );
-        self::enqueue_style( 'normalizer', self::maybe() );
 
-        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
+        if ( ! is_brisko_hybrid_fse() ) {
+            self::enqueue_style( 'normalizer', self::maybe() );
+        }
+
+        if ( ! is_brisko_hybrid_fse() ) {
             if ( get_theme_mod( 'use_custom_styles', false ) ) {
                 wp_enqueue_style( 'custom-styles' );
             }
@@ -129,6 +132,7 @@ class Styles extends AbstractEnq
         $archive_header_padding    = $this->element_mod( 'archive_header_padding', '0px' );
         $archive_header_margin     = $this->element_mod( 'archive_header_margin', '0px' );
         $transform_tags            = get_theme_mod( 'text_transform_tags', 'none' );
+        $enable_fse_layout         = get_theme_mod( 'enable_fse_layout', false );
 
         // footer.
         $footer_links            = get_theme_mod( 'footer_links_color', '#000000' );
@@ -160,6 +164,10 @@ class Styles extends AbstractEnq
         $custom_styles['tag_links']                 = ".tags-links {text-transform: {$transform_tags};}";
         $custom_styles['footer_background']         = ".site-footer {background-color: {$footer_background_color};}";
         $custom_styles['footer_border_color']       = ".site-footer {border-color: {$footer_border_color};}";
+
+        if ( false === $enable_fse_layout ) {
+            $custom_styles['fse_layouts'] = '.alignfull{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);max-width:100vw;width:100vw;overflow:hidden}.alignwide{max-width:90vw;margin-left:calc(50% - 39vw);margin-right:calc(50% - 39vw)}';
+        }
 
         if ( false === $underline_post_links ) {
             $custom_styles['underline_body_links'] = 'body a{text-decoration: none;}';

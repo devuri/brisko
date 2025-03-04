@@ -22,15 +22,8 @@ class SiteHeader
     {
         // $patterns = \WP_Block_Patterns_Registry::get_instance()->get_all_registered();
 
-        if ( get_theme_mod( 'use_block_header', false ) ) {
-            do_action( 'brisko_before_header' );
+        if ( get_theme_mod( 'enable_hybrid_mode', false ) ) {
             self::block_header();
-            do_action( 'brisko_after_header' );
-            if ( is_front_page() && is_home() ) {
-                do_action( 'brisko_homepage_header' );
-            }
-
-            return;
         }
 
         // elementor header.
