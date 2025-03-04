@@ -61,7 +61,7 @@ class Styles extends AbstractEnq
         }
 
         if ( ! is_brisko_hybrid_fse() ) {
-            if ( get_theme_mod( 'use_custom_styles', false ) ) {
+            if ( get_theme_mod( 'use_custom_styles', true ) ) {
                 wp_enqueue_style( 'custom-styles' );
             }
 
