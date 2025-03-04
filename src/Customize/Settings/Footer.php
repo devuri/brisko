@@ -23,7 +23,6 @@ class Footer implements SettingsInterface
         // Footer Settings.
         ( new Control() )->separator( $wp_customize, esc_html__( 'Footer Settings', 'brisko' ), self::section() );
 
-
         if ( get_theme_mod( 'enable_hybrid_mode', false ) ) {
             self::info_note(
                 $wp_customize,

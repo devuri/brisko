@@ -21,7 +21,7 @@ class Palette
         $base_hex = self::sanitize_hex( $base_hex );
 
         // [$r, $g, $b] = self::hex_to_rgb( $base_hex );
-		list($r, $g, $b) = self::hex_to_rgb( $base_hex );
+        list($r, $g, $b) = self::hex_to_rgb( $base_hex );
 
         $shades = [
             50  => 0.05,

@@ -22,7 +22,7 @@
         "files": [
             "src/Customize/helpers.php",
             "src/inc/actions.php",
-            "src/inc/template-tags.php"
+            "src/inc/functions.php"
         ],
         "psr-4": {
             "Brisko\\": "src"
@@ -32,7 +32,7 @@
         "files": [
             "src/Customize/helpers.php",
             "src/inc/actions.php",
-            "src/inc/template-tags.php"
+            "src/inc/functions.php"
         ],
         "psr-4": {
             "Brisko\\Tests\\": "tests/"

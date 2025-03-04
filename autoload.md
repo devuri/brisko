@@ -23,7 +23,7 @@ project/
 │   │   ├── helpers.php (non-class file)
 │   ├── inc/
 │   │   ├── actions.php (non-class file)
-│   │   ├── template-tags.php (non-class file)
+│   │   ├── functions.php (non-class file)
 ├── vendor/  (optional)
 ├── Autoloader.php
 ├── index.php
@@ -68,7 +68,7 @@ You can also **manually include files** that are not class-based (e.g., helper f
 $autoloader->addFiles([
     "src/Customize/helpers.php",
     "src/inc/actions.php",
-    "src/inc/template-tags.php",
+    "src/inc/functions.php",
 ]);
 ```
 

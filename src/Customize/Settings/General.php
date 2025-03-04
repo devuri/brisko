@@ -101,7 +101,7 @@ class General implements SettingsInterface
 
         // Link Color
         if ( ! is_brisko_hybrid_fse() ) {
-            self::global_link_color_settings();
+            self::global_link_color_settings( $wp_customize );
         }
 
         ( new Control() )->separator( $wp_customize, esc_html__( 'Other Settings', 'brisko' ), self::section() );
@@ -115,7 +115,6 @@ class General implements SettingsInterface
 
             return;
         }
-
 
         if ( ! is_brisko_hybrid_fse() ) {
             // Underline Content Links.
