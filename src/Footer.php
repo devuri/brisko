@@ -18,7 +18,7 @@ class Footer
      */
     public function site_footer()
     {
-        if ( get_theme_mod( 'use_block_footer', false ) ) {
+        if ( get_theme_mod( 'enable_hybrid_mode', false ) ) {
             self::block_footer();
         }
 

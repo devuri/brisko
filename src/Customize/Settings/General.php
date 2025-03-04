@@ -99,29 +99,9 @@ class General implements SettingsInterface
             )
         );
 
-        if ( ! get_theme_mod( 'use_block_templates', false ) ) {
-            // Link Color
-            $wp_customize->add_setting(
-                'link_color',
-                [
-                    'capability'        => 'manage_options',
-                    'default'           => '#000000',
-                    'transport'         => self::$transport,
-                    'sanitize_callback' => 'sanitize_hex_color',
-                ]
-            );
-
-            $wp_customize->add_control(
-                new WP_Customize_Color_Control(
-                    $wp_customize,
-                    'link_color',
-                    [
-                        'label'       => esc_html__( 'Link Color', 'brisko' ),
-                        'description' => esc_html__( 'Select a color', 'brisko' ),
-                        'section'     => self::section(),
-                    ]
-                )
-            );
+        // Link Color
+        if ( ! is_brisko_hybrid_fse() ) {
+            self::global_link_color_settings();
         }
 
         ( new Control() )->separator( $wp_customize, esc_html__( 'Other Settings', 'brisko' ), self::section() );
@@ -136,29 +116,32 @@ class General implements SettingsInterface
             return;
         }
 
-        // Underline Content Links.
-        $wp_customize->add_setting(
-            'underline_post_links',
-            [
-                'default'           => true,
-                'capability'        => self::$capability,
-                'transport'         => self::$transport,
-                'sanitize_callback' => 'brisko_sanitize_checkbox',
-            ]
-        );
 
-        $wp_customize->add_control(
-            new ToggleControl(
-                $wp_customize,
+        if ( ! is_brisko_hybrid_fse() ) {
+            // Underline Content Links.
+            $wp_customize->add_setting(
                 'underline_post_links',
                 [
-                    'label'   => esc_html__( 'Underline Links', 'brisko' ),
-                    'section' => self::section(),
-                    'type'    => 'light',
-                    // light, ios, flat.
+                    'default'           => true,
+                    'capability'        => self::$capability,
+                    'transport'         => self::$transport,
+                    'sanitize_callback' => 'brisko_sanitize_checkbox',
                 ]
-            )
-        );
+            );
+
+            $wp_customize->add_control(
+                new ToggleControl(
+                    $wp_customize,
+                    'underline_post_links',
+                    [
+                        'label'   => esc_html__( 'Underline Links', 'brisko' ),
+                        'section' => self::section(),
+                        'type'    => 'light',
+                        // light, ios, flat.
+                    ]
+                )
+            );
+        }
 
         // Removes extra <p> </p> tags in post and pages
         $wp_customize->add_setting(
@@ -191,12 +174,89 @@ class General implements SettingsInterface
         }
     }
 
+    protected static function global_link_color_settings( $wp_customize )
+    {
+        // Link Color
+        $wp_customize->add_setting(
+            'link_color',
+            [
+                'capability'        => 'manage_options',
+                'default'           => '#000000',
+                'transport'         => self::$transport,
+                'sanitize_callback' => 'sanitize_hex_color',
+            ]
+        );
+
+        $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+                $wp_customize,
+                'link_color',
+                [
+                    'label'       => esc_html__( 'Link Color', 'brisko' ),
+                    'description' => esc_html__( 'Select a color', 'brisko' ),
+                    'section'     => self::section(),
+                ]
+            )
+        );
+    }
 
     protected static function hybrid_mode_settings( $wp_customize )
     {
         ( new Control() )->separator( $wp_customize, esc_html__( 'Hybrid Mode', 'brisko' ), self::section() );
 
-        // Load user assets
+        // Hybrid Mode
+        $wp_customize->add_setting(
+            'enable_hybrid_mode',
+            [
+                'default'           => false,
+                'capability'        => self::$capability,
+                'transport'         => self::$transport,
+                'sanitize_callback' => 'brisko_sanitize_checkbox',
+            ]
+        );
+
+        $wp_customize->add_control(
+            new ToggleControl(
+                $wp_customize,
+                'enable_hybrid_mode',
+                [
+                    'label'       => esc_html__( 'Enable Hybrid Mode', 'brisko' ),
+                    'description' => esc_html__( 'Will render the block header and footer template in hybrid theme mode.', 'brisko' ),
+                    'section'     => self::section(),
+                    'type'        => 'light',
+                    // light, ios, flat.
+                ]
+            )
+        );
+
+        if ( ! get_theme_mod( 'enable_hybrid_mode', false ) ) {
+            // FSE Layouts
+            $wp_customize->add_setting(
+                'enable_fse_layout',
+                [
+                    'default'           => false,
+                    'capability'        => self::$capability,
+                    'transport'         => self::$transport,
+                    'sanitize_callback' => 'brisko_sanitize_checkbox',
+                ]
+            );
+
+            $wp_customize->add_control(
+                new ToggleControl(
+                    $wp_customize,
+                    'enable_fse_layout',
+                    [
+                        'label'       => esc_html__( 'Enable FSE Layouts', 'brisko' ),
+                        'description' => esc_html__( 'Sets up support for full width etc.', 'brisko' ),
+                        'section'     => self::section(),
+                        'type'        => 'light',
+                        // light, ios, flat.
+                    ]
+                )
+            );
+        }
+
+        // Custom Styles
         $wp_customize->add_setting(
             'use_custom_styles',
             [
@@ -214,56 +274,6 @@ class General implements SettingsInterface
                 [
                     'label'       => esc_html__( 'Enable Custom Styles', 'brisko' ),
                     'description' => esc_html__( 'Custom Styles, may not be needed in hybrid theme mode or FSE mode.', 'brisko' ),
-                    'section'     => self::section(),
-                    'type'        => 'light',
-                    // light, ios, flat.
-                ]
-            )
-        );
-
-        // Load user assets
-        $wp_customize->add_setting(
-            'use_block_header',
-            [
-                'default'           => false,
-                'capability'        => self::$capability,
-                'transport'         => self::$transport,
-                'sanitize_callback' => 'brisko_sanitize_checkbox',
-            ]
-        );
-
-        $wp_customize->add_control(
-            new ToggleControl(
-                $wp_customize,
-                'use_block_header',
-                [
-                    'label'       => esc_html__( 'Enable Block Header Area', 'brisko' ),
-                    'description' => esc_html__( 'Will render the block header template in hybrid theme mode.', 'brisko' ),
-                    'section'     => self::section(),
-                    'type'        => 'light',
-                    // light, ios, flat.
-                ]
-            )
-        );
-
-        // Load user assets
-        $wp_customize->add_setting(
-            'use_block_footer',
-            [
-                'default'           => false,
-                'capability'        => self::$capability,
-                'transport'         => self::$transport,
-                'sanitize_callback' => 'brisko_sanitize_checkbox',
-            ]
-        );
-
-        $wp_customize->add_control(
-            new ToggleControl(
-                $wp_customize,
-                'use_block_footer',
-                [
-                    'label'       => esc_html__( 'Enable Block Footer Area', 'brisko' ),
-                    'description' => esc_html__( 'Will render the block footer template in hybrid theme mode.', 'brisko' ),
                     'section'     => self::section(),
                     'type'        => 'light',
                     // light, ios, flat.
