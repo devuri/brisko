@@ -8,6 +8,10 @@
 			"wideSize": "1320px"
 		},
 		"spacing": {
+			"blockGap": true,
+			"margin": true,
+			"padding": true,
+			"customSpacingSize": true,
 			"units": ["px", "rem", "em", "%", "vh", "vw"]
 		},
 		"typography": {
