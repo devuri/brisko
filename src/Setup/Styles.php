@@ -18,6 +18,7 @@ class Styles extends AbstractEnq
             $this->editor_style( 'milligram', 'enable_milligram' );
             $this->editor_style( 'uikit', 'enable_uikit' );
             $this->editor_style( 'underscores', 'enable_underscores', self::maybe() );
+            $this->editor_style( 'bstr-icons', 'enable_bootstrap_icons', self::maybe() );
             $this->editor_style( 'brisko', 'enable_brisko', self::maybe() );
         }
 
@@ -52,6 +53,7 @@ class Styles extends AbstractEnq
             self::enqueue_style( 'uikit', 'enable_uikit' );
             self::enqueue_style( 'underscores', 'enable_underscores', self::maybe() );
             self::enqueue_style( 'brisko', 'enable_brisko', self::maybe() );
+            self::enqueue_style( 'bstr-icons', 'enable_bootstrap_icons', self::maybe() );
         }
 
         self::enqueue_style( self::CORE_CSS, 'enable_core', true );
@@ -82,6 +84,7 @@ class Styles extends AbstractEnq
             'uikit'         => 'uikit/css/uikit',
             'milligram'     => 'milligram/css/milligram',
             'brisko'        => 'css/brisko',
+            'bstr-icons'    => 'bootstrap/icons/bootstrap-icons',
             'custom-styles' => 'css/custom-styles',
             'underscores'   => 'css/underscores',
             'normalizer'    => 'css/normalize',

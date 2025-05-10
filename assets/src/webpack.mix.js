@@ -46,3 +46,6 @@ mix.copy('assets/src/uikit/', 'assets/dist/uikit/');
 
 // bootstrap.
 mix.copy('assets/src/bootstrap/', 'assets/dist/bootstrap/');
+
+// bootstrap-icons
+mix.copy('node_modules/bootstrap-icons/font/fonts', 'assets/dist/bootstrap/icons/fonts/');
