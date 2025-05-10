@@ -46,6 +46,7 @@
         "phpstan/phpstan-strict-rules": "1.4.4",
         "symfony/var-dumper": "^5.4",
         "szepeviktor/phpstan-wordpress": "^1.3",
+        "vimeo/psalm": "^6.10",
         "wptrt/wpthemereview": "^0.2.1",
         "yoast/phpunit-polyfills": "^1.0"
     },
@@ -68,6 +69,15 @@
             "phpcbf src",
             "phpcbf template-parts"
         ],
+		"zipit": [
+			"composer install -q",
+			"composer wpcs-lint",
+			"composer no-dev -q",
+			"npm install",
+			"npm run asset:build",
+			"php bin/zipit",
+			"php bin/zipit copy"
+		],
         "build": [
             "composer install -q",
             "composer wpcs-lint",
