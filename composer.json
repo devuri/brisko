@@ -69,15 +69,15 @@
             "phpcbf src",
             "phpcbf template-parts"
         ],
-		"zipit": [
-			"composer install -q",
-			"composer wpcs-lint",
-			"composer no-dev -q",
-			"npm install",
-			"npm run asset:build",
-			"php bin/zipit",
-			"php bin/zipit copy"
-		],
+        "zipit": [
+            "composer install -q",
+            "composer wpcs-lint",
+            "composer no-dev -q",
+            "npm install",
+            "npm run asset:build",
+            "php bin/zipit",
+            "php bin/zipit copy"
+        ],
         "build": [
             "composer install -q",
             "composer wpcs-lint",
