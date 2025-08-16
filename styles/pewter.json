@@ -5,6 +5,9 @@
   "settings": {
     "color": {
       "palette": [
+        { "slug": "base", "color": "#ffffff", "name": "Base" },
+        { "slug": "contrast", "color": "#17171a", "name": "Contrast" },
+        { "slug": "primary", "color": "#55555f", "name": "Primary" },
         { "slug": "pewter-50", "color": "#f9f9fa", "name": "Pewter 50" },
         { "slug": "pewter-100", "color": "#f1f1f3", "name": "Pewter 100" },
         { "slug": "pewter-150", "color": "#e4e4e7", "name": "Pewter 150" },
@@ -48,6 +51,10 @@
     }
   },
   "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--base)",
+      "text": "var(--wp--preset--color--contrast)"
+    },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--dm-sans)",
       "fontSize": "var(--wp--preset--font-size--medium)",
@@ -133,9 +140,21 @@
           "background": "var(--wp--preset--color--pewter-450)",
           "text": "#ffffff"
         },
+        "spacing": {
+          "padding": {
+            "top": "0.75em",
+            "right": "1.5em",
+            "bottom": "0.75em",
+            "left": "1.5em"
+          }
+        },
+        "typography": {
+          "fontWeight": "600"
+        },
         ":hover": {
           "color": {
-            "text": "var(--wp--preset--color--pewter-550)"
+            "background": "var(--wp--preset--color--pewter-500)",
+            "text": "#ffffff"
           }
         }
       },

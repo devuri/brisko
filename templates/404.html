@@ -1,9 +1,67 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"brisko","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main"} -->
-<main class="wp-block-group">
-	<!-- wp:pattern {"slug":"brisko/hidden-404"} /-->
-</main>
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d120)","bottom":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d120)"}}}} -->
+<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--120);padding-bottom:var(--wp--preset--spacing--120)"><!-- wp:group {"style":{"spacing":{"blockGap":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d60)"}},"layout":{"type":"constrained","contentSize":"800px"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":1,"className":"wp-block-heading has-text-align-center"} -->
+<h1 class="wp-block-heading has-text-align-center">404</h1>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"className":"wp-block-heading has-text-align-center"} -->
+<h2 class="wp-block-heading has-text-align-center">Page Not Found</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center">Sorry, the page you are looking for doesn't exist or has been moved. Let's get you back on track.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d40)"}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"style":{"border":{"radius":"0.5rem"},"spacing":{"padding":{"top":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d40)","bottom":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d40)","left":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d60)","right":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d60)"}},"typography":{"fontWeight":"600","fontStyle":"normal"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/" style="border-radius:0.5rem;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--60);font-style:normal;font-weight:600">Go Home</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"0.5rem","color":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dneutral-300)","width":"1px"},"spacing":{"padding":{"top":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d40)","bottom":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d40)","left":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d60)","right":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d60)"}},"typography":{"fontWeight":"600","fontStyle":"normal"},"color":{"text":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dneutral-700)","background":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dneutral-50)"}}} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background has-border-color wp-element-button" href="/blog" style="border-color:var(--wp--preset--color--neutral-300);border-width:1px;border-radius:0.5rem;color:var(--wp--preset--color--neutral-700);background-color:var(--wp--preset--color--neutral-50);padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--60);font-style:normal;font-weight:600">Browse Posts</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:spacer {"height":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d80)"} -->
+<div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search for content...","width":100,"widthUnit":"%","buttonText":"Search","style":{"border":{"radius":"0.5rem"}}} /-->
+
+<!-- wp:spacer {"height":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d60)"} -->
+<div style="height:var(--wp--preset--spacing--60)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:group {"style":{"spacing":{"blockGap":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d40)"}}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":3,"className":"wp-block-heading has-text-align-center"} -->
+<h3 class="wp-block-heading has-text-align-center">Popular Pages</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"style":{"typography":{"lineHeight":"2"},"spacing":{"padding":{"left":"0"}}}} -->
+<ul style="padding-left:0;line-height:2" class="wp-block-list"><!-- wp:list-item {"style":{"typography":{"fontSize":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dfont-size\u002d\u002dmedium)"}}} -->
+<li style="font-size:var(--wp--preset--font-size--medium)"><a href="/">Home</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item {"style":{"typography":{"fontSize":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dfont-size\u002d\u002dmedium)"}}} -->
+<li style="font-size:var(--wp--preset--font-size--medium)"><a href="/about">About</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item {"style":{"typography":{"fontSize":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dfont-size\u002d\u002dmedium)"}}} -->
+<li style="font-size:var(--wp--preset--font-size--medium)"><a href="/services">Services</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item {"style":{"typography":{"fontSize":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dfont-size\u002d\u002dmedium)"}}} -->
+<li style="font-size:var(--wp--preset--font-size--medium)"><a href="/blog">Blog</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item {"style":{"typography":{"fontSize":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dfont-size\u002d\u002dmedium)"}}} -->
+<li style="font-size:var(--wp--preset--font-size--medium)"><a href="/contact">Contact</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"brisko","tagName":"footer"} /-->
