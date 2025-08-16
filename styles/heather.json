@@ -5,6 +5,9 @@
   "settings": {
     "color": {
       "palette": [
+        { "slug": "base", "color": "#ffffff", "name": "Base" },
+        { "slug": "contrast", "color": "#30343b", "name": "Contrast" },
+        { "slug": "primary", "color": "#8898a9", "name": "Primary" },
         { "slug": "brisko-50", "color": "#f6f7f8", "name": "Heather 50" },
         { "slug": "brisko-100", "color": "#e9edf0", "name": "Heather 100" },
         { "slug": "brisko-200", "color": "#d9dfe4", "name": "Heather 200" },
@@ -22,6 +25,11 @@
           "slug": "heather-gradient",
           "gradient": "linear-gradient(135deg, #e9edf0 0%, #8898a9 100%)",
           "name": "Heather Gradient"
+        },
+        {
+          "slug": "heather-subtle",
+          "gradient": "linear-gradient(135deg, #f6f7f8 0%, #d9dfe4 100%)",
+          "name": "Heather Subtle"
         }
       ],
       "duotone": [
@@ -29,6 +37,11 @@
           "slug": "heather-duotone",
           "colors": ["#76849a", "#f6f7f8"],
           "name": "Heather Duotone"
+        },
+        {
+          "slug": "heather-contrast",
+          "colors": ["#30343b", "#ffffff"],
+          "name": "Heather Contrast"
         }
       ]
     },
@@ -62,6 +75,10 @@
     }
   },
   "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--base)",
+      "text": "var(--wp--preset--color--contrast)"
+    },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--dm-sans)",
       "fontSize": "var(--wp--preset--font-size--medium)",
@@ -149,7 +166,8 @@
         },
         ":hover": {
           "color": {
-            "text": "var(--wp--preset--color--brisko-950)"
+            "background": "var(--wp--preset--color--brisko-800)",
+            "text": "#ffffff"
           }
         }
       },

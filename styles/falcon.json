@@ -5,6 +5,9 @@
   "settings": {
     "color": {
       "palette": [
+        { "slug": "base", "color": "#ffffff", "name": "Base" },
+        { "slug": "contrast", "color": "#33242d", "name": "Contrast" },
+        { "slug": "primary", "color": "#ac88a0", "name": "Primary" },
         { "slug": "brisko-50", "color": "#f9f6f9", "name": "Falcon 50" },
         { "slug": "brisko-100", "color": "#f4eff3", "name": "Falcon 100" },
         { "slug": "brisko-200", "color": "#eae0e8", "name": "Falcon 200" },
@@ -48,6 +51,10 @@
     }
   },
   "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--base)",
+      "text": "var(--wp--preset--color--contrast)"
+    },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--dm-sans)",
       "fontSize": "var(--wp--preset--font-size--medium)",
