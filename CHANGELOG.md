@@ -1,5 +1,22 @@
 # Changelog
 
+## [6.2.0](https://github.com/devuri/brisko/compare/6.1.2...6.2.0) (2025-08-16)
+
+
+### Features
+
+* adds `Bootstrap Icons` v1.12.1 https://icons.getbootstrap.com/ ([6e66246](https://github.com/devuri/brisko/commit/6e662462b024c775beaabfff87733b22697f66b3))
+* adds `Bootstrap Icons` v1.12.1 https://icons.getbootstrap.com/ ([f9de219](https://github.com/devuri/brisko/commit/f9de219677a5dd8cb011659fd897822fd54ed414))
+* update presets `base` `contrats` and `primary` ([394ba0b](https://github.com/devuri/brisko/commit/394ba0b60fe368678e3957e0af2e862a865d7fd0))
+* update presets `base` `contrats` and `primary` ([ea51ae0](https://github.com/devuri/brisko/commit/ea51ae080cb949124c45aaa59dfef1088e461daa))
+
+
+### Bug Fixes
+
+* adds al spaces ([1b76d41](https://github.com/devuri/brisko/commit/1b76d417b8fcd88fbee2e74cd59ec73dbce95534))
+* adds al spaces ([3484e94](https://github.com/devuri/brisko/commit/3484e940ac280333934ff94a10825841844f2b9c))
+* upgrade bootstrap from 5.2.0 to 5.3.5 ([7cce246](https://github.com/devuri/brisko/commit/7cce2466dd3df970031c6c419ea31ca624aaf2fc))
+
 ## [6.1.2](https://github.com/devuri/brisko/compare/6.1.1...6.1.2) (2025-03-04)
 
 
