@@ -1,3 +1,5 @@
+remote_theme: devuri//esl-theme
+
 title: Brisko
 description: WordPress Starter Theme, based on Underscores and Bootstrap.
-remote_theme: devuri//esl-theme
+
