@@ -3,19 +3,39 @@ remote_theme: devuri/ceres-theme
 title: Brisko
 description: WordPress Starter Theme, based on Underscores and Bootstrap.
 
-# Header link (optional)
-header_link:
-  text: "My Account"
-  url: "#"
-  icon: "person-circle"
+# Navigation
+navigation:
+  - title: Features
+    url: "#features"
+  - title: Pricing
+    url: "#pricing"
+  - title: Docs
+    url: /docs
 
-# Footer links (optional)
-footer_links:
-  - text: "Terms of Service"
-    url: "#"
-  - text: "Privacy Policy"
-    url: "#"
-  - text: "Contact Support"
-    url: "#"
+# Footer columns
+footer_columns:
+  - title: Product
+    links:
+      - title: Features
+        url: "#features"
+      - title: Pricing
+        url: "#pricing"
+  - title: Resources
+    links:
+      - title: Documentation
+        url: /docs
+      - title: Support
+        url: /support
 
-footer_text: "© 2026 Brisko. All rights reserved."
+# Social links
+social_links:
+  - platform: Twitter
+    icon: twitter-x
+    url: https://twitter.com/yourusername
+  - platform: GitHub
+    icon: github
+    url: https://github.com/yourusername
+
+# Footer
+footer_tagline: WordPress Starter Theme.
+footer_copyright: "© 2026 WPBrisko. All rights reserved."      
