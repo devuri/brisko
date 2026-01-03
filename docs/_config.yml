@@ -26,6 +26,12 @@ footer_columns:
         url: /docs
       - title: Support
         url: /support
+  - title: Company
+    links:
+      - title: Privacy Policy
+        url: /privacy
+      - title: Terms of Service
+        url: /terms
 
 # Social links
 social_links:
@@ -37,5 +43,5 @@ social_links:
     url: https://github.com/yourusername
 
 # Footer
-footer_tagline: WordPress Starter Theme.
+footer_tagline: Brisko is a lightweight and easy-to-use WordPress theme optimized for speed and fully compatible with the Block Editor and Elementor.
 footer_copyright: "© 2026 WPBrisko. All rights reserved."      
