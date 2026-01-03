@@ -40,7 +40,7 @@ social_links:
     url: https://twitter.com/yourusername
   - platform: GitHub
     icon: github
-    url: https://github.com/yourusername
+    url: https://github.com/devuri/brisko
 
 # Footer
 footer_tagline: Brisko is a lightweight and easy-to-use WordPress theme optimized for speed and fully compatible with the Block Editor and Elementor.
