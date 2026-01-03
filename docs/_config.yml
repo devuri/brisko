@@ -3,3 +3,19 @@ remote_theme: devuri/esl-theme
 title: Brisko
 description: WordPress Starter Theme, based on Underscores and Bootstrap.
 
+# Header link (optional)
+header_link:
+  text: "My Account"
+  url: "#"
+  icon: "person-circle"
+
+# Footer links (optional)
+footer_links:
+  - text: "Terms of Service"
+    url: "#"
+  - text: "Privacy Policy"
+    url: "#"
+  - text: "Contact Support"
+    url: "#"
+
+footer_text: "© 2026 Brisko. All rights reserved."
