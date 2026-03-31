@@ -1,5 +1,26 @@
 # Changelog
 
+## [7.0.1](https://github.com/devuri/brisko/compare/7.0.0...7.0.1) (2026-03-31)
+
+
+### Miscellaneous Chores
+
+* 7.0.1 version bump ([4b5993f](https://github.com/devuri/brisko/commit/4b5993fa23a198d29a741f1a912eeed689d5cb56))
+* 7.0.1 version bump ([3025d9b](https://github.com/devuri/brisko/commit/3025d9bcedeb8fcc32714d9272991ba23677c3da))
+* **deps-dev:** bump cipher-base from 1.0.4 to 1.0.6 ([9f514e1](https://github.com/devuri/brisko/commit/9f514e147f313564c91be304540104d2647c2d71))
+* **deps-dev:** bump lodash from 4.17.21 to 4.17.23 ([197da34](https://github.com/devuri/brisko/commit/197da349292d50c4acce1f40447bb43bacd356c6))
+* **deps-dev:** bump node-forge from 1.3.1 to 1.3.2 ([220db23](https://github.com/devuri/brisko/commit/220db23caf1ed17aa9116be49c1249b31541705a))
+* **deps-dev:** bump node-forge from 1.3.2 to 1.4.0 ([01bd687](https://github.com/devuri/brisko/commit/01bd6874e4b170064b5a3b5d9c20b3e04c9e654e))
+* **deps-dev:** bump node-forge from 1.3.2 to 1.4.0 ([4b09a00](https://github.com/devuri/brisko/commit/4b09a00b7a0d0faa9f040b9efb8460aa346a82b3))
+* **deps-dev:** bump picomatch from 2.3.1 to 2.3.2 ([d5f812c](https://github.com/devuri/brisko/commit/d5f812c3fc2788ef70f3da67871872ce039f1f02))
+* **deps-dev:** bump picomatch from 2.3.1 to 2.3.2 ([76575f3](https://github.com/devuri/brisko/commit/76575f37b31e626ff09a631d3249e224a3f2adfb))
+* **deps-dev:** bump sha.js from 2.4.11 to 2.4.12 ([d530285](https://github.com/devuri/brisko/commit/d5302850142ca2a2bf9c42d805a93a6f8d1d1842))
+* **deps-dev:** bump svgo from 2.8.0 to 2.8.2 ([4e2933a](https://github.com/devuri/brisko/commit/4e2933a4f674a55983a936908da96dd55a10ce12))
+* **deps-dev:** bump svgo from 2.8.0 to 2.8.2 ([b5207d5](https://github.com/devuri/brisko/commit/b5207d588086450a5d6947558252ee37ecd598f9))
+* **deps-dev:** bump webpack from 5.94.0 to 5.105.0 ([015bbfa](https://github.com/devuri/brisko/commit/015bbfa91480219961e36a164898abcbfc01e01d))
+* **deps:** bump serialize-javascript and terser-webpack-plugin ([13b2abf](https://github.com/devuri/brisko/commit/13b2abf4490840aba546d788e22341974b73ca26))
+* **deps:** bump serialize-javascript and terser-webpack-plugin ([9d4d562](https://github.com/devuri/brisko/commit/9d4d562f3fdd7b8d40408cd884e87cda09a8bfd3))
+
 ## [7.0.0](https://github.com/devuri/brisko/compare/6.2.0...7.0.0) (2026-03-31)
 
 
