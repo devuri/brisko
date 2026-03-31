@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.0.0](https://github.com/devuri/brisko/compare/6.2.0...7.0.0) (2026-03-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove templates/index.html
+
+### Bug Fixes
+
+* remove templates/index.html  ([12311e1](https://github.com/devuri/brisko/commit/12311e1d07f1dde722cd7b0f038fb76bb340dd92))
+
 ## [6.2.0](https://github.com/devuri/brisko/compare/6.1.2...6.2.0) (2025-08-16)
 
 
